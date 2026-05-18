@@ -130,7 +130,6 @@ public class Player : MonoBehaviour
             isLockedOnGrapple = false;
             if (dist < 0.8f)
             {
-                rb.position = hookPoint;
                 isLockedOnGrapple = true;
                 isAttaching = false;
             }

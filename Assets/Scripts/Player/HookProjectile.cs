@@ -79,9 +79,9 @@ public class HookProjectile : MonoBehaviour
         if (((1 << collision.gameObject.layer) & grappleMask) != 0)
         {
             attached = true;
+            rb.linearVelocity = Vector2.zero;
             Vector2 hitPoint = transform.position;
             player.HookAttached(hitPoint, this);
-            rb.linearVelocity = Vector2.zero;
         }
     }
 }
