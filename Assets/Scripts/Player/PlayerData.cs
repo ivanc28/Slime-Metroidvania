@@ -12,6 +12,8 @@ public class PlayerData : ScriptableObject
     public float maxExcessSpeed;
     public float momentumPreservation;
     public float highSpeedMomentumPreservation;
+    public float noInputMomentumPreservation;
+    public float noInputMomentumFactor = 0.85f;
     public PhysicsMaterial2D frictionless;
     [Header("Jumping")]
     public float jumpSpeed;
@@ -26,6 +28,8 @@ public class PlayerData : ScriptableObject
     [Tooltip("How many seconds of coyote time")]
     public float coyoteTime;
     [Header("Grapple")]
-    public float grappleAttachSpeed;
-    public float grappleThrowSpeed;
+    public float baseGrappleLifetime;
+    public float attachSpeed;
+    public float hookSpeed;
+    public LayerMask grappleObjects;
 }

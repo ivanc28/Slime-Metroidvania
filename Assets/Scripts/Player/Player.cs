@@ -17,6 +17,15 @@ public class Player : MonoBehaviour
     [SerializeField] Collider2D col;
     [SerializeField] SpriteRenderer rend;
     [SerializeField] Transform feetPos;
+    [SerializeField] HookProjectile hookPrefab;
+
+    private bool grappleLocked;
+    HookProjectile currHookAttached;
+    HookProjectile currHookBeingThrown;
+    bool isAttaching;
+    bool isLocked;
+    Vector2 hookPoint;
+    bool logAccelRate;
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -73,15 +82,46 @@ public class Player : MonoBehaviour
         {
             rb.sharedMaterial = null;
         }
+
+        // Fire grappling hook
+        if (Input.GetMouseButtonDown(0))
+        {
+            FireHook();
+        }
+        if(isAttaching && Input.GetKeyDown(KeyCode.Space))
+        {
+            DetachHook();
+        }
+
         //// TEST
         //if (Input.GetKeyDown(KeyCode.LeftShift))
         //{
         //    rb.linearVelocityX = 50 * moveInput;
         //}
+        if (Input.GetMouseButtonDown(1))
+        {
+            logAccelRate = true;
+        }
     }
 
     private void FixedUpdate()
     {
+        #region Grappling
+        if (isAttaching)
+        {
+            Vector2 dir = ((Vector2)hookPoint - rb.position).normalized;
+            rb.linearVelocity = dir * data.attachSpeed;
+
+            float dist = Vector2.Distance(rb.position, hookPoint);
+
+            if (dist < 0.2f)
+            {
+                rb.linearVelocity = Vector2.zero;
+                isLocked = true;
+            }
+            return;
+        }
+        #endregion
         // Movement
         Run(1);
         // Jumping
@@ -119,9 +159,10 @@ public class Player : MonoBehaviour
         if (rb.linearVelocityY < data.terminalFallVel)
         {
             rb.linearVelocityY = data.terminalFallVel;
-        }
+        }        
 
     }
+  
     private void Run(float lerpAmount)
     {
         //Calculate the direction we want to move in and our desired velocity
@@ -129,6 +170,10 @@ public class Player : MonoBehaviour
         //We can reduce our control using Lerp() this smooths changes to our direction and speed
         targetSpeed = Mathf.Lerp(rb.linearVelocityX, targetSpeed, lerpAmount);
 
+        // Preserve momentum when moving in the same direction
+        float currentSpeed = rb.linearVelocityX;
+
+        
         #region Calculate AccelRate
         float accelRate;
 
@@ -140,52 +185,27 @@ public class Player : MonoBehaviour
             accelRate = (Mathf.Abs(targetSpeed) > 0.01f) ? data.runAccelAmount * data.accelInAir : data.runDecelAmount * data.decelInAir;
         #endregion
 
-        //#region Add Bonus Jump Apex Acceleration
-        ////Increase are acceleration and maxSpeed when at the apex of their jump, makes the jump feel a bit more bouncy, responsive and natural
-        //if ((IsJumping || IsWallJumping || _isJumpFalling) && Mathf.Abs(RB.velocity.y) < Data.jumpHangTimeThreshold)
-        //{
-        //    accelRate *= Data.jumpHangAccelerationMult;
-        //    targetSpeed *= Data.jumpHangMaxSpeedMult;
-        //}
-        //#endregion
-
-        //#region Conserve Momentum
-        ////We won't slow the player down if they are moving in their desired direction but at a greater speed than their maxSpeed
-        //if (Mathf.Abs(rb.linearVelocityX) > Mathf.Abs(targetSpeed) && Mathf.Sign(rb.linearVelocityX) == Mathf.Sign(targetSpeed) && Mathf.Abs(targetSpeed) > 0.01f)
-        //{
-        //    //Prevent any deceleration from happening, or in other words conserve our current momentum
-        //    //You could experiment with allowing for the player to slightly increae their speed whilst in this "state"
-        //    accelRate = 0;
-        //}
-        //#endregion
         #region Conserve Momentum
 
-        float currentSpeed = rb.linearVelocityX;
+        bool isOverspeeding = Mathf.Abs(currentSpeed) > data.baseMoveSpeed;
 
-        bool isOverspeeding = Mathf.Abs(currentSpeed) > Mathf.Abs(targetSpeed);
-
-        bool sameDirection = Mathf.Sign(currentSpeed) == Mathf.Sign(targetSpeed);
-
-        bool hasInput = Mathf.Abs(targetSpeed) > 0.01f;
-
-        if (isOverspeeding && sameDirection && hasInput)
+        if (isOverspeeding)
         {
-            // How far above max speed are we?
-            float excessSpeed = Mathf.Abs(currentSpeed) - Mathf.Abs(targetSpeed);
-
-            // 0 = barely overspeeding
-            // 1 = massively overspeeding
-            float excessRatio = Mathf.Clamp01(excessSpeed / data.maxExcessSpeed);
-
-            // reduce deceleration smoothly
-            accelRate *= Mathf.Lerp(data.momentumPreservation, data.highSpeedMomentumPreservation,excessRatio);
+            if (moveInput == 0)
+            {
+                accelRate *= data.noInputMomentumPreservation; // medium preservation
+            }
+            else if (currentSpeed * moveInput > 0)
+            {
+                accelRate *= data.highSpeedMomentumPreservation; // strongest preservation
+            }
         }
-
+   
         #endregion
 
         //Calculate difference between current velocity and desired velocity
         float speedDif = targetSpeed - rb.linearVelocityX;
-        //Calculate force along x-axis to apply to thr player
+        //Calculate force along x-axis to apply to the player
 
         float movement = speedDif * accelRate;
 
@@ -207,10 +227,69 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void FireHook()
+    {
+        Vector2 dir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        dir.Normalize();
+
+        HookProjectile hook = Instantiate(hookPrefab, transform.position, Quaternion.identity);
+        hook.Initialize(this, dir, data.hookSpeed, data.baseGrappleLifetime, data.grappleObjects);
+        currHookBeingThrown = hook;
+    }
+    public void HookAttached(Vector2 point, HookProjectile hook)
+    {
+        if (currHookAttached != null && currHookAttached != hook)
+        {
+            Destroy(currHookAttached.gameObject);
+        }
+
+        currHookAttached = hook;
+        currHookBeingThrown = null;
+
+        hookPoint = point;
+        isAttaching = true;
+
+        grappleLocked = true;
+        rb.gravityScale = 0;
+    }
+    private void DetachHook()
+    {
+        isAttaching = false;
+
+        grappleLocked = false;
+
+        rb.gravityScale = data.fallingGravity;
+
+        if (currHookAttached != null)
+            Destroy(currHookAttached.gameObject);
+
+        currHookAttached = null;
+        currHookBeingThrown = null;
+        isLocked = false;
+    }
+    public void HookMissed()
+    {
+        currHookAttached = null;
+    }
+    public bool GetIsLocked()
+    {
+        return isLocked;
+    }
+    public bool HookEqualsOneAttached(HookProjectile other)
+    {
+        return other == currHookAttached;
+    }
+    public bool HookEqualsOneThrown(HookProjectile other)
+    {
+        return other == currHookBeingThrown;
+    }
+
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(feetPos.position, data.feetRadius);
 
     }
+
 }
