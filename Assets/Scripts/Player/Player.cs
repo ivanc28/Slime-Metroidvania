@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
     HookProjectile currHookAttached;
     HookProjectile currHookBeingThrown;
     bool isAttaching;
-    bool isLocked;
+    [SerializeField] bool isLockedOnGrapple;
     Vector2 hookPoint;
     bool logAccelRate;
     private void Awake()
@@ -88,9 +88,19 @@ public class Player : MonoBehaviour
         {
             FireHook();
         }
-        if(isAttaching && Input.GetKeyDown(KeyCode.Space))
+        // Detach grappling hook
+        if(Input.GetKeyDown(KeyCode.Space))
         {
-            DetachHook();
+            bool shouldJumpAfterDetach = false;
+            if (isLockedOnGrapple || isAttaching)
+            {
+                shouldJumpAfterDetach = isLockedOnGrapple;
+                DetachHook();
+            }
+            if (shouldJumpAfterDetach)
+            {
+                Jump();
+            }
         }
 
         //// TEST
@@ -114,11 +124,17 @@ public class Player : MonoBehaviour
 
             float dist = Vector2.Distance(rb.position, hookPoint);
 
-            if (dist < 0.2f)
+            if (dist < 0.8f)
             {
+                rb.position = hookPoint;
                 rb.linearVelocity = Vector2.zero;
-                isLocked = true;
+                isLockedOnGrapple = true;
+                isAttaching = false;
             }
+            return;
+        }
+        if (isLockedOnGrapple)
+        {
             return;
         }
         #endregion
@@ -136,6 +152,7 @@ public class Player : MonoBehaviour
             if (isJumping)
             {
                 StopJump();
+                Debug.Log("Stopped jump");
             }
             liftedJump = false;
         }
@@ -159,7 +176,7 @@ public class Player : MonoBehaviour
         if (rb.linearVelocityY < data.terminalFallVel)
         {
             rb.linearVelocityY = data.terminalFallVel;
-        }        
+        }
 
     }
   
@@ -255,7 +272,6 @@ public class Player : MonoBehaviour
     private void DetachHook()
     {
         isAttaching = false;
-
         grappleLocked = false;
 
         rb.gravityScale = data.fallingGravity;
@@ -265,7 +281,7 @@ public class Player : MonoBehaviour
 
         currHookAttached = null;
         currHookBeingThrown = null;
-        isLocked = false;
+        isLockedOnGrapple = false;
     }
     public void HookMissed()
     {
@@ -273,7 +289,7 @@ public class Player : MonoBehaviour
     }
     public bool GetIsLocked()
     {
-        return isLocked;
+        return isLockedOnGrapple;
     }
     public bool HookEqualsOneAttached(HookProjectile other)
     {

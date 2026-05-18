@@ -72,7 +72,6 @@ public class HookProjectile : MonoBehaviour
             Vector2 hitPoint = transform.position;
             player.HookAttached(hitPoint, this);
             rb.linearVelocity = Vector2.zero;
-            Debug.Log("Hit something");
         }
     }
 }

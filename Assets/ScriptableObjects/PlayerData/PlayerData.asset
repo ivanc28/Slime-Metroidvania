@@ -13,13 +13,15 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: Assembly-CSharp::PlayerData
   baseMoveSpeed: 12
-  runAccelAmount: 25
-  runDecelAmount: 10
+  runAccelAmount: 23
+  runDecelAmount: 15
   accelInAir: 1
-  decelInAir: 0.35
+  decelInAir: 0.5
   maxExcessSpeed: 40
-  momentumPreservation: 0.2
-  highSpeedMomentumPreservation: 0.1
+  momentumPreservation: 0.3
+  highSpeedMomentumPreservation: 0.05
+  noInputMomentumPreservation: 0.2
+  noInputMomentumFactor: 0.85
   frictionless: {fileID: 6200000, guid: 7d4911744a6e33e4e9d4c02b63718da4, type: 2}
   jumpSpeed: 17.5
   feetRadius: 0.25
@@ -32,9 +34,9 @@ MonoBehaviour:
   terminalFallVel: -20
   jumpBuffer: 0.1
   coyoteTime: 0.1
-  baseGrappleLifetime: 1
-  attachSpeed: 15
-  hookSpeed: 15
+  baseGrappleLifetime: 0.45
+  attachSpeed: 27.5
+  hookSpeed: 27.5
   grappleObjects:
     serializedVersion: 2
     m_Bits: 8
