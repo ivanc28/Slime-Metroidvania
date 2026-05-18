@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private PlayerData data;
+    [SerializeField] public PlayerData data;
     // Movement
     private float moveInput;
     // Jumping
@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     private float jumpBufferTimer;
     private float coyoteTimer;
     [Header("Components")]
-    [SerializeField] Rigidbody2D rb;
+    public Rigidbody2D rb;
     [SerializeField] Collider2D col;
     [SerializeField] SpriteRenderer rend;
     [SerializeField] Transform feetPos;
@@ -24,8 +24,18 @@ public class Player : MonoBehaviour
     bool isAttaching;
     [SerializeField] bool isLockedOnGrapple;
     Vector2 hookPoint;
+
+    // Singleton
+    public static Player Instance { get; private set; }
+
     private void Awake()
     {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
         DontDestroyOnLoad(gameObject);
         jumpBufferTimer = data.jumpBuffer;
         coyoteTimer = data.coyoteTime;
@@ -121,7 +131,6 @@ public class Player : MonoBehaviour
             if (dist < 0.8f)
             {
                 rb.position = hookPoint;
-                rb.linearVelocity = Vector2.zero;
                 isLockedOnGrapple = true;
                 isAttaching = false;
             }
@@ -129,6 +138,7 @@ public class Player : MonoBehaviour
         }
         if (isLockedOnGrapple)
         {
+            rb.linearVelocity = Vector2.zero;
             return;
         }
         #endregion
@@ -172,6 +182,12 @@ public class Player : MonoBehaviour
             rb.linearVelocityY = data.terminalFallVel;
         }
 
+    }
+
+    // References
+    public SpriteRenderer GetRenderer()
+    {
+        return rend;
     }
   
     private void Run(float lerpAmount)
@@ -259,7 +275,7 @@ public class Player : MonoBehaviour
 
         rb.gravityScale = 0;
     }
-    private void DetachHook()
+    public void DetachHook()
     {
         isAttaching = false;
         if (!isLockedOnGrapple)

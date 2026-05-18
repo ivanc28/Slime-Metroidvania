@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 4119030689181757675}
   m_Layer: 0
   m_Name: Hook
-  m_TagString: Untagged
+  m_TagString: Hook
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 049e24506f8bd524e9aa285b898b78e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HookProjectile
-  playerVelFactor: {x: 0.2, y: 0.3}
+  playerVelFactor: {x: 0.2, y: 0.1}
   lengthBufferIfStillTimeLeft: 0
   lifetime: 0
 --- !u!50 &-4824268991652366660

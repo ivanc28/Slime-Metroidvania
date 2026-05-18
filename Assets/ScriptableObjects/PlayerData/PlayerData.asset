@@ -40,4 +40,4 @@ MonoBehaviour:
   hookSpeed: 27.5
   grappleObjects:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 72
