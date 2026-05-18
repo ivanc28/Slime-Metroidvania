@@ -139,6 +139,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 049e24506f8bd524e9aa285b898b78e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HookProjectile
+  playerVelFactor: {x: 0.2, y: 0.3}
+  lengthBufferIfStillTimeLeft: 0
+  lifetime: 0
 --- !u!50 &-4824268991652366660
 Rigidbody2D:
   serializedVersion: 5

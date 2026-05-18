@@ -31,10 +31,11 @@ MonoBehaviour:
   risingGravity: 4
   fallingGravity: 6
   stopJumpGravity: 10
-  terminalFallVel: -20
+  terminalFallVel: -25
   jumpBuffer: 0.1
   coyoteTime: 0.1
-  baseGrappleLifetime: 0.45
+  baseGrappleLength: 10
+  minGrappleLifetime: 0.6
   attachSpeed: 27.5
   hookSpeed: 27.5
   grappleObjects:

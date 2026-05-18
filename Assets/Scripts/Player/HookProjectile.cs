@@ -2,28 +2,37 @@ using UnityEngine;
 
 public class HookProjectile : MonoBehaviour
 {
+    [Tooltip("Percentage of player's X velocity that's added to the hook's velocity")]
+    [SerializeField] Vector2 playerVelFactor;
+    [SerializeField] float lengthBufferIfStillTimeLeft;
+    [SerializeField] float lifetime;
     Player player;
 
     Vector2 direction;
     float speed;
-    float lifeTime;
+    float length;
 
     LayerMask grappleMask;
     Rigidbody2D rb;
     LineRenderer hookLine;
 
     bool attached;
-    
+    Rigidbody2D playerRB;
 
-    public void Initialize(Player p, Vector2 dir, float hookSpeed, float maxTime, LayerMask mask)
+    public void Initialize(Player p, Vector2 dir, float hookSpeed, float maxLength, float minLifetime, LayerMask mask)
     {
         player = p;
         direction = dir;
         speed = hookSpeed;
-        lifeTime = maxTime;
+        length = maxLength;
+        lifetime = minLifetime;
         grappleMask = mask;
         rb = GetComponent<Rigidbody2D>();
         hookLine = GetComponent<LineRenderer>();
+
+        playerRB = player.GetComponent<Rigidbody2D>();
+        playerVelFactor.x = Mathf.Clamp01(playerVelFactor.x);
+        playerVelFactor.y = Mathf.Clamp01(playerVelFactor.y);
     }
 
     void Update()
@@ -34,11 +43,15 @@ public class HookProjectile : MonoBehaviour
         }
         if (!attached)
         {
-            rb.linearVelocity = direction * speed;
+            Vector2 moveVel = direction * speed;
+            moveVel.x += playerRB.linearVelocityX * playerVelFactor.x;
+            moveVel.y += playerRB.linearVelocityY * playerVelFactor.y;
+            rb.linearVelocity = moveVel;
 
-            lifeTime -= Time.deltaTime;
+            lifetime -= Time.deltaTime;
+            float distanceFromPlayer = Vector2.Distance(transform.position, player.transform.position);
 
-            if (lifeTime <= 0)
+            if (distanceFromPlayer > length && lifetime <= 0)
             {
                 player.HookMissed();
                 Destroy(gameObject);

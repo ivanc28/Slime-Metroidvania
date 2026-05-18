@@ -67,7 +67,7 @@ public class Player : MonoBehaviour
             coyoteTimer = data.coyoteTime;
         }
         
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKeyUp(KeyCode.Space) && isJumping && !isLockedOnGrapple)
         {
             liftedJump = true;
         }
@@ -241,7 +241,7 @@ public class Player : MonoBehaviour
         dir.Normalize();
 
         HookProjectile hook = Instantiate(hookPrefab, transform.position, Quaternion.identity);
-        hook.Initialize(this, dir, data.hookSpeed, data.baseGrappleLifetime, data.grappleObjects);
+        hook.Initialize(this, dir, data.hookSpeed, data.baseGrappleLength, data.minGrappleLifetime, data.grappleObjects);
         currHookBeingThrown = hook;
     }
     public void HookAttached(Vector2 point, HookProjectile hook)
@@ -262,11 +262,15 @@ public class Player : MonoBehaviour
     private void DetachHook()
     {
         isAttaching = false;
-
-        rb.gravityScale = data.fallingGravity;
+        if (!isLockedOnGrapple)
+        {
+            rb.gravityScale = data.fallingGravity;
+        }
 
         if (currHookAttached != null)
+        {
             Destroy(currHookAttached.gameObject);
+        }
 
         currHookAttached = null;
         currHookBeingThrown = null;

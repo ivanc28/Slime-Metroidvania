@@ -28,7 +28,8 @@ public class PlayerData : ScriptableObject
     [Tooltip("How many seconds of coyote time")]
     public float coyoteTime;
     [Header("Grapple")]
-    public float baseGrappleLifetime;
+    public float baseGrappleLength;
+    public float minGrappleLifetime;
     public float attachSpeed;
     public float hookSpeed;
     public LayerMask grappleObjects;
