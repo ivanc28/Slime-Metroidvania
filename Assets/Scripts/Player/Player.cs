@@ -19,13 +19,11 @@ public class Player : MonoBehaviour
     [SerializeField] Transform feetPos;
     [SerializeField] HookProjectile hookPrefab;
 
-    private bool grappleLocked;
     HookProjectile currHookAttached;
     HookProjectile currHookBeingThrown;
     bool isAttaching;
     [SerializeField] bool isLockedOnGrapple;
     Vector2 hookPoint;
-    bool logAccelRate;
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -108,10 +106,6 @@ public class Player : MonoBehaviour
         //{
         //    rb.linearVelocityX = 50 * moveInput;
         //}
-        if (Input.GetMouseButtonDown(1))
-        {
-            logAccelRate = true;
-        }
     }
 
     private void FixedUpdate()
@@ -123,7 +117,7 @@ public class Player : MonoBehaviour
             rb.linearVelocity = dir * data.attachSpeed;
 
             float dist = Vector2.Distance(rb.position, hookPoint);
-
+            isLockedOnGrapple = false;
             if (dist < 0.8f)
             {
                 rb.position = hookPoint;
@@ -141,7 +135,7 @@ public class Player : MonoBehaviour
         // Movement
         Run(1);
         // Jumping
-        #region
+        #region Jumping
         if (pressedJump && (isGrounded || coyoteTimer > 0))
         {
             Jump();
@@ -182,28 +176,30 @@ public class Player : MonoBehaviour
   
     private void Run(float lerpAmount)
     {
-        //Calculate the direction we want to move in and our desired velocity
+        // Calculate the direction we want to move in and our desired velocity
         float targetSpeed = moveInput * data.baseMoveSpeed;
-        //We can reduce our control using Lerp() this smooths changes to our direction and speed
+        // We can reduce our control using Lerp() this smooths changes to our direction and speed
         targetSpeed = Mathf.Lerp(rb.linearVelocityX, targetSpeed, lerpAmount);
 
         // Preserve momentum when moving in the same direction
         float currentSpeed = rb.linearVelocityX;
-
         
         #region Calculate AccelRate
         float accelRate;
 
-        //Gets an acceleration value based on if we are accelerating (includes turning) 
-        //or trying to decelerate (stop). As well as applying a multiplier if we're air borne.
+        // Gets an acceleration value based on if we are accelerating 
+        // or trying to decelerate (stop). As well as applying a multiplier if we're air borne.
         if (isGrounded)
+        {
             accelRate = (Mathf.Abs(targetSpeed) > 0.01f) ? data.runAccelAmount : data.runDecelAmount;
+        }
         else
+        {
             accelRate = (Mathf.Abs(targetSpeed) > 0.01f) ? data.runAccelAmount * data.accelInAir : data.runDecelAmount * data.decelInAir;
+        }
         #endregion
 
         #region Conserve Momentum
-
         bool isOverspeeding = Mathf.Abs(currentSpeed) > data.baseMoveSpeed;
 
         if (isOverspeeding)
@@ -217,16 +213,11 @@ public class Player : MonoBehaviour
                 accelRate *= data.highSpeedMomentumPreservation; // strongest preservation
             }
         }
-   
         #endregion
 
         //Calculate difference between current velocity and desired velocity
         float speedDif = targetSpeed - rb.linearVelocityX;
-        //Calculate force along x-axis to apply to the player
-
         float movement = speedDif * accelRate;
-
-        //Convert this to a vector and apply to rigidbody
         rb.AddForce(movement * Vector2.right, ForceMode2D.Force);
     }
     private void Jump()
@@ -266,13 +257,11 @@ public class Player : MonoBehaviour
         hookPoint = point;
         isAttaching = true;
 
-        grappleLocked = true;
         rb.gravityScale = 0;
     }
     private void DetachHook()
     {
         isAttaching = false;
-        grappleLocked = false;
 
         rb.gravityScale = data.fallingGravity;
 
@@ -285,7 +274,7 @@ public class Player : MonoBehaviour
     }
     public void HookMissed()
     {
-        currHookAttached = null;
+        currHookBeingThrown = null;
     }
     public bool GetIsLocked()
     {

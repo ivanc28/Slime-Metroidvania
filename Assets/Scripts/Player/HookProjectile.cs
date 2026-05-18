@@ -15,12 +15,7 @@ public class HookProjectile : MonoBehaviour
     bool attached;
     
 
-    public void Initialize(
-        Player p,
-        Vector2 dir,
-        float hookSpeed,
-        float maxTime,
-        LayerMask mask)
+    public void Initialize(Player p, Vector2 dir, float hookSpeed, float maxTime, LayerMask mask)
     {
         player = p;
         direction = dir;
@@ -37,21 +32,22 @@ public class HookProjectile : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        if (attached) return;
-
-        rb.linearVelocity = direction * speed;
-
-        lifeTime -= Time.deltaTime;
-
-        if (lifeTime <= 0)
+        if (!attached)
         {
-            player.HookMissed();
-            Destroy(gameObject);
-        }
+            rb.linearVelocity = direction * speed;
+
+            lifeTime -= Time.deltaTime;
+
+            if (lifeTime <= 0)
+            {
+                player.HookMissed();
+                Destroy(gameObject);
+            }
+        }     
     }
     void LateUpdate()
     {
-        if (player.GetIsLocked())
+        if (attached && player.GetIsLocked())
         {
             hookLine.enabled = false;
         }
@@ -66,6 +62,7 @@ public class HookProjectile : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (attached) return;
+        // Check if the hit layer is within the grapple mask
         if (((1 << collision.gameObject.layer) & grappleMask) != 0)
         {
             attached = true;
