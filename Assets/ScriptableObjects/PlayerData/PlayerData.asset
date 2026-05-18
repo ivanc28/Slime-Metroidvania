@@ -12,7 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77f68927748552145b1acb318bbf0a72, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: Assembly-CSharp::PlayerData
-  baseMoveSpeed: 7.5
-  jumpSpeed: 13
+  baseMoveSpeed: 12
+  runAccelAmount: 25
+  runDecelAmount: 15
+  accelInAir: 0.75
+  decelInAir: 0.75
+  jumpSpeed: 17.5
+  feetRadius: 0.25
+  groundObjects:
+    serializedVersion: 2
+    m_Bits: 8
+  risingGravity: 4
+  fallingGravity: 6
+  stopJumpGravity: 10
+  terminalFallVel: -20
+  jumpBuffer: 0.1
+  coyoteTime: 0.1
   grappleAttachSpeed: 0
   grappleThrowSpeed: 0
