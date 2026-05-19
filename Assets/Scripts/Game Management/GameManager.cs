@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     private Dictionary<string, RoomData> roomStates = new();
 
     private string currRoomID;
+    private string nextSpawnPointID;
 
     private void Awake()
     {
@@ -53,5 +54,14 @@ public class GameManager : MonoBehaviour
     public void SetCurrRoomID(string id)
     {
         currRoomID = id;
+    }
+    public string GetNextSpawnPointID()
+    {
+        return nextSpawnPointID;
+    }
+    public void GoNextRoom(string roomID, string spawnPointID)
+    {
+        nextSpawnPointID = spawnPointID;
+        SceneManager.LoadScene(roomID);
     }
 }
