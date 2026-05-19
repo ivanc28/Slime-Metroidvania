@@ -15,7 +15,7 @@ public class BubbleInteractable : Interactables
         {
             if (data.destroyOnInteract)
             {
-                SpawnPebbles(data.numPebbles);
+                SpawnPebbles(numPebbles);
             }
             else
             {

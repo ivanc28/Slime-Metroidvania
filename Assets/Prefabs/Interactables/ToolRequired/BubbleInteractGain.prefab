@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BubbleInteractable
   interactableID: 
   data: {fileID: 11400000, guid: 6eb24e2aa40b43a4082bd1bcc266b9a4, type: 2}
-  canPopandGetPebbles: 0
+  numPebbles: 7
 --- !u!58 &7191273614948363824
 CircleCollider2D:
   m_ObjectHideFlags: 0

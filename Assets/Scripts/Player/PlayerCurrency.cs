@@ -27,6 +27,11 @@ public class PlayerCurrency
     /// <param name="amount"></param>
     public void IncreaseCurrency(int amount)
     {
+        UIManager.Instance.UpdateCurrencyUp(amount);
         currency += amount;
+    }
+    public int GetCurrency()
+    {
+        return currency;
     }
 }

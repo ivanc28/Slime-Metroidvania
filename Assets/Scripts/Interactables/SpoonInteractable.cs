@@ -4,6 +4,6 @@ public class SpoonInteractable : Interactables
 {
     public override void OnInteract()
     {
-        SpawnPebbles(data.numPebbles);
+        SpawnPebbles(numPebbles);
     }
 }

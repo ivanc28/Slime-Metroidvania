@@ -5,6 +5,7 @@ public abstract class Interactables : MonoBehaviour
 {
     [SerializeField] string interactableID;
     public InteractableData data;
+    public int numPebbles;
     private bool inRange;
 
     RoomData room;
