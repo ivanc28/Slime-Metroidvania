@@ -46,13 +46,14 @@ public class Player : MonoBehaviour
         jumpBufferTimer = data.jumpBuffer;
         coyoteTimer = data.coyoteTime;
         tools = new PlayerTools();
+        currencyData = new PlayerCurrency();
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         //TESTING
-        tools.ClaimTool(PlayerTools.Tool.Spoon);
-        tools.SwapTool(PlayerTools.Tool.Spoon);
+        tools.ClaimTool(PlayerTools.Tool.Fork);
+        tools.SwapTool(PlayerTools.Tool.Fork);
     }
 
     // Update is called once per frame
@@ -226,7 +227,6 @@ public class Player : MonoBehaviour
         // Calculate the direction we want to move in and our desired velocity
 
         float targetSpeed = moveInput * data.baseMoveSpeed;
-        Debug.Log("Trying to run! with input: " + moveInput);
         // We can reduce our control using Lerp() this smooths changes to our direction and speed
         targetSpeed = Mathf.Lerp(rb.linearVelocityX, targetSpeed, lerpAmount);
 

@@ -4,8 +4,10 @@ using UnityEngine;
 public class InteractableData : ScriptableObject
 {
     public KeyCode interactKey;
-    public PlayerTools.Tool requiredTool;
+    public PlayerTools.Tool[] requiredTool;
+    public bool destroyOnInteract;
     public Pebble pebblePrefab;
+    public int numPebbles;
     public float pebblePickupDelay;
     public float pebbleLaunchSpeed;
     public float pebbleLaunchMaxAngle;

@@ -2,6 +2,10 @@ using UnityEngine;
 
 public abstract class GrappleObj : MonoBehaviour
 {
+    // Components
+    public SpriteRenderer objRenderer;
+    public Collider2D objCollider;
+
     private bool hookAttached;
     private bool playerInsideCollider;
     private void FixedUpdate()
@@ -20,9 +24,14 @@ public abstract class GrappleObj : MonoBehaviour
     {
         hookAttached = true;
     }
-    public void DetachHook()
+    public virtual void DetachHook()
     {
+        Player.Instance.DetachHook();
         hookAttached = false;
+    }
+    public bool IsHookAttached()
+    {
+        return hookAttached;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

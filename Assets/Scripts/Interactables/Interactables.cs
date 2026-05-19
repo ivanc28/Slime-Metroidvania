@@ -1,15 +1,19 @@
+using System.Linq;
 using UnityEngine;
 
 public abstract class Interactables : MonoBehaviour
 {
-    [SerializeField] bool destroyOnInteract;
     [SerializeField] string interactableID;
-    [SerializeField] InteractableData data;
+    public InteractableData data;
     private bool inRange;
 
     RoomData room;
 
     private void Start()
+    {
+        MakeStart();
+    }
+    public virtual void MakeStart()
     {
         room = GameManager.Instance.GetCurrRoomData();
         if (room.collectedInteractables.Contains(interactableID))
@@ -25,10 +29,10 @@ public abstract class Interactables : MonoBehaviour
         {
             if (Input.GetKeyDown(data.interactKey))
             {
-                if (Player.Instance.tools.GetCurrTool() == data.requiredTool)
+                if (data.requiredTool.Contains(Player.Instance.tools.GetCurrTool()))
                 {
                     OnInteract();
-                    if (destroyOnInteract)
+                    if (data.destroyOnInteract)
                     {
                         room.collectedInteractables.Add(interactableID);
                         Destroy(gameObject);

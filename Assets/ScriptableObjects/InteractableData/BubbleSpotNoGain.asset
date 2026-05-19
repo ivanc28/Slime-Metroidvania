@@ -10,11 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 306e431e83996ff4088ffdc5085fbce5, type: 3}
-  m_Name: BubbleSpot
+  m_Name: BubbleSpotNoGain
   m_EditorClassIdentifier: Assembly-CSharp::InteractableData
   interactKey: 101
-  requiredTool: 2
+  requiredTool: 0200000005000000
+  destroyOnInteract: 0
   pebblePrefab: {fileID: 8555977693275348765, guid: c9bacbc4542a8db4ca1ee4d4a0b2b249, type: 3}
-  pebblePickupDelay: 0.75
-  pebbleLaunchSpeed: 10
-  pebbleLaunchMaxAngle: 50
+  numPebbles: 0
+  pebblePickupDelay: 0
+  pebbleLaunchSpeed: 0
+  pebbleLaunchMaxAngle: 0
