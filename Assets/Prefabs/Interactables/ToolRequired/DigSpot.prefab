@@ -137,6 +137,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e86d22ff73a1764b9a355b94165d2ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpoonInteractable
+  destroyOnInteract: 1
+  interactableID: 
   data: {fileID: 11400000, guid: e0dba6c71aedba34eaec20b02b8e8af4, type: 2}
   numPebbles: 10
 --- !u!58 &8380526833367777044

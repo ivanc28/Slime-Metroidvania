@@ -1,10 +1,22 @@
-using System.Data;
 using UnityEngine;
 
 public abstract class Interactables : MonoBehaviour
 {
+    [SerializeField] bool destroyOnInteract;
+    [SerializeField] string interactableID;
     [SerializeField] InteractableData data;
     private bool inRange;
+
+    RoomData room;
+
+    private void Start()
+    {
+        room = GameManager.Instance.GetCurrRoomData();
+        if (room.collectedInteractables.Contains(interactableID))
+        {
+            Destroy(gameObject);
+        }
+    }
 
     // Update is called once per frame
     void Update()
@@ -16,7 +28,11 @@ public abstract class Interactables : MonoBehaviour
                 if (Player.Instance.tools.GetCurrTool() == data.requiredTool)
                 {
                     OnInteract();
-                    Destroy(gameObject);
+                    if (destroyOnInteract)
+                    {
+                        room.collectedInteractables.Add(interactableID);
+                        Destroy(gameObject);
+                    }
                 }
             }
         }    
