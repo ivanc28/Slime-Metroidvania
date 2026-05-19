@@ -278,6 +278,7 @@ public class Player : MonoBehaviour
 
         hookPoint = point;
         isAttaching = true;
+        isJumping = false;
 
         rb.gravityScale = 0;
     }
