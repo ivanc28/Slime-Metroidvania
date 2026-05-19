@@ -48,7 +48,9 @@ public class Player : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        //TESTING
+        tools.ClaimTool(PlayerTools.Tool.Spoon);
+        tools.SwapTool(PlayerTools.Tool.Spoon);
     }
 
     // Update is called once per frame
