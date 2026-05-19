@@ -51,5 +51,8 @@ TagManager:
   - name: walkBehind
     uniqueID: 608616773
     locked: 0
+  - name: UI
+    uniqueID: 437338375
+    locked: 0
   m_RenderingLayers:
   - Default

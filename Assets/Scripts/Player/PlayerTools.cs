@@ -13,12 +13,14 @@ public class PlayerTools
     public void ClaimTool(Tool tool)
     {
         claimedTools[(int)tool] = true;
+        Player.Instance.UnlockTool(tool);
     }
     public void SwapTool(Tool tool)
     {
         if (claimedTools[(int)tool])
         {
             currTool = tool;
+            Debug.Log($"Swapped to tool: {tool}");
         }
     }
     public bool HasTool(Tool tool)

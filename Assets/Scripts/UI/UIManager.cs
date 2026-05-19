@@ -17,6 +17,7 @@ public class UIManager : MonoBehaviour
     private float currencyTimer;
     private bool startCurrencyTimer;
     private bool startedGettingCurrency;
+
     public static UIManager Instance { get; private set; }
     private void Awake()
     {
@@ -37,7 +38,7 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Player.Instance.currencyData.GetCurrency());
+        #region Currency Update        
         if (startCurrencyTimer)
         {
             if(currencyTimer > 0)
@@ -50,6 +51,7 @@ public class UIManager : MonoBehaviour
                 startCurrencyTimer = false;
             }
         }
+        #endregion
     }
     // Called everytime we increase our currency 
     public void UpdateCurrencyUp(int amt)

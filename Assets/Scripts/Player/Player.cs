@@ -28,6 +28,12 @@ public class Player : MonoBehaviour
 
     // Tools
     public PlayerTools tools;
+
+    [Header("ToolSelection")]
+    [SerializeField] GameObject toolSelectorCanvas;
+    [SerializeField] Transform selectWheelCenter;
+    [SerializeField] ToolOption[] toolOptions;
+    private bool toolSelectorEnabled;
     // Currency
     public PlayerCurrency currencyData;
 
@@ -51,8 +57,10 @@ public class Player : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        EnableToolSelectionCanvas(false);
         //TESTING
         tools.ClaimTool(PlayerTools.Tool.Fork);
+        tools.ClaimTool(PlayerTools.Tool.Spoon);
         tools.SwapTool(PlayerTools.Tool.Fork);
     }
 
@@ -145,6 +153,25 @@ public class Player : MonoBehaviour
             }
         }
 
+        #region Tool Selection
+        if (Input.GetMouseButton(1))
+        {
+            if (!toolSelectorEnabled)
+            {
+                EnableToolSelectionCanvas(true);
+                toolSelectorEnabled = true;
+            }
+        }
+        if (Input.GetMouseButtonUp(1))
+        {
+            if (toolSelectorEnabled)
+            {
+                SelectTool();
+                EnableToolSelectionCanvas(false);
+                toolSelectorEnabled = false;
+            }
+        }
+        #endregion
         //// TEST
         //if (Input.GetKeyDown(KeyCode.LeftShift))
         //{
@@ -285,6 +312,9 @@ public class Player : MonoBehaviour
         }
     }
 
+
+
+
     private void FireHook()
     {
         Vector2 dir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
@@ -345,6 +375,57 @@ public class Player : MonoBehaviour
     }
 
 
+
+
+    public int GetToolOptionsLength()
+    {
+        return toolOptions.Length;
+    }
+    public float GetWheelAngle()
+    {
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 selectPos = selectWheelCenter.position;
+        Vector2 dir = mousePos - selectPos;
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        angle -= 67.5f; // adjust angle so that the top option is 0-45 deg
+        if (angle < 0)
+        {
+            angle += 360;
+        }
+        return angle;
+    }
+    public ToolOption GetHoveredTool()
+    {
+        float angle = GetWheelAngle();
+        int toolChoice = (int)(angle / (360 / toolOptions.Length));
+        return toolOptions[toolChoice];
+    }
+    private void SelectTool()
+    {
+        float angle = GetWheelAngle();
+        int toolChoice = (int)(angle / (360 / toolOptions.Length));
+        Mathf.Clamp(toolChoice, 0, toolOptions.Length - 1);
+        tools.SwapTool(toolOptions[toolChoice].tool);
+        foreach(ToolOption option in toolOptions)
+        {
+            option.EnableToolBG(false);
+        }
+    }
+    public void UnlockTool(PlayerTools.Tool tool)
+    {
+        foreach(ToolOption option in toolOptions)
+        {
+            if(option.tool == tool)
+            {
+                option.RemoveLock();
+                return;
+            }
+        }
+    }
+    private void EnableToolSelectionCanvas(bool enabled)
+    {
+        toolSelectorCanvas.SetActive(enabled);
+    }
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
