@@ -25,6 +25,10 @@ public class Player : MonoBehaviour
     [SerializeField] bool isLockedOnGrapple;
     Vector2 hookPoint;
 
+    // Tools
+    public PlayerTools tools;
+
+
     // Singleton
     public static Player Instance { get; private set; }
 
@@ -39,6 +43,7 @@ public class Player : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         jumpBufferTimer = data.jumpBuffer;
         coyoteTimer = data.coyoteTime;
+        tools = new PlayerTools();
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
