@@ -1,3 +1,4 @@
+using System.Data;
 using UnityEngine;
 
 public abstract class Interactables : MonoBehaviour
@@ -22,6 +23,17 @@ public abstract class Interactables : MonoBehaviour
        
     }
     public abstract void OnInteract();
+    public  void SpawnPebbles(int numPebbles)
+    {
+        for(int i = 0; i < numPebbles; i++)
+        {
+            Pebble pebble = Instantiate(data.pebblePrefab, transform.position, Quaternion.identity);
+            pebble.Initialize(data.pebblePickupDelay);
+            Quaternion rotation = Quaternion.AngleAxis(Random.Range(-data.pebbleLaunchMaxAngle, data.pebbleLaunchMaxAngle), Vector3.forward);
+            Vector2 dir = (rotation * Vector2.up).normalized;
+            pebble.rb.linearVelocity = dir * data.pebbleLaunchSpeed;
+        }
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))

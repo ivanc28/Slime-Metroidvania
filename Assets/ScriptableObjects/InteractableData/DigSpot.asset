@@ -14,3 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InteractableData
   interactKey: 101
   requiredTool: 1
+  pebblePrefab: {fileID: 8555977693275348765, guid: c9bacbc4542a8db4ca1ee4d4a0b2b249, type: 3}
+  pebblePickupDelay: 0.75
+  pebbleLaunchSpeed: 10
+  pebbleLaunchMaxAngle: 50
