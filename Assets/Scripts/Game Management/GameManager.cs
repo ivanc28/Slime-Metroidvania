@@ -1,4 +1,6 @@
+using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -64,4 +66,5 @@ public class GameManager : MonoBehaviour
         nextSpawnPointID = spawnPointID;
         SceneManager.LoadScene(roomID);
     }
+
 }

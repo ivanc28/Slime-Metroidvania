@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
@@ -56,7 +57,31 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        moveInput = Input.GetAxisRaw("Horizontal");
+        float move = 0;
+
+        if (Keyboard.current != null)
+        {
+            if (Keyboard.current.aKey.isPressed)
+                move = -1;
+            if (Keyboard.current.dKey.isPressed)
+                move = 1;
+            if ((Keyboard.current.aKey.isPressed && Keyboard.current.dKey.isPressed) || (!Keyboard.current.aKey.isPressed && !Keyboard.current.dKey.isPressed))
+                move = 0;
+        }
+        moveInput = move;
+        //moveInput = Input.GetAxisRaw("Horizontal");
+        //if (Input.GetKey(KeyCode.A))
+        //{
+        //    moveInput = -1;
+        //}
+        //if (Input.GetKey(KeyCode.D))
+        //{
+        //    moveInput = 1;
+        //}
+        //if((Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D)) || (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D)))
+        //{
+        //    moveInput = 0;
+        //}
         isGrounded = Physics2D.OverlapCircle(feetPos.position, data.feetRadius, data.groundObjects);
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -162,7 +187,6 @@ public class Player : MonoBehaviour
             if (isJumping)
             {
                 StopJump();
-                Debug.Log("Stopped jump");
             }
             liftedJump = false;
         }
@@ -199,7 +223,9 @@ public class Player : MonoBehaviour
     private void Run(float lerpAmount)
     {
         // Calculate the direction we want to move in and our desired velocity
+
         float targetSpeed = moveInput * data.baseMoveSpeed;
+        Debug.Log("Trying to run! with input: " + moveInput);
         // We can reduce our control using Lerp() this smooths changes to our direction and speed
         targetSpeed = Mathf.Lerp(rb.linearVelocityX, targetSpeed, lerpAmount);
 
@@ -242,6 +268,7 @@ public class Player : MonoBehaviour
         float movement = speedDif * accelRate;
         rb.AddForce(movement * Vector2.right, ForceMode2D.Force);
     }
+
     private void Jump()
     {
         isJumping = true;

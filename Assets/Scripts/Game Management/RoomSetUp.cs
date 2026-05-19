@@ -22,10 +22,8 @@ public class RoomSetUp : MonoBehaviour
         string spawnPointID = GameManager.Instance.GetNextSpawnPointID();
         if(spawnPointID == null || spawnPointID == string.Empty)
         {
-            Debug.Log(spawnPointID + ": I was empty");
             return;
         }
-        Debug.Log(spawnPointID + ": I was not empty");
         bool foundScene = false;
         foreach(SpawnPoint point in spawnPoints)
         {
@@ -33,6 +31,7 @@ public class RoomSetUp : MonoBehaviour
             {
                 foundScene = true;
                 Player.Instance.transform.position = point.transform.position;
+                Input.ResetInputAxes();
             }
         }
         if (!foundScene)
