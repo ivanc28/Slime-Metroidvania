@@ -42,5 +42,14 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: walkInFront
+    uniqueID: 44991717
+    locked: 0
+  - name: walkOn
+    uniqueID: 2510965027
+    locked: 0
+  - name: walkBehind
+    uniqueID: 608616773
+    locked: 0
   m_RenderingLayers:
   - Default
