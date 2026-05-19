@@ -36,8 +36,8 @@ MonoBehaviour:
   coyoteTime: 0.1
   baseGrappleLength: 10
   minGrappleLifetime: 0.4
-  attachSpeed: 27.5
-  hookSpeed: 27.5
+  attachSpeed: 25
+  hookSpeed: 25
   grappleObjects:
     serializedVersion: 2
     m_Bits: 72

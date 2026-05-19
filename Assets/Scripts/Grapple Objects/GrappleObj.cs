@@ -3,9 +3,17 @@ using UnityEngine;
 public abstract class GrappleObj : MonoBehaviour
 {
     private bool hookAttached;
+    private bool playerInsideCollider;
+    private void FixedUpdate()
+    {
+        if(playerInsideCollider && hookAttached)
+        {
+            EffectOnPlayerContactAfterHook();
+        }
+    }
     public virtual void EffectOnPlayerContact()
     {
-
+        playerInsideCollider = true;
     }
     public abstract void EffectOnPlayerContactAfterHook();
     public virtual void EffectOnHookContact()
@@ -33,6 +41,10 @@ public abstract class GrappleObj : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            playerInsideCollider = false;
+        }
         if (collision.gameObject.CompareTag("Hook"))
         {                
             DetachHook();
