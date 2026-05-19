@@ -28,7 +28,8 @@ public class Player : MonoBehaviour
 
     // Tools
     public PlayerTools tools;
-
+    // Currency
+    public PlayerCurrency currencyData;
 
     // Singleton
     public static Player Instance { get; private set; }

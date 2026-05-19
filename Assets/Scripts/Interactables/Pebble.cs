@@ -26,7 +26,7 @@ public class Pebble : MonoBehaviour
     }
     private void CollectPebble()
     {
-        Debug.Log("I got a pebble!");
+        Player.Instance.currencyData.IncreaseCurrency(1);
         Destroy(gameObject);
     }
     private void OnTriggerEnter2D(Collider2D collision)
