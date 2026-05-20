@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
     [Header("Currency")]
     [SerializeField] TextMeshProUGUI currencyText;
     [SerializeField] TextMeshProUGUI currencyAccText;
+    [SerializeField] TextMeshProUGUI grappleChargeText;
     [SerializeField] float currencyDelayBeforeAcc;
     [SerializeField] float currencyDelayAfterAcc;
     [Tooltip("How much time between each increment of player's final currency (coming from accumulatedCurrency)")]
@@ -51,6 +52,9 @@ public class UIManager : MonoBehaviour
                 startCurrencyTimer = false;
             }
         }
+        #endregion
+        #region Grapple Charges
+        UpdateGrappleCharges();
         #endregion
     }
     // Called everytime we increase our currency 
@@ -97,5 +101,9 @@ public class UIManager : MonoBehaviour
     {
         currencyText.enabled = enabled;
         currencyAccText.enabled = enabled;
+    }
+    public void UpdateGrappleCharges()
+    {
+        grappleChargeText.text = (Player.Instance.grappleCharges + (Player.Instance.grappleRechargeTimer/Player.Instance.grappleRechargeTime)).ToString();
     }
 }

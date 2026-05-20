@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class Player : MonoBehaviour
 {
     [SerializeField] public PlayerData data;
+    [SerializeField] public UIManager uiManager;
     // Movement
     private float moveInput;
     private bool canRun = true;
@@ -32,9 +33,10 @@ public class Player : MonoBehaviour
     public PlayerTools tools;
 
     // Grapple charges
-    private int grappleCharges;
+    public int grappleCharges;
     private int maxGrappleCharges;
-    private float grappleRechargeTimer;
+    public float grappleRechargeTime;
+    public float grappleRechargeTimer;
 
     [Header("ToolSelection")]
     [SerializeField] GameObject toolSelectorCanvas;
@@ -67,7 +69,8 @@ public class Player : MonoBehaviour
         currencyData = new PlayerCurrency();
         maxGrappleCharges = data.initialMaxGrappleCharges;
         grappleCharges = maxGrappleCharges;
-        grappleRechargeTimer = data.grappleRechargeTime;
+        grappleRechargeTime = data.grappleRechargeTime;
+        grappleRechargeTimer = 0;
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -136,16 +139,19 @@ public class Player : MonoBehaviour
         {
             coyoteTimer = data.coyoteTime;
             rb.sharedMaterial = null;
-            if (grappleCharges < maxGrappleCharges)
+            // checking if charges can be gained, hook is not being thrown, and hook is not attached (there is a frame where hook is attached but slime still grounded where recharge can happen otherwise)
+            if (grappleCharges < maxGrappleCharges && currHookBeingThrown == null && isAttaching == false)
             {
-                if (grappleRechargeTimer > 0)
+                if (grappleRechargeTimer < grappleRechargeTime)
                 {
-                    grappleRechargeTimer -= Time.deltaTime;
+                    grappleRechargeTimer += Time.deltaTime;
+                    UIManager.Instance.UpdateGrappleCharges();
                 }
                 else
                 {
                     grappleCharges += 1;
-                    grappleRechargeTimer = data.grappleRechargeTime;
+                    grappleRechargeTimer = 0;
+                    UIManager.Instance.UpdateGrappleCharges();
                 }
             }
         } 
@@ -159,6 +165,7 @@ public class Player : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && grappleCharges > 0)
         {
             grappleCharges -= 1;
+            UIManager.Instance.UpdateGrappleCharges();
             FireHook();
         }
         // Detach grappling hook
