@@ -7,33 +7,32 @@ public class BubbleObj : GrappleObj
     public float popTime;
     private bool playerInBubble;
     private Vector2 moveInput;
+    public LayerMask excludedObjects;
+    public LayerMask nothingLayer;
 
     [SerializeField] Rigidbody2D rb;
     [SerializeField] Collider2D bubbleTrigger;
-    [SerializeField] Collider2D bubbleCollider;
 
     public override void MakeUpdate()
     {
         base.MakeUpdate();
         Vector2 move = Vector2.zero;
 
-        //if (Keyboard.current != null)
-        //{
-        //    if (Keyboard.current.aKey.isPressed)
-        //        move.x = -1;
-        //    if (Keyboard.current.dKey.isPressed)
-        //        move.x = 1;
-        //    if ((Keyboard.current.aKey.isPressed && Keyboard.current.dKey.isPressed) || (!Keyboard.current.aKey.isPressed && !Keyboard.current.dKey.isPressed))
-        //        move.x = 0;
-        //    if (Keyboard.current.sKey.isPressed)
-        //        move.y = -1;
-        //    if (Keyboard.current.wKey.isPressed)
-        //        move.y = 1;
-        //    if ((Keyboard.current.sKey.isPressed && Keyboard.current.wKey.isPressed) || (!Keyboard.current.sKey.isPressed && !Keyboard.current.wKey.isPressed))
-        //        move.y = 0;
-        //}
-        move.x = Input.GetAxisRaw("Horizontal");
-        move.y = Input.GetAxisRaw("Vertical");
+        if (Keyboard.current != null)
+        {
+            if (Keyboard.current.aKey.isPressed)
+                move.x = -1;
+            if (Keyboard.current.dKey.isPressed)
+                move.x = 1;
+            if ((Keyboard.current.aKey.isPressed && Keyboard.current.dKey.isPressed) || (!Keyboard.current.aKey.isPressed && !Keyboard.current.dKey.isPressed))
+                move.x = 0;
+            if (Keyboard.current.sKey.isPressed)
+                move.y = -1;
+            if (Keyboard.current.wKey.isPressed)
+                move.y = 1;
+            if ((Keyboard.current.sKey.isPressed && Keyboard.current.wKey.isPressed) || (!Keyboard.current.sKey.isPressed && !Keyboard.current.wKey.isPressed))
+                move.y = 0;
+        }
         moveInput = move;
 
         // Escape bubble
@@ -87,22 +86,21 @@ public class BubbleObj : GrappleObj
         playerInBubble = true;
         rb.bodyType = RigidbodyType2D.Dynamic;
         rb.gravityScale = 0;
-        bubbleTrigger.enabled = false;
 
-        //bubbleCollider.enabled = true;
+        bubbleTrigger.isTrigger = false;
+        bubbleTrigger.excludeLayers = excludedObjects;
     }
     private void ExitBubble()
     {
-        //bubbleCollider.enabled = false;
-
         Player.Instance.SetInBubble(true);
         playerInBubble = false;
         rb.bodyType = RigidbodyType2D.Static;
-        bubbleTrigger.enabled = true;
 
         Player.Instance.transform.parent = null;
         Player.Instance.rb.simulated = true;
 
+        bubbleTrigger.isTrigger = true;
+        bubbleTrigger.excludeLayers = nothingLayer;
     }
 
     public void Float()

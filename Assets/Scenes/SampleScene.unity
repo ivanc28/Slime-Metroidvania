@@ -1732,10 +1732,6 @@ PrefabInstance:
       propertyPath: interactableID
       value: SampleScene_BubbleSpot_01
       objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7326717726518027655, guid: 68e3ed076710aaf439e76209c20bec9e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
