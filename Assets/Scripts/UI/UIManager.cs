@@ -104,6 +104,6 @@ public class UIManager : MonoBehaviour
     }
     public void UpdateGrappleCharges()
     {
-        grappleChargeText.text = (Player.Instance.grappleCharges + (Player.Instance.grappleRechargeTimer/Player.Instance.grappleRechargeTime)).ToString();
+        grappleChargeText.text = (Player.Instance.grappleCharges + (Player.Instance.grappleRechargeTimer/Player.Instance.grappleRechargeTime)).ToString("0.0");
     }
 }
