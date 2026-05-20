@@ -41,6 +41,8 @@ MonoBehaviour:
   grappleObjects:
     serializedVersion: 2
     m_Bits: 72
+  initialMaxGrappleCharges: 5
+  grappleRechargeTime: 0.5
   interactKey: 101
   blowTime: 0.8
   bubbleMoveSpeed: 12

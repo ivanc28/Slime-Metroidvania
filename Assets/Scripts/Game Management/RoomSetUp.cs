@@ -19,9 +19,11 @@ public class RoomSetUp : MonoBehaviour
     private void Start()
     {
         FindFirstObjectByType<CinemachineCamera>().Follow = Player.Instance.transform;
+        PlayerTalking.SetNPCsInRoom();
         string spawnPointID = GameManager.Instance.GetNextSpawnPointID();
-        if(spawnPointID == null || spawnPointID == string.Empty)
+        if (spawnPointID == null || spawnPointID == string.Empty)
         {
+            // Initial call when there is no spawnPointID yet (when GameManager first loaded)
             return;
         }
         bool foundScene = false;
@@ -38,5 +40,8 @@ public class RoomSetUp : MonoBehaviour
         {
             Debug.LogWarning($"Failed to find spawnPointID labeled {spawnPointID}");
         }
+
+
+
     }    
 }
