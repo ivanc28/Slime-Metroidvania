@@ -84,4 +84,9 @@ public class HookProjectile : MonoBehaviour
             player.HookAttached(hitPoint, this);
         }
     }
+
+    public void IncreaseGrappleLength(float inc)
+    {
+        length += inc;
+    }
 }

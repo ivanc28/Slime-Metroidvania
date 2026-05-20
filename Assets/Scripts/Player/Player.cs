@@ -31,6 +31,11 @@ public class Player : MonoBehaviour
     // Tools
     public PlayerTools tools;
 
+    // Grapple charges
+    private int grappleCharges;
+    private int maxGrappleCharges;
+    private float grappleRechargeTimer;
+
     [Header("ToolSelection")]
     [SerializeField] GameObject toolSelectorCanvas;
     [SerializeField] Transform selectWheelCenter;
@@ -60,6 +65,9 @@ public class Player : MonoBehaviour
         coyoteTimer = data.coyoteTime;
         tools = new PlayerTools();
         currencyData = new PlayerCurrency();
+        maxGrappleCharges = data.maxGrappleCharges;
+        grappleCharges = maxGrappleCharges;
+        grappleRechargeTimer = data.grappleRechargeTime;
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -122,29 +130,35 @@ public class Player : MonoBehaviour
             {
                 coyoteTimer -= Time.deltaTime;
             }
+            rb.sharedMaterial = data.frictionless;
         }
         else
         {
             coyoteTimer = data.coyoteTime;
-        }
+            rb.sharedMaterial = null;
+            if (grappleCharges < maxGrappleCharges)
+            {
+                if (grappleRechargeTimer > 0)
+                {
+                    grappleRechargeTimer -= Time.deltaTime;
+                }
+                else
+                {
+                    grappleCharges += 1;
+                    grappleRechargeTimer = data.grappleRechargeTime;
+                }
+            }
+        } 
         
         if (Input.GetKeyUp(KeyCode.Space) && isJumping && !isLockedOnGrapple)
         {
             liftedJump = true;
         }
 
-        if (!isGrounded)
+        // Fire grappling hook if charges are available
+        if (Input.GetMouseButtonDown(0) && grappleCharges > 0)
         {
-            rb.sharedMaterial = data.frictionless;
-        }
-        else
-        {
-            rb.sharedMaterial = null;
-        }
-
-        // Fire grappling hook
-        if (Input.GetMouseButtonDown(0))
-        {
+            grappleCharges -= 1;
             FireHook();
         }
         // Detach grappling hook
