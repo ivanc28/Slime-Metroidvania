@@ -36,4 +36,7 @@ public class PlayerData : ScriptableObject
     [Header("Bubble Blowing")]
     public KeyCode interactKey;
     public float blowTime;
+    public float bubbleMoveSpeed;
+    public float floatAccelAmount;
+    public float floatDecelAmount;
 }

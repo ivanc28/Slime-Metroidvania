@@ -8,9 +8,29 @@ public abstract class GrappleObj : MonoBehaviour
 
     private bool hookAttached;
     private bool playerInsideCollider;
+    private void Start()
+    {
+        MakeStart();
+    }
+    public virtual void MakeStart()
+    {
+
+    }
+    private void Update()
+    {
+        MakeUpdate();
+    }
+    public virtual void MakeUpdate()
+    {
+
+    }
     private void FixedUpdate()
     {
-        if(playerInsideCollider && hookAttached)
+        MakeFixedUpdate();
+    }
+    public virtual void MakeFixedUpdate()
+    {
+        if (playerInsideCollider && hookAttached)
         {
             EffectOnPlayerContactAfterHook();
         }
@@ -26,7 +46,6 @@ public abstract class GrappleObj : MonoBehaviour
     }
     public virtual void DetachHook()
     {
-        Player.Instance.DetachHook();
         hookAttached = false;
     }
     public bool IsHookAttached()
@@ -55,7 +74,7 @@ public abstract class GrappleObj : MonoBehaviour
             playerInsideCollider = false;
         }
         if (collision.gameObject.CompareTag("Hook"))
-        {                
+        {
             DetachHook();
         }
     }

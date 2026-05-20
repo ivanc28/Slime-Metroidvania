@@ -6,6 +6,7 @@ public class InteractableData : ScriptableObject
     public KeyCode interactKey;
     public PlayerTools.Tool[] requiredTool;
     public bool destroyOnInteract;
+    public float minDistanceToInteract;
     public Pebble pebblePrefab;
     public float pebblePickupDelay;
     public float pebbleLaunchSpeed;

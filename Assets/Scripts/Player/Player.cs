@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
     [SerializeField] public PlayerData data;
     // Movement
     private float moveInput;
+    private bool canRun = true;
     // Jumping
     private bool pressedJump;
     private bool liftedJump;
@@ -13,6 +14,7 @@ public class Player : MonoBehaviour
     private bool isGrounded;
     private float jumpBufferTimer;
     private float coyoteTimer;
+    private bool canAdjustGravity = true;
     [Header("Components")]
     public Rigidbody2D rb;
     [SerializeField] Collider2D col;
@@ -38,6 +40,7 @@ public class Player : MonoBehaviour
     [Header("Blowing Bubbles")]
     [SerializeField] ParticleSystem bubbleParticle;
     private bool bubbledState;
+    private bool inBubble;
     // Currency
     public PlayerCurrency currencyData;
 
@@ -219,11 +222,14 @@ public class Player : MonoBehaviour
             return;
         }
         #endregion
-        // Movement
-        Run(1);
+        // Movement]
+        if (canRun)
+        {
+            Run(1);
+        }
         // Jumping
         #region Jumping
-        if (pressedJump && (isGrounded || coyoteTimer > 0))
+        if (pressedJump && (isGrounded || coyoteTimer > 0 || inBubble))
         {
             Jump();
             pressedJump = false;
@@ -239,17 +245,20 @@ public class Player : MonoBehaviour
         #endregion
 
         // Adjust gravity
-        if (rb.linearVelocityY > 0)
+        if (canAdjustGravity)
         {
-            if (isJumping)
+            if (rb.linearVelocityY > 0)
             {
-                rb.gravityScale = data.risingGravity;
+                if (isJumping)
+                {
+                    rb.gravityScale = data.risingGravity;
+                }
             }
-        }
-        else
-        {
-            rb.gravityScale = data.fallingGravity;
-            isJumping = false;
+            else
+            {
+                rb.gravityScale = data.fallingGravity;
+                isJumping = false;
+            }
         }
 
         // Terminal fall speed
@@ -390,6 +399,10 @@ public class Player : MonoBehaviour
     {
         return other == currHookBeingThrown;
     }
+    public bool GetIsAttaching()
+    {
+        return isAttaching;
+    }
 
 
 
@@ -461,6 +474,13 @@ public class Player : MonoBehaviour
     {
         return bubbledState;
     }
+    public void SetInBubble(bool value)
+    {
+        canRun = value;
+        canAdjustGravity = value;
+        inBubble = value;
+    }
+
 
     private void OnDrawGizmosSelected()
     {

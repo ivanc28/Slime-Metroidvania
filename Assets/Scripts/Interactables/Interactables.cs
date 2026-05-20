@@ -26,6 +26,8 @@ public abstract class Interactables : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        inRange = Vector2.Distance(transform.position, Player.Instance.transform.position) <= data.minDistanceToInteract;
+
         if (inRange)
         {
             if (Input.GetKeyDown(data.interactKey))
@@ -55,18 +57,10 @@ public abstract class Interactables : MonoBehaviour
             pebble.rb.linearVelocity = dir * data.pebbleLaunchSpeed;
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    private void OnDrawGizmosSelected()
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            inRange = true;
-        }
-    }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            inRange = false;
-        }
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, data.minDistanceToInteract);
     }
 }

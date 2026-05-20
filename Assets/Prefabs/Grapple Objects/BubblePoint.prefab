@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3609051605664137405}
   - component: {fileID: 5715407787039484838}
   - component: {fileID: 7355406469698735675}
+  - component: {fileID: 2335034518909459281}
   m_Layer: 6
   m_Name: BubblePoint
   m_TagString: Untagged
@@ -51,6 +52,9 @@ MonoBehaviour:
   objCollider: {fileID: 7355406469698735675}
   bubbleInteractGain: {fileID: 2949446675398853784}
   popTime: 1
+  rb: {fileID: 2335034518909459281}
+  bubbleTrigger: {fileID: 7355406469698735675}
+  bubbleCollider: {fileID: 0}
 --- !u!58 &7355406469698735675
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -87,6 +91,33 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.75
+--- !u!50 &2335034518909459281
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2486861543313945044}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 1
+  m_SleepingMode: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!1 &3638311659868820576
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,7 +219,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4028783586599730307}
   - component: {fileID: 2949446675398853784}
-  - component: {fileID: 9149276977450778338}
   m_Layer: 0
   m_Name: BubbleInteract
   m_TagString: Untagged
@@ -225,39 +255,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BubbleInteractable
   interactableID: 
   data: {fileID: 11400000, guid: 7657b715de82a8540a5381406031311c, type: 2}
---- !u!58 &9149276977450778338
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7764170022590102005}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 1.293257
+  numPebbles: 0

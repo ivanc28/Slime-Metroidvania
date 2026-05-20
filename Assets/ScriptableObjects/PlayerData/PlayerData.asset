@@ -43,3 +43,6 @@ MonoBehaviour:
     m_Bits: 72
   interactKey: 101
   blowTime: 0.8
+  bubbleMoveSpeed: 10
+  floatAccelAmount: 20
+  floatDecelAmount: 12

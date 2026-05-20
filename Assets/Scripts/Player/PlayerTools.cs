@@ -20,7 +20,6 @@ public class PlayerTools
         if (claimedTools[(int)tool])
         {
             currTool = tool;
-            Debug.Log($"Swapped to tool: {tool}");
         }
     }
     public bool HasTool(Tool tool)

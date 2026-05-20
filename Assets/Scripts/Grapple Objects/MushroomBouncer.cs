@@ -8,6 +8,7 @@ public class MushroomBouncer : GrappleObj
     {
         float playerXVel = Player.Instance.rb.linearVelocityX;
         DetachHook();
+        Player.Instance.DetachHook();
         Player.Instance.rb.gravityScale = Player.Instance.data.fallingGravity;
         Player.Instance.rb.linearVelocity = new Vector2(playerXVel, bounceSpeed);
     }

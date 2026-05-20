@@ -567,6 +567,7 @@ Transform:
   m_Children:
   - {fileID: 761267652}
   - {fileID: 1345123893}
+  - {fileID: 1400745474}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &654949658
@@ -1731,6 +1732,10 @@ PrefabInstance:
       propertyPath: interactableID
       value: SampleScene_BubbleSpot_01
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7326717726518027655, guid: 68e3ed076710aaf439e76209c20bec9e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1775,7 +1780,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: BubbleInteractGain
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -18254,11 +18261,11 @@ Tilemap:
       e00: 0
       e01: 0
       e02: 0
-      e03: 4.2804584e+13
+      e03: 1.0544776e+38
       e10: 0
       e11: 0
       e12: 0
-      e13: 2.2e-44
+      e13: 1.44e-43
       e20: 0
       e21: 0
       e22: 1e-45
@@ -18989,7 +18996,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 618995213}
     m_Modifications:
     - target: {fileID: 2486861543313945044, guid: eba8e75ad89aff64289d45c28208284c, type: 3}
       propertyPath: m_Name
@@ -19013,15 +19020,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3609051605664137405, guid: eba8e75ad89aff64289d45c28208284c, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3609051605664137405, guid: eba8e75ad89aff64289d45c28208284c, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3609051605664137405, guid: eba8e75ad89aff64289d45c28208284c, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3609051605664137405, guid: eba8e75ad89aff64289d45c28208284c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -19035,9 +19042,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5715407787039484838, guid: eba8e75ad89aff64289d45c28208284c, type: 3}
+      propertyPath: bubbleCollider
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7764170022590102005, guid: eba8e75ad89aff64289d45c28208284c, type: 3}
       propertyPath: m_Name
       value: BubbleInteractNoGain
+      objectReference: {fileID: 0}
+    - target: {fileID: 8650123858508990535, guid: eba8e75ad89aff64289d45c28208284c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9149276977450778338, guid: eba8e75ad89aff64289d45c28208284c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19330,4 +19349,3 @@ SceneRoots:
   - {fileID: 1000737731}
   - {fileID: 530465395}
   - {fileID: 1638467234}
-  - {fileID: 5257559214518363546}
