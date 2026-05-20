@@ -3,13 +3,14 @@ using UnityEngine;
 public class PlayerTalking : MonoBehaviour
 {
     public static NPC[] NPCsInRoom;
+    public static bool inDialogue;
     private NPC currNearestNPC;
 
     // Update is called once per frame
     void Update()
     {
         NPC nearestNPC = GetNearestNPCInRange();
-        if(currNearestNPC != nearestNPC)
+        if(currNearestNPC != nearestNPC || !Player.Instance.GetIsGrounded() || Player.Instance.InInteraction)
         {
             if(currNearestNPC != null)
             {
@@ -17,11 +18,11 @@ public class PlayerTalking : MonoBehaviour
             }
             currNearestNPC = nearestNPC;
         }
-        if(nearestNPC != null)
+        if(nearestNPC != null && Player.Instance.GetIsGrounded() && !Player.Instance.InInteraction)
         {
             nearestNPC.EnableKeyIcon(true);
         }
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W) && Player.Instance.GetIsGrounded() && !Player.Instance.InInteraction)
         {
             InteractWithNPC(nearestNPC);
         }
@@ -43,11 +44,11 @@ public class PlayerTalking : MonoBehaviour
         return nearestNPC;
     }
     private void InteractWithNPC(NPC npc)
-    {
-        
+    {        
         if (npc != null)
         {
             npc.Interact();
+            Player.Instance.InInteraction = true;
         }
     }
 

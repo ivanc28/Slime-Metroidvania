@@ -7,6 +7,7 @@ public class InteractableData : ScriptableObject
     public PlayerTools.Tool[] requiredTool;
     public bool destroyOnInteract;
     public float maxDistanceToInteract;
+    public float interactionTime;
     public Pebble pebblePrefab;
     public float pebblePickupDelay;
     public float pebbleLaunchSpeed;

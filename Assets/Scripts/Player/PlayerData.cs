@@ -15,6 +15,7 @@ public class PlayerData : ScriptableObject
     public float noInputMomentumPreservation;
     public float noInputMomentumFactor = 0.85f;
     public PhysicsMaterial2D frictionless;
+    public PhysicsMaterial2D someFriction;
     [Header("Jumping")]
     public float jumpSpeed;
     public float feetRadius;
@@ -35,10 +36,14 @@ public class PlayerData : ScriptableObject
     public LayerMask grappleObjects;
     public int initialMaxGrappleCharges;
     public float grappleRechargeTime;
+    [Header("Tools")]
+    public float toolUseTime;
     [Header("Bubble Blowing")]
     public KeyCode interactKey;
     public float blowTime;
     public float bubbleMoveSpeed;
     public float floatAccelAmount;
     public float floatDecelAmount;
+    [Header("NPC Interactions")]
+    public float distanceDialogueAboveHeadOffset = 1f;
 }

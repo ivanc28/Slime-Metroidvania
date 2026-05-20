@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -51,6 +52,9 @@ public class Player : MonoBehaviour
     // Currency
     public PlayerCurrency currencyData;
 
+    // Interactions
+    public bool InInteraction { get; set; }
+
     // Singleton
     public static Player Instance { get; private set; }
 
@@ -87,6 +91,11 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (InInteraction)
+        {
+            return;
+        }
+
         float move = 0;
 
         if (Keyboard.current != null)
@@ -203,16 +212,14 @@ public class Player : MonoBehaviour
         }
         #endregion
 
-        #region Bubble Blowing
-        if(tools.GetCurrTool() == PlayerTools.Tool.BubbleBlower)
+        #region Using Tools
+        if (Input.GetKeyDown(data.interactKey) && !InInteraction && !inBubble && isGrounded && !isAttaching && !isLockedOnGrapple && currHookBeingThrown == null)
         {
-            if (Input.GetKeyDown(data.interactKey))
-            {
-                BlowBubbles();
-            }
+            rb.sharedMaterial = data.someFriction;  // ensure we don't slide around when we start interacting
+            InInteraction = true;
+            StartCoroutine(UseTool());
         }
         #endregion
-
         //// TEST
         //if (Input.GetKeyDown(KeyCode.LeftShift))
         //{
@@ -222,6 +229,10 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (InInteraction)
+        {
+            return;
+        }
         #region Grappling
         if (isAttaching)
         {
@@ -358,6 +369,10 @@ public class Player : MonoBehaviour
             isJumping = false;
         }
     }
+    public bool GetIsGrounded()
+    {
+        return isGrounded;
+    }
 
 
 
@@ -482,8 +497,23 @@ public class Player : MonoBehaviour
         toolSelectorCanvas.SetActive(enabled);
     }
 
+    
+    public IEnumerator UseTool()
+    {
+        // play tool animation or something
+        yield return new WaitForSeconds(data.toolUseTime);
+        if(tools.GetCurrTool() == PlayerTools.Tool.BubbleBlower)
+        {
+            BlowBubbles();
+        }
+        else if(tools.GetCurrTool() == PlayerTools.Tool.Umbrella)
+        {
 
-    private void BlowBubbles()
+        }
+        InInteraction = false;
+        rb.sharedMaterial = null;
+    }
+    public void BlowBubbles()
     {
         bubbledState = !bubbledState;
         if (bubbledState)
@@ -505,7 +535,7 @@ public class Player : MonoBehaviour
         canRun = !value;
         canAdjustGravity = !value;
     }
-    public bool GetInBubble()
+    public bool IsInBubble()
     {
         return inBubble;
     }
