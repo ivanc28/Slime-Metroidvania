@@ -65,7 +65,7 @@ public class Player : MonoBehaviour
         coyoteTimer = data.coyoteTime;
         tools = new PlayerTools();
         currencyData = new PlayerCurrency();
-        maxGrappleCharges = data.maxGrappleCharges;
+        maxGrappleCharges = data.initialMaxGrappleCharges;
         grappleCharges = maxGrappleCharges;
         grappleRechargeTimer = data.grappleRechargeTime;
     }
