@@ -34,6 +34,10 @@ public class Player : MonoBehaviour
     [SerializeField] Transform selectWheelCenter;
     [SerializeField] ToolOption[] toolOptions;
     private bool toolSelectorEnabled;
+
+    [Header("Blowing Bubbles")]
+    [SerializeField] ParticleSystem bubbleParticle;
+    private bool bubbledState;
     // Currency
     public PlayerCurrency currencyData;
 
@@ -61,7 +65,9 @@ public class Player : MonoBehaviour
         //TESTING
         tools.ClaimTool(PlayerTools.Tool.Fork);
         tools.ClaimTool(PlayerTools.Tool.Spoon);
+        tools.ClaimTool(PlayerTools.Tool.BubbleBlower);
         tools.SwapTool(PlayerTools.Tool.Fork);
+        bubbleParticle.Stop(true, ParticleSystemStopBehavior.StopEmitting);
     }
 
     // Update is called once per frame
@@ -172,6 +178,17 @@ public class Player : MonoBehaviour
             }
         }
         #endregion
+
+        #region Bubble Blowing
+        if(tools.GetCurrTool() == PlayerTools.Tool.BubbleBlower)
+        {
+            if (Input.GetKeyDown(data.interactKey))
+            {
+                BlowBubbles();
+            }
+        }
+        #endregion
+
         //// TEST
         //if (Input.GetKeyDown(KeyCode.LeftShift))
         //{
@@ -426,6 +443,25 @@ public class Player : MonoBehaviour
     {
         toolSelectorCanvas.SetActive(enabled);
     }
+
+
+    private void BlowBubbles()
+    {
+        bubbledState = !bubbledState;
+        if (bubbledState)
+        {
+            bubbleParticle.Play();
+        }
+        else
+        {            
+            bubbleParticle.Stop();
+        }
+    }
+    public bool GetBubbledState()
+    {
+        return bubbledState;
+    }
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;

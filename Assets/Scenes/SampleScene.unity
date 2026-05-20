@@ -1038,6 +1038,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f0b6cd9a37cfba4c95e2fe9e5ef3401, type: 3}
+--- !u!198 &1028942466 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8475826247357860277, guid: 5df7d5e734a991b4d851a0776d33f837, type: 3}
+  m_PrefabInstance: {fileID: 7173270681216302365}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1029439018 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5249675703139573394, guid: 77c1c2af526353644aca4d97fb037c89, type: 3}
@@ -1994,8 +1999,8 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 692282859
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
@@ -19192,6 +19197,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4100452309072477043, guid: 5df7d5e734a991b4d851a0776d33f837, type: 3}
+      propertyPath: bubbleParticle
+      value: 
+      objectReference: {fileID: 1028942466}
     - target: {fileID: 5126447155626743955, guid: 5df7d5e734a991b4d851a0776d33f837, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
       value: 0.018050542

@@ -33,4 +33,7 @@ public class PlayerData : ScriptableObject
     public float attachSpeed;
     public float hookSpeed;
     public LayerMask grappleObjects;
+    [Header("Bubble Blowing")]
+    public KeyCode interactKey;
+    public float blowTime;
 }
