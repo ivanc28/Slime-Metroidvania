@@ -243,7 +243,7 @@ public class Player : MonoBehaviour
         }
         // Jumping
         #region Jumping
-        if (pressedJump && (isGrounded || coyoteTimer > 0 || inBubble))
+        if (pressedJump && (isGrounded || coyoteTimer > 0))
         {
             Jump();
             pressedJump = false;
@@ -337,7 +337,7 @@ public class Player : MonoBehaviour
         rb.AddForce(movement * Vector2.right, ForceMode2D.Force);
     }
 
-    private void Jump()
+    public void Jump()
     {
         isJumping = true;
         rb.gravityScale = data.risingGravity;
@@ -417,6 +417,10 @@ public class Player : MonoBehaviour
     {
         return isAttaching;
     }
+    public bool GetHookBeingThrown()
+    {
+        return currHookBeingThrown != null;
+    }
 
 
 
@@ -490,9 +494,13 @@ public class Player : MonoBehaviour
     }
     public void SetInBubble(bool value)
     {
-        canRun = value;
-        canAdjustGravity = value;
         inBubble = value;
+        canRun = !value;
+        canAdjustGravity = !value;
+    }
+    public bool GetInBubble()
+    {
+        return inBubble;
     }
 
 

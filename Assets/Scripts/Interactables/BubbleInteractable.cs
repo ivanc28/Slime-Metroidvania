@@ -20,16 +20,8 @@ public class BubbleInteractable : Interactables
             }
             else
             {
-                StartCoroutine(PopBubble(bubbleGrappleObj.popTime));
+                StartCoroutine(bubbleGrappleObj.PopBubble(bubbleGrappleObj.popTime));
             }
         }
-    }
-
-    private IEnumerator PopBubble(float delayBeforeReappear)
-    {
-        yield return null;
-        bubbleGrappleObj.DeactivateBubble();
-        yield return new WaitForSeconds(delayBeforeReappear);
-        bubbleGrappleObj.ActivateBubble();
     }
 }

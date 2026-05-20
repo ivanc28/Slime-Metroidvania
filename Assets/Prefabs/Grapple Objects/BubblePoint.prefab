@@ -52,9 +52,16 @@ MonoBehaviour:
   objCollider: {fileID: 7355406469698735675}
   bubbleInteractGain: {fileID: 2949446675398853784}
   popTime: 1
+  excludedObjects:
+    serializedVersion: 2
+    m_Bits: 119
+  nothingLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  lifespan: 3
+  flashRate: 0.05
   rb: {fileID: 2335034518909459281}
   bubbleTrigger: {fileID: 7355406469698735675}
-  bubbleCollider: {fileID: 0}
 --- !u!58 &7355406469698735675
 CircleCollider2D:
   m_ObjectHideFlags: 0
