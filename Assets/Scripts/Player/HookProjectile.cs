@@ -85,8 +85,8 @@ public class HookProjectile : MonoBehaviour
         }
     }
 
-    public void IncreaseGrappleLength(float inc)
+    public void IncreaseGrappleLength(float increment)
     {
-        length += inc;
+        length += increment;
     }
 }
