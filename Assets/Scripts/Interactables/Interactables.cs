@@ -26,7 +26,7 @@ public abstract class Interactables : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        inRange = Vector2.Distance(transform.position, Player.Instance.transform.position) <= data.minDistanceToInteract;
+        inRange = Vector2.Distance(transform.position, Player.Instance.transform.position) <= data.maxDistanceToInteract;
 
         if (inRange)
         {
@@ -61,6 +61,6 @@ public abstract class Interactables : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, data.minDistanceToInteract);
+        Gizmos.DrawWireSphere(transform.position, data.maxDistanceToInteract);
     }
 }

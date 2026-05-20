@@ -27,6 +27,7 @@ public class BubbleInteractable : Interactables
 
     private IEnumerator PopBubble(float delayBeforeReappear)
     {
+        yield return null;
         bubbleGrappleObj.DeactivateBubble();
         yield return new WaitForSeconds(delayBeforeReappear);
         bubbleGrappleObj.ActivateBubble();
