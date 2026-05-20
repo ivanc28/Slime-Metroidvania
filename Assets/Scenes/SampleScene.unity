@@ -1788,6 +1788,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7326717726518027655, guid: 68e3ed076710aaf439e76209c20bec9e, type: 3}
   m_PrefabInstance: {fileID: 1926014210}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1926014214 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2816553224402179984, guid: 68e3ed076710aaf439e76209c20bec9e, type: 3}
+  m_PrefabInstance: {fileID: 1926014210}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a52dc8c65bf95834a8a2114bd917d1e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BubbleInteractable
 --- !u!1 &1960029903
 GameObject:
   m_ObjectHideFlags: 0
@@ -19042,6 +19053,10 @@ PrefabInstance:
       propertyPath: bubbleCollider
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5715407787039484838, guid: eba8e75ad89aff64289d45c28208284c, type: 3}
+      propertyPath: bubbleInteractGain
+      value: 
+      objectReference: {fileID: 1926014214}
     - target: {fileID: 7764170022590102005, guid: eba8e75ad89aff64289d45c28208284c, type: 3}
       propertyPath: m_Name
       value: BubbleInteractNoGain

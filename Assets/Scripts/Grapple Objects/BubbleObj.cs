@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,10 +10,24 @@ public class BubbleObj : GrappleObj
     private Vector2 moveInput;
     public LayerMask excludedObjects;
     public LayerMask nothingLayer;
+    public float lifespan;
+    private float lifetime;
+
+    public float flashRate;
+    private float flashTimer;
+    private bool startFlashing;
+
+    private Vector3 startingPos;
 
     [SerializeField] Rigidbody2D rb;
     [SerializeField] Collider2D bubbleTrigger;
 
+    public override void MakeStart()
+    {
+        base.MakeStart();
+        startingPos = transform.position;
+        lifetime = lifespan;
+    }
     public override void MakeUpdate()
     {
         base.MakeUpdate();
@@ -38,8 +53,40 @@ public class BubbleObj : GrappleObj
         // Escape bubble
         if (playerInBubble && (Input.GetKeyDown(KeyCode.Space) || Player.Instance.GetIsAttaching()))
         {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Player.Instance.Jump();
+            }
             ExitBubble();
         }
+        if (playerInBubble)
+        {
+            if (lifetime > 0)
+            {
+                lifetime -= Time.deltaTime;
+                if(lifetime <= lifespan / 2)
+                {
+                    startFlashing = true;
+                }
+            }
+            else if (lifetime <= 0)
+            {
+                ExitBubble();
+            }
+        }
+        if (startFlashing)
+        {
+            if(flashTimer > 0)
+            {
+                flashTimer -= Time.deltaTime;
+            }
+            else
+            {
+                objRenderer.enabled = !objRenderer.enabled;
+                flashTimer = flashRate;
+            }
+        }
+
     }
     public override void MakeFixedUpdate()
     {
@@ -57,6 +104,7 @@ public class BubbleObj : GrappleObj
             DetachHook();
             Player.Instance.DetachHook();
             EnterBubble();
+            lifetime = lifespan;
         }
     }
 
@@ -68,9 +116,20 @@ public class BubbleObj : GrappleObj
     public void DeactivateBubble()
     {
         DetachHook();
-        Player.Instance.DetachHook();
+        if (!Player.Instance.GetHookBeingThrown() && !Player.Instance.GetIsAttaching())
+        {
+            Player.Instance.DetachHook();
+        }
         objCollider.enabled = false;
         objRenderer.enabled = false;
+        // MANUALLY SPAWN PEBBLES IF NEEDED
+        if(bubbleInteractGain != null)
+        {
+            bubbleInteractGain.SpawnPebbles(bubbleInteractGain.numPebbles);
+            bubbleInteractGain.GetRoomOfInteractable().collectedInteractables.Add(bubbleInteractGain.GetInteractableID());
+            Destroy(bubbleInteractGain.gameObject);
+        }
+        transform.position = startingPos;
     }
     private void EnterBubble()
     {
@@ -82,7 +141,7 @@ public class BubbleObj : GrappleObj
         Player.Instance.transform.parent = transform;
         Player.Instance.transform.localPosition = Vector3.zero;
 
-        Player.Instance.SetInBubble(false);
+        Player.Instance.SetInBubble(true);
         playerInBubble = true;
         rb.bodyType = RigidbodyType2D.Dynamic;
         rb.gravityScale = 0;
@@ -92,7 +151,7 @@ public class BubbleObj : GrappleObj
     }
     private void ExitBubble()
     {
-        Player.Instance.SetInBubble(true);
+        Player.Instance.SetInBubble(false);
         playerInBubble = false;
         rb.bodyType = RigidbodyType2D.Static;
 
@@ -101,11 +160,13 @@ public class BubbleObj : GrappleObj
 
         bubbleTrigger.isTrigger = true;
         bubbleTrigger.excludeLayers = nothingLayer;
+        startFlashing = false;
+
+        StartCoroutine(PopBubble(popTime));
     }
 
     public void Float()
     {
-        Debug.Log(moveInput);
         // Calculate the direction we want to move in and our desired velocity
         Vector2 normalizedMoveInput = moveInput.normalized;
         Vector2 targetSpeed = normalizedMoveInput * Player.Instance.data.bubbleMoveSpeed;
@@ -121,5 +182,13 @@ public class BubbleObj : GrappleObj
         Vector2 movement = velocityDif * accelRate;
 
         rb.AddForce(movement, ForceMode2D.Force);
+    }
+
+    public IEnumerator PopBubble(float delayBeforeReappear)
+    {
+        yield return null;
+        DeactivateBubble();
+        yield return new WaitForSeconds(delayBeforeReappear);
+        ActivateBubble();
     }
 }

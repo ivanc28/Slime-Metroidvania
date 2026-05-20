@@ -58,6 +58,8 @@ MonoBehaviour:
   nothingLayer:
     serializedVersion: 2
     m_Bits: 0
+  lifespan: 3
+  flashRate: 0.05
   rb: {fileID: 2335034518909459281}
   bubbleTrigger: {fileID: 7355406469698735675}
 --- !u!58 &7355406469698735675

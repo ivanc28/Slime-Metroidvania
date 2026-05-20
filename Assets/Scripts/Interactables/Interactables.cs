@@ -28,7 +28,7 @@ public abstract class Interactables : MonoBehaviour
     {
         inRange = Vector2.Distance(transform.position, Player.Instance.transform.position) <= data.maxDistanceToInteract;
 
-        if (inRange)
+        if (inRange && !Player.Instance.GetInBubble())
         {
             if (Input.GetKeyDown(data.interactKey))
             {
@@ -45,6 +45,7 @@ public abstract class Interactables : MonoBehaviour
         }    
        
     }
+
     public abstract void OnInteract();
     public  void SpawnPebbles(int numPebbles)
     {
@@ -56,6 +57,14 @@ public abstract class Interactables : MonoBehaviour
             Vector2 dir = (rotation * Vector2.up).normalized;
             pebble.rb.linearVelocity = dir * data.pebbleLaunchSpeed;
         }
+    }
+    public RoomData GetRoomOfInteractable()
+    {
+        return room;
+    }
+    public string GetInteractableID()
+    {
+        return interactableID;
     }
 
     private void OnDrawGizmosSelected()
