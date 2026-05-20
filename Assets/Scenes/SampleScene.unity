@@ -19395,10 +19395,6 @@ PrefabInstance:
       propertyPath: uiManager
       value: 
       objectReference: {fileID: 1292316570}
-    - target: {fileID: 4100452309072477043, guid: 5df7d5e734a991b4d851a0776d33f837, type: 3}
-      propertyPath: bubbleParticle
-      value: 
-      objectReference: {fileID: 1028942466}
     - target: {fileID: 5126447155626743955, guid: 5df7d5e734a991b4d851a0776d33f837, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
       value: 0.018050542

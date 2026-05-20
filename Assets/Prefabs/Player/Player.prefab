@@ -53,12 +53,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
   data: {fileID: 11400000, guid: 8233bdb19b671f74490694a30e2118b8, type: 2}
+  uiManager: {fileID: 0}
   rb: {fileID: 611412721014228531}
   col: {fileID: 6488276358241451689}
   rend: {fileID: 5237681312361329521}
   feetPos: {fileID: 7648288525037105130}
   hookPrefab: {fileID: 5154775660519359415, guid: c887a7fcd43c65e46b1a773d469497fc, type: 3}
   isLockedOnGrapple: 0
+  grappleCharges: 0
+  grappleRechargeTime: 0
+  grappleRechargeTimer: 0
   toolSelectorCanvas: {fileID: 3383839953130031409}
   selectWheelCenter: {fileID: 4162031183596903196}
   toolOptions:
