@@ -23,7 +23,7 @@ MonoBehaviour:
   delayBetweenChars: 0.03
   delayAfterPeriod: 0.25
   delayAfterComma: 0.15
-  npcTextColor: {r: 0.18071377, g: 0.2311059, b: 0.2924528, a: 1}
-  playerTextColor: {r: 0.2934636, g: 0.3679245, b: 0.2759434, a: 1}
+  npcTextColor: {r: 0.26352793, g: 0.32301342, b: 0.3962264, a: 1}
+  playerTextColor: {r: 0.3225347, g: 0.4528302, b: 0.37931314, a: 1}
   choiceHoverColor: {r: 0.122641504, g: 0.122641504, b: 0.122641504, a: 1}
-  choiceNotHoverColor: {r: 0.3490566, g: 0.3490566, b: 0.3490566, a: 1}
+  choiceNotHoverColor: {r: 0.509434, g: 0.509434, b: 0.509434, a: 1}
