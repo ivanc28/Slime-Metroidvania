@@ -41,13 +41,14 @@ public abstract class Interactables : MonoBehaviour
 
     private IEnumerator TryInteract(float interactTime)
     {
-        yield return new WaitForSeconds(interactTime);
+        yield return new WaitForSeconds(interactTime);       
         if (data.requiredTool.Contains(Player.Instance.tools.GetCurrTool()))
         {
             OnInteract();
             if (data.destroyOnInteract)
             {
                 room.collectedInteractables.Add(interactableID);
+                Debug.Log($"adding to colected interactables and destroying {gameObject.name}");
                 Destroy(gameObject);
             }
         }

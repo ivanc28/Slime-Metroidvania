@@ -49,6 +49,7 @@ public class Player : MonoBehaviour
     [SerializeField] ParticleSystem bubbleParticle;
     private bool bubbledState;
     private bool inBubble;
+    private bool onBubble;
     // Currency
     public PlayerCurrency currencyData;
 
@@ -81,10 +82,9 @@ public class Player : MonoBehaviour
     {
         EnableToolSelectionCanvas(false);
         //TESTING
-        tools.ClaimTool(PlayerTools.Tool.Fork);
         tools.ClaimTool(PlayerTools.Tool.Spoon);
         tools.ClaimTool(PlayerTools.Tool.BubbleBlower);
-        tools.SwapTool(PlayerTools.Tool.Fork);
+        tools.SwapTool(PlayerTools.Tool.Spoon);
         bubbleParticle.Stop(true, ParticleSystemStopBehavior.StopEmitting);
     }
 
@@ -193,30 +193,32 @@ public class Player : MonoBehaviour
         }
 
         #region Tool Selection
-        if (Input.GetMouseButton(1))
+        if (!InInteraction)
         {
-            if (!toolSelectorEnabled)
+            if (Input.GetMouseButton(1))
             {
-                EnableToolSelectionCanvas(true);
-                toolSelectorEnabled = true;
+                if (!toolSelectorEnabled)
+                {
+                    EnableToolSelectionCanvas(true);
+                    toolSelectorEnabled = true;
+                }
+            }
+            if (Input.GetMouseButtonUp(1))
+            {
+                if (toolSelectorEnabled)
+                {
+                    SelectTool();
+                    EnableToolSelectionCanvas(false);
+                    toolSelectorEnabled = false;
+                }
             }
         }
-        if (Input.GetMouseButtonUp(1))
-        {
-            if (toolSelectorEnabled)
-            {
-                SelectTool();
-                EnableToolSelectionCanvas(false);
-                toolSelectorEnabled = false;
-            }
-        }
+
         #endregion
 
         #region Using Tools
-        if (Input.GetKeyDown(data.interactKey) && !InInteraction && !inBubble && isGrounded && !isAttaching && !isLockedOnGrapple && currHookBeingThrown == null)
+        if (Input.GetKeyDown(data.interactKey) && ((!InInteraction && !inBubble && isGrounded && !isAttaching && !isLockedOnGrapple && currHookBeingThrown == null) || onBubble))
         {
-            rb.sharedMaterial = data.someFriction;  // ensure we don't slide around when we start interacting
-            InInteraction = true;
             StartCoroutine(UseTool());
         }
         #endregion
@@ -500,6 +502,9 @@ public class Player : MonoBehaviour
     
     public IEnumerator UseTool()
     {
+        yield return null;
+        rb.sharedMaterial = data.someFriction;  // ensure we don't slide around when we start interacting
+        InInteraction = true;
         // play tool animation or something
         yield return new WaitForSeconds(data.toolUseTime);
         if(tools.GetCurrTool() == PlayerTools.Tool.BubbleBlower)
@@ -538,6 +543,14 @@ public class Player : MonoBehaviour
     public bool IsInBubble()
     {
         return inBubble;
+    }
+    public void SetOnBubble(bool value)
+    {
+        onBubble = value;
+    }
+    public bool IsOnbubble()
+    {
+        return onBubble;
     }
 
 

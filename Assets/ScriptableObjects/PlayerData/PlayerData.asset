@@ -50,3 +50,4 @@ MonoBehaviour:
   bubbleMoveSpeed: 12
   floatAccelAmount: 20
   floatDecelAmount: 12
+  distanceDialogueAboveHeadOffset: 0.75

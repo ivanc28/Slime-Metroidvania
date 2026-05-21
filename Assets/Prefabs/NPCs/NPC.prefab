@@ -50,6 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NPC
   data: {fileID: 11400000, guid: 9c9aa9befdc789d498d1669bfa2644b7, type: 2}
   keyIcon: {fileID: 8440627809026406060}
+  npcRenderer: {fileID: 4664505054422345750}
 --- !u!61 &2407329635778683229
 BoxCollider2D:
   m_ObjectHideFlags: 0

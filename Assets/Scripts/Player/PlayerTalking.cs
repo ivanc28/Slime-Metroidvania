@@ -49,6 +49,7 @@ public class PlayerTalking : MonoBehaviour
         {
             npc.Interact();
             Player.Instance.InInteraction = true;
+            Player.Instance.rb.sharedMaterial = Player.Instance.data.someFriction;
         }
     }
 
