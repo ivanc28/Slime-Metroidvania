@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4100452309072477043}
   - component: {fileID: 611412721014228531}
   - component: {fileID: 6488276358241451689}
+  - component: {fileID: 2856085039485690102}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -52,12 +53,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
   data: {fileID: 11400000, guid: 8233bdb19b671f74490694a30e2118b8, type: 2}
+  uiManager: {fileID: 0}
   rb: {fileID: 611412721014228531}
   col: {fileID: 6488276358241451689}
   rend: {fileID: 5237681312361329521}
   feetPos: {fileID: 7648288525037105130}
   hookPrefab: {fileID: 5154775660519359415, guid: c887a7fcd43c65e46b1a773d469497fc, type: 3}
   isLockedOnGrapple: 0
+  grappleCharges: 0
+  grappleRechargeTime: 0
+  grappleRechargeTimer: 0
   toolSelectorCanvas: {fileID: 3383839953130031409}
   selectWheelCenter: {fileID: 4162031183596903196}
   toolOptions:
@@ -133,6 +138,18 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!114 &2856085039485690102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638892935657975172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 171fd132191ec3e43bcef1d1c83bd82f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerTalking
 --- !u!1 &2733444690839863186
 GameObject:
   m_ObjectHideFlags: 0
@@ -5114,7 +5131,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 437338375
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!114 &8557792608693589225
 MonoBehaviour:

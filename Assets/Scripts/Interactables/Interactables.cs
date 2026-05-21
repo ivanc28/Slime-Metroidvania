@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Linq;
 using UnityEngine;
 
@@ -28,24 +29,30 @@ public abstract class Interactables : MonoBehaviour
     {
         inRange = Vector2.Distance(transform.position, Player.Instance.transform.position) <= data.maxDistanceToInteract;
 
-        if (inRange && !Player.Instance.GetInBubble())
+        if (inRange && !Player.Instance.IsInBubble() && !Player.Instance.InInteraction)
         {
             if (Input.GetKeyDown(data.interactKey))
             {
-                if (data.requiredTool.Contains(Player.Instance.tools.GetCurrTool()))
-                {
-                    OnInteract();
-                    if (data.destroyOnInteract)
-                    {
-                        room.collectedInteractables.Add(interactableID);
-                        Destroy(gameObject);
-                    }
-                }
+                StartCoroutine(TryInteract(Player.Instance.data.toolUseTime));
             }
         }    
        
     }
 
+    private IEnumerator TryInteract(float interactTime)
+    {
+        yield return new WaitForSeconds(interactTime);       
+        if (data.requiredTool.Contains(Player.Instance.tools.GetCurrTool()))
+        {
+            OnInteract();
+            if (data.destroyOnInteract)
+            {
+                room.collectedInteractables.Add(interactableID);
+                Debug.Log($"adding to colected interactables and destroying {gameObject.name}");
+                Destroy(gameObject);
+            }
+        }
+    }
     public abstract void OnInteract();
     public  void SpawnPebbles(int numPebbles)
     {

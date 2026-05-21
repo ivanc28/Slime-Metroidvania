@@ -106,8 +106,16 @@ public class BubbleObj : GrappleObj
             EnterBubble();
             lifetime = lifespan;
         }
+        else
+        {
+            Player.Instance.SetOnBubble(true);
+        }
     }
-
+    public override void DetachHook()
+    {
+        base.DetachHook();
+        Player.Instance.SetOnBubble(false);
+    }
     public void ActivateBubble()
     {
         objCollider.enabled = true;
