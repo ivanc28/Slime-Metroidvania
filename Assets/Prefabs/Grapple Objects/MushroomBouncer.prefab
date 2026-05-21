@@ -105,7 +105,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca1c8583b6fc961469eb1c79f9d92cd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MushroomBouncer
+  objRenderer: {fileID: 0}
+  objCollider: {fileID: 0}
   bounceSpeed: 33
+  umbrellaBounceSpeed: 27
 --- !u!61 &4102344681250481021
 BoxCollider2D:
   m_ObjectHideFlags: 0

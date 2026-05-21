@@ -18,6 +18,5 @@ public class DEventClaimTool : DialogueEvent
         {
             Player.Instance.tools.ClaimTool(claimedTool);
         }
-        Debug.Log("Tried to claim a tool via dialogue");
     }
 }

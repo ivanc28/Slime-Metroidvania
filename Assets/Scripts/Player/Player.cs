@@ -53,6 +53,10 @@ public class Player : MonoBehaviour
     private bool bubbledState;
     private bool inBubble;
     private bool onBubble;
+
+    //[Header("Umbrella")]
+    private bool umbrellaState;
+
     // Currency
     public PlayerCurrency currencyData;
 
@@ -89,6 +93,7 @@ public class Player : MonoBehaviour
         //TESTING
         tools.ClaimTool(PlayerTools.Tool.Spoon);
         tools.SwapTool(PlayerTools.Tool.Spoon);
+        tools.ClaimTool(PlayerTools.Tool.Umbrella);
     }
 
     // Update is called once per frame
@@ -302,11 +307,38 @@ public class Player : MonoBehaviour
             }
         }
 
-        // Terminal fall speed
-        if (rb.linearVelocityY < data.terminalFallVel)
+        if (umbrellaState)
         {
-            rb.linearVelocityY = data.terminalFallVel;
+            if (rb.linearVelocityY > 0.01f)
+            {
+                if (isJumping)
+                {
+                    rb.gravityScale = data.umbrellaJumpGravity;
+                }
+            }
+            else
+            {
+                rb.gravityScale = data.umbrellaFallingGravity;
+                isJumping = false;
+            }
         }
+
+        // Terminal fall speed
+        if (!umbrellaState)
+        {
+            if (rb.linearVelocityY < data.terminalFallVel)
+            {
+                rb.linearVelocityY = data.terminalFallVel;
+            }
+        }
+        else
+        {
+            if (rb.linearVelocityY < -data.umbrellaDescendSpeed)
+            {
+                rb.linearVelocityY = -data.umbrellaDescendSpeed;
+            }
+        }
+        
 
     }
 
@@ -374,7 +406,14 @@ public class Player : MonoBehaviour
     {
         if(rb.linearVelocityY > 0)
         {
-            rb.gravityScale = data.stopJumpGravity;
+            if (!umbrellaState)
+            {
+                rb.gravityScale = data.stopJumpGravity;
+            }
+            else
+            {
+                rb.gravityScale = data.umbrellaStopJumpGravity;
+            }
             isJumping = false;
         }
     }
@@ -382,10 +421,20 @@ public class Player : MonoBehaviour
     {
         return isGrounded;
     }
+    public void SetGravityToFalling()
+    {
+        if (!umbrellaState)
+        {
+            rb.gravityScale = data.fallingGravity;
+        }
+        else
+        {
+            rb.gravityScale = data.umbrellaFallingGravity;
+        }
+    }
 
 
-
-
+    // ---- GRAPPLE ----
     private void FireHook()
     {
         Vector2 dir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
@@ -416,7 +465,7 @@ public class Player : MonoBehaviour
         isAttaching = false;
         if (!isLockedOnGrapple)
         {
-            rb.gravityScale = data.fallingGravity;
+            SetGravityToFalling();
         }
 
         if (currHookAttached != null)
@@ -452,10 +501,10 @@ public class Player : MonoBehaviour
     {
         return currHookBeingThrown != null;
     }
+    // -------------------
 
 
-
-
+    // ---- TOOLS --------
     public int GetToolOptionsLength()
     {
         return toolOptions.Length;
@@ -506,7 +555,6 @@ public class Player : MonoBehaviour
         toolSelectorCanvas.SetActive(enabled);
     }
 
-    
     public IEnumerator UseTool()
     {
         if (tools.GetCurrTool() == PlayerTools.Tool.None)
@@ -524,7 +572,7 @@ public class Player : MonoBehaviour
         }
         else if(tools.GetCurrTool() == PlayerTools.Tool.Umbrella)
         {
-
+            ToggleUmbrella();
         }
         InInteraction = false;
         rb.sharedMaterial = null;
@@ -563,6 +611,17 @@ public class Player : MonoBehaviour
     {
         return onBubble;
     }
+
+    public void ToggleUmbrella()
+    {
+        umbrellaState = !umbrellaState;
+        canAdjustGravity = !umbrellaState;
+    }
+    public bool IsUsingUmbrella()
+    {
+        return umbrellaState;
+    }
+    // ------------
     public void SetZipping(bool value)
     {
         zipping = value;
