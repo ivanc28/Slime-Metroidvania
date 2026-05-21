@@ -20095,6 +20095,10 @@ PrefabInstance:
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
       value: 0.16949123
       objectReference: {fileID: 0}
+    - target: {fileID: 6375924020915340543, guid: 5df7d5e734a991b4d851a0776d33f837, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6488276358241451689, guid: 5df7d5e734a991b4d851a0776d33f837, type: 3}
       propertyPath: m_Radius
       value: 0.4
@@ -20141,7 +20145,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7648288525037105130, guid: 5df7d5e734a991b4d851a0776d33f837, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.056
+      value: -0.179
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6488276358241451689, guid: 5df7d5e734a991b4d851a0776d33f837, type: 3}

@@ -6,5 +6,6 @@ public class DetachObj : GrappleObj
     {
         DetachHook();
         Player.Instance.DetachHook();
+        Player.Instance.rb.gravityScale = Player.Instance.data.fallingGravity;
     }
 }
