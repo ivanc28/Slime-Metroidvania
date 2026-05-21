@@ -19,7 +19,4 @@ public class NPCData : ScriptableObject
     public float delayAfterComma;
     [Header("Dialogue Color")]
     public Color npcTextColor;
-    public Color playerTextColor;
-    public Color choiceHoverColor;
-    public Color choiceNotHoverColor;
 }

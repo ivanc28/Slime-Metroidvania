@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c8351639e9514324d8a56a5d6cca7493, type: 3}
-  m_Name: SampleNPC_3 0
+  m_Name: SampleNPC_3 2
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSequence
-  rootNode: {fileID: 11400000, guid: 96be2011baafcd34b8bcc101130ddf53, type: 2}
-  nextSequenceCondition: {fileID: 11400000, guid: 5a3f6b2e8620ae4438b85927aca2af69, type: 2}
+  rootNode: {fileID: 11400000, guid: 7482d00bc4529e941b33801158e7c9f6, type: 2}
+  nextSequenceCondition: {fileID: 0}

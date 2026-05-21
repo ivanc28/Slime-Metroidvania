@@ -15,10 +15,14 @@ public class UIManager : MonoBehaviour
     [SerializeField] float delayBetweenIncrements;
     private int prevCurrencyBeforeAccumulation;
     private int accumulatedCurrency;
+    // ADDING CURRENCY
     private float currencyTimer;
     private bool startCurrencyTimer;
     private bool startedGettingCurrency;
-
+    // SUBTRACTING CURRENCY
+    private float subCurrencyTimer;
+    private bool subStartCurrencyTimer;
+    private bool subStartedLosingCurrency;
     public static UIManager Instance { get; private set; }
     private void Awake()
     {
@@ -34,12 +38,14 @@ public class UIManager : MonoBehaviour
     {
         EnableCurrencyText(false);
         currencyTimer = currencyDelayBeforeAcc;
+        subCurrencyTimer = currencyDelayBeforeAcc;
     }
 
     // Update is called once per frame
     void Update()
     {
-        #region Currency Update        
+        #region Currency Update       
+        // adding
         if (startCurrencyTimer)
         {
             if(currencyTimer > 0)
@@ -50,6 +56,20 @@ public class UIManager : MonoBehaviour
             {
                 StartCoroutine(AddAccCurrencyToFinal());
                 startCurrencyTimer = false;
+            }
+        }
+
+        // subtracting
+        if (subStartCurrencyTimer)
+        {
+            if (subCurrencyTimer > 0)
+            {
+                subCurrencyTimer -= Time.deltaTime;
+            }
+            else
+            {
+                StartCoroutine(SubAccCurrencyToFinal());
+                subStartCurrencyTimer = false;
             }
         }
         #endregion
@@ -97,10 +117,54 @@ public class UIManager : MonoBehaviour
         EnableCurrencyText(false);
         startedGettingCurrency = false;
     }
+
+    public void UpdateCurrencyDown(int amt)
+    {
+        if (!subStartedLosingCurrency)
+        {
+            prevCurrencyBeforeAccumulation = Player.Instance.currencyData.GetCurrency();
+            subStartedLosingCurrency = true;
+        }
+        EnableCurrencyText(true);
+
+        accumulatedCurrency += amt;
+        currencyAccText.text = $"-{accumulatedCurrency}";
+
+        subCurrencyTimer = currencyDelayBeforeAcc / 2;
+        subStartCurrencyTimer = true;
+
+    }
+    private IEnumerator SubAccCurrencyToFinal()
+    {
+        while (accumulatedCurrency > 0)
+        {
+            yield return new WaitForSeconds(delayBetweenIncrements);
+            prevCurrencyBeforeAccumulation--;
+            currencyText.text = $"{prevCurrencyBeforeAccumulation}";
+            accumulatedCurrency--;
+            currencyAccText.text = $"+{accumulatedCurrency}";
+            if (currencyTimer > 0)
+            {
+                yield break;
+            }
+        }
+        yield return new WaitForSeconds(currencyDelayAfterAcc * 2);
+        if (subCurrencyTimer > 0)
+        {
+            yield break;
+        }
+        // finished accumulating our currency
+        EnableCurrencyText(false);
+        subStartedLosingCurrency = false;
+    }
     private void EnableCurrencyText(bool enabled)
     {
         currencyText.enabled = enabled;
         currencyAccText.enabled = enabled;
+    }
+    public void DisplayCurrency(bool value)
+    {
+        currencyText.enabled = value;
     }
     public void UpdateGrappleCharges()
     {

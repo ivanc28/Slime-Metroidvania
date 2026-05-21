@@ -176,7 +176,7 @@ public class NPC : MonoBehaviour
         currDialogueBox = box.gameObject;
         if (forPlayer)
         {
-            currText.color = data.playerTextColor;
+            currText.color = Player.Instance.data.textColor;
         }
         else
         {
@@ -191,11 +191,11 @@ public class NPC : MonoBehaviour
         {
             if(i < choices.Length - 1)
             {
-                finalText += $"{ChangeTextColor(choices[i].choiceText, data.choiceNotHoverColor)}\n";
+                finalText += $"{ChangeTextColor(choices[i].choiceText, Player.Instance.data.choiceNotHoverColor)}\n";
             }
             else
             {
-                finalText += $"{ChangeTextColor(choices[i].choiceText, data.choiceNotHoverColor)}";
+                finalText += $"{ChangeTextColor(choices[i].choiceText, Player.Instance.data.choiceNotHoverColor)}";
             }
         }
         box.Initalize(finalText);
@@ -265,32 +265,48 @@ public class NPC : MonoBehaviour
                 selectedChoice = true;
                 break;
             }
-            if (Input.GetKeyDown(KeyCode.W))
-            {
-                currChoice--;
-            }
-            if (Input.GetKeyDown(KeyCode.S))
+            while (!IsChoiceAvailable(choices[currChoice]))
             {
                 currChoice++;
             }
-            currChoice = Mathf.Clamp(currChoice, 0, choices.Length - 1);
-            string updateDialogeText = "";
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                int newChoice = currChoice - 1;
+
+                if (newChoice >= 0 && IsChoiceAvailable(choices[newChoice]))
+                {
+                    currChoice = newChoice;
+                }
+            }
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                int newChoice = currChoice + 1;
+                if (newChoice < choices.Length && IsChoiceAvailable(choices[newChoice]))
+                {
+                    currChoice = newChoice;
+                }
+            }
+            string updateDialogueText = "";
             for(int i = 0; i < choices.Length; i++)
             {
-                if(i == currChoice)
+                if (!IsChoiceAvailable(choices[i]))
                 {
-                    updateDialogeText += ChangeTextColor(choices[i].choiceText, data.choiceHoverColor);
+                    updateDialogueText += ChangeTextColor(choices[i].choiceText, Player.Instance.data.choiceDisabledColor);
+                }
+                else if (i == currChoice)
+                {
+                    updateDialogueText += ChangeTextColor(choices[i].choiceText, Player.Instance.data.choiceHoverColor);
                 }
                 else
                 {
-                    updateDialogeText += ChangeTextColor(choices[i].choiceText, data.choiceNotHoverColor);
+                    updateDialogueText += ChangeTextColor(choices[i].choiceText, Player.Instance.data.choiceNotHoverColor);
                 }
                 if(i < choices.Length - 1)
                 {
-                    updateDialogeText += "\n";
+                    updateDialogueText += "\n";
                 }
             }
-            currText.text = updateDialogeText;
+            currText.text = updateDialogueText;
             yield return null;
         }
         if (currNode.choices[currChoice].dialogueEvent != null)
@@ -299,6 +315,11 @@ public class NPC : MonoBehaviour
         }
         choiceChosen = currChoice;
         NextDialogue();
+    }
+
+    private bool IsChoiceAvailable(DialogueChoice choice)
+    {
+        return choice.condition == null || choice.condition.ConditionMet();
     }
     private Vector2 CalculateDialogueBoxPos(bool forPlayer)
     {
