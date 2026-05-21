@@ -44,6 +44,4 @@ public class PlayerData : ScriptableObject
     public float bubbleMoveSpeed;
     public float floatAccelAmount;
     public float floatDecelAmount;
-    [Header("NPC Interactions")]
-    public float distanceDialogueAboveHeadOffset = 1f;
 }

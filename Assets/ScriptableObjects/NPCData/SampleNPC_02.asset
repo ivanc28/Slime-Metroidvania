@@ -21,6 +21,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d3628eac4500adf42882a6304eebfd7f, type: 2}
   dialogueBoxPrefab: {fileID: 8471492469622854947, guid: 19917e134e38e6444a2e69101becaece, type: 3}
   distanceDialogueAboveHeadOffset: 0.75
-  delayBetweenChars: 0.04
+  delayBetweenChars: 0.03
   delayAfterPeriod: 0.25
-  delayAfterComma: 0.1
+  delayAfterComma: 0.15
+  npcTextColor: {r: 0.18071377, g: 0.2311059, b: 0.2924528, a: 1}
+  playerTextColor: {r: 0.2934636, g: 0.3679245, b: 0.2759434, a: 1}
+  choiceHoverColor: {r: 0.122641504, g: 0.122641504, b: 0.122641504, a: 1}
+  choiceNotHoverColor: {r: 0.3490566, g: 0.3490566, b: 0.3490566, a: 1}

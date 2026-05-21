@@ -1,4 +1,6 @@
+using NUnit.Framework;
 using System.Collections;
+using System.Security;
 using TMPro;
 using UnityEngine;
 
@@ -17,6 +19,7 @@ public class NPC : MonoBehaviour
     private bool choosingToSkipLine;
     private bool isInteracting;
     private bool doneWithLine;
+    private int choiceChosen;
     private GameObject currDialogueBox;
 
     RoomData room;
@@ -47,10 +50,16 @@ public class NPC : MonoBehaviour
             choosingToSkipLine = true;            
         }
 
+        // Only called with linear choice paths
         if (doneWithLine)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                if (currNode.choices.Length > 0 && currNode.choices[0].dialogueEvent != null)
+                {
+                    currNode.choices[0].dialogueEvent.Invoke();
+                }
+                choiceChosen = 0;
                 NextDialogue();
                 doneWithLine = false;
             }
@@ -69,23 +78,38 @@ public class NPC : MonoBehaviour
     }
     private void SetDialogue(DialogueNode node)
     {
+
         if (node.speaker == DialogueNode.Speaker.NPC)
         {
-            SpawnDialogueBubble(CalculateDialogueBoxPos(false), node.line);
+            SpawnDialogueBubble(CalculateDialogueBoxPos(false), node.line, false);
         }
         else
         {
-            SpawnDialogueBubble(CalculateDialogueBoxPos(true), node.line);
+            SpawnDialogueBubble(CalculateDialogueBoxPos(true), node.line, true);
         }
         StartCoroutine(StartDialogueLine(currText, currText.text, data.delayBetweenChars, data.delayAfterPeriod, data.delayAfterComma));
     }
+    private void SetChoices(DialogueNode node)
+    {
+        if(node.speaker == DialogueNode.Speaker.NPC)
+        {
+            Debug.LogWarning("The NPC shouldn't have choices");
+        }
+        SpawnChoicesBubble(CalculateDialogueBoxPos(true), node.choices);
+        StartCoroutine(PromptPlayerChoice(node.choices));
+    }
     private void NextDialogue()
     {
-        if(currNode.dialogueEvent != null)
-        {
-            currNode.dialogueEvent.Invoke();
-        }
-        if(currNode.choices.Count == 0)
+        // Try to call the event function
+        //if (currNode.choices.Length > 0)
+        //{
+        //    if (currNode.choices[choiceChosen].dialogueEvent != null)
+        //    {
+        //        currNode.choices[choiceChosen].dialogueEvent.Invoke();
+        //    }
+        //}
+        // Either no more choices or the choice does not have a nextNode (we go into the block when nextNode = null too b/c might've had an event w/ no nextNode)
+        if (currNode.choices.Length == 0 || currNode.choices[choiceChosen].nextNode == null)
         {
             // End dialogue
             EndDialogueSequence();
@@ -95,19 +119,35 @@ public class NPC : MonoBehaviour
                 NextDialogueSequence();
             }
         }
-        else if (currNode.choices.Count == 1)
+        else /*(currNode.choices.Length == 1)*/
         {
             // Seek next dialogue
-            Destroy(currDialogueBox);
-            currDialogueBox = null;
-            currNode = currNode.choices[0].nextNode;
-            SetDialogue(currNode);
-        }
-        else
-        {
-            // Wait for player's choice
+            if (currNode.choices[choiceChosen].nextNode.choices.Length <= 1)
+            {
+                Destroy(currDialogueBox);
+                currDialogueBox = null;
+                currNode = currNode.choices[choiceChosen].nextNode;
+                SetDialogue(currNode);
+            }
 
+            // Seek to a choice for the player
+            else
+            {
+                Destroy(currDialogueBox);
+                currDialogueBox = null;
+                currNode = currNode.choices[choiceChosen].nextNode;
+                SetChoices(currNode);
+            }
         }
+        //else
+        //{
+        //    // NEED FIX
+        //    // Wait for player's choice
+        //    Destroy(currDialogueBox);
+        //    currDialogueBox = null;
+        //    currNode = currNode.choices[0].nextNode;
+        //    SetChoices(currNode);
+        //}
 
     }
     private void NextDialogueSequence()
@@ -128,12 +168,44 @@ public class NPC : MonoBehaviour
         keyIcon.SetActive(enabled);
     }
 
-    private void SpawnDialogueBubble(Vector3 pos, string text)
+    private void SpawnDialogueBubble(Vector3 pos, string text, bool forPlayer)
     {
         DialogueBox box = Instantiate(data.dialogueBoxPrefab, pos, Quaternion.identity);
         box.Initalize(text);
         currText = box.dialogueText;
         currDialogueBox = box.gameObject;
+        if (forPlayer)
+        {
+            currText.color = data.playerTextColor;
+        }
+        else
+        {
+            currText.color = data.npcTextColor;
+        }
+    }
+    private void SpawnChoicesBubble(Vector3 pos, DialogueChoice[] choices)
+    {
+        DialogueBox box = Instantiate(data.dialogueBoxPrefab, pos, Quaternion.identity);
+        string finalText = "";
+        for (int i = 0; i < choices.Length; i++)
+        {
+            if(i < choices.Length - 1)
+            {
+                finalText += $"{ChangeTextColor(choices[i].choiceText, data.choiceNotHoverColor)}\n";
+            }
+            else
+            {
+                finalText += $"{ChangeTextColor(choices[i].choiceText, data.choiceNotHoverColor)}";
+            }
+        }
+        box.Initalize(finalText);
+        currText = box.dialogueText;
+        currDialogueBox = box.gameObject;
+    }
+
+    private string ChangeTextColor(string text, Color color)
+    {
+        return $"<color=#{ColorUtility.ToHtmlStringRGB(color)}>{text}</color>";
     }
 
     private IEnumerator StartDialogueLine(TextMeshProUGUI text, string message, float delayBetweenChars, float delayAfterPeriod, float delayAfterComma)
@@ -181,13 +253,59 @@ public class NPC : MonoBehaviour
         doneWithLine = true;
         choosingToSkipLine = false;
     }
-
+    private IEnumerator PromptPlayerChoice(DialogueChoice[] choices)
+    {
+        yield return null;
+        bool selectedChoice = false;
+        int currChoice = 0;
+        while (!selectedChoice)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                selectedChoice = true;
+                break;
+            }
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                currChoice--;
+            }
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                currChoice++;
+            }
+            currChoice = Mathf.Clamp(currChoice, 0, choices.Length - 1);
+            string updateDialogeText = "";
+            for(int i = 0; i < choices.Length; i++)
+            {
+                if(i == currChoice)
+                {
+                    updateDialogeText += ChangeTextColor(choices[i].choiceText, data.choiceHoverColor);
+                }
+                else
+                {
+                    updateDialogeText += ChangeTextColor(choices[i].choiceText, data.choiceNotHoverColor);
+                }
+                if(i < choices.Length - 1)
+                {
+                    updateDialogeText += "\n";
+                }
+            }
+            currText.text = updateDialogeText;
+            yield return null;
+        }
+        if (currNode.choices[currChoice].dialogueEvent != null)
+        {
+            currNode.choices[currChoice].dialogueEvent.Invoke();
+        }
+        choiceChosen = currChoice;
+        NextDialogue();
+    }
     private Vector2 CalculateDialogueBoxPos(bool forPlayer)
     {
         if (forPlayer)
         {
             Vector2 playerPos = Player.Instance.transform.position;
-            return playerPos + Vector2.up * (Player.Instance.GetRenderer().bounds.size.y * 0.5f + Player.Instance.data.distanceDialogueAboveHeadOffset);
+            return playerPos + Vector2.up * (Player.Instance.GetRenderer().bounds.size.y * 0.5f + data.distanceDialogueAboveHeadOffset);
         }
         else
         {

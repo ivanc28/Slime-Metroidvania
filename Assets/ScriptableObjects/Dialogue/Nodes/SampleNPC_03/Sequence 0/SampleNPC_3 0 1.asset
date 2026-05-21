@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c0552f17edcde34cb93ab0d9a5ca2bb, type: 3}
-  m_Name: SampleNPC_1 0 1
+  m_Name: SampleNPC_3 0 1
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 0
-  line: i like you, here's a fork
+  line: do you know why that is?
   choices:
   - choiceText: 
-    nextNode: {fileID: 11400000, guid: 1947b95c1f00a4f4183182e2bc56c056, type: 2}
-    dialogueEvent: {fileID: 11400000, guid: aaee922bbd13e2a478fcb5b959d54f20, type: 2}
+    nextNode: {fileID: 11400000, guid: a3ba8de0876eb5f41ba48d08ede941cd, type: 2}
+    dialogueEvent: {fileID: 0}
