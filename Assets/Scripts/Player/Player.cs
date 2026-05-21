@@ -39,6 +39,9 @@ public class Player : MonoBehaviour
     public float grappleRechargeTime;
     public float grappleRechargeTimer;
 
+    // Zipline
+    private bool zipping;
+
     [Header("ToolSelection")]
     [SerializeField] GameObject toolSelectorCanvas;
     [SerializeField] Transform selectWheelCenter;
@@ -185,6 +188,10 @@ public class Player : MonoBehaviour
             {
                 shouldJumpAfterDetach = isLockedOnGrapple;
                 DetachHook();
+            }
+            else if (zipping)
+            {
+                shouldJumpAfterDetach = true;
             }
             if (shouldJumpAfterDetach)
             {
@@ -555,6 +562,16 @@ public class Player : MonoBehaviour
     public bool IsOnbubble()
     {
         return onBubble;
+    }
+    public void SetZipping(bool value)
+    {
+        zipping = value;
+        canAdjustGravity = !value;
+        rb.gravityScale = 0;
+        if (value)
+        {
+            rb.linearVelocity = new Vector2(0,0);
+        }
     }
 
 
