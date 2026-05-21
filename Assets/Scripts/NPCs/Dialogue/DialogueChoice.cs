@@ -8,4 +8,6 @@ public class DialogueChoice
     public string choiceText;
     [Tooltip("The next dialogue line")]
     public DialogueNode nextNode;
+    [Tooltip("An optional event that gets called when this choice is chosen")]
+    public DialogueEvent dialogueEvent;
 }

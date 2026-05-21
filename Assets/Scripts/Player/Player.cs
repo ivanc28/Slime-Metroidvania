@@ -39,6 +39,9 @@ public class Player : MonoBehaviour
     public float grappleRechargeTime;
     public float grappleRechargeTimer;
 
+    // Zipline
+    private bool zipping;
+
     [Header("ToolSelection")]
     [SerializeField] GameObject toolSelectorCanvas;
     [SerializeField] Transform selectWheelCenter;
@@ -81,11 +84,11 @@ public class Player : MonoBehaviour
     void Start()
     {
         EnableToolSelectionCanvas(false);
+        tools.ClaimTool(PlayerTools.Tool.None);
+        bubbleParticle.Stop(true, ParticleSystemStopBehavior.StopEmitting);
         //TESTING
         tools.ClaimTool(PlayerTools.Tool.Spoon);
-        tools.ClaimTool(PlayerTools.Tool.BubbleBlower);
         tools.SwapTool(PlayerTools.Tool.Spoon);
-        bubbleParticle.Stop(true, ParticleSystemStopBehavior.StopEmitting);
     }
 
     // Update is called once per frame
@@ -185,6 +188,10 @@ public class Player : MonoBehaviour
             {
                 shouldJumpAfterDetach = isLockedOnGrapple;
                 DetachHook();
+            }
+            else if (zipping)
+            {
+                shouldJumpAfterDetach = true;
             }
             if (shouldJumpAfterDetach)
             {
@@ -476,7 +483,7 @@ public class Player : MonoBehaviour
     {
         float angle = GetWheelAngle();
         int toolChoice = (int)(angle / (360 / toolOptions.Length));
-        Mathf.Clamp(toolChoice, 0, toolOptions.Length - 1);
+        toolChoice = Mathf.Clamp(toolChoice, 0, toolOptions.Length - 1);
         tools.SwapTool(toolOptions[toolChoice].tool);
         foreach(ToolOption option in toolOptions)
         {
@@ -502,6 +509,10 @@ public class Player : MonoBehaviour
     
     public IEnumerator UseTool()
     {
+        if (tools.GetCurrTool() == PlayerTools.Tool.None)
+        {
+            yield break;
+        }
         yield return null;
         rb.sharedMaterial = data.someFriction;  // ensure we don't slide around when we start interacting
         InInteraction = true;
@@ -551,6 +562,16 @@ public class Player : MonoBehaviour
     public bool IsOnbubble()
     {
         return onBubble;
+    }
+    public void SetZipping(bool value)
+    {
+        zipping = value;
+        canAdjustGravity = !value;
+        rb.gravityScale = 0;
+        if (value)
+        {
+            rb.linearVelocity = new Vector2(0,0);
+        }
     }
 
 

@@ -11,6 +11,7 @@ public class DialogueBox : MonoBehaviour
 
     public void Initalize(string text)
     {
+        dialogueCanvas.GetComponent<Canvas>().worldCamera = Camera.main;
         dialogueText.text = text;
         if(text.Length <= 4)
         {
