@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Hook
   - ZiplineAttachPoint
+  - Zipline
   layers:
   - Default
   - TransparentFX

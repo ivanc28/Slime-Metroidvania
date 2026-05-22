@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
     HookProjectile currHookAttached;
     HookProjectile currHookBeingThrown;
     bool isAttaching;
-    bool isLockedOnGrapple;
+    [SerializeField] bool isLockedOnGrapple;
     Vector2 hookPoint;
 
     // Tools
@@ -670,7 +670,7 @@ public class Player : MonoBehaviour
     public void AttachToZipline(Collider2D collision)
     {
         Vector2 closest = collision.ClosestPoint(transform.position);
-        closest.y = closest.y - (col as CircleCollider2D).radius;
+        closest.y = closest.y - 0.3f;
         Debug.Log(closest);
         transform.position = closest;
         rb.linearVelocity = new Vector2(0,0);
