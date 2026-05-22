@@ -63,19 +63,8 @@ public class ZiplineObj : GrappleObj
             // edge.edgeRadius = 0.1f;
             edge.isTrigger = true;
             // edge.enabled = false;
-            lowLineColliders.Add(edge);
-
-            // edge = gameObject.AddComponent<EdgeCollider2D>();
-            // vectorPair[0] = travelPointVectors[i];
-            // vectorPair[1] = travelPointVectors[i+1];
-            // edge.points = vectorPair;
-            // // edge.edgeRadius = 0.1f;
-            // edge.isTrigger = true;
-            // lineColliders.Add(edge);
+            lineColliders.Add(edge);
         }
-        // lowLineCollider.points = lowTravelPointVectors.ToArray();
-        // lowLineCollider.edgeRadius = 0.1f;
-        // lowLineCollider.enabled = false;
     }
 
     // Update is called once per frame
@@ -83,46 +72,22 @@ public class ZiplineObj : GrappleObj
     {
         if (Player.Instance.IsZipping())
         {
-            if (Player.Instance.GetMoveInput() < 0)
+            if (Player.Instance.GetMoveInput() < 0 && Player.Instance.zipDirection == 1)
             {
                 Debug.Log("a");
+                Player.Instance.SetZipDirection(-1);
             }
-            if (Player.Instance.GetMoveInput() > 0)
+            if (Player.Instance.GetMoveInput() > 0 && Player.Instance.zipDirection == -1)
             {
                 Debug.Log("d");
+                Player.Instance.SetZipDirection(1);
             }
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // if (collision.gameObject.CompareTag("ZiplineAttachPoint") && Player.Instance.IsZipping() && Player.Instance.zipDirection == 0)
-        // {
-        //     Player.Instance.SetZipDirection(Player.Instance.GetMoveInput());
-        //     Player.Instance.rb.linearVelocity = new Vector2(0,0);
-        //     // Player.Instance.transform.position = collision.contacts.point[0];
-
-        //     Debug.Log("attach zip point");
-        //     // EffectOnPlayerContact();
-            
-        //     Debug.Log("zipping");
-        //     EffectOnPlayerContactAfterHook();
-            
-        // }
-        // if (collision.gameObject.CompareTag("Player"))
-        // {
-        //     if (Player.Instance.GetIsLocked())
-        //     {
-        //         DetachHook();
-        //         Player.Instance.DetachHook();
-        //         Player.Instance.SetZipping(true);
-        //         // lowLineCollider.enabled = true;
-        //         // Player.Instance.rb.gravityScale = 50;
-        //         Debug.Log("unhook");
-        //         // Player.Instance.AttachToZipline(collision.point[0], collision.point[1]);
-        //     }
-        // }
-        if (collision.gameObject.CompareTag("Hook") && !Player.Instance.IsZipping())
+        if (collision.gameObject.CompareTag("Hook") && collision != Player.Instance.currentAttachedCollider)
         {
             Debug.Log("hooked");
             EffectOnHookContact(collision);
@@ -132,26 +97,14 @@ public class ZiplineObj : GrappleObj
 
     public override void EffectOnPlayerContact()
     {
-        // DetachHook();
-        // Player.Instance.DetachHook();
-        // // Player.Instance.rb.gravityScale = Player.Instance.data.fallingGravity;
-        // Player.Instance.SetZipping(true);
-        // Zip();
     }
 
     public override void EffectOnPlayerContactAfterHook()
     {
-        // DetachHook();
-        // Player.Instance.DetachHook();
-        // Player.Instance.rb.gravityScale = Player.Instance.data.fallingGravity;
-        // Player.Instance.rb.linearVelocity = new Vector2(0,0);
-        // Player.Instance.rb.gravityScale = 0;
-        // Zip();
     }
 
-    void Zip()
+    public List<EdgeCollider2D> GetLineColliders()
     {
-        Debug.Log("zip1");
-        
+        return lineColliders;
     }
 }
