@@ -528,6 +528,111 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 228, y: 52}
+  - name: tileset 1_19
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 22
+      y: 124
+      width: 8
+      height: 16
+    spriteID: 498ebe7761db0cd4b9e4f42ff5fd5c5d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 18, y: 124}
+  - name: tileset 1_20
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 38
+      y: 124
+      width: 6
+      height: 16
+    spriteID: 19f54663641491f4fb9fcb68a76a21be
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 33, y: 124}
+  - name: tileset 1_21
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 228
+      y: 76
+      width: 16
+      height: 16
+    spriteID: 7ef25988f45137d46a6271a5860c0035
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 228, y: 76}
+  - name: tileset 1_22
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 228
+      y: 100
+      width: 14
+      height: 16
+    spriteID: 50bc5bd05f4eaeb428604ce819c44b33
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 227, y: 100}
+  - name: tileset 1_23
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 124
+      width: 10
+      height: 16
+    spriteID: d499801e9cad49745a65c897a008834d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1, y: 124}
   asepriteLayers:
   - layerIndex: 0
     uuid:
@@ -575,7 +680,7 @@ ScriptedImporter:
         y: 0
         width: 9
         height: 7
-      tileIndices: 01000000020000000c0000000000000000000000000000000000000012000000120000000d000000030000000e00000000000000000000000000000000000000120000001200000004000000050000000b00000000000000000000000000000000000000000000000000000006000000070000000a000000000000000000000000000000000000000000000000000000090000000f00000008000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000001100000000000000000000000000000000000000000000000000000000000000
+      tileIndices: 01000000020000000c0000000000000000000000000000000000000012000000120000000d000000030000000e00000000000000000000001500000000000000120000001200000004000000050000000b00000000000000000000001600000000000000000000000000000006000000070000000a000000000000000000000017000000000000000000000000000000090000000f00000008000000000000000000000017000000000000000000000000000000000000001000000000000000000000000000000013000000000000000000000000000000000000001100000000000000000000000000000014000000000000000000000000000000
     tileSetIndex: 0
     parentIndex: -1
   tileSets:
@@ -693,6 +798,36 @@ ScriptedImporter:
         y: 16
       name: tileset 1_18
       spriteId: a7ead23f0ecda5e4daefe8131f847d68
+    - tileId: 19
+      size:
+        x: 16
+        y: 16
+      name: tileset 1_19
+      spriteId: 498ebe7761db0cd4b9e4f42ff5fd5c5d
+    - tileId: 20
+      size:
+        x: 16
+        y: 16
+      name: tileset 1_20
+      spriteId: 19f54663641491f4fb9fcb68a76a21be
+    - tileId: 21
+      size:
+        x: 16
+        y: 16
+      name: tileset 1_21
+      spriteId: 7ef25988f45137d46a6271a5860c0035
+    - tileId: 22
+      size:
+        x: 16
+        y: 16
+      name: tileset 1_22
+      spriteId: 50bc5bd05f4eaeb428604ce819c44b33
+    - tileId: 23
+      size:
+        x: 16
+        y: 16
+      name: tileset 1_23
+      spriteId: d499801e9cad49745a65c897a008834d
     guid: 1764653211
   platformSettings:
   - name: DefaultTexturePlatform
@@ -723,4 +858,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 144, y: 112}
-  previousTextureSize: {x: 256, y: 128}
+  previousTextureSize: {x: 256, y: 256}
