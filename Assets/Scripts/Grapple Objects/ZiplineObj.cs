@@ -44,7 +44,7 @@ public class ZiplineObj : GrappleObj
         for (int i = 0; i < travelPoints.Length; i++)
         {
             travelPointVectors.Add(travelPoints[i].transform.position);
-            lowTravelPointVectors.Add(lowTravelPoints[i].transform.position);
+            // lowTravelPointVectors.Add(lowTravelPoints[i].transform.position);
             lineRenderer.SetPosition(i, travelPoints[i].transform.position);
         }
         
@@ -55,23 +55,23 @@ public class ZiplineObj : GrappleObj
         // lineCollider.edgeRadius = 0.1f;
         // lineCollider.isTrigger = true;
         
-        for (int i = 0; i < lowTravelPointVectors.Count - 1; i++)
+        for (int i = 0; i < travelPointVectors.Count - 1; i++)
         {
             EdgeCollider2D edge = gameObject.AddComponent<EdgeCollider2D>();
-            Vector2[] vectorPair = {lowTravelPointVectors[i], lowTravelPointVectors[i+1]};
+            Vector2[] vectorPair = {travelPointVectors[i], travelPointVectors[i+1]};
             edge.points = vectorPair;
             // edge.edgeRadius = 0.1f;
             edge.isTrigger = true;
-            edge.enabled = false;
+            // edge.enabled = false;
             lowLineColliders.Add(edge);
 
-            edge = gameObject.AddComponent<EdgeCollider2D>();
-            vectorPair[0] = travelPointVectors[i];
-            vectorPair[1] = travelPointVectors[i+1];
-            edge.points = vectorPair;
-            // edge.edgeRadius = 0.1f;
-            edge.isTrigger = true;
-            lineColliders.Add(edge);
+            // edge = gameObject.AddComponent<EdgeCollider2D>();
+            // vectorPair[0] = travelPointVectors[i];
+            // vectorPair[1] = travelPointVectors[i+1];
+            // edge.points = vectorPair;
+            // // edge.edgeRadius = 0.1f;
+            // edge.isTrigger = true;
+            // lineColliders.Add(edge);
         }
         // lowLineCollider.points = lowTravelPointVectors.ToArray();
         // lowLineCollider.edgeRadius = 0.1f;
@@ -94,23 +94,6 @@ public class ZiplineObj : GrappleObj
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        // if (collision.gameObject.CompareTag("Player"))
-        // {
-        //     if (Player.Instance.GetIsLocked())
-        //     {
-        //         DetachHook();
-        //         Player.Instance.DetachHook();
-        //         Player.Instance.SetZipping(true);
-        //         // lowLineCollider.enabled = true;
-        //         // Player.Instance.rb.gravityScale = 50;
-        //         Debug.Log("unhook");
-        //         // Player.Instance.AttachToZipline(collision.point[0], collision.point[1]);
-        //     }
-        // }
-        
-    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // if (collision.gameObject.CompareTag("ZiplineAttachPoint") && Player.Instance.IsZipping() && Player.Instance.zipDirection == 0)
@@ -161,14 +144,14 @@ public class ZiplineObj : GrappleObj
         // DetachHook();
         // Player.Instance.DetachHook();
         // Player.Instance.rb.gravityScale = Player.Instance.data.fallingGravity;
-        Player.Instance.rb.linearVelocity = new Vector2(0,0);
-        Player.Instance.rb.gravityScale = 0;
-        Zip();
+        // Player.Instance.rb.linearVelocity = new Vector2(0,0);
+        // Player.Instance.rb.gravityScale = 0;
+        // Zip();
     }
 
     void Zip()
     {
-        Debug.Log("zip");
+        Debug.Log("zip1");
         
     }
 }
