@@ -4,8 +4,19 @@ using UnityEngine;
 public class DEventClaimTool : DialogueEvent
 {
     public PlayerTools.Tool claimedTool;
+    public int optionalPebbleCost = 0;
     public override void Invoke()
     {
-        Player.Instance.tools.ClaimTool(claimedTool);
+        if(optionalPebbleCost > 0)
+        {
+            if (Player.Instance.currencyData.OnPurchase(optionalPebbleCost))
+            {
+                Player.Instance.tools.ClaimTool(claimedTool);
+            }
+        }
+        else
+        {
+            Player.Instance.tools.ClaimTool(claimedTool);
+        }
     }
 }

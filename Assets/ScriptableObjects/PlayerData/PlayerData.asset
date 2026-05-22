@@ -25,7 +25,7 @@ MonoBehaviour:
   frictionless: {fileID: 6200000, guid: 7d4911744a6e33e4e9d4c02b63718da4, type: 2}
   someFriction: {fileID: 6200000, guid: b34665b1fd4f5f0489bcc07de7e8d37c, type: 2}
   jumpSpeed: 16
-  feetRadius: 0.25
+  feetRadius: 0.45
   groundObjects:
     serializedVersion: 2
     m_Bits: 8
@@ -36,7 +36,7 @@ MonoBehaviour:
   jumpBuffer: 0.1
   coyoteTime: 0.1
   baseGrappleLength: 10
-  minGrappleLifetime: 0.4
+  minGrappleLifetime: 0.3
   attachSpeed: 25
   hookSpeed: 27
   grappleObjects:
@@ -50,3 +50,11 @@ MonoBehaviour:
   bubbleMoveSpeed: 12
   floatAccelAmount: 20
   floatDecelAmount: 12
+  umbrellaJumpGravity: 2
+  umbrellaFallingGravity: 3
+  umbrellaStopJumpGravity: 4
+  umbrellaDescendSpeed: 6
+  textColor: {r: 0.13995196, g: 0.16037738, b: 0.15016468, a: 1}
+  choiceHoverColor: {r: 0.084905684, g: 0.084905684, b: 0.084905684, a: 1}
+  choiceNotHoverColor: {r: 0.509434, g: 0.509434, b: 0.509434, a: 1}
+  choiceDisabledColor: {r: 0.6320754, g: 0.4442417, b: 0.4442417, a: 0.50980395}

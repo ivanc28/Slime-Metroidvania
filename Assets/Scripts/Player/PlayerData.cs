@@ -44,4 +44,14 @@ public class PlayerData : ScriptableObject
     public float bubbleMoveSpeed;
     public float floatAccelAmount;
     public float floatDecelAmount;
+    [Header("Umbrella")]
+    public float umbrellaJumpGravity;
+    public float umbrellaFallingGravity;
+    public float umbrellaStopJumpGravity;
+    public float umbrellaDescendSpeed;
+    [Header("NPC Interaction")]
+    public Color textColor;
+    public Color choiceHoverColor;
+    public Color choiceNotHoverColor;
+    public Color choiceDisabledColor;
 }

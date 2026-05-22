@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: ClaimBubbleBlowerEvent
   m_EditorClassIdentifier: Assembly-CSharp::DEventClaimTool
   claimedTool: 7
+  optionalPebbleCost: 0

@@ -5,7 +5,7 @@ public class PlayerCurrency
     private int currency;
     private bool CanPurchase(int cost)
     {
-        return currency <= cost;
+        return currency >= cost;
     }
     /// <summary>
     /// Attempts to purchase item and subtracts cost from currency. Returns true if successful, otherwise returns false
@@ -16,6 +16,7 @@ public class PlayerCurrency
     {
         if (CanPurchase(cost))
         {
+            UIManager.Instance.UpdateCurrencyDown(cost);
             currency -= cost;
             return true;
         }

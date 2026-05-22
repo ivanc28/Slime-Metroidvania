@@ -1,9 +1,9 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Condition", menuName = "ScriptableData/Dialogue/Conditions")]
+[CreateAssetMenu(fileName = "Condition", menuName = "ScriptableData/Dialogue/Conditions/NoConditions")]
 public class Condition : ScriptableObject
 {
-    public bool ConditionMet()
+    public virtual bool ConditionMet()
     {
         return true;
     }

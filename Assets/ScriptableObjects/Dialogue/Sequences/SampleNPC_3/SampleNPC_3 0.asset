@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: SampleNPC_3 0
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSequence
   rootNode: {fileID: 11400000, guid: 96be2011baafcd34b8bcc101130ddf53, type: 2}
-  nextSequenceCondition: {fileID: 11400000, guid: b41435194a007f141b57793463c840d1, type: 2}
+  nextSequenceCondition: {fileID: 11400000, guid: 5a3f6b2e8620ae4438b85927aca2af69, type: 2}
