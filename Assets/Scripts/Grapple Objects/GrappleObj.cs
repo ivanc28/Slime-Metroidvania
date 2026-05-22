@@ -7,6 +7,7 @@ public abstract class GrappleObj : MonoBehaviour
     public Collider2D objCollider;
 
     private bool hookAttached;
+    private Collider2D hookedCollider;
     public bool PlayerInsideCollider { get; private set; }
     private void Start()
     {
@@ -40,13 +41,16 @@ public abstract class GrappleObj : MonoBehaviour
         PlayerInsideCollider = true;
     }
     public abstract void EffectOnPlayerContactAfterHook();
-    public virtual void EffectOnHookContact()
+    public virtual void EffectOnHookContact(Collider2D hitCollider)
     {
+        hookedCollider = hitCollider;
         hookAttached = true;
+        Debug.Log("YAY");
     }
     public virtual void DetachHook()
     {
         hookAttached = false;
+        hookedCollider = null;
     }
     public bool IsHookAttached()
     {
@@ -64,7 +68,7 @@ public abstract class GrappleObj : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Hook"))
         {
-            EffectOnHookContact();
+            EffectOnHookContact(collision);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -75,6 +79,7 @@ public abstract class GrappleObj : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Hook"))
         {
+            if (collision == hookedCollider) return;
             DetachHook();
         }
     }

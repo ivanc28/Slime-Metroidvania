@@ -73,6 +73,10 @@ public class Player : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+        else
+        {
+            Debug.Log("I existed HAHA!");
+        }
         Instance = this;
         DontDestroyOnLoad(gameObject);
         jumpBufferTimer = data.jumpBuffer;
@@ -93,7 +97,6 @@ public class Player : MonoBehaviour
         //TESTING
         tools.ClaimTool(PlayerTools.Tool.Spoon);
         tools.SwapTool(PlayerTools.Tool.Spoon);
-        tools.ClaimTool(PlayerTools.Tool.Umbrella);
     }
 
     // Update is called once per frame

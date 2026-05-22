@@ -40,7 +40,8 @@ public class RoomSetUp : MonoBehaviour
         {
             Debug.LogWarning($"Failed to find spawnPointID labeled {spawnPointID}");
         }
-
+        Player.Instance.SetGravityToFalling();
+        Player.Instance.DetachHook();
 
 
     }    

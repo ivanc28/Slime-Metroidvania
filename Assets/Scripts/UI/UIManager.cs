@@ -39,6 +39,7 @@ public class UIManager : MonoBehaviour
         EnableCurrencyText(false);
         currencyTimer = currencyDelayBeforeAcc;
         subCurrencyTimer = currencyDelayBeforeAcc;
+        currencyText.text = Player.Instance.currencyData.GetCurrency().ToString();
     }
 
     // Update is called once per frame
