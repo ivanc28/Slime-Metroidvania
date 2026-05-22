@@ -143,8 +143,8 @@ public class UIManager : MonoBehaviour
             prevCurrencyBeforeAccumulation--;
             currencyText.text = $"{prevCurrencyBeforeAccumulation}";
             accumulatedCurrency--;
-            currencyAccText.text = $"+{accumulatedCurrency}";
-            if (currencyTimer > 0)
+            currencyAccText.text = $"-{accumulatedCurrency}";
+            if (subCurrencyTimer > 0)
             {
                 yield break;
             }
