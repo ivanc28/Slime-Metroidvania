@@ -71,6 +71,7 @@ MonoBehaviour:
   currentAttachedCollider: {fileID: 0}
   zipDirection: 0
   attachingToZip: 0
+  zipColliders: []
   toolSelectorCanvas: {fileID: 3383839953130031409}
   selectWheelCenter: {fileID: 4162031183596903196}
   toolOptions:
@@ -83,6 +84,7 @@ MonoBehaviour:
   - {fileID: 4486851049758957817}
   - {fileID: 5559844837372388416}
   bubbleParticle: {fileID: 8475826247357860277}
+  flipTimeTheshold: 0.2
 --- !u!114 &2856085039485690102
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -73,9 +73,12 @@ public class Player : MonoBehaviour
     //[Header("Umbrella")]
     private bool umbrellaState;
 
-    // Currency
+    [Header("Currency")]
     public PlayerCurrency currencyData;
 
+    [Header("Animations")]
+    public float flipTimeTheshold;
+    private float flipTimer;
     // Interactions
     public bool InInteraction { get; set; }
 
@@ -127,6 +130,15 @@ public class Player : MonoBehaviour
         anim.SetBool("isGrappling", isAttaching || currHookBeingThrown != null);
         anim.SetBool("isGrappleLocked", isLockedOnGrapple);
         anim.SetBool("isZipping", zipping);
+        if (flipTimer > 0 && !isGrounded)
+        {
+            flipTimer -= Time.deltaTime;
+        }
+        if (isGrounded || zipping || isAttaching || currHookBeingThrown != null || isLockedOnGrapple)
+        {
+            flipTimer = flipTimeTheshold;
+        }
+        anim.SetBool("canFlip", flipTimer <= 0);
 
 
         if (InInteraction)
@@ -905,7 +917,6 @@ public class Player : MonoBehaviour
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(feetPos.position, data.feetRadius);
-
     }
 
 }
