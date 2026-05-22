@@ -39,8 +39,12 @@ public class Player : MonoBehaviour
     public float grappleRechargeTime;
     public float grappleRechargeTimer;
 
+    public Collider2D currentAttachedCollider;
+
     // Zipline
     private bool zipping;
+    public int zipDirection; // -1: left; 1: right; 0: not zipped
+    public bool attachingToZip;
 
     [Header("ToolSelection")]
     [SerializeField] GameObject toolSelectorCanvas;
@@ -188,15 +192,21 @@ public class Player : MonoBehaviour
             {
                 shouldJumpAfterDetach = isLockedOnGrapple;
                 DetachHook();
+                SetZipping(false);
+                Debug.Log("unzip");
             }
-            else if (zipping)
+            else if (IsZipping())
             {
                 shouldJumpAfterDetach = true;
+                SetZipping(false);
+                SetZipDirection(0);
+                Debug.Log("unzip");
             }
             if (shouldJumpAfterDetach)
             {
                 Jump();
             }
+            currentAttachedCollider = null;
         }
 
         #region Tool Selection
@@ -395,7 +405,7 @@ public class Player : MonoBehaviour
         hook.Initialize(this, dir, data.hookSpeed, data.baseGrappleLength, data.minGrappleLifetime, data.grappleObjects);
         currHookBeingThrown = hook;
     }
-    public void HookAttached(Vector2 point, HookProjectile hook)
+    public void HookAttached(Vector2 point, HookProjectile hook, Collider2D currentCollider)
     {
         if (currHookAttached != null && currHookAttached != hook)
         {
@@ -408,6 +418,8 @@ public class Player : MonoBehaviour
         hookPoint = point;
         isAttaching = true;
         isJumping = false;
+
+        currentAttachedCollider = currentCollider;
 
         rb.gravityScale = 0;
     }
@@ -566,14 +578,55 @@ public class Player : MonoBehaviour
     public void SetZipping(bool value)
     {
         zipping = value;
+        canRun = !value;
         canAdjustGravity = !value;
-        rb.gravityScale = 0;
-        if (value)
+    }
+    public bool IsZipping()
+    {
+        return zipping;
+    }
+    public void SetZipDirection(float n)
+    {
+        if (n > 0)
         {
-            rb.linearVelocity = new Vector2(0,0);
+            zipDirection = 1;
+        }
+        else if (n < 0)
+        {
+            zipDirection = -1;
+        }
+        else
+        {
+            zipDirection = 0;
         }
     }
+    public float GetMoveInput()
+    {
+        return moveInput;
+    }
+    public void AttachToZipline(Collider2D collision)
+    {
+        Vector2 closest = collision.ClosestPoint(transform.position);
+        closest.y = closest.y - (col as CircleCollider2D).radius;
+        Debug.Log(closest);
+        transform.position = closest;
+        rb.linearVelocity = new Vector2(0,0);
+        rb.gravityScale = 0;
+    }
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Zipline") && attachingToZip && isLockedOnGrapple && collision == currentAttachedCollider)
+        {
+            DetachHook();
+            SetZipping(true);
+            // lowLineCollider.enabled = true;
+            // Player.Instance.rb.gravityScale = 50;
+            Debug.Log("unhook");
+            AttachToZipline(collision);
+            attachingToZip = false;
+        }
+    }
 
     private void OnDrawGizmosSelected()
     {

@@ -42,7 +42,7 @@ MonoBehaviour:
   grappleObjects:
     serializedVersion: 2
     m_Bits: 72
-  initialMaxGrappleCharges: 5
+  initialMaxGrappleCharges: 50
   grappleRechargeTime: 0.25
   toolUseTime: 0.8
   interactKey: 101
@@ -50,4 +50,3 @@ MonoBehaviour:
   bubbleMoveSpeed: 12
   floatAccelAmount: 20
   floatDecelAmount: 12
-  distanceDialogueAboveHeadOffset: 0.75

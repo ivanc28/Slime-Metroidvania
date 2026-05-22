@@ -360,7 +360,7 @@ Transform:
   m_GameObject: {fileID: 295875284}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.2400007, y: 17.04, z: 0}
+  m_LocalPosition: {x: -6.89, y: 1.57, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1562,7 +1562,7 @@ Transform:
   m_GameObject: {fileID: 1105521941}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -18.31, y: 20.48, z: 0}
+  m_LocalPosition: {x: -25.65, y: 1.789999, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2032,7 +2032,7 @@ Transform:
   m_GameObject: {fileID: 1551793256}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -18.31, y: 21.54, z: 0}
+  m_LocalPosition: {x: -25.65, y: 2.85, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2187,7 +2187,7 @@ Transform:
   m_GameObject: {fileID: 1600254552}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17.510002, y: 21.700003, z: 0}
+  m_LocalPosition: {x: 7.54, y: 9.150002, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2422,7 +2422,7 @@ Transform:
   m_GameObject: {fileID: 1730255817}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17.510002, y: 20.640001, z: 0}
+  m_LocalPosition: {x: 7.54, y: 8.09, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2698,7 +2698,7 @@ Transform:
   m_GameObject: {fileID: 2064800589}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.2400007, y: 18.100002, z: 0}
+  m_LocalPosition: {x: -6.89, y: 2.6300015, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -20058,6 +20058,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3939033362369090521, guid: 5df7d5e734a991b4d851a0776d33f837, type: 3}
+      propertyPath: m_TagString
+      value: ZiplineAttachPoint
+      objectReference: {fileID: 0}
     - target: {fileID: 4100452309072477043, guid: 5df7d5e734a991b4d851a0776d33f837, type: 3}
       propertyPath: uiManager
       value: 
@@ -20069,6 +20073,14 @@ PrefabInstance:
     - target: {fileID: 5126447155626743955, guid: 5df7d5e734a991b4d851a0776d33f837, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
       value: 0.16949123
+      objectReference: {fileID: 0}
+    - target: {fileID: 6850540239200541166, guid: 5df7d5e734a991b4d851a0776d33f837, type: 3}
+      propertyPath: m_Radius
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 6850540239200541166, guid: 5df7d5e734a991b4d851a0776d33f837, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 6850540239200541166, guid: 5df7d5e734a991b4d851a0776d33f837, type: 3}
       propertyPath: m_IsTrigger

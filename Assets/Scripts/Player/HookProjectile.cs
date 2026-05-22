@@ -78,10 +78,14 @@ public class HookProjectile : MonoBehaviour
         // Check if the hit layer is within the grapple mask
         if (((1 << collision.gameObject.layer) & grappleMask) != 0)
         {
+            if (collision.gameObject.CompareTag("Zipline") && collision == player.currentAttachedCollider)
+            {
+                return;
+            }
             attached = true;
             rb.linearVelocity = Vector2.zero;
             Vector2 hitPoint = transform.position;
-            player.HookAttached(hitPoint, this);
+            player.HookAttached(hitPoint, this, collision);
         }
     }
 
