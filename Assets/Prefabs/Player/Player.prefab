@@ -58,6 +58,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 8233bdb19b671f74490694a30e2118b8, type: 2}
   uiManager: {fileID: 0}
   rb: {fileID: 611412721014228531}
+  anim: {fileID: 7686558863821911098}
   col: {fileID: 2676775612087949736}
   rend: {fileID: 5237681312361329521}
   feetPos: {fileID: 7648288525037105130}
@@ -66,6 +67,9 @@ MonoBehaviour:
   grappleCharges: 0
   grappleRechargeTime: 0
   grappleRechargeTimer: 0
+  currentAttachedCollider: {fileID: 0}
+  zipDirection: 0
+  attachingToZip: 0
   toolSelectorCanvas: {fileID: 3383839953130031409}
   selectWheelCenter: {fileID: 4162031183596903196}
   toolOptions:

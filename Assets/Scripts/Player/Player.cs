@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     private bool canAdjustGravity = true;
     [Header("Components")]
     public Rigidbody2D rb;
+    public Animator anim;
     [SerializeField] Collider2D col;
     [SerializeField] SpriteRenderer rend;
     [SerializeField] Transform feetPos;
@@ -107,6 +108,12 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // animations here? trying
+        anim.SetFloat("yVel", rb.linearVelocityY);
+        anim.SetFloat("speed", Mathf.Abs(rb.linearVelocityX));
+        anim.SetBool("isGrounded", isGrounded);
+
+
         if (InInteraction)
         {
             return;
