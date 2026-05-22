@@ -53,6 +53,7 @@ public class Player : MonoBehaviour
     private Vector2 zipVector;
     private List<EdgeCollider2D> zipColliders;
     private float ziplineSpeed;
+    private float zipCoyoteTimer;
 
     [Header("ToolSelection")]
     [SerializeField] GameObject toolSelectorCanvas;
@@ -100,6 +101,7 @@ public class Player : MonoBehaviour
         grappleRechargeTime = data.grappleRechargeTime;
         grappleRechargeTimer = 0;
         ziplineSpeed = data.ziplineSpeedValue;
+        zipCoyoteTimer = data.coyoteTime;
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -227,7 +229,7 @@ public class Player : MonoBehaviour
                 SetZipping(false);
                 Debug.Log("unzip");
             }
-            else if (IsZipping())
+            else if (IsZipping() || zipCoyoteTimer > 0)
             {
                 shouldJumpAfterDetach = true;
                 SetZipping(false);
@@ -238,6 +240,19 @@ public class Player : MonoBehaviour
                 Jump();
             }
             currentAttachedCollider = null;
+        }
+
+        // Zip Coyote Time
+        if (!zipping)
+        {
+            if(zipCoyoteTimer > 0)
+            {
+                zipCoyoteTimer -= Time.deltaTime;
+            }
+        }
+        else
+        {
+            coyoteTimer = data.coyoteTime;
         }
 
         #region Tool Selection
