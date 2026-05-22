@@ -26,11 +26,11 @@ public class ZiplineObj : GrappleObj
         lowLineColliders = new List<EdgeCollider2D>();
 
         // Add a LineRenderer component
-        LineRenderer lineRenderer = gameObject.AddComponent<LineRenderer>();
+        LineRenderer lineRenderer = GetComponent<LineRenderer>();
         // lineRenderer.material = lineMaterial;
         // Set the color
-        lineRenderer.startColor = Color.red;
-        lineRenderer.endColor = Color.green;
+        //lineRenderer.startColor = Color.red;
+        //lineRenderer.endColor = Color.green;
 
         // Set the width
         lineRenderer.startWidth = 0.2f;

@@ -730,6 +730,8 @@ public class Player : MonoBehaviour
         return umbrellaState;
     }
     // ------------
+
+    // ---- Zipping ----
     public void SetZipping(bool value)
     {
         zipping = value;
@@ -787,6 +789,7 @@ public class Player : MonoBehaviour
 
         zipVector = (rightZipPoint - leftZipPoint).normalized;
     }
+    // --------------
 
     private void OnTriggerStay2D(Collider2D collision)
     {
