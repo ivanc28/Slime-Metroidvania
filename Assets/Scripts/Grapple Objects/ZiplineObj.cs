@@ -142,7 +142,7 @@ public class ZiplineObj : GrappleObj
         if (collision.gameObject.CompareTag("Hook") && !Player.Instance.IsZipping())
         {
             Debug.Log("hooked");
-            EffectOnHookContact();
+            EffectOnHookContact(collision);
             Player.Instance.attachingToZip = true;
         }
     }
