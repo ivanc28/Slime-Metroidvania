@@ -2,7 +2,42 @@ fileFormatVersion: 2
 guid: 0218bfd042fcc8d4d8dfe7c8510df3bf
 ScriptedImporter:
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: flip
+    second: {fileID: 7400000, guid: 888e84bed21915b44850fae0907c181b, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: grapple
+    second: {fileID: 7400000, guid: 6935f7558c4795d43a8d1f8946e03cb4, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: idle
+    second: {fileID: 7400000, guid: bc3f721f13462f44f81a666aae37e608, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: land
+    second: {fileID: 7400000, guid: b6b90fbb4674a22449c6c64e7ee5c9dc, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: move
+    second: {fileID: 7400000, guid: 360e96abfcc708244889b6bceefa7f7a, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: moveToHook
+    second: {fileID: 7400000, guid: 97927e63fdfd31a43807ee72a173d2ca, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: talk
+    second: {fileID: 7400000, guid: 4d9815e5f64e1a8439f84e6eabecb651, type: 2}
   serializedVersion: 2
   userData: 
   assetBundleName: 
@@ -102,7 +137,7 @@ ScriptedImporter:
     generateIndividualEvents: 1
     generateSpriteAtlas: 1
   importFileNodeState: 1
-  platformSettingsDirtyTick: 639149699103387192
+  platformSettingsDirtyTick: 639150538294643397
   textureAssetName: 
   singleSpriteImportData:
   - name: 

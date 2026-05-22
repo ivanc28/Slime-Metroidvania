@@ -5868,6 +5868,10 @@ PrefabInstance:
       propertyPath: tool
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6766357248075687594, guid: baad90df90ecfa84ca5eddbf728b8ac8, type: 3}
+      propertyPath: toolImage
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7097360095395305542, guid: baad90df90ecfa84ca5eddbf728b8ac8, type: 3}
       propertyPath: m_Name
       value: NoneSelection

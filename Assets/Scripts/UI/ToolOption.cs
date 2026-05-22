@@ -8,6 +8,7 @@ public class ToolOption : MonoBehaviour
     public Image toolBG;
     public Image lockIcon;
     public PlayerTools.Tool tool;
+    public Image toolImage;
 
     private void Awake()
     {

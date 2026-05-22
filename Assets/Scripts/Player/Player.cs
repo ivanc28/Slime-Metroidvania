@@ -62,6 +62,7 @@ public class Player : MonoBehaviour
     [SerializeField] Transform selectWheelCenter;
     [SerializeField] ToolOption[] toolOptions;
     private bool toolSelectorEnabled;
+    private bool usingTool;
 
     [Header("Blowing Bubbles")]
     [SerializeField] ParticleSystem bubbleParticle;
@@ -260,7 +261,7 @@ public class Player : MonoBehaviour
         }
 
         #region Tool Selection
-        if (!InInteraction)
+        if (!InInteraction && !usingTool)
         {
             if (Input.GetMouseButton(1))
             {
@@ -287,6 +288,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(data.interactKey) && ((!InInteraction && !inBubble && isGrounded && !isAttaching && !isLockedOnGrapple && currHookBeingThrown == null) || onBubble))
         {
             StartCoroutine(UseTool());
+            EnableToolSelectionCanvas(false);
         }
         #endregion
         //// TEST
@@ -708,11 +710,16 @@ public class Player : MonoBehaviour
         int toolChoice = (int)(angle / (360 / toolOptions.Length));
         toolChoice = Mathf.Clamp(toolChoice, 0, toolOptions.Length - 1);
         tools.SwapTool(toolOptions[toolChoice].tool);
+        UIManager.Instance.UpdateToolDispay(toolOptions[toolChoice]);
         foreach(ToolOption option in toolOptions)
         {
             option.EnableToolBG(false);
         }
     }
+    /// <summary>
+    /// Used for UI Wheel Selector
+    /// </summary>
+    /// <param name="tool"></param>
     public void UnlockTool(PlayerTools.Tool tool)
     {
         foreach(ToolOption option in toolOptions)
@@ -736,6 +743,7 @@ public class Player : MonoBehaviour
             yield break;
         }
         yield return null;
+        usingTool = true;
         rb.sharedMaterial = data.someFriction;  // ensure we don't slide around when we start interacting
         InInteraction = true;
         // play tool animation or something
@@ -750,6 +758,7 @@ public class Player : MonoBehaviour
         }
         InInteraction = false;
         rb.sharedMaterial = null;
+        usingTool = false;
     }
     public void BlowBubbles()
     {
