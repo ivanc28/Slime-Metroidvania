@@ -217,7 +217,7 @@ public class Player : MonoBehaviour
         // Fire grappling hook if charges are available
         if (Input.GetMouseButtonDown(0) && grappleCharges > 0)
         {
-            grappleCharges -= 1;
+            grappleCharges--;
             UIManager.Instance.UpdateGrappleCharges();
             FireHook();
         }
@@ -676,6 +676,10 @@ public class Player : MonoBehaviour
     public bool GetHookBeingThrown()
     {
         return currHookBeingThrown != null;
+    }
+    public void IncrementGrappleCharges()
+    {
+        maxGrappleCharges++;
     }
     // -------------------
 
