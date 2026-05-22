@@ -119,6 +119,9 @@ public class Player : MonoBehaviour
         anim.SetFloat("yVel", rb.linearVelocityY);
         anim.SetFloat("speed", Mathf.Abs(rb.linearVelocityX));
         anim.SetBool("isGrounded", isGrounded);
+        anim.SetBool("isGrappling", isAttaching || currHookBeingThrown != null);
+        anim.SetBool("isGrappleLocked", isLockedOnGrapple);
+        anim.SetBool("isZipping", zipping);
 
 
         if (InInteraction)
@@ -131,9 +134,15 @@ public class Player : MonoBehaviour
         if (Keyboard.current != null)
         {
             if (Keyboard.current.aKey.isPressed)
+            {
                 move = -1;
+                FacingRight(false);
+            }
             if (Keyboard.current.dKey.isPressed)
+            {
                 move = 1;
+                FacingRight(true);
+            }
             if ((Keyboard.current.aKey.isPressed && Keyboard.current.dKey.isPressed) || (!Keyboard.current.aKey.isPressed && !Keyboard.current.dKey.isPressed))
                 move = 0;
         }
@@ -418,6 +427,10 @@ public class Player : MonoBehaviour
     {
         return rend;
     }
+    private void FacingRight(bool value)
+    {
+        rend.flipX = !value;
+    }
   
     private void Run(float lerpAmount)
     {
@@ -510,7 +523,14 @@ public class Player : MonoBehaviour
     {
         Vector2 dir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - hookFirePoint.position;
         dir.Normalize();
-
+        if(dir.x > 0)
+        {
+            FacingRight(true);
+        }
+        else
+        {
+            FacingRight(false);
+        }
         HookProjectile hook = Instantiate(hookPrefab, hookFirePoint.position, Quaternion.identity);
         hook.Initialize(this, dir, data.hookSpeed, data.baseGrappleLength, data.minGrappleLifetime, data.grappleObjects);
         currHookBeingThrown = hook;
