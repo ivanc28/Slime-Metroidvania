@@ -205,6 +205,7 @@ MonoBehaviour:
   toolBG: {fileID: 3006802367840559609}
   lockIcon: {fileID: 1745670607654364351}
   tool: 1
+  toolImage: {fileID: 2097854189366935555}
 --- !u!1 &7821956442714296693
 GameObject:
   m_ObjectHideFlags: 0

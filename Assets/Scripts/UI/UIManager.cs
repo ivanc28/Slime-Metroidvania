@@ -1,7 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
-using Unity.VisualScripting;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -23,6 +23,9 @@ public class UIManager : MonoBehaviour
     private float subCurrencyTimer;
     private bool subStartCurrencyTimer;
     private bool subStartedLosingCurrency;
+
+    [Header("Tool Display")]
+    [SerializeField] Image toolImage;
     public static UIManager Instance { get; private set; }
     private void Awake()
     {
@@ -170,5 +173,21 @@ public class UIManager : MonoBehaviour
     public void UpdateGrappleCharges()
     {
         grappleChargeText.text = (Player.Instance.grappleCharges + (Player.Instance.grappleRechargeTimer/Player.Instance.grappleRechargeTime)).ToString("0.0");
+    }
+
+    public void UpdateToolDispay(ToolOption toolOption)
+    {
+        if (Player.Instance.tools.HasTool(toolOption.tool))
+        {
+            if (toolOption.toolImage != null)
+            {
+                toolImage.sprite = toolOption.toolImage.sprite;
+                toolImage.color = Color.white;
+            }
+            else
+            {
+                toolImage.color = Color.clear;
+            }
+        }
     }
 }
