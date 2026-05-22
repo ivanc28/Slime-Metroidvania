@@ -54,4 +54,6 @@ public class PlayerData : ScriptableObject
     public Color choiceHoverColor;
     public Color choiceNotHoverColor;
     public Color choiceDisabledColor;
+    [Header("Zipline")]
+    public float ziplineSpeedValue;
 }

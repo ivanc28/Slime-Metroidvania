@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections.Generic;
 
 public class Player : MonoBehaviour
 {
@@ -47,6 +48,11 @@ public class Player : MonoBehaviour
     private bool zipping;
     public int zipDirection; // -1: left; 1: right; 0: not zipped
     public bool attachingToZip;
+    private Vector2 leftZipPoint;
+    private Vector2 rightZipPoint;
+    private Vector2 zipVector;
+    private List<EdgeCollider2D> zipColliders;
+    private float ziplineSpeed;
 
     [Header("ToolSelection")]
     [SerializeField] GameObject toolSelectorCanvas;
@@ -93,6 +99,7 @@ public class Player : MonoBehaviour
         grappleCharges = maxGrappleCharges;
         grappleRechargeTime = data.grappleRechargeTime;
         grappleRechargeTimer = 0;
+        ziplineSpeed = data.ziplineSpeedValue;
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -215,7 +222,6 @@ public class Player : MonoBehaviour
             {
                 shouldJumpAfterDetach = true;
                 SetZipping(false);
-                SetZipDirection(0);
                 Debug.Log("unzip");
             }
             if (shouldJumpAfterDetach)
@@ -293,6 +299,48 @@ public class Player : MonoBehaviour
         if (canRun)
         {
             Run(1);
+        }
+        if (IsZipping())
+        {
+            rb.linearVelocity = zipVector * zipDirection * ziplineSpeed;
+            if (Vector2.Distance(leftZipPoint, new Vector2(transform.position.x,transform.position.y)) <= 0.5f && zipDirection == -1)
+            {
+                int index = zipColliders.IndexOf(currentAttachedCollider as EdgeCollider2D);
+                if (index == 0)
+                {
+                    SetZipping(false);
+                    // Jump();
+                    currentAttachedCollider = null;
+                    rb.gravityScale = data.fallingGravity;
+                    isJumping = false;
+                }
+                else
+                {
+                    leftZipPoint = zipColliders[index-1].points[0];
+                    rightZipPoint = zipColliders[index-1].points[1];
+                    currentAttachedCollider = zipColliders[index-1];
+                    AttachToZipline(currentAttachedCollider);
+                }
+            }
+            if (Vector2.Distance(rightZipPoint, new Vector2(transform.position.x,transform.position.y)) <= 0.5f && zipDirection == 1)
+            {
+                int index = zipColliders.IndexOf(currentAttachedCollider as EdgeCollider2D);
+                if (index == zipColliders.Count - 1)
+                {
+                    SetZipping(false);
+                    // Jump();
+                    currentAttachedCollider = null;
+                    rb.gravityScale = data.fallingGravity;
+                    isJumping = false;
+                }
+                else
+                {
+                    leftZipPoint = zipColliders[index+1].points[0];
+                    rightZipPoint = zipColliders[index+1].points[1];
+                    currentAttachedCollider = zipColliders[index+1];
+                    AttachToZipline(currentAttachedCollider);
+                }
+            }
         }
         // Jumping
         #region Jumping
@@ -657,17 +705,13 @@ public class Player : MonoBehaviour
     }
     public void SetZipDirection(float n)
     {
-        if (n > 0)
-        {
-            zipDirection = 1;
-        }
-        else if (n < 0)
+        if (n < 0)
         {
             zipDirection = -1;
         }
         else
         {
-            zipDirection = 0;
+            zipDirection = 1;
         }
     }
     public float GetMoveInput()
@@ -680,8 +724,31 @@ public class Player : MonoBehaviour
         closest.y = closest.y - 0.3f;
         Debug.Log(closest);
         transform.position = closest;
+        SetZipDirection(rb.linearVelocityX);
+        Debug.Log(zipDirection);
         rb.linearVelocity = new Vector2(0,0);
+        SetZipping(true);
         rb.gravityScale = 0;
+        Zip();
+    }
+    void Zip()
+    {
+        Debug.Log("zip1");
+        zipColliders = currentAttachedCollider.gameObject.GetComponent<ZiplineObj>().GetLineColliders();
+        int index = zipColliders.IndexOf(currentAttachedCollider as EdgeCollider2D);
+        
+        leftZipPoint = zipColliders[index].points[0];
+        rightZipPoint = zipColliders[index].points[1];
+        if (leftZipPoint.x > rightZipPoint.x)
+        {
+            Vector2 temp = leftZipPoint;
+            leftZipPoint = rightZipPoint;
+            rightZipPoint = temp;
+        }
+        Debug.Log(leftZipPoint.x);
+        Debug.Log(rightZipPoint.x);
+
+        zipVector = (rightZipPoint - leftZipPoint).normalized;
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -689,7 +756,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Zipline") && attachingToZip && isLockedOnGrapple && collision == currentAttachedCollider)
         {
             DetachHook();
-            SetZipping(true);
+            
             // lowLineCollider.enabled = true;
             // Player.Instance.rb.gravityScale = 50;
             Debug.Log("unhook");
