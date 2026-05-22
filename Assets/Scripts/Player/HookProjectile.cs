@@ -49,7 +49,7 @@ public class HookProjectile : MonoBehaviour
             rb.linearVelocity = moveVel;
 
             lifetime -= Time.deltaTime;
-            float distanceFromPlayer = Vector2.Distance(transform.position, player.transform.position);
+            float distanceFromPlayer = Vector2.Distance(transform.position, player.hookFirePoint.position);
 
             if (distanceFromPlayer > length && lifetime <= 0)
             {
@@ -67,7 +67,7 @@ public class HookProjectile : MonoBehaviour
         else
         {
             hookLine.enabled = true;
-            hookLine.SetPosition(0, player.transform.position);
+            hookLine.SetPosition(0, player.hookFirePoint.position);
             hookLine.SetPosition(1, transform.position);
         }
     }

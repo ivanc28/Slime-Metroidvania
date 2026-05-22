@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7561695776983823848}
   - component: {fileID: 4100452309072477043}
-  - component: {fileID: 611412721014228531}
-  - component: {fileID: 6488276358241451689}
   - component: {fileID: 2856085039485690102}
+  - component: {fileID: 611412721014228531}
+  - component: {fileID: 2676775612087949736}
+  - component: {fileID: 7686558863821911098}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -35,6 +36,7 @@ Transform:
   m_Children:
   - {fileID: 2335891057008057496}
   - {fileID: 7648288525037105130}
+  - {fileID: 6981788117458435727}
   - {fileID: 7218403313237224577}
   - {fileID: 4162031183596903196}
   - {fileID: 2736336437840373685}
@@ -56,11 +58,11 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 8233bdb19b671f74490694a30e2118b8, type: 2}
   uiManager: {fileID: 0}
   rb: {fileID: 611412721014228531}
-  col: {fileID: 6488276358241451689}
+  col: {fileID: 2676775612087949736}
   rend: {fileID: 5237681312361329521}
   feetPos: {fileID: 7648288525037105130}
   hookPrefab: {fileID: 5154775660519359415, guid: c887a7fcd43c65e46b1a773d469497fc, type: 3}
-  isLockedOnGrapple: 0
+  hookFirePoint: {fileID: 6981788117458435727}
   grappleCharges: 0
   grappleRechargeTime: 0
   grappleRechargeTimer: 0
@@ -76,6 +78,18 @@ MonoBehaviour:
   - {fileID: 4486851049758957817}
   - {fileID: 5559844837372388416}
   bubbleParticle: {fileID: 8475826247357860277}
+--- !u!114 &2856085039485690102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638892935657975172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 171fd132191ec3e43bcef1d1c83bd82f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerTalking
 --- !u!50 &611412721014228531
 Rigidbody2D:
   serializedVersion: 5
@@ -103,8 +117,8 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!58 &6488276358241451689
-CircleCollider2D:
+--- !u!70 &2676775612087949736
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -137,20 +151,31 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
---- !u!114 &2856085039485690102
-MonoBehaviour:
+  m_Offset: {x: -0.000000033090814, y: 0.35}
+  m_Size: {x: 1.0000004, y: 0.70000654}
+  m_Direction: 1
+--- !u!95 &7686558863821911098
+Animator:
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 638892935657975172}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 171fd132191ec3e43bcef1d1c83bd82f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerTalking
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 91f4c421b1ebcc54d8d4f02404e47b27, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2733444690839863186
 GameObject:
   m_ObjectHideFlags: 0
@@ -5265,8 +5290,8 @@ LineRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
-        value: 1
+        time: 0.018050542
+        value: 0.16949123
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -5316,6 +5341,37 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!1 &3754804518863733474
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6981788117458435727}
+  m_Layer: 0
+  m_Name: HookFIrePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6981788117458435727
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3754804518863733474}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.382, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7561695776983823848}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3939033362369090521
 GameObject:
   m_ObjectHideFlags: 0
@@ -5342,7 +5398,7 @@ Transform:
   m_GameObject: {fileID: 3939033362369090521}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.415, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5409,7 +5465,7 @@ Transform:
   m_GameObject: {fileID: 4856934098622976508}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.302, z: 0}
+  m_LocalPosition: {x: 0, y: 0.247, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5496,7 +5552,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 368543389579951487, guid: 85cf410e25fb0cd4eb2d3ca0eb4dd2a6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

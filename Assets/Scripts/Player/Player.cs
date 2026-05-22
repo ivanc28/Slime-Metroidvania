@@ -23,21 +23,22 @@ public class Player : MonoBehaviour
     [SerializeField] SpriteRenderer rend;
     [SerializeField] Transform feetPos;
     [SerializeField] HookProjectile hookPrefab;
+    public Transform hookFirePoint;
 
     HookProjectile currHookAttached;
     HookProjectile currHookBeingThrown;
     bool isAttaching;
-    [SerializeField] bool isLockedOnGrapple;
+    bool isLockedOnGrapple;
     Vector2 hookPoint;
 
     // Tools
     public PlayerTools tools;
 
-    // Grapple charges
-    public int grappleCharges;
+    // Grappling
+    [HideInInspector] public int grappleCharges;
     private int maxGrappleCharges;
-    public float grappleRechargeTime;
-    public float grappleRechargeTimer;
+    [HideInInspector] public float grappleRechargeTime;
+    [HideInInspector] public float grappleRechargeTimer;
 
     // Zipline
     private bool zipping;
@@ -440,10 +441,10 @@ public class Player : MonoBehaviour
     // ---- GRAPPLE ----
     private void FireHook()
     {
-        Vector2 dir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        Vector2 dir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - hookFirePoint.position;
         dir.Normalize();
 
-        HookProjectile hook = Instantiate(hookPrefab, transform.position, Quaternion.identity);
+        HookProjectile hook = Instantiate(hookPrefab, hookFirePoint.position, Quaternion.identity);
         hook.Initialize(this, dir, data.hookSpeed, data.baseGrappleLength, data.minGrappleLifetime, data.grappleObjects);
         currHookBeingThrown = hook;
     }
