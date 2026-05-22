@@ -42,12 +42,12 @@ public class Player : MonoBehaviour
     [HideInInspector] public float grappleRechargeTime;
     [HideInInspector] public float grappleRechargeTimer;
 
-    public Collider2D currentAttachedCollider;
+    [HideInInspector] public Collider2D currentAttachedCollider;
 
     // Zipline
     private bool zipping;
-    public int zipDirection; // -1: left; 1: right; 0: not zipped
-    public bool attachingToZip;
+    [HideInInspector] public int zipDirection; // -1: left; 1: right; 0: not zipped
+    [HideInInspector] public bool attachingToZip;
     private Vector2 leftZipPoint;
     private Vector2 rightZipPoint;
     private Vector2 zipVector;
@@ -300,6 +300,7 @@ public class Player : MonoBehaviour
         {
             Run(1);
         }
+        #region Zipline
         if (IsZipping())
         {
             rb.linearVelocity = zipVector * zipDirection * ziplineSpeed;
@@ -342,6 +343,7 @@ public class Player : MonoBehaviour
                 }
             }
         }
+        #endregion
         // Jumping
         #region Jumping
         if (pressedJump && (isGrounded || coyoteTimer > 0))
@@ -721,12 +723,12 @@ public class Player : MonoBehaviour
     public void AttachToZipline(Collider2D collision)
     {
         Vector2 closest = collision.ClosestPoint(transform.position);
-        closest.y = closest.y - 0.3f;
+        closest.y -= 0.3f;
         Debug.Log(closest);
         transform.position = closest;
         SetZipDirection(rb.linearVelocityX);
         Debug.Log(zipDirection);
-        rb.linearVelocity = new Vector2(0,0);
+        rb.linearVelocity = Vector2.zero;
         SetZipping(true);
         rb.gravityScale = 0;
         Zip();
