@@ -70,19 +70,7 @@ public class ZiplineObj : GrappleObj
     // Update is called once per frame
     void Update()
     {
-        if (Player.Instance.IsZipping())
-        {
-            if (Player.Instance.GetMoveInput() < 0 && Player.Instance.zipDirection == 1)
-            {
-                Debug.Log("a");
-                Player.Instance.SetZipDirection(-1);
-            }
-            if (Player.Instance.GetMoveInput() > 0 && Player.Instance.zipDirection == -1)
-            {
-                Debug.Log("d");
-                Player.Instance.SetZipDirection(1);
-            }
-        }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
