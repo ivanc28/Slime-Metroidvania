@@ -66,6 +66,19 @@ public abstract class Interactables : MonoBehaviour
             pebble.rb.linearVelocity = dir * data.pebbleLaunchSpeed;
         }
     }
+
+    public void SpawnCollectable()
+    {
+        if(data.collectablePrefab != null)
+        {
+            Collectable collectable = Instantiate(data.collectablePrefab, transform.position, Quaternion.identity);
+            collectable.Initialize(data.collectablePickupDelay);
+            Quaternion rotation = Quaternion.AngleAxis(Random.Range(-data.collectableLaunchMaxAngle, data.collectableLaunchMaxAngle), Vector3.forward);
+            Vector2 dir = (rotation * Vector2.up).normalized;
+            collectable.rb.linearVelocity = dir * data.collectableLaunchSpeed;
+        }
+
+    }
     public RoomData GetRoomOfInteractable()
     {
         return room;

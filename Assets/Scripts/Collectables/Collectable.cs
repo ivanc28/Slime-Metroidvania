@@ -6,8 +6,9 @@ public abstract class Collectable : MonoBehaviour
     public CollectableData data;
     public string collectableID;
     public GameObject keyIcon;
+    public Rigidbody2D rb;
     private bool inRange;
-
+    private float pickupTime;
     RoomData room;
     private void Start()
     {
@@ -22,10 +23,18 @@ public abstract class Collectable : MonoBehaviour
         }
         EnableKeyIcon(false);
     }
+    public void Initialize(float timeBeforePickup)
+    {
+        pickupTime = timeBeforePickup;
+    }
     private void Update()
     {
+        if(pickupTime > 0)
+        {
+            pickupTime -= Time.deltaTime;
+        }
         inRange = Vector2.Distance(transform.position, Player.Instance.transform.position) <= data.maxDistanceToCollect;
-        if (inRange)
+        if (inRange && pickupTime <= 0)
         {
             EnableKeyIcon(true);
             if (Input.GetKeyDown(data.pickupKey) && CanCollect())

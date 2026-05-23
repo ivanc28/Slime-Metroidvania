@@ -233,6 +233,8 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: a73c3039338dffc4d8df4aaefab2420c, type: 2}
   collectableID: SampleScene_Food01
   keyIcon: {fileID: 3343622880750300710}
+  rb: {fileID: 1920031591507770918}
+  consumableType: 0
 --- !u!61 &9211548040890170318
 BoxCollider2D:
   m_ObjectHideFlags: 0
