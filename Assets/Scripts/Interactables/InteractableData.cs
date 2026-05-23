@@ -14,7 +14,6 @@ public class InteractableData : ScriptableObject
     public float pebbleLaunchSpeed;
     public float pebbleLaunchMaxAngle;
     [Header("Optional Collectable Spawning Data")]
-    public Collectable collectablePrefab;
     public float collectablePickupDelay;
     public float collectableLaunchSpeed;
     public float collectableLaunchMaxAngle;

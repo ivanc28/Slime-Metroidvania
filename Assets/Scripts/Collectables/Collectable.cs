@@ -25,6 +25,7 @@ public abstract class Collectable : MonoBehaviour
     }
     public void Initialize(float timeBeforePickup)
     {
+        gameObject.SetActive(true);
         pickupTime = timeBeforePickup;
     }
     private void Update()

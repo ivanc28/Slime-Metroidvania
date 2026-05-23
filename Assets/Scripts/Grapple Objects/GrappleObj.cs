@@ -45,7 +45,6 @@ public abstract class GrappleObj : MonoBehaviour
     {
         hookedCollider = hitCollider;
         hookAttached = true;
-        Debug.Log("YAY");
     }
     public virtual void DetachHook()
     {
