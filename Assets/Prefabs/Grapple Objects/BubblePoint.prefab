@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2335034518909459281}
   m_Layer: 6
   m_Name: BubblePoint
-  m_TagString: Untagged
+  m_TagString: GrappleableNoRepeat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -263,3 +263,4 @@ MonoBehaviour:
   interactableID: 
   data: {fileID: 11400000, guid: 7657b715de82a8540a5381406031311c, type: 2}
   numPebbles: 0
+  collectablePrefab: {fileID: 0}
