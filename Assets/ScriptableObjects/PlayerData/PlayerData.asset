@@ -36,6 +36,7 @@ MonoBehaviour:
   jumpBuffer: 0.1
   coyoteTime: 0.1
   baseGrappleLength: 10
+  grappleLengthIncrements: 2
   minGrappleLifetime: 0.3
   attachSpeed: 25
   hookSpeed: 27

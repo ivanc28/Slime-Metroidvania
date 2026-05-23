@@ -132,6 +132,7 @@ public class Player : MonoBehaviour
         anim.SetFloat("yVel", rb.linearVelocityY);
         anim.SetFloat("speed", Mathf.Abs(rb.linearVelocityX));
         anim.SetBool("isGrounded", isGrounded);
+        anim.SetBool("isAttaching", isAttaching);
         anim.SetBool("isGrappling", isAttaching || currHookBeingThrown != null);
         anim.SetBool("isGrappleLocked", isLockedOnGrapple);
         anim.SetBool("isZipping", zipping);
