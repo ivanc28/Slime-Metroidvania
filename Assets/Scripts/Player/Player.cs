@@ -73,8 +73,10 @@ public class Player : MonoBehaviour
     //[Header("Umbrella")]
     private bool umbrellaState;
 
-    [Header("Currency")]
+    //[Header("Currency")]
     public PlayerCurrency currencyData;
+    //[Header("Inventory")]
+    public PlayerInventory inventory;
 
     [Header("Animations")]
     public float flipTimeTheshold;
@@ -102,6 +104,7 @@ public class Player : MonoBehaviour
         coyoteTimer = data.coyoteTime;
         tools = new PlayerTools();
         currencyData = new PlayerCurrency();
+        inventory = new PlayerInventory();
         maxGrappleCharges = data.initialMaxGrappleCharges;
         grappleCharges = maxGrappleCharges;
         grappleRechargeTime = data.grappleRechargeTime;
