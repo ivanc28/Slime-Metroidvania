@@ -11,6 +11,10 @@ public abstract class Collectable : MonoBehaviour
     RoomData room;
     private void Start()
     {
+        MakeStart();
+    }
+    public virtual void MakeStart()
+    {
         room = GameManager.Instance.GetCurrRoomData();
         if (room.collectedCollectables.Contains(collectableID))
         {
