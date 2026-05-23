@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
-  m_Name: rock candy pole
+  m_Name: autotile rock candy blue
   m_EditorClassIdentifier: Unity.2D.Tilemap.Extras::UnityEngine.RuleTile
-  m_DefaultSprite: {fileID: 0}
+  m_DefaultSprite: {fileID: 6877930135490508475, guid: e02522f916428494fa62c5e84fc11422, type: 3}
   m_DefaultGameObject: {fileID: 0}
   m_DefaultColliderType: 1
   m_TilingRules:
   - m_Id: 0
     m_Sprites:
-    - {fileID: -755139954442191551, guid: e02522f916428494fa62c5e84fc11422, type: 3}
+    - {fileID: 6877930135490508475, guid: e02522f916428494fa62c5e84fc11422, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
@@ -32,7 +32,7 @@ MonoBehaviour:
     m_RuleTransform: 0
   - m_Id: 1
     m_Sprites:
-    - {fileID: 8763885590306332915, guid: e02522f916428494fa62c5e84fc11422, type: 3}
+    - {fileID: -7726049428465660351, guid: e02522f916428494fa62c5e84fc11422, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
@@ -47,7 +47,7 @@ MonoBehaviour:
     m_RuleTransform: 0
   - m_Id: 3
     m_Sprites:
-    - {fileID: 4061132062844436977, guid: e02522f916428494fa62c5e84fc11422, type: 3}
+    - {fileID: -492099559687004281, guid: e02522f916428494fa62c5e84fc11422, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
@@ -62,7 +62,7 @@ MonoBehaviour:
     m_RuleTransform: 0
   - m_Id: 4
     m_Sprites:
-    - {fileID: -4527823311704287852, guid: e02522f916428494fa62c5e84fc11422, type: 3}
+    - {fileID: -4907097170949675939, guid: e02522f916428494fa62c5e84fc11422, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
@@ -76,7 +76,7 @@ MonoBehaviour:
     m_RuleTransform: 0
   - m_Id: 2
     m_Sprites:
-    - {fileID: 4271782401528013575, guid: e02522f916428494fa62c5e84fc11422, type: 3}
+    - {fileID: -5228756499524606609, guid: e02522f916428494fa62c5e84fc11422, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
