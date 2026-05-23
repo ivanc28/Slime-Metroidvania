@@ -137,7 +137,7 @@ public class Player : MonoBehaviour
         {
             flipTimer -= Time.deltaTime;
         }
-        if (isGrounded || zipping || isAttaching || currHookBeingThrown != null || isLockedOnGrapple)
+        if (isGrounded || zipping || isAttaching || currHookBeingThrown != null || isLockedOnGrapple || inBubble)
         {
             flipTimer = flipTimeTheshold;
         }
@@ -358,7 +358,7 @@ public class Player : MonoBehaviour
                 Debug.Log("d");
                 SetZipDirection(1);
             }
-            rb.linearVelocity = zipVector * zipDirection * ziplineSpeed;
+            rb.linearVelocity = zipDirection * ziplineSpeed * zipVector;
             if (Vector2.Distance(leftZipPoint, new Vector2(transform.position.x,transform.position.y)) <= 0.5f && zipDirection == -1)
             {
                 SetZipping(false);
@@ -481,48 +481,34 @@ public class Player : MonoBehaviour
             {
                 if (isJumping)
                 {
-                    rb.gravityScale = data.risingGravity;
+                    SetGravityToRising();
                 }
             }
             else
             {
-                rb.gravityScale = data.fallingGravity;
-                isJumping = false;
-            }
-        }
-
-        if (umbrellaState)
-        {
-            if (rb.linearVelocityY > 0.01f)
-            {
-                if (isJumping)
-                {
-                    rb.gravityScale = data.umbrellaJumpGravity;
-                }
-            }
-            else
-            {
-                rb.gravityScale = data.umbrellaFallingGravity;
+                SetGravityToFalling();
                 isJumping = false;
             }
         }
 
         // Terminal fall speed
-        if (!umbrellaState)
+        if (!zipping)
         {
-            if (rb.linearVelocityY < data.terminalFallVel)
+            if (!umbrellaState)
             {
-                rb.linearVelocityY = data.terminalFallVel;
+                if (rb.linearVelocityY < data.terminalFallVel)
+                {
+                    rb.linearVelocityY = data.terminalFallVel;
+                }
             }
-        }
-        else
-        {
-            if (rb.linearVelocityY < -data.umbrellaDescendSpeed)
+            else
             {
-                rb.linearVelocityY = -data.umbrellaDescendSpeed;
+                if (rb.linearVelocityY < -data.umbrellaDescendSpeed)
+                {
+                    rb.linearVelocityY = -data.umbrellaDescendSpeed;
+                }
             }
-        }
-        
+        }        
 
     }
 
@@ -618,6 +604,17 @@ public class Player : MonoBehaviour
         else
         {
             rb.gravityScale = data.umbrellaFallingGravity;
+        }
+    }
+    public void SetGravityToRising()
+    {
+        if (!umbrellaState)
+        {
+            rb.gravityScale = data.risingGravity;
+        }
+        else
+        {
+            rb.gravityScale = data.umbrellaJumpGravity;
         }
     }
 
@@ -823,7 +820,6 @@ public class Player : MonoBehaviour
     public void ToggleUmbrella()
     {
         umbrellaState = !umbrellaState;
-        canAdjustGravity = !umbrellaState;
     }
     public bool IsUsingUmbrella()
     {

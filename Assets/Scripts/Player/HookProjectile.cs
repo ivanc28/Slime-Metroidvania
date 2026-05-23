@@ -84,7 +84,8 @@ public class HookProjectile : MonoBehaviour
             }
             attached = true;
             rb.linearVelocity = Vector2.zero;
-            Vector2 hitPoint = transform.position;
+            Vector2 hitPoint = collision.ClosestPoint(transform.position);
+            transform.position = hitPoint;
             player.HookAttached(hitPoint, this, collision);
         }
     }
