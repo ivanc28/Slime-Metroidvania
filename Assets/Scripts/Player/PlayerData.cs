@@ -30,6 +30,7 @@ public class PlayerData : ScriptableObject
     public float coyoteTime;
     [Header("Grapple")]
     public float baseGrappleLength;
+    public float grappleLengthIncrements;
     public float minGrappleLifetime;
     public float attachSpeed;
     public float hookSpeed;

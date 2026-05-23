@@ -43,6 +43,7 @@ public class Player : MonoBehaviour
     [HideInInspector] public float grappleRechargeTimer;
 
     [HideInInspector] public Collider2D currentAttachedCollider;
+    private float grappleLength;
 
     // Zipline
     private bool zipping;
@@ -109,6 +110,7 @@ public class Player : MonoBehaviour
         grappleCharges = maxGrappleCharges;
         grappleRechargeTime = data.grappleRechargeTime;
         grappleRechargeTimer = 0;
+        grappleLength = data.baseGrappleLength;
         ziplineSpeed = data.ziplineSpeedValue;
         zipCoyoteTimer = data.coyoteTime;
     }
@@ -217,7 +219,7 @@ public class Player : MonoBehaviour
                 }
                 else
                 {
-                    grappleCharges += 1;
+                    grappleCharges++;
                     grappleRechargeTimer = 0;
                     UIManager.Instance.UpdateGrappleCharges();
                 }
@@ -634,7 +636,7 @@ public class Player : MonoBehaviour
         }
         Vector2 spawnPos = (Vector2)hookFirePoint.position + dir * data.hookSpawnOffset;
         HookProjectile hook = Instantiate(hookPrefab, spawnPos, Quaternion.identity);
-        hook.Initialize(this, dir, data.hookSpeed, data.baseGrappleLength, data.minGrappleLifetime, data.grappleObjects);
+        hook.Initialize(this, dir, data.hookSpeed, grappleLength, data.minGrappleLifetime, data.grappleObjects);
         currHookBeingThrown = hook;
     }
     public void HookAttached(Vector2 point, HookProjectile hook, Collider2D currentCollider)
@@ -699,6 +701,10 @@ public class Player : MonoBehaviour
     public void IncrementGrappleCharges()
     {
         maxGrappleCharges++;
+    }
+    public void IncreaseGrappleLength()
+    {
+        grappleLength += data.grappleLengthIncrements;
     }
     // -------------------
 
