@@ -16,6 +16,6 @@ MonoBehaviour:
   line: ahh yes it's very white
   choices:
   - choiceText: 
-    nextNode: {fileID: 11400000, guid: 6ed55e81c64f9a24088dbc34d9c1a180, type: 2}
+    nextNode: {fileID: 11400000, guid: 479e56d474d45504babc74d41e4c57d7, type: 2}
     dialogueEvent: {fileID: 0}
     condition: {fileID: 0}
