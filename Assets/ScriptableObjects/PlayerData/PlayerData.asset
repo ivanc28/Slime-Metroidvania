@@ -39,6 +39,7 @@ MonoBehaviour:
   minGrappleLifetime: 0.3
   attachSpeed: 25
   hookSpeed: 27
+  hookSpawnOffset: 0.5
   grappleObjects:
     serializedVersion: 2
     m_Bits: 72

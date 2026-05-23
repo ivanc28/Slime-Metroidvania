@@ -33,6 +33,7 @@ public class PlayerData : ScriptableObject
     public float minGrappleLifetime;
     public float attachSpeed;
     public float hookSpeed;
+    public float hookSpawnOffset;
     public LayerMask grappleObjects;
     public int initialMaxGrappleCharges;
     public float grappleRechargeTime;

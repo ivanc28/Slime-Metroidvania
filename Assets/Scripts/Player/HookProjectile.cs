@@ -78,7 +78,7 @@ public class HookProjectile : MonoBehaviour
         // Check if the hit layer is within the grapple mask
         if (((1 << collision.gameObject.layer) & grappleMask) != 0)
         {
-            if (collision.gameObject.CompareTag("Zipline") && collision == player.currentAttachedCollider)
+            if (collision == player.currentAttachedCollider && collision.gameObject.CompareTag("Zipline"))
             {
                 return;
             }
