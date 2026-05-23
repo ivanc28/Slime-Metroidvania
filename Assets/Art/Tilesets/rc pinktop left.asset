@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
-  m_Name: autotile rock candy pink
+  m_Name: rc pinktop left
   m_EditorClassIdentifier: Unity.2D.Tilemap.Extras::UnityEngine.RuleTile
-  m_DefaultSprite: {fileID: -351661394541252313, guid: e02522f916428494fa62c5e84fc11422, type: 3}
+  m_DefaultSprite: {fileID: 4620341112300377913, guid: e02522f916428494fa62c5e84fc11422, type: 3}
   m_DefaultGameObject: {fileID: 0}
   m_DefaultColliderType: 1
   m_TilingRules:
   - m_Id: 0
     m_Sprites:
-    - {fileID: -351661394541252313, guid: e02522f916428494fa62c5e84fc11422, type: 3}
+    - {fileID: 4620341112300377913, guid: e02522f916428494fa62c5e84fc11422, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
@@ -28,11 +28,11 @@ MonoBehaviour:
     m_RandomTransform: 0
     m_Neighbors: 02000000
     m_NeighborPositions:
-    - {x: 0, y: 1, z: 0}
+    - {x: -1, y: 0, z: 0}
     m_RuleTransform: 0
   - m_Id: 1
     m_Sprites:
-    - {fileID: 3083598389850843056, guid: e02522f916428494fa62c5e84fc11422, type: 3}
+    - {fileID: 3997812637588290544, guid: e02522f916428494fa62c5e84fc11422, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
@@ -42,12 +42,12 @@ MonoBehaviour:
     m_RandomTransform: 0
     m_Neighbors: 0100000002000000
     m_NeighborPositions:
-    - {x: 0, y: 1, z: 0}
-    - {x: 0, y: 2, z: 0}
+    - {x: -1, y: 0, z: 0}
+    - {x: -2, y: 0, z: 0}
     m_RuleTransform: 0
   - m_Id: 3
     m_Sprites:
-    - {fileID: 285316637450624705, guid: e02522f916428494fa62c5e84fc11422, type: 3}
+    - {fileID: 8573893048858575070, guid: e02522f916428494fa62c5e84fc11422, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
@@ -57,12 +57,12 @@ MonoBehaviour:
     m_RandomTransform: 0
     m_Neighbors: 0100000002000000
     m_NeighborPositions:
-    - {x: 0, y: -1, z: 0}
-    - {x: 0, y: -2, z: 0}
+    - {x: 1, y: 0, z: 0}
+    - {x: 2, y: 0, z: 0}
     m_RuleTransform: 0
   - m_Id: 4
     m_Sprites:
-    - {fileID: -3932919589546885275, guid: e02522f916428494fa62c5e84fc11422, type: 3}
+    - {fileID: 1168173102300793587, guid: e02522f916428494fa62c5e84fc11422, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
@@ -72,11 +72,11 @@ MonoBehaviour:
     m_RandomTransform: 0
     m_Neighbors: 02000000
     m_NeighborPositions:
-    - {x: 0, y: -1, z: 0}
+    - {x: 1, y: 0, z: 0}
     m_RuleTransform: 0
   - m_Id: 2
     m_Sprites:
-    - {fileID: -9127353443897748249, guid: e02522f916428494fa62c5e84fc11422, type: 3}
+    - {fileID: 2930307673037682409, guid: e02522f916428494fa62c5e84fc11422, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
