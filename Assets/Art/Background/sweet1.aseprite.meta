@@ -127,7 +127,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: BG color
+  - name: cave walls back
     originalName: 
     pivot: {x: 0.5, y: -0.4962963}
     alignment: 9
@@ -139,27 +139,6 @@ ScriptedImporter:
       y: 1075
       width: 480
       height: 270
-    spriteID: 399cb142d46b83d42aff1a2ca403d117
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 1075}
-  - name: cave walls back
-    originalName: 
-    pivot: {x: 0.5, y: -0.72985786}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 1353
-      width: 480
-      height: 211
     spriteID: 57ddc20fdf42e2a479817e1fe966a6b2
     spriteBone: []
     spriteOutline: []
@@ -168,7 +147,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 1353}
+    uvTransform: {x: 4, y: 1075}
   - name: cave walls mid
     originalName: 
     pivot: {x: 0.5, y: -0.3302469}
@@ -241,7 +220,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 1572
+      y: 1353
       width: 473
       height: 112
     spriteID: 734c272bd7daf994b84b47192bc97cdb
@@ -252,36 +231,11 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 1572}
+    uvTransform: {x: 4, y: 1353}
   spriteSheetImportData: []
   tileSetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    uuid:
-      value0: 621099202
-      value1: 0
-      value2: 0
-      value3: 0
-    guid: 0
-    name: BG color
-    layerFlags: 3
-    layerType: 0
-    blendMode: 0
-    cells:
-    - name: BG color
-      frameIndex: 0
-      additiveSortOrder: 0
-      cellRect:
-        x: 240
-        y: 134
-        width: 480
-        height: 270
-      spriteId: 399cb142d46b83d42aff1a2ca403d117
-    linkedCells: []
-    tileCells: []
-    tileSetIndex: 0
-    parentIndex: -1
-  - layerIndex: 1
     uuid:
       value0: 524665503
       value1: 0
@@ -298,15 +252,15 @@ ScriptedImporter:
       additiveSortOrder: 0
       cellRect:
         x: 240
-        y: 154
+        y: 134
         width: 480
-        height: 211
+        height: 270
       spriteId: 57ddc20fdf42e2a479817e1fe966a6b2
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
     parentIndex: -1
-  - layerIndex: 2
+  - layerIndex: 1
     uuid:
       value0: 2464679604
       value1: 0
@@ -331,7 +285,7 @@ ScriptedImporter:
     tileCells: []
     tileSetIndex: 0
     parentIndex: -1
-  - layerIndex: 3
+  - layerIndex: 2
     uuid:
       value0: 3855778437
       value1: 0
@@ -356,7 +310,7 @@ ScriptedImporter:
     tileCells: []
     tileSetIndex: 0
     parentIndex: -1
-  - layerIndex: 4
+  - layerIndex: 3
     uuid:
       value0: 151036112
       value1: 0
@@ -381,7 +335,7 @@ ScriptedImporter:
     tileCells: []
     tileSetIndex: 0
     parentIndex: -1
-  - layerIndex: 5
+  - layerIndex: 4
     uuid:
       value0: 3652290796
       value1: 0
@@ -406,7 +360,7 @@ ScriptedImporter:
     tileCells: []
     tileSetIndex: 0
     parentIndex: -1
-  - layerIndex: 6
+  - layerIndex: 5
     uuid:
       value0: 64694410
       value1: 0
