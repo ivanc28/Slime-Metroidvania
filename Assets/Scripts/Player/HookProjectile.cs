@@ -49,7 +49,7 @@ public class HookProjectile : MonoBehaviour
             rb.linearVelocity = moveVel;
 
             lifetime -= Time.deltaTime;
-            float distanceFromPlayer = Vector2.Distance(transform.position, player.transform.position);
+            float distanceFromPlayer = Vector2.Distance(transform.position, player.hookFirePoint.position);
 
             if (distanceFromPlayer > length && lifetime <= 0)
             {
@@ -67,7 +67,7 @@ public class HookProjectile : MonoBehaviour
         else
         {
             hookLine.enabled = true;
-            hookLine.SetPosition(0, player.transform.position);
+            hookLine.SetPosition(0, player.hookFirePoint.position);
             hookLine.SetPosition(1, transform.position);
         }
     }
@@ -78,10 +78,16 @@ public class HookProjectile : MonoBehaviour
         // Check if the hit layer is within the grapple mask
         if (((1 << collision.gameObject.layer) & grappleMask) != 0)
         {
+            if (collision == player.currentAttachedCollider && collision.gameObject.CompareTag("Zipline"))
+            {
+                return;
+            }
             attached = true;
             rb.linearVelocity = Vector2.zero;
-            Vector2 hitPoint = transform.position;
-            player.HookAttached(hitPoint, this);
+            Vector2 hitPoint = collision.ClosestPoint(transform.position);
+            transform.position = hitPoint;
+            player.HookAttached(hitPoint, this, collision);
         }
     }
+
 }
