@@ -8,6 +8,8 @@ public abstract class Interactables : MonoBehaviour
     public InteractableData data;
     [Tooltip("Optional number of pebbles we spawn")]
     public int numPebbles;
+    [Tooltip("Optional collectable to spawn")]
+    public Collectable collectablePrefab;
     private bool inRange;
 
     RoomData room;
@@ -69,9 +71,9 @@ public abstract class Interactables : MonoBehaviour
 
     public void SpawnCollectable()
     {
-        if(data.collectablePrefab != null)
+        if(collectablePrefab != null)
         {
-            Collectable collectable = Instantiate(data.collectablePrefab, transform.position, Quaternion.identity);
+            Collectable collectable = Instantiate(collectablePrefab, transform.position, Quaternion.identity);
             collectable.Initialize(data.collectablePickupDelay);
             Quaternion rotation = Quaternion.AngleAxis(Random.Range(-data.collectableLaunchMaxAngle, data.collectableLaunchMaxAngle), Vector3.forward);
             Vector2 dir = (rotation * Vector2.up).normalized;
