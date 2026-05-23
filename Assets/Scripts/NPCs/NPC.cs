@@ -73,6 +73,11 @@ public class NPC : MonoBehaviour
     {
         isInteracting = true;
         EnableKeyIcon(false);
+        Condition skipCondition = data.dialogueSequences[currDialogueSequence].skipSequenceCondition;
+        if (skipCondition != null && skipCondition.ConditionMet())
+        {
+            NextDialogueSequence();
+        }
         currNode = data.dialogueSequences[currDialogueSequence].rootNode;
         SetDialogue(currNode);
     }

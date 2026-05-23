@@ -1,16 +1,11 @@
 using UnityEngine;
 
-public class QuestItemCondition : MonoBehaviour
+[CreateAssetMenu(fileName = "HasQuestCondition", menuName = "ScriptableData/Dialogue/Conditions/HasQuestItem")]
+public class QuestItemCondition : Condition
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public QuestCollectableData questData;
+    public override bool ConditionMet()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        return base.ConditionMet() && Player.Instance.inventory.HasQuestItem(questData);
     }
 }

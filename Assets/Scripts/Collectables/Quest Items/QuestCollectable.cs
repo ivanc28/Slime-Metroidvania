@@ -7,6 +7,10 @@ public class QuestCollectable : Collectable
     {
         base.MakeStart();
         questData = data as QuestCollectableData;
+        if (questData == null)
+        {
+            Debug.LogError("data is not a QuestCollectableData on " + gameObject.name);
+        }
     }
     public override void Collect()
     {
