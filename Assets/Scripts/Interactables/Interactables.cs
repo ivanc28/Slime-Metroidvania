@@ -6,6 +6,7 @@ public abstract class Interactables : MonoBehaviour
 {
     [SerializeField] string interactableID;
     public InteractableData data;
+    [Tooltip("Optional number of pebbles we spawn")]
     public int numPebbles;
     private bool inRange;
 
