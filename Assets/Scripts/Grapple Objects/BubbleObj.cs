@@ -135,13 +135,13 @@ public class BubbleObj : GrappleObj
         }
         objCollider.enabled = false;
         objRenderer.enabled = false;
-        // MANUALLY SPAWN PEBBLES IF NEEDED
-        if(bubbleInteractGain != null)
-        {
-            bubbleInteractGain.SpawnPebbles(bubbleInteractGain.numPebbles);
-            bubbleInteractGain.GetRoomOfInteractable().collectedInteractables.Add(bubbleInteractGain.GetInteractableID());
-            Destroy(bubbleInteractGain.gameObject);
-        }
+        //// MANUALLY SPAWN PEBBLES IF NEEDED
+        //if(bubbleInteractGain != null)
+        //{
+        //    bubbleInteractGain.SpawnPebbles(bubbleInteractGain.numPebbles);
+        //    bubbleInteractGain.GetRoomOfInteractable().collectedInteractables.Add(bubbleInteractGain.GetInteractableID());
+        //    Destroy(bubbleInteractGain.gameObject);
+        //}
         transform.position = startingPos;
         bubbleEmpty = true;
         Player.Instance.currentAttachedCollider = null;
@@ -172,6 +172,7 @@ public class BubbleObj : GrappleObj
         rb.bodyType = RigidbodyType2D.Static;
 
         Player.Instance.transform.parent = null;
+        DontDestroyOnLoad(Player.Instance.gameObject);
         Player.Instance.rb.simulated = true;
 
         bubbleTrigger.isTrigger = true;
