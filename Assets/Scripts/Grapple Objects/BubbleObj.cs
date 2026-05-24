@@ -18,6 +18,7 @@ public class BubbleObj : GrappleObj
     private bool startFlashing;
 
     private Vector3 startingPos;
+    private bool bubbleEmpty;
 
     [SerializeField] Rigidbody2D rb;
     [SerializeField] Collider2D bubbleTrigger;
@@ -27,6 +28,7 @@ public class BubbleObj : GrappleObj
         base.MakeStart();
         startingPos = transform.position;
         lifetime = lifespan;
+        bubbleEmpty = bubbleInteractGain == null;
     }
     public override void MakeUpdate()
     {
@@ -101,10 +103,13 @@ public class BubbleObj : GrappleObj
     {
         if (Player.Instance.GetBubbledState())
         {
-            DetachHook();
-            Player.Instance.DetachHook();
-            EnterBubble();
-            lifetime = lifespan;
+            if (bubbleEmpty)
+            {
+                DetachHook();
+                Player.Instance.DetachHook();
+                EnterBubble();
+                lifetime = lifespan;
+            }
         }
         else
         {
@@ -138,9 +143,12 @@ public class BubbleObj : GrappleObj
             Destroy(bubbleInteractGain.gameObject);
         }
         transform.position = startingPos;
+        bubbleEmpty = true;
+        Player.Instance.currentAttachedCollider = null;
     }
     private void EnterBubble()
     {
+        Debug.Log(gameObject.name);
         Player.Instance.rb.gravityScale = 0;
         Player.Instance.rb.linearVelocity = Vector2.zero;
         Player.Instance.rb.position = transform.position;
