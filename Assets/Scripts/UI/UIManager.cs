@@ -35,6 +35,7 @@ public class UIManager : MonoBehaviour
             return;
         }
         Instance = this;
+
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -43,6 +44,10 @@ public class UIManager : MonoBehaviour
         currencyTimer = currencyDelayBeforeAcc;
         subCurrencyTimer = currencyDelayBeforeAcc;
         currencyText.text = Player.Instance.currencyData.GetCurrency().ToString();
+        if (Player.Instance.tools.GetCurrToolOption() != null)
+        {
+            UpdateToolDispay(Player.Instance.tools.GetCurrToolOption());
+        }
     }
 
     // Update is called once per frame

@@ -35,6 +35,10 @@ public class PlayerTools
     {
         return currToolOption;
     }
+    /// <summary>
+    /// FOR UI ONLY
+    /// </summary>
+    /// <param name="option"></param>
     public void SetCurrToolOption(ToolOption option)
     {
         currToolOption = option;
