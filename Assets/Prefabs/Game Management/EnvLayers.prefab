@@ -44,7 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4869961eb7fe9340889966b03191435, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParallaxLayer
-  parallaxFactor: -0.4
+  parallaxFactorX: 0
+  parallaxFactorY: 0
 --- !u!1 &5675286970561127265
 GameObject:
   m_ObjectHideFlags: 0
@@ -54,6 +55,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8295317503704732122}
+  - component: {fileID: 2692560826801372289}
   m_Layer: 0
   m_Name: EnvLayers
   m_TagString: Untagged
@@ -81,6 +83,19 @@ Transform:
   - {fileID: 573213267045993936}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2692560826801372289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5675286970561127265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f110a61f671de08408b3bbc6dc169aa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ParallaxBackground
+  parallaxCamera: {fileID: 0}
 --- !u!1 &7540368293771385501
 GameObject:
   m_ObjectHideFlags: 0
@@ -125,7 +140,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4869961eb7fe9340889966b03191435, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParallaxLayer
-  parallaxFactor: 0.4
+  parallaxFactorX: 0
+  parallaxFactorY: 0
 --- !u!1 &7804228353274448755
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,7 +186,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4869961eb7fe9340889966b03191435, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParallaxLayer
-  parallaxFactor: -0.2
+  parallaxFactorX: 0
+  parallaxFactorY: 0
 --- !u!1 &8337889071909094809
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,7 +232,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4869961eb7fe9340889966b03191435, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParallaxLayer
-  parallaxFactor: 0.2
+  parallaxFactorX: 0
+  parallaxFactorY: 0
 --- !u!1 &9221337806538520248
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,4 +278,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4869961eb7fe9340889966b03191435, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParallaxLayer
-  parallaxFactor: 0
+  parallaxFactorX: 0
+  parallaxFactorY: 0

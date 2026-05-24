@@ -122,6 +122,7 @@ public class Player : MonoBehaviour
         bubbleParticle.Stop(true, ParticleSystemStopBehavior.StopEmitting);
         //TESTING
         tools.ClaimTool(PlayerTools.Tool.Spoon);
+        tools.ClaimTool(PlayerTools.Tool.Whisk);
         tools.SwapTool(PlayerTools.Tool.Spoon);
     }
 
