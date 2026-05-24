@@ -1623,9 +1623,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1170357500231597865, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
+      propertyPath: m_Name
+      value: Layer-4
+      objectReference: {fileID: 0}
     - target: {fileID: 5675286970561127265, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
       propertyPath: m_Name
       value: EnvLayers
+      objectReference: {fileID: 0}
+    - target: {fileID: 7540368293771385501, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
+      propertyPath: m_Name
+      value: Layer-0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7804228353274448755, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
+      propertyPath: m_Name
+      value: Layer-3
       objectReference: {fileID: 0}
     - target: {fileID: 8295317503704732122, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1667,6 +1679,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8337889071909094809, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
+      propertyPath: m_Name
+      value: Layer-1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9221337806538520248, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
+      propertyPath: m_Name
+      value: Layer-2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -1682,8 +1702,29 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2682584126854107180, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 726726762}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5675286970561127265, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1205430373}
   m_SourcePrefab: {fileID: 100100000, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
+--- !u!1 &1205430372 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5675286970561127265, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
+  m_PrefabInstance: {fileID: 1205430371}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1205430373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205430372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f110a61f671de08408b3bbc6dc169aa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ParallaxBackground
+  parallaxCamera: {fileID: 4784084843230246148}
 --- !u!4 &1223828913 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 14153591354800887, guid: e3c3becbafb9809469a87740dd5a1797, type: 3}
@@ -20613,11 +20654,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4555607478704896849, guid: fdbcfb5adc9e8d8479e6a8b1189f1396, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.1757174
+      value: -3.1793685
       objectReference: {fileID: 0}
     - target: {fileID: 4555607478704896849, guid: fdbcfb5adc9e8d8479e6a8b1189f1396, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.33642
+      value: 4.33645
       objectReference: {fileID: 0}
     - target: {fileID: 6380010479903196677, guid: fdbcfb5adc9e8d8479e6a8b1189f1396, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20668,6 +20709,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdbcfb5adc9e8d8479e6a8b1189f1396, type: 3}
+--- !u!114 &4784084843230246148 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8229978009201667398, guid: fdbcfb5adc9e8d8479e6a8b1189f1396, type: 3}
+  m_PrefabInstance: {fileID: 4784084843230246147}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cab419f7b4772642958ecc1edac293d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ParallaxCamera
 --- !u!1001 &5257559214518363546
 PrefabInstance:
   m_ObjectHideFlags: 0
