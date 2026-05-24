@@ -855,10 +855,12 @@ public class Player : MonoBehaviour
         if (n < 0)
         {
             zipDirection = -1;
+            FacingRight(false);
         }
         else if (n > 0)
         {
             zipDirection = 1;
+            FacingRight(true);
         }
         else
         {
