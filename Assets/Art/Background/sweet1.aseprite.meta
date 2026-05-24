@@ -211,27 +211,6 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: cotton candy
-    originalName: 
-    pivot: {x: 0.49260038, y: -1.4732144}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 1353
-      width: 473
-      height: 112
-    spriteID: fae8b763f0772ed4bb83037f0f072ebf
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 1353}
   spriteSheetImportData: []
   tileSetImportData: []
   asepriteLayers:
@@ -331,31 +310,6 @@ ScriptedImporter:
         width: 960
         height: 318
       spriteId: 26123ecdc20a9b64f8716f52ea58b073
-    linkedCells: []
-    tileCells: []
-    tileSetIndex: 0
-    parentIndex: -1
-  - layerIndex: 4
-    uuid:
-      value0: 3652290796
-      value1: 0
-      value2: 0
-      value3: 0
-    guid: 0
-    name: cotton candy
-    layerFlags: 3
-    layerType: 0
-    blendMode: 0
-    cells:
-    - name: cotton candy
-      frameIndex: 0
-      additiveSortOrder: 0
-      cellRect:
-        x: 247
-        y: 165
-        width: 473
-        height: 112
-      spriteId: fae8b763f0772ed4bb83037f0f072ebf
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
