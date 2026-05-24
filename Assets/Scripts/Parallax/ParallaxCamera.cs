@@ -18,7 +18,7 @@ public class ParallaxCamera : MonoBehaviour
 
     void Update()
     {
-        if (transform.position.x != oldPositionX)
+        if (transform.position.x != oldPositionX || transform.position.y != oldPositionY)
         {
             if (onCameraTranslate != null)
             {
