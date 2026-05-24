@@ -35,7 +35,7 @@ public abstract class Collectable : MonoBehaviour
             pickupTime -= Time.deltaTime;
         }
         inRange = Vector2.Distance(transform.position, Player.Instance.transform.position) <= data.maxDistanceToCollect;
-        if (inRange && pickupTime <= 0)
+        if (inRange && pickupTime <= 0 && Player.Instance.GetIsGrounded())
         {
             EnableKeyIcon(true);
             if (Input.GetKeyDown(data.pickupKey) && CanCollect())

@@ -6,6 +6,7 @@ public class PlayerTools
     public enum Tool { None, Spoon, Fork, Chopsticks, Umbrella, Scissors, Whisk, BubbleBlower};
     private Tool currTool;
     private bool[] claimedTools = new bool[Enum.GetValues(typeof(Tool)).Length];
+    public ToolOption currToolOption;
     public PlayerTools()
     {
         currTool = Tool.None;
@@ -29,6 +30,14 @@ public class PlayerTools
     public Tool GetCurrTool()
     {
         return currTool;
+    }
+    public ToolOption GetCurrToolOption()
+    {
+        return currToolOption;
+    }
+    public void SetCurrToolOption(ToolOption option)
+    {
+        currToolOption = option;
     }
 
 }

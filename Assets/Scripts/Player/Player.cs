@@ -740,6 +740,7 @@ public class Player : MonoBehaviour
         float angle = GetWheelAngle();
         int toolChoice = (int)(angle / (360 / toolOptions.Length));
         toolChoice = Mathf.Clamp(toolChoice, 0, toolOptions.Length - 1);
+        tools.SetCurrToolOption(toolOptions[toolChoice]);
         tools.SwapTool(toolOptions[toolChoice].tool);
         UIManager.Instance.UpdateToolDispay(toolOptions[toolChoice]);
         foreach(ToolOption option in toolOptions)
