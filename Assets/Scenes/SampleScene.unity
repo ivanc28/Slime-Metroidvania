@@ -1625,7 +1625,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1170357500231597865, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
       propertyPath: m_Name
-      value: Layer-4
+      value: Layer 2
       objectReference: {fileID: 0}
     - target: {fileID: 5675286970561127265, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
       propertyPath: m_Name
@@ -1633,11 +1633,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7540368293771385501, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
       propertyPath: m_Name
-      value: Layer-0
+      value: Layer -2
       objectReference: {fileID: 0}
     - target: {fileID: 7804228353274448755, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
       propertyPath: m_Name
-      value: Layer-3
+      value: Layer 1
       objectReference: {fileID: 0}
     - target: {fileID: 8295317503704732122, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1681,11 +1681,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8337889071909094809, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
       propertyPath: m_Name
-      value: Layer-1
+      value: Layer -1
       objectReference: {fileID: 0}
     - target: {fileID: 9221337806538520248, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
       propertyPath: m_Name
-      value: Layer-2
+      value: Layer 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
