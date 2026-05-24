@@ -3334,6 +3334,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1894196408}
     m_Modifications:
+    - target: {fileID: 2815591831241812643, guid: d2e0481a0db86ea46992310ff4812535, type: 3}
+      propertyPath: wall
+      value: 
+      objectReference: {fileID: 2678168879550934942}
     - target: {fileID: 7271212680941624915, guid: d2e0481a0db86ea46992310ff4812535, type: 3}
       propertyPath: m_LocalPosition.x
       value: -32.5
@@ -3380,7 +3384,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 7271212680941624915, guid: d2e0481a0db86ea46992310ff4812535, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2678168879550934941}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2e0481a0db86ea46992310ff4812535, type: 3}
 --- !u!4 &1993084977 stripped
@@ -3388,6 +3395,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7271212680941624915, guid: d2e0481a0db86ea46992310ff4812535, type: 3}
   m_PrefabInstance: {fileID: 1993084976}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1993084979 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2815591831241812643, guid: d2e0481a0db86ea46992310ff4812535, type: 3}
+  m_PrefabInstance: {fileID: 1993084976}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 111337566868f504fafcb75d00e42818, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WhiskInteractable
 --- !u!1001 &2064442264
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20694,6 +20712,83 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20c6ed9e91125774eb1cd836858c411c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnPoint
+--- !u!1001 &2678168879550934940
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1993084977}
+    m_Modifications:
+    - target: {fileID: 5553245253984132691, guid: 68ed09ecc3385314d9028614c69f7a78, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553245253984132691, guid: 68ed09ecc3385314d9028614c69f7a78, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.10435009
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553245253984132691, guid: 68ed09ecc3385314d9028614c69f7a78, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553245253984132691, guid: 68ed09ecc3385314d9028614c69f7a78, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553245253984132691, guid: 68ed09ecc3385314d9028614c69f7a78, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553245253984132691, guid: 68ed09ecc3385314d9028614c69f7a78, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553245253984132691, guid: 68ed09ecc3385314d9028614c69f7a78, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553245253984132691, guid: 68ed09ecc3385314d9028614c69f7a78, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553245253984132691, guid: 68ed09ecc3385314d9028614c69f7a78, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553245253984132691, guid: 68ed09ecc3385314d9028614c69f7a78, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7191673336741685219, guid: 68ed09ecc3385314d9028614c69f7a78, type: 3}
+      propertyPath: interactable
+      value: 
+      objectReference: {fileID: 1993084979}
+    - target: {fileID: 7980624165640838419, guid: 68ed09ecc3385314d9028614c69f7a78, type: 3}
+      propertyPath: m_Name
+      value: WindmillWall
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 68ed09ecc3385314d9028614c69f7a78, type: 3}
+--- !u!4 &2678168879550934941 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5553245253984132691, guid: 68ed09ecc3385314d9028614c69f7a78, type: 3}
+  m_PrefabInstance: {fileID: 2678168879550934940}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2678168879550934942 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7191673336741685219, guid: 68ed09ecc3385314d9028614c69f7a78, type: 3}
+  m_PrefabInstance: {fileID: 2678168879550934940}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c36db78983f931443a5899cf721c4421, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WhiskWall
 --- !u!1001 &2697937959148782210
 PrefabInstance:
   m_ObjectHideFlags: 0

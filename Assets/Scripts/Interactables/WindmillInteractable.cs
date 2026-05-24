@@ -17,6 +17,5 @@ public class WindmillInteractable : Interactables
     public override void OnInteract()
     {
         rb.AddTorque(spinForce);
-        Debug.Log("SPIN");
     }
 }
