@@ -60,4 +60,6 @@ MonoBehaviour:
   choiceHoverColor: {r: 0.084905684, g: 0.084905684, b: 0.084905684, a: 1}
   choiceNotHoverColor: {r: 0.509434, g: 0.509434, b: 0.509434, a: 1}
   choiceDisabledColor: {r: 0.6320754, g: 0.4442417, b: 0.4442417, a: 0.50980395}
+  talkDistance: 2.25
+  getDistanceSpeed: 6
   ziplineSpeedValue: 20

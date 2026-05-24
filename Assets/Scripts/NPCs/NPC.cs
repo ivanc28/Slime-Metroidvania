@@ -9,6 +9,10 @@ public class NPC : MonoBehaviour
     public NPCData data;
     public GameObject keyIcon;
     public SpriteRenderer npcRenderer;
+    [Tooltip("Forces the player to move to the right of NPC when talking")]
+    public bool forcePlayerMoveRight;
+    [Tooltip("Forces the player to move to the left of NPC when talking")]
+    public bool forcePlayerMoveLeft;
     
     private DialogueNode currNode;
     private int currDialogueSequence;
