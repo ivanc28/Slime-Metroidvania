@@ -331,7 +331,8 @@ public class Player : MonoBehaviour
 
             float dist = Vector2.Distance(rb.position, hookPoint);
             isLockedOnGrapple = false;
-            if (dist < 0.8f)
+            Debug.Log(dist);
+            if (dist < 1.05f)
             {
                 isLockedOnGrapple = true;
                 isAttaching = false;

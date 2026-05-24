@@ -25,7 +25,7 @@ MonoBehaviour:
   frictionless: {fileID: 6200000, guid: 7d4911744a6e33e4e9d4c02b63718da4, type: 2}
   someFriction: {fileID: 6200000, guid: b34665b1fd4f5f0489bcc07de7e8d37c, type: 2}
   jumpSpeed: 16
-  feetRadius: 0.45
+  feetRadius: 0.4
   groundObjects:
     serializedVersion: 2
     m_Bits: 8
@@ -40,7 +40,7 @@ MonoBehaviour:
   minGrappleLifetime: 0.3
   attachSpeed: 25
   hookSpeed: 27
-  hookSpawnOffset: 0.25
+  hookSpawnOffset: 0.125
   grappleObjects:
     serializedVersion: 2
     m_Bits: 72
