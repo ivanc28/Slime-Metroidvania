@@ -136,7 +136,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 485
-      y: 1075
+      y: 1623
       width: 480
       height: 270
     spriteID: 57ddc20fdf42e2a479817e1fe966a6b2
@@ -147,7 +147,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 485, y: 1075}
+    uvTransform: {x: 485, y: 1623}
   - name: cave walls mid
     originalName: 
     pivot: {x: 0.5, y: -0.3302469}
@@ -157,7 +157,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 743
+      y: 1291
       width: 576
       height: 324
     spriteID: ec6988b318e6de145ae61ec6b1faa033
@@ -168,7 +168,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 743}
+    uvTransform: {x: 4, y: 1291}
   - name: cave walls front
     originalName: 
     pivot: {x: 0.5, y: -0.1654321}
@@ -178,7 +178,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 330
+      y: 878
       width: 720
       height: 405
     spriteID: 39fa28d21fcddc945b475c26a50abc06
@@ -189,7 +189,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 330}
+    uvTransform: {x: 4, y: 878}
   - name: dragon's beard floss
     originalName: 
     pivot: {x: 0.5, y: -0.6981132}
@@ -199,7 +199,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 4
+      y: 552
       width: 960
       height: 318
     spriteID: 26123ecdc20a9b64f8716f52ea58b073
@@ -210,7 +210,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 4}
+    uvTransform: {x: 4, y: 552}
   - name: cotton candy
     originalName: 
     pivot: {x: 0.49260038, y: 0}
@@ -220,7 +220,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 1075
+      y: 1623
       width: 473
       height: 277
     spriteID: 6c8ea2cdcfa80c54db28daec36acb66e
@@ -231,20 +231,20 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 1075}
-  - name: tanghulu
+    uvTransform: {x: 4, y: 1623}
+  - name: Layer 1
     originalName: 
-    pivot: {x: 21.2, y: -20.2}
+    pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
-      x: 972
+      x: 4
       y: 4
-      width: 20
-      height: 25
-    spriteID: 8d951f7ad99494f43ad85fa8f0c42a2b
+      width: 960
+      height: 540
+    spriteID: b43d0c561eaa147468c8850ff23605dd
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -252,7 +252,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 972, y: 4}
+    uvTransform: {x: 4, y: 4}
   spriteSheetImportData: []
   tileSetImportData: []
   asepriteLayers:
@@ -333,6 +333,31 @@ ScriptedImporter:
     parentIndex: -1
   - layerIndex: 3
     uuid:
+      value0: 4287466680
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: 0
+    name: Layer 1
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Layer 1
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 960
+        height: 540
+      spriteId: b43d0c561eaa147468c8850ff23605dd
+    linkedCells: []
+    tileCells: []
+    tileSetIndex: 0
+    parentIndex: -1
+  - layerIndex: 4
+    uuid:
       value0: 151036112
       value1: 0
       value2: 0
@@ -356,7 +381,7 @@ ScriptedImporter:
     tileCells: []
     tileSetIndex: 0
     parentIndex: -1
-  - layerIndex: 4
+  - layerIndex: 5
     uuid:
       value0: 3652290796
       value1: 0
@@ -377,31 +402,6 @@ ScriptedImporter:
         width: 473
         height: 277
       spriteId: 6c8ea2cdcfa80c54db28daec36acb66e
-    linkedCells: []
-    tileCells: []
-    tileSetIndex: 0
-    parentIndex: -1
-  - layerIndex: 5
-    uuid:
-      value0: 64694410
-      value1: 0
-      value2: 0
-      value3: 0
-    guid: 0
-    name: tanghulu
-    layerFlags: 3
-    layerType: 0
-    blendMode: 0
-    cells:
-    - name: tanghulu
-      frameIndex: 0
-      additiveSortOrder: 0
-      cellRect:
-        x: 56
-        y: 505
-        width: 20
-        height: 25
-      spriteId: 8d951f7ad99494f43ad85fa8f0c42a2b
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
