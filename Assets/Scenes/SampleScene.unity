@@ -1627,9 +1627,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Layer 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1557263715195226996, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
+      propertyPath: parallaxFactorX
+      value: -0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1557263715195226996, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
+      propertyPath: parallaxFactorY
+      value: -0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 5675286970561127265, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
       propertyPath: m_Name
       value: EnvLayers
+      objectReference: {fileID: 0}
+    - target: {fileID: 7474766475681745378, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
+      propertyPath: parallaxFactorX
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7474766475681745378, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
+      propertyPath: parallaxFactorY
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 7540368293771385501, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
       propertyPath: m_Name
@@ -1682,6 +1698,22 @@ PrefabInstance:
     - target: {fileID: 8337889071909094809, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
       propertyPath: m_Name
       value: Layer -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8425322161699382048, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
+      propertyPath: parallaxFactorX
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8425322161699382048, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
+      propertyPath: parallaxFactorY
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8426545191265267269, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
+      propertyPath: parallaxFactorX
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8426545191265267269, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
+      propertyPath: parallaxFactorY
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 9221337806538520248, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
       propertyPath: m_Name
