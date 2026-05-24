@@ -1623,13 +1623,77 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 573213267045993936, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 573213267045993936, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 573213267045993936, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0014604569
+      objectReference: {fileID: 0}
     - target: {fileID: 1170357500231597865, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
       propertyPath: m_Name
       value: Layer 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1557263715195226996, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
+      propertyPath: parallaxFactor
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2682584126854107180, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2682584126854107180, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2682584126854107180, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.00073022844
+      objectReference: {fileID: 0}
+    - target: {fileID: 3394682154993602703, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3394682154993602703, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3394682154993602703, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.00073022844
+      objectReference: {fileID: 0}
+    - target: {fileID: 4457704486151085244, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4457704486151085244, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4457704486151085244, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0014604569
+      objectReference: {fileID: 0}
     - target: {fileID: 5675286970561127265, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
       propertyPath: m_Name
       value: EnvLayers
+      objectReference: {fileID: 0}
+    - target: {fileID: 7115140499812583034, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7115140499812583034, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7474766475681745378, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
+      propertyPath: parallaxFactor
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 7540368293771385501, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
       propertyPath: m_Name
@@ -1682,6 +1746,18 @@ PrefabInstance:
     - target: {fileID: 8337889071909094809, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
       propertyPath: m_Name
       value: Layer -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8425322161699382048, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
+      propertyPath: parallaxFactor
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8426545191265267269, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
+      propertyPath: parallaxFactor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8916313715907120044, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
+      propertyPath: parallaxFactor
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 9221337806538520248, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
       propertyPath: m_Name
@@ -20654,11 +20730,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4555607478704896849, guid: fdbcfb5adc9e8d8479e6a8b1189f1396, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.1793685
+      value: -3.1757174
       objectReference: {fileID: 0}
     - target: {fileID: 4555607478704896849, guid: fdbcfb5adc9e8d8479e6a8b1189f1396, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.33645
+      value: 4.33642
       objectReference: {fileID: 0}
     - target: {fileID: 6380010479903196677, guid: fdbcfb5adc9e8d8479e6a8b1189f1396, type: 3}
       propertyPath: m_LocalPosition.x
