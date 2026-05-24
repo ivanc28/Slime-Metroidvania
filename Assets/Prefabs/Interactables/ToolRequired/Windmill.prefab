@@ -128,6 +128,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1931171618322217903}
+  - component: {fileID: 2815591831241812643}
   m_Layer: 0
   m_Name: WhiskInteraction
   m_TagString: Untagged
@@ -150,6 +151,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7271212680941624915}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2815591831241812643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7899729650915717661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 111337566868f504fafcb75d00e42818, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WhiskInteractable
+  interactableID: 
+  data: {fileID: 11400000, guid: 26b8cf13237d435479ffea9558e10353, type: 2}
+  numPebbles: 0
+  collectablePrefab: {fileID: 0}
+  wall: {fileID: 0}
 --- !u!1 &8238778556375687360
 GameObject:
   m_ObjectHideFlags: 0

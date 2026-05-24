@@ -11,6 +11,7 @@ public abstract class Interactables : MonoBehaviour
     [Tooltip("Optional collectable to spawn")]
     public Collectable collectablePrefab;
     private bool inRange;
+    private bool isInteracting;
 
     RoomData room;
 
@@ -37,10 +38,11 @@ public abstract class Interactables : MonoBehaviour
     {
         inRange = Vector2.Distance(transform.position, Player.Instance.transform.position) <= data.maxDistanceToInteract;
 
-        if (inRange && !Player.Instance.IsInBubble() && !Player.Instance.InInteraction)
+        if (inRange && !Player.Instance.IsInBubble() && !Player.Instance.InInteraction && !isInteracting)
         {
             if (Input.GetKeyDown(data.interactKey))
             {
+                isInteracting = true;
                 StartCoroutine(TryInteract(Player.Instance.data.toolUseTime));
             }
         }
@@ -59,6 +61,7 @@ public abstract class Interactables : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+        isInteracting = false;
     }
     public abstract void OnInteract();
     public  void SpawnPebbles(int numPebbles)
