@@ -19,6 +19,7 @@ public class NPC : MonoBehaviour
     private bool choosingToSkipLine;
     private bool isInteracting;
     private bool doneWithLine;
+    private bool makingAChoice;
     private int choiceChosen;
     private GameObject currDialogueBox;
 
@@ -45,7 +46,7 @@ public class NPC : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isInteracting && !doneWithLine)
+        if (Input.GetKeyDown(KeyCode.Space) && isInteracting && !doneWithLine && !makingAChoice)
         {
             choosingToSkipLine = true;            
         }
@@ -260,6 +261,7 @@ public class NPC : MonoBehaviour
     }
     private IEnumerator PromptPlayerChoice(DialogueChoice[] choices)
     {
+        makingAChoice = true;
         yield return null;
         bool selectedChoice = false;
         int currChoice = 0;
@@ -320,6 +322,7 @@ public class NPC : MonoBehaviour
         }
         choiceChosen = currChoice;
         NextDialogue();
+        makingAChoice = false;
     }
 
     private bool IsChoiceAvailable(DialogueChoice choice)

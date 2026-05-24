@@ -30,6 +30,11 @@ public abstract class Interactables : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        MakeUpdate();
+       
+    }
+    public virtual void MakeUpdate()
+    {
         inRange = Vector2.Distance(transform.position, Player.Instance.transform.position) <= data.maxDistanceToInteract;
 
         if (inRange && !Player.Instance.IsInBubble() && !Player.Instance.InInteraction)
@@ -38,8 +43,7 @@ public abstract class Interactables : MonoBehaviour
             {
                 StartCoroutine(TryInteract(Player.Instance.data.toolUseTime));
             }
-        }    
-       
+        }
     }
 
     private IEnumerator TryInteract(float interactTime)

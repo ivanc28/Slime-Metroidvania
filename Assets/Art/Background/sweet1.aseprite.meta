@@ -74,7 +74,7 @@ ScriptedImporter:
   previousAsepriteImporterSettings:
     fileImportMode: 1
     importHiddenLayers: 0
-    layerImportMode: 1
+    layerImportMode: 0
     defaultPivotSpace: 0
     defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
@@ -89,7 +89,7 @@ ScriptedImporter:
   asepriteImporterSettings:
     fileImportMode: 1
     importHiddenLayers: 0
-    layerImportMode: 1
+    layerImportMode: 0
     defaultPivotSpace: 0
     defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
@@ -102,7 +102,7 @@ ScriptedImporter:
     generateIndividualEvents: 1
     generateSpriteAtlas: 1
   importFileNodeState: 1
-  platformSettingsDirtyTick: 639151353261694004
+  platformSettingsDirtyTick: 639151585079853263
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -127,9 +127,72 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: sweet1
+  - name: cave walls back
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.5, y: -0.4962963}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 485
+      y: 1075
+      width: 480
+      height: 270
+    spriteID: 57ddc20fdf42e2a479817e1fe966a6b2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 485, y: 1075}
+  - name: cave walls mid
+    originalName: 
+    pivot: {x: 0.5, y: -0.3302469}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 743
+      width: 576
+      height: 324
+    spriteID: ec6988b318e6de145ae61ec6b1faa033
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 743}
+  - name: cave walls front
+    originalName: 
+    pivot: {x: 0.5, y: -0.1654321}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 330
+      width: 720
+      height: 405
+    spriteID: 39fa28d21fcddc945b475c26a50abc06
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 330}
+  - name: dragon's beard floss
+    originalName: 
+    pivot: {x: 0.5, y: -0.6981132}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -137,9 +200,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 480
-      height: 270
-    spriteID: 6c3780109fdd60e478bd6c1f33ab2ca7
+      width: 960
+      height: 318
+    spriteID: 26123ecdc20a9b64f8716f52ea58b073
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -148,30 +211,151 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: cotton candy
+    originalName: 
+    pivot: {x: 0.49260038, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1075
+      width: 473
+      height: 277
+    spriteID: 6c8ea2cdcfa80c54db28daec36acb66e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1075}
   spriteSheetImportData: []
   tileSetImportData: []
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 54080613
+      value0: 524665503
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: sweet1
-    layerFlags: 0
+    name: cave walls back
+    layerFlags: 1
     layerType: 0
     blendMode: 0
     cells:
-    - name: sweet1
+    - name: cave walls back
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 240
+        y: 134
+        width: 480
+        height: 270
+      spriteId: 57ddc20fdf42e2a479817e1fe966a6b2
+    linkedCells: []
+    tileCells: []
+    tileSetIndex: 0
+    parentIndex: -1
+  - layerIndex: 1
+    uuid:
+      value0: 2464679604
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: 0
+    name: cave walls mid
+    layerFlags: 1
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: cave walls mid
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 192
+        y: 107
+        width: 576
+        height: 324
+      spriteId: ec6988b318e6de145ae61ec6b1faa033
+    linkedCells: []
+    tileCells: []
+    tileSetIndex: 0
+    parentIndex: -1
+  - layerIndex: 2
+    uuid:
+      value0: 3855778437
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: 0
+    name: cave walls front
+    layerFlags: 1
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: cave walls front
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 120
+        y: 67
+        width: 720
+        height: 405
+      spriteId: 39fa28d21fcddc945b475c26a50abc06
+    linkedCells: []
+    tileCells: []
+    tileSetIndex: 0
+    parentIndex: -1
+  - layerIndex: 3
+    uuid:
+      value0: 151036112
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: 0
+    name: dragon's beard floss
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: dragon's beard floss
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
         x: 0
+        y: 222
+        width: 960
+        height: 318
+      spriteId: 26123ecdc20a9b64f8716f52ea58b073
+    linkedCells: []
+    tileCells: []
+    tileSetIndex: 0
+    parentIndex: -1
+  - layerIndex: 4
+    uuid:
+      value0: 3652290796
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: 0
+    name: cotton candy
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: cotton candy
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 247
         y: 0
-        width: 480
-        height: 270
-      spriteId: 6c3780109fdd60e478bd6c1f33ab2ca7
+        width: 473
+        height: 277
+      spriteId: 6c8ea2cdcfa80c54db28daec36acb66e
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
@@ -205,5 +389,5 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 480, y: 270}
-  previousTextureSize: {x: 512, y: 512}
+  canvasSize: {x: 960, y: 540}
+  previousTextureSize: {x: 1024, y: 2048}
