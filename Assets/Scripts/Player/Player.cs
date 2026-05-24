@@ -578,6 +578,7 @@ public class Player : MonoBehaviour
     {
         isJumping = true;
         rb.gravityScale = data.risingGravity;
+        rb.sharedMaterial = data.frictionless;
         rb.linearVelocityY = data.jumpSpeed;
     }
     private void StopJump()
