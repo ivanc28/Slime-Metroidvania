@@ -212,7 +212,7 @@ public class Player : MonoBehaviour
             coyoteTimer = data.coyoteTime;
             rb.sharedMaterial = null;
             // checking if charges can be gained, hook is not being thrown, and hook is not attached (there is a frame where hook is attached but slime still grounded where recharge can happen otherwise)
-            if (grappleCharges < maxGrappleCharges && currHookBeingThrown == null && isAttaching == false)
+            if (grappleCharges < maxGrappleCharges && currHookBeingThrown == null && isAttaching == false && !isLockedOnGrapple)
             {
                 if (grappleRechargeTimer < grappleRechargeTime)
                 {
@@ -578,6 +578,7 @@ public class Player : MonoBehaviour
     {
         isJumping = true;
         rb.gravityScale = data.risingGravity;
+        rb.sharedMaterial = data.frictionless;
         rb.linearVelocityY = data.jumpSpeed;
     }
     private void StopJump()
