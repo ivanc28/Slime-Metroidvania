@@ -31,6 +31,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] Animator collectTextAnim;
     [SerializeField] GameObject collectTextContainer;
     [SerializeField] TextMeshProUGUI collectText;
+
+    [Header("Screen Transition")]
+    [SerializeField] Animator screenAnim;
     public static UIManager Instance { get; private set; }
     private void Awake()
     {
@@ -211,5 +214,10 @@ public class UIManager : MonoBehaviour
     {
         collectTextAnim.SetBool("isCollecting", false);
         collectTextContainer.SetActive(false);
+    }
+
+    public void FadeIn()
+    {
+        screenAnim.SetTrigger("FadeIn");
     }
 }

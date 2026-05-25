@@ -58,8 +58,10 @@ public class GameManager : MonoBehaviour
     {
         return nextSpawnPointID;
     }
-    public void GoNextRoom(string roomID, string spawnPointID)
+    public IEnumerator GoNextRoom(string roomID, string spawnPointID, float fadeTime)
     {
+        UIManager.Instance.FadeIn();
+        yield return new WaitForSeconds(fadeTime);
         nextSpawnPointID = spawnPointID;
         SceneManager.LoadScene(roomID);
     }
