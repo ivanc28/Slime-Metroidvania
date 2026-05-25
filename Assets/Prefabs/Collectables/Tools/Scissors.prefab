@@ -232,8 +232,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ToolCollectable
   data: {fileID: 11400000, guid: a73c3039338dffc4d8df4aaefab2420c, type: 2}
   collectableID: Scissors
+  pickupMessage: You found Kitchen Scissors!
   keyIcon: {fileID: 3343622880750300710}
   rb: {fileID: 1920031591507770918}
+  spriteRend: {fileID: 1608443179185600185}
   tool: 5
 --- !u!61 &9211548040890170318
 BoxCollider2D:

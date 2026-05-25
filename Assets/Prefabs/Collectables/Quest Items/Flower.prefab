@@ -232,7 +232,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::QuestCollectable
   data: {fileID: 11400000, guid: 6fa2bb8a926351943af320dab69f5035, type: 2}
   collectableID: SampleScene_Flower
+  pickupMessage: You found a White Flower!
   keyIcon: {fileID: 6254863482828121653}
+  rb: {fileID: 0}
+  spriteRend: {fileID: 9093104567981088291}
 --- !u!61 &3191726206499858861
 BoxCollider2D:
   m_ObjectHideFlags: 0

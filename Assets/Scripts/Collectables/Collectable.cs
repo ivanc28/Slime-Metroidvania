@@ -5,8 +5,11 @@ public abstract class Collectable : MonoBehaviour
 {
     public CollectableData data;
     public string collectableID;
+    [Tooltip("The message should fit one line")]
+    public string pickupMessage;
     public GameObject keyIcon;
     public Rigidbody2D rb;
+    public SpriteRenderer spriteRend;
     private bool inRange;
     private float pickupTime;
     RoomData room;
@@ -35,7 +38,7 @@ public abstract class Collectable : MonoBehaviour
             pickupTime -= Time.deltaTime;
         }
         inRange = Vector2.Distance(transform.position, Player.Instance.transform.position) <= data.maxDistanceToCollect;
-        if (inRange && pickupTime <= 0 && Player.Instance.GetIsGrounded())
+        if (inRange && pickupTime <= 0 && Player.Instance.GetIsGrounded() && !Player.Instance.InInteraction)
         {
             EnableKeyIcon(true);
             if (Input.GetKeyDown(data.pickupKey) && CanCollect())
@@ -59,7 +62,16 @@ public abstract class Collectable : MonoBehaviour
         yield return new WaitForSeconds(data.pickupTime);
         Collect();
         room.collectedCollectables.Add(collectableID);
+        EnableKeyIcon(false);
+        spriteRend.enabled = false;
+        UIManager.Instance.DisplayCollectText(pickupMessage);
+        while (!Input.GetKey(KeyCode.Space))
+        {
+            yield return null;
+        }
+        yield return null;
         Player.Instance.InInteraction = false;
+        UIManager.Instance.DisableCollectText();
         Destroy(gameObject);
     }
 
