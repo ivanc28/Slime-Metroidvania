@@ -15,6 +15,7 @@ public class NPCAI : MonoBehaviour
     private bool isJumping;
     private float jumpCooldown;
     private float jumpCooldownTime = 0.2f;
+    private Animator anim;
 
     private NPC npc;
     private PlayerTalking playerTalking;
@@ -43,6 +44,13 @@ public class NPCAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //// Setting animator parameters
+        //anim.SetFloat("moveDir", moveDir);
+        //anim.SetBool("isMoving", Mathf.Abs(rb.linearVelocityX) > 0.01f);
+        //anim.SetBool("isGrounded", IsGrounded());
+        //anim.SetBool("isJumping", isJumping);
+        //anim.SetBool("isInteracting", npc.IsInteracting());
+
         SetGravityScale();
         if (enableMovement && !npc.IsInteracting() && (!playerTalking.MovingForNPC() || !playerTalking.NPCEqualsCurrNPC(npc)))
         {
