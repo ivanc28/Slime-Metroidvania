@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     // Movement
     private float moveInput;
     private bool canRun = true;
+    private bool facingRight;
     // Jumping
     private bool pressedJump;
     private bool liftedJump;
@@ -120,6 +121,7 @@ public class Player : MonoBehaviour
         EnableToolSelectionCanvas(false);
         tools.ClaimTool(PlayerTools.Tool.None);
         bubbleParticle.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+        FacingRight(true);
         //TESTING
         tools.ClaimTool(PlayerTools.Tool.Spoon);
         tools.ClaimTool(PlayerTools.Tool.Whisk);
@@ -528,7 +530,12 @@ public class Player : MonoBehaviour
     }
     private void FacingRight(bool value)
     {
+        facingRight = value;
         rend.flipX = !value;
+    }
+    public bool GetFacingRight()
+    {
+        return facingRight;
     }
   
     private void Run(float lerpAmount)
