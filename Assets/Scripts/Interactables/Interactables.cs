@@ -22,7 +22,8 @@ public abstract class Interactables : MonoBehaviour
     public virtual void MakeStart()
     {
         room = GameManager.Instance.GetCurrRoomData();
-        if (room.collectedInteractables.Contains(interactableID))
+        // we check if it was supposed to be destroyed, because otherwise it wouldn't have been added to collectedInteractables
+        if (room.collectedInteractables.Contains(interactableID) && data.destroyOnInteract)
         {
             Destroy(gameObject);
         }
