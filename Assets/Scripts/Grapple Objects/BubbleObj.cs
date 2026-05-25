@@ -110,6 +110,10 @@ public class BubbleObj : GrappleObj
                 EnterBubble();
                 lifetime = lifespan;
             }
+            else
+            {
+                Player.Instance.SetOnBubble(true);
+            }
         }
         else
         {
