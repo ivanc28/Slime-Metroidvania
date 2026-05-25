@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
 
     private string currRoomID;
     private string nextSpawnPointID;
+    public enum Region { None, Sweet, Savory, Sour, Bitter, Salty }
+    private Region currRegion;
 
     private void Awake()
     {
@@ -61,5 +63,12 @@ public class GameManager : MonoBehaviour
         nextSpawnPointID = spawnPointID;
         SceneManager.LoadScene(roomID);
     }
-
+    public void SetCurrRegion(Region region)
+    {
+        currRegion = region;
+    }
+    public Region GetCurrRegion()
+    {
+        return currRegion;
+    }
 }

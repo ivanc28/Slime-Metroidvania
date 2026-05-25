@@ -9,12 +9,14 @@ using UnityEditor;
 public class RoomSetUp : MonoBehaviour
 {
     [SerializeField] SpawnPoint[] spawnPoints;
+    [SerializeField] GameManager.Region region;
     string roomID;
     private void Awake()
     {
         roomID = SceneManager.GetActiveScene().name;
         GameManager.Instance.AddRoom(roomID);
         GameManager.Instance.SetCurrRoomID(roomID);
+        GameManager.Instance.SetCurrRegion(region);
     }
     private void Start()
     {
