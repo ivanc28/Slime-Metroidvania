@@ -15,7 +15,7 @@ public class PlayerTalking : MonoBehaviour
             return;
         }
         NPC nearestNPC = GetNearestNPCInRange();
-        if(currNearestNPC != nearestNPC || !Player.Instance.GetIsGrounded() || Player.Instance.InInteraction)
+        if(currNearestNPC != nearestNPC || !Player.Instance.GetIsGrounded() || Player.Instance.InInteraction || Player.Instance.GetIsLocked())
         {
             if(currNearestNPC != null)
             {
@@ -23,11 +23,11 @@ public class PlayerTalking : MonoBehaviour
             }
             currNearestNPC = nearestNPC;
         }
-        if(nearestNPC != null && Player.Instance.GetIsGrounded() && !Player.Instance.InInteraction)
+        if(nearestNPC != null && Player.Instance.GetIsGrounded() && !Player.Instance.InInteraction && !Player.Instance.GetIsLocked())
         {
             nearestNPC.EnableKeyIcon(true);
         }
-        if (Input.GetKeyDown(KeyCode.W) && Player.Instance.GetIsGrounded() && !Player.Instance.InInteraction)
+        if (Input.GetKeyDown(KeyCode.W) && Player.Instance.GetIsGrounded() && !Player.Instance.InInteraction && !Player.Instance.GetIsLocked())
         {
             StartCoroutine(InteractWithNPC(nearestNPC));
         }
@@ -66,7 +66,8 @@ public class PlayerTalking : MonoBehaviour
                     walkRight = true;
                 if (npc.forcePlayerMoveLeft)
                     walkRight = false;
-
+                yield return null;
+                Player.Instance.DetachHook();   // in case player presses interact and grapple at same time
                 while (Vector2.Distance(npc.transform.position, transform.position) < talkDistance)
                 {
                     if (walkRight)
@@ -84,7 +85,6 @@ public class PlayerTalking : MonoBehaviour
                 Player.Instance.GetRenderer().flipX ^= true; // flip the player sprite (same as flipX = !flipX)
                 yield return new WaitForSeconds(0.25f);
             }
-
             npc.Interact();
         }
     }
