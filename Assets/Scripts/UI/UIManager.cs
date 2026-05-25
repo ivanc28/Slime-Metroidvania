@@ -1,7 +1,9 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEditor.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -32,8 +34,23 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject collectTextContainer;
     [SerializeField] TextMeshProUGUI collectText;
 
+    [Header("Inventory")]
+    [SerializeField] GameObject inventory;
+    [SerializeField] Transform slotContainer;
+    [SerializeField] GridLayoutGroup gridLayout;
+    [SerializeField] InventorySlot slotPrefab;
+
+    [SerializeField] TextMeshProUGUI itemName;
+    [SerializeField] TextMeshProUGUI itemDescription;
+
+    private List<GameObject> addedSlots;
+    private List<QuestCollectableData> addedItems;
+    private bool inventoryOpen;
+    private int currItemIndex;
+
     [Header("Screen Transition")]
     [SerializeField] Animator screenAnim;
+
     public static UIManager Instance { get; private set; }
     private void Awake()
     {
@@ -52,6 +69,8 @@ public class UIManager : MonoBehaviour
         currencyTimer = currencyDelayBeforeAcc;
         subCurrencyTimer = currencyDelayBeforeAcc;
         currencyText.text = Player.Instance.currencyData.GetCurrency().ToString();
+        addedSlots = new();
+        addedItems = new();
         if (Player.Instance.tools.GetCurrToolOption() != null)
         {
             UpdateToolDispay(Player.Instance.tools.GetCurrToolOption());
@@ -92,6 +111,77 @@ public class UIManager : MonoBehaviour
         #endregion
         #region Grapple Charges
         UpdateGrappleCharges();
+        #endregion
+
+        #region Inventory
+        if (!inventoryOpen)
+        {
+            if (Input.GetKeyDown(KeyCode.I))
+            {
+                OpenInventory();
+                inventoryOpen = true;
+            }
+        }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.I))
+            {
+                CloseInventory();
+                inventoryOpen = false;
+            }
+        }
+
+        if (inventoryOpen)
+        {
+            int nextSlot = currItemIndex;
+            int colsPerRow = gridLayout.constraintCount;
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                if(nextSlot - colsPerRow >= 0)
+                {
+                    nextSlot -= colsPerRow;
+                }
+            }
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                if (nextSlot + colsPerRow < addedSlots.Count)
+                {
+                    nextSlot += colsPerRow;
+                }   
+                else if(currItemIndex < addedSlots.Count - 1 && currItemIndex + colsPerRow - (currItemIndex % 3) < addedSlots.Count)
+                {
+                    nextSlot = addedSlots.Count - 1;
+                }
+                else
+                {
+                    // do nothing?
+                }
+            }
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                if(nextSlot - 1  >= 0 && currItemIndex % colsPerRow != 0)
+                {
+                    nextSlot--;
+                }
+                else
+                {
+                    // go left to tools
+                }
+            }
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                if(nextSlot + 1 < addedSlots.Count)
+                {
+                    nextSlot++;
+                }
+            }
+            if(nextSlot != currItemIndex)
+            {
+                currItemIndex = nextSlot;
+                UpdateItemDescription(addedItems[currItemIndex]);
+                Debug.Log("We swap to a new item");
+            }
+        }
         #endregion
     }
     // Called everytime we increase our currency 
@@ -219,5 +309,41 @@ public class UIManager : MonoBehaviour
     public void FadeIn()
     {
         screenAnim.SetTrigger("FadeIn");
+    }
+
+    public void OpenInventory()
+    {
+        GameManager.Instance.SetPaused(true);
+        inventory.SetActive(true);
+        QuestCollectableData[] items = Player.Instance.inventory.GetAllItems().ToArray();
+        foreach(QuestCollectableData item in items)
+        {
+            InventorySlot slot = Instantiate(slotPrefab, slotContainer);
+            addedSlots.Add(slot.gameObject);
+            addedItems.Add(item);
+            slot.Initialize(item);
+        }
+        if(items.Length > 0)
+        {
+            UpdateItemDescription(items[0]);
+        }
+        currItemIndex = 0;
+    }
+    public void CloseInventory()
+    {
+        foreach (GameObject slot in addedSlots)
+        {
+            Destroy(slot);
+        }
+        addedSlots.Clear();
+        addedItems.Clear();
+        inventory.SetActive(false);
+        GameManager.Instance.SetPaused(false);
+    }
+
+    public void UpdateItemDescription(QuestCollectableData item)
+    {
+        itemName.text = item.itemName;
+        itemDescription.text = item.description;
     }
 }

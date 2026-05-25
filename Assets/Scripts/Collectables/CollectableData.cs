@@ -4,6 +4,7 @@ using UnityEngine;
 public class CollectableData : ScriptableObject
 {
     public float maxDistanceToCollect;
+    [Tooltip("Set the sprite of the OBJECT")]
     public Sprite itemSprite;
     public KeyCode pickupKey;
     public Sprite keySprite;

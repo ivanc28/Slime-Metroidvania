@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 0.8773585, g: 0.8773585, b: 0.8773585, a: 1}
+  m_Color: {r: 0.77399766, g: 0.9056604, b: 0.6450694, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -195,7 +195,7 @@ GameObject:
   - component: {fileID: 3191726206499858861}
   - component: {fileID: 3934530804348982309}
   m_Layer: 8
-  m_Name: Flower
+  m_Name: Shirt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -230,9 +230,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f37149f4a0b0964ab44898944b7dd50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::QuestCollectable
-  data: {fileID: 11400000, guid: 6fa2bb8a926351943af320dab69f5035, type: 2}
+  data: {fileID: 11400000, guid: 3edc03d288de80a41a2d5fc121575a29, type: 2}
   collectableID: SampleScene_Flower
-  pickupMessage: You found a White Flower!
+  pickupMessage: You found an Orange Shirt!
   keyIcon: {fileID: 6254863482828121653}
   rb: {fileID: 0}
   spriteRend: {fileID: 9093104567981088291}

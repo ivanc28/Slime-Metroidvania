@@ -37,6 +37,10 @@ public class HookProjectile : MonoBehaviour
 
     void Update()
     {
+        if (GameManager.Instance.GamePaused)
+        {
+            return;
+        }
         if (!player.HookEqualsOneThrown(this) && !player.HookEqualsOneAttached(this))
         {
             Destroy(gameObject);

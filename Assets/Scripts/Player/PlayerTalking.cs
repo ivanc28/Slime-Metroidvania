@@ -10,6 +10,10 @@ public class PlayerTalking : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.Instance.GamePaused)
+        {
+            return;
+        }
         NPC nearestNPC = GetNearestNPCInRange();
         if(currNearestNPC != nearestNPC || !Player.Instance.GetIsGrounded() || Player.Instance.InInteraction)
         {
