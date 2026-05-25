@@ -73,7 +73,7 @@ ScriptedImporter:
     applyGammaDecoding: 0
   previousAsepriteImporterSettings:
     fileImportMode: 1
-    importHiddenLayers: 0
+    importHiddenLayers: 1
     layerImportMode: 0
     defaultPivotSpace: 0
     defaultPivotAlignment: 7
@@ -88,7 +88,7 @@ ScriptedImporter:
     generateSpriteAtlas: 1
   asepriteImporterSettings:
     fileImportMode: 1
-    importHiddenLayers: 0
+    importHiddenLayers: 1
     layerImportMode: 0
     defaultPivotSpace: 0
     defaultPivotAlignment: 7
@@ -102,7 +102,7 @@ ScriptedImporter:
     generateIndividualEvents: 1
     generateSpriteAtlas: 1
   importFileNodeState: 1
-  platformSettingsDirtyTick: 639151585079853263
+  platformSettingsDirtyTick: 639152550192966634
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -127,27 +127,6 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: cave walls back
-    originalName: 
-    pivot: {x: 0.49999997, y: -0.9925926}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 1449
-      y: 336
-      width: 480
-      height: 270
-    spriteID: 57ddc20fdf42e2a479817e1fe966a6b2
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 1449, y: 336}
   - name: cave walls mid
     originalName: 
     pivot: {x: 0.49999997, y: -0.74382716}
@@ -156,11 +135,11 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 1449
+      x: 1108
       y: 4
       width: 576
       height: 324
-    spriteID: ec6988b318e6de145ae61ec6b1faa033
+    spriteID: a6994a15acc5865479d834a9308ff1a6
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -168,7 +147,28 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 1449, y: 4}
+    uvTransform: {x: 1108, y: 4}
+  - name: cave walls back
+    originalName: 
+    pivot: {x: 0.49999997, y: -0.74153847}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1652
+      width: 576
+      height: 325
+    spriteID: cdf3869b54e533b47a8ab202126d0175
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1652}
   - name: cave walls front
     originalName: 
     pivot: {x: 0.5, y: -0.4962963}
@@ -177,11 +177,11 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 972
-      y: 823
+      x: 1072
+      y: 1421
       width: 720
       height: 405
-    spriteID: 39fa28d21fcddc945b475c26a50abc06
+    spriteID: 9b9a423b1ab34b24290309a13fa5d3dc
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -189,20 +189,20 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 972, y: 823}
-  - name: dragon's beard floss
+    uvTransform: {x: 1072, y: 1421}
+  - name: floss
     originalName: 
-    pivot: {x: 0.49999997, y: -0.24814814}
+    pivot: {x: 0.49999997, y: -0.1681109}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
-      x: 4
-      y: 823
+      x: 1072
+      y: 836
       width: 960
-      height: 540
-    spriteID: 26123ecdc20a9b64f8716f52ea58b073
+      height: 577
+    spriteID: c6550e2778c401f4d8247b0154ac9eda
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -210,10 +210,10 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 823}
+    uvTransform: {x: 1072, y: 836}
   - name: tanghulu
     originalName: 
-    pivot: {x: 0.49895617, y: 0}
+    pivot: {x: 0.47171533, y: 0.016990291}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -221,9 +221,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 1437
-      height: 811
-    spriteID: 1e522ba8a2c2a3e47a2bd12e888b5e98
+      width: 1096
+      height: 824
+    spriteID: fce869a864b70eb4491ba6d405d922c0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -232,6 +232,27 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: stars
+    originalName: 
+    pivot: {x: 0.46698114, y: -0.0024752477}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 836
+      width: 1060
+      height: 808
+    spriteID: 168270ca54119bf46b666b96bd782d7b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 836}
   spriteSheetImportData: []
   tileSetImportData: []
   asepriteLayers:
@@ -243,7 +264,7 @@ ScriptedImporter:
       value3: 0
     guid: 0
     name: cave walls back
-    layerFlags: 1
+    layerFlags: 3
     layerType: 0
     blendMode: 0
     cells:
@@ -251,11 +272,11 @@ ScriptedImporter:
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 480
-        y: 268
-        width: 480
-        height: 270
-      spriteId: 57ddc20fdf42e2a479817e1fe966a6b2
+        x: 432
+        y: 241
+        width: 576
+        height: 325
+      spriteId: cdf3869b54e533b47a8ab202126d0175
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
@@ -268,7 +289,7 @@ ScriptedImporter:
       value3: 0
     guid: 0
     name: cave walls mid
-    layerFlags: 1
+    layerFlags: 3
     layerType: 0
     blendMode: 0
     cells:
@@ -280,7 +301,7 @@ ScriptedImporter:
         y: 241
         width: 576
         height: 324
-      spriteId: ec6988b318e6de145ae61ec6b1faa033
+      spriteId: a6994a15acc5865479d834a9308ff1a6
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
@@ -293,7 +314,7 @@ ScriptedImporter:
       value3: 0
     guid: 0
     name: cave walls front
-    layerFlags: 1
+    layerFlags: 3
     layerType: 0
     blendMode: 0
     cells:
@@ -305,32 +326,32 @@ ScriptedImporter:
         y: 201
         width: 720
         height: 405
-      spriteId: 39fa28d21fcddc945b475c26a50abc06
+      spriteId: 9b9a423b1ab34b24290309a13fa5d3dc
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
     parentIndex: -1
   - layerIndex: 3
     uuid:
-      value0: 151036112
+      value0: 3033364609
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: dragon's beard floss
+    name: floss
     layerFlags: 3
     layerType: 0
     blendMode: 0
     cells:
-    - name: dragon's beard floss
+    - name: floss
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
         x: 240
-        y: 134
+        y: 97
         width: 960
-        height: 540
-      spriteId: 26123ecdc20a9b64f8716f52ea58b073
+        height: 577
+      spriteId: c6550e2778c401f4d8247b0154ac9eda
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
@@ -351,11 +372,36 @@ ScriptedImporter:
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 3
-        y: 0
-        width: 1437
-        height: 811
-      spriteId: 1e522ba8a2c2a3e47a2bd12e888b5e98
+        x: 203
+        y: -14
+        width: 1096
+        height: 824
+      spriteId: fce869a864b70eb4491ba6d405d922c0
+    linkedCells: []
+    tileCells: []
+    tileSetIndex: 0
+    parentIndex: -1
+  - layerIndex: 5
+    uuid:
+      value0: 2858725203
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: 0
+    name: stars
+    layerFlags: 2
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: stars
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 225
+        y: 2
+        width: 1060
+        height: 808
+      spriteId: 168270ca54119bf46b666b96bd782d7b
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
