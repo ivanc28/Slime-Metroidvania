@@ -354,6 +354,10 @@ public class NPC : MonoBehaviour
         Player.Instance.rb.sharedMaterial = null;
     }
 
+    public bool IsInteracting()
+    {
+        return isInteracting;
+    }
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.pink;

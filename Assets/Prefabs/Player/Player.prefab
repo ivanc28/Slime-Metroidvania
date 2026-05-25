@@ -97,6 +97,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 171fd132191ec3e43bcef1d1c83bd82f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerTalking
+  gizmosFeetPos: {fileID: 7648288525037105130}
+  gizmosCheckGroundLength: 0.75
+  gizmosTalkDistance: 2.25
 --- !u!50 &611412721014228531
 Rigidbody2D:
   serializedVersion: 5
