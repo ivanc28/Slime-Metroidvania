@@ -56,6 +56,8 @@ public class PlayerData : ScriptableObject
     public Color choiceHoverColor;
     public Color choiceNotHoverColor;
     public Color choiceDisabledColor;
+    public float talkDistance;
+    public float getDistanceSpeed;
     [Header("Zipline")]
     public float ziplineSpeedValue;
 }

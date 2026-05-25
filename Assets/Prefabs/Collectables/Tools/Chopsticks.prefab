@@ -232,8 +232,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ToolCollectable
   data: {fileID: 11400000, guid: a73c3039338dffc4d8df4aaefab2420c, type: 2}
   collectableID: Chopsticks
+  pickupMessage: You found Chopsticks!
   keyIcon: {fileID: 3343622880750300710}
   rb: {fileID: 1920031591507770918}
+  spriteRend: {fileID: 1608443179185600185}
   tool: 3
 --- !u!61 &9211548040890170318
 BoxCollider2D:

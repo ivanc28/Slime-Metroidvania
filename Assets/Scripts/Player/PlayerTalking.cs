@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerTalking : MonoBehaviour
@@ -24,7 +25,7 @@ public class PlayerTalking : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.W) && Player.Instance.GetIsGrounded() && !Player.Instance.InInteraction)
         {
-            InteractWithNPC(nearestNPC);
+            StartCoroutine(InteractWithNPC(nearestNPC));
         }
     }
 
@@ -43,13 +44,44 @@ public class PlayerTalking : MonoBehaviour
         }
         return nearestNPC;
     }
-    private void InteractWithNPC(NPC npc)
-    {        
+    private IEnumerator InteractWithNPC(NPC npc)
+    {
         if (npc != null)
         {
-            npc.Interact();
             Player.Instance.InInteraction = true;
-            Player.Instance.rb.sharedMaterial = Player.Instance.data.someFriction;
+            bool shouldStayInPlace = npc.forcePlayerMoveLeft && npc.forcePlayerMoveRight;
+
+            if (!shouldStayInPlace)
+            {   
+                Player.Instance.rb.sharedMaterial = Player.Instance.data.someFriction;
+                float talkDistance = Player.Instance.data.talkDistance;
+                float getDistanceSpeed = Player.Instance.data.getDistanceSpeed;
+
+                bool walkRight = npc.transform.position.x < transform.position.x;
+                if (npc.forcePlayerMoveRight)
+                    walkRight = true;
+                if (npc.forcePlayerMoveLeft)
+                    walkRight = false;
+
+                while (Vector2.Distance(npc.transform.position, transform.position) < talkDistance)
+                {
+                    if (walkRight)
+                    {
+                        Player.Instance.rb.linearVelocityX = getDistanceSpeed;
+                        Player.Instance.GetRenderer().flipX = false;
+                    }
+                    else
+                    {
+                        Player.Instance.rb.linearVelocityX = -getDistanceSpeed;
+                        Player.Instance.GetRenderer().flipX = true;
+                    }
+                    yield return null;
+                }
+                Player.Instance.GetRenderer().flipX ^= true; // flip the player sprite (same as flipX = !flipX)
+                yield return new WaitForSeconds(0.25f);
+            }
+
+            npc.Interact();
         }
     }
 

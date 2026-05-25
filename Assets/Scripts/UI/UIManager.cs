@@ -26,6 +26,14 @@ public class UIManager : MonoBehaviour
 
     [Header("Tool Display")]
     [SerializeField] Image toolImage;
+
+    [Header("Collection Text")]
+    [SerializeField] Animator collectTextAnim;
+    [SerializeField] GameObject collectTextContainer;
+    [SerializeField] TextMeshProUGUI collectText;
+
+    [Header("Screen Transition")]
+    [SerializeField] Animator screenAnim;
     public static UIManager Instance { get; private set; }
     private void Awake()
     {
@@ -194,5 +202,22 @@ public class UIManager : MonoBehaviour
                 toolImage.color = Color.clear;
             }
         }
+    }
+
+    public void DisplayCollectText(string text)
+    {
+        collectTextContainer.SetActive(true);
+        collectText.text = text;
+        collectTextAnim.SetBool("isCollecting", true);
+    }
+    public void DisableCollectText()
+    {
+        collectTextAnim.SetBool("isCollecting", false);
+        collectTextContainer.SetActive(false);
+    }
+
+    public void FadeIn()
+    {
+        screenAnim.SetTrigger("FadeIn");
     }
 }
