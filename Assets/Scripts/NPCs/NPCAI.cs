@@ -6,6 +6,7 @@ public class NPCAI : MonoBehaviour
     [Tooltip("When on, the NPC will move back and forth")]
     public bool enableMovement;
     public bool enableJumping;
+    public bool faceLeftOnStart;
     public SpriteRenderer npcRenderer;
     public Transform feetPos;
     private Rigidbody2D rb;
@@ -31,14 +32,19 @@ public class NPCAI : MonoBehaviour
             int roll = Random.Range(0, 2);
             if(roll == 0)
             {
-                moveDir = 1;
+                SetFacingRight(true);
             }
             else
             {
-                moveDir = -1;
+                SetFacingRight(false);
             }
             ResetMoveTimer();
         }
+        else
+        {
+            SetFacingRight(!faceLeftOnStart);
+        }
+
     }
 
     // Update is called once per frame
@@ -149,6 +155,18 @@ public class NPCAI : MonoBehaviour
     {
         moveDir *= -1;
         npcRenderer.flipX = !npcRenderer.flipX;
+    }
+    private void SetFacingRight(bool faceRight)
+    {
+        if (faceRight)
+        {
+            moveDir = 1;
+        }
+        else
+        {
+            moveDir = -1;
+        }
+        npcRenderer.flipX = !faceRight;
     }
     private void ResetMoveTimer()
     {
