@@ -58,6 +58,10 @@ public class PlayerData : ScriptableObject
     public Color choiceDisabledColor;
     public float talkDistance;
     public float getDistanceSpeed;
+    [Tooltip("The max amount of time the player will try to get distance from the NPC")]
+    public float maxWalkTime;
+    [Tooltip("How far the down vector is to check if there is ground where we are trying to walk to get distance from the NPC")]
+    public float checkGroundLength;
     [Header("Zipline")]
     public float ziplineSpeedValue;
 }

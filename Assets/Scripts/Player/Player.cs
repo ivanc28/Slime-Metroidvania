@@ -537,7 +537,10 @@ public class Player : MonoBehaviour
     {
         return facingRight;
     }
-  
+    public Vector3 GetFeetPos()
+    {
+        return feetPos.position;
+    }
     private void Run(float lerpAmount)
     {
         // Calculate the direction we want to move in and our desired velocity

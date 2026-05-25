@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6702394be9c02043a954be95fc865d1, type: 3}
+  m_Name: NPCBasicMovement
+  m_EditorClassIdentifier: Assembly-CSharp::NPCAIData
+  moveSpeed: 6
+  jumpSpeed: 12
+  risingGravity: 4
+  fallingGravity: 6
+  groundObjects:
+    serializedVersion: 2
+    m_Bits: 8
+  minMoveTime: 3
+  maxMoveTime: 5
+  minPauseTime: 5
+  maxPauseTime: 8
+  feetCheckLength: 1.5
+  groundCheckLength: 2
+  highWallHeight: 1.25
