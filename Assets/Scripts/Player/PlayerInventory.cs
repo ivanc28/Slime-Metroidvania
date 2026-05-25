@@ -18,4 +18,9 @@ public class PlayerInventory
     {
         return questItemList.Contains(item);
     }
+
+    public List<QuestCollectableData> GetAllItems()
+    {
+        return questItemList;
+    }
 }

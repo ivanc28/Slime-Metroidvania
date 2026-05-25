@@ -11,8 +11,10 @@ public class GameManager : MonoBehaviour
 
     private string currRoomID;
     private string nextSpawnPointID;
+    public bool GamePaused { get; private set; }
     public enum Region { None, Sweet, Savory, Sour, Bitter, Salty }
     private Region currRegion;
+    private float currTimeScale;
 
     private void Awake()
     {
@@ -72,5 +74,14 @@ public class GameManager : MonoBehaviour
     public Region GetCurrRegion()
     {
         return currRegion;
+    }
+    public void SetPaused(bool paused)
+    {
+        if (paused)
+        {
+            currTimeScale = Time.timeScale;
+        }
+        GamePaused = paused;
+        Time.timeScale = paused ? 0 : currTimeScale;
     }
 }

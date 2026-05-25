@@ -129,6 +129,10 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.Instance.GamePaused)
+        {
+            return;
+        }
         // animations here? trying
         anim.SetFloat("yVel", rb.linearVelocityY);
         anim.SetFloat("speed", Mathf.Abs(rb.linearVelocityX));
@@ -319,7 +323,7 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (InInteraction)
+        if (InInteraction || GameManager.Instance.GamePaused)
         {
             return;
         }
