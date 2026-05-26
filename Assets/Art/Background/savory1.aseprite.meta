@@ -127,7 +127,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: mountains
+  - name: -4 mountains back
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -139,7 +139,7 @@ ScriptedImporter:
       y: 4
       width: 1440
       height: 810
-    spriteID: ea6a836d8bfbd974e93bd84dd3c5debd
+    spriteID: 5f911f024cedbc84cb2dc0594b371ab2
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -148,30 +148,9 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: forest back
+  - name: -3 mountains front
     originalName: 
-    pivot: {x: 0.53215635, y: -0.46606332}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 1101
-      width: 793
-      height: 221
-    spriteID: 8381ac2aaf2a2794ca8622487a2a3559
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 1101}
-  - name: forest front
-    originalName: 
-    pivot: {x: 0.4978118, y: -0.3394834}
+    pivot: {x: 0.49306297, y: -0.6951673}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -179,9 +158,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 822
-      width: 914
-      height: 271
-    spriteID: 84050f5d5a5db0d47948fa80a0e75c5d
+      width: 937
+      height: 269
+    spriteID: 80fcb3a73793ef640ab505c3aed2dcd3
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -190,7 +169,49 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 822}
-  - name: egg clouds
+  - name: -2 forest back
+    originalName: 
+    pivot: {x: 0.53215635, y: -0.46606332}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 926
+      y: 1099
+      width: 793
+      height: 221
+    spriteID: ab1e0a5e451e6da4185ac0eb144deba3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 926, y: 1099}
+  - name: -1 forest front
+    originalName: 
+    pivot: {x: 0.4978118, y: -0.3394834}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1099
+      width: 914
+      height: 271
+    spriteID: b46bf9094c7135440b7af9ec1bdb06c8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1099}
+  - name: 0 egg clouds
     originalName: 
     pivot: {x: 0.48075113, y: -2.4615386}
     alignment: 9
@@ -198,11 +219,11 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 926
+      x: 949
       y: 822
       width: 1065
       height: 182
-    spriteID: 370c35fa4e428db42aaf513e96928f99
+    spriteID: 6b17f2508221c1c45ba87bc6f6c6e8ad
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -210,8 +231,8 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 926, y: 822}
-  - name: parm
+    uvTransform: {x: 949, y: 822}
+  - name: 1 parm
     originalName: 
     pivot: {x: 0.5008696, y: 0}
     alignment: 9
@@ -219,11 +240,11 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 805
-      y: 1101
+      x: 4
+      y: 1378
       width: 1150
       height: 132
-    spriteID: 860b4f25e07013943a6e8f35a1b48135
+    spriteID: b00c58b0d3cd0114ea2221bcaaaae8ac
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -231,23 +252,23 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 805, y: 1101}
+    uvTransform: {x: 4, y: 1378}
   spriteSheetImportData: []
   tileSetImportData: []
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 4050698730
+      value0: 2848439114
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: mountains
+    name: -4 mountains back
     layerFlags: 3
     layerType: 0
     blendMode: 0
     cells:
-    - name: mountains
+    - name: -4 mountains back
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -255,24 +276,49 @@ ScriptedImporter:
         y: 0
         width: 1440
         height: 810
-      spriteId: ea6a836d8bfbd974e93bd84dd3c5debd
+      spriteId: 5f911f024cedbc84cb2dc0594b371ab2
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
     parentIndex: -1
   - layerIndex: 1
     uuid:
-      value0: 1553727338
+      value0: 2507115819
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: forest back
+    name: -3 mountains front
     layerFlags: 3
     layerType: 0
     blendMode: 0
     cells:
-    - name: forest back
+    - name: -3 mountains front
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 258
+        y: 187
+        width: 937
+        height: 269
+      spriteId: 80fcb3a73793ef640ab505c3aed2dcd3
+    linkedCells: []
+    tileCells: []
+    tileSetIndex: 0
+    parentIndex: -1
+  - layerIndex: 2
+    uuid:
+      value0: 3060508345
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: 0
+    name: -2 forest back
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: -2 forest back
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -280,24 +326,24 @@ ScriptedImporter:
         y: 103
         width: 793
         height: 221
-      spriteId: 8381ac2aaf2a2794ca8622487a2a3559
+      spriteId: ab1e0a5e451e6da4185ac0eb144deba3
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
     parentIndex: -1
-  - layerIndex: 2
+  - layerIndex: 3
     uuid:
-      value0: 284650332
+      value0: 2504533814
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: forest front
+    name: -1 forest front
     layerFlags: 3
     layerType: 0
     blendMode: 0
     cells:
-    - name: forest front
+    - name: -1 forest front
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -305,24 +351,24 @@ ScriptedImporter:
         y: 92
         width: 914
         height: 271
-      spriteId: 84050f5d5a5db0d47948fa80a0e75c5d
+      spriteId: b46bf9094c7135440b7af9ec1bdb06c8
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
     parentIndex: -1
-  - layerIndex: 3
+  - layerIndex: 4
     uuid:
-      value0: 3815815191
+      value0: 1792316711
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: egg clouds
+    name: 0 egg clouds
     layerFlags: 3
     layerType: 0
     blendMode: 0
     cells:
-    - name: egg clouds
+    - name: 0 egg clouds
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -330,24 +376,24 @@ ScriptedImporter:
         y: 448
         width: 1065
         height: 182
-      spriteId: 370c35fa4e428db42aaf513e96928f99
+      spriteId: 6b17f2508221c1c45ba87bc6f6c6e8ad
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
     parentIndex: -1
-  - layerIndex: 4
+  - layerIndex: 5
     uuid:
-      value0: 1971988788
+      value0: 3789856835
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: parm
+    name: 1 parm
     layerFlags: 3
     layerType: 0
     blendMode: 0
     cells:
-    - name: parm
+    - name: 1 parm
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -355,7 +401,7 @@ ScriptedImporter:
         y: 0
         width: 1150
         height: 132
-      spriteId: 860b4f25e07013943a6e8f35a1b48135
+      spriteId: b00c58b0d3cd0114ea2221bcaaaae8ac
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
