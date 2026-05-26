@@ -36,7 +36,8 @@ public class UIManager : MonoBehaviour
 
     [Header("Inventory")]
     [SerializeField] GameObject inventory;
-    [SerializeField] Transform slotContainer;
+    [SerializeField] Transform questSlotContainer;
+    [SerializeField] Transform toolSlotContainer;
     [SerializeField] GridLayoutGroup gridLayout;
     [SerializeField] InventorySlot slotPrefab;
     [SerializeField] Image inventoryFrame;
@@ -45,10 +46,14 @@ public class UIManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI itemName;
     [SerializeField] TextMeshProUGUI itemDescription;
 
-    private List<GameObject> addedSlots;
-    private List<QuestCollectableData> addedItems;
+    private List<GameObject> addedQuestSlots;
+    private List<QuestCollectableData> addedQuestItems;
+    private List<GameObject> addedToolSlots;
+    private List<ToolInventoryData> addedToolItems;
     private bool inventoryOpen;
-    private int currItemIndex;
+    private bool lookingAtQuestItems;
+    private int currQuestItemIndex;
+    private int currToolItemIndex;
     private Vector2 frameTargetPos;
     private bool recalculatedLayout;
 
@@ -73,8 +78,10 @@ public class UIManager : MonoBehaviour
         currencyTimer = currencyDelayBeforeAcc;
         subCurrencyTimer = currencyDelayBeforeAcc;
         currencyText.text = Player.Instance.currencyData.GetCurrency().ToString();
-        addedSlots = new();
-        addedItems = new();
+        addedQuestSlots = new();
+        addedQuestItems = new();
+        addedToolSlots = new();
+        addedToolItems = new();
         if (Player.Instance.tools.GetCurrToolOption() != null)
         {
             UpdateToolDispay(Player.Instance.tools.GetCurrToolOption());
@@ -141,55 +148,112 @@ public class UIManager : MonoBehaviour
             {
                 inventoryFrame.rectTransform.position = Vector2.Lerp(inventoryFrame.rectTransform.position, frameTargetPos, Time.unscaledDeltaTime * frameSpeed);
             }
-            int nextSlot = currItemIndex;
-            int colsPerRow = gridLayout.constraintCount;
-            if (Input.GetKeyDown(KeyCode.W))
-            {
-                if(nextSlot - colsPerRow >= 0)
+            // Looking at quest items section
+            if (lookingAtQuestItems)
+            {                
+                int nextSlot = currQuestItemIndex;
+                int colsPerRow = gridLayout.constraintCount;
+                if (Input.GetKeyDown(KeyCode.W))
                 {
-                    nextSlot -= colsPerRow;
+                    if (nextSlot - colsPerRow >= 0)
+                    {
+                        nextSlot -= colsPerRow;
+                    }
+                }
+                if (Input.GetKeyDown(KeyCode.S))
+                {
+                    if (nextSlot + colsPerRow < addedQuestSlots.Count)
+                    {
+                        nextSlot += colsPerRow;
+                    }
+                    else if (currQuestItemIndex < addedQuestSlots.Count - 1 && currQuestItemIndex + colsPerRow - (currQuestItemIndex % colsPerRow) < addedQuestSlots.Count)
+                    {
+                        nextSlot = addedQuestSlots.Count - 1;
+                    }
+                    else
+                    {
+                        // do nothing?
+                    }
+                }
+                if (Input.GetKeyDown(KeyCode.A))
+                {
+                    if (nextSlot - 1 >= 0 && currQuestItemIndex % colsPerRow != 0)
+                    {
+                        nextSlot--;
+                    }
+                    else
+                    {
+                        if(addedToolItems.Count > 0)
+                        {
+                            // go left to tools
+                            // set next slot to be same as currQuestItemIndex so that we skip the if-statement that checks their inequality
+                            nextSlot = 0;
+                            currQuestItemIndex = 0;
+                            currToolItemIndex = 0;
+                            lookingAtQuestItems = false;
+                            UpdateItemDescription(addedToolItems[0]);
+                            inventoryFrame.transform.parent = toolSlotContainer;
+                            SetFrameTargetPos(addedToolSlots[0].GetComponent<RectTransform>().position);
+                        }
+                    }
+                }
+                if (Input.GetKeyDown(KeyCode.D))
+                {
+                    if (nextSlot + 1 < addedQuestSlots.Count && nextSlot % colsPerRow != colsPerRow - 1)
+                    {
+                        nextSlot++;
+                    }
+                }
+                if (nextSlot != currQuestItemIndex)
+                {
+                    currQuestItemIndex = nextSlot;
+                    UpdateItemDescription(addedQuestItems[currQuestItemIndex]);
+                    SetFrameTargetPos(addedQuestSlots[currQuestItemIndex].GetComponent<RectTransform>().position);
                 }
             }
-            if (Input.GetKeyDown(KeyCode.S))
+            // Looking at tools sections
+            else
             {
-                if (nextSlot + colsPerRow < addedSlots.Count)
-                {
-                    nextSlot += colsPerRow;
-                }   
-                else if(currItemIndex < addedSlots.Count - 1 && currItemIndex + colsPerRow - (currItemIndex % 3) < addedSlots.Count)
-                {
-                    nextSlot = addedSlots.Count - 1;
-                }
-                else
-                {
-                    // do nothing?
-                }
-            }
-            if (Input.GetKeyDown(KeyCode.A))
-            {
-                if(nextSlot - 1  >= 0 && currItemIndex % colsPerRow != 0)
+                int nextSlot = currToolItemIndex;
+                if (Input.GetKeyDown(KeyCode.W))
                 {
                     nextSlot--;
+                    if(nextSlot < 0)
+                    {
+                        nextSlot = addedToolSlots.Count - 1;
+                    }
                 }
-                else
-                {
-                    // go left to tools
-                }
-            }
-            if (Input.GetKeyDown(KeyCode.D))
-            {
-                if(nextSlot + 1 < addedSlots.Count)
+                if (Input.GetKeyDown(KeyCode.S))
                 {
                     nextSlot++;
+                    if(nextSlot >= addedToolSlots.Count)
+                    {
+                        nextSlot = 0;
+                    }
+                }
+                if (Input.GetKeyDown(KeyCode.D))
+                {
+                    if(addedQuestItems.Count > 0)
+                    {
+                        // go right quest items
+                        // set next slot to be same as currToolItemIndex so that we skip the if-statement that checks their inequality
+                        nextSlot = 0;
+                        currQuestItemIndex = 0;
+                        currToolItemIndex = 0;
+                        lookingAtQuestItems = true;
+                        UpdateItemDescription(addedQuestItems[0]);
+                        inventoryFrame.transform.parent = questSlotContainer;
+                        SetFrameTargetPos(addedQuestSlots[0].GetComponent<RectTransform>().position);
+                    }
+                }
+                if (nextSlot != currToolItemIndex)
+                {
+                    currToolItemIndex = nextSlot;
+                    UpdateItemDescription(addedToolItems[currToolItemIndex]);
+                    SetFrameTargetPos(addedToolSlots[currToolItemIndex].GetComponent<RectTransform>().position);
                 }
             }
-            if(nextSlot != currItemIndex)
-            {
-                currItemIndex = nextSlot;
-                UpdateItemDescription(addedItems[currItemIndex]);
-                SetFrameTargetPos(addedSlots[currItemIndex].GetComponent<RectTransform>().position);
-                Debug.Log("We swap to a new item");
-            }
+            
         }
         #endregion
     }
@@ -327,35 +391,67 @@ public class UIManager : MonoBehaviour
         QuestCollectableData[] items = Player.Instance.inventory.GetAllItems().ToArray();
         foreach(QuestCollectableData item in items)
         {
-            InventorySlot slot = Instantiate(slotPrefab, slotContainer);
-            addedSlots.Add(slot.gameObject);
-            addedItems.Add(item);
+            InventorySlot slot = Instantiate(slotPrefab, questSlotContainer);
+            addedQuestSlots.Add(slot.gameObject);
+            addedQuestItems.Add(item);
             slot.Initialize(item);
         }
+        ToolInventoryData[] tools = Player.Instance.inventory.GetAllTools().ToArray();
+        foreach(ToolInventoryData tool in tools)
+        {
+            InventorySlot slot = Instantiate(slotPrefab, toolSlotContainer);
+            addedToolSlots.Add(slot.gameObject);
+            addedToolItems.Add(tool);
+            slot.Initialize(tool);
+        }
+        if(tools.Length > 0)
+        {
+            inventoryFrame.enabled = true;
+            UpdateItemDescription(tools[0]);
+
+            // Calculate the layout grid and set the pos of the inventory frame
+            LayoutRebuilder.ForceRebuildLayoutImmediate(toolSlotContainer.GetComponent<RectTransform>());
+            Vector2 targetPos = addedToolSlots[0].GetComponent<RectTransform>().position;
+
+            frameTargetPos = targetPos;
+            inventoryFrame.transform.parent = toolSlotContainer;
+            inventoryFrame.rectTransform.position = targetPos;
+            recalculatedLayout = true;
+            lookingAtQuestItems = false;
+        }
+        // hover over a quest item first, so we set up the layout grid of quest item 2nd
         if(items.Length > 0)
         {
             inventoryFrame.enabled = true;
             UpdateItemDescription(items[0]);
 
             // Calculate the layout grid and set the pos of the inventory frame
-            LayoutRebuilder.ForceRebuildLayoutImmediate(slotContainer.GetComponent<RectTransform>());
-            Vector2 targetPos = addedSlots[0].GetComponent<RectTransform>().position;
+            LayoutRebuilder.ForceRebuildLayoutImmediate(questSlotContainer.GetComponent<RectTransform>());
+            Vector2 targetPos = addedQuestSlots[0].GetComponent<RectTransform>().position;
 
             frameTargetPos = targetPos;
+            inventoryFrame.transform.parent = questSlotContainer;
             inventoryFrame.rectTransform.position = targetPos;
             recalculatedLayout = true;
+            lookingAtQuestItems = true;
         }
-        currItemIndex = 0;
-
+        currQuestItemIndex = 0;
+        currToolItemIndex = 0;
     }
     public void CloseInventory()
     {
-        foreach (GameObject slot in addedSlots)
+        foreach (GameObject slot in addedQuestSlots)
         {
             Destroy(slot);
         }
-        addedSlots.Clear();
-        addedItems.Clear();
+        foreach(GameObject slot in addedToolSlots)
+        {
+            Destroy(slot);
+        }
+        addedQuestSlots.Clear();
+        addedQuestItems.Clear();
+        addedToolSlots.Clear();
+        addedToolItems.Clear();
         inventoryFrame.enabled = false;
         recalculatedLayout = false;
         inventory.SetActive(false);
@@ -371,5 +467,10 @@ public class UIManager : MonoBehaviour
     {
         itemName.text = item.itemName;
         itemDescription.text = item.description;
+    }
+    public void UpdateItemDescription(ToolInventoryData tool)
+    {
+        itemName.text = tool.toolName;
+        itemDescription.text = tool.description;
     }
 }

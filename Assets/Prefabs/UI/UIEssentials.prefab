@@ -404,7 +404,7 @@ GameObject:
   - component: {fileID: 8516310849792743239}
   - component: {fileID: 761738118351288272}
   m_Layer: 5
-  m_Name: Slots
+  m_Name: QuestSlots
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -427,8 +427,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -478, y: -350}
-  m_SizeDelta: {x: 759.575, y: 507.3318}
+  m_AnchoredPosition: {x: -777, y: -302.24}
+  m_SizeDelta: {x: 1115, y: 507.3318}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &761738118351288272
 MonoBehaviour:
@@ -453,7 +453,67 @@ MonoBehaviour:
   m_CellSize: {x: 100, y: 100}
   m_Spacing: {x: 230, y: 150}
   m_Constraint: 1
-  m_ConstraintCount: 3
+  m_ConstraintCount: 2
+--- !u!1 &2564098252335299255
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4484736355025417993}
+  - component: {fileID: 2847920301871152809}
+  m_Layer: 5
+  m_Name: ToolSlots
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4484736355025417993
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2564098252335299255}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1379710710509246665}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 158.64099, y: -538.8805}
+  m_SizeDelta: {x: 138.1387, y: 980.62}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2847920301871152809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2564098252335299255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GridLayoutGroup
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 100, y: 100}
+  m_Spacing: {x: 0, y: 47}
+  m_Constraint: 1
+  m_ConstraintCount: 1
 --- !u!1 &2961135675999913359
 GameObject:
   m_ObjectHideFlags: 0
@@ -732,7 +792,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 133}
+  m_AnchoredPosition: {x: 183, y: 133}
   m_SizeDelta: {x: 1115.0559, y: 164.382}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9101278456207920528
@@ -866,6 +926,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8516310849792743239}
+  - {fileID: 4484736355025417993}
   - {fileID: 1183127750412675301}
   - {fileID: 3745658208386164480}
   m_Father: {fileID: 9067203961750009656}
@@ -968,7 +1029,8 @@ MonoBehaviour:
   collectTextContainer: {fileID: 879558128867075889}
   collectText: {fileID: 3809990790816080961}
   inventory: {fileID: 3531266706159660110}
-  slotContainer: {fileID: 8516310849792743239}
+  questSlotContainer: {fileID: 8516310849792743239}
+  toolSlotContainer: {fileID: 4484736355025417993}
   gridLayout: {fileID: 761738118351288272}
   slotPrefab: {fileID: 6464613599032812644, guid: 9e0aab26647dafb4fa8d85b7b3d988ee, type: 3}
   inventoryFrame: {fileID: 3654914328213758440}
@@ -1589,7 +1651,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 293}
+  m_AnchoredPosition: {x: 183, y: 293}
   m_SizeDelta: {x: 603.3469, y: 134.2815}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2250246049722415240

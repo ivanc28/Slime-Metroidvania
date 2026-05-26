@@ -17,4 +17,15 @@ public class InventorySlot : MonoBehaviour
             itemImage.sprite = defaultItemSprite;
         }
     }
+    public void Initialize(ToolInventoryData tool)
+    {
+        if (tool.sprite != null)
+        {
+            itemImage.sprite = tool.sprite;
+        }
+        else
+        {
+            itemImage.sprite = defaultItemSprite;
+        }
+    }
 }

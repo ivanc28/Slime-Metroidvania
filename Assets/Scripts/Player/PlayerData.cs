@@ -64,4 +64,6 @@ public class PlayerData : ScriptableObject
     public float checkGroundLength;
     [Header("Zipline")]
     public float ziplineSpeedValue;
+    [Header("Inventory")]
+    public ToolInventoryData[] toolUIData;
 }

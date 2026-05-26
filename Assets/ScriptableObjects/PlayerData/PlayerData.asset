@@ -65,3 +65,11 @@ MonoBehaviour:
   maxWalkTime: 2
   checkGroundLength: 0.75
   ziplineSpeedValue: 20
+  toolUIData:
+  - {fileID: 11400000, guid: 0394f0f9e4043a343bf94e091fbff175, type: 2}
+  - {fileID: 11400000, guid: cac9728e9948ef74a9ad0984c6ec2ceb, type: 2}
+  - {fileID: 11400000, guid: 90c0a5b58b13d9141b22e1e67cbbb80a, type: 2}
+  - {fileID: 11400000, guid: d2d99c4ef86af1b4e8f8b49263e809f0, type: 2}
+  - {fileID: 11400000, guid: 5139ff26f8263e44ebfa99c7b30ab3a5, type: 2}
+  - {fileID: 11400000, guid: 3ef61222eb36f3a479e2b20e5abe20db, type: 2}
+  - {fileID: 11400000, guid: 71833ea5e2588fb40a07fbdfc069c7c6, type: 2}

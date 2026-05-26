@@ -6,7 +6,7 @@ public class PlayerTools
     public enum Tool { None, Spoon, Fork, Chopsticks, Umbrella, Scissors, Whisk, BubbleBlower};
     private Tool currTool;
     private bool[] claimedTools = new bool[Enum.GetValues(typeof(Tool)).Length];
-    public ToolOption currToolOption;
+    [HideInInspector] public ToolOption currToolOption;
     public PlayerTools()
     {
         currTool = Tool.None;
@@ -15,6 +15,18 @@ public class PlayerTools
     {
         claimedTools[(int)tool] = true;
         Player.Instance.UnlockTool(tool);
+        if(tool == Tool.None)
+        {
+            return;
+        }
+        foreach(ToolInventoryData toolData in Player.Instance.data.toolUIData)
+        {
+            if(toolData.tool == tool)
+            {
+                Player.Instance.inventory.AddToolItem(toolData);
+                break;
+            }
+        }
     }
     public void SwapTool(Tool tool)
     {

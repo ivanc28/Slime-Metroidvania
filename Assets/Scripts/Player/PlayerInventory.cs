@@ -4,6 +4,7 @@ using UnityEngine;
 public class PlayerInventory
 {
     private List<QuestCollectableData> questItemList = new();
+    private List<ToolInventoryData> toolItemList = new();
     public void AddQuestItem(QuestCollectableData item)
     {
         questItemList.Add(item);
@@ -18,9 +19,16 @@ public class PlayerInventory
     {
         return questItemList.Contains(item);
     }
-
+    public void AddToolItem(ToolInventoryData toolItem)
+    {
+        toolItemList.Add(toolItem);
+    }
     public List<QuestCollectableData> GetAllItems()
     {
         return questItemList;
+    }
+    public List<ToolInventoryData> GetAllTools()
+    {
+        return toolItemList;
     }
 }
