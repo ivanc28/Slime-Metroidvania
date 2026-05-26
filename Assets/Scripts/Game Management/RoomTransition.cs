@@ -16,6 +16,8 @@ public class RoomTransition : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             StartCoroutine(GameManager.Instance.GoNextRoom(nextRoomID, nextSpawnPointID, fadeTime));
+            Player.Instance.EnableMovement(false);
+            Player.Instance.rb.linearVelocity = Vector2.zero;
         }
     }
     #if UNITY_EDITOR

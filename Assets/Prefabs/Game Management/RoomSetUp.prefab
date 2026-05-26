@@ -44,3 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcd218afc7169024d91431fb848e2f05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomSetUp
+  spawnPoints: []
+  region: 0
+  minJumpSpeed: 20
+  horizontalSpeedOutOfUp: 10.5
+  transitionTime: 0.15

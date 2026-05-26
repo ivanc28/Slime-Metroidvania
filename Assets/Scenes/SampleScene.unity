@@ -651,6 +651,10 @@ PrefabInstance:
       propertyPath: spawnPointID
       value: SampleScene_East01
       objectReference: {fileID: 0}
+    - target: {fileID: 8154921939504300336, guid: 3f0b6cd9a37cfba4c95e2fe9e5ef3401, type: 3}
+      propertyPath: spawnDirection
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8181567071303827125, guid: 3f0b6cd9a37cfba4c95e2fe9e5ef3401, type: 3}
       propertyPath: m_Name
       value: RoomTransition (2)
@@ -37556,6 +37560,10 @@ PrefabInstance:
     - target: {fileID: 8154921939504300336, guid: 3f0b6cd9a37cfba4c95e2fe9e5ef3401, type: 3}
       propertyPath: spawnPointID
       value: SampleScene_East02
+      objectReference: {fileID: 0}
+    - target: {fileID: 8154921939504300336, guid: 3f0b6cd9a37cfba4c95e2fe9e5ef3401, type: 3}
+      propertyPath: spawnDirection
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8181567071303827125, guid: 3f0b6cd9a37cfba4c95e2fe9e5ef3401, type: 3}
       propertyPath: m_Name

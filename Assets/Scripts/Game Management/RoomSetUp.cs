@@ -10,6 +10,11 @@ public class RoomSetUp : MonoBehaviour
 {
     [SerializeField] SpawnPoint[] spawnPoints;
     [SerializeField] GameManager.Region region;
+    [Tooltip("How much vertical speed the player must get when transitioning up")]
+    [SerializeField] float minJumpSpeed;
+    [Tooltip("How much horizontal speed the player has when moving out of an up transition")]
+    [SerializeField] float horizontalSpeedOutOfUp;
+    [SerializeField] float transitionTime;
     string roomID;
     private void Awake()
     {
@@ -35,7 +40,11 @@ public class RoomSetUp : MonoBehaviour
             {
                 foundScene = true;
                 Player.Instance.transform.position = point.transform.position;
-                Input.ResetInputAxes();
+                Player.Instance.EnableMovement(false);
+                Player.Instance.SetGravityToFalling();
+                Player.Instance.anim.Play("idle", 0, 0);
+                Player.Instance.ResetFlipTimer();
+                StartCoroutine(MoveOutOfTransition(point, transitionTime));
             }
         }
         if (!foundScene)
@@ -47,4 +56,51 @@ public class RoomSetUp : MonoBehaviour
 
 
     }    
+
+    private IEnumerator MoveOutOfTransition(SpawnPoint spawnPoint, float transitionTime)
+    {
+        float timer = 0;
+        while (timer < transitionTime)
+        {
+            if (spawnPoint.spawnDirection == SpawnPoint.Direction.Up)
+            {
+                float moveYSpeed = Player.Instance.rb.linearVelocityY > minJumpSpeed ? Player.Instance.rb.linearVelocityY : minJumpSpeed;
+                //Player.Instance.SetGravityToRising();
+                if (spawnPoint.upRight)
+                {
+                    Player.Instance.rb.linearVelocity = new Vector2(horizontalSpeedOutOfUp, moveYSpeed);
+                }
+                else
+                {
+                    Player.Instance.rb.linearVelocity = new Vector2(-horizontalSpeedOutOfUp, moveYSpeed);
+                }
+                yield return new WaitForSeconds(transitionTime);
+                Player.Instance.EnableMovement(true);
+                yield break;
+            }
+            else if(spawnPoint.spawnDirection == SpawnPoint.Direction.Right)
+            {
+                float xSpeed = Mathf.Abs(Player.Instance.rb.linearVelocityX);
+                Debug.Log($"xspeed was {xSpeed}, and we must be at least {Player.Instance.data.baseMoveSpeed}");
+                if (xSpeed < Player.Instance.data.baseMoveSpeed)
+                {
+                    Player.Instance.rb.linearVelocityX = Player.Instance.data.baseMoveSpeed;
+
+                }
+            }
+            else if(spawnPoint.spawnDirection == SpawnPoint.Direction.Left)
+            {
+                float xSpeed = Mathf.Abs(Player.Instance.rb.linearVelocityX);
+                Debug.Log($"xspeed was {xSpeed}, and we must be at least {Player.Instance.data.baseMoveSpeed}");
+                if (xSpeed < Player.Instance.data.baseMoveSpeed)
+                {
+                    Player.Instance.rb.linearVelocityX = -Player.Instance.data.baseMoveSpeed;
+                }
+            }
+            timer += Time.deltaTime;
+            yield return null;
+        }
+        Player.Instance.EnableMovement(true);
+
+    }
 }

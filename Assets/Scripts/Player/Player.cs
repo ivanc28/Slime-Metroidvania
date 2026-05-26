@@ -380,7 +380,6 @@ public class Player : MonoBehaviour
 
             float dist = Vector2.Distance(rb.position, hookPoint);
             isLockedOnGrapple = false;
-            Debug.Log(dist);
             if (dist < 1.05f)
             {
                 isLockedOnGrapple = true;
@@ -679,6 +678,17 @@ public class Player : MonoBehaviour
         {
             rb.gravityScale = data.umbrellaJumpGravity;
         }
+    }
+
+    public void EnableMovement(bool enabled)
+    {
+        canRun = enabled;
+        canAdjustGravity = enabled;
+        rb.gravityScale = enabled ? data.fallingGravity : 0;
+    }
+    public void ResetFlipTimer()
+    {
+        flipTimer = flipTimeTheshold;
     }
 
 
