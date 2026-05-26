@@ -39,6 +39,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] Transform slotContainer;
     [SerializeField] GridLayoutGroup gridLayout;
     [SerializeField] InventorySlot slotPrefab;
+    [SerializeField] Image inventoryFrame;
+    [SerializeField] float frameSpeed;
 
     [SerializeField] TextMeshProUGUI itemName;
     [SerializeField] TextMeshProUGUI itemDescription;
@@ -47,6 +49,8 @@ public class UIManager : MonoBehaviour
     private List<QuestCollectableData> addedItems;
     private bool inventoryOpen;
     private int currItemIndex;
+    private Vector2 frameTargetPos;
+    private bool recalculatedLayout;
 
     [Header("Screen Transition")]
     [SerializeField] Animator screenAnim;
@@ -133,6 +137,10 @@ public class UIManager : MonoBehaviour
 
         if (inventoryOpen)
         {
+            if (recalculatedLayout)
+            {
+                inventoryFrame.rectTransform.position = Vector2.Lerp(inventoryFrame.rectTransform.position, frameTargetPos, Time.unscaledDeltaTime * frameSpeed);
+            }
             int nextSlot = currItemIndex;
             int colsPerRow = gridLayout.constraintCount;
             if (Input.GetKeyDown(KeyCode.W))
@@ -179,6 +187,7 @@ public class UIManager : MonoBehaviour
             {
                 currItemIndex = nextSlot;
                 UpdateItemDescription(addedItems[currItemIndex]);
+                SetFrameTargetPos(addedSlots[currItemIndex].GetComponent<RectTransform>().position);
                 Debug.Log("We swap to a new item");
             }
         }
@@ -325,9 +334,19 @@ public class UIManager : MonoBehaviour
         }
         if(items.Length > 0)
         {
+            inventoryFrame.enabled = true;
             UpdateItemDescription(items[0]);
+
+            // Calculate the layout grid and set the pos of the inventory frame
+            LayoutRebuilder.ForceRebuildLayoutImmediate(slotContainer.GetComponent<RectTransform>());
+            Vector2 targetPos = addedSlots[0].GetComponent<RectTransform>().position;
+
+            frameTargetPos = targetPos;
+            inventoryFrame.rectTransform.position = targetPos;
+            recalculatedLayout = true;
         }
         currItemIndex = 0;
+
     }
     public void CloseInventory()
     {
@@ -337,8 +356,15 @@ public class UIManager : MonoBehaviour
         }
         addedSlots.Clear();
         addedItems.Clear();
+        inventoryFrame.enabled = false;
+        recalculatedLayout = false;
         inventory.SetActive(false);
         GameManager.Instance.SetPaused(false);
+    }
+
+    private void SetFrameTargetPos(Vector2 targetPos)
+    {
+        frameTargetPos = targetPos;
     }
 
     public void UpdateItemDescription(QuestCollectableData item)
