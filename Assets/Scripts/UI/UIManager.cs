@@ -192,7 +192,7 @@ public class UIManager : MonoBehaviour
                             currToolItemIndex = 0;
                             lookingAtQuestItems = false;
                             UpdateItemDescription(addedToolItems[0]);
-                            inventoryFrame.transform.parent = toolSlotContainer;
+                            inventoryFrame.transform.SetParent(toolSlotContainer);
                             SetFrameTargetPos(addedToolSlots[0].GetComponent<RectTransform>().position);
                         }
                     }
@@ -242,7 +242,7 @@ public class UIManager : MonoBehaviour
                         currToolItemIndex = 0;
                         lookingAtQuestItems = true;
                         UpdateItemDescription(addedQuestItems[0]);
-                        inventoryFrame.transform.parent = questSlotContainer;
+                        inventoryFrame.transform.SetParent(questSlotContainer);
                         SetFrameTargetPos(addedQuestSlots[0].GetComponent<RectTransform>().position);
                     }
                 }
@@ -414,7 +414,7 @@ public class UIManager : MonoBehaviour
             Vector2 targetPos = addedToolSlots[0].GetComponent<RectTransform>().position;
 
             frameTargetPos = targetPos;
-            inventoryFrame.transform.parent = toolSlotContainer;
+            inventoryFrame.transform.SetParent(toolSlotContainer);
             inventoryFrame.rectTransform.position = targetPos;
             recalculatedLayout = true;
             lookingAtQuestItems = false;
@@ -430,7 +430,7 @@ public class UIManager : MonoBehaviour
             Vector2 targetPos = addedQuestSlots[0].GetComponent<RectTransform>().position;
 
             frameTargetPos = targetPos;
-            inventoryFrame.transform.parent = questSlotContainer;
+            inventoryFrame.transform.SetParent(questSlotContainer);
             inventoryFrame.rectTransform.position = targetPos;
             recalculatedLayout = true;
             lookingAtQuestItems = true;
