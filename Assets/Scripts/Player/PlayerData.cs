@@ -66,4 +66,6 @@ public class PlayerData : ScriptableObject
     public float ziplineSpeedValue;
     [Header("Inventory")]
     public ToolInventoryData[] toolUIData;
+    [Header("Debug")]
+    public float noclipSpeed;
 }

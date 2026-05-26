@@ -6,11 +6,13 @@ using System.Collections.Generic;
 public class Player : MonoBehaviour
 {
     [SerializeField] public PlayerData data;
+    [SerializeField] bool enableDebugMode;
     [SerializeField] public UIManager uiManager;
     // Movement
     private float moveInput;
     private bool canRun = true;
     private bool facingRight;
+    private bool noclip;
     // Jumping
     private bool pressedJump;
     private bool liftedJump;
@@ -135,6 +137,32 @@ public class Player : MonoBehaviour
         {
             return;
         }
+        if (enableDebugMode)
+        {
+            if (Input.GetKeyDown(KeyCode.F1))
+            {
+                noclip = !noclip;
+                col.enabled = !noclip;
+                rb.gravityScale = noclip ? 0 : data.fallingGravity;
+                rb.linearVelocity = Vector2.zero;
+                canRun = !noclip;
+                canAdjustGravity = !noclip;
+                isLockedOnGrapple = false;
+                isAttaching = false;
+                SetZipping(false);
+                InInteraction = false;
+            }
+
+            if (noclip)
+            {
+                float x = Input.GetAxisRaw("Horizontal");
+                float y = Input.GetAxisRaw("Vertical");
+                rb.gravityScale = 0;
+                rb.linearVelocity = new Vector2(x, y) * data.noclipSpeed;
+                return;
+            }
+        }
+
         // animations here? trying
         anim.SetFloat("yVel", rb.linearVelocityY);
         anim.SetFloat("speed", Mathf.Abs(rb.linearVelocityX));
@@ -340,7 +368,7 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (InInteraction || GameManager.Instance.GamePaused)
+        if (InInteraction || GameManager.Instance.GamePaused || noclip)
         {
             return;
         }
