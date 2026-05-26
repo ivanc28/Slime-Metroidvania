@@ -156,6 +156,21 @@ public class Player : MonoBehaviour
 
         if (InInteraction)
         {
+            // ensure we can also recharge grapples while interacting with NPCs or picking up stuff
+            if (grappleCharges < maxGrappleCharges)
+            {
+                if (grappleRechargeTimer < grappleRechargeTime)
+                {
+                    grappleRechargeTimer += Time.deltaTime;
+                    UIManager.Instance.UpdateGrappleCharges();
+                }
+                else
+                {
+                    grappleCharges++;
+                    grappleRechargeTimer = 0;
+                    UIManager.Instance.UpdateGrappleCharges();
+                }
+            }
             return;
         }
 
