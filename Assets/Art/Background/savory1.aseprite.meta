@@ -36,7 +36,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 100
+    spritePixelsToUnits: 16
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -73,8 +73,8 @@ ScriptedImporter:
     applyGammaDecoding: 0
   previousAsepriteImporterSettings:
     fileImportMode: 1
-    importHiddenLayers: 0
-    layerImportMode: 1
+    importHiddenLayers: 1
+    layerImportMode: 0
     defaultPivotSpace: 0
     defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
@@ -88,8 +88,8 @@ ScriptedImporter:
     generateSpriteAtlas: 1
   asepriteImporterSettings:
     fileImportMode: 1
-    importHiddenLayers: 0
-    layerImportMode: 1
+    importHiddenLayers: 1
+    layerImportMode: 0
     defaultPivotSpace: 0
     defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
@@ -102,7 +102,7 @@ ScriptedImporter:
     generateIndividualEvents: 1
     generateSpriteAtlas: 1
   importFileNodeState: 1
-  platformSettingsDirtyTick: 0
+  platformSettingsDirtyTick: 639154089405878154
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -127,9 +127,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: savory1
+  - name: -4 mountains back
     originalName: 
-    pivot: {x: 0.5, y: 0.016990291}
+    pivot: {x: 0.48940676, y: -0.24474189}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -137,9 +137,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 1440
-      height: 824
-    spriteID: 31777c6bdbf37b04bb9a705e146245ca
+      width: 944
+      height: 523
+    spriteID: 5f911f024cedbc84cb2dc0594b371ab2
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -148,38 +148,292 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: -3 mountains front
+    originalName: 
+    pivot: {x: 0.49784485, y: -0.2881356}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 956
+      y: 4
+      width: 928
+      height: 354
+    spriteID: 80fcb3a73793ef640ab505c3aed2dcd3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 956, y: 4}
+  - name: -2 forest back
+    originalName: 
+    pivot: {x: 0.49360865, y: -0.32492113}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 955
+      width: 1017
+      height: 317
+    spriteID: ab1e0a5e451e6da4185ac0eb144deba3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 955}
+  - name: -1 forest front
+    originalName: 
+    pivot: {x: 0.49745762, y: -0.067961164}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 535
+      width: 1180
+      height: 412
+    spriteID: 1ff9a929a44e12f4faa67c5f1ae57df1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 535}
+  - name: 0 egg clouds
+    originalName: 
+    pivot: {x: 0.48075113, y: -2.4615386}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1280
+      width: 1065
+      height: 182
+    spriteID: f14bd507934dcd4488eb418449aa70a9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1280}
+  - name: 1 parm
+    originalName: 
+    pivot: {x: 0.5008696, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1470
+      width: 1150
+      height: 132
+    spriteID: 72a99f0c13df97449b42de04157cb3a2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1470}
   spriteSheetImportData: []
   tileSetImportData: []
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 926221149
+      value0: 2848439114
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: savory1
-    layerFlags: 0
+    name: -4 mountains back
+    layerFlags: 3
     layerType: 0
     blendMode: 0
     cells:
-    - name: savory1
+    - name: -4 mountains back
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 0
-        y: -14
-        width: 1440
-        height: 824
-      spriteId: 31777c6bdbf37b04bb9a705e146245ca
+        x: 258
+        y: 128
+        width: 944
+        height: 523
+      spriteId: 5f911f024cedbc84cb2dc0594b371ab2
+    linkedCells: []
+    tileCells: []
+    tileSetIndex: 0
+    parentIndex: -1
+  - layerIndex: 1
+    uuid:
+      value0: 2507115819
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: 0
+    name: -3 mountains front
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: -3 mountains front
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 258
+        y: 102
+        width: 928
+        height: 354
+      spriteId: 80fcb3a73793ef640ab505c3aed2dcd3
+    linkedCells: []
+    tileCells: []
+    tileSetIndex: 0
+    parentIndex: -1
+  - layerIndex: 2
+    uuid:
+      value0: 3060508345
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: 0
+    name: -2 forest back
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: -2 forest back
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 218
+        y: 103
+        width: 1017
+        height: 317
+      spriteId: ab1e0a5e451e6da4185ac0eb144deba3
+    linkedCells: []
+    tileCells: []
+    tileSetIndex: 0
+    parentIndex: -1
+  - layerIndex: 3
+    uuid:
+      value0: 2504533814
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: 0
+    name: -1 forest front
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: -1 forest front
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 133
+        y: 28
+        width: 1180
+        height: 412
+      spriteId: 1ff9a929a44e12f4faa67c5f1ae57df1
+    linkedCells: []
+    tileCells: []
+    tileSetIndex: 0
+    parentIndex: -1
+  - layerIndex: 4
+    uuid:
+      value0: 1792316711
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: 0
+    name: 0 egg clouds
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: 0 egg clouds
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 208
+        y: 448
+        width: 1065
+        height: 182
+      spriteId: f14bd507934dcd4488eb418449aa70a9
+    linkedCells: []
+    tileCells: []
+    tileSetIndex: 0
+    parentIndex: -1
+  - layerIndex: 5
+    uuid:
+      value0: 3789856835
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: 0
+    name: 1 parm
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: 1 parm
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 144
+        y: 0
+        width: 1150
+        height: 132
+      spriteId: 72a99f0c13df97449b42de04157cb3a2
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
     parentIndex: -1
   tileSets: []
-  platformSettings: []
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 1440, y: 810}
-  previousTextureSize: {x: 2048, y: 1024}
+  previousTextureSize: {x: 2048, y: 2048}
