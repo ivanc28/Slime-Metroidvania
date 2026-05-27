@@ -61,6 +61,7 @@ public class Player : MonoBehaviour
     private float ziplineSpeed;
     private float zipCoyoteTimer;
     private float prevXVelForZip;
+    public bool HasZiplineStrap { get; private set; }
 
     [Header("ToolSelection")]
     [SerializeField] GameObject toolSelectorCanvas;
@@ -153,7 +154,10 @@ public class Player : MonoBehaviour
                 SetZipping(false);
                 InInteraction = false;
             }
-
+            if (Input.GetKeyDown(KeyCode.F2))
+            {
+                HasZiplineStrap = !HasZiplineStrap;
+            }
             if (noclip)
             {
                 float x = Input.GetAxisRaw("Horizontal");

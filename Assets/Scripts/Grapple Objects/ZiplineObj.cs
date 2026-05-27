@@ -75,11 +75,14 @@ public class ZiplineObj : GrappleObj
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Hook") && collision != Player.Instance.currentAttachedCollider)
+        if (Player.Instance.HasZiplineStrap)
         {
-            Debug.Log("hooked");
-            EffectOnHookContact(collision);
-            Player.Instance.attachingToZip = true;
+            if (collision.gameObject.CompareTag("Hook") && collision != Player.Instance.currentAttachedCollider)
+            {
+                Debug.Log("hooked");
+                EffectOnHookContact(collision);
+                Player.Instance.attachingToZip = true;
+            }
         }
     }
 
