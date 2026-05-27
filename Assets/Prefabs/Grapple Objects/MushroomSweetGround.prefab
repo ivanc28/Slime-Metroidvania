@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4598308257122908314}
   - component: {fileID: 4349308370015137228}
   m_Layer: 6
-  m_Name: MushroomSavoryFloat
+  m_Name: MushroomSweetGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,7 +84,7 @@ SpriteRenderer:
   m_SortingLayer: -2
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 703310521, guid: 33619b72c439f5b4aa976d4e5370c724, type: 3}
+  m_Sprite: {fileID: -1605907568, guid: 0e2754f25447b0f4d984428901c2e16b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -157,7 +157,7 @@ Animator:
   m_GameObject: {fileID: 5297369461672832583}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7513a3f09a4c1a940ad35e494527e9b4, type: 2}
+  m_Controller: {fileID: 9100000, guid: e43c9f2f659b54f4382f7bed974afbab, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
