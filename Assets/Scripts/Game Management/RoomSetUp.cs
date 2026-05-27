@@ -59,6 +59,7 @@ public class RoomSetUp : MonoBehaviour
 
     private IEnumerator MoveOutOfTransition(SpawnPoint spawnPoint, float transitionTime)
     {
+        Player.Instance.InSceneTransition = true;
         float timer = 0;
         while (timer < transitionTime)
         {
@@ -75,6 +76,7 @@ public class RoomSetUp : MonoBehaviour
                     Player.Instance.rb.linearVelocity = new Vector2(-horizontalSpeedOutOfUp, moveYSpeed);
                 }
                 yield return new WaitForSeconds(transitionTime);
+                Player.Instance.InSceneTransition = false;
                 Player.Instance.EnableMovement(true);
                 yield break;
             }
@@ -101,6 +103,6 @@ public class RoomSetUp : MonoBehaviour
             yield return null;
         }
         Player.Instance.EnableMovement(true);
-
+        Player.Instance.InSceneTransition = false;
     }
 }

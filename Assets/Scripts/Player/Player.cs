@@ -87,6 +87,7 @@ public class Player : MonoBehaviour
     [Header("Animations")]
     public float flipTimeTheshold;
     private float flipTimer;
+    public bool InSceneTransition {  get; set; }
     // Interactions
     public bool InInteraction { get; set; }
 
@@ -184,7 +185,7 @@ public class Player : MonoBehaviour
         {
             flipTimer = flipTimeTheshold;
         }
-        anim.SetBool("canFlip", flipTimer <= 0);
+        anim.SetBool("canFlip", flipTimer <= 0 && !InSceneTransition);
 
 
         if (InInteraction)
