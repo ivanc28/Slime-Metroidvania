@@ -5,6 +5,7 @@ public abstract class GrappleObj : MonoBehaviour
     // Components
     public SpriteRenderer objRenderer;
     public Collider2D objCollider;
+    public Animator anim;
 
     private bool hookAttached;
     private Collider2D hookedCollider;
@@ -15,7 +16,7 @@ public abstract class GrappleObj : MonoBehaviour
     }
     public virtual void MakeStart()
     {
-
+        anim = GetComponent<Animator>();
     }
     private void Update()
     {

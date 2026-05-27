@@ -11,6 +11,7 @@ public class MushroomBouncer : GrappleObj
         DetachHook();
         Player.Instance.DetachHook();
         Player.Instance.SetGravityToFalling();
+        anim.SetTrigger("bounce");
         if (Player.Instance.IsUsingUmbrella())
         {
             Player.Instance.rb.linearVelocity = new Vector2(playerXVel, umbrellaBounceSpeed);

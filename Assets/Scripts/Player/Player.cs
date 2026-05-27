@@ -60,6 +60,7 @@ public class Player : MonoBehaviour
     [SerializeField] List<EdgeCollider2D> zipColliders;
     private float ziplineSpeed;
     private float zipCoyoteTimer;
+    private float prevXVelForZip;
 
     [Header("ToolSelection")]
     [SerializeField] GameObject toolSelectorCanvas;
@@ -375,13 +376,15 @@ public class Player : MonoBehaviour
         #region Grappling
         if (isAttaching)
         {
-            Vector2 dir = ((Vector2)hookPoint - rb.position).normalized;
+            Vector2 dir = (hookPoint - rb.position).normalized;
             rb.linearVelocity = dir * data.attachSpeed;
 
             float dist = Vector2.Distance(rb.position, hookPoint);
             isLockedOnGrapple = false;
+            Debug.Log($"Distance before attach: {dist}");
             if (dist < 1.05f)
             {
+                prevXVelForZip = rb.linearVelocityX;
                 isLockedOnGrapple = true;
                 isAttaching = false;
             }
@@ -389,6 +392,7 @@ public class Player : MonoBehaviour
         }
         if (isLockedOnGrapple)
         {
+
             rb.linearVelocity = Vector2.zero;
             return;
         }
@@ -454,7 +458,7 @@ public class Player : MonoBehaviour
                     {
                         SetZipDirection(1);
                     }
-                    AttachToZipline(currentAttachedCollider);
+                    AttachToZipline(currentAttachedCollider, prevXVelForZip);
                 }
             }
             if (Vector2.Distance(rightZipPoint, new Vector2(transform.position.x,transform.position.y)) <= 0.5f && zipDirection == 1)
@@ -505,7 +509,7 @@ public class Player : MonoBehaviour
                     {
                         SetZipDirection(-1);
                     }
-                    AttachToZipline(currentAttachedCollider);
+                    AttachToZipline(currentAttachedCollider, prevXVelForZip);
                 }
             }
         }
@@ -938,17 +942,18 @@ public class Player : MonoBehaviour
     {
         return moveInput;
     }
-    public void AttachToZipline(Collider2D collision)
+    public void AttachToZipline(Collider2D collision, float xVelocity)
     {
         Vector2 closest = collision.ClosestPoint(transform.position);
         closest.y -= 0.3f;
-        Debug.Log(closest);
+        //Debug.Log(closest);
         transform.position = closest;
         if (zipDirection == 0)
         {
-            SetZipDirection(rb.linearVelocityX);
+            Debug.Log($"zip dir was 0 and XVel was : {xVelocity}");
+            SetZipDirection(xVelocity);
         }
-        Debug.Log(zipDirection);
+        Debug.Log($"new zip dir is {zipDirection}");
         rb.linearVelocity = Vector2.zero;
         SetZipping(true);
         rb.gravityScale = 0;
@@ -988,7 +993,7 @@ public class Player : MonoBehaviour
             // lowLineCollider.enabled = true;
             // Player.Instance.rb.gravityScale = 50;
             Debug.Log("unhook");
-            AttachToZipline(collision);
+            AttachToZipline(collision, prevXVelForZip);
             attachingToZip = false;
         }
     }
