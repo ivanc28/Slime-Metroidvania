@@ -48,8 +48,9 @@ MonoBehaviour:
   nextRoomID: 
   nextSpawnPointID: 
   fadeTime: 0.75
-  transitionCooldown: 0.5
+  transitionCooldown: 0.2
   moveToTransitionSpeed: 12.5
+  direction: 0
 --- !u!61 &219240302506569598
 BoxCollider2D:
   m_ObjectHideFlags: 0

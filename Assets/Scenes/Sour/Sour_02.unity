@@ -1378,6 +1378,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7949734134691755127, guid: 3f0b6cd9a37cfba4c95e2fe9e5ef3401, type: 3}
+      propertyPath: direction
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7949734134691755127, guid: 3f0b6cd9a37cfba4c95e2fe9e5ef3401, type: 3}
       propertyPath: nextRoomID
       value: Sour_03
       objectReference: {fileID: 0}
@@ -196084,6 +196088,10 @@ PrefabInstance:
     - target: {fileID: 7724705572453912221, guid: 3f0b6cd9a37cfba4c95e2fe9e5ef3401, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7949734134691755127, guid: 3f0b6cd9a37cfba4c95e2fe9e5ef3401, type: 3}
+      propertyPath: direction
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7949734134691755127, guid: 3f0b6cd9a37cfba4c95e2fe9e5ef3401, type: 3}
       propertyPath: nextRoomID
