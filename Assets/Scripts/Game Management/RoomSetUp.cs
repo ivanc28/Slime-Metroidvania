@@ -83,7 +83,7 @@ public class RoomSetUp : MonoBehaviour
             else if(spawnPoint.spawnDirection == SpawnPoint.Direction.Right)
             {
                 float xSpeed = Mathf.Abs(Player.Instance.rb.linearVelocityX);
-                Debug.Log($"xspeed was {xSpeed}, and we must be at least {Player.Instance.data.baseMoveSpeed}");
+                //Debug.Log($"xspeed was {xSpeed}, and we must be at least {Player.Instance.data.baseMoveSpeed}");
                 if (xSpeed < Player.Instance.data.baseMoveSpeed)
                 {
                     Player.Instance.rb.linearVelocityX = Player.Instance.data.baseMoveSpeed;
@@ -93,7 +93,7 @@ public class RoomSetUp : MonoBehaviour
             else if(spawnPoint.spawnDirection == SpawnPoint.Direction.Left)
             {
                 float xSpeed = Mathf.Abs(Player.Instance.rb.linearVelocityX);
-                Debug.Log($"xspeed was {xSpeed}, and we must be at least {Player.Instance.data.baseMoveSpeed}");
+                //Debug.Log($"xspeed was {xSpeed}, and we must be at least {Player.Instance.data.baseMoveSpeed}");
                 if (xSpeed < Player.Instance.data.baseMoveSpeed)
                 {
                     Player.Instance.rb.linearVelocityX = -Player.Instance.data.baseMoveSpeed;
