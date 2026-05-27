@@ -56,7 +56,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Mushroom
+  m_Name: MushroomSavoryFloat
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: bounce
@@ -86,7 +86,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Bounce
-  m_Speed: 2
+  m_Speed: 1.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 7358468410663907026}
@@ -99,7 +99,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 7e40d74494ac5314dae3e9d73270d1f7, type: 2}
+  m_Motion: {fileID: 7400000, guid: 82a5880044a3b6445817af6a1f0421ce, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -148,7 +148,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: eeea25e2cbbb19b44b7f10d1750141c7, type: 2}
+  m_Motion: {fileID: 7400000, guid: 4b988c38312fd764cb81e7d96c8401b7, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
