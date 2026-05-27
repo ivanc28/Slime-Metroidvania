@@ -716,6 +716,15 @@ public class Player : MonoBehaviour
     }
     public void HookAttached(Vector2 point, HookProjectile hook, Collider2D currentCollider)
     {
+        if (currentAttachedCollider != null)
+        {
+            GrappleObj prevObj = currentAttachedCollider.GetComponent<GrappleObj>();
+            if (prevObj != null)
+            {
+                prevObj.DetachHook();
+            }
+        }
+
         if (currHookAttached != null && currHookAttached != hook)
         {
             Destroy(currHookAttached.gameObject);
@@ -734,6 +743,14 @@ public class Player : MonoBehaviour
     }
     public void DetachHook()
     {
+        if (currentAttachedCollider != null)
+        {
+            GrappleObj prevObj = currentAttachedCollider.GetComponent<GrappleObj>();
+            if (prevObj != null)
+            {
+                prevObj.DetachHook();
+            }
+        }
         isAttaching = false;
         if (!isLockedOnGrapple)
         {
