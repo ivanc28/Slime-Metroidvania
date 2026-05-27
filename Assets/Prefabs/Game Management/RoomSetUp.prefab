@@ -46,6 +46,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RoomSetUp
   spawnPoints: []
   region: 0
-  minJumpSpeed: 20
+  minJumpSpeed: 21
   horizontalSpeedOutOfUp: 10.5
   transitionTime: 0.15
