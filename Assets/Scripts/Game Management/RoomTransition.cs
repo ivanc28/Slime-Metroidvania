@@ -1,4 +1,5 @@
 #if UNITY_EDITOR
+using System.Collections;
 using UnityEditor;
 #endif
 using UnityEngine;
@@ -11,14 +12,44 @@ public class RoomTransition : MonoBehaviour
     public string nextSpawnPointID;
     [Tooltip("How much time we wait for the screen to fade before transitioning (in seconds)")]
     public float fadeTime;
+    [Tooltip("How long the player must wait before being able to enter a new transition")]
+    public float transitionCooldown;
+    public float moveToTransitionSpeed;
+
+    private bool canTransition = false;
+    private bool canMoveToTransitionGap = false;
+    private void Start()
+    {
+        StartCoroutine(EnableTransitionAfterDelay());
+    }
+    private void Update()
+    {
+        if (canMoveToTransitionGap)
+        {
+            Player.Instance.transform.position = Vector2.MoveTowards(Player.Instance.transform.position, transform.position, Time.deltaTime * moveToTransitionSpeed);
+        }
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (canTransition)
         {
-            StartCoroutine(GameManager.Instance.GoNextRoom(nextRoomID, nextSpawnPointID, fadeTime));
-            Player.Instance.EnableMovement(false);
-            Player.Instance.rb.linearVelocity = Vector2.zero;
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                StartCoroutine(MoveToTransitionPoint());
+            }
         }
+    }
+    private IEnumerator MoveToTransitionPoint()
+    {
+        Player.Instance.EnableMovement(false);
+        Player.Instance.rb.linearVelocity = Vector2.zero;
+        canMoveToTransitionGap = true;
+        yield return GameManager.Instance.GoNextRoom(nextRoomID, nextSpawnPointID, fadeTime);
+    }
+    private IEnumerator EnableTransitionAfterDelay()
+    {
+        yield return new WaitForSeconds(transitionCooldown);
+        canTransition = true;
     }
     #if UNITY_EDITOR
     private void OnDrawGizmos()
