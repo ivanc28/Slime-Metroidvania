@@ -381,7 +381,7 @@ public class Player : MonoBehaviour
 
             float dist = Vector2.Distance(rb.position, hookPoint);
             isLockedOnGrapple = false;
-            Debug.Log($"Distance before attach: {dist}");
+            //Debug.Log($"Distance before attach: {dist}");
             if (dist < 1.05f)
             {
                 prevXVelForZip = rb.linearVelocityX;
