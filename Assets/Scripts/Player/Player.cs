@@ -381,7 +381,7 @@ public class Player : MonoBehaviour
 
             float dist = Vector2.Distance(rb.position, hookPoint);
             isLockedOnGrapple = false;
-            Debug.Log($"Distance before attach: {dist}");
+            //Debug.Log($"Distance before attach: {dist}");
             if (dist < 1.05f)
             {
                 prevXVelForZip = rb.linearVelocityX;
@@ -950,10 +950,9 @@ public class Player : MonoBehaviour
         transform.position = closest;
         if (zipDirection == 0)
         {
-            Debug.Log($"zip dir was 0 and XVel was : {xVelocity}");
             SetZipDirection(xVelocity);
         }
-        Debug.Log($"new zip dir is {zipDirection}");
+        //Debug.Log($"new zip dir is {zipDirection}");
         rb.linearVelocity = Vector2.zero;
         SetZipping(true);
         rb.gravityScale = 0;
