@@ -2,6 +2,8 @@ using System.Collections;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
+
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -25,7 +27,11 @@ public class RoomSetUp : MonoBehaviour
     }
     private void Start()
     {
-        FindFirstObjectByType<CinemachineCamera>().Follow = Player.Instance.transform;
+        CinemachineCamera[] cameras = FindObjectsByType<CinemachineCamera>(FindObjectsSortMode.None);
+        foreach(CinemachineCamera cam in cameras)
+        {
+            cam.Follow = Player.Instance.transform;
+        }
         PlayerTalking.SetNPCsInRoom();
         string spawnPointID = GameManager.Instance.GetNextSpawnPointID();
         if (spawnPointID == null || spawnPointID == string.Empty)
