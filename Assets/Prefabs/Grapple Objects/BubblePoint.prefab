@@ -50,7 +50,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BubbleObj
   objRenderer: {fileID: 7060385693812180949}
   objCollider: {fileID: 7355406469698735675}
-  bubbleInteractGain: {fileID: 2949446675398853784}
+  anim: {fileID: 0}
+  bubbleInteractGain: {fileID: 0}
   popTime: 1
   excludedObjects:
     serializedVersion: 2

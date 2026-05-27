@@ -130,6 +130,7 @@ public class Player : MonoBehaviour
         //TESTING
         tools.ClaimTool(PlayerTools.Tool.Spoon);
         tools.ClaimTool(PlayerTools.Tool.Whisk);
+        tools.ClaimTool(PlayerTools.Tool.BubbleBlower);
         tools.SwapTool(PlayerTools.Tool.Spoon);
     }
 
@@ -359,7 +360,7 @@ public class Player : MonoBehaviour
         #endregion
 
         #region Using Tools
-        if (Input.GetKeyDown(data.interactKey) && ((!InInteraction && !inBubble && isGrounded && !isAttaching && !isLockedOnGrapple && currHookBeingThrown == null) || onBubble))
+        if (Input.GetKeyDown(data.interactKey) && ((!InInteraction && !inBubble && (isGrounded || isLockedOnGrapple) && !isAttaching && !zipping && currHookBeingThrown == null) || onBubble))
         {
             StartCoroutine(UseTool());
             EnableToolSelectionCanvas(false);

@@ -38675,10 +38675,6 @@ PrefabInstance:
       propertyPath: bubbleCollider
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 5715407787039484838, guid: eba8e75ad89aff64289d45c28208284c, type: 3}
-      propertyPath: bubbleInteractGain
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 7764170022590102005, guid: eba8e75ad89aff64289d45c28208284c, type: 3}
       propertyPath: m_Name
       value: BubbleInteractNoGain
