@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4598308257122908314}
   - component: {fileID: 4349308370015137228}
   m_Layer: 6
-  m_Name: MushroomBouncer
+  m_Name: MushroomSavoryGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,7 +84,7 @@ SpriteRenderer:
   m_SortingLayer: -2
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 5395865059021553701, guid: 23281c3980c1aa04294ac940f1fc30c0, type: 3}
+  m_Sprite: {fileID: -3582439230087644502, guid: 23281c3980c1aa04294ac940f1fc30c0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
