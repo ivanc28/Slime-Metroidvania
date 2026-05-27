@@ -80,11 +80,11 @@ ScriptedImporter:
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
     spritePadding: 0
-    generateModelPrefab: 1
-    generateAnimationClips: 1
-    addSortingGroup: 1
+    generateModelPrefab: 0
+    generateAnimationClips: 0
+    addSortingGroup: 0
     addShadowCasters: 0
-    generateIndividualEvents: 1
+    generateIndividualEvents: 0
     generateSpriteAtlas: 1
   asepriteImporterSettings:
     fileImportMode: 1
@@ -95,14 +95,14 @@ ScriptedImporter:
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
     spritePadding: 0
-    generateModelPrefab: 1
-    generateAnimationClips: 1
-    addSortingGroup: 1
+    generateModelPrefab: 0
+    generateAnimationClips: 0
+    addSortingGroup: 0
     addShadowCasters: 0
-    generateIndividualEvents: 1
+    generateIndividualEvents: 0
     generateSpriteAtlas: 1
   importFileNodeState: 1
-  platformSettingsDirtyTick: 639153471195360683
+  platformSettingsDirtyTick: 639154896052264980
   textureAssetName: 
   singleSpriteImportData:
   - name: 
