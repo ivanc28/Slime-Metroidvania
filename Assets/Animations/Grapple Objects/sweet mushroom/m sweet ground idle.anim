@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: m savory ground idle
+  m_Name: m sweet ground idle
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,7 +21,7 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 703310521, guid: 33619b72c439f5b4aa976d4e5370c724, type: 3}
+      value: {fileID: -1605907568, guid: 0e2754f25447b0f4d984428901c2e16b, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -44,7 +44,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 703310521, guid: 33619b72c439f5b4aa976d4e5370c724, type: 3}
+    - {fileID: -1605907568, guid: 0e2754f25447b0f4d984428901c2e16b, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
