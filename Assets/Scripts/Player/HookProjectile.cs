@@ -79,6 +79,10 @@ public class HookProjectile : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (attached) return;
+        if(collision.gameObject.CompareTag("Zipline") && !Player.Instance.HasZiplineStrap)
+        {
+            return;
+        }
         // Check if the hit layer is within the grapple mask
         if (((1 << collision.gameObject.layer) & grappleMask) != 0)
         {
