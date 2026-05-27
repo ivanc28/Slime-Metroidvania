@@ -80,8 +80,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 692282859
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 5395865059021553701, guid: 23281c3980c1aa04294ac940f1fc30c0, type: 3}
@@ -108,6 +108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MushroomBouncer
   objRenderer: {fileID: 0}
   objCollider: {fileID: 0}
+  anim: {fileID: 0}
   bounceSpeed: 33
   umbrellaBounceSpeed: 27
 --- !u!58 &4598308257122908314
