@@ -266,4 +266,4 @@ MonoBehaviour:
   anim: {fileID: 0}
   rb: {fileID: 4267910538756410414}
   spinForce: 2000
-  maxSpinSpeed: 900
+  maxSpinSpeed: 750
