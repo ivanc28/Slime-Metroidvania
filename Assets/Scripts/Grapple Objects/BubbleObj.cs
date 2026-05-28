@@ -152,7 +152,6 @@ public class BubbleObj : GrappleObj
     }
     private void EnterBubble()
     {
-        Debug.Log(gameObject.name);
         Player.Instance.rb.gravityScale = 0;
         Player.Instance.rb.linearVelocity = Vector2.zero;
         Player.Instance.rb.position = transform.position;
@@ -182,7 +181,13 @@ public class BubbleObj : GrappleObj
         bubbleTrigger.isTrigger = true;
         bubbleTrigger.excludeLayers = nothingLayer;
         startFlashing = false;
-
+        foreach (CameraSwitcher switcher in FindObjectsByType<CameraSwitcher>(FindObjectsSortMode.None))
+        {
+            if (switcher.UsingCamera)
+            {
+                switcher.OnPlayerExitBubble();
+            }
+        }
         StartCoroutine(PopBubble(popTime));
     }
 

@@ -2,6 +2,8 @@ using System.Collections;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
+
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -25,7 +27,11 @@ public class RoomSetUp : MonoBehaviour
     }
     private void Start()
     {
-        FindFirstObjectByType<CinemachineCamera>().Follow = Player.Instance.transform;
+        CinemachineCamera[] cameras = FindObjectsByType<CinemachineCamera>(FindObjectsSortMode.None);
+        foreach(CinemachineCamera cam in cameras)
+        {
+            cam.Follow = Player.Instance.transform;
+        }
         PlayerTalking.SetNPCsInRoom();
         string spawnPointID = GameManager.Instance.GetNextSpawnPointID();
         if (spawnPointID == null || spawnPointID == string.Empty)
@@ -59,6 +65,7 @@ public class RoomSetUp : MonoBehaviour
 
     private IEnumerator MoveOutOfTransition(SpawnPoint spawnPoint, float transitionTime)
     {
+        Player.Instance.InSceneTransition = true;
         float timer = 0;
         while (timer < transitionTime)
         {
@@ -75,13 +82,14 @@ public class RoomSetUp : MonoBehaviour
                     Player.Instance.rb.linearVelocity = new Vector2(-horizontalSpeedOutOfUp, moveYSpeed);
                 }
                 yield return new WaitForSeconds(transitionTime);
+                Player.Instance.InSceneTransition = false;
                 Player.Instance.EnableMovement(true);
                 yield break;
             }
             else if(spawnPoint.spawnDirection == SpawnPoint.Direction.Right)
             {
                 float xSpeed = Mathf.Abs(Player.Instance.rb.linearVelocityX);
-                Debug.Log($"xspeed was {xSpeed}, and we must be at least {Player.Instance.data.baseMoveSpeed}");
+                //Debug.Log($"xspeed was {xSpeed}, and we must be at least {Player.Instance.data.baseMoveSpeed}");
                 if (xSpeed < Player.Instance.data.baseMoveSpeed)
                 {
                     Player.Instance.rb.linearVelocityX = Player.Instance.data.baseMoveSpeed;
@@ -91,7 +99,7 @@ public class RoomSetUp : MonoBehaviour
             else if(spawnPoint.spawnDirection == SpawnPoint.Direction.Left)
             {
                 float xSpeed = Mathf.Abs(Player.Instance.rb.linearVelocityX);
-                Debug.Log($"xspeed was {xSpeed}, and we must be at least {Player.Instance.data.baseMoveSpeed}");
+                //Debug.Log($"xspeed was {xSpeed}, and we must be at least {Player.Instance.data.baseMoveSpeed}");
                 if (xSpeed < Player.Instance.data.baseMoveSpeed)
                 {
                     Player.Instance.rb.linearVelocityX = -Player.Instance.data.baseMoveSpeed;
@@ -101,6 +109,6 @@ public class RoomSetUp : MonoBehaviour
             yield return null;
         }
         Player.Instance.EnableMovement(true);
-
+        Player.Instance.InSceneTransition = false;
     }
 }

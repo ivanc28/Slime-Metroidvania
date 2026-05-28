@@ -61,6 +61,7 @@ public class Player : MonoBehaviour
     private float ziplineSpeed;
     private float zipCoyoteTimer;
     private float prevXVelForZip;
+    public bool HasZiplineStrap { get; private set; }
 
     [Header("ToolSelection")]
     [SerializeField] GameObject toolSelectorCanvas;
@@ -86,6 +87,7 @@ public class Player : MonoBehaviour
     [Header("Animations")]
     public float flipTimeTheshold;
     private float flipTimer;
+    public bool InSceneTransition {  get; set; }
     // Interactions
     public bool InInteraction { get; set; }
 
@@ -128,6 +130,8 @@ public class Player : MonoBehaviour
         //TESTING
         tools.ClaimTool(PlayerTools.Tool.Spoon);
         tools.ClaimTool(PlayerTools.Tool.Whisk);
+        tools.ClaimTool(PlayerTools.Tool.Scissors);
+        tools.ClaimTool(PlayerTools.Tool.BubbleBlower);
         tools.SwapTool(PlayerTools.Tool.Spoon);
     }
 
@@ -153,13 +157,20 @@ public class Player : MonoBehaviour
                 SetZipping(false);
                 InInteraction = false;
             }
-
+            if (Input.GetKeyDown(KeyCode.F2))
+            {
+                HasZiplineStrap = !HasZiplineStrap;
+            }
             if (noclip)
             {
                 float x = Input.GetAxisRaw("Horizontal");
                 float y = Input.GetAxisRaw("Vertical");
                 rb.gravityScale = 0;
                 rb.linearVelocity = new Vector2(x, y) * data.noclipSpeed;
+                if(Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.LeftControl))
+                {
+                    rb.linearVelocity = new Vector2(x, y) * data.noclipSpeed * 1.5f;
+                }
                 return;
             }
         }
@@ -180,10 +191,10 @@ public class Player : MonoBehaviour
         {
             flipTimer = flipTimeTheshold;
         }
-        anim.SetBool("canFlip", flipTimer <= 0);
+        anim.SetBool("canFlip", flipTimer <= 0 && !InSceneTransition);
 
 
-        if (InInteraction)
+        if (InInteraction && !isLockedOnGrapple)
         {
             // ensure we can also recharge grapples while interacting with NPCs or picking up stuff
             if (grappleCharges < maxGrappleCharges)
@@ -354,7 +365,7 @@ public class Player : MonoBehaviour
         #endregion
 
         #region Using Tools
-        if (Input.GetKeyDown(data.interactKey) && ((!InInteraction && !inBubble && isGrounded && !isAttaching && !isLockedOnGrapple && currHookBeingThrown == null) || onBubble))
+        if (Input.GetKeyDown(data.interactKey) && ((!InInteraction && !inBubble && (isGrounded || isLockedOnGrapple) && !isAttaching && !zipping && currHookBeingThrown == null) || onBubble))
         {
             StartCoroutine(UseTool());
             EnableToolSelectionCanvas(false);

@@ -423,27 +423,6 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 424, y: 148}
-  - name: BG
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 4
-      width: 388
-      height: 160
-    spriteID: fd650c9ac279b9d498d8483e2e760358
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 4}
   - name: tileset 1_15
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -3153,6 +3132,27 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 196, y: 266}
+  - name: BG
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 388
+      height: 160
+    spriteID: 2237f4a2070488441b7b5eeb9a34dcb4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
   asepriteLayers:
   - layerIndex: 0
     uuid:
@@ -3174,7 +3174,7 @@ ScriptedImporter:
         y: 0
         width: 388
         height: 160
-      spriteId: fd650c9ac279b9d498d8483e2e760358
+      spriteId: 2237f4a2070488441b7b5eeb9a34dcb4
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
