@@ -3,8 +3,8 @@ using System.Collections.Generic;
 
 public class ZiplineObj : GrappleObj
 {
-    [SerializeField] GameObject[] travelPoints;
-    [SerializeField] GameObject[] lowTravelPoints;
+    //[SerializeField] GameObject[] travelPoints;
+    //[SerializeField] GameObject[] lowTravelPoints;
     // [SerializeField] GameObject zipPoint;
     // [SerializeField] Material lineMaterial;
     // private bool atStart;
@@ -37,15 +37,15 @@ public class ZiplineObj : GrappleObj
         lineRenderer.endWidth = 0.2f;
 
         // Set the number of vertices
-        lineRenderer.positionCount = travelPoints.Length;
+        lineRenderer.positionCount = transform.childCount;
         
 
         // Set the positions of the vertices
-        for (int i = 0; i < travelPoints.Length; i++)
+        for (int i = 0; i < transform.childCount; i++)
         {
-            travelPointVectors.Add(travelPoints[i].transform.position);
+            travelPointVectors.Add(transform.GetChild(i).transform.position);
             // lowTravelPointVectors.Add(lowTravelPoints[i].transform.position);
-            lineRenderer.SetPosition(i, travelPoints[i].transform.position);
+            lineRenderer.SetPosition(i, transform.GetChild(i).transform.position);
         }
         
         // lineCollider = gameObject.AddComponent<EdgeCollider2D>();

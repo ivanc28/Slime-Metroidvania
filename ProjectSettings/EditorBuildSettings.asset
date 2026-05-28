@@ -32,6 +32,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Sour/Sour_05.unity
     guid: 049dcfb6bda65934f9abac94f3efdf93
+  - enabled: 1
+    path: Assets/Scenes/Bitter/Bitter_01.unity
+    guid: 1ac7a368665416441873da61e6a45f3e
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 3590b91b4603b465dbb4216d601bff33, type: 3}
   m_UseUCBPForAssetBundles: 0

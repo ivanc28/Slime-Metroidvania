@@ -469,10 +469,10 @@ public class Player : MonoBehaviour
                     {
                         SetZipDirection(1);
                     }
-                    AttachToZipline(currentAttachedCollider, prevXVelForZip);
+                    AttachToZipline(currentAttachedCollider, 0);
                 }
             }
-            if (Vector2.Distance(rightZipPoint, new Vector2(transform.position.x,transform.position.y)) <= 0.5f && zipDirection == 1)
+            if (Vector2.Distance(rightZipPoint, transform.position) <= 0.5f && zipDirection == 1)
             {
                 SetZipping(false);
                 bool leftRight = firstZipPoint.x < secondZipPoint.x;
@@ -520,7 +520,7 @@ public class Player : MonoBehaviour
                     {
                         SetZipDirection(-1);
                     }
-                    AttachToZipline(currentAttachedCollider, prevXVelForZip);
+                    AttachToZipline(currentAttachedCollider, 0);
                 }
             }
         }
