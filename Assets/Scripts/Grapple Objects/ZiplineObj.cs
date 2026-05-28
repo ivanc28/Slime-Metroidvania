@@ -98,4 +98,17 @@ public class ZiplineObj : GrappleObj
     {
         return lineColliders;
     }
+
+    public void OnDrawGizmos()
+    {
+        if(transform.childCount > 1)
+        {
+            for (int i = 0; i < transform.childCount - 1; i++)
+            {
+                Gizmos.color = Color.white;
+                Vector2 dir = transform.GetChild(i + 1).position - transform.GetChild(i).position;
+                Gizmos.DrawRay(transform.GetChild(i).transform.position, dir);
+            }
+        }
+    }
 }
