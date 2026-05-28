@@ -45,4 +45,5 @@ public class CameraController : MonoBehaviour
         (currCamera.Priority, newCamera.Priority) = (newCamera.Priority, currCamera.Priority);
         vcamFollow = newCamera.GetComponent<CinemachineFollow>();
     }
+    
 }

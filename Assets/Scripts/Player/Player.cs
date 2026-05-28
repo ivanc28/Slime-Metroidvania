@@ -167,6 +167,10 @@ public class Player : MonoBehaviour
                 float y = Input.GetAxisRaw("Vertical");
                 rb.gravityScale = 0;
                 rb.linearVelocity = new Vector2(x, y) * data.noclipSpeed;
+                if(Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.LeftControl))
+                {
+                    rb.linearVelocity = new Vector2(x, y) * data.noclipSpeed * 1.5f;
+                }
                 return;
             }
         }
@@ -190,7 +194,7 @@ public class Player : MonoBehaviour
         anim.SetBool("canFlip", flipTimer <= 0 && !InSceneTransition);
 
 
-        if (InInteraction)
+        if (InInteraction && !isLockedOnGrapple)
         {
             // ensure we can also recharge grapples while interacting with NPCs or picking up stuff
             if (grappleCharges < maxGrappleCharges)
