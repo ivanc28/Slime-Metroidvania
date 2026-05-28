@@ -48,4 +48,4 @@ MonoBehaviour:
   region: 0
   minJumpSpeed: 21
   horizontalSpeedOutOfUp: 10.5
-  transitionTime: 0.15
+  transitionTime: 0.3

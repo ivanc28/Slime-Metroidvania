@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RoomTransition
   nextRoomID: 
   nextSpawnPointID: 
-  fadeTime: 0.75
+  fadeTime: 0.85
   transitionCooldown: 0.2
   moveToTransitionSpeed: 12.5
   direction: 0
