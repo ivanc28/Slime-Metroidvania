@@ -218,5 +218,6 @@ public class BubbleObj : GrappleObj
         DeactivateBubble();
         yield return new WaitForSeconds(delayBeforeReappear);
         ActivateBubble();
+        anim.SetTrigger("replaceBubble");
     }
 }
