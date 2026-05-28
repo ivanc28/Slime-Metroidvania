@@ -196753,6 +196753,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1083763222}
     m_Modifications:
+    - target: {fileID: 1826089363269184507, guid: 69e27b4bc88e1bf4685b0fe55f538366, type: 3}
+      propertyPath: interactableID
+      value: Sour_02_ScissorsWall
+      objectReference: {fileID: 0}
     - target: {fileID: 8851486633162957434, guid: 69e27b4bc88e1bf4685b0fe55f538366, type: 3}
       propertyPath: m_LocalPosition.x
       value: 35.5146
