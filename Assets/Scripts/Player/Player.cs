@@ -504,7 +504,6 @@ public class Player : MonoBehaviour
                     bool newLeftRight = firstZipPoint.x < secondZipPoint.x;
                     if (firstZipPoint.x > secondZipPoint.x)
                     {
-                        SetZipDirection(-1);
                         leftZipPoint = secondZipPoint;
                         rightZipPoint = firstZipPoint;
                         Debug.Log("swap direction");
