@@ -39,6 +39,18 @@ public class RoomTransition : MonoBehaviour
             if (collision.gameObject.CompareTag("Player"))
             {
                 StartCoroutine(MoveToTransitionPoint());
+                canTransition = false;
+            }
+        }
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (canTransition)
+        {
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                StartCoroutine(MoveToTransitionPoint());
+                canTransition = false;
             }
         }
     }

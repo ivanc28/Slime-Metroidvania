@@ -125,7 +125,6 @@ Transform:
   - {fileID: 1473318916847903887}
   - {fileID: 2187572629940727041}
   - {fileID: 6289379194479980989}
-  - {fileID: 7798827224432573037}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2108276842980964637
@@ -142,11 +141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ZiplineObj
   objRenderer: {fileID: 0}
   objCollider: {fileID: 0}
-  travelPoints:
-  - {fileID: 5275854720615139008}
-  - {fileID: 212880967182562193}
-  - {fileID: 6255361380442238517}
-  lowTravelPoints: []
+  anim: {fileID: 0}
 --- !u!120 &8017220658648640779
 LineRenderer:
   serializedVersion: 3
@@ -439,34 +434,3 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!1 &7974318144739641259
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7798827224432573037}
-  m_Layer: 0
-  m_Name: LineCollider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7798827224432573037
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7974318144739641259}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.259999, y: 1.8300018, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3634669894495456771}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
