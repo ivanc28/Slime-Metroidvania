@@ -152,6 +152,7 @@ public class BubbleObj : GrappleObj
     }
     private void EnterBubble()
     {
+        anim.SetBool("inBubble", true);
         Player.Instance.rb.gravityScale = 0;
         Player.Instance.rb.linearVelocity = Vector2.zero;
         Player.Instance.rb.position = transform.position;
@@ -170,6 +171,7 @@ public class BubbleObj : GrappleObj
     }
     private void ExitBubble()
     {
+        anim.SetBool("inBubble", false);
         Player.Instance.SetInBubble(false);
         playerInBubble = false;
         rb.bodyType = RigidbodyType2D.Static;
