@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Sweet/Sweet_03.unity
     guid: 837837078233f694dac76a6e60d3d262
   - enabled: 1
+    path: Assets/Scenes/Sweet/Sweet_04.unity
+    guid: c34a1e7f07fdbfb4bbb13270e2abded4
+  - enabled: 1
     path: Assets/Scenes/Sour/Sour_01.unity
     guid: 6dfced9dfd70e6645909fe273314d375
   - enabled: 1
