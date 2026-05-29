@@ -2598,6 +2598,10 @@ PrefabInstance:
       value: RoomSetUp
       objectReference: {fileID: 0}
     - target: {fileID: 4989853534961498432, guid: e1795217d854b4040b84d4731da72783, type: 3}
+      propertyPath: region
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4989853534961498432, guid: e1795217d854b4040b84d4731da72783, type: 3}
       propertyPath: spawnPoints.Array.size
       value: 3
       objectReference: {fileID: 0}
