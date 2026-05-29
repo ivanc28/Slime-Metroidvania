@@ -21,7 +21,10 @@ public class PlayerInventory
     }
     public void AddToolItem(ToolInventoryData toolItem)
     {
-        toolItemList.Add(toolItem);
+        if (!toolItemList.Contains(toolItem))
+        {
+            toolItemList.Add(toolItem);
+        }
     }
     public List<QuestCollectableData> GetAllItems()
     {
