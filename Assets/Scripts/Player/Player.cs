@@ -161,6 +161,17 @@ public class Player : MonoBehaviour
             {
                 HasZiplineStrap = !HasZiplineStrap;
             }
+            if (Input.GetKeyDown(KeyCode.F3))
+            {
+                tools.ClaimTool(PlayerTools.Tool.Spoon);
+                tools.ClaimTool(PlayerTools.Tool.Fork);
+                tools.ClaimTool(PlayerTools.Tool.Umbrella);
+                tools.ClaimTool(PlayerTools.Tool.Scissors);
+                tools.ClaimTool(PlayerTools.Tool.Whisk);
+                tools.ClaimTool(PlayerTools.Tool.BubbleBlower);
+                tools.ClaimTool(PlayerTools.Tool.Chopsticks);
+
+            }
             if (noclip)
             {
                 float x = Input.GetAxisRaw("Horizontal");
