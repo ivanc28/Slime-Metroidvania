@@ -4,7 +4,7 @@ public abstract class GrappleObj : MonoBehaviour
 {
     // Components
     public SpriteRenderer objRenderer;
-    public Collider2D objCollider;
+    [HideInInspector] public Collider2D objCollider;
     public Animator anim;
 
     private bool hookAttached;
@@ -16,6 +16,7 @@ public abstract class GrappleObj : MonoBehaviour
     }
     public virtual void MakeStart()
     {
+        objCollider = GetComponent<Collider2D>();
         anim = GetComponent<Animator>();
     }
     private void Update()
@@ -32,7 +33,8 @@ public abstract class GrappleObj : MonoBehaviour
     }
     public virtual void MakeFixedUpdate()
     {
-        if ((PlayerInsideCollider || Player.Instance.GetIsLocked()) && hookAttached)
+        bool lockedOnThis = Player.Instance.GetIsLocked() && Player.Instance.currentAttachedCollider == objCollider && !Player.Instance.GetIsAttaching();
+        if ((PlayerInsideCollider || lockedOnThis) && hookAttached)
         {
             EffectOnPlayerContactAfterHook();
         }
