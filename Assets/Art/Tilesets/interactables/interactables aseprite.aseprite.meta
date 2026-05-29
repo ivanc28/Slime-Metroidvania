@@ -171,6 +171,27 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 204, y: 4}
+  - name: tilemap_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.53333336}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 204
+      y: 28
+      width: 16
+      height: 15
+    spriteID: 7834faa4f0400ef4f9d0f63669426aa3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 204, y: 28}
   asepriteLayers:
   - layerIndex: 0
     uuid:
@@ -216,9 +237,9 @@ ScriptedImporter:
       cellRect:
         x: 16
         y: 16
-        width: 2
+        width: 3
         height: 2
-      tileIndices: 01000000010000000000000001000000
+      tileIndices: 010000000100000001000000020000000200000002000000
     tileSetIndex: 0
     parentIndex: -1
   tileSets:
@@ -234,6 +255,12 @@ ScriptedImporter:
         y: 16
       name: tilemap_1
       spriteId: cfa2dd4ebb8f83c46ab96a1c488caa13
+    - tileId: 2
+      size:
+        x: 16
+        y: 16
+      name: tilemap_2
+      spriteId: 7834faa4f0400ef4f9d0f63669426aa3
     guid: -1756119096
   platformSettings:
   - name: DefaultTexturePlatform
