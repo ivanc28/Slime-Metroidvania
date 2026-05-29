@@ -239,7 +239,7 @@ ScriptedImporter:
         y: 16
         width: 4
         height: 2
-      tileIndices: 0100000001000000010000000100000002000000020000000200000000000000
+      tileIndices: 0100000001000000010000000100000002000000020000000200000002000000
     tileSetIndex: 0
     parentIndex: -1
   tileSets:
