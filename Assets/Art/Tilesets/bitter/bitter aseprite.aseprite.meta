@@ -740,27 +740,6 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 116}
   - name: tileset_29
     originalName: 
-    pivot: {x: 0.4666667, y: 0.5}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 100
-      y: 116
-      width: 15
-      height: 16
-    spriteID: ab2221684784bdf4d91564f5340efc08
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 99, y: 116}
-  - name: tileset_30
-    originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -771,7 +750,7 @@ ScriptedImporter:
       y: 116
       width: 16
       height: 16
-    spriteID: b252048c431c65a4abffed3305c2cd87
+    spriteID: ab2221684784bdf4d91564f5340efc08
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -780,7 +759,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 28, y: 116}
-  - name: tileset_31
+  - name: tileset_30
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 9
@@ -792,7 +771,7 @@ ScriptedImporter:
       y: 116
       width: 16
       height: 16
-    spriteID: e91083723d4d68749ac4460f1e6e684f
+    spriteID: b252048c431c65a4abffed3305c2cd87
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -801,9 +780,30 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 52, y: 116}
+  - name: tileset_31
+    originalName: 
+    pivot: {x: 0.53333336, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 100
+      y: 116
+      width: 15
+      height: 16
+    spriteID: e91083723d4d68749ac4460f1e6e684f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 100, y: 116}
   - name: tileset_32
     originalName: 
-    pivot: {x: 0.6, y: 0.5}
+    pivot: {x: 0.8, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -821,7 +821,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 239, y: 4}
+    uvTransform: {x: 240, y: 4}
   - name: tileset_33
     originalName: 
     pivot: {x: 0.5, y: 0.5}
