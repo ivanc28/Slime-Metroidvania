@@ -782,7 +782,7 @@ ScriptedImporter:
     uvTransform: {x: 132, y: 156}
   - name: tileset_31
     originalName: 
-    pivot: {x: 0.5, y: 0.6666667}
+    pivot: {x: 0.5, y: 0.72727275}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -791,7 +791,7 @@ ScriptedImporter:
       x: 110
       y: 156
       width: 14
-      height: 12
+      height: 11
     spriteID: 1035ef709550dd44a90358a26810dfdc
     spriteBone: []
     spriteOutline: []
