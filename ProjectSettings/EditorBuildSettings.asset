@@ -36,6 +36,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Savory/Savory_02.unity
     guid: a2a0781e8a47eb24885d86463d09671c
   - enabled: 1
+    path: Assets/Scenes/Savory/Savory_05.unity
+    guid: 5d5cc82f021994846b73482127cc17a0
+  - enabled: 1
     path: Assets/Scenes/Sour/Sour_01.unity
     guid: 6dfced9dfd70e6645909fe273314d375
   - enabled: 1
