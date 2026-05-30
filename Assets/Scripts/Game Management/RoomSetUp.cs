@@ -34,6 +34,7 @@ public class RoomSetUp : MonoBehaviour
         }
         PlayerTalking.SetNPCsInRoom();
         string spawnPointID = GameManager.Instance.GetNextSpawnPointID();
+        UIManager.Instance.FadeOut();
         if (spawnPointID == null || spawnPointID == string.Empty)
         {
             // Initial call when there is no spawnPointID yet (when GameManager first loaded)
