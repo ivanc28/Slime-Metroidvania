@@ -383,6 +383,10 @@ public class UIManager : MonoBehaviour
     {
         screenAnim.SetTrigger("FadeIn");
     }
+    public void FadeOut()
+    {
+        screenAnim.SetTrigger("FadeOut");
+    }
 
     public void OpenInventory()
     {
