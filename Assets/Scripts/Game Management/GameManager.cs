@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
     private Dictionary<string, RoomData> roomStates = new();
+    public HashSet<string> worldIDs = new();
 
     private string currRoomID;
     private string nextSpawnPointID;

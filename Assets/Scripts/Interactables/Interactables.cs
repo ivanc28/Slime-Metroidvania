@@ -23,7 +23,8 @@ public abstract class Interactables : MonoBehaviour
     {
         room = GameManager.Instance.GetCurrRoomData();
         // we check if it was supposed to be destroyed, because otherwise it wouldn't have been added to collectedInteractables
-        if (room.collectedInteractables.Contains(interactableID) && data.destroyOnInteract)
+        bool entityFound = room.collectedInteractables.Contains(interactableID) || GameManager.Instance.worldIDs.Contains(interactableID);
+        if (entityFound && data.destroyOnInteract)
         {
             Destroy(gameObject);
         }
@@ -58,6 +59,7 @@ public abstract class Interactables : MonoBehaviour
             if (data.destroyOnInteract)
             {
                 room.collectedInteractables.Add(interactableID);
+                GameManager.Instance.worldIDs.Add(interactableID);
                 Debug.Log($"adding to colected interactables and destroying {gameObject.name}");
                 Destroy(gameObject);
             }

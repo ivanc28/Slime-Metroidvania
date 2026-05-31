@@ -480,7 +480,7 @@ public class Player : MonoBehaviour
                     {
                         SetZipDirection(1);
                     }
-                    AttachToZipline(currentAttachedCollider, 0);
+                    AttachToZipline(currentAttachedCollider, prevXVelForZip);
                 }
             }
             if (Vector2.Distance(rightZipPoint, transform.position) <= 0.5f && zipDirection == 1)
@@ -530,7 +530,7 @@ public class Player : MonoBehaviour
                     {
                         SetZipDirection(-1);
                     }
-                    AttachToZipline(currentAttachedCollider, 0);
+                    AttachToZipline(currentAttachedCollider, prevXVelForZip);
                 }
             }
         }
@@ -1030,6 +1030,7 @@ public class Player : MonoBehaviour
             // lowLineCollider.enabled = true;
             // Player.Instance.rb.gravityScale = 50;
             Debug.Log("unhook");
+            zipDirection = 0;
             AttachToZipline(collision, prevXVelForZip);
             attachingToZip = false;
         }

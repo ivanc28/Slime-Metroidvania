@@ -20,7 +20,8 @@ public abstract class Collectable : MonoBehaviour
     public virtual void MakeStart()
     {
         room = GameManager.Instance.GetCurrRoomData();
-        if (room.collectedCollectables.Contains(collectableID))
+        bool entityFound = room.collectedInteractables.Contains(collectableID) || GameManager.Instance.worldIDs.Contains(collectableID);
+        if (entityFound)
         {
             Destroy(gameObject);
         }
@@ -62,6 +63,7 @@ public abstract class Collectable : MonoBehaviour
         yield return new WaitForSeconds(data.pickupTime);
         Collect();
         room.collectedCollectables.Add(collectableID);
+        GameManager.Instance.worldIDs.Add(collectableID);
         EnableKeyIcon(false);
         spriteRend.enabled = false;
         UIManager.Instance.DisplayCollectText(pickupMessage);
