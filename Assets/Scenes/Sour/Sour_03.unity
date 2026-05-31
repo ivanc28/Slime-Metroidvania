@@ -143046,6 +143046,10 @@ PrefabInstance:
       propertyPath: wall
       value: 
       objectReference: {fileID: 115877056}
+    - target: {fileID: 2815591831241812643, guid: d2e0481a0db86ea46992310ff4812535, type: 3}
+      propertyPath: interactableID
+      value: Sour_03_Windmill
+      objectReference: {fileID: 0}
     - target: {fileID: 7271212680941624915, guid: d2e0481a0db86ea46992310ff4812535, type: 3}
       propertyPath: m_LocalPosition.x
       value: -33.5

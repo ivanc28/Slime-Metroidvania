@@ -211616,6 +211616,10 @@ PrefabInstance:
       propertyPath: wall
       value: 
       objectReference: {fileID: 179551305}
+    - target: {fileID: 2815591831241812643, guid: d2e0481a0db86ea46992310ff4812535, type: 3}
+      propertyPath: interactableID
+      value: Savory_01_Windmill
+      objectReference: {fileID: 0}
     - target: {fileID: 7271212680941624915, guid: d2e0481a0db86ea46992310ff4812535, type: 3}
       propertyPath: m_LocalPosition.x
       value: 85.5
@@ -214512,7 +214516,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7949734134691755127, guid: 3f0b6cd9a37cfba4c95e2fe9e5ef3401, type: 3}
       propertyPath: nextRoomID
-      value: Savory_03
+      value: Savory_02
       objectReference: {fileID: 0}
     - target: {fileID: 7949734134691755127, guid: 3f0b6cd9a37cfba4c95e2fe9e5ef3401, type: 3}
       propertyPath: nextSpawnPointID
