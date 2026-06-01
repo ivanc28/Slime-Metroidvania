@@ -732,7 +732,8 @@ public class Player : MonoBehaviour
         }
         Vector2 spawnPos = (Vector2)hookFirePoint.position + dir * data.hookSpawnOffset;
         HookProjectile hook = Instantiate(hookPrefab, spawnPos, Quaternion.identity);
-        hook.Initialize(this, dir, data.hookSpeed, grappleLength, data.minGrappleLifetime, data.grappleObjects);
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        hook.Initialize(this, dir, data.hookSpeed, angle, grappleLength, data.minGrappleLifetime, data.grappleObjects);
         currHookBeingThrown = hook;
     }
     public void HookAttached(Vector2 point, HookProjectile hook, Collider2D currentCollider)

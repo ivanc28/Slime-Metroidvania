@@ -19,7 +19,7 @@ public class HookProjectile : MonoBehaviour
     bool attached;
     Rigidbody2D playerRB;
 
-    public void Initialize(Player p, Vector2 dir, float hookSpeed, float maxLength, float minLifetime, LayerMask mask)
+    public void Initialize(Player p, Vector2 dir, float hookSpeed, float rotation, float maxLength, float minLifetime, LayerMask mask)
     {
         player = p;
         direction = dir;
@@ -33,6 +33,7 @@ public class HookProjectile : MonoBehaviour
         playerRB = player.GetComponent<Rigidbody2D>();
         playerVelFactor.x = Mathf.Clamp01(playerVelFactor.x);
         playerVelFactor.y = Mathf.Clamp01(playerVelFactor.y);
+        transform.rotation = Quaternion.Euler(0, 0, rotation);
     }
 
     void Update()
