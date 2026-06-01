@@ -192,6 +192,69 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 204, y: 28}
+  - name: tilemap_3
+    originalName: 
+    pivot: {x: 0.53846157, y: 1.3333334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 204
+      y: 51
+      width: 13
+      height: 6
+    spriteID: 746c29ec8ac8bfb43bc5e39312b9da08
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 203, y: 51}
+  - name: tilemap_4
+    originalName: 
+    pivot: {x: 0.4615385, y: 1.3333334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 204
+      y: 65
+      width: 13
+      height: 6
+    spriteID: 45dc42abdceda5241a15c363bc75b55d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 202, y: 65}
+  - name: tilemap_5
+    originalName: 
+    pivot: {x: 0.54545456, y: 1.1428572}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 204
+      y: 79
+      width: 11
+      height: 7
+    spriteID: 80382b5c78ffe2846a2aacc9b152bd3c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 202, y: 79}
   asepriteLayers:
   - layerIndex: 0
     uuid:
@@ -236,10 +299,10 @@ ScriptedImporter:
       frameIndex: 0
       cellRect:
         x: 16
-        y: 16
+        y: 0
         width: 4
-        height: 2
-      tileIndices: 0100000001000000010000000100000002000000020000000200000002000000
+        height: 3
+      tileIndices: 030000000400000005000000000000000100000001000000010000000100000002000000020000000200000002000000
     tileSetIndex: 0
     parentIndex: -1
   tileSets:
@@ -261,6 +324,24 @@ ScriptedImporter:
         y: 16
       name: tilemap_2
       spriteId: 7834faa4f0400ef4f9d0f63669426aa3
+    - tileId: 3
+      size:
+        x: 16
+        y: 16
+      name: tilemap_3
+      spriteId: 746c29ec8ac8bfb43bc5e39312b9da08
+    - tileId: 4
+      size:
+        x: 16
+        y: 16
+      name: tilemap_4
+      spriteId: 45dc42abdceda5241a15c363bc75b55d
+    - tileId: 5
+      size:
+        x: 16
+        y: 16
+      name: tilemap_5
+      spriteId: 80382b5c78ffe2846a2aacc9b152bd3c
     guid: -1756119096
   platformSettings:
   - name: DefaultTexturePlatform
