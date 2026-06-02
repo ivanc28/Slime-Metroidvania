@@ -109,6 +109,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 89d2925fc5717bd4d989d78a71860b60, type: 2}
   numPebbles: 0
   collectablePrefab: {fileID: 0}
+  interactTransform: {fileID: 0}
 --- !u!61 &1128731100851096240
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -147,11 +148,11 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
-    oldSize: {x: 3.5, y: 1}
+    oldSize: {x: 5.5, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 3.5, y: 1}
+  m_Size: {x: 5.5, y: 1}
   m_EdgeRadius: 0
