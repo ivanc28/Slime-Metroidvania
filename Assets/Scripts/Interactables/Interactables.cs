@@ -12,7 +12,9 @@ public abstract class Interactables : MonoBehaviour
     public Collectable collectablePrefab;
     private bool inRange;
     private bool isInteracting;
-
+    [Tooltip("Optional position for where the interaction starts")]
+    public Transform interactTransform;
+    private Vector2 interactPoint;
     RoomData room;
 
     private void Start()
@@ -28,6 +30,14 @@ public abstract class Interactables : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if(interactTransform  != null)
+        {
+            interactPoint = interactTransform.position;
+        }
+        else
+        {
+            interactPoint = transform.position;
+        }
     }
 
     // Update is called once per frame
@@ -38,7 +48,7 @@ public abstract class Interactables : MonoBehaviour
     }
     public virtual void MakeUpdate()
     {
-        inRange = Vector2.Distance(transform.position, Player.Instance.transform.position) <= data.maxDistanceToInteract;
+        inRange = Vector2.Distance(interactPoint, Player.Instance.transform.position) <= data.maxDistanceToInteract;
 
         if (inRange && !Player.Instance.IsInBubble() && !Player.Instance.InInteraction && !isInteracting)
         {
@@ -71,7 +81,7 @@ public abstract class Interactables : MonoBehaviour
     {
         for(int i = 0; i < numPebbles; i++)
         {
-            Pebble pebble = Instantiate(data.pebblePrefab, transform.position, Quaternion.identity);
+            Pebble pebble = Instantiate(data.pebblePrefab, interactPoint, Quaternion.identity);
             pebble.Initialize(data.pebblePickupDelay);
             Quaternion rotation = Quaternion.AngleAxis(Random.Range(-data.pebbleLaunchMaxAngle, data.pebbleLaunchMaxAngle), Vector3.forward);
             Vector2 dir = (rotation * Vector2.up).normalized;
@@ -83,7 +93,7 @@ public abstract class Interactables : MonoBehaviour
     {
         if(collectablePrefab != null)
         {
-            Collectable collectable = Instantiate(collectablePrefab, transform.position, Quaternion.identity);
+            Collectable collectable = Instantiate(collectablePrefab, interactPoint, Quaternion.identity);
             collectable.Initialize(data.collectablePickupDelay);
             Quaternion rotation = Quaternion.AngleAxis(Random.Range(-data.collectableLaunchMaxAngle, data.collectableLaunchMaxAngle), Vector3.forward);
             Vector2 dir = (rotation * Vector2.up).normalized;
@@ -103,6 +113,15 @@ public abstract class Interactables : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, data.maxDistanceToInteract);
+        Vector2 point = Vector2.zero;
+        if(interactTransform != null)
+        {
+            point = interactTransform.position;
+        }
+        else
+        {
+            point = transform.position;
+        }
+            Gizmos.DrawWireSphere(point, data.maxDistanceToInteract);
     }
 }

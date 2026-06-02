@@ -234,4 +234,4 @@ MonoBehaviour:
   keyIcon: {fileID: 3343622880750300710}
   rb: {fileID: 0}
   spriteRend: {fileID: 1608443179185600185}
-  numPebbles: 5
+  numPebbles: 15
