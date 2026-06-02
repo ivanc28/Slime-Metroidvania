@@ -129,7 +129,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: grappling hook
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 2, y: -0.70588243}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -137,8 +137,8 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 40
-      height: 40
+      width: 10
+      height: 17
     spriteID: c5a33daf97761a24b8220538bf4fd673
     spriteBone: []
     spriteOutline: []
@@ -168,9 +168,9 @@ ScriptedImporter:
       additiveSortOrder: 0
       cellRect:
         x: 0
-        y: 0
-        width: 40
-        height: 40
+        y: 12
+        width: 10
+        height: 17
       spriteId: c5a33daf97761a24b8220538bf4fd673
     linkedCells: []
     tileCells: []
@@ -206,4 +206,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 40, y: 40}
-  previousTextureSize: {x: 64, y: 64}
+  previousTextureSize: {x: 32, y: 32}
