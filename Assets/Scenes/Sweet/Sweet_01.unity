@@ -355,6 +355,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 6eb24e2aa40b43a4082bd1bcc266b9a4, type: 2}
   numPebbles: 10
   collectablePrefab: {fileID: 0}
+  interactTransform: {fileID: 0}
 --- !u!1001 &77817695
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2152,6 +2153,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 6eb24e2aa40b43a4082bd1bcc266b9a4, type: 2}
   numPebbles: 5
   collectablePrefab: {fileID: 0}
+  interactTransform: {fileID: 0}
 --- !u!4 &863198574 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4717207529013791224, guid: 1f9a53f9f13fe35448afa24ff9cf92ed, type: 3}
@@ -2570,6 +2572,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 6eb24e2aa40b43a4082bd1bcc266b9a4, type: 2}
   numPebbles: 5
   collectablePrefab: {fileID: 0}
+  interactTransform: {fileID: 0}
 --- !u!1001 &1112944645
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2698,6 +2701,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8539965827836377823, guid: 2448e678b13fca346b2aa7cc3cfa4476, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8977782857583962670, guid: 2448e678b13fca346b2aa7cc3cfa4476, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -3146,6 +3153,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 6eb24e2aa40b43a4082bd1bcc266b9a4, type: 2}
   numPebbles: 5
   collectablePrefab: {fileID: 0}
+  interactTransform: {fileID: 0}
 --- !u!1001 &1397330139
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -307316,6 +307324,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4492770881531947069, guid: 6e7abc9b6cf1a9c448bafd96d44b7c86, type: 3}
+      propertyPath: collectableID
+      value: Sweet_01_Food
+      objectReference: {fileID: 0}
     - target: {fileID: 8180098741594223675, guid: 6e7abc9b6cf1a9c448bafd96d44b7c86, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11.824173

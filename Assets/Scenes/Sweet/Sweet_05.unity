@@ -145660,6 +145660,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4492770881531947069, guid: 6e7abc9b6cf1a9c448bafd96d44b7c86, type: 3}
+      propertyPath: collectableID
+      value: Sweet_05_Food
+      objectReference: {fileID: 0}
     - target: {fileID: 8180098741594223675, guid: 6e7abc9b6cf1a9c448bafd96d44b7c86, type: 3}
       propertyPath: m_LocalPosition.x
       value: 105.3087

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class Interactables : MonoBehaviour
 {
@@ -49,8 +50,8 @@ public abstract class Interactables : MonoBehaviour
     public virtual void MakeUpdate()
     {
         inRange = Vector2.Distance(interactPoint, Player.Instance.transform.position) <= data.maxDistanceToInteract;
-
-        if (inRange && !Player.Instance.IsInBubble() && !Player.Instance.InInteraction && !isInteracting)
+        bool playerCanInteract = (!Player.Instance.InInteraction && !Player.Instance.IsInBubble() && (Player.Instance.GetIsGrounded() || Player.Instance.GetIsLocked()) && !Player.Instance.GetIsAttaching() && !Player.Instance.IsZipping() && !Player.Instance.GetHookBeingThrown()) || Player.Instance.IsOnbubble();
+        if (inRange && playerCanInteract && !isInteracting)
         {
             if (Input.GetKeyDown(data.interactKey))
             {
