@@ -112,6 +112,7 @@ MonoBehaviour:
   afterCut:
   - {fileID: -1516536669057671774, guid: 156ffcedf19c6c741961179947866957, type: 3}
   - {fileID: 6374282906183268104, guid: 156ffcedf19c6c741961179947866957, type: 3}
+  - {fileID: 8094199675306219692, guid: 156ffcedf19c6c741961179947866957, type: 3}
   cutParticle: {fileID: 0}
 --- !u!1 &7102486741276482269
 GameObject:
