@@ -81,7 +81,7 @@ public abstract class Interactables : MonoBehaviour
     {
         for(int i = 0; i < numPebbles; i++)
         {
-            Pebble pebble = Instantiate(data.pebblePrefab, interactPoint, Quaternion.identity);
+            Pebble pebble = Instantiate(data.pebblePrefab, interactPoint + Vector2.up * 0.5f, Quaternion.identity);
             pebble.Initialize(data.pebblePickupDelay);
             Quaternion rotation = Quaternion.AngleAxis(Random.Range(-data.pebbleLaunchMaxAngle, data.pebbleLaunchMaxAngle), Vector3.forward);
             Vector2 dir = (rotation * Vector2.up).normalized;

@@ -84,7 +84,7 @@ MonoBehaviour:
   - {fileID: 4486851049758957817}
   - {fileID: 5559844837372388416}
   bubbleParticle: {fileID: 8475826247357860277}
-  flipTimeTheshold: 0.2
+  flipTimeTheshold: 0.15
 --- !u!114 &2856085039485690102
 MonoBehaviour:
   m_ObjectHideFlags: 0

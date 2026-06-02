@@ -767,6 +767,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4605960011329214267, guid: f8b7e9abf2a503b4c89d6efb3105a0cf, type: 3}
+      propertyPath: collectableID
+      value: Sweet_Flower
+      objectReference: {fileID: 0}
     - target: {fileID: 6531561494089855843, guid: f8b7e9abf2a503b4c89d6efb3105a0cf, type: 3}
       propertyPath: m_Name
       value: Flower
