@@ -7,4 +7,5 @@ public class RoomData
     public HashSet<string> collectedInteractables = new();
     //public HashSet<string> openedChests = new();
     public Dictionary<string, int> npcStates = new();
+    public Dictionary<string, int> bushStates = new();
 }
