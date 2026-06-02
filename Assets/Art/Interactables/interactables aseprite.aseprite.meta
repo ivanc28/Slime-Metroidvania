@@ -255,6 +255,48 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 202, y: 79}
+  - name: tilemap_6
+    originalName: 
+    pivot: {x: 0.54545456, y: 1.6}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 204
+      y: 94
+      width: 11
+      height: 5
+    spriteID: 9f72ef920e1687d4ba37885b678d7b43
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 202, y: 94}
+  - name: tilemap_7
+    originalName: 
+    pivot: {x: 0.375, y: 2.6666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 204
+      y: 107
+      width: 8
+      height: 3
+    spriteID: 989b2049f249af245b213fb0ee330b82
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 199, y: 107}
   asepriteLayers:
   - layerIndex: 0
     uuid:
@@ -300,9 +342,9 @@ ScriptedImporter:
       cellRect:
         x: 16
         y: 0
-        width: 4
+        width: 5
         height: 3
-      tileIndices: 030000000400000005000000050000000100000001000000010000000100000002000000020000000200000002000000
+      tileIndices: 030000000400000005000000060000000700000001000000010000000100000001000000000000000200000002000000020000000200000000000000
     tileSetIndex: 0
     parentIndex: -1
   tileSets:
@@ -342,6 +384,18 @@ ScriptedImporter:
         y: 16
       name: tilemap_5
       spriteId: 80382b5c78ffe2846a2aacc9b152bd3c
+    - tileId: 6
+      size:
+        x: 16
+        y: 16
+      name: tilemap_6
+      spriteId: 9f72ef920e1687d4ba37885b678d7b43
+    - tileId: 7
+      size:
+        x: 16
+        y: 16
+      name: tilemap_7
+      spriteId: 989b2049f249af245b213fb0ee330b82
     guid: -1756119096
   platformSettings:
   - name: DefaultTexturePlatform

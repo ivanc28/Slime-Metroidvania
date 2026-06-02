@@ -9,4 +9,5 @@ public class CollectableData : ScriptableObject
     public KeyCode pickupKey;
     public Sprite keySprite;
     public float pickupTime;
+    public bool displayMessage = true;
 }

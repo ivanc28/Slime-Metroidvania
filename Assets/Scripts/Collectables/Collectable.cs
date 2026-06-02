@@ -66,14 +66,17 @@ public abstract class Collectable : MonoBehaviour
         GameManager.Instance.worldIDs.Add(collectableID);
         EnableKeyIcon(false);
         spriteRend.enabled = false;
-        UIManager.Instance.DisplayCollectText(pickupMessage);
-        while (!Input.GetKey(KeyCode.Space))
+        if (data.displayMessage)
         {
-            yield return null;
+            UIManager.Instance.DisplayCollectText(pickupMessage);
+            while (!Input.GetKey(KeyCode.Space))
+            {
+                yield return null;
+            }
+            UIManager.Instance.DisableCollectText();
         }
         yield return null;
         Player.Instance.InInteraction = false;
-        UIManager.Instance.DisableCollectText();
         Destroy(gameObject);
     }
 

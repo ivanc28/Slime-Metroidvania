@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a52dc8c65bf95834a8a2114bd917d1e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BubbleInteractable
-  interactableID: 
+  interactableID: Sweet_01_Bubble_01
   data: {fileID: 11400000, guid: 6eb24e2aa40b43a4082bd1bcc266b9a4, type: 2}
   numPebbles: 7
+  collectablePrefab: {fileID: 0}
