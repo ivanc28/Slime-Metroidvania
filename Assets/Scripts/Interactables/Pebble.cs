@@ -6,6 +6,7 @@ public class Pebble : MonoBehaviour
     private bool touchingPlayer;
     [SerializeField] public Rigidbody2D rb;
     private bool ignoreCollision;
+    public float maxFallSpeed = 25f;
     public void Initialize(float pickDelay)
     {
         pickupTimer = pickDelay;
@@ -30,6 +31,10 @@ public class Pebble : MonoBehaviour
             {
                 CollectPebble();
             }
+        }
+        if(rb.linearVelocityY < -maxFallSpeed)
+        {
+            rb.linearVelocityY = -maxFallSpeed;
         }
     }
     private void CollectPebble()
