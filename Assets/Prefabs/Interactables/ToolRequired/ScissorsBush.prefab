@@ -84,7 +84,7 @@ SpriteRenderer:
   m_SortingLayer: -2
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 970294820, guid: 19600422c0e34874f986e311e675b7b5, type: 3}
+  m_Sprite: {fileID: -7453072844874414904, guid: 156ffcedf19c6c741961179947866957, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -108,8 +108,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ScissorsBush
   interactable: {fileID: 8464785405324012346}
   rend: {fileID: 2214889959481952392}
-  beforeCut: {fileID: 970294820, guid: 19600422c0e34874f986e311e675b7b5, type: 3}
-  afterCut: {fileID: 565781244, guid: 19600422c0e34874f986e311e675b7b5, type: 3}
+  beforeCut: {fileID: -7453072844874414904, guid: 156ffcedf19c6c741961179947866957, type: 3}
+  afterCut: {fileID: -1516536669057671774, guid: 156ffcedf19c6c741961179947866957, type: 3}
   cutParticle: {fileID: 0}
 --- !u!1 &7102486741276482269
 GameObject:
@@ -159,6 +159,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: bfbfab92e17ccf14ea8917586e07bcab, type: 2}
   numPebbles: 0
   collectablePrefab: {fileID: 0}
+  interactTransform: {fileID: 0}
   bush: {fileID: 4735555051083329099}
 --- !u!1001 &3731811560800602606
 PrefabInstance:
