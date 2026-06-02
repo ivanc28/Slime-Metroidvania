@@ -56,6 +56,7 @@ public class RoomTransition : MonoBehaviour
     }
     private IEnumerator MoveToTransitionPoint()
     {
+        Player.Instance.DetachHook();
         Player.Instance.EnableMovement(false);
         Player.Instance.rb.linearVelocity = Vector2.zero;
         canMoveToTransitionGap = true;

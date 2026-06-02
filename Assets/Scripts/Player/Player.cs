@@ -194,6 +194,7 @@ public class Player : MonoBehaviour
         anim.SetBool("isGrappling", isAttaching || currHookBeingThrown != null);
         anim.SetBool("isGrappleLocked", isLockedOnGrapple);
         anim.SetBool("isZipping", zipping);
+
         if (flipTimer > 0 && !isGrounded)
         {
             flipTimer -= Time.deltaTime;
@@ -222,6 +223,11 @@ public class Player : MonoBehaviour
                     UIManager.Instance.UpdateGrappleCharges();
                 }
             }
+            return;
+        }
+
+        if (InInteraction)
+        {
             return;
         }
 
