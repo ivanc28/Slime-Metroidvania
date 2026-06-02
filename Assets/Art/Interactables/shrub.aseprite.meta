@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c3db46b2d003f5d4ab2b05cb842df20e
+guid: 156ffcedf19c6c741961179947866957
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -73,8 +73,8 @@ ScriptedImporter:
     applyGammaDecoding: 0
   previousAsepriteImporterSettings:
     fileImportMode: 1
-    importHiddenLayers: 0
-    layerImportMode: 1
+    importHiddenLayers: 1
+    layerImportMode: 0
     defaultPivotSpace: 0
     defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
@@ -88,8 +88,8 @@ ScriptedImporter:
     generateSpriteAtlas: 1
   asepriteImporterSettings:
     fileImportMode: 1
-    importHiddenLayers: 0
-    layerImportMode: 1
+    importHiddenLayers: 1
+    layerImportMode: 0
     defaultPivotSpace: 0
     defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
@@ -102,7 +102,7 @@ ScriptedImporter:
     generateIndividualEvents: 1
     generateSpriteAtlas: 1
   importFileNodeState: 1
-  platformSettingsDirtyTick: 639160201022705502
+  platformSettingsDirtyTick: 639160200430240911
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -127,7 +127,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: wood wall
+  - name: BG
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -137,9 +137,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 10
-      height: 56
-    spriteID: 82095516870cdb6488a934b5cdeee497
+      width: 50
+      height: 60
+    spriteID: 164d12712ad571c43a614f6751f767f4
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -148,30 +148,214 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: base
+    originalName: 
+    pivot: {x: 0.49999997, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 62
+      y: 98
+      width: 10
+      height: 6
+    spriteID: 2a0eeaeda7a147b438c87f155458d93d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 62, y: 98}
+  - name: shrub
+    originalName: 
+    pivot: {x: 0.5, y: 0.1975}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 72
+      width: 50
+      height: 41
+    spriteID: 7ff7b04d024fa614690e98d9f13715f8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 72}
+  - name: shrub berries
+    originalName: 
+    pivot: {x: 0.5, y: 0.25}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 62
+      y: 4
+      width: 50
+      height: 41
+    spriteID: 58def260f15226e44be8211eb8326aa2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 62, y: 4}
+  - name: heart
+    originalName: 
+    pivot: {x: 0.47727275, y: 0.25}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 62
+      y: 53
+      width: 44
+      height: 37
+    spriteID: a8068403a650596498900ff4d0101bd0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 62, y: 53}
   spriteSheetImportData: []
   tileSetImportData: []
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 40244889
+      value0: 428224017
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: wood wall
+    name: BG
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: wood wall
+    - name: BG
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
+        width: 50
+        height: 60
+      spriteId: 164d12712ad571c43a614f6751f767f4
+    linkedCells: []
+    tileCells: []
+    tileSetIndex: 0
+    parentIndex: -1
+  - layerIndex: 1
+    uuid:
+      value0: 2328218841
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: 0
+    name: base
+    layerFlags: 1
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: base
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 20
+        y: 0
         width: 10
-        height: 56
-      spriteId: 82095516870cdb6488a934b5cdeee497
+        height: 6
+      spriteId: 2a0eeaeda7a147b438c87f155458d93d
+    linkedCells: []
+    tileCells: []
+    tileSetIndex: 0
+    parentIndex: -1
+  - layerIndex: 2
+    uuid:
+      value0: 2791467390
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: 0
+    name: shrub
+    layerFlags: 1
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: shrub
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 50
+        height: 41
+      spriteId: 7ff7b04d024fa614690e98d9f13715f8
+    linkedCells: []
+    tileCells: []
+    tileSetIndex: 0
+    parentIndex: -1
+  - layerIndex: 3
+    uuid:
+      value0: 2235251998
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: 0
+    name: shrub berries
+    layerFlags: 1
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: shrub berries
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 50
+        height: 41
+      spriteId: 58def260f15226e44be8211eb8326aa2
+    linkedCells: []
+    tileCells: []
+    tileSetIndex: 0
+    parentIndex: -1
+  - layerIndex: 4
+    uuid:
+      value0: 479149618
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: 0
+    name: heart
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: heart
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 4
+        y: 0
+        width: 44
+        height: 37
+      spriteId: a8068403a650596498900ff4d0101bd0
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
@@ -205,5 +389,5 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 10, y: 56}
-  previousTextureSize: {x: 32, y: 64}
+  canvasSize: {x: 50, y: 60}
+  previousTextureSize: {x: 128, y: 128}

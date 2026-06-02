@@ -194,16 +194,16 @@ ScriptedImporter:
     uvTransform: {x: 204, y: 28}
   - name: tilemap_3
     originalName: 
-    pivot: {x: 0.53846157, y: 1.3333334}
+    pivot: {x: 0.53333336, y: 1.1428572}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
       x: 204
-      y: 82
-      width: 13
-      height: 6
+      y: 84
+      width: 15
+      height: 7
     spriteID: 746c29ec8ac8bfb43bc5e39312b9da08
     spriteBone: []
     spriteOutline: []
@@ -212,19 +212,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 203, y: 82}
+    uvTransform: {x: 204, y: 84}
   - name: tilemap_4
     originalName: 
-    pivot: {x: 0.4615385, y: 1.3333334}
+    pivot: {x: 0.4666667, y: 1.1428572}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
       x: 204
-      y: 96
-      width: 13
-      height: 6
+      y: 99
+      width: 15
+      height: 7
     spriteID: 45dc42abdceda5241a15c363bc75b55d
     spriteBone: []
     spriteOutline: []
@@ -233,10 +233,10 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 202, y: 96}
+    uvTransform: {x: 203, y: 99}
   - name: tilemap_5
     originalName: 
-    pivot: {x: 0.5, y: 1}
+    pivot: {x: 0.5, y: 0.8888889}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -244,8 +244,8 @@ ScriptedImporter:
       serializedVersion: 2
       x: 204
       y: 51
-      width: 14
-      height: 8
+      width: 16
+      height: 9
     spriteID: 80382b5c78ffe2846a2aacc9b152bd3c
     spriteBone: []
     spriteOutline: []
@@ -254,19 +254,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 203, y: 51}
+    uvTransform: {x: 204, y: 51}
   - name: tilemap_6
     originalName: 
-    pivot: {x: 0.5833334, y: 1.1428572}
+    pivot: {x: 0.53333336, y: 1}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
       x: 204
-      y: 67
-      width: 12
-      height: 7
+      y: 68
+      width: 15
+      height: 8
     spriteID: 612e6153f88e9474c8424eb9cce65cd2
     spriteBone: []
     spriteOutline: []
@@ -275,19 +275,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 203, y: 67}
+    uvTransform: {x: 204, y: 68}
   - name: tilemap_7
     originalName: 
-    pivot: {x: 0.5, y: 2}
+    pivot: {x: 0.5, y: 1.6}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
       x: 204
-      y: 110
-      width: 10
-      height: 4
+      y: 114
+      width: 12
+      height: 5
     spriteID: 2ac4f9c6cca50b54f9ecac5f1234b238
     spriteBone: []
     spriteOutline: []
@@ -296,7 +296,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 201, y: 110}
+    uvTransform: {x: 202, y: 114}
   asepriteLayers:
   - layerIndex: 0
     uuid:
