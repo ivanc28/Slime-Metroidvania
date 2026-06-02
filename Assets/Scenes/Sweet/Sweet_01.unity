@@ -2598,6 +2598,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallSpot
       objectReference: {fileID: 0}
+    - target: {fileID: 8167069624622458100, guid: 8992f487652597c469767ab301e1d3b8, type: 3}
+      propertyPath: numPebbles
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8167069624622458100, guid: 8992f487652597c469767ab301e1d3b8, type: 3}
+      propertyPath: interactableID
+      value: Sweet_01_Wall_02
+      objectReference: {fileID: 0}
     - target: {fileID: 8539965827836377823, guid: 8992f487652597c469767ab301e1d3b8, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.5
@@ -2659,6 +2667,14 @@ PrefabInstance:
     - target: {fileID: 5664891249791995145, guid: 2448e678b13fca346b2aa7cc3cfa4476, type: 3}
       propertyPath: m_Name
       value: DigSpot
+      objectReference: {fileID: 0}
+    - target: {fileID: 6445539666013854799, guid: 2448e678b13fca346b2aa7cc3cfa4476, type: 3}
+      propertyPath: numPebbles
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6445539666013854799, guid: 2448e678b13fca346b2aa7cc3cfa4476, type: 3}
+      propertyPath: interactableID
+      value: Sweet_01_Dig_01
       objectReference: {fileID: 0}
     - target: {fileID: 8539965827836377823, guid: 2448e678b13fca346b2aa7cc3cfa4476, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2726,6 +2742,14 @@ PrefabInstance:
     - target: {fileID: 5664891249791995145, guid: 2448e678b13fca346b2aa7cc3cfa4476, type: 3}
       propertyPath: m_Name
       value: DigSpot
+      objectReference: {fileID: 0}
+    - target: {fileID: 6445539666013854799, guid: 2448e678b13fca346b2aa7cc3cfa4476, type: 3}
+      propertyPath: numPebbles
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6445539666013854799, guid: 2448e678b13fca346b2aa7cc3cfa4476, type: 3}
+      propertyPath: interactableID
+      value: Sweet_01_Dig_02
       objectReference: {fileID: 0}
     - target: {fileID: 8539965827836377823, guid: 2448e678b13fca346b2aa7cc3cfa4476, type: 3}
       propertyPath: m_LocalPosition.x
@@ -295391,6 +295415,10 @@ PrefabInstance:
     - target: {fileID: 5664891249791995145, guid: 8992f487652597c469767ab301e1d3b8, type: 3}
       propertyPath: m_Name
       value: WallSpot
+      objectReference: {fileID: 0}
+    - target: {fileID: 8167069624622458100, guid: 8992f487652597c469767ab301e1d3b8, type: 3}
+      propertyPath: interactableID
+      value: Sweet_01_Wall_01
       objectReference: {fileID: 0}
     - target: {fileID: 8539965827836377823, guid: 8992f487652597c469767ab301e1d3b8, type: 3}
       propertyPath: m_LocalPosition.x
