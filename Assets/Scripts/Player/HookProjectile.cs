@@ -65,16 +65,19 @@ public class HookProjectile : MonoBehaviour
     }
     void LateUpdate()
     {
-        if (attached && player.GetIsLocked())
-        {
-            hookLine.enabled = false;
-        }
-        else
-        {
-            hookLine.enabled = true;
-            hookLine.SetPosition(0, player.hookFirePoint.position);
-            hookLine.SetPosition(1, transform.position);
-        }
+        //if (attached && player.GetIsLocked())
+        //{
+        //    hookLine.enabled = false;
+        //}
+        //else
+        //{
+        //    hookLine.enabled = true;
+        //    hookLine.SetPosition(0, player.hookFirePoint.position);
+        //    hookLine.SetPosition(1, transform.position);
+        //}
+        hookLine.enabled = true;
+        hookLine.SetPosition(0, player.hookFirePoint.position);
+        hookLine.SetPosition(1, transform.position);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
