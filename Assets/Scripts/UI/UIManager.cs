@@ -31,6 +31,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] GridLayoutGroup grappleGridGroup;
     [SerializeField] GameObject notchPrefab;
     [SerializeField] TextMeshProUGUI grappleCountText;
+    [SerializeField] float grappleSliderWidthIncrements;
+    private float startingGrappleSliderWidth;
 
     [Header("Tool Display")]
     [SerializeField] Image toolImage;
@@ -92,6 +94,12 @@ public class UIManager : MonoBehaviour
         {
             UpdateToolDispay(Player.Instance.tools.GetCurrToolOption());
         }
+        startingGrappleSliderWidth = grappleSlider.GetComponent<RectTransform>().rect.width;
+        SetGrappleSliderWidth();
+        while (grappleNotchesContainer.childCount < Player.Instance.maxGrappleCharges)
+        {
+            AddNewGrappleNotch(false);
+        }
     }
 
     // Update is called once per frame
@@ -127,10 +135,6 @@ public class UIManager : MonoBehaviour
         }
         #endregion
         #region Grapple Charges
-        if(grappleNotchesContainer.childCount < Player.Instance.maxGrappleCharges)
-        {
-            AddNewGrappleNotch();
-        }
         UpdateGrappleSlider();
         #endregion
 
@@ -356,19 +360,32 @@ public class UIManager : MonoBehaviour
     {
         currencyText.enabled = value;
     }
-    public void UpdateGrappleSlider()
+    private void UpdateGrappleSlider()
     {
         //grappleChargeText.text = (Player.Instance.grappleCharges + (Player.Instance.grappleRechargeTimer/Player.Instance.grappleRechargeTime)).ToString("0.0");
         grappleSlider.value = (Player.Instance.grappleCharges + (Player.Instance.grappleRechargeTimer / Player.Instance.grappleRechargeTime)) / Player.Instance.maxGrappleCharges;
         grappleCountText.text = $"{Player.Instance.grappleCharges}/{Player.Instance.maxGrappleCharges}";
     }
-    public void AddNewGrappleNotch()
+    public void AddNewGrappleNotch(bool updateWidth)
     {
+        if (updateWidth)
+        {
+            SetGrappleSliderWidth();
+        }
         Instantiate(notchPrefab, grappleNotchesContainer);
         float totalNotchWidth = grappleGridGroup.cellSize.x * (Player.Instance.maxGrappleCharges - 1);
         float remainingSpace = grappleNotchesContainer.GetComponent<RectTransform>().rect.width - totalNotchWidth;
         float spacingBetween = remainingSpace / Player.Instance.maxGrappleCharges;
         grappleGridGroup.spacing = new Vector2(spacingBetween, 0);
+    }
+
+    private void SetGrappleSliderWidth()
+    {
+        RectTransform sliderRect = grappleSlider.GetComponent<RectTransform>();
+        float newWidth = startingGrappleSliderWidth + grappleSliderWidthIncrements * (Player.Instance.maxGrappleCharges - 1);
+        sliderRect.sizeDelta = new Vector2(newWidth, sliderRect.rect.height);
+        RectTransform containerRect = grappleNotchesContainer.GetComponent<RectTransform>();
+        containerRect.sizeDelta = new Vector2(newWidth, containerRect.rect.height);
     }
 
     public void UpdateToolDispay(ToolOption toolOption)
