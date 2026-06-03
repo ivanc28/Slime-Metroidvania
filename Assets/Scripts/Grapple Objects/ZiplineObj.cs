@@ -33,8 +33,8 @@ public class ZiplineObj : GrappleObj
         //lineRenderer.endColor = Color.green;
 
         // Set the width
-        lineRenderer.startWidth = 0.2f;
-        lineRenderer.endWidth = 0.2f;
+        //lineRenderer.startWidth = 0.2f;
+        //lineRenderer.endWidth = 0.2f;
 
         // Set the number of vertices
         lineRenderer.positionCount = transform.childCount;
@@ -46,6 +46,9 @@ public class ZiplineObj : GrappleObj
             travelPointVectors.Add(transform.GetChild(i).transform.position);
             // lowTravelPointVectors.Add(lowTravelPoints[i].transform.position);
             lineRenderer.SetPosition(i, transform.GetChild(i).transform.position);
+
+            // disable the sprite renderer of each child point
+            transform.GetChild(i).GetComponent<SpriteRenderer>().enabled = false;
         }
         
         // lineCollider = gameObject.AddComponent<EdgeCollider2D>();
