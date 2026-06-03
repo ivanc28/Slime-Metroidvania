@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: ClaimForkEvent
   m_EditorClassIdentifier: Assembly-CSharp::DEventClaimTool
   claimedTool: 2
+  optionalPebbleCost: 0
+  claimMessage: You found a Fork!

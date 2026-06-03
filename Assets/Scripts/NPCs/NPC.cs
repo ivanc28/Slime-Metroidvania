@@ -60,15 +60,11 @@ public class NPC : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                if (currNode.choices.Length > 0 && currNode.choices[0].dialogueEvent != null)
-                {
-                    currNode.choices[0].dialogueEvent.Invoke();
-                }
-                choiceChosen = 0;
-                NextDialogue();
                 doneWithLine = false;
+                StartCoroutine(AdvanceDialogue());
             }
         }
+
     }
 
     /// <summary>
@@ -320,9 +316,11 @@ public class NPC : MonoBehaviour
             currText.text = updateDialogueText;
             yield return null;
         }
-        if (currNode.choices[currChoice].dialogueEvent != null)
+        if (currNode.choices[currChoice].dialogueEvents.Length > 0)
         {
-            currNode.choices[currChoice].dialogueEvent.Invoke();
+            Destroy(currDialogueBox);
+            currDialogueBox = null;
+            yield return StartCoroutine(CallEvents(currNode.choices[currChoice].dialogueEvents));
         }
         choiceChosen = currChoice;
         NextDialogue();
@@ -354,6 +352,25 @@ public class NPC : MonoBehaviour
         Player.Instance.rb.sharedMaterial = null;
     }
 
+    private IEnumerator CallEvents(DialogueEvent[] events)
+    {
+        for (int i = 0; i < events.Length; i++)
+        {
+            yield return StartCoroutine(events[i].InvokeAndWait(this));
+        }
+    }
+
+    private IEnumerator AdvanceDialogue()
+    {
+        if (currNode.choices.Length > 0 && currNode.choices[0].dialogueEvents.Length > 0)
+        {
+            Destroy(currDialogueBox);
+            currDialogueBox = null;
+            yield return StartCoroutine(CallEvents(currNode.choices[0].dialogueEvents));
+        }
+        choiceChosen = 0;
+        NextDialogue();
+    }
     public bool IsInteracting()
     {
         return isInteracting;

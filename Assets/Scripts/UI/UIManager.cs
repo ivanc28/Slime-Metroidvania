@@ -381,6 +381,7 @@ public class UIManager : MonoBehaviour
     public IEnumerator ShowCollectTextAndWait(string text)
     {
         DisplayCollectText(text);
+        yield return null;
         while (!Input.GetKeyDown(KeyCode.Space))
         {
             yield return null;
