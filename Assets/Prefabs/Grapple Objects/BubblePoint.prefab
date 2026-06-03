@@ -288,3 +288,4 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 7657b715de82a8540a5381406031311c, type: 2}
   numPebbles: 0
   collectablePrefab: {fileID: 0}
+  interactTransform: {fileID: 0}
