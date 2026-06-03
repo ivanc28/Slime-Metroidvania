@@ -76,8 +76,8 @@ ScriptedImporter:
     importHiddenLayers: 1
     layerImportMode: 0
     defaultPivotSpace: 0
-    defaultPivotAlignment: 7
-    customPivotPosition: {x: 0.5, y: 0.5}
+    defaultPivotAlignment: 9
+    customPivotPosition: {x: 0.5, y: 0.13333334}
     mosaicPadding: 4
     spritePadding: 0
     generateModelPrefab: 0
@@ -91,8 +91,8 @@ ScriptedImporter:
     importHiddenLayers: 1
     layerImportMode: 0
     defaultPivotSpace: 0
-    defaultPivotAlignment: 7
-    customPivotPosition: {x: 0.5, y: 0.5}
+    defaultPivotAlignment: 9
+    customPivotPosition: {x: 0.5, y: 0.13333334}
     mosaicPadding: 4
     spritePadding: 0
     generateModelPrefab: 0
@@ -102,7 +102,7 @@ ScriptedImporter:
     generateIndividualEvents: 1
     generateSpriteAtlas: 1
   importFileNodeState: 1
-  platformSettingsDirtyTick: 639160200430240911
+  platformSettingsDirtyTick: 639160292454549297
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -129,7 +129,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: BG
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.5, y: 0.13333334}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -150,7 +150,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 4}
   - name: base
     originalName: 
-    pivot: {x: 0.49999997, y: 0}
+    pivot: {x: 0.49999997, y: 1.3333334}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -171,7 +171,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 219}
   - name: shrub
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.5, y: 0.19512196}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -192,7 +192,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 72}
   - name: shrub berries
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.5, y: 0.19512196}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -213,7 +213,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 121}
   - name: heart
     originalName: 
-    pivot: {x: 0.47727275, y: 0}
+    pivot: {x: 0.47727275, y: 0.21621622}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -234,7 +234,7 @@ ScriptedImporter:
     uvTransform: {x: 62, y: 51}
   - name: slime
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.5, y: 0.19512196}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -255,7 +255,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 170}
   - name: teapot
     originalName: 
-    pivot: {x: 0.5102041, y: 0}
+    pivot: {x: 0.5102041, y: 0.20512822}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
