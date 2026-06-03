@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
 
     // Grappling
     [HideInInspector] public int grappleCharges;
-    private int maxGrappleCharges;
+    [HideInInspector] public int maxGrappleCharges;
     [HideInInspector] public float grappleRechargeTime;
     [HideInInspector] public float grappleRechargeTimer;
 
@@ -214,13 +214,13 @@ public class Player : MonoBehaviour
                 if (grappleRechargeTimer < grappleRechargeTime)
                 {
                     grappleRechargeTimer += Time.deltaTime;
-                    UIManager.Instance.UpdateGrappleCharges();
+                    //UIManager.Instance.UpdateGrappleSlider();
                 }
                 else
                 {
                     grappleCharges++;
                     grappleRechargeTimer = 0;
-                    UIManager.Instance.UpdateGrappleCharges();
+                    //UIManager.Instance.UpdateGrappleSlider();
                 }
             }
             return;
@@ -295,13 +295,13 @@ public class Player : MonoBehaviour
                 if (grappleRechargeTimer < grappleRechargeTime)
                 {
                     grappleRechargeTimer += Time.deltaTime;
-                    UIManager.Instance.UpdateGrappleCharges();
+                    //UIManager.Instance.UpdateGrappleSlider();
                 }
                 else
                 {
                     grappleCharges++;
                     grappleRechargeTimer = 0;
-                    UIManager.Instance.UpdateGrappleCharges();
+                    //UIManager.Instance.UpdateGrappleSlider();
                 }
             }
         } 
@@ -315,7 +315,7 @@ public class Player : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && grappleCharges > 0)
         {
             grappleCharges--;
-            UIManager.Instance.UpdateGrappleCharges();
+            //UIManager.Instance.UpdateGrappleSlider();
             FireHook();
         }
         // Detach grappling hook
@@ -825,6 +825,7 @@ public class Player : MonoBehaviour
     public void IncreaseGrappleLength()
     {
         grappleLength += data.grappleLengthIncrements;
+        UIManager.Instance.AddNewGrappleNotch();
     }
     // -------------------
 

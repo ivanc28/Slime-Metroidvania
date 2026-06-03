@@ -10,7 +10,6 @@ public class UIManager : MonoBehaviour
     [Header("Currency")]
     [SerializeField] TextMeshProUGUI currencyText;
     [SerializeField] TextMeshProUGUI currencyAccText;
-    [SerializeField] TextMeshProUGUI grappleChargeText;
     [SerializeField] float currencyDelayBeforeAcc;
     [SerializeField] float currencyDelayAfterAcc;
     [Tooltip("How much time between each increment of player's final currency (coming from accumulatedCurrency)")]
@@ -25,6 +24,13 @@ public class UIManager : MonoBehaviour
     private float subCurrencyTimer;
     private bool subStartCurrencyTimer;
     private bool subStartedLosingCurrency;
+
+    [Header("Grappling Bar")]
+    [SerializeField] Slider grappleSlider;
+    [SerializeField] Transform grappleNotchesContainer;
+    [SerializeField] GridLayoutGroup grappleGridGroup;
+    [SerializeField] GameObject notchPrefab;
+    [SerializeField] TextMeshProUGUI grappleCountText;
 
     [Header("Tool Display")]
     [SerializeField] Image toolImage;
@@ -121,7 +127,11 @@ public class UIManager : MonoBehaviour
         }
         #endregion
         #region Grapple Charges
-        UpdateGrappleCharges();
+        if(grappleNotchesContainer.childCount < Player.Instance.maxGrappleCharges)
+        {
+            AddNewGrappleNotch();
+        }
+        UpdateGrappleSlider();
         #endregion
 
         #region Inventory
@@ -346,9 +356,19 @@ public class UIManager : MonoBehaviour
     {
         currencyText.enabled = value;
     }
-    public void UpdateGrappleCharges()
+    public void UpdateGrappleSlider()
     {
-        grappleChargeText.text = (Player.Instance.grappleCharges + (Player.Instance.grappleRechargeTimer/Player.Instance.grappleRechargeTime)).ToString("0.0");
+        //grappleChargeText.text = (Player.Instance.grappleCharges + (Player.Instance.grappleRechargeTimer/Player.Instance.grappleRechargeTime)).ToString("0.0");
+        grappleSlider.value = (Player.Instance.grappleCharges + (Player.Instance.grappleRechargeTimer / Player.Instance.grappleRechargeTime)) / Player.Instance.maxGrappleCharges;
+        grappleCountText.text = $"{Player.Instance.grappleCharges}/{Player.Instance.maxGrappleCharges}";
+    }
+    public void AddNewGrappleNotch()
+    {
+        Instantiate(notchPrefab, grappleNotchesContainer);
+        float totalNotchWidth = grappleGridGroup.cellSize.x * (Player.Instance.maxGrappleCharges - 1);
+        float remainingSpace = grappleNotchesContainer.GetComponent<RectTransform>().rect.width - totalNotchWidth;
+        float spacingBetween = remainingSpace / Player.Instance.maxGrappleCharges;
+        grappleGridGroup.spacing = new Vector2(spacingBetween, 0);
     }
 
     public void UpdateToolDispay(ToolOption toolOption)

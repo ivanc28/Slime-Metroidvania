@@ -23,7 +23,6 @@ public class DEventClaimTool : DialogueEvent
     }
     public override IEnumerator InvokeAndWait(MonoBehaviour runner)
     {
-        Debug.Log($"ShowCollectTextAndWait called with: {claimMessage}");
         Invoke();
         yield return runner.StartCoroutine(UIManager.Instance.ShowCollectTextAndWait(claimMessage));
     }
