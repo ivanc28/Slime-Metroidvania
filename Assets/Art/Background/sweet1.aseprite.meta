@@ -129,16 +129,16 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: stars
     originalName: 
-    pivot: {x: 0.46698114, y: -0.0024752477}
+    pivot: {x: 0.44696066, y: -0.023529412}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
-      x: 4
-      y: 4
-      width: 1060
-      height: 808
+      x: 879
+      y: 1138
+      width: 839
+      height: 85
     spriteID: 168270ca54119bf46b666b96bd782d7b
     spriteBone: []
     spriteOutline: []
@@ -147,17 +147,17 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 4}
+    uvTransform: {x: 879, y: 1138}
   - name: -4 cave walls back
     originalName: 
-    pivot: {x: 0.49999997, y: -0.74153847}
+    pivot: {x: 1.0416666, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
       x: 4
-      y: 1524
+      y: 1713
       width: 576
       height: 325
     spriteID: 67bda3da51e25784abcc9447c8eb4130
@@ -168,17 +168,17 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 1524}
+    uvTransform: {x: 4, y: 1713}
   - name: -3 cave walls mid
     originalName: 
-    pivot: {x: 0.49999997, y: -0.74382716}
+    pivot: {x: 1.0416666, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
-      x: 588
-      y: 1524
+      x: 1242
+      y: 1300
       width: 576
       height: 324
     spriteID: 2272b0619310ed246847b59d3d0bfe03
@@ -189,17 +189,17 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 588, y: 1524}
+    uvTransform: {x: 1242, y: 1300}
   - name: -2 cave walls front
     originalName: 
-    pivot: {x: 0.5, y: -0.4962963}
+    pivot: {x: 0.8333333, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
-      x: 1072
-      y: 330
+      x: 4
+      y: 1300
       width: 720
       height: 405
     spriteID: 27f6b587a73381f4ab0b3ddf824d8735
@@ -210,38 +210,17 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 1072, y: 330}
-  - name: -1 cotton candy
-    originalName: 
-    pivot: {x: 0.28884465, y: -0.22769953}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 1108
-      y: 820
-      width: 502
-      height: 426
-    spriteID: 3a61987e1cdf0ce44b5d9fdb0fd15011
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 1108, y: 820}
+    uvTransform: {x: 4, y: 1300}
   - name: 0 dragon's beard floss
     originalName: 
-    pivot: {x: 0.49999997, y: -1.119497}
+    pivot: {x: 0.625, y: -0.82075465}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
-      x: 1072
-      y: 4
+      x: 879
+      y: 812
       width: 960
       height: 318
     spriteID: 740d308b3867a6d449868e9c1e6990c9
@@ -252,20 +231,20 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 1072, y: 4}
-  - name: 1 tanghulu
+    uvTransform: {x: 879, y: 812}
+  - name: 1.1 tanghulu
     originalName: 
-    pivot: {x: 0.47171533, y: 0.020114942}
+    pivot: {x: 0.44917715, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
       x: 4
-      y: 820
-      width: 1096
-      height: 696
-    spriteID: ec4a4e29fbdd4c74aaf2763affad2ddb
+      y: 4
+      width: 1033
+      height: 800
+    spriteID: 2fe382569fc43dd469bebe45457fb050
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -273,7 +252,112 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 820}
+    uvTransform: {x: 4, y: 4}
+  - name: 1.2 tanghulu
+    originalName: 
+    pivot: {x: 0.53056514, y: -0.36666664}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 812
+      width: 867
+      height: 480
+    spriteID: aaf9289b8025ea043acc57e292feb79b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 812}
+  - name: tanghulu
+    originalName: 
+    pivot: {x: 0.345977, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1045
+      y: 4
+      width: 870
+      height: 800
+    spriteID: 639b9a67d3cd9d941b290718bad2091e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1045, y: 4}
+  - name: 1 tut tanghulu
+    originalName: 
+    pivot: {x: 0.47424895, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 732
+      y: 1734
+      width: 466
+      height: 256
+    spriteID: 7f9fa54c57ba51d4f9ddc3d202c858b8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 732, y: 1734}
+  - name: -1.1 cotton candy
+    originalName: 
+    pivot: {x: 1.0298805, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 732
+      y: 1300
+      width: 502
+      height: 426
+    spriteID: e61f2135d5adf4448883a36123190f24
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 732, y: 1300}
+  - name: -1.2 cotton candy
+    originalName: 
+    pivot: {x: 2.2041883, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1826
+      y: 1300
+      width: 191
+      height: 321
+    spriteID: bb49157b670b6b048a02e7e6ef020fcb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1826, y: 1300}
   spriteSheetImportData: []
   tileSetImportData: []
   asepriteLayers:
@@ -293,8 +377,8 @@ ScriptedImporter:
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 432
-        y: 241
+        x: 0
+        y: 0
         width: 576
         height: 325
       spriteId: 67bda3da51e25784abcc9447c8eb4130
@@ -318,8 +402,8 @@ ScriptedImporter:
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 432
-        y: 241
+        x: 0
+        y: 0
         width: 576
         height: 324
       spriteId: 2272b0619310ed246847b59d3d0bfe03
@@ -343,8 +427,8 @@ ScriptedImporter:
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 360
-        y: 201
+        x: 0
+        y: 0
         width: 720
         height: 405
       spriteId: 27f6b587a73381f4ab0b3ddf824d8735
@@ -354,30 +438,55 @@ ScriptedImporter:
     parentIndex: -1
   - layerIndex: 3
     uuid:
-      value0: 2846646134
+      value0: 1681835487
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: -1 cotton candy
-    layerFlags: 3
+    name: -1.1 cotton candy
+    layerFlags: 2
     layerType: 0
     blendMode: 0
     cells:
-    - name: -1 cotton candy
+    - name: -1.1 cotton candy
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 575
-        y: 97
+        x: 83
+        y: 0
         width: 502
         height: 426
-      spriteId: 3a61987e1cdf0ce44b5d9fdb0fd15011
+      spriteId: e61f2135d5adf4448883a36123190f24
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
     parentIndex: -1
   - layerIndex: 4
+    uuid:
+      value0: 2452840398
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: 0
+    name: -1.2 cotton candy
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: -1.2 cotton candy
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 179
+        y: 0
+        width: 191
+        height: 321
+      spriteId: bb49157b670b6b048a02e7e6ef020fcb
+    linkedCells: []
+    tileCells: []
+    tileSetIndex: 0
+    parentIndex: -1
+  - layerIndex: 5
     uuid:
       value0: 1335335904
       value1: 0
@@ -393,8 +502,8 @@ ScriptedImporter:
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 240
-        y: 356
+        x: 0
+        y: 261
         width: 960
         height: 318
       spriteId: 740d308b3867a6d449868e9c1e6990c9
@@ -402,32 +511,107 @@ ScriptedImporter:
     tileCells: []
     tileSetIndex: 0
     parentIndex: -1
-  - layerIndex: 5
+  - layerIndex: 6
     uuid:
-      value0: 4038008697
+      value0: 3321541976
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: 1 tanghulu
+    name: 1 tut tanghulu
     layerFlags: 3
     layerType: 0
     blendMode: 0
     cells:
-    - name: 1 tanghulu
+    - name: 1 tut tanghulu
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 203
-        y: -14
-        width: 1096
-        height: 696
-      spriteId: ec4a4e29fbdd4c74aaf2763affad2ddb
+        x: 379
+        y: 0
+        width: 466
+        height: 256
+      spriteId: 7f9fa54c57ba51d4f9ddc3d202c858b8
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
     parentIndex: -1
-  - layerIndex: 6
+  - layerIndex: 7
+    uuid:
+      value0: 1279483484
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: 0
+    name: 1.1 tanghulu
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: 1.1 tanghulu
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 136
+        y: 0
+        width: 1033
+        height: 800
+      spriteId: 2fe382569fc43dd469bebe45457fb050
+    linkedCells: []
+    tileCells: []
+    tileSetIndex: 0
+    parentIndex: -1
+  - layerIndex: 8
+    uuid:
+      value0: 1278362969
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: 0
+    name: 1.2 tanghulu
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: 1.2 tanghulu
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 140
+        y: 176
+        width: 867
+        height: 480
+      spriteId: aaf9289b8025ea043acc57e292feb79b
+    linkedCells: []
+    tileCells: []
+    tileSetIndex: 0
+    parentIndex: -1
+  - layerIndex: 9
+    uuid:
+      value0: 64694410
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: 0
+    name: tanghulu
+    layerFlags: 2
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: tanghulu
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 299
+        y: 0
+        width: 870
+        height: 800
+      spriteId: 639b9a67d3cd9d941b290718bad2091e
+    linkedCells: []
+    tileCells: []
+    tileSetIndex: 0
+    parentIndex: -1
+  - layerIndex: 10
     uuid:
       value0: 2858725203
       value1: 0
@@ -445,8 +629,8 @@ ScriptedImporter:
       cellRect:
         x: 225
         y: 2
-        width: 1060
-        height: 808
+        width: 839
+        height: 85
       spriteId: 168270ca54119bf46b666b96bd782d7b
     linkedCells: []
     tileCells: []
@@ -481,5 +665,5 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 1440, y: 810}
+  canvasSize: {x: 1200, y: 800}
   previousTextureSize: {x: 2048, y: 2048}
