@@ -431,7 +431,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 54}
-  m_SizeDelta: {x: 1000, y: 40}
+  m_SizeDelta: {x: 250, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3996662637066844403
 MonoBehaviour:
@@ -1331,6 +1331,7 @@ MonoBehaviour:
   grappleGridGroup: {fileID: 1246242696728931215}
   notchPrefab: {fileID: 4220957934686704833, guid: a21d823b08c84e04c8c87bc83f251aaf, type: 3}
   grappleCountText: {fileID: 2972678277524683937}
+  grappleSliderWidthIncrements: 25
   toolImage: {fileID: 8772045079294078960}
   collectTextAnim: {fileID: 5290036806775639793}
   collectTextContainer: {fileID: 879558128867075889}
@@ -1684,7 +1685,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1000, y: 25.6}
+  m_SizeDelta: {x: 250, y: 25.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1246242696728931215
 MonoBehaviour:

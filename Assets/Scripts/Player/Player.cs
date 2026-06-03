@@ -821,11 +821,11 @@ public class Player : MonoBehaviour
     public void IncrementGrappleCharges()
     {
         maxGrappleCharges++;
+        UIManager.Instance.AddNewGrappleNotch(true);
     }
     public void IncreaseGrappleLength()
     {
         grappleLength += data.grappleLengthIncrements;
-        UIManager.Instance.AddNewGrappleNotch();
     }
     // -------------------
 
