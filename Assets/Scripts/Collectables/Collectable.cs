@@ -68,12 +68,7 @@ public abstract class Collectable : MonoBehaviour
         spriteRend.enabled = false;
         if (data.displayMessage)
         {
-            UIManager.Instance.DisplayCollectText(pickupMessage);
-            while (!Input.GetKey(KeyCode.Space))
-            {
-                yield return null;
-            }
-            UIManager.Instance.DisableCollectText();
+            yield return StartCoroutine(UIManager.Instance.ShowCollectTextAndWait(pickupMessage));
         }
         yield return null;
         Player.Instance.InInteraction = false;

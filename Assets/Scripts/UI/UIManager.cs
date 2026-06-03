@@ -378,6 +378,15 @@ public class UIManager : MonoBehaviour
         collectTextAnim.SetBool("isCollecting", false);
         collectTextContainer.SetActive(false);
     }
+    public IEnumerator ShowCollectTextAndWait(string text)
+    {
+        DisplayCollectText(text);
+        while (!Input.GetKeyDown(KeyCode.Space))
+        {
+            yield return null;
+        }
+        DisableCollectText();
+    }
 
     public void FadeIn()
     {
