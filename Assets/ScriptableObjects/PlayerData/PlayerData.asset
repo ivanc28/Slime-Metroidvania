@@ -51,7 +51,7 @@ MonoBehaviour:
   blowTime: 0.8
   bubbleMoveSpeed: 12
   floatAccelAmount: 20
-  floatDecelAmount: 12
+  floatDecelAmount: 4
   umbrellaJumpGravity: 2
   umbrellaFallingGravity: 3
   umbrellaStopJumpGravity: 4
