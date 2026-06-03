@@ -80,8 +80,8 @@ ScriptedImporter:
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
     spritePadding: 0
-    generateModelPrefab: 1
-    generateAnimationClips: 1
+    generateModelPrefab: 0
+    generateAnimationClips: 0
     addSortingGroup: 1
     addShadowCasters: 0
     generateIndividualEvents: 1
@@ -95,14 +95,14 @@ ScriptedImporter:
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
     spritePadding: 0
-    generateModelPrefab: 1
-    generateAnimationClips: 1
+    generateModelPrefab: 0
+    generateAnimationClips: 0
     addSortingGroup: 1
     addShadowCasters: 0
     generateIndividualEvents: 1
     generateSpriteAtlas: 1
   importFileNodeState: 1
-  platformSettingsDirtyTick: 639154065734590371
+  platformSettingsDirtyTick: 639160447255310664
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -276,7 +276,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 812}
   - name: tanghulu
     originalName: 
-    pivot: {x: 0.345977, y: 0}
+    pivot: {x: 0.21947873, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -284,7 +284,7 @@ ScriptedImporter:
       serializedVersion: 2
       x: 1045
       y: 4
-      width: 870
+      width: 729
       height: 800
     spriteID: 639b9a67d3cd9d941b290718bad2091e
     spriteBone: []
@@ -358,6 +358,27 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 1826, y: 1300}
+  - name: 1.3 tanghulu
+    originalName: 
+    pivot: {x: -0.25925902, y: -6.714286}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1726
+      y: 1138
+      width: 135
+      height: 56
+    spriteID: 5fd46f745727a82469a939009ec80396
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1726, y: 1138}
   spriteSheetImportData: []
   tileSetImportData: []
   asepriteLayers:
@@ -588,6 +609,31 @@ ScriptedImporter:
     parentIndex: -1
   - layerIndex: 9
     uuid:
+      value0: 1286446682
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: 0
+    name: 1.3 tanghulu
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: 1.3 tanghulu
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 635
+        y: 376
+        width: 135
+        height: 56
+      spriteId: 5fd46f745727a82469a939009ec80396
+    linkedCells: []
+    tileCells: []
+    tileSetIndex: 0
+    parentIndex: -1
+  - layerIndex: 10
+    uuid:
       value0: 64694410
       value1: 0
       value2: 0
@@ -602,16 +648,16 @@ ScriptedImporter:
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 299
+        x: 440
         y: 0
-        width: 870
+        width: 729
         height: 800
       spriteId: 639b9a67d3cd9d941b290718bad2091e
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
     parentIndex: -1
-  - layerIndex: 10
+  - layerIndex: 11
     uuid:
       value0: 2858725203
       value1: 0
