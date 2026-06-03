@@ -147,7 +147,7 @@ public class Player : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.F1))
             {
                 noclip = !noclip;
-                col.enabled = !noclip;
+                Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Ground"), noclip);
                 rb.gravityScale = noclip ? 0 : data.fallingGravity;
                 rb.linearVelocity = Vector2.zero;
                 canRun = !noclip;
