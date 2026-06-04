@@ -221765,7 +221765,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7474766475681745378, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
       propertyPath: parallaxFactorY
-      value: 0.97
+      value: 0.95
       objectReference: {fileID: 0}
     - target: {fileID: 8295317503704732122, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -221813,7 +221813,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8425322161699382048, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
       propertyPath: parallaxFactorY
-      value: 0.93
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 8916313715907120044, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
       propertyPath: parallaxFactorX
@@ -221821,7 +221821,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8916313715907120044, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
       propertyPath: parallaxFactorY
-      value: 0.95
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 9043932383308125957, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
       propertyPath: m_LocalPosition.y
