@@ -157,7 +157,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 466
+      y: 576
       width: 661
       height: 153
     spriteID: e35bd33b11450bd4d820c7a206263184
@@ -168,7 +168,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 466}
+    uvTransform: {x: 4, y: 576}
   - name: -2 spring
     originalName: 
     pivot: {x: 0.73619634, y: 0}
@@ -178,7 +178,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 321
+      y: 431
       width: 815
       height: 137
     spriteID: 5e0ac481359bf3c4f93bcb0c8d498e54
@@ -189,28 +189,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 321}
-  - name: sour candy
-    originalName: 
-    pivot: {x: 0.49082568, y: -3.1874998}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 588
-      y: 257
-      width: 1090
-      height: 48
-    spriteID: 2dd014b1397c6164a844933806f39edd
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 588, y: 257}
+    uvTransform: {x: 4, y: 431}
   - name: 1.1 sour candy
     originalName: 
     pivot: {x: 0.26788992, y: -0.9206349}
@@ -219,8 +198,8 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 673
-      y: 466
+      x: 4
+      y: 879
       width: 1090
       height: 63
     spriteID: 89dbfb7b88874c24283a881ccd7c2db9
@@ -231,7 +210,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 673, y: 466}
+    uvTransform: {x: 4, y: 879}
   - name: 0.1 cliff
     originalName: 
     pivot: {x: 0.5095613, y: -0.7972973}
@@ -240,8 +219,8 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 673
-      y: 537
+      x: 1102
+      y: 879
       width: 889
       height: 74
     spriteID: 690ebe46fd45a324797c23ebb36d56d8
@@ -252,28 +231,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 673, y: 537}
-  - name: cliff
-    originalName: 
-    pivot: {x: 0.46654776, y: -0.33333334}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 588
-      y: 147
-      width: 1121
-      height: 102
-    spriteID: 84a219ca0fcdc4a4a881072ea23fa33a
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 588, y: 147}
+    uvTransform: {x: 1102, y: 879}
   - name: 0.2 cliff
     originalName: 
     pivot: {x: 0.49958298, y: -0.13333334}
@@ -303,8 +261,8 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 827
-      y: 321
+      x: 673
+      y: 576
       width: 1017
       height: 84
     spriteID: 4e19c53b5d8d0e247a8f7ae67a1ea08b
@@ -315,7 +273,133 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 827, y: 321}
+    uvTransform: {x: 673, y: 576}
+  - name: 1.3 sour candy
+    originalName: 
+    pivot: {x: 0.49705637, y: -2.2096775}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 737
+      width: 1189
+      height: 62
+    spriteID: 9b96cec41c949954fb58875c5c07551d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 737}
+  - name: 0.3 cliff
+    originalName: 
+    pivot: {x: 0.49915543, y: -0.32352942}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 321
+      width: 1184
+      height: 102
+    spriteID: f3b6d754fac1c0e4e8c1602b42da822a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 321}
+  - name: 1.4 sour candy
+    originalName: 
+    pivot: {x: 0.6290833, y: -3.2307692}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 950
+      width: 949
+      height: 65
+    spriteID: 6e6c743dcbac6934d8951c4b562f9986
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 950}
+  - name: 0.4 cliff
+    originalName: 
+    pivot: {x: 0.7109005, y: -0.5714286}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 827
+      y: 431
+      width: 844
+      height: 105
+    spriteID: c8245a4b5f31dae4bb9776fc1a601984
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 827, y: 431}
+  - name: 0.5 cliff
+    originalName: 
+    pivot: {x: 0.49916527, y: -0.18867925}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 588
+      y: 147
+      width: 1198
+      height: 106
+    spriteID: 100ff7444f685fc4b9a9ce656edd4f53
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 588, y: 147}
+  - name: 1.5 sour candy
+    originalName: 
+    pivot: {x: 0.46855626, y: -2.765625}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 807
+      width: 1129
+      height: 64
+    spriteID: d16a2b92796c33e4ca10045d185b853c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 807}
   spriteSheetImportData: []
   tileSetImportData: []
   asepriteLayers:
@@ -446,55 +530,80 @@ ScriptedImporter:
     parentIndex: -1
   - layerIndex: 5
     uuid:
-      value0: 2986315796
+      value0: 1589924975
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: cliff
+    name: 0.3 cliff
     layerFlags: 2
     layerType: 0
     blendMode: 0
     cells:
-    - name: cliff
+    - name: 0.3 cliff
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 77
-        y: 34
-        width: 1121
+        x: 9
+        y: 33
+        width: 1184
         height: 102
-      spriteId: 84a219ca0fcdc4a4a881072ea23fa33a
+      spriteId: f3b6d754fac1c0e4e8c1602b42da822a
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
     parentIndex: -1
   - layerIndex: 6
     uuid:
-      value0: 2659053826
+      value0: 1589821394
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: sour candy
-    layerFlags: 0
+    name: 0.4 cliff
+    layerFlags: 3
     layerType: 0
     blendMode: 0
     cells:
-    - name: sour candy
+    - name: 0.4 cliff
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 65
-        y: 153
-        width: 1090
-        height: 48
-      spriteId: 2dd014b1397c6164a844933806f39edd
+        x: 0
+        y: 60
+        width: 844
+        height: 105
+      spriteId: c8245a4b5f31dae4bb9776fc1a601984
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
     parentIndex: -1
   - layerIndex: 7
+    uuid:
+      value0: 1589852977
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: 0
+    name: 0.5 cliff
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: 0.5 cliff
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 2
+        y: 20
+        width: 1198
+        height: 106
+      spriteId: 100ff7444f685fc4b9a9ce656edd4f53
+    linkedCells: []
+    tileCells: []
+    tileSetIndex: 0
+    parentIndex: -1
+  - layerIndex: 8
     uuid:
       value0: 2325054832
       value1: 0
@@ -519,7 +628,7 @@ ScriptedImporter:
     tileCells: []
     tileSetIndex: 0
     parentIndex: -1
-  - layerIndex: 8
+  - layerIndex: 9
     uuid:
       value0: 2290512975
       value1: 0
@@ -540,6 +649,81 @@ ScriptedImporter:
         width: 1017
         height: 84
       spriteId: 4e19c53b5d8d0e247a8f7ae67a1ea08b
+    linkedCells: []
+    tileCells: []
+    tileSetIndex: 0
+    parentIndex: -1
+  - layerIndex: 10
+    uuid:
+      value0: 2550379694
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: 0
+    name: 1.3 sour candy
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: 1.3 sour candy
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 9
+        y: 137
+        width: 1189
+        height: 62
+      spriteId: 9b96cec41c949954fb58875c5c07551d
+    linkedCells: []
+    tileCells: []
+    tileSetIndex: 0
+    parentIndex: -1
+  - layerIndex: 11
+    uuid:
+      value0: 2212529549
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: 0
+    name: 1.4 sour candy
+    layerFlags: 2
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: 1.4 sour candy
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 3
+        y: 210
+        width: 949
+        height: 65
+      spriteId: 6e6c743dcbac6934d8951c4b562f9986
+    linkedCells: []
+    tileCells: []
+    tileSetIndex: 0
+    parentIndex: -1
+  - layerIndex: 12
+    uuid:
+      value0: 2168800748
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: 0
+    name: 1.5 sour candy
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: 1.5 sour candy
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 71
+        y: 177
+        width: 1129
+        height: 64
+      spriteId: d16a2b92796c33e4ca10045d185b853c
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
