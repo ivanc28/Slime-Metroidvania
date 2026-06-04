@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Friend Guy 2 13
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 0
-  line: let's rob a bank next time
+  line: ... what?
   choices:
   - choiceText: 
     nextNode: {fileID: 0}

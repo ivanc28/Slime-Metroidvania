@@ -16,6 +16,6 @@ MonoBehaviour:
   line: let's rob a bank next time
   choices:
   - choiceText: 
-    nextNode: {fileID: 0}
+    nextNode: {fileID: 11400000, guid: a6f023072b5b8cd44ad5fe7a4dc00ec6, type: 2}
     dialogueEvents: []
     condition: {fileID: 0}
