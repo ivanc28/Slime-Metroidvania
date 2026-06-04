@@ -173,6 +173,10 @@ public class Player : MonoBehaviour
                 tools.ClaimTool(PlayerTools.Tool.Chopsticks);
 
             }
+            if (Input.GetKeyDown(KeyCode.F4))
+            {
+                IncrementGrappleCharges();
+            }
             if (noclip)
             {
                 float x = Input.GetAxisRaw("Horizontal");
