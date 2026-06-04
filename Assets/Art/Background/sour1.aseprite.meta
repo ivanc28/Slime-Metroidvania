@@ -33,10 +33,10 @@ ScriptedImporter:
     sRGBTexture: 1
     spriteMode: 2
     spriteExtrude: 1
-    spriteMeshType: 1
+    spriteMeshType: 0
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 100
+    spritePixelsToUnits: 16
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -73,36 +73,36 @@ ScriptedImporter:
     applyGammaDecoding: 0
   previousAsepriteImporterSettings:
     fileImportMode: 1
-    importHiddenLayers: 0
-    layerImportMode: 1
+    importHiddenLayers: 1
+    layerImportMode: 0
     defaultPivotSpace: 0
     defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
     spritePadding: 0
-    generateModelPrefab: 1
-    generateAnimationClips: 1
+    generateModelPrefab: 0
+    generateAnimationClips: 0
     addSortingGroup: 1
     addShadowCasters: 0
     generateIndividualEvents: 1
     generateSpriteAtlas: 1
   asepriteImporterSettings:
     fileImportMode: 1
-    importHiddenLayers: 0
-    layerImportMode: 1
+    importHiddenLayers: 1
+    layerImportMode: 0
     defaultPivotSpace: 0
     defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
     spritePadding: 0
-    generateModelPrefab: 1
-    generateAnimationClips: 1
+    generateModelPrefab: 0
+    generateAnimationClips: 0
     addSortingGroup: 1
     addShadowCasters: 0
     generateIndividualEvents: 1
     generateSpriteAtlas: 1
   importFileNodeState: 1
-  platformSettingsDirtyTick: 0
+  platformSettingsDirtyTick: 639161766905417521
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -127,9 +127,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: sour1
+  - name: -4 BG
     originalName: 
-    pivot: {x: 0.5352364, y: 0}
+    pivot: {x: 1.0416666, y: -0.051779933}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -137,9 +137,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 1121
-      height: 325
-    spriteID: 82331e1228793e34cb02cad0286100f9
+      width: 576
+      height: 309
+    spriteID: f387202e013d5d84f8f5a19f019c7508
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -148,36 +148,336 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: -3 geyser
+    originalName: 
+    pivot: {x: 0.90771556, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 321
+      width: 661
+      height: 153
+    spriteID: e35bd33b11450bd4d820c7a206263184
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 321}
+  - name: -2 spring
+    originalName: 
+    pivot: {x: 0.73619634, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 588
+      y: 114
+      width: 815
+      height: 137
+    spriteID: 5e0ac481359bf3c4f93bcb0c8d498e54
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 588, y: 114}
+  - name: sour candy
+    originalName: 
+    pivot: {x: 0.49082568, y: -3.1874998}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 588
+      y: 259
+      width: 1090
+      height: 48
+    spriteID: 2dd014b1397c6164a844933806f39edd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 588, y: 259}
+  - name: 1.1 sour candy
+    originalName: 
+    pivot: {x: 0.26788992, y: -0.9206349}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 673
+      y: 321
+      width: 1090
+      height: 63
+    spriteID: 89dbfb7b88874c24283a881ccd7c2db9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 673, y: 321}
+  - name: 0.1 cliff
+    originalName: 
+    pivot: {x: 0.5095613, y: -0.7972973}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 673
+      y: 392
+      width: 889
+      height: 74
+    spriteID: 690ebe46fd45a324797c23ebb36d56d8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 673, y: 392}
+  - name: cliff
+    originalName: 
+    pivot: {x: 0.46654776, y: -0.33333334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 588
+      y: 4
+      width: 1121
+      height: 102
+    spriteID: 84a219ca0fcdc4a4a881072ea23fa33a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 588, y: 4}
   spriteSheetImportData: []
   tileSetImportData: []
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 2811670474
+      value0: 3167039438
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: sour1
-    layerFlags: 0
+    name: -4 BG
+    layerFlags: 3
     layerType: 0
     blendMode: 0
     cells:
-    - name: sour1
+    - name: -4 BG
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: 16
+        width: 576
+        height: 309
+      spriteId: f387202e013d5d84f8f5a19f019c7508
+    linkedCells: []
+    tileCells: []
+    tileSetIndex: 0
+    parentIndex: -1
+  - layerIndex: 1
+    uuid:
+      value0: 1720673549
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: 0
+    name: -3 geyser
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: -3 geyser
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
+        width: 661
+        height: 153
+      spriteId: e35bd33b11450bd4d820c7a206263184
+    linkedCells: []
+    tileCells: []
+    tileSetIndex: 0
+    parentIndex: -1
+  - layerIndex: 2
+    uuid:
+      value0: 2549837038
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: 0
+    name: -2 spring
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: -2 spring
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 815
+        height: 137
+      spriteId: 5e0ac481359bf3c4f93bcb0c8d498e54
+    linkedCells: []
+    tileCells: []
+    tileSetIndex: 0
+    parentIndex: -1
+  - layerIndex: 3
+    uuid:
+      value0: 1589996717
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: 0
+    name: 0.1 cliff
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: 0.1 cliff
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 147
+        y: 59
+        width: 889
+        height: 74
+      spriteId: 690ebe46fd45a324797c23ebb36d56d8
+    linkedCells: []
+    tileCells: []
+    tileSetIndex: 0
+    parentIndex: -1
+  - layerIndex: 4
+    uuid:
+      value0: 2986315796
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: 0
+    name: cliff
+    layerFlags: 2
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: cliff
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 77
+        y: 34
         width: 1121
-        height: 325
-      spriteId: 82331e1228793e34cb02cad0286100f9
+        height: 102
+      spriteId: 84a219ca0fcdc4a4a881072ea23fa33a
+    linkedCells: []
+    tileCells: []
+    tileSetIndex: 0
+    parentIndex: -1
+  - layerIndex: 5
+    uuid:
+      value0: 2659053826
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: 0
+    name: sour candy
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: sour candy
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 65
+        y: 153
+        width: 1090
+        height: 48
+      spriteId: 2dd014b1397c6164a844933806f39edd
+    linkedCells: []
+    tileCells: []
+    tileSetIndex: 0
+    parentIndex: -1
+  - layerIndex: 6
+    uuid:
+      value0: 2325054832
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: 0
+    name: 1.1 sour candy
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: 1.1 sour candy
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 308
+        y: 58
+        width: 1090
+        height: 63
+      spriteId: 89dbfb7b88874c24283a881ccd7c2db9
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
     parentIndex: -1
   tileSets: []
-  platformSettings: []
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
