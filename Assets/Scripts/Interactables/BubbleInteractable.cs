@@ -23,4 +23,9 @@ public class BubbleInteractable : Interactables
             }
         }
     }
+    public override void BehaviourBeforeDestroy()
+    {
+        bubbleGrappleObj = transform.parent.gameObject.GetComponent<BubbleObj>();
+        bubbleGrappleObj.bubbleInteractGain = null;
+    }
 }

@@ -18,10 +18,14 @@ public abstract class Interactables : MonoBehaviour
     private Vector2 interactPoint;
     RoomData room;
 
-    private void Start()
+    private void Awake()
     {
         MakeStart();
     }
+    //private void Start()
+    //{
+    //    //MakeStart();
+    //}
     public virtual void MakeStart()
     {
         room = GameManager.Instance.GetCurrRoomData();
@@ -29,6 +33,7 @@ public abstract class Interactables : MonoBehaviour
         bool entityFound = room.collectedInteractables.Contains(interactableID) || GameManager.Instance.worldIDs.Contains(interactableID);
         if (entityFound && data.destroyOnInteract)
         {
+            BehaviourBeforeDestroy();
             Destroy(gameObject);
         }
         if(interactTransform  != null)
@@ -39,6 +44,10 @@ public abstract class Interactables : MonoBehaviour
         {
             interactPoint = transform.position;
         }
+    }
+    public virtual void BehaviourBeforeDestroy()
+    {
+
     }
 
     // Update is called once per frame
