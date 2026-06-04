@@ -223,6 +223,7 @@ public class NPC : MonoBehaviour
         while (i < message.Length)
         {
             char nextChar = message[i];
+            char nextNextChar = i < message.Length - 1 ? message[i + 1] : ' ';
             if (nextChar == '<')
             {
                 int j = i;
@@ -242,7 +243,7 @@ public class NPC : MonoBehaviour
                 text.maxVisibleCharacters = message.Length;
                 break;
             }
-            if (nextChar == '.' || nextChar == '?')
+            if (nextChar == '.' || (nextChar == '?' && nextNextChar == ' ') || (nextChar == '!' && nextNextChar == ' ') || nextChar == '-')
             {
                 yield return new WaitForSeconds(delayAfterPeriod);
             }

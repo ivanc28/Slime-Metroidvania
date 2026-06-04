@@ -10,13 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c0552f17edcde34cb93ab0d9a5ca2bb, type: 3}
-  m_Name: SampleNPC_1 0 1
+  m_Name: Friend Guy 0 11
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 0
-  line: i like you, here's a dessert
+  line: others might not let you have it that easily
   choices:
   - choiceText: 
-    nextNode: {fileID: 11400000, guid: 1947b95c1f00a4f4183182e2bc56c056, type: 2}
-    dialogueEvents:
-    - {fileID: 11400000, guid: fbf5baec94574e1419b7d7bc326213f0, type: 2}
+    nextNode: {fileID: 11400000, guid: 2ffbc440e8da52c44b3dd3650922a250, type: 2}
+    dialogueEvents: []
     condition: {fileID: 0}

@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: SampleNPC_1 1 0
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 0
-  line: i hope you like the fork
-  dialogueEvent: {fileID: 0}
+  line: i hope you like the dessert
   choices:
   - choiceText: 
     nextNode: {fileID: 11400000, guid: 3b1a7e888923cc4479a6fac84e47f6c8, type: 2}
+    dialogueEvents: []
+    condition: {fileID: 0}
