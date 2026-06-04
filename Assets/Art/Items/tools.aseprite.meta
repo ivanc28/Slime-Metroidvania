@@ -127,19 +127,19 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: BG
+  - name: chopsticks
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.53333336, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
       x: 4
-      y: 4
-      width: 16
+      y: 52
+      width: 15
       height: 16
-    spriteID: 7c57113c472ad1d43acf578bff0c28c2
+    spriteID: d7f514f47d6571845a39dc82067b6876
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -147,8 +147,29 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 4}
-  - name: chopsticks
+    uvTransform: {x: 4, y: 52}
+  - name: spoon
+    originalName: 
+    pivot: {x: 0.5714286, y: -0.06666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 100
+      width: 14
+      height: 15
+    spriteID: 71def8dc7bfad3b448de6282a9b9a1cc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 100}
+  - name: fork
     originalName: 
     pivot: {x: 0.53333336, y: 0}
     alignment: 9
@@ -160,48 +181,6 @@ ScriptedImporter:
       y: 76
       width: 15
       height: 16
-    spriteID: d7f514f47d6571845a39dc82067b6876
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 76}
-  - name: spoon
-    originalName: 
-    pivot: {x: 0.5714286, y: -0.06666667}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 28
-      y: 4
-      width: 14
-      height: 15
-    spriteID: 71def8dc7bfad3b448de6282a9b9a1cc
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 28, y: 4}
-  - name: fork
-    originalName: 
-    pivot: {x: 0.53333336, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 100
-      width: 15
-      height: 16
     spriteID: 8eeaff98ea977f9488358a34a2aa0a1d
     spriteBone: []
     spriteOutline: []
@@ -210,8 +189,29 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 100}
+    uvTransform: {x: 4, y: 76}
   - name: scissors
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 16
+      height: 16
+    spriteID: 993c1c35ff68194489f5271aa01ffe87
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: whisk
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -223,27 +223,6 @@ ScriptedImporter:
       y: 28
       width: 16
       height: 16
-    spriteID: 993c1c35ff68194489f5271aa01ffe87
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 28}
-  - name: whisk
-    originalName: 
-    pivot: {x: 0.5, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 52
-      width: 16
-      height: 16
     spriteID: ce59f9c5de93eed4881b1ec656124f10
     spriteBone: []
     spriteOutline: []
@@ -252,7 +231,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 52}
+    uvTransform: {x: 4, y: 28}
   - name: bubble wand
     originalName: 
     pivot: {x: 0.3846154, y: 0}
@@ -262,7 +241,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 28
-      y: 27
+      y: 4
       width: 13
       height: 16
     spriteID: ead1b218962a9f94b9e0b7d9714a5d3f
@@ -273,36 +252,11 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 28, y: 27}
+    uvTransform: {x: 28, y: 4}
   spriteSheetImportData: []
   tileSetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    uuid:
-      value0: 428224017
-      value1: 0
-      value2: 0
-      value3: 0
-    guid: 0
-    name: BG
-    layerFlags: 3
-    layerType: 0
-    blendMode: 0
-    cells:
-    - name: BG
-      frameIndex: 0
-      additiveSortOrder: 0
-      cellRect:
-        x: 0
-        y: 0
-        width: 16
-        height: 16
-      spriteId: 7c57113c472ad1d43acf578bff0c28c2
-    linkedCells: []
-    tileCells: []
-    tileSetIndex: 0
-    parentIndex: -1
-  - layerIndex: 1
     uuid:
       value0: 262872661
       value1: 0
@@ -327,7 +281,7 @@ ScriptedImporter:
     tileCells: []
     tileSetIndex: 0
     parentIndex: -1
-  - layerIndex: 2
+  - layerIndex: 1
     uuid:
       value0: 3114199225
       value1: 0
@@ -352,7 +306,7 @@ ScriptedImporter:
     tileCells: []
     tileSetIndex: 0
     parentIndex: -1
-  - layerIndex: 3
+  - layerIndex: 2
     uuid:
       value0: 963906198
       value1: 0
@@ -377,7 +331,7 @@ ScriptedImporter:
     tileCells: []
     tileSetIndex: 0
     parentIndex: -1
-  - layerIndex: 4
+  - layerIndex: 3
     uuid:
       value0: 224560939
       value1: 0
@@ -402,7 +356,7 @@ ScriptedImporter:
     tileCells: []
     tileSetIndex: 0
     parentIndex: -1
-  - layerIndex: 5
+  - layerIndex: 4
     uuid:
       value0: 3598033030
       value1: 0
@@ -427,7 +381,7 @@ ScriptedImporter:
     tileCells: []
     tileSetIndex: 0
     parentIndex: -1
-  - layerIndex: 6
+  - layerIndex: 5
     uuid:
       value0: 850046866
       value1: 0
