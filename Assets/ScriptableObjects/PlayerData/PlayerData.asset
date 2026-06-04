@@ -74,7 +74,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3ef61222eb36f3a479e2b20e5abe20db, type: 2}
   - {fileID: 11400000, guid: 71833ea5e2588fb40a07fbdfc069c7c6, type: 2}
   jumpClips:
-  - {fileID: 8300000, guid: 6565b482719e3ce4ea405d9eda359406, type: 3}
+  - {fileID: 8300000, guid: 644239ea552fb1343b5c084a186b1670, type: 3}
   whooshClips:
   - {fileID: 8300000, guid: e41ee7650c6d4104b9d3d074191691a4, type: 3}
   - {fileID: 8300000, guid: 0016506f5d243ec49bc4fd83282d84b4, type: 3}
