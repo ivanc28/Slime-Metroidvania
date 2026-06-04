@@ -3,7 +3,6 @@ using TMPro;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
-using UnityEditor.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -100,6 +99,8 @@ public class UIManager : MonoBehaviour
         {
             AddNewGrappleNotch(false);
         }
+
+        EnableGrappleSlider();
     }
 
     // Update is called once per frame
@@ -362,9 +363,12 @@ public class UIManager : MonoBehaviour
     }
     private void UpdateGrappleSlider()
     {
-        //grappleChargeText.text = (Player.Instance.grappleCharges + (Player.Instance.grappleRechargeTimer/Player.Instance.grappleRechargeTime)).ToString("0.0");
-        grappleSlider.value = (Player.Instance.grappleCharges + (Player.Instance.grappleRechargeTimer / Player.Instance.grappleRechargeTime)) / Player.Instance.maxGrappleCharges;
-        grappleCountText.text = $"{Player.Instance.grappleCharges}/{Player.Instance.maxGrappleCharges}";
+        if(Player.Instance.maxGrappleCharges > 0)
+        { 
+            grappleSlider.value = (Player.Instance.grappleCharges + (Player.Instance.grappleRechargeTimer / Player.Instance.grappleRechargeTime)) / Player.Instance.maxGrappleCharges;
+            grappleCountText.text = $"{Player.Instance.grappleCharges}/{Player.Instance.maxGrappleCharges}";
+        }
+
     }
     public void AddNewGrappleNotch(bool updateWidth)
     {
@@ -523,5 +527,12 @@ public class UIManager : MonoBehaviour
     {
         itemName.text = tool.toolName;
         itemDescription.text = tool.description;
+    }
+
+    public void EnableGrappleSlider()
+    {
+        bool active = Player.Instance.maxGrappleCharges > 0;
+        grappleSlider.gameObject.SetActive(active);
+        grappleCountText.enabled = active;
     }
 }

@@ -44,6 +44,7 @@ public class Player : MonoBehaviour
     [HideInInspector] public int maxGrappleCharges;
     [HideInInspector] public float grappleRechargeTime;
     [HideInInspector] public float grappleRechargeTimer;
+    private bool incrementGrappleCountAfterTouchGround = false;
 
     [HideInInspector] public Collider2D currentAttachedCollider;
     private float grappleLength;
@@ -285,6 +286,7 @@ public class Player : MonoBehaviour
                 coyoteTimer -= Time.deltaTime;
             }
             rb.sharedMaterial = data.frictionless;
+            incrementGrappleCountAfterTouchGround = true;
         }
         else
         {
@@ -298,11 +300,11 @@ public class Player : MonoBehaviour
                     grappleRechargeTimer += Time.deltaTime;
                     //UIManager.Instance.UpdateGrappleSlider();
                 }
-                else
+                if(grappleRechargeTimer >= grappleRechargeTime || incrementGrappleCountAfterTouchGround)
                 {
                     grappleCharges++;
                     grappleRechargeTimer = 0;
-                    //UIManager.Instance.UpdateGrappleSlider();
+                    incrementGrappleCountAfterTouchGround = false;
                 }
             }
         } 
@@ -823,7 +825,11 @@ public class Player : MonoBehaviour
     public void IncrementGrappleCharges()
     {
         maxGrappleCharges++;
-        UIManager.Instance.AddNewGrappleNotch(true);
+        UIManager.Instance.EnableGrappleSlider();
+        if(maxGrappleCharges > 1)
+        {
+            UIManager.Instance.AddNewGrappleNotch(true);
+        }
     }
     public void IncreaseGrappleLength()
     {

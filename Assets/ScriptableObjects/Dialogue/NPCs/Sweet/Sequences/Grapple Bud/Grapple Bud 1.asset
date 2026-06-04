@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Grapple Bud 1
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSequence
   rootNode: {fileID: 11400000, guid: 8ffacf7cb1efebb4bb10fbbeffbf93c5, type: 2}
-  nextSequenceCondition: {fileID: 0}
+  nextSequenceCondition: {fileID: 11400000, guid: 5b06bd845d919f5458baf715c1476227, type: 2}
   skipSequenceCondition: {fileID: 11400000, guid: 5b06bd845d919f5458baf715c1476227, type: 2}

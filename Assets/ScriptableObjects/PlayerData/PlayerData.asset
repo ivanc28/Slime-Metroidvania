@@ -44,7 +44,7 @@ MonoBehaviour:
   grappleObjects:
     serializedVersion: 2
     m_Bits: 72
-  initialMaxGrappleCharges: 10
+  initialMaxGrappleCharges: 0
   grappleRechargeTime: 0.1
   toolUseTime: 0.8
   interactKey: 101

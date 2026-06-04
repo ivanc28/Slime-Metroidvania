@@ -6,6 +6,6 @@ public class EnoughGrapplesCondition : Condition
     public int minGrapplesRequired;
     public override bool ConditionMet()
     {
-        return base.ConditionMet() && Player.Instance.maxGrappleCharges > minGrapplesRequired;
+        return base.ConditionMet() && Player.Instance.maxGrappleCharges >= minGrapplesRequired;
     }
 }
