@@ -33,7 +33,7 @@ ScriptedImporter:
     sRGBTexture: 1
     spriteMode: 2
     spriteExtrude: 1
-    spriteMeshType: 1
+    spriteMeshType: 0
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
     spritePixelsToUnits: 16
@@ -102,7 +102,7 @@ ScriptedImporter:
     generateIndividualEvents: 1
     generateSpriteAtlas: 1
   importFileNodeState: 1
-  platformSettingsDirtyTick: 639160447255310664
+  platformSettingsDirtyTick: 639161154881707492
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -234,7 +234,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 1570}
   - name: 1 parm
     originalName: 
-    pivot: {x: 0.6092254, y: 0}
+    pivot: {x: 0.52676296, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -242,7 +242,7 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 1760
-      width: 1149
+      width: 1177
       height: 75
     spriteID: 72a99f0c13df97449b42de04157cb3a2
     spriteBone: []
@@ -443,9 +443,9 @@ ScriptedImporter:
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 0
+        x: 80
         y: 0
-        width: 1149
+        width: 1177
         height: 75
       spriteId: 72a99f0c13df97449b42de04157cb3a2
     linkedCells: []
