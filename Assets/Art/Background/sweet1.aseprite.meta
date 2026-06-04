@@ -276,7 +276,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 1609}
   - name: 1 tut tanghulu
     originalName: 
-    pivot: {x: 0.47424895, y: 0}
+    pivot: {x: 0.45555553, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -284,7 +284,7 @@ ScriptedImporter:
       serializedVersion: 2
       x: 514
       y: 3393
-      width: 466
+      width: 450
       height: 256
     spriteID: 7f9fa54c57ba51d4f9ddc3d202c858b8
     spriteBone: []
@@ -707,9 +707,9 @@ ScriptedImporter:
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 379
+        x: 395
         y: 0
-        width: 466
+        width: 450
         height: 256
       spriteId: 7f9fa54c57ba51d4f9ddc3d202c858b8
     linkedCells: []
