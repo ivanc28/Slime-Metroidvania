@@ -66,6 +66,9 @@ public class PlayerData : ScriptableObject
     public float ziplineSpeedValue;
     [Header("Inventory")]
     public ToolInventoryData[] toolUIData;
+    [Header("Sound Effects")]
+    public AudioClip[] jumpClips;
+    public AudioClip[] whooshClips;
     [Header("Debug")]
     public float noclipSpeed;
 }

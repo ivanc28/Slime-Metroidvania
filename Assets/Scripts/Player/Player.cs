@@ -338,7 +338,7 @@ public class Player : MonoBehaviour
                 SetZipDirection(0);
                 Debug.Log("unzip");
             }
-            if (shouldJumpAfterDetach)
+            if (shouldJumpAfterDetach && !isGrounded)
             {
                 Jump();
             }
@@ -669,6 +669,7 @@ public class Player : MonoBehaviour
         rb.gravityScale = data.risingGravity;
         rb.sharedMaterial = data.frictionless;
         rb.linearVelocityY = data.jumpSpeed;
+        SoundManager.Instance.PlaySoundIfNotPlaying(data.jumpClips, 0.25f, true);
     }
     private void StopJump()
     {
@@ -1030,6 +1031,15 @@ public class Player : MonoBehaviour
     }
     // --------------
 
+    // SFX
+    // Called by animation
+    public void PlayJumpSFX()
+    {
+        if (!isJumping)
+        {
+            SoundManager.Instance.PlaySound(data.whooshClips, 0.075f, true);
+        }
+    }
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Zipline") && attachingToZip && isLockedOnGrapple && collision == currentAttachedCollider)
