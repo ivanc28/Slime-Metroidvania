@@ -13,6 +13,10 @@ public class ToolOption : MonoBehaviour
     private void Awake()
     {
         lockIcon.sprite = selectionData.lockSprite;
+        if(toolImage != null)
+        {
+            toolImage.color = Color.black;
+        }
     }
     private void Update()
     {
@@ -32,5 +36,9 @@ public class ToolOption : MonoBehaviour
     public void RemoveLock()
     {
         lockIcon.enabled = false;
+        if (toolImage != null)
+        {
+            toolImage.color = Color.white;
+        }
     }
 }
