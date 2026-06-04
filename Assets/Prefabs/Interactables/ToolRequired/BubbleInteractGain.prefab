@@ -50,6 +50,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 6eb24e2aa40b43a4082bd1bcc266b9a4, type: 2}
   numPebbles: 7
   collectablePrefab: {fileID: 0}
+  interactTransform: {fileID: 0}
 --- !u!95 &4196371987350397944
 Animator:
   serializedVersion: 7
@@ -119,7 +120,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_MaskInteraction: 0
   m_Sprite: {fileID: 41490175618422106, guid: 26a11915748413141b82605e5c1e0211, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
