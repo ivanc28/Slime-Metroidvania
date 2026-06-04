@@ -130,7 +130,7 @@ public class Player : MonoBehaviour
         FacingRight(true);
         //TESTING
         tools.ClaimTool(PlayerTools.Tool.Spoon);
-        tools.ClaimTool(PlayerTools.Tool.Whisk);
+        //tools.ClaimTool(PlayerTools.Tool.Whisk);
         tools.ClaimTool(PlayerTools.Tool.Scissors);
         tools.ClaimTool(PlayerTools.Tool.BubbleBlower);
         tools.SwapTool(PlayerTools.Tool.Spoon);

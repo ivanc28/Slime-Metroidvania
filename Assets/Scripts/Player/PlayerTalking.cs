@@ -142,6 +142,7 @@ public class PlayerTalking : MonoBehaviour
                 // When rayCheckStayInPlace is false, that means we found solid ground so we can safely move to the side
                 if (!rayCheckStayInPlace)
                 {
+                    bool hasTurnedAround = false;
                     float walkTimer = 0;
                     while (Vector2.Distance(npc.transform.position, transform.position) < talkDistance)
                     {
@@ -149,11 +150,13 @@ public class PlayerTalking : MonoBehaviour
                         {
                             Player.Instance.rb.linearVelocityX = getDistanceSpeed;
                             Player.Instance.GetRenderer().flipX = false;
+                            hasTurnedAround = true;
                         }
                         else
                         {
                             Player.Instance.rb.linearVelocityX = -getDistanceSpeed;
                             Player.Instance.GetRenderer().flipX = true;
+                            hasTurnedAround = true;
                         }
 
                         // we've tried getting distance for long enough so let's stop
@@ -165,7 +168,10 @@ public class PlayerTalking : MonoBehaviour
 
                         yield return null;
                     }
-                    Player.Instance.GetRenderer().flipX ^= true; // flip the player sprite (same as flipX = !flipX)
+                    if (hasTurnedAround)
+                    {
+                        Player.Instance.GetRenderer().flipX ^= true; // flip the player sprite (same as flipX = !flipX)
+                    }
                     yield return new WaitForSeconds(0.25f);
                 }
             }
