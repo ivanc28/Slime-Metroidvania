@@ -156,6 +156,7 @@ public class BubbleObj : GrappleObj
         Player.Instance.rb.gravityScale = 0;
         Player.Instance.rb.linearVelocity = Vector2.zero;
         Player.Instance.rb.position = transform.position;
+        objRenderer.sortingOrder = 1;
 
         Player.Instance.rb.simulated = false;
         Player.Instance.transform.parent = transform;
@@ -175,6 +176,7 @@ public class BubbleObj : GrappleObj
         Player.Instance.SetInBubble(false);
         playerInBubble = false;
         rb.bodyType = RigidbodyType2D.Static;
+        objRenderer.sortingOrder = -1;
 
         Player.Instance.transform.parent = null;
         DontDestroyOnLoad(Player.Instance.gameObject);

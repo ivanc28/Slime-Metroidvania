@@ -194,6 +194,7 @@ public class Player : MonoBehaviour
         anim.SetBool("isGrappling", isAttaching || currHookBeingThrown != null);
         anim.SetBool("isGrappleLocked", isLockedOnGrapple);
         anim.SetBool("isZipping", zipping);
+        anim.SetBool("inBubble", inBubble);
 
         if (flipTimer > 0 && !isGrounded)
         {
