@@ -21,9 +21,13 @@ public class DialogueBox : MonoBehaviour
         {
             textLayout.preferredWidth = preferredWidths[1] * GetFactorByFontSize();
         }
-        else
+        else if (text.Length <= 12)
         {
             textLayout.preferredWidth = preferredWidths[2] * GetFactorByFontSize();
+        }
+        else
+        {
+            textLayout.preferredWidth = preferredWidths[3] * GetFactorByFontSize();
         }
     }
 

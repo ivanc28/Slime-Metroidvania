@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c0552f17edcde34cb93ab0d9a5ca2bb, type: 3}
+  m_Name: Sweet Seller 1 0
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
+  speaker: 0
+  line: finally ready to enjoy a sugary snack for 50 pebbles?
+  choices:
+  - choiceText: 
+    nextNode: {fileID: 11400000, guid: eb7dad2e577cb1a449a3a02d57807ee5, type: 2}
+    dialogueEvents:
+    - {fileID: 11400000, guid: d8d0e9f2fd330934ca441d59b78b7bc8, type: 2}
+    condition: {fileID: 0}

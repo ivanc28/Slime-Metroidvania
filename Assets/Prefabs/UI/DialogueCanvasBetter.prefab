@@ -218,6 +218,7 @@ MonoBehaviour:
   - 30
   - 60
   - 75
+  - 90
 --- !u!1 &3676482697136440539
 GameObject:
   m_ObjectHideFlags: 0

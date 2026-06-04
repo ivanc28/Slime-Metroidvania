@@ -177,6 +177,10 @@ public class Player : MonoBehaviour
             {
                 IncrementGrappleCharges();
             }
+            if (Input.GetKeyDown(KeyCode.F5))
+            {
+                currencyData.IncreaseCurrency(100);
+            }
             if (noclip)
             {
                 float x = Input.GetAxisRaw("Horizontal");

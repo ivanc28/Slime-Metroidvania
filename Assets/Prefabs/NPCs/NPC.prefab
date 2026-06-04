@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5628423949749143985}
   - component: {fileID: 2407329635778683229}
   - component: {fileID: 4181236119794495017}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: NPC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,7 +136,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6976294746196523538}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FeetPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,7 +168,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3094401129459082623}
   - component: {fileID: 4664505054422345750}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -259,7 +259,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8466169854335391593}
   - component: {fileID: 1987533155729985303}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: W Key
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -327,7 +327,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 437338375
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -1603291472181913768, guid: 5efc9df48170572458a3afb7e8317a37, type: 3}

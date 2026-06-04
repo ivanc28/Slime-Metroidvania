@@ -1326,6 +1326,7 @@ MonoBehaviour:
   currencyDelayBeforeAcc: 1
   currencyDelayAfterAcc: 1
   delayBetweenIncrements: 0.035
+  delayBetweenDecrements: 0.0115
   grappleSlider: {fileID: 3996662637066844403}
   grappleNotchesContainer: {fileID: 6413772335976257380}
   grappleGridGroup: {fileID: 1246242696728931215}

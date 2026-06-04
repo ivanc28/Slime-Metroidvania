@@ -5,6 +5,7 @@ public class PlayerInventory
 {
     private List<QuestCollectableData> questItemList = new();
     private List<ToolInventoryData> toolItemList = new();
+    private HashSet<string> completedPurchases = new();
     public void AddQuestItem(QuestCollectableData item)
     {
         questItemList.Add(item);
@@ -33,5 +34,14 @@ public class PlayerInventory
     public List<ToolInventoryData> GetAllTools()
     {
         return toolItemList;
+    }
+    public void CompletePurchase(string purchaseID)
+    {
+        completedPurchases.Add(purchaseID);
+    }
+
+    public bool HasPurchased(string purchaseID)
+    {
+        return completedPurchases.Contains(purchaseID);
     }
 }
