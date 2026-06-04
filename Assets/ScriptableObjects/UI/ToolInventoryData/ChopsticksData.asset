@@ -15,4 +15,4 @@ MonoBehaviour:
   tool: 3
   toolName: Chopsticks
   description: Pick up stuff
-  sprite: {fileID: -745645855993587873, guid: 2843968d1d159304ea00aafcac6f401e, type: 3}
+  sprite: {fileID: 686314766057107471, guid: 8bbff4bbe5733b343a27626669032067, type: 3}
