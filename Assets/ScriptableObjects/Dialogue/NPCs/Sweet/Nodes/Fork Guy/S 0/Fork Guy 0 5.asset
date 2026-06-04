@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Fork Guy 0 5
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 0
-  line: ever wondered if you could pop tehse things?
+  line: ever wondered if you could pop these things?
   choices:
   - choiceText: 
     nextNode: {fileID: 11400000, guid: b2a2dd056a2732545a57f549778472d2, type: 2}
