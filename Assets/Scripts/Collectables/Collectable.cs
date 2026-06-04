@@ -13,7 +13,7 @@ public abstract class Collectable : MonoBehaviour
     private bool inRange;
     private float pickupTime;
     RoomData room;
-    private void Start()
+    private void Awake()
     {
         MakeStart();
     }

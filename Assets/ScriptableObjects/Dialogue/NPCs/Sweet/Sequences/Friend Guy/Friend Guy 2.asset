@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8351639e9514324d8a56a5d6cca7493, type: 3}
   m_Name: Friend Guy 2
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSequence
-  rootNode: {fileID: 11400000, guid: 5324497a630063640970aa0ce74bf71d, type: 2}
+  rootNode: {fileID: 11400000, guid: 1086a0bd80502554ba044967bb91b6f2, type: 2}
   nextSequenceCondition: {fileID: 0}
   skipSequenceCondition: {fileID: 0}

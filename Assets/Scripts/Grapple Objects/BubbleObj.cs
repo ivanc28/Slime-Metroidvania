@@ -136,6 +136,7 @@ public class BubbleObj : GrappleObj
         if (!Player.Instance.GetHookBeingThrown() && !Player.Instance.GetIsAttaching())
         {
             Player.Instance.DetachHook();
+            Player.Instance.currentAttachedCollider = null;
         }
         objCollider.enabled = false;
         objRenderer.enabled = false;
@@ -148,7 +149,6 @@ public class BubbleObj : GrappleObj
         //}
         transform.position = startingPos;
         bubbleEmpty = true;
-        Player.Instance.currentAttachedCollider = null;
     }
     private void EnterBubble()
     {
