@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Lemonade Guy 1 0
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 1
-  line: i hope you have a splendid day
+  line: i hope you have a splendid day!
   choices:
   - choiceText: 
     nextNode: {fileID: 11400000, guid: c76c0c73aa3c26847a13ae84078aca2f, type: 2}
