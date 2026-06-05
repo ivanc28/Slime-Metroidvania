@@ -322,6 +322,8 @@ public class NPC : MonoBehaviour
             Destroy(currDialogueBox);
             currDialogueBox = null;
             yield return StartCoroutine(CallEvents(currNode.choices[currChoice].dialogueEvents));
+            yield return null;
+            choosingToSkipLine = false;
         }
         choiceChosen = currChoice;
         NextDialogue();
@@ -371,6 +373,8 @@ public class NPC : MonoBehaviour
             Destroy(currDialogueBox);
             currDialogueBox = null;
             yield return StartCoroutine(CallEvents(currNode.choices[0].dialogueEvents));
+            yield return null;
+            choosingToSkipLine = false;
         }
         choiceChosen = 0;
         NextDialogue();

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c0552f17edcde34cb93ab0d9a5ca2bb, type: 3}
+  m_Name: Chef 2 7
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
+  speaker: 0
+  line: give me a moment, i'll cook up something you'll surely enjoy
+  choices:
+  - choiceText: 
+    nextNode: {fileID: 11400000, guid: 133b1204ed735b94fb368273b454addb, type: 2}
+    dialogueEvents:
+    - {fileID: 11400000, guid: e51ac76a546a5e1428e3098132716a8f, type: 2}
+    condition: {fileID: 0}
