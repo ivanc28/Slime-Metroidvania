@@ -61,9 +61,9 @@ TextureImporter:
     filterMode: 0
     aniso: 1
     mipBias: 0
-    wrapU: 1
-    wrapV: 1
-    wrapW: 1
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -93,7 +93,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -139,10 +139,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -159,12 +159,12 @@ TextureImporter:
       name: slime_1
       rect:
         serializedVersion: 2
-        x: 20
+        x: 32
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -181,12 +181,12 @@ TextureImporter:
       name: slime_2
       rect:
         serializedVersion: 2
-        x: 40
+        x: 64
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -203,12 +203,12 @@ TextureImporter:
       name: slime_3
       rect:
         serializedVersion: 2
-        x: 60
+        x: 96
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -225,12 +225,12 @@ TextureImporter:
       name: slime_4
       rect:
         serializedVersion: 2
-        x: 80
+        x: 128
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -247,12 +247,12 @@ TextureImporter:
       name: slime_5
       rect:
         serializedVersion: 2
-        x: 100
+        x: 160
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -269,12 +269,12 @@ TextureImporter:
       name: slime_6
       rect:
         serializedVersion: 2
-        x: 120
+        x: 192
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -291,12 +291,12 @@ TextureImporter:
       name: slime_7
       rect:
         serializedVersion: 2
-        x: 140
+        x: 224
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -313,12 +313,12 @@ TextureImporter:
       name: slime_8
       rect:
         serializedVersion: 2
-        x: 160
+        x: 256
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -335,12 +335,12 @@ TextureImporter:
       name: slime_9
       rect:
         serializedVersion: 2
-        x: 180
+        x: 288
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -357,12 +357,12 @@ TextureImporter:
       name: slime_10
       rect:
         serializedVersion: 2
-        x: 200
+        x: 320
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -379,12 +379,12 @@ TextureImporter:
       name: slime_11
       rect:
         serializedVersion: 2
-        x: 220
+        x: 352
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -401,12 +401,12 @@ TextureImporter:
       name: slime_12
       rect:
         serializedVersion: 2
-        x: 240
+        x: 384
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -423,12 +423,12 @@ TextureImporter:
       name: slime_13
       rect:
         serializedVersion: 2
-        x: 260
+        x: 416
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -445,12 +445,12 @@ TextureImporter:
       name: slime_14
       rect:
         serializedVersion: 2
-        x: 280
+        x: 448
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -467,12 +467,12 @@ TextureImporter:
       name: slime_15
       rect:
         serializedVersion: 2
-        x: 300
+        x: 480
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -489,12 +489,12 @@ TextureImporter:
       name: slime_16
       rect:
         serializedVersion: 2
-        x: 320
+        x: 512
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -511,12 +511,12 @@ TextureImporter:
       name: slime_17
       rect:
         serializedVersion: 2
-        x: 340
+        x: 544
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -533,12 +533,12 @@ TextureImporter:
       name: slime_18
       rect:
         serializedVersion: 2
-        x: 360
+        x: 576
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -555,12 +555,12 @@ TextureImporter:
       name: slime_19
       rect:
         serializedVersion: 2
-        x: 380
+        x: 608
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -577,12 +577,12 @@ TextureImporter:
       name: slime_20
       rect:
         serializedVersion: 2
-        x: 400
+        x: 640
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -599,12 +599,12 @@ TextureImporter:
       name: slime_21
       rect:
         serializedVersion: 2
-        x: 420
+        x: 672
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -621,12 +621,12 @@ TextureImporter:
       name: slime_22
       rect:
         serializedVersion: 2
-        x: 440
+        x: 704
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -643,12 +643,12 @@ TextureImporter:
       name: slime_23
       rect:
         serializedVersion: 2
-        x: 460
+        x: 736
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -665,12 +665,12 @@ TextureImporter:
       name: slime_24
       rect:
         serializedVersion: 2
-        x: 480
+        x: 768
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -687,12 +687,12 @@ TextureImporter:
       name: slime_25
       rect:
         serializedVersion: 2
-        x: 500
+        x: 800
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -709,12 +709,12 @@ TextureImporter:
       name: slime_26
       rect:
         serializedVersion: 2
-        x: 520
+        x: 832
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -731,12 +731,12 @@ TextureImporter:
       name: slime_27
       rect:
         serializedVersion: 2
-        x: 540
+        x: 864
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -753,12 +753,12 @@ TextureImporter:
       name: slime_28
       rect:
         serializedVersion: 2
-        x: 560
+        x: 896
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -775,12 +775,12 @@ TextureImporter:
       name: slime_29
       rect:
         serializedVersion: 2
-        x: 580
+        x: 928
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -797,12 +797,12 @@ TextureImporter:
       name: slime_30
       rect:
         serializedVersion: 2
-        x: 600
+        x: 960
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -819,12 +819,12 @@ TextureImporter:
       name: slime_31
       rect:
         serializedVersion: 2
-        x: 620
+        x: 992
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -841,12 +841,12 @@ TextureImporter:
       name: slime_32
       rect:
         serializedVersion: 2
-        x: 640
+        x: 1024
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -863,12 +863,12 @@ TextureImporter:
       name: slime_33
       rect:
         serializedVersion: 2
-        x: 660
+        x: 1056
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -885,12 +885,12 @@ TextureImporter:
       name: slime_34
       rect:
         serializedVersion: 2
-        x: 680
+        x: 1088
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -907,12 +907,12 @@ TextureImporter:
       name: slime_35
       rect:
         serializedVersion: 2
-        x: 700
+        x: 1120
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -929,12 +929,12 @@ TextureImporter:
       name: slime_36
       rect:
         serializedVersion: 2
-        x: 720
+        x: 1152
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -951,12 +951,12 @@ TextureImporter:
       name: slime_37
       rect:
         serializedVersion: 2
-        x: 740
+        x: 1184
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -973,12 +973,12 @@ TextureImporter:
       name: slime_38
       rect:
         serializedVersion: 2
-        x: 760
+        x: 1216
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -995,12 +995,12 @@ TextureImporter:
       name: slime_39
       rect:
         serializedVersion: 2
-        x: 780
+        x: 1248
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1017,12 +1017,12 @@ TextureImporter:
       name: slime_40
       rect:
         serializedVersion: 2
-        x: 800
+        x: 1280
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1039,12 +1039,12 @@ TextureImporter:
       name: slime_41
       rect:
         serializedVersion: 2
-        x: 820
+        x: 1312
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1061,12 +1061,12 @@ TextureImporter:
       name: slime_42
       rect:
         serializedVersion: 2
-        x: 840
+        x: 1344
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1083,12 +1083,12 @@ TextureImporter:
       name: slime_43
       rect:
         serializedVersion: 2
-        x: 860
+        x: 1376
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1105,12 +1105,12 @@ TextureImporter:
       name: slime_44
       rect:
         serializedVersion: 2
-        x: 880
+        x: 1408
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1127,12 +1127,12 @@ TextureImporter:
       name: slime_45
       rect:
         serializedVersion: 2
-        x: 900
+        x: 1440
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1149,12 +1149,12 @@ TextureImporter:
       name: slime_46
       rect:
         serializedVersion: 2
-        x: 920
+        x: 1472
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1171,12 +1171,12 @@ TextureImporter:
       name: slime_47
       rect:
         serializedVersion: 2
-        x: 940
+        x: 1504
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1193,12 +1193,12 @@ TextureImporter:
       name: slime_48
       rect:
         serializedVersion: 2
-        x: 960
+        x: 1536
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1215,12 +1215,12 @@ TextureImporter:
       name: slime_49
       rect:
         serializedVersion: 2
-        x: 980
+        x: 1568
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1237,12 +1237,12 @@ TextureImporter:
       name: slime_50
       rect:
         serializedVersion: 2
-        x: 1000
+        x: 1600
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1259,12 +1259,12 @@ TextureImporter:
       name: slime_51
       rect:
         serializedVersion: 2
-        x: 1020
+        x: 1632
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1281,12 +1281,12 @@ TextureImporter:
       name: slime_52
       rect:
         serializedVersion: 2
-        x: 1040
+        x: 1664
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1303,12 +1303,12 @@ TextureImporter:
       name: slime_53
       rect:
         serializedVersion: 2
-        x: 1060
+        x: 1696
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1325,12 +1325,12 @@ TextureImporter:
       name: slime_54
       rect:
         serializedVersion: 2
-        x: 1080
+        x: 1728
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1347,12 +1347,12 @@ TextureImporter:
       name: slime_55
       rect:
         serializedVersion: 2
-        x: 1100
+        x: 1760
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1369,12 +1369,12 @@ TextureImporter:
       name: slime_56
       rect:
         serializedVersion: 2
-        x: 1120
+        x: 1792
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1391,12 +1391,12 @@ TextureImporter:
       name: slime_57
       rect:
         serializedVersion: 2
-        x: 1140
+        x: 1824
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1413,12 +1413,12 @@ TextureImporter:
       name: slime_58
       rect:
         serializedVersion: 2
-        x: 1160
+        x: 1856
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1435,12 +1435,12 @@ TextureImporter:
       name: slime_59
       rect:
         serializedVersion: 2
-        x: 1180
+        x: 1888
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1457,12 +1457,12 @@ TextureImporter:
       name: slime_60
       rect:
         serializedVersion: 2
-        x: 1200
+        x: 1920
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1479,12 +1479,12 @@ TextureImporter:
       name: slime_61
       rect:
         serializedVersion: 2
-        x: 1220
+        x: 1952
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1501,12 +1501,12 @@ TextureImporter:
       name: slime_62
       rect:
         serializedVersion: 2
-        x: 1240
+        x: 1984
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1523,12 +1523,12 @@ TextureImporter:
       name: slime_63
       rect:
         serializedVersion: 2
-        x: 1260
+        x: 2016
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1545,12 +1545,12 @@ TextureImporter:
       name: slime_64
       rect:
         serializedVersion: 2
-        x: 1280
+        x: 2048
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1567,12 +1567,12 @@ TextureImporter:
       name: slime_65
       rect:
         serializedVersion: 2
-        x: 1300
+        x: 2080
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1589,12 +1589,12 @@ TextureImporter:
       name: slime_66
       rect:
         serializedVersion: 2
-        x: 1320
+        x: 2112
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1611,12 +1611,12 @@ TextureImporter:
       name: slime_67
       rect:
         serializedVersion: 2
-        x: 1340
+        x: 2144
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1633,12 +1633,12 @@ TextureImporter:
       name: slime_68
       rect:
         serializedVersion: 2
-        x: 1360
+        x: 2176
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1655,20 +1655,20 @@ TextureImporter:
       name: slime_69
       rect:
         serializedVersion: 2
-        x: 1380
+        x: 2208
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bdff8f5b8590ea641aa065b81e64cac0
-      internalID: -1880837101
+      spriteID: ddc5bcfb77405614499e3740365df5e3
+      internalID: -2013223143
       vertices: []
       indices: 
       edges: []
@@ -1677,20 +1677,20 @@ TextureImporter:
       name: slime_70
       rect:
         serializedVersion: 2
-        x: 1400
+        x: 2240
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 797f8586617647f4e854853282a02ad3
-      internalID: 114673283
+      spriteID: a1f5d459770cc8642955fbca0dca03e4
+      internalID: -545051385
       vertices: []
       indices: 
       edges: []
@@ -1699,20 +1699,20 @@ TextureImporter:
       name: slime_71
       rect:
         serializedVersion: 2
-        x: 1420
+        x: 2272
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9df7c577f0e395142acc6568d1aefcd6
-      internalID: -1126525635
+      spriteID: af578fedc2616d44da60f160865d54c1
+      internalID: -347206841
       vertices: []
       indices: 
       edges: []
@@ -1721,20 +1721,20 @@ TextureImporter:
       name: slime_72
       rect:
         serializedVersion: 2
-        x: 1440
+        x: 2304
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 084dd34c040acb648b588c7634d004e3
-      internalID: -1589625509
+      spriteID: a1f6430861ab1234ab398d2a9d91e590
+      internalID: -162076241
       vertices: []
       indices: 
       edges: []
@@ -1743,20 +1743,20 @@ TextureImporter:
       name: slime_73
       rect:
         serializedVersion: 2
-        x: 1460
+        x: 2336
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dffeac17e63bf084bb4508504d4fc092
-      internalID: -1071346204
+      spriteID: 3889e99828caae142ae20c55402eccf4
+      internalID: 1019552227
       vertices: []
       indices: 
       edges: []
@@ -1765,20 +1765,20 @@ TextureImporter:
       name: slime_74
       rect:
         serializedVersion: 2
-        x: 1480
+        x: 2368
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b967a5b5b8a305a43a4aa2f2c1a92369
-      internalID: -1168851545
+      spriteID: db8c0e54e96a4434d82b57cdd5c3a006
+      internalID: 1335863683
       vertices: []
       indices: 
       edges: []
@@ -1787,20 +1787,20 @@ TextureImporter:
       name: slime_75
       rect:
         serializedVersion: 2
-        x: 1500
+        x: 2400
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a28ed1be1747774682b2bad573e19b0
-      internalID: 1407948545
+      spriteID: 82cd2ab759055ad4ab90b02fc1d76538
+      internalID: -1582540933
       vertices: []
       indices: 
       edges: []
@@ -1809,20 +1809,218 @@ TextureImporter:
       name: slime_76
       rect:
         serializedVersion: 2
-        x: 1520
+        x: 2432
         y: 0
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b8ac26c111237149b72a27233d8e456
-      internalID: -1292937956
+      spriteID: fcecc957ea7491347ba0c8136e46a7d0
+      internalID: -1190321408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slime_77
+      rect:
+        serializedVersion: 2
+        x: 2464
+        y: 0
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7986c02f36ed85648bce717e7d33c79b
+      internalID: -1541652473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slime_78
+      rect:
+        serializedVersion: 2
+        x: 2496
+        y: 0
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe1d8c9a3e2063c428fbf0dbc8b4df1f
+      internalID: 486180950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slime_79
+      rect:
+        serializedVersion: 2
+        x: 2528
+        y: 0
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6e740430af03a746a3d50c974516d25
+      internalID: 1723074342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slime_80
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 0
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4ccd13a29af4324faa6ee51faa342fe
+      internalID: 818395728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slime_81
+      rect:
+        serializedVersion: 2
+        x: 2592
+        y: 0
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3eea6a01d8d423f459aeb41bc7bd8d68
+      internalID: -1990064553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slime_82
+      rect:
+        serializedVersion: 2
+        x: 2624
+        y: 0
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3ceb7799be7b9f48bdf7c1b47527f97
+      internalID: -1949340086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slime_83
+      rect:
+        serializedVersion: 2
+        x: 2656
+        y: 0
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 093ba75f88652d248b6a2981b519ea5b
+      internalID: 2090899995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slime_84
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 0
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92ca589adfbcc6a47903a452538a7555
+      internalID: 1896296166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slime_85
+      rect:
+        serializedVersion: 2
+        x: 2720
+        y: 0
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7dd4485bf10deb47bc9026371c0bc27
+      internalID: 1963146046
       vertices: []
       indices: 
       edges: []
@@ -1841,7 +2039,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":20.0,"y":20.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.1875},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":9,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
       - key: SpriteEditor.SliceOnImport
         value: False
     nameFileIdTable:
@@ -1911,16 +2109,25 @@ TextureImporter:
       slime_66: 185364849
       slime_67: 1813613267
       slime_68: 45574749
-      slime_69: -1880837101
+      slime_69: -2013223143
       slime_7: -6776676135277293862
-      slime_70: 114673283
-      slime_71: -1126525635
-      slime_72: -1589625509
-      slime_73: -1071346204
-      slime_74: -1168851545
-      slime_75: 1407948545
-      slime_76: -1292937956
+      slime_70: -545051385
+      slime_71: -347206841
+      slime_72: -162076241
+      slime_73: 1019552227
+      slime_74: 1335863683
+      slime_75: -1582540933
+      slime_76: -1190321408
+      slime_77: -1541652473
+      slime_78: 486180950
+      slime_79: 1723074342
       slime_8: 822319986
+      slime_80: 818395728
+      slime_81: -1990064553
+      slime_82: -1949340086
+      slime_83: 2090899995
+      slime_84: 1896296166
+      slime_85: 1963146046
       slime_9: -352516380
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
