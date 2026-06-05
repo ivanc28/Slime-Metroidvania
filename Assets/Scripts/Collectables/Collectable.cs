@@ -45,6 +45,7 @@ public abstract class Collectable : MonoBehaviour
             if (Input.GetKeyDown(data.pickupKey) && CanCollect())
             {
                 Player.Instance.InInteraction = true;
+                Player.Instance.anim.SetTrigger("pickUp");
                 StartCoroutine(PickUp());
             }
         }

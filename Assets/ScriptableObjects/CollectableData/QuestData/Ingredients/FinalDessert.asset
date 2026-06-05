@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82cc5ed70c4c8104db24732106bdf78e, type: 3}
   m_Name: FinalDessert
   m_EditorClassIdentifier: Assembly-CSharp::QuestCollectableData
-  maxDistanceToCollect: 0
+  maxDistanceToCollect: 1.5
   itemSprite: {fileID: 0}
   pickupKey: 0
   keySprite: {fileID: 0}
   pickupTime: 0
   displayMessage: 1
-  itemName: Amaretto Cake
+  itemName: 0.5
   description: A cake that infuses all the core flavors of this world
   sprite: {fileID: 0}

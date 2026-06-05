@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82cc5ed70c4c8104db24732106bdf78e, type: 3}
   m_Name: FlowerOrangeData
   m_EditorClassIdentifier: Assembly-CSharp::QuestCollectableData
-  maxDistanceToCollect: 2
+  maxDistanceToCollect: 1.5
   itemSprite: {fileID: 0}
   pickupKey: 119
   keySprite: {fileID: -1603291472181913768, guid: 5efc9df48170572458a3afb7e8317a37, type: 3}
-  pickupTime: 1
+  pickupTime: 0.5
   displayMessage: 1
   itemName: Orange Flower
   description: A flower as orange as... well, an orange
