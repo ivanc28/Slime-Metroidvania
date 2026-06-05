@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: ClaimSweets
   m_EditorClassIdentifier: Assembly-CSharp::DEventClaimFood
   consumableType: 0
-  claimMessage: You found some sweets!
+  claimMessage: You found some Sweets!
