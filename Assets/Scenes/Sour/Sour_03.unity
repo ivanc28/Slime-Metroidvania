@@ -159246,6 +159246,14 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 573213267045993936, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.00011439324
+      objectReference: {fileID: 0}
+    - target: {fileID: 573213267045993936, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 988797337731099234, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
       propertyPath: m_LocalScale.x
       value: 2
@@ -159278,6 +159286,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -2
       objectReference: {fileID: 0}
+    - target: {fileID: 2682584126854107180, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.00005719662
+      objectReference: {fileID: 0}
+    - target: {fileID: 2682584126854107180, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.03
+      objectReference: {fileID: 0}
     - target: {fileID: 2692560826801372289, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
       propertyPath: parallaxCamera
       value: 
@@ -159289,6 +159305,14 @@ PrefabInstance:
     - target: {fileID: 3002603272294223477, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
       propertyPath: m_Name
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3394682154993602703, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0010867357
+      objectReference: {fileID: 0}
+    - target: {fileID: 3394682154993602703, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.97
       objectReference: {fileID: 0}
     - target: {fileID: 3808275967321502125, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
       propertyPath: m_Size.x
@@ -159321,6 +159345,14 @@ PrefabInstance:
     - target: {fileID: 3893124872115049537, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4457704486151085244, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0011439323
+      objectReference: {fileID: 0}
+    - target: {fileID: 4457704486151085244, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5003480222730015084, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
       propertyPath: m_Size.x
@@ -159361,6 +159393,14 @@ PrefabInstance:
     - target: {fileID: 5675286970561127265, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
       propertyPath: m_Name
       value: EnvLayers
+      objectReference: {fileID: 0}
+    - target: {fileID: 7115140499812583034, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0009723425
+      objectReference: {fileID: 0}
+    - target: {fileID: 7115140499812583034, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.95
       objectReference: {fileID: 0}
     - target: {fileID: 7258242987998950344, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -159817,11 +159857,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4555607478704896849, guid: fdbcfb5adc9e8d8479e6a8b1189f1396, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.1398363
+      value: -3.1409802
       objectReference: {fileID: 0}
     - target: {fileID: 4555607478704896849, guid: fdbcfb5adc9e8d8479e6a8b1189f1396, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.476904
+      value: 10.476904
       objectReference: {fileID: 0}
     - target: {fileID: 6085920068757319703, guid: fdbcfb5adc9e8d8479e6a8b1189f1396, type: 3}
       propertyPath: m_LocalPosition.x
