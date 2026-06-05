@@ -914,6 +914,16 @@ public class Player : MonoBehaviour
         rb.sharedMaterial = data.someFriction;  // ensure we don't slide around when we start interacting
         InInteraction = true;
         // play tool animation or something
+        // Spoon: 0
+        // Fork: 1
+        // Chopsticks: 2
+        // Umbrella: 3
+        // Scissors: 4
+        // Whisk: 5
+        // Bubble Blower: 6
+        int toolForAnim = (int)tools.GetCurrTool() - 1;
+        anim.SetFloat("toolChoice", toolForAnim);
+        anim.SetTrigger("useTool");
         yield return new WaitForSeconds(data.toolUseTime);
         if(tools.GetCurrTool() == PlayerTools.Tool.BubbleBlower)
         {

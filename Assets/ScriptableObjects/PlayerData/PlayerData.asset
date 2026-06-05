@@ -46,7 +46,7 @@ MonoBehaviour:
     m_Bits: 72
   initialMaxGrappleCharges: 0
   grappleRechargeTime: 0.1
-  toolUseTime: 0.8
+  toolUseTime: 0.9
   interactKey: 101
   blowTime: 0.8
   bubbleMoveSpeed: 12
