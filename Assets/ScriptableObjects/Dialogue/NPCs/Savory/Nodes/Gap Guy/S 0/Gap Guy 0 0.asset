@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c0552f17edcde34cb93ab0d9a5ca2bb, type: 3}
   m_Name: Gap Guy 0 0
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
-  speaker: 0
+  speaker: 1
   line: what're you looking at?
   choices:
   - choiceText: 
