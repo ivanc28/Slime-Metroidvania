@@ -231479,7 +231479,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6531561494089855843, guid: 1655abc70aa2aee42910a24407353244, type: 3}
       propertyPath: m_Name
-      value: Phone
+      value: Plushie
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
