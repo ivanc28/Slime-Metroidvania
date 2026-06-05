@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Fork Guy 2 5
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 1
-  line: then press <color="red">E</color> while you're on the bubble to use it
+  line: then press <color=#FF69B4>E</color> while you're on the bubble to use it
   choices:
   - choiceText: 
     nextNode: {fileID: 11400000, guid: 4c91548419fca4c4cbcf4fd35b805e21, type: 2}

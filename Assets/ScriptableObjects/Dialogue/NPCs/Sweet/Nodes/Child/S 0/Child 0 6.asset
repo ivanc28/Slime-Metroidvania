@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Child 0 6
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 0
-  line: if i hold <color="red">Space</color> longer, i can jump higher!
+  line: if i hold <color=#FF69B4>Space</color> longer, i can jump higher!
   choices:
   - choiceText: 
     nextNode: {fileID: 11400000, guid: 34a745c2411fc844b9da41f7cca4b228, type: 2}

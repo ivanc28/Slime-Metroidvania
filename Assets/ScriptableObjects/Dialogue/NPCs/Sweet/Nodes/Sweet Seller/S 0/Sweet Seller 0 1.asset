@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Sweet Seller 0 1
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 0
-  line: would you be interested in treating yourself to some sweets?
+  line: would you be interested in treating yourself to some <color=#FF69B4>sweets</color>?
   choices:
   - choiceText: 
     nextNode: {fileID: 11400000, guid: ce26f01cf93d66d42821c4aa1e239206, type: 2}

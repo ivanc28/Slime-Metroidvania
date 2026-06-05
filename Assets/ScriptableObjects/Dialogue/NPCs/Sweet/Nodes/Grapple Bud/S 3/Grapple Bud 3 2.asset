@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Grapple Bud 3 2
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 0
-  line: as long as you got some energy left, just press <color="red">Left Click</color>
+  line: as long as you got some energy left, just press <color=#FF69B4>Left Click</color>
     and aim where you wanna go
   choices: []
