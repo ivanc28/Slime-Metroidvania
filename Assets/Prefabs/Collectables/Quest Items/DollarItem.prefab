@@ -195,7 +195,7 @@ GameObject:
   - component: {fileID: 3191726206499858861}
   - component: {fileID: 3934530804348982309}
   m_Layer: 8
-  m_Name: Sour3QuestItem
+  m_Name: DollarItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -230,9 +230,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f37149f4a0b0964ab44898944b7dd50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::QuestCollectable
-  data: {fileID: 11400000, guid: fc075d8deef98b149ac3e4a0e4ceeb42, type: 2}
-  collectableID: Sour_3_Soda
-  pickupMessage: You found a <color=#FF69B4>Soda Bottle!</color>
+  data: {fileID: 11400000, guid: 98543ab23fdb694439c5851bcf83bfb1, type: 2}
+  collectableID: Sour_3_DollarBill
+  pickupMessage: You found a Dollar Bill!
   keyIcon: {fileID: 6254863482828121653}
   rb: {fileID: 0}
   spriteRend: {fileID: 9093104567981088291}
