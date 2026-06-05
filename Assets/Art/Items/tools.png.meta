@@ -108,11 +108,24 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tools_0
+      name: Chopsticks
       rect:
         serializedVersion: 2
         x: 0
@@ -134,7 +147,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tools_1
+      name: Spoon
       rect:
         serializedVersion: 2
         x: 0
@@ -156,7 +169,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tools_2
+      name: Fork
       rect:
         serializedVersion: 2
         x: 0
@@ -178,7 +191,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tools_3
+      name: Scissors
       rect:
         serializedVersion: 2
         x: 0
@@ -200,7 +213,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tools_4
+      name: Whisk
       rect:
         serializedVersion: 2
         x: 0
@@ -222,7 +235,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tools_5
+      name: Bubble Wand
       rect:
         serializedVersion: 2
         x: 0
@@ -259,12 +272,12 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      tools_0: 1559704157218881296
-      tools_1: 8699069900992395679
-      tools_2: 7155652846937496742
-      tools_3: 5292716684467120071
-      tools_4: -5651667117540000442
-      tools_5: 942299122
+      Bubble Wand: 942299122
+      Chopsticks: 1559704157218881296
+      Fork: 7155652846937496742
+      Scissors: 5292716684467120071
+      Spoon: 8699069900992395679
+      Whisk: -5651667117540000442
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

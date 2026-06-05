@@ -169,7 +169,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 437338375
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -1603291472181913768, guid: 5efc9df48170572458a3afb7e8317a37, type: 3}
@@ -195,7 +195,7 @@ GameObject:
   - component: {fileID: 3191726206499858861}
   - component: {fileID: 3934530804348982309}
   m_Layer: 8
-  m_Name: FlowerRed
+  m_Name: FlowerGreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -232,7 +232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::QuestCollectable
   data: {fileID: 11400000, guid: 409e064a3384a2d4f9ba75a0522fb804, type: 2}
   collectableID: Bitter_03_Flower
-  pickupMessage: You found a Red Flower!
+  pickupMessage: You found a Green Flower!
   keyIcon: {fileID: 6254863482828121653}
   rb: {fileID: 0}
   spriteRend: {fileID: 9093104567981088291}

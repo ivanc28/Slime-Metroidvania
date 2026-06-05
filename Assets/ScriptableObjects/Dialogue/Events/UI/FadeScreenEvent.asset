@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93492c21ef8c3e24aaa23cbcdf51c85d, type: 3}
-  m_Name: HasFinalDessert
-  m_EditorClassIdentifier: Assembly-CSharp::QuestItemCondition
-  questData:
-  - {fileID: 11400000, guid: 183ef6fef05dd514081ac4095cfd6087, type: 2}
+  m_Script: {fileID: 11500000, guid: 41ad4141627b70b4385802e38da2bca4, type: 3}
+  m_Name: FadeScreenEvent
+  m_EditorClassIdentifier: Assembly-CSharp::DEventFadeScreen
+  fadeTime: 1.75
