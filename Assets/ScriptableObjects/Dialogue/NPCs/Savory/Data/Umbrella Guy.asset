@@ -23,6 +23,6 @@ MonoBehaviour:
   dialogueBoxPrefab: {fileID: 8471492469622854947, guid: 19917e134e38e6444a2e69101becaece, type: 3}
   distanceDialogueAboveHeadOffset: 0.75
   delayBetweenChars: 0.02
-  delayAfterPeriod: 0.4
+  delayAfterPeriod: 0.3
   delayAfterComma: 0.5
   npcTextColor: {r: 0.26352793, g: 0.32301342, b: 0.3962264, a: 1}
