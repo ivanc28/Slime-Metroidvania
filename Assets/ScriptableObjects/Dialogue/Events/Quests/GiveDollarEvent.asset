@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 173baa61935887c49ae5011af6302c98, type: 3}
+  m_Name: GiveDollarEvent
+  m_EditorClassIdentifier: Assembly-CSharp::DEventGiveItem
+  questItems:
+  - {fileID: 11400000, guid: 98543ab23fdb694439c5851bcf83bfb1, type: 2}
