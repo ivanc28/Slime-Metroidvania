@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93492c21ef8c3e24aaa23cbcdf51c85d, type: 3}
+  m_Name: HasAllIngredients
+  m_EditorClassIdentifier: Assembly-CSharp::QuestItemCondition
+  questData:
+  - {fileID: 11400000, guid: 9ad997951fbd2164f9981a2d1a98ec24, type: 2}
+  - {fileID: 11400000, guid: ed9ed2913a6497f4985571a1c64fe35d, type: 2}
+  - {fileID: 11400000, guid: 715a09f10ba9377418294a63355b7517, type: 2}
+  - {fileID: 11400000, guid: 7aca33390b8d59048a6fa1f828b9561e, type: 2}
+  - {fileID: 11400000, guid: 895053010b477cf4191519b86ed1dbcd, type: 2}
