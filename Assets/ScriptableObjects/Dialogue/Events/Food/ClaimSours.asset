@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 921ead34942c2814986c2fa6ba7abf65, type: 3}
-  m_Name: ClaimSweets
+  m_Name: ClaimSours
   m_EditorClassIdentifier: Assembly-CSharp::DEventClaimFood
   consumableType: 0
-  claimMessage: You found some Sweets!
+  claimMessage: You found some Sour Candies!
