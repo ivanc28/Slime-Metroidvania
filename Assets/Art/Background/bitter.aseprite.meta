@@ -135,10 +135,10 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 4
+      x: 1167
       y: 4
       width: 576
-      height: 309
+      height: 598
     spriteID: c6269770a5edc6f4d87ece5877b1cde8
     spriteBone: []
     spriteOutline: []
@@ -147,19 +147,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 4}
+    uvTransform: {x: 1167, y: 4}
   - name: -3 cacao back
     originalName: 
-    pivot: {x: 12.509091, y: -2.909091}
+    pivot: {x: 1.7898089, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
-      x: 588
-      y: 4
-      width: 55
-      height: 55
+      x: 1167
+      y: 610
+      width: 157
+      height: 217
     spriteID: 32aa2300e3466e943aa49b7d1eec9cd4
     spriteBone: []
     spriteOutline: []
@@ -168,7 +168,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 588, y: 4}
+    uvTransform: {x: 1167, y: 610}
   - name: -2 cacao middle
     originalName: 
     pivot: {x: 11.690909, y: -2.0363636}
@@ -177,8 +177,8 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 651
-      y: 4
+      x: 1332
+      y: 610
       width: 55
       height: 55
     spriteID: 19fcf32f7e50bc446a2353e1aa0b9005
@@ -189,19 +189,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 651, y: 4}
+    uvTransform: {x: 1332, y: 610}
   - name: -1 cacao front
     originalName: 
-    pivot: {x: 8.472727, y: -2.1454544}
+    pivot: {x: 0.6060606, y: -0.06657224}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
-      x: 714
+      x: 4
       y: 4
-      width: 55
-      height: 55
+      width: 1155
+      height: 706
     spriteID: aee93fcf7a4153f4aa6ff36cf5f95307
     spriteBone: []
     spriteOutline: []
@@ -210,7 +210,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 714, y: 4}
+    uvTransform: {x: 4, y: 4}
   - name: 1 sage
     originalName: 
     pivot: {x: 5.0363636, y: -2.4727273}
@@ -219,8 +219,8 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 777
-      y: 4
+      x: 1395
+      y: 610
       width: 55
       height: 55
     spriteID: 2238c70bca400d3409f8d622b235fd93
@@ -231,7 +231,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 777, y: 4}
+    uvTransform: {x: 1395, y: 610}
   spriteSheetImportData: []
   tileSetImportData: []
   asepriteLayers:
@@ -254,7 +254,7 @@ ScriptedImporter:
         x: 0
         y: 0
         width: 576
-        height: 309
+        height: 598
       spriteId: c6269770a5edc6f4d87ece5877b1cde8
     linkedCells: []
     tileCells: []
@@ -276,10 +276,10 @@ ScriptedImporter:
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 12
-        y: 160
-        width: 55
-        height: 55
+        x: 419
+        y: 0
+        width: 157
+        height: 217
       spriteId: 32aa2300e3466e943aa49b7d1eec9cd4
     linkedCells: []
     tileCells: []
@@ -326,10 +326,10 @@ ScriptedImporter:
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 234
-        y: 118
-        width: 55
-        height: 55
+        x: 0
+        y: 47
+        width: 1155
+        height: 706
       spriteId: aee93fcf7a4153f4aa6ff36cf5f95307
     linkedCells: []
     tileCells: []
@@ -390,4 +390,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 1400, y: 800}
-  previousTextureSize: {x: 1024, y: 512}
+  previousTextureSize: {x: 2048, y: 1024}
