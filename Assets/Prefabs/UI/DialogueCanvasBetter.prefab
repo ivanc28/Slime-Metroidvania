@@ -215,9 +215,10 @@ MonoBehaviour:
   dialogueText: {fileID: 2743711428422042493}
   textLayout: {fileID: 3463173697634603727}
   preferredWidths:
-  - 30
-  - 60
-  - 75
+  - 35
+  - 70
+  - 90
+  - 110
 --- !u!1 &3676482697136440539
 GameObject:
   m_ObjectHideFlags: 0

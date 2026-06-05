@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Grapple Bud 2 3
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 0
-  line: if you press <color="red">Left Click</color>, you can shoot out parts of
+  line: if you press <color=#FF69B4>Left Click</color>, you can shoot out parts of
     your body and attatch to surfaces
   choices:
   - choiceText: 

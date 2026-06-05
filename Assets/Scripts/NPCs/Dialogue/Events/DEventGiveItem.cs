@@ -3,9 +3,12 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "giveItemEvent", menuName = "ScriptableData/Dialogue/Event/GiveItem")]
 public class DEventGiveItem : DialogueEvent
 {
-    public QuestCollectableData questItem;
+    public QuestCollectableData[] questItems;
     public override void Invoke()
     {
-        Player.Instance.inventory.RemoveQuestItem(questItem);
+        foreach (QuestCollectableData item  in questItems)
+        {
+            Player.Instance.inventory.RemoveQuestItem(item);
+        }
     }
 }

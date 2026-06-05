@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Friend Guy 0 19
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 0
-  line: we're in the sweet region, so i guess start here?
+  line: we're in the <color=#FF69B4>Sweet</color> region, so i guess start here?
   choices:
   - choiceText: 
     nextNode: {fileID: 11400000, guid: aab0d149680d93d47a1a64e927f0acbd, type: 2}

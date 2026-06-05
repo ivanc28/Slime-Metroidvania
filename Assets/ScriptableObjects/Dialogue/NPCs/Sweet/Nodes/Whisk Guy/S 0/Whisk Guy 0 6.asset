@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Whisk Guy 0 6
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 0
-  line: i'm looking for my <color="red">whisk</color>
+  line: i'm looking for my <color=#FF69B4>Whisk</color>
   choices:
   - choiceText: 
     nextNode: {fileID: 11400000, guid: b796a1a8f963e234480e072f73a35aef, type: 2}

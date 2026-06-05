@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Fork Guy 2 0
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 1
-  line: i found this fork, i bet it could work
+  line: i found this <color=#FF69B4:>Fork</color>, i bet it could work
   choices:
   - choiceText: 
     nextNode: {fileID: 11400000, guid: 9523fb61240bff5418c4eae968c48d4b, type: 2}

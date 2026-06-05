@@ -19,5 +19,5 @@ MonoBehaviour:
   pickupTime: 1
   displayMessage: 1
   itemName: Orange Flower
-  description: A flower as orange as... well an orange
+  description: A flower as orange as... well, an orange
   sprite: {fileID: 0}

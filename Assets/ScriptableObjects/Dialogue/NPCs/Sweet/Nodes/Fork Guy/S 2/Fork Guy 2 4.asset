@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Fork Guy 2 4
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 0
-  line: just hold <color="red">Right Click</color> to select the fork
+  line: just hold <color=#FF69B4>Right Click</color> to select the fork
   choices:
   - choiceText: 
     nextNode: {fileID: 11400000, guid: 5ed29dd1d0391ff4097588283176278c, type: 2}

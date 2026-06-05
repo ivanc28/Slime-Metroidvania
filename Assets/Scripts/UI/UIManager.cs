@@ -13,6 +13,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] float currencyDelayAfterAcc;
     [Tooltip("How much time between each increment of player's final currency (coming from accumulatedCurrency)")]
     [SerializeField] float delayBetweenIncrements;
+    [SerializeField] float delayBetweenDecrements;
     private int prevCurrencyBeforeAccumulation;
     private int accumulatedCurrency;
     // ADDING CURRENCY
@@ -333,7 +334,7 @@ public class UIManager : MonoBehaviour
     {
         while (accumulatedCurrency > 0)
         {
-            yield return new WaitForSeconds(delayBetweenIncrements);
+            yield return new WaitForSeconds(delayBetweenDecrements);
             prevCurrencyBeforeAccumulation--;
             currencyText.text = $"{prevCurrencyBeforeAccumulation}";
             accumulatedCurrency--;

@@ -99,12 +99,6 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: isAttaching
     m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: isGrappling
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: isGrappleLocked
-    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -5364208874343732489}
   m_Solo: 0
@@ -129,8 +123,7 @@ AnimatorState:
   m_Name: grappleLocked
   m_Speed: 1
   m_CycleOffset: 0
-  m_Transitions:
-  - {fileID: 9000806325708275913}
+  m_Transitions: []
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -283,22 +276,19 @@ AnimatorStateMachine:
     m_Position: {x: 700, y: -180, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8576348907149538987}
-    m_Position: {x: -90, y: -190, z: 0}
+    m_Position: {x: -40, y: -150, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7553015900539787309}
-    m_Position: {x: 30, y: -380, z: 0}
+    m_Position: {x: 90, y: -260, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -875615856998393402}
-    m_Position: {x: 60, y: 40, z: 0}
+    m_Position: {x: 90, y: 30, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -829877522291645886}
     m_Position: {x: 350, y: -260, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4548182673414510858}
     m_Position: {x: -60, y: 180, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 389963429816841912}
-    m_Position: {x: 590, y: -260, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: -1549935410922518384}
@@ -1106,6 +1096,12 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: isGrounded
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: isGrappling
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: isAttaching
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1353684524543920600}
   m_Solo: 0
@@ -1115,7 +1111,7 @@ AnimatorStateTransition:
   m_TransitionDuration: 0
   m_TransitionOffset: 0
   m_ExitTime: 0
-  m_HasExitTime: 1
+  m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1

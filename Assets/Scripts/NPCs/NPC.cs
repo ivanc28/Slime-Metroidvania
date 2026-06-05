@@ -243,7 +243,7 @@ public class NPC : MonoBehaviour
                 text.maxVisibleCharacters = message.Length;
                 break;
             }
-            if (nextChar == '.' || (nextChar == '?' && nextNextChar == ' ') || (nextChar == '!' && nextNextChar == ' ') || nextChar == '-')
+            if (nextChar == '.' || (nextChar == '?' && nextNextChar == ' ') || (nextChar == '!' && nextNextChar == ' ') || (nextChar == '-' && nextNextChar == ' '))
             {
                 yield return new WaitForSeconds(delayAfterPeriod);
             }
@@ -357,7 +357,10 @@ public class NPC : MonoBehaviour
     {
         for (int i = 0; i < events.Length; i++)
         {
-            yield return StartCoroutine(events[i].InvokeAndWait(this));
+            if (events[i] != null)
+            {
+                yield return StartCoroutine(events[i].InvokeAndWait(this));
+            }
         }
     }
 
