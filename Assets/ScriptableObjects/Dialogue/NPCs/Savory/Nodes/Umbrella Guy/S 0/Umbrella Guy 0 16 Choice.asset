@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c0552f17edcde34cb93ab0d9a5ca2bb, type: 3}
+  m_Name: Umbrella Guy 0 16 Choice
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
+  speaker: 1
+  line: 
+  choices:
+  - choiceText: here you go
+    nextNode: {fileID: 11400000, guid: f218b3799cd82324eb03b28d7c81ed50, type: 2}
+    dialogueEvents:
+    - {fileID: 11400000, guid: 8c9a054a097d5e84096ecf2685f9c471, type: 2}
+    condition: {fileID: 11400000, guid: 28b7075e714b76645aa80eaa4c2b64d7, type: 2}
+  - choiceText: actually, nevermind
+    nextNode: {fileID: 11400000, guid: e5327d3f01cd50f4099ee107194a76a4, type: 2}
+    dialogueEvents:
+    - {fileID: 11400000, guid: 0e82f5701aed91246badee5df80b52c4, type: 2}
+    condition: {fileID: 0}
