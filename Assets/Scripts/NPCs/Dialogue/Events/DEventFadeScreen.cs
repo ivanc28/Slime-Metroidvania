@@ -4,8 +4,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "FadeScreenEvent", menuName = "ScriptableData/Dialogue/Event/UI/FadeScreenEvent")]
 public class DEventFadeScreen : DialogueEvent
 {
-    [Tooltip("does NOT include the time it actually takes to fade, so take the number you wanted and add like 0.75 sec")]
     public float fadeTime;
+    public float blackTime;
     public override void Invoke()
     {
         
@@ -14,6 +14,8 @@ public class DEventFadeScreen : DialogueEvent
     {
         UIManager.Instance.FadeIn();
         yield return new WaitForSeconds(fadeTime);
+        yield return new WaitForSeconds(blackTime);
         UIManager.Instance.FadeOut();
+        yield return new WaitForSeconds(fadeTime);
     }
 }

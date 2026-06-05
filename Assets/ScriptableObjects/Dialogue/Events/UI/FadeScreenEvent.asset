@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41ad4141627b70b4385802e38da2bca4, type: 3}
   m_Name: FadeScreenEvent
   m_EditorClassIdentifier: Assembly-CSharp::DEventFadeScreen
-  fadeTime: 1.75
+  fadeTime: 0.75
+  blackTime: 0.75

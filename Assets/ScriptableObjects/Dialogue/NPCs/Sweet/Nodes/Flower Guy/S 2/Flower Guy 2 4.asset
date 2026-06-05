@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Flower Guy 2 4
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 0
-  line: done! here's my special floral bubble tea!
+  line: give me a second and i'll brew something up
   choices:
   - choiceText: 
     nextNode: {fileID: 11400000, guid: ed73ead447808974a8dc5a3d13cd6eb8, type: 2}
-    dialogueEvents: []
+    dialogueEvents:
+    - {fileID: 11400000, guid: e51ac76a546a5e1428e3098132716a8f, type: 2}
     condition: {fileID: 0}

@@ -12,4 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 173baa61935887c49ae5011af6302c98, type: 3}
   m_Name: GiveFlowerEvent
   m_EditorClassIdentifier: Assembly-CSharp::DEventGiveItem
-  questItem: {fileID: 11400000, guid: 6fa2bb8a926351943af320dab69f5035, type: 2}
+  questItems:
+  - {fileID: 11400000, guid: 409e064a3384a2d4f9ba75a0522fb804, type: 2}
+  - {fileID: 11400000, guid: 6fa2bb8a926351943af320dab69f5035, type: 2}
+  - {fileID: 11400000, guid: e7bc8f2a1dce66b48940a6707148d1da, type: 2}
+  - {fileID: 11400000, guid: 743fb062f5e411b4bb9b3b13501beb71, type: 2}

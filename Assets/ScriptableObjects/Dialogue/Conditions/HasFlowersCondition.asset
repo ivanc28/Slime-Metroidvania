@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::QuestItemCondition
   questData:
   - {fileID: 11400000, guid: 6fa2bb8a926351943af320dab69f5035, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 743fb062f5e411b4bb9b3b13501beb71, type: 2}
+  - {fileID: 11400000, guid: e7bc8f2a1dce66b48940a6707148d1da, type: 2}
+  - {fileID: 11400000, guid: 409e064a3384a2d4f9ba75a0522fb804, type: 2}

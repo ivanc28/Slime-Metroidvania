@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c0552f17edcde34cb93ab0d9a5ca2bb, type: 3}
   m_Name: Flower Guy 2 6
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
-  speaker: 0
-  line: thank you for the flowers! maybe i'll start putting the tea for sale
-  choices: []
+  speaker: 1
+  line: woow it smells so good!
+  choices:
+  - choiceText: 
+    nextNode: {fileID: 11400000, guid: 9653d0495cf80b342bbad15b86a12061, type: 2}
+    dialogueEvents: []
+    condition: {fileID: 0}

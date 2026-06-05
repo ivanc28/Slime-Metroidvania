@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Flower Guy 2 2
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 0
-  line: these flowers look great!
+  line: ......
   choices:
   - choiceText: 
     nextNode: {fileID: 11400000, guid: e236c3ccf59e87f40a10ba693fbf6eda, type: 2}

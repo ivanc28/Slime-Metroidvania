@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c0552f17edcde34cb93ab0d9a5ca2bb, type: 3}
   m_Name: Flower Guy 2 5
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
-  speaker: 1
-  line: woow it smells so good!
+  speaker: 0
+  line: done! here's my special floral bubble tea!
   choices:
   - choiceText: 
     nextNode: {fileID: 11400000, guid: a8d9bf9018bff2e4a80214d59f8d1ea9, type: 2}
