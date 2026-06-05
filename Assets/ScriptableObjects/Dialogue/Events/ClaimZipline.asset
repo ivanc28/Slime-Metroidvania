@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ca9382c3317d944fa6c20899b276131, type: 3}
+  m_Name: ClaimZipline
+  m_EditorClassIdentifier: Assembly-CSharp::DEventClaimZipline
+  questItem: {fileID: 11400000, guid: 5f79701779798d949b9fa9a711cc398d, type: 2}
+  optionalPebbleCost: 0
+  claimMessage: You found a <color=#FF69B4>Zipline Strap!</color>

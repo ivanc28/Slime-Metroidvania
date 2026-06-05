@@ -1043,6 +1043,11 @@ public class Player : MonoBehaviour
 
         zipVector = (rightZipPoint - leftZipPoint).normalized;
     }
+
+    public void ClaimZiplineStrap()
+    {
+        HasZiplineStrap = true;
+    }
     // --------------
 
     // SFX

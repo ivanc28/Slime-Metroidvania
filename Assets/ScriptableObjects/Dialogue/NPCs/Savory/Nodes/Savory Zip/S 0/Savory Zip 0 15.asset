@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c0552f17edcde34cb93ab0d9a5ca2bb, type: 3}
+  m_Name: Savory Zip 0 15
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
+  speaker: 1
+  line: 
+  choices:
+  - choiceText: yeah!
+    nextNode: {fileID: 11400000, guid: b897c0233aa6ea841b7872f298000901, type: 2}
+    dialogueEvents:
+    - {fileID: 11400000, guid: 0243aa6b65d18bb47bad7a2701b2f96e, type: 2}
+    condition: {fileID: 11400000, guid: f71ef6687122f2d428d00a3a773b9952, type: 2}
+  - choiceText: not right now
+    nextNode: {fileID: 11400000, guid: 44c40ef6d4c7a92489d33038606e44c9, type: 2}
+    dialogueEvents: []
+    condition: {fileID: 0}

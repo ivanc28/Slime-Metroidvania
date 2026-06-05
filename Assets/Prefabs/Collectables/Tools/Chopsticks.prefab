@@ -169,7 +169,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 437338375
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -1603291472181913768, guid: 5efc9df48170572458a3afb7e8317a37, type: 3}
@@ -232,7 +232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ToolCollectable
   data: {fileID: 11400000, guid: a73c3039338dffc4d8df4aaefab2420c, type: 2}
   collectableID: Chopsticks
-  pickupMessage: You found Chopsticks!
+  pickupMessage: You found <color=#FF69B4>Chopsticks!</color>
   keyIcon: {fileID: 3343622880750300710}
   rb: {fileID: 1920031591507770918}
   spriteRend: {fileID: 1608443179185600185}
