@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ff1e0e2302d87d47bcac18ba8ac52d4, type: 3}
-  m_Name: ClaimUmbrellaEvent
-  m_EditorClassIdentifier: Assembly-CSharp::DEventClaimTool
-  claimedTool: 4
-  optionalPebbleCost: 0
-  claimMessage: You got an <color=#FF69B4>Umbrella!</color>
+  m_Script: {fileID: 11500000, guid: f8ff6c2e91b4b83449f4cdac02eacc82, type: 3}
+  m_Name: EnoughCurrency150
+  m_EditorClassIdentifier: Assembly-CSharp::EnoughCurrencyCondition
+  minCurrencyRequired: 150
