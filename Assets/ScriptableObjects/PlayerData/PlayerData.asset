@@ -74,13 +74,17 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5139ff26f8263e44ebfa99c7b30ab3a5, type: 2}
   - {fileID: 11400000, guid: 3ef61222eb36f3a479e2b20e5abe20db, type: 2}
   - {fileID: 11400000, guid: 71833ea5e2588fb40a07fbdfc069c7c6, type: 2}
+  walkClips:
+  - {fileID: 8300000, guid: 2a096ca2e0799864c8a437201eafb200, type: 3}
   jumpClips:
   - {fileID: 8300000, guid: 644239ea552fb1343b5c084a186b1670, type: 3}
   whooshClips:
   - {fileID: 8300000, guid: e41ee7650c6d4104b9d3d074191691a4, type: 3}
   - {fileID: 8300000, guid: 0016506f5d243ec49bc4fd83282d84b4, type: 3}
-  - {fileID: 8300000, guid: 2c5bd2144d552684c92f87392d7d5d16, type: 3}
+  - {fileID: 8300000, guid: 9be88a402561e4e4da3cfbf3bfa41afd, type: 3}
   - {fileID: 8300000, guid: 5dc9d167d978cbd469cf4918089edccd, type: 3}
+  throwGrappleClips:
+  - {fileID: 8300000, guid: 0585bd2f03f0fde4fa1f9f5bb8cffa8d, type: 3}
   bubbleParticleOffset: {x: 1, y: 1}
   shortBubbleParticle: {fileID: 6314520340302582308, guid: c4fd394705acb3e49ad009733b2acdeb, type: 3}
   noclipSpeed: 17.5

@@ -679,7 +679,7 @@ public class Player : MonoBehaviour
         rb.gravityScale = data.risingGravity;
         rb.sharedMaterial = data.frictionless;
         rb.linearVelocityY = data.jumpSpeed;
-        SoundManager.Instance.PlaySoundIfNotPlaying(data.jumpClips, 0.25f, true);
+        SoundManager.Instance.PlaySoundIfNotPlaying(data.jumpClips, 0.5f, true);
     }
     private void StopJump()
     {
@@ -750,6 +750,10 @@ public class Player : MonoBehaviour
         }
         Vector2 spawnPos = (Vector2)hookFirePoint.position + dir * data.hookSpawnOffset;
         HookProjectile hook = Instantiate(hookPrefab, spawnPos, Quaternion.identity);
+        if(SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySound(data.throwGrappleClips, 0.3f, true, 1f, 1.2f);
+        }
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         hook.Initialize(this, dir, data.hookSpeed, angle, grappleLength, data.minGrappleLifetime, data.grappleObjects);
         currHookBeingThrown = hook;
@@ -1075,9 +1079,17 @@ public class Player : MonoBehaviour
     // Called by animation
     public void PlayJumpSFX()
     {
-        if (!isJumping)
+        if (!isJumping && SoundManager.Instance != null)
         {
-            SoundManager.Instance.PlaySound(data.whooshClips, 0.075f, true);
+            SoundManager.Instance.PlaySound(data.whooshClips, 0.15f, true);
+        }
+    }
+    // Called by animation
+    public void PlayWalkSFX()
+    {
+        if(SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySound(data.walkClips, 0.3f, true, 1.8f, 2f);
         }
     }
     private void OnTriggerStay2D(Collider2D collision)

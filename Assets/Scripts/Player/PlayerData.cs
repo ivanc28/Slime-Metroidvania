@@ -68,8 +68,10 @@ public class PlayerData : ScriptableObject
     [Header("Inventory")]
     public ToolInventoryData[] toolUIData;
     [Header("Sound Effects")]
+    public AudioClip[] walkClips;
     public AudioClip[] jumpClips;
     public AudioClip[] whooshClips;
+    public AudioClip[] throwGrappleClips;
     [Header("Animations")]
     [Tooltip("The offset from player's position where bubbles will spawn due to BLOWING BUBBLES ANIMATION")]
     public Vector2 bubbleParticleOffset;
