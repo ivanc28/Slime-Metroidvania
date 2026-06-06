@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Ride Guy 1 3
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 0
-  line: '!i will!'
+  line: i will!
   choices: []

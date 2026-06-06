@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Spoon Guy 1 6
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 1
-  line: um... i swear i'm not trying toget any dessert- or uh...
+  line: um... i swear i'm not trying to get any dessert- or uh...
   choices:
   - choiceText: 
     nextNode: {fileID: 11400000, guid: 4252f2f0cb770134cb2d48ad193f18c0, type: 2}
