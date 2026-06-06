@@ -93,7 +93,8 @@ MonoBehaviour:
   scissorsClips:
   - {fileID: 8300000, guid: a2f4bed314c7402468e50ca128b52733, type: 3}
   forkClips: []
-  chopsticksClips: []
+  chopsticksClips:
+  - {fileID: 8300000, guid: 2f26c6039a5d2de4daca95729cf798fc, type: 3}
   bubbleBlowClips:
   - {fileID: 8300000, guid: d6a3c9697290b9c438032c44938725b7, type: 3}
   bubbleParticleOffset: {x: 1, y: 1}
