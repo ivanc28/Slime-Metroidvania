@@ -16,12 +16,19 @@ public class ScissorsBush : MonoBehaviour
             SwapSprite(spriteIndex);
         }
     }
-    public void Cut()
-    {
-        int spriteIndex = Random.Range(0, afterCut.Length);
-        SaveSpriteIndex(spriteIndex);
-        SwapSprite(spriteIndex);
-    }
+    //public void Cut()
+    //{
+    //    int currentIndex = room.bushStates.ContainsKey(interactable.GetInteractableID()) ? room.bushStates[interactable.GetInteractableID()] : -1;
+    //    int spriteIndex = Random.Range(0, afterCut.Length - 1);
+    //    Debug.Log($"curr index: {currentIndex}, random index: {spriteIndex}");
+    //    if (spriteIndex >= currentIndex && currentIndex != -1)
+    //    {
+    //        spriteIndex++;
+    //    }
+    //    Debug.Log($"new sprite index if it was greater than curr index: {spriteIndex}");
+    //    SaveSpriteIndex(spriteIndex);
+    //    SwapSprite(spriteIndex);
+    //}
     public void SwapSprite(int index)
     {
         rend.sprite = afterCut[index];

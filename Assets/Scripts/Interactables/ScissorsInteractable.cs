@@ -5,8 +5,15 @@ public class ScissorsInteractable : Interactables
     public ScissorsBush bush;
     public override void OnInteract()
     {
-        int spriteIndex = Random.Range(0, bush.afterCut.Length);
         bool firstCut = !GetRoomOfInteractable().bushStates.ContainsKey(GetInteractableID());
+
+        int currentIndex = firstCut ? -1 : GetRoomOfInteractable().bushStates[GetInteractableID()];
+        int spriteIndex = Random.Range(0, bush.afterCut.Length - 1);
+        if (currentIndex != -1 && spriteIndex >= currentIndex)
+        {
+            spriteIndex++;
+        }
+
         if (firstCut)
         {
             SpawnCollectable();
