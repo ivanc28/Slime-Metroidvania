@@ -1140,7 +1140,7 @@ public class Player : MonoBehaviour
     {
         if (SoundManager.Instance != null)
         {
-            SoundManager.Instance.PlaySound(data.bubbleBlowClips, 0.8f, true, 0.9f, 1.1f);
+            SoundManager.Instance.PlaySound(data.bubbleBlowClips, 0.8f, true, 1f, 1.1f);
         }
     }
     // ------------------------------------
