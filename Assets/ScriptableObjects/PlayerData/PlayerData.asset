@@ -85,6 +85,18 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5dc9d167d978cbd469cf4918089edccd, type: 3}
   throwGrappleClips:
   - {fileID: 8300000, guid: 0585bd2f03f0fde4fa1f9f5bb8cffa8d, type: 3}
+  grappleLandClip: {fileID: 8300000, guid: ce0297304e5e2014cb8ee233ab84911a, type: 3}
+  digClips:
+  - {fileID: 8300000, guid: 0693eba295a625542a7ed590d1146daf, type: 3}
+  whiskClips:
+  - {fileID: 8300000, guid: c44fdb759a5b2ee4d8c648f2cbbe3a41, type: 3}
+  scissorsClips:
+  - {fileID: 8300000, guid: a2f4bed314c7402468e50ca128b52733, type: 3}
+  forkClips: []
+  chopsticksClips:
+  - {fileID: 8300000, guid: 2f26c6039a5d2de4daca95729cf798fc, type: 3}
+  bubbleBlowClips:
+  - {fileID: 8300000, guid: d6a3c9697290b9c438032c44938725b7, type: 3}
   bubbleParticleOffset: {x: 1, y: 1}
   shortBubbleParticle: {fileID: 6314520340302582308, guid: c4fd394705acb3e49ad009733b2acdeb, type: 3}
   noclipSpeed: 17.5

@@ -379,17 +379,17 @@ public class Player : MonoBehaviour
                     toolSelectorEnabled = true;
                 }
             }
-            if (Input.GetMouseButtonUp(1))
+
+        }
+        if (Input.GetMouseButtonUp(1))
+        {
+            if (toolSelectorEnabled)
             {
-                if (toolSelectorEnabled)
-                {
-                    SelectTool();
-                    EnableToolSelectionCanvas(false);
-                    toolSelectorEnabled = false;
-                }
+                SelectTool();
+                EnableToolSelectionCanvas(false);
+                toolSelectorEnabled = false;
             }
         }
-
         #endregion
 
         #region Using Tools
@@ -773,7 +773,10 @@ public class Player : MonoBehaviour
         {
             Destroy(currHookAttached.gameObject);
         }
-
+        if(SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySound(data.grappleLandClip, 1, true, 0.8f, 1.2f);
+        }
         currHookAttached = hook;
         currHookBeingThrown = null;
 
@@ -902,7 +905,7 @@ public class Player : MonoBehaviour
             }
         }
     }
-    private void EnableToolSelectionCanvas(bool enabled)
+    public void EnableToolSelectionCanvas(bool enabled)
     {
         toolSelectorCanvas.SetActive(enabled);
     }
@@ -1075,7 +1078,7 @@ public class Player : MonoBehaviour
     }
     // --------------
 
-    // SFX
+    // ---- SFX ----------------------------------------------
     // Called by animation
     public void PlayJumpSFX()
     {
@@ -1092,6 +1095,55 @@ public class Player : MonoBehaviour
             SoundManager.Instance.PlaySound(data.walkClips, 0.3f, true, 1.8f, 2f);
         }
     }
+    // Called by animation
+    public void PlayDigSFX()
+    {
+        if (SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySound(data.digClips, 1f, true, 1.1f, 1.4f);
+        }
+    }
+    // Called by animation
+    public void PlayWhiskSFX()
+    {
+        if(SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySound(data.whiskClips, 0.4f, true, 0.9f, 1.1f);
+        }
+    }
+    // Called by animation
+    public void PlayScissorsSFX()
+    {
+        if (SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySound(data.scissorsClips, 0.6f, true, 0.9f, 1.1f);
+        }
+    }
+    // Called by animation
+    public void PlayForkSFX()
+    {
+        if (SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySound(data.forkClips, 1f, true, 0.9f, 1.1f);
+        }
+    }
+    // Called by animation
+    public void PlayChopsticksSFX()
+    {
+        if (SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySound(data.chopsticksClips, 1f, true, 0.9f, 1.1f);
+        }
+    }
+    // Called by animation
+    public void PlayBubbleBlowSFX()
+    {
+        if (SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySound(data.bubbleBlowClips, 0.8f, true, 1f, 1.1f);
+        }
+    }
+    // ------------------------------------
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Zipline") && attachingToZip && isLockedOnGrapple && collision == currentAttachedCollider)
