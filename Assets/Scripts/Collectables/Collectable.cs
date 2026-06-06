@@ -13,6 +13,7 @@ public abstract class Collectable : MonoBehaviour
     private bool inRange;
     private float pickupTime;
     RoomData room;
+    private bool checkID = true;
     private void Awake()
     {
         MakeStart();
@@ -21,16 +22,17 @@ public abstract class Collectable : MonoBehaviour
     {
         room = GameManager.Instance.GetCurrRoomData();
         bool entityFound = room.collectedInteractables.Contains(collectableID) || GameManager.Instance.worldIDs.Contains(collectableID);
-        if (entityFound)
+        if (entityFound && checkID)
         {
             Destroy(gameObject);
         }
         EnableKeyIcon(false);
     }
-    public void Initialize(float timeBeforePickup)
+    public void Initialize(float timeBeforePickup, bool shouldCheckID)
     {
-        gameObject.SetActive(true);
         pickupTime = timeBeforePickup;
+        checkID = shouldCheckID;
+        gameObject.SetActive(true);
     }
     private void Update()
     {

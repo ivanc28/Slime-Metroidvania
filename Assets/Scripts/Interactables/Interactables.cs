@@ -104,7 +104,7 @@ public abstract class Interactables : MonoBehaviour
         if(collectablePrefab != null)
         {
             Collectable collectable = Instantiate(collectablePrefab, interactPoint, Quaternion.identity);
-            collectable.Initialize(data.collectablePickupDelay);
+            collectable.Initialize(data.collectablePickupDelay, false);
             Quaternion rotation = Quaternion.AngleAxis(Random.Range(-data.collectableLaunchMaxAngle, data.collectableLaunchMaxAngle), Vector3.forward);
             Vector2 dir = (rotation * Vector2.up).normalized;
             collectable.rb.linearVelocity = dir * data.collectableLaunchSpeed;
