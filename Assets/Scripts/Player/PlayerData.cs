@@ -72,6 +72,7 @@ public class PlayerData : ScriptableObject
     public AudioClip[] jumpClips;
     public AudioClip[] whooshClips;
     public AudioClip[] throwGrappleClips;
+    public AudioClip grappleLandClip;
     public AudioClip[] digClips;
     public AudioClip[] whiskClips;
     public AudioClip[] scissorsClips;

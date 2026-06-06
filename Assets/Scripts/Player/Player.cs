@@ -773,7 +773,10 @@ public class Player : MonoBehaviour
         {
             Destroy(currHookAttached.gameObject);
         }
-
+        if(SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySound(data.grappleLandClip, 1, true, 0.8f, 1.2f);
+        }
         currHookAttached = hook;
         currHookBeingThrown = null;
 
