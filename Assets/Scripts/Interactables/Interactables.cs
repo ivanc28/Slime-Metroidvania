@@ -65,7 +65,7 @@ public abstract class Interactables : MonoBehaviour
             if (Input.GetKeyDown(data.interactKey))
             {
                 isInteracting = true;
-                StartCoroutine(TryInteract(Player.Instance.data.toolUseTime));
+                StartCoroutine(TryInteract(data.interactionTime));
             }
         }
     }
