@@ -347,7 +347,7 @@ AnimatorStateMachine:
     m_Position: {x: 940, y: -80, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 774485635015383445}
-    m_Position: {x: 700, y: -180, z: 0}
+    m_Position: {x: 700, y: -140, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8576348907149538987}
     m_Position: {x: -150, y: -160, z: 0}
@@ -358,9 +358,6 @@ AnimatorStateMachine:
     m_State: {fileID: -875615856998393402}
     m_Position: {x: 150, y: 0, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: -829877522291645886}
-    m_Position: {x: 380, y: -300, z: 0}
-  - serializedVersion: 1
     m_State: {fileID: -4548182673414510858}
     m_Position: {x: -30, y: 220, z: 0}
   - serializedVersion: 1
@@ -369,12 +366,6 @@ AnimatorStateMachine:
   - serializedVersion: 1
     m_State: {fileID: 8917724004644328375}
     m_Position: {x: 60, y: 120, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 144559349632745796}
-    m_Position: {x: 450, y: -240, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 7254296889090020059}
-    m_Position: {x: 730, y: -270, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: -1549935410922518384}
@@ -603,32 +594,6 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &-829877522291645886
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: talk
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 11595cf039853f54e806bb1f68f46174, type: 2}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
 --- !u!1102 &-538260279395419859
 AnimatorState:
   serializedVersion: 6
@@ -786,32 +751,6 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
---- !u!1102 &144559349632745796
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: forkAnim
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 2d0294517080080449736ab009167965, type: 2}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
 --- !u!1102 &389963429816841912
 AnimatorState:
   serializedVersion: 6
@@ -1314,32 +1253,6 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
---- !u!1102 &7254296889090020059
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: bubbleWand
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 6501235c74081f548bd92fe2a3fd6829, type: 2}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
 --- !u!1101 &7725417536739415099
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
