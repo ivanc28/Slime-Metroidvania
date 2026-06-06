@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Comedian 0 7
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 0
-  line: someone will appreciate my comedic genuis eventually
+  line: someone will appreciate my comedic genius eventually
   choices: []
