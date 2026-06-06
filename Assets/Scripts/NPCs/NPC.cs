@@ -84,16 +84,18 @@ public class NPC : MonoBehaviour
     }
     private void SetDialogue(DialogueNode node)
     {
-
+        AudioClip clip = null;
         if (node.speaker == DialogueNode.Speaker.NPC)
         {
             SpawnDialogueBubble(CalculateDialogueBoxPos(false), node.line, false);
+            clip = data.talkingSFX;
         }
         else
         {
             SpawnDialogueBubble(CalculateDialogueBoxPos(true), node.line, true);
+            clip = Player.Instance.data.talkSFX;
         }
-        StartCoroutine(StartDialogueLine(currText, currText.text, data.delayBetweenChars, data.delayAfterPeriod, data.delayAfterComma));
+        StartCoroutine(StartDialogueLine(currText, currText.text, clip, data.delayBetweenChars, data.delayAfterPeriod, data.delayAfterComma));
     }
     private void SetChoices(DialogueNode node)
     {
@@ -214,12 +216,15 @@ public class NPC : MonoBehaviour
         return $"<color=#{ColorUtility.ToHtmlStringRGB(color)}>{text}</color>";
     }
 
-    private IEnumerator StartDialogueLine(TextMeshProUGUI text, string message, float delayBetweenChars, float delayAfterPeriod, float delayAfterComma)
+    private IEnumerator StartDialogueLine(TextMeshProUGUI text, string message, AudioClip sfxClip, float delayBetweenChars, float delayAfterPeriod, float delayAfterComma)
     {
         text.text = message;
         text.maxVisibleCharacters = 0;
         int maxChars = 0;
         int i = 0;
+        int sfxCharCount = 0;
+        bool canPlaySFX = SoundManager.Instance != null && sfxClip != null;
+
         while (i < message.Length)
         {
             char nextChar = message[i];
@@ -238,6 +243,20 @@ public class NPC : MonoBehaviour
             i++;
             maxChars++;
             text.maxVisibleCharacters = maxChars;
+
+            // play sfx
+            bool isPunctuation = nextChar == '.' || nextChar == ',' || nextChar == '?' ||
+                      nextChar == '!' || nextChar == '-' || nextChar == ' ';
+
+            if (!isPunctuation)
+            {
+                sfxCharCount++;
+                if (canPlaySFX && sfxCharCount % data.playSFXEveryXChars == 1)
+                {
+                    SoundManager.Instance.PlaySound(sfxClip, 1, true);
+                }
+            }
+
             if (choosingToSkipLine) // choosingToSkipDialogue set in update
             {
                 text.maxVisibleCharacters = message.Length;

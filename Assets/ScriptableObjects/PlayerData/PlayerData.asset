@@ -62,6 +62,7 @@ MonoBehaviour:
   choiceDisabledColor: {r: 0.6320754, g: 0.4442417, b: 0.4442417, a: 0.50980395}
   talkDistance: 2.25
   getDistanceSpeed: 6
+  talkSFX: {fileID: 8300000, guid: 219c2a073a1d9cb48b300f50f2b891e0, type: 3}
   maxWalkTime: 2
   checkGroundLength: 0.75
   ziplineSpeedValue: 20

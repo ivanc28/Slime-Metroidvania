@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Friend Guy 0 10
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 0
-  line: ... BUT...
+  line: ... BUT
   choices:
   - choiceText: 
     nextNode: {fileID: 11400000, guid: f51168104c206b148933cc1e71caa470, type: 2}

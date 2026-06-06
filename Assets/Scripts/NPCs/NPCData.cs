@@ -11,6 +11,8 @@ public class NPCData : ScriptableObject
     [Header("Dialogue")]
     public DialogueSequence[] dialogueSequences;
     public DialogueBox dialogueBoxPrefab;
+    public AudioClip talkingSFX;
+    public int playSFXEveryXChars = 3;
     [Tooltip("How much above or below we offset the dialogue box")]
     public float distanceDialogueAboveHeadOffset = 0.75f;
     [Header("Dialogue Speed")]
