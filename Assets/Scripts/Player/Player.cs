@@ -1092,7 +1092,7 @@ public class Player : MonoBehaviour
     {
         if(SoundManager.Instance != null)
         {
-            SoundManager.Instance.PlaySound(data.walkClips, 0.3f, true, 1.8f, 2f);
+            SoundManager.Instance.PlaySound(data.walkClips, 0.2f, true, 1.8f, 2f);
         }
     }
     // Called by animation
