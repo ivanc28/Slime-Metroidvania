@@ -18,6 +18,6 @@ MonoBehaviour:
   keySprite: {fileID: 0}
   pickupTime: 0.5
   displayMessage: 1
-  itemName: Final Dessert
+  itemName: Amaretto Tiramisu
   description: A cake that infuses all the core flavors of this world
   sprite: {fileID: 0}

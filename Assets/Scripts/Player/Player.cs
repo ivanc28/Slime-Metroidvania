@@ -379,17 +379,17 @@ public class Player : MonoBehaviour
                     toolSelectorEnabled = true;
                 }
             }
-            if (Input.GetMouseButtonUp(1))
+
+        }
+        if (Input.GetMouseButtonUp(1))
+        {
+            if (toolSelectorEnabled)
             {
-                if (toolSelectorEnabled)
-                {
-                    SelectTool();
-                    EnableToolSelectionCanvas(false);
-                    toolSelectorEnabled = false;
-                }
+                SelectTool();
+                EnableToolSelectionCanvas(false);
+                toolSelectorEnabled = false;
             }
         }
-
         #endregion
 
         #region Using Tools
@@ -902,7 +902,7 @@ public class Player : MonoBehaviour
             }
         }
     }
-    private void EnableToolSelectionCanvas(bool enabled)
+    public void EnableToolSelectionCanvas(bool enabled)
     {
         toolSelectorCanvas.SetActive(enabled);
     }
