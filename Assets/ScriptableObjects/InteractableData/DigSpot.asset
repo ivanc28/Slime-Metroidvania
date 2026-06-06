@@ -16,8 +16,11 @@ MonoBehaviour:
   requiredTool: 01000000
   destroyOnInteract: 1
   maxDistanceToInteract: 2
-  interactionTime: 1
+  interactionTime: 0.46666667
   pebblePrefab: {fileID: 8555977693275348765, guid: c9bacbc4542a8db4ca1ee4d4a0b2b249, type: 3}
   pebblePickupDelay: 0.75
   pebbleLaunchSpeed: 10
   pebbleLaunchMaxAngle: 50
+  collectablePickupDelay: 0
+  collectableLaunchSpeed: 0
+  collectableLaunchMaxAngle: 0
