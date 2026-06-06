@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Inventory Guy 0 10
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 0
-  line: it might also be worth it to press I to open your inventory!
+  line: it might also be worth it to press <color=#FF69B4>I</color> to open your
+    inventory!
   choices:
   - choiceText: 
     nextNode: {fileID: 11400000, guid: 264856b3dfe6c9d45bff5131927fc720, type: 2}
