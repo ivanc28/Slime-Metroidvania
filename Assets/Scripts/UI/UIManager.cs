@@ -410,6 +410,10 @@ public class UIManager : MonoBehaviour
                 toolImage.color = Color.clear;
             }
         }
+        else
+        {
+            toolImage.enabled = false;
+        }
     }
 
     public void DisplayCollectText(string text)
