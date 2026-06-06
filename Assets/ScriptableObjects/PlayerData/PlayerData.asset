@@ -89,6 +89,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0693eba295a625542a7ed590d1146daf, type: 3}
   whiskClips:
   - {fileID: 8300000, guid: c44fdb759a5b2ee4d8c648f2cbbe3a41, type: 3}
+  scissorsClips:
+  - {fileID: 8300000, guid: a2f4bed314c7402468e50ca128b52733, type: 3}
+  forkClips: []
+  chopsticksClips: []
+  bubbleBlowClips: []
   bubbleParticleOffset: {x: 1, y: 1}
   shortBubbleParticle: {fileID: 6314520340302582308, guid: c4fd394705acb3e49ad009733b2acdeb, type: 3}
   noclipSpeed: 17.5

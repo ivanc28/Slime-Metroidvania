@@ -1075,7 +1075,7 @@ public class Player : MonoBehaviour
     }
     // --------------
 
-    // SFX
+    // ---- SFX ----------------------------------------------
     // Called by animation
     public void PlayJumpSFX()
     {
@@ -1105,9 +1105,42 @@ public class Player : MonoBehaviour
     {
         if(SoundManager.Instance != null)
         {
-            SoundManager.Instance.PlaySound(data.whiskClips, 1f, true, 0.9f, 1.1f);
+            SoundManager.Instance.PlaySound(data.whiskClips, 0.4f, true, 0.9f, 1.1f);
         }
     }
+    // Called by animation
+    public void PlayScissorsSFX()
+    {
+        if (SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySound(data.scissorsClips, 0.6f, true, 0.9f, 1.1f);
+        }
+    }
+    // Called by animation
+    public void PlayForkSFX()
+    {
+        if (SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySound(data.forkClips, 1f, true, 0.9f, 1.1f);
+        }
+    }
+    // Called by animation
+    public void PlayChopsticksSFX()
+    {
+        if (SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySound(data.chopsticksClips, 1f, true, 0.9f, 1.1f);
+        }
+    }
+    // Called by animation
+    public void PlayBubbleBlowSFX()
+    {
+        if (SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySound(data.bubbleBlowClips, 0.8f, true, 0.9f, 1.1f);
+        }
+    }
+    // ------------------------------------
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Zipline") && attachingToZip && isLockedOnGrapple && collision == currentAttachedCollider)
