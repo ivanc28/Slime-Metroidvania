@@ -13,6 +13,7 @@ public class BubbleInteractable : Interactables
     {       
         if (bubbleGrappleObj.IsHookAttached() && Player.Instance.GetIsLocked())
         {
+            Player.Instance.SetGravityToFalling();
             if (data.destroyOnInteract)
             {
                 SpawnPebbles(numPebbles);
