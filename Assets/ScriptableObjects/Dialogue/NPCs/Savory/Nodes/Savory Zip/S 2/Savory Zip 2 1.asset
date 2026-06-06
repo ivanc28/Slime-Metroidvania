@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Savory Zip 2 1
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 0
-  line: might take another trip to <color=#069e06>BItter</color>
+  line: might take another trip to <color=#069e06>Bitter</color>
   choices:
   - choiceText: 
     nextNode: {fileID: 11400000, guid: 8706b10bb08d9914fab3e17def27fe78, type: 2}

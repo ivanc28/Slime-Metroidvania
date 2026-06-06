@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c0552f17edcde34cb93ab0d9a5ca2bb, type: 3}
   m_Name: Savory Zip 0 19 Yes
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
-  speaker: 0
+  speaker: 1
   line: thanks!
   choices: []

@@ -253077,6 +253077,91 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7166177547723224080, guid: 1f9a53f9f13fe35448afa24ff9cf92ed, type: 3}
   m_PrefabInstance: {fileID: 1288924691}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1290787084
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5628423949749143985, guid: 3385855de30868b469ec474e26605771, type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 11400000, guid: a3eaac0c6452f604584b5111e23f9506, type: 2}
+    - target: {fileID: 5628423949749143985, guid: 3385855de30868b469ec474e26605771, type: 3}
+      propertyPath: forcePlayerMoveRight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7083297186524609644, guid: 3385855de30868b469ec474e26605771, type: 3}
+      propertyPath: m_Name
+      value: Bitter Zipline Strap
+      objectReference: {fileID: 0}
+    - target: {fileID: 8027254636526167811, guid: 3385855de30868b469ec474e26605771, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 67.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 8027254636526167811, guid: 3385855de30868b469ec474e26605771, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -105.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 8027254636526167811, guid: 3385855de30868b469ec474e26605771, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8027254636526167811, guid: 3385855de30868b469ec474e26605771, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8027254636526167811, guid: 3385855de30868b469ec474e26605771, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8027254636526167811, guid: 3385855de30868b469ec474e26605771, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8027254636526167811, guid: 3385855de30868b469ec474e26605771, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8027254636526167811, guid: 3385855de30868b469ec474e26605771, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8027254636526167811, guid: 3385855de30868b469ec474e26605771, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8027254636526167811, guid: 3385855de30868b469ec474e26605771, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7083297186524609644, guid: 3385855de30868b469ec474e26605771, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1290787086}
+  m_SourcePrefab: {fileID: 100100000, guid: 3385855de30868b469ec474e26605771, type: 3}
+--- !u!1 &1290787085 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7083297186524609644, guid: 3385855de30868b469ec474e26605771, type: 3}
+  m_PrefabInstance: {fileID: 1290787084}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1290787086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1290787085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1f9bd5e71fce3c42a27da2224d6eed9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ZiplineNPC
 --- !u!1001 &1298806222
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -255695,3 +255780,4 @@ SceneRoots:
   - {fileID: 1981623469}
   - {fileID: 971036034}
   - {fileID: 89819716}
+  - {fileID: 1290787084}
