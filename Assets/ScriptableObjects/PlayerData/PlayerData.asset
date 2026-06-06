@@ -80,4 +80,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0016506f5d243ec49bc4fd83282d84b4, type: 3}
   - {fileID: 8300000, guid: 2c5bd2144d552684c92f87392d7d5d16, type: 3}
   - {fileID: 8300000, guid: 5dc9d167d978cbd469cf4918089edccd, type: 3}
+  bubbleParticleOffset: {x: 1, y: 1}
+  shortBubbleParticle: {fileID: 6314520340302582308, guid: c4fd394705acb3e49ad009733b2acdeb, type: 3}
   noclipSpeed: 17.5

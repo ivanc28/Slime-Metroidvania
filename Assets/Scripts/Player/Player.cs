@@ -953,7 +953,12 @@ public class Player : MonoBehaviour
     public void SpawnShortBubbleParticle()
     {
         Vector2 playerPos = transform.position;
-        Instantiate(data.shortBubbleParticle, playerPos + data.bubbleParticleOffset, Quaternion.identity);
+        Vector2 offset = data.bubbleParticleOffset;
+        if (!facingRight)
+        {
+            offset.x *= -1;
+        }
+        Instantiate(data.shortBubbleParticle, playerPos + offset, data.shortBubbleParticle.transform.rotation);
     }
     public bool GetBubbledState()
     {
