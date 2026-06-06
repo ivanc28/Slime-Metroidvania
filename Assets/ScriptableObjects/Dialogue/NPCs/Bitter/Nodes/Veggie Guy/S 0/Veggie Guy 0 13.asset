@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c0552f17edcde34cb93ab0d9a5ca2bb, type: 3}
+  m_Name: Veggie Guy 0 13
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
+  speaker: 0
+  line: if the vegetable monster doesn't come, maybe i'll head to <color="orange">Savory</color>
+    and buy a <color=#FF69B4>Zipline Strap</color>
+  choices:
+  - choiceText: 
+    nextNode: {fileID: 11400000, guid: a7329cdeb7d9c4744915e863c52a7e6a, type: 2}
+    dialogueEvents: []
+    condition: {fileID: 0}
