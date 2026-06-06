@@ -90,10 +90,7 @@ public class UIManager : MonoBehaviour
         addedQuestItems = new();
         addedToolSlots = new();
         addedToolItems = new();
-        if (Player.Instance.tools.GetCurrToolOption() != null)
-        {
-            UpdateToolDispay(Player.Instance.tools.GetCurrToolOption());
-        }
+        UpdateToolDispay(Player.Instance.tools.GetCurrToolOption());
         startingGrappleSliderWidth = grappleSlider.GetComponent<RectTransform>().rect.width;
         SetGrappleSliderWidth();
         while (grappleNotchesContainer.childCount < Player.Instance.maxGrappleCharges)
@@ -395,8 +392,14 @@ public class UIManager : MonoBehaviour
 
     public void UpdateToolDispay(ToolOption toolOption)
     {
+        if(toolOption == null)
+        {
+            toolImage.enabled = false;
+            return;
+        }
         if (Player.Instance.tools.HasTool(toolOption.tool))
         {
+            toolImage.enabled = true;
             if (toolOption.toolImage != null)
             {
                 toolImage.sprite = toolOption.toolImage.sprite;
