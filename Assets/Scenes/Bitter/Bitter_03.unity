@@ -255555,6 +255555,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1288924693}
     m_Modifications:
+    - target: {fileID: 392259336154603852, guid: 2448e678b13fca346b2aa7cc3cfa4476, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5664891249791995145, guid: 2448e678b13fca346b2aa7cc3cfa4476, type: 3}
       propertyPath: m_Name
       value: DigSpot
