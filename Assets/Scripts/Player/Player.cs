@@ -1100,6 +1100,14 @@ public class Player : MonoBehaviour
             SoundManager.Instance.PlaySound(data.digClips, 1f, true, 1.1f, 1.4f);
         }
     }
+    // Called by animation
+    public void PlayWhiskSFX()
+    {
+        if(SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySound(data.whiskClips, 1f, true, 0.9f, 1.1f);
+        }
+    }
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Zipline") && attachingToZip && isLockedOnGrapple && collision == currentAttachedCollider)

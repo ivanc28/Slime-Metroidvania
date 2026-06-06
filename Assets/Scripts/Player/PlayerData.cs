@@ -73,6 +73,7 @@ public class PlayerData : ScriptableObject
     public AudioClip[] whooshClips;
     public AudioClip[] throwGrappleClips;
     public AudioClip[] digClips;
+    public AudioClip[] whiskClips;
     [Header("Animations")]
     [Tooltip("The offset from player's position where bubbles will spawn due to BLOWING BUBBLES ANIMATION")]
     public Vector2 bubbleParticleOffset;
