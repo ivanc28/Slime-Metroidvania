@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de6a2b76e4352634b845ecce0e65930c, type: 3}
+  m_Name: S Persimmons
+  m_EditorClassIdentifier: Assembly-CSharp::NPCData
+  npcID: sweet_05 Persimmons
+  npcName: Sweet Persimmons
+  interactDistance: 3
+  keySprite: {fileID: -1603291472181913768, guid: 5efc9df48170572458a3afb7e8317a37, type: 3}
+  dialogueSequences:
+  - {fileID: 11400000, guid: d3959fab64c836a44833790d7f1d189a, type: 2}
+  - {fileID: 11400000, guid: 0a1f8215436de344c8ce49afad28d5b5, type: 2}
+  - {fileID: 11400000, guid: a0d79f64549a6fc47ba4d409c26a59f0, type: 2}
+  - {fileID: 11400000, guid: 317c49db888a5ad4fb98c687944b5104, type: 2}
+  dialogueBoxPrefab: {fileID: 8471492469622854947, guid: 19917e134e38e6444a2e69101becaece, type: 3}
+  distanceDialogueAboveHeadOffset: 0.75
+  delayBetweenChars: 0.02
+  delayAfterPeriod: 0.3
+  delayAfterComma: 0.5
+  npcTextColor: {r: 0.26352793, g: 0.32301342, b: 0.3962264, a: 1}

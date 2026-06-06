@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: ClaimBubbleTea
   m_EditorClassIdentifier: Assembly-CSharp::DEventClaimFood
   consumableType: 1
-  claimMessage: You found Bubble Tea!
+  claimMessage: You found <color=##FF69B4>Bubble Tea!</color>

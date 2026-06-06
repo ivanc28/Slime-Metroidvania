@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c0552f17edcde34cb93ab0d9a5ca2bb, type: 3}
+  m_Name: S Persimmons 2 2
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
+  speaker: 1
+  line: yeah, they're from your twin, i found them
+  choices:
+  - choiceText: 
+    nextNode: {fileID: 11400000, guid: 1b60e0e230f8339499115b57b1e5609d, type: 2}
+    dialogueEvents:
+    - {fileID: 11400000, guid: ceacbc0ed6fc54a42a4d04550c5bd95d, type: 2}
+    condition: {fileID: 0}
