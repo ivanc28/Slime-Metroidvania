@@ -773,7 +773,10 @@ public class Player : MonoBehaviour
         {
             Destroy(currHookAttached.gameObject);
         }
-
+        if(SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySound(data.grappleLandClip, 1, true, 0.8f, 1.2f);
+        }
         currHookAttached = hook;
         currHookBeingThrown = null;
 
@@ -1075,7 +1078,7 @@ public class Player : MonoBehaviour
     }
     // --------------
 
-    // SFX
+    // ---- SFX ----------------------------------------------
     // Called by animation
     public void PlayJumpSFX()
     {
@@ -1100,6 +1103,47 @@ public class Player : MonoBehaviour
             SoundManager.Instance.PlaySound(data.digClips, 1f, true, 1.1f, 1.4f);
         }
     }
+    // Called by animation
+    public void PlayWhiskSFX()
+    {
+        if(SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySound(data.whiskClips, 0.4f, true, 0.9f, 1.1f);
+        }
+    }
+    // Called by animation
+    public void PlayScissorsSFX()
+    {
+        if (SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySound(data.scissorsClips, 0.6f, true, 0.9f, 1.1f);
+        }
+    }
+    // Called by animation
+    public void PlayForkSFX()
+    {
+        if (SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySound(data.forkClips, 1f, true, 0.9f, 1.1f);
+        }
+    }
+    // Called by animation
+    public void PlayChopsticksSFX()
+    {
+        if (SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySound(data.chopsticksClips, 1f, true, 0.9f, 1.1f);
+        }
+    }
+    // Called by animation
+    public void PlayBubbleBlowSFX()
+    {
+        if (SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySound(data.bubbleBlowClips, 0.8f, true, 1f, 1.1f);
+        }
+    }
+    // ------------------------------------
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Zipline") && attachingToZip && isLockedOnGrapple && collision == currentAttachedCollider)
