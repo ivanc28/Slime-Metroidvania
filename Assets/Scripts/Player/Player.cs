@@ -1092,6 +1092,14 @@ public class Player : MonoBehaviour
             SoundManager.Instance.PlaySound(data.walkClips, 0.3f, true, 1.8f, 2f);
         }
     }
+    // Called by animation
+    public void PlayDigSFX()
+    {
+        if (SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySound(data.digClips, 1f, true, 1.1f, 1.4f);
+        }
+    }
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Zipline") && attachingToZip && isLockedOnGrapple && collision == currentAttachedCollider)
