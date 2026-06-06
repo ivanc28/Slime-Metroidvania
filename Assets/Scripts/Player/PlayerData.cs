@@ -69,6 +69,10 @@ public class PlayerData : ScriptableObject
     [Header("Sound Effects")]
     public AudioClip[] jumpClips;
     public AudioClip[] whooshClips;
+    [Header("Animations")]
+    [Tooltip("The offset from player's position where bubbles will spawn due to BLOWING BUBBLES ANIMATION")]
+    public Vector2 bubbleParticleOffset;
+    public ParticleSystem shortBubbleParticle;
     [Header("Debug")]
     public float noclipSpeed;
 }

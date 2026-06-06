@@ -949,6 +949,12 @@ public class Player : MonoBehaviour
             bubbleParticle.Stop();
         }
     }
+    // CALLED BY ANIMATION
+    public void SpawnShortBubbleParticle()
+    {
+        Vector2 playerPos = transform.position;
+        Instantiate(data.shortBubbleParticle, playerPos + data.bubbleParticleOffset, Quaternion.identity);
+    }
     public bool GetBubbledState()
     {
         return bubbledState;
