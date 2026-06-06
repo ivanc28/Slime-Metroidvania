@@ -16,8 +16,8 @@ MonoBehaviour:
   itemSprite: {fileID: 0}
   pickupKey: 0
   keySprite: {fileID: 0}
-  pickupTime: 0
+  pickupTime: 0.5
   displayMessage: 1
-  itemName: 0.5
+  itemName: Final Dessert
   description: A cake that infuses all the core flavors of this world
   sprite: {fileID: 0}
