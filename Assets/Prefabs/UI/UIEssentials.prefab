@@ -1485,7 +1485,7 @@ MonoBehaviour:
   currencyDelayBeforeAcc: 1
   currencyDelayAfterAcc: 1
   delayBetweenIncrements: 0.025
-  delayBetweenDecrements: 0.0115
+  delayBetweenDecrements: 0.00575
   currencyAnim: {fileID: 7910314481023026106}
   grappleSlider: {fileID: 3996662637066844403}
   grappleNotchesContainer: {fileID: 6413772335976257380}
