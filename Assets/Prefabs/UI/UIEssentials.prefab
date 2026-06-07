@@ -626,8 +626,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0/1
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5ea20d0a037967b4799829621431a44f, type: 2}
+  m_sharedMaterial: {fileID: 6487392763903301786, guid: 5ea20d0a037967b4799829621431a44f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -651,7 +651,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
+  m_fontSize: 60
   m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
@@ -730,8 +730,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -77, y: -304}
-  m_SizeDelta: {x: 1115, y: 507.3318}
+  m_AnchoredPosition: {x: -77, y: -302.31165}
+  m_SizeDelta: {x: 1115, y: 503.9551}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &761738118351288272
 MonoBehaviour:
@@ -754,9 +754,9 @@ MonoBehaviour:
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 100, y: 100}
-  m_Spacing: {x: 230, y: 150}
+  m_Spacing: {x: 150, y: 75}
   m_Constraint: 1
-  m_ConstraintCount: 4
+  m_ConstraintCount: 5
 --- !u!1 &2278887741634597526
 GameObject:
   m_ObjectHideFlags: 0
