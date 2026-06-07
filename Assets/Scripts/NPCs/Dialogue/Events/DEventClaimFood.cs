@@ -7,6 +7,7 @@ public class DEventClaimFood : DialogueEvent
     public enum Type { Food, Drink }
     public Type consumableType;
     public string claimMessage;
+    public Sprite itemSprite;
     public override void Invoke()
     {
         ClaimFood();
@@ -21,6 +22,8 @@ public class DEventClaimFood : DialogueEvent
         {
             Player.Instance.IncreaseGrappleLength();
         }
+        Player.Instance.SetFoodHolder(itemSprite);
+        Player.Instance.anim.SetTrigger("eat");
     }
     public override IEnumerator InvokeAndWait(MonoBehaviour runner)
     {

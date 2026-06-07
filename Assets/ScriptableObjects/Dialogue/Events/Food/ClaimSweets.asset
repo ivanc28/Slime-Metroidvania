@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DEventClaimFood
   consumableType: 0
   claimMessage: You found some Sweets!
+  itemSprite: {fileID: 8361171416893098218, guid: bc7e1521e247cf9429e86fce76a3aaaa, type: 3}

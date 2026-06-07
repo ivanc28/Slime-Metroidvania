@@ -14,5 +14,7 @@ public class FoodCollectable : Collectable
         {
             Player.Instance.IncreaseGrappleLength();
         }
+        Player.Instance.SetFoodHolder(data.itemSprite);
+        Player.Instance.anim.SetTrigger("eat");
     }
 }

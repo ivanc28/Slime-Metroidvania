@@ -83,6 +83,7 @@ public class PlayerData : ScriptableObject
     [Tooltip("The offset from player's position where bubbles will spawn due to BLOWING BUBBLES ANIMATION")]
     public Vector2 bubbleParticleOffset;
     public ParticleSystem shortBubbleParticle;
+    public Vector2 eatFoodPosOffset;
     [Header("Debug")]
     public float noclipSpeed;
 }

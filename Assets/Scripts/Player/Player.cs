@@ -89,6 +89,7 @@ public class Player : MonoBehaviour
     [Header("Animations")]
     public float flipTimeTheshold;
     private float flipTimer;
+    public GameObject foodHolder;
     public bool InSceneTransition {  get; set; }
     // Interactions
     public bool InInteraction { get; set; }
@@ -1085,6 +1086,28 @@ public class Player : MonoBehaviour
         HasZiplineStrap = true;
     }
     // --------------
+
+    // ---- Food animation stuff --------
+    public void SetFoodHolder(Sprite sprite)
+    {
+        foodHolder.SetActive(true);
+        if(sprite != null)
+        {
+            foodHolder.GetComponent<SpriteRenderer>().sprite = sprite;
+        }
+        Vector2 offset = data.eatFoodPosOffset;
+        if (!facingRight)
+        {
+            offset.x *= -1;
+        }
+        foodHolder.transform.localPosition = offset;
+    }
+    // Called by animation
+    public void HideFoodHolder()
+    {
+        foodHolder.SetActive(false);
+    }
+    // ----------------------------------
 
     // ---- SFX ----------------------------------------------
     // Called by animation
