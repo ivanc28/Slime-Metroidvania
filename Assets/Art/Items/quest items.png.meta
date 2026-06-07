@@ -235,7 +235,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: quest items_0
+      name: amaretto tiramisu
       rect:
         serializedVersion: 2
         x: 80
@@ -273,11 +273,11 @@ TextureImporter:
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":1,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       amaretto: 5230568015574724374
+      amaretto tiramisu: 1089344639
       cherry: 841544948626000649
       fleur de sel: -1440068487228740338
       ladyfinger: -2913488199902953041
       mascarpone: 5264453991067655730
-      quest items_0: 1089344639
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

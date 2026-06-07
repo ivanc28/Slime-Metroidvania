@@ -686,7 +686,7 @@ public class Player : MonoBehaviour
         //{
         //    rb.linearVelocityX = 0;
         //}
-        StartCoroutine(DisableColliderOnePhysicsFrame());
+        //StartCoroutine(DisableColliderOnePhysicsFrame());
         col.sharedMaterial = data.frictionless;
         rb.sharedMaterial = data.frictionless;
         rb.linearVelocityY = data.jumpSpeed;
@@ -709,13 +709,6 @@ public class Player : MonoBehaviour
             }
             isJumping = false;
         }
-    }
-    private IEnumerator DisableColliderOnePhysicsFrame()
-    {
-        col.enabled = false;
-        //yield return new WaitForFixedUpdate();
-        yield return new WaitForFixedUpdate();
-        col.enabled = true;
     }
     public bool GetIsGrounded()
     {
