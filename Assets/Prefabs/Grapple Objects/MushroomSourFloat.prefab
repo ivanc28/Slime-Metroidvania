@@ -111,6 +111,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   bounceSpeed: 33
   umbrellaBounceSpeed: 27
+  bounceClip: {fileID: 8300000, guid: afcc70c185162434394adedd04271e3c, type: 3}
 --- !u!58 &4598308257122908314
 CircleCollider2D:
   m_ObjectHideFlags: 0
