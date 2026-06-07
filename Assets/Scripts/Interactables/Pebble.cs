@@ -9,6 +9,7 @@ public class Pebble : MonoBehaviour
     public float maxFallSpeed = 25f;
     [SerializeField] SpriteRenderer pebbleRenderer;
     [SerializeField] Sprite[] sprites;
+    [SerializeField] AudioClip[] collectClips;
     public void Initialize(float pickDelay)
     {
         pickupTimer = pickDelay;
@@ -43,6 +44,10 @@ public class Pebble : MonoBehaviour
     private void CollectPebble()
     {
         Player.Instance.currencyData.IncreaseCurrency(1);
+        if(SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySound(collectClips, 1, true);
+        }
         Destroy(gameObject);
     }
     private void OnTriggerEnter2D(Collider2D collision)

@@ -679,7 +679,10 @@ public class Player : MonoBehaviour
         rb.gravityScale = data.risingGravity;
         rb.sharedMaterial = data.frictionless;
         rb.linearVelocityY = data.jumpSpeed;
-        SoundManager.Instance.PlaySoundIfNotPlaying(data.jumpClips, 0.5f, true);
+        if(SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySoundIfNotPlaying(data.jumpClips, 0.5f, true);
+        }
     }
     private void StopJump()
     {

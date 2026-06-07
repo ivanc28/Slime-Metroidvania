@@ -182,6 +182,11 @@ MonoBehaviour:
   - {fileID: 6035993246965501914, guid: a291e203126931f468de62f35621669b, type: 3}
   - {fileID: -8309849398907823485, guid: a291e203126931f468de62f35621669b, type: 3}
   - {fileID: -1380965164297187176, guid: a291e203126931f468de62f35621669b, type: 3}
+  collectClips:
+  - {fileID: 8300000, guid: 209210b2f2779fc46a4392bd06e59526, type: 3}
+  - {fileID: 8300000, guid: f8779f36ed41d5f478184647673dcb9f, type: 3}
+  - {fileID: 8300000, guid: 6664578f6c67a9f44835bd3f608ccdb6, type: 3}
+  - {fileID: 8300000, guid: a7c1bce14bc09094c87c6eeab4c52d56, type: 3}
 --- !u!58 &2486355238688549143
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -234,7 +239,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0
   m_GravityScale: 3
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: fc7e3e0a24cc57a4390519eccb4ca384, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
