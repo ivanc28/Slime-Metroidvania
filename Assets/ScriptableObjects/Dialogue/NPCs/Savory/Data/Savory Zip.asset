@@ -21,6 +21,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 70a289546ddcac94d8e2e2875d2afb98, type: 2}
   - {fileID: 11400000, guid: 40d3a0fc6556c29419ba1524310f034a, type: 2}
   dialogueBoxPrefab: {fileID: 8471492469622854947, guid: 19917e134e38e6444a2e69101becaece, type: 3}
+  talkingSFX: {fileID: 8300000, guid: 5d79936b22a78b04dba2d2ac365e5736, type: 3}
+  playSFXEveryXChars: 3
   distanceDialogueAboveHeadOffset: 0.75
   delayBetweenChars: 0.02
   delayAfterPeriod: 0.3
