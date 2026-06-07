@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Fork Guy 0 0
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 1
-  line: how's it going
+  line: what's up?
   choices:
   - choiceText: 
     nextNode: {fileID: 11400000, guid: 6d8c92862878ec04f94fedf6693dc3f9, type: 2}

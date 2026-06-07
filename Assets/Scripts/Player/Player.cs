@@ -219,7 +219,7 @@ public class Player : MonoBehaviour
         anim.SetBool("canFlip", flipTimer <= 0 && !InSceneTransition);
 
 
-        if (InInteraction && !isLockedOnGrapple)
+        if (InInteraction && !isLockedOnGrapple && isGrounded)
         {
             // ensure we can also recharge grapples while interacting with NPCs or picking up stuff
             if (grappleCharges < maxGrappleCharges)

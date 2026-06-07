@@ -34,4 +34,21 @@ public class CameraSwitcher : MonoBehaviour
             controller.ChangeCamera(mainVCamera);
         }
     }
+    public void CheckColliderPlayerInBubble()
+    {
+        if (Player.Instance.IsInBubble())
+        {
+            Collider2D playerCol = Player.Instance.GetComponent<Collider2D>();
+            Collider2D thisCol = GetComponent<Collider2D>();
+
+            if (!playerCol.IsTouching(thisCol))
+            {
+                controller.ChangeCamera(mainVCamera);
+            }
+            else
+            {
+                controller.ChangeCamera(thisVCamera);
+            }
+        }
+    }
 }

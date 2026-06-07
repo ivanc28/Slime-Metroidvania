@@ -284,7 +284,11 @@ public class NPC : MonoBehaviour
         makingAChoice = true;
         yield return null;
         bool selectedChoice = false;
-        int currChoice = 0;
+        int currChoice = choices.Length - 1;
+        while (!IsChoiceAvailable(choices[currChoice]) && currChoice > 0)
+        {
+            currChoice--;
+        }
         while (!selectedChoice)
         {
             if (Input.GetKeyDown(KeyCode.Space))

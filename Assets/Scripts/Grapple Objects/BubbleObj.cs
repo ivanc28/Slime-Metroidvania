@@ -23,12 +23,14 @@ public class BubbleObj : GrappleObj
     [SerializeField] Rigidbody2D rb;
     [SerializeField] Collider2D bubbleTrigger;
 
+    private CameraSwitcher[] switchers;
     public override void MakeStart()
     {
         base.MakeStart();
         startingPos = transform.position;
         lifetime = lifespan;
         bubbleEmpty = bubbleInteractGain == null;
+        switchers = FindObjectsByType<CameraSwitcher>(FindObjectsSortMode.None);
     }
     public override void MakeUpdate()
     {
@@ -185,13 +187,13 @@ public class BubbleObj : GrappleObj
         bubbleTrigger.isTrigger = true;
         bubbleTrigger.excludeLayers = nothingLayer;
         startFlashing = false;
-        foreach (CameraSwitcher switcher in FindObjectsByType<CameraSwitcher>(FindObjectsSortMode.None))
-        {
-            if (switcher.UsingCamera)
-            {
-                switcher.OnPlayerExitBubble();
-            }
-        }
+        //foreach (CameraSwitcher switcher in FindObjectsByType<CameraSwitcher>(FindObjectsSortMode.None))
+        //{
+        //    if (switcher.UsingCamera)
+        //    {
+        //        switcher.OnPlayerExitBubble();
+        //    }
+        //}
         StartCoroutine(PopBubble(popTime));
     }
 
@@ -212,6 +214,13 @@ public class BubbleObj : GrappleObj
         Vector2 movement = velocityDif * accelRate;
 
         rb.AddForce(movement, ForceMode2D.Force);
+        foreach (CameraSwitcher switcher in switchers)
+        {
+            if (switcher.UsingCamera)
+            {
+                switcher.CheckColliderPlayerInBubble();
+            }
+        }
     }
 
     public IEnumerator PopBubble(float delayBeforeReappear)
