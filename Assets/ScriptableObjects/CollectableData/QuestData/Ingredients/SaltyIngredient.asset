@@ -19,5 +19,5 @@ MonoBehaviour:
   pickupTime: 0.5
   displayMessage: 1
   itemName: Fleur de Sel
-  description: A really salty ingredient. One of the five main ingredients in cake.
-  sprite: {fileID: 0}
+  description: A really salty ingredient. One of the five main ingredients in cake
+  sprite: {fileID: -1440068487228740338, guid: 65a3c4692082ce946a9ae2e0a290af5f, type: 3}
