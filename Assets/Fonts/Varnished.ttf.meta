@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dde2980c298b26649b6a8d1015132912
+guid: a3a2ec21bdb1eb14ea5a2c4fb3c48541
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Thin Sans
+  - Varnished
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

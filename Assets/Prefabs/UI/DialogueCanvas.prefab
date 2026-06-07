@@ -254,7 +254,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -16.21, y: 0.39}
+  m_AnchoredPosition: {x: -16.210022, y: 0.39001465}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.9999999, y: 0}
 --- !u!223 &2544639144547066007
@@ -302,7 +302,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &852506309159641229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,8 +333,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueBox
   dialogueCanvas: {fileID: 6960449104400606344}
-  dialogueBubble: {fileID: 0}
   dialogueText: {fileID: 8102294213464718978}
+  textLayout: {fileID: 0}
+  preferredWidths: []
 --- !u!1 &7451227913104653356
 GameObject:
   m_ObjectHideFlags: 0
