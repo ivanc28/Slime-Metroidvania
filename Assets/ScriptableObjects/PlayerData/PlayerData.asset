@@ -52,9 +52,9 @@ MonoBehaviour:
   bubbleMoveSpeed: 12
   floatAccelAmount: 20
   floatDecelAmount: 4
-  umbrellaJumpGravity: 2
+  umbrellaJumpGravity: 4
   umbrellaFallingGravity: 3
-  umbrellaStopJumpGravity: 4
+  umbrellaStopJumpGravity: 5
   umbrellaDescendSpeed: 6
   textColor: {r: 0.13995196, g: 0.16037738, b: 0.15016468, a: 1}
   choiceHoverColor: {r: 0.084905684, g: 0.084905684, b: 0.084905684, a: 1}
