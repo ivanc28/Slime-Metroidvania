@@ -45,6 +45,7 @@ public class UIManager : MonoBehaviour
 
     [Header("Inventory")]
     [SerializeField] GameObject inventory;
+    [SerializeField] TextMeshProUGUI inventoryCurrencyText;
     [SerializeField] Transform questSlotContainer;
     [SerializeField] Transform toolSlotContainer;
     [SerializeField] GridLayoutGroup gridLayout;
@@ -452,6 +453,7 @@ public class UIManager : MonoBehaviour
     {
         GameManager.Instance.SetPaused(true);
         inventory.SetActive(true);
+        inventoryCurrencyText.text = Player.Instance.currencyData.GetCurrency().ToString();
         QuestCollectableData[] items = Player.Instance.inventory.GetAllItems().ToArray();
         foreach(QuestCollectableData item in items)
         {

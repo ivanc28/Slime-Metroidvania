@@ -7,12 +7,15 @@ public class Pebble : MonoBehaviour
     [SerializeField] public Rigidbody2D rb;
     private bool ignoreCollision;
     public float maxFallSpeed = 25f;
+    [SerializeField] SpriteRenderer pebbleRenderer;
+    [SerializeField] Sprite[] sprites;
     public void Initialize(float pickDelay)
     {
         pickupTimer = pickDelay;
         rb = GetComponent<Rigidbody2D>();
         Physics2D.IgnoreCollision(GetComponent<Collider2D>(), Player.Instance.GetComponent<Collider2D>());
         ignoreCollision = true;
+        pebbleRenderer.sprite = sprites[Random.Range(0, sprites.Length)];
     }
     private void Update()
     {
