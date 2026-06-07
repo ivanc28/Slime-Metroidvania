@@ -76,6 +76,7 @@ public class PlayerData : ScriptableObject
     public AudioClip[] digClips;
     public AudioClip[] whiskClips;
     public AudioClip[] scissorsClips;
+    public AudioClip[] umbrellaClips;
     public AudioClip[] forkClips;
     public AudioClip[] chopsticksClips;
     public AudioClip[] bubbleBlowClips;

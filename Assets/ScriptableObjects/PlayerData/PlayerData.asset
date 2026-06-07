@@ -92,6 +92,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c44fdb759a5b2ee4d8c648f2cbbe3a41, type: 3}
   scissorsClips:
   - {fileID: 8300000, guid: a2f4bed314c7402468e50ca128b52733, type: 3}
+  umbrellaClips:
+  - {fileID: 8300000, guid: 773b9e5e2dd5b814b8f3b0238aa41fcc, type: 3}
   forkClips:
   - {fileID: 8300000, guid: af5cd26d9a3eb9a498ec1da33f303eac, type: 3}
   chopsticksClips:

@@ -1206,6 +1206,14 @@ public class Player : MonoBehaviour
             SoundManager.Instance.PlaySound(data.bubbleBlowClips, 0.8f, true, 1f, 1.1f);
         }
     }
+    // Called by animation
+    public void PlayUmbrellaSFX()
+    {
+        if (SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySound(data.umbrellaClips, 0.8f, true, 0.9f, 1.1f);
+        }
+    }
     // ------------------------------------
     private void OnTriggerStay2D(Collider2D collision)
     {
