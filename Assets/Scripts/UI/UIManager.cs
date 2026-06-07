@@ -14,6 +14,7 @@ public class UIManager : MonoBehaviour
     [Tooltip("How much time between each increment of player's final currency (coming from accumulatedCurrency)")]
     [SerializeField] float delayBetweenIncrements;
     [SerializeField] float delayBetweenDecrements;
+    [SerializeField] Animator currencyAnim;
     private int prevCurrencyBeforeAccumulation;
     private int accumulatedCurrency;
     // ADDING CURRENCY
@@ -352,12 +353,12 @@ public class UIManager : MonoBehaviour
     }
     private void EnableCurrencyText(bool enabled)
     {
-        currencyText.enabled = enabled;
+        currencyAnim.SetBool("currencyVisible", enabled);
         currencyAccText.enabled = enabled;
     }
     public void DisplayCurrency(bool value)
     {
-        currencyText.enabled = value;
+        currencyAnim.SetBool("currencyVisible", value);
     }
     private void UpdateGrappleSlider()
     {

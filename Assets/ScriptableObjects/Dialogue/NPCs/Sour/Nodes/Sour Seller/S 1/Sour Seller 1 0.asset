@@ -17,5 +17,6 @@ MonoBehaviour:
   choices:
   - choiceText: 
     nextNode: {fileID: 11400000, guid: 9c80cdc19ed63684fa1ea6b740cdb96e, type: 2}
-    dialogueEvents: []
+    dialogueEvents:
+    - {fileID: 11400000, guid: d8d0e9f2fd330934ca441d59b78b7bc8, type: 2}
     condition: {fileID: 0}
