@@ -680,6 +680,10 @@ public class Player : MonoBehaviour
     {
         isJumping = true;
         rb.gravityScale = data.risingGravity;
+        if (Mathf.Abs(rb.linearVelocityX) < 1f)
+        {
+            rb.linearVelocityX = 0;
+        }
         rb.sharedMaterial = data.frictionless;
         rb.linearVelocityY = data.jumpSpeed;
         if(SoundManager.Instance != null)
