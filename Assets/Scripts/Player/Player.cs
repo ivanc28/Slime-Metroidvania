@@ -887,7 +887,7 @@ public class Player : MonoBehaviour
             prevToolChoice = toolChoice;
             if (SoundManager.Instance != null)
             {
-                SoundManager.Instance.PlaySound(data.hoverUIClip, 0.08f);
+                SoundManager.Instance.PlaySound(data.hoverUIClip, 0.08f, true, 0.9f, 1.1f);
             }
         }
         return toolOptions[toolChoice];
@@ -901,7 +901,7 @@ public class Player : MonoBehaviour
         tools.SwapTool(toolOptions[toolChoice].tool);
         if (SoundManager.Instance != null)
         {
-            SoundManager.Instance.PlaySound(data.hoverUIClip, 0.2f, true, 1.9f, 1.9f);
+            SoundManager.Instance.PlaySound(data.hoverUIClip, 0.2f, true, 1.8f, 1.9f);
         }
         UIManager.Instance.UpdateToolDispay(toolOptions[toolChoice]);
         foreach(ToolOption option in toolOptions)
