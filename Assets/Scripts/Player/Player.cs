@@ -77,7 +77,8 @@ public class Player : MonoBehaviour
     private bool inBubble;
     private bool onBubble;
 
-    //[Header("Umbrella")]
+    [Header("Umbrella")]
+    [SerializeField] SpriteRenderer umbrellaRenderer;
     private bool umbrellaState;
 
     //[Header("Currency")]
@@ -616,6 +617,7 @@ public class Player : MonoBehaviour
     {
         facingRight = value;
         rend.flipX = !value;
+        umbrellaRenderer.flipX = !value;
     }
     public bool GetFacingRight()
     {
@@ -932,6 +934,8 @@ public class Player : MonoBehaviour
         // Whisk: 5
         // Bubble Blower: 6
         int toolForAnim = (int)tools.GetCurrTool() - 1;
+        anim.SetFloat("umbrellaOn", umbrellaState ? 0 : 1);
+        umbrellaRenderer.enabled = false;
         anim.SetFloat("toolChoice", toolForAnim);
         anim.SetTrigger("useTool");
         yield return new WaitForSeconds(data.toolUseTime);
@@ -996,6 +1000,7 @@ public class Player : MonoBehaviour
     public void ToggleUmbrella()
     {
         umbrellaState = !umbrellaState;
+        umbrellaRenderer.enabled = umbrellaState;
     }
     public bool IsUsingUmbrella()
     {

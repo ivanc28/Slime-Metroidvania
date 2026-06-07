@@ -15,4 +15,4 @@ MonoBehaviour:
   tool: 4
   toolName: Umbrella
   description: Float and stuff
-  sprite: {fileID: 4123733795721074919, guid: 2843968d1d159304ea00aafcac6f401e, type: 3}
+  sprite: {fileID: 640189316, guid: a536270742a624047a312c4f2863f2ee, type: 3}
