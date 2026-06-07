@@ -48,7 +48,7 @@ MonoBehaviour:
   nextRoomID: 
   nextSpawnPointID: 
   fadeTime: 0.85
-  transitionCooldown: 0.2
+  transitionCooldown: 0.4
   moveToTransitionSpeed: 12.5
   direction: 0
 --- !u!61 &219240302506569598
