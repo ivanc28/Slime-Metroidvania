@@ -98,6 +98,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 16656638766e0f045aa1430bd2055609, type: 3}
   bubbleBlowClips:
   - {fileID: 8300000, guid: d6a3c9697290b9c438032c44938725b7, type: 3}
+  hoverUIClip: {fileID: 8300000, guid: 2ecbe3c504e1b524d9b398fe3ddb192f, type: 3}
   bubbleParticleOffset: {x: 1, y: 1}
   shortBubbleParticle: {fileID: 6314520340302582308, guid: c4fd394705acb3e49ad009733b2acdeb, type: 3}
   eatFoodPosOffset: {x: 0.5, y: 0.5}

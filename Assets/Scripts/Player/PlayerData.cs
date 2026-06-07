@@ -79,6 +79,7 @@ public class PlayerData : ScriptableObject
     public AudioClip[] forkClips;
     public AudioClip[] chopsticksClips;
     public AudioClip[] bubbleBlowClips;
+    public AudioClip hoverUIClip;
     [Header("Animations")]
     [Tooltip("The offset from player's position where bubbles will spawn due to BLOWING BUBBLES ANIMATION")]
     public Vector2 bubbleParticleOffset;

@@ -70,6 +70,7 @@ public class Player : MonoBehaviour
     [SerializeField] ToolOption[] toolOptions;
     private bool toolSelectorEnabled;
     private bool usingTool;
+    private int prevToolChoice = -1;
 
     [Header("Blowing Bubbles")]
     [SerializeField] ParticleSystem bubbleParticle;
@@ -881,6 +882,14 @@ public class Player : MonoBehaviour
     {
         float angle = GetWheelAngle();
         int toolChoice = (int)(angle / (360 / toolOptions.Length));
+        if (toolChoice != prevToolChoice)
+        {
+            prevToolChoice = toolChoice;
+            if (SoundManager.Instance != null)
+            {
+                SoundManager.Instance.PlaySound(data.hoverUIClip, 0.08f);
+            }
+        }
         return toolOptions[toolChoice];
     }
     private void SelectTool()
@@ -890,6 +899,10 @@ public class Player : MonoBehaviour
         toolChoice = Mathf.Clamp(toolChoice, 0, toolOptions.Length - 1);
         tools.SetCurrToolOption(toolOptions[toolChoice]);
         tools.SwapTool(toolOptions[toolChoice].tool);
+        if (SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySound(data.hoverUIClip, 0.2f, true, 1.9f, 1.9f);
+        }
         UIManager.Instance.UpdateToolDispay(toolOptions[toolChoice]);
         foreach(ToolOption option in toolOptions)
         {
