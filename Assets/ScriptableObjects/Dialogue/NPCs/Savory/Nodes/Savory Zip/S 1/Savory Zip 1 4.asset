@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Savory Zip 1 4
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 0
-  line: still gonna be 200 pebbles
+  line: still gonna be 300 pebbles
   choices:
   - choiceText: 
     nextNode: {fileID: 11400000, guid: 0e5ca4c1824bdf0458f917f84339252e, type: 2}
