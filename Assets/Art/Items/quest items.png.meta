@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3a4abdd49fbaab44f9c1fdf2c639e2f0
+guid: 65a3c4692082ce946a9ae2e0a290af5f
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -60,7 +60,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
@@ -108,11 +108,24 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: quest items_0
+      name: ladyfinger
       rect:
         serializedVersion: 2
         x: 0
@@ -134,7 +147,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: quest items_1
+      name: mascarpone
       rect:
         serializedVersion: 2
         x: 16
@@ -156,7 +169,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: quest items_2
+      name: cherry
       rect:
         serializedVersion: 2
         x: 32
@@ -178,7 +191,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: quest items_3
+      name: amaretto
       rect:
         serializedVersion: 2
         x: 48
@@ -200,7 +213,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: quest items_4
+      name: fleur de sel
       rect:
         serializedVersion: 2
         x: 64
@@ -225,7 +238,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 11fe2264cdb65774c96316236eedbeb9
+    spriteID: b009990a3a726174f84b87d5697e1709
     internalID: 0
     vertices: []
     indices: 
@@ -235,13 +248,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":5.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      quest items_0: -2913488199902953041
-      quest items_1: 5264453991067655730
-      quest items_2: 841544948626000649
-      quest items_3: 5230568015574724374
-      quest items_4: -1440068487228740338
+      amaretto: 5230568015574724374
+      cherry: 841544948626000649
+      fleur de sel: -1440068487228740338
+      ladyfinger: -2913488199902953041
+      mascarpone: 5264453991067655730
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

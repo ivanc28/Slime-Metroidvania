@@ -333,6 +333,7 @@ public class Player : MonoBehaviour
             FireHook();
         }
         // Detach grappling hook
+        Debug.Log($"zipping: {zipping}");
         if(Input.GetKeyDown(KeyCode.Space))
         {
             bool shouldJumpAfterDetach = false;
@@ -342,14 +343,14 @@ public class Player : MonoBehaviour
                 DetachHook();
                 SetZipping(false);
                 SetZipDirection(0);
-                Debug.Log("unzip");
+                //Debug.Log("unzip");
             }
             else if (IsZipping() || zipCoyoteTimer > 0)
             {
                 shouldJumpAfterDetach = true;
                 SetZipping(false);
                 SetZipDirection(0);
-                Debug.Log("unzip");
+                //Debug.Log("unzip");
             }
             if (shouldJumpAfterDetach && !isGrounded)
             {
@@ -449,12 +450,10 @@ public class Player : MonoBehaviour
         {
             if (GetMoveInput() < 0 && zipDirection == 1)
             {
-                Debug.Log("a");
                 SetZipDirection(-1);
             }
             if (GetMoveInput() > 0 && zipDirection == -1)
             {
-                Debug.Log("d");
                 SetZipDirection(1);
             }
             rb.linearVelocity = zipDirection * ziplineSpeed * zipVector;
@@ -519,7 +518,7 @@ public class Player : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log($"current index: {index}; current count: {zipColliders.Count}");
+                    //Debug.Log($"current index: {index}; current count: {zipColliders.Count}");
                     if (rightZipPoint == firstZipPoint)
                     {
                         firstZipPoint = zipColliders[index-1].points[0];
@@ -537,14 +536,14 @@ public class Player : MonoBehaviour
                     {
                         leftZipPoint = secondZipPoint;
                         rightZipPoint = firstZipPoint;
-                        Debug.Log("swap direction");
+                        //Debug.Log("swap direction");
                         Debug.Log(zipDirection);
                     }
                     else
                     {
                         leftZipPoint = firstZipPoint;
                         rightZipPoint = secondZipPoint;
-                        Debug.Log("no swap");
+                        //Debug.Log("no swap");
                     }
                     if (leftRight != newLeftRight)
                     {
@@ -685,7 +684,7 @@ public class Player : MonoBehaviour
         rb.linearVelocityY = data.jumpSpeed;
         if(SoundManager.Instance != null)
         {
-            SoundManager.Instance.PlaySoundIfNotPlaying(data.jumpClips, 0.5f, true);
+            SoundManager.Instance.PlaySoundIfNotPlaying(data.jumpClips, 0.3f, true);
         }
     }
     private void StopJump()
@@ -786,7 +785,7 @@ public class Player : MonoBehaviour
         }
         currHookAttached = hook;
         currHookBeingThrown = null;
-
+        SetZipping(false);
         hookPoint = point;
         isAttaching = true;
         isJumping = false;
@@ -1072,7 +1071,7 @@ public class Player : MonoBehaviour
     }
     void Zip()
     {
-        Debug.Log("zip1");
+        //Debug.Log("zip1");
         zipColliders = currentAttachedCollider.gameObject.GetComponent<ZiplineObj>().GetLineColliders();
         int index = zipColliders.IndexOf(currentAttachedCollider as EdgeCollider2D);
         
@@ -1088,8 +1087,8 @@ public class Player : MonoBehaviour
             leftZipPoint = firstZipPoint;
             rightZipPoint = secondZipPoint;
         }
-        Debug.Log(leftZipPoint.x);
-        Debug.Log(rightZipPoint.x);
+        //Debug.Log(leftZipPoint.x);
+        //Debug.Log(rightZipPoint.x);
 
         zipVector = (rightZipPoint - leftZipPoint).normalized;
     }
@@ -1168,7 +1167,7 @@ public class Player : MonoBehaviour
     {
         if (SoundManager.Instance != null)
         {
-            SoundManager.Instance.PlaySound(data.forkClips, 1f, true, 0.9f, 1.1f);
+            SoundManager.Instance.PlaySound(data.forkClips, 0.5f, true, 0.9f, 1.1f);
         }
     }
     // Called by animation
