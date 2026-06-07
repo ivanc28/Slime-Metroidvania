@@ -33,6 +33,6 @@ public class DialogueBox : MonoBehaviour
 
     private float GetFactorByFontSize()
     {
-        return dialogueText.fontSize / 16;
+        return dialogueText.fontSize / 9;
     }
 }

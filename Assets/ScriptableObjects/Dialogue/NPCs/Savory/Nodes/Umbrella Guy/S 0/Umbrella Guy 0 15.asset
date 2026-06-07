@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Umbrella Guy 0 15
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 0
-  line: alright! pay up!
+  line: no! 200!
   choices:
   - choiceText: 
     nextNode: {fileID: 11400000, guid: f49cfb2b36ceda147b6af014121295ef, type: 2}

@@ -181,7 +181,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &3468878934784866575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,8 +287,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: extravaganza!!!!!!!!!!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5ea20d0a037967b4799829621431a44f, type: 2}
-  m_sharedMaterial: {fileID: 6487392763903301786, guid: 5ea20d0a037967b4799829621431a44f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2a5d646f693947e41b1427791cb16fef, type: 2}
+  m_sharedMaterial: {fileID: 6119526355280302052, guid: 2a5d646f693947e41b1427791cb16fef, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -312,8 +312,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16
-  m_fontSizeBase: 16
+  m_fontSize: 9
+  m_fontSizeBase: 9
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -322,7 +322,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: -12
   m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0

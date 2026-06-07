@@ -296,12 +296,14 @@ public class Player : MonoBehaviour
             {
                 coyoteTimer -= Time.deltaTime;
             }
+            col.sharedMaterial = data.frictionless;
             rb.sharedMaterial = data.frictionless;
             incrementGrappleCountAfterTouchGround = true;
         }
         else
         {
             coyoteTimer = data.coyoteTime;
+            col.sharedMaterial = null;
             rb.sharedMaterial = null;
             // checking if charges can be gained, hook is not being thrown, and hook is not attached (there is a frame where hook is attached but slime still grounded where recharge can happen otherwise)
             if (grappleCharges < maxGrappleCharges && currHookBeingThrown == null && isAttaching == false && !isLockedOnGrapple)
@@ -685,6 +687,7 @@ public class Player : MonoBehaviour
         //    rb.linearVelocityX = 0;
         //}
         StartCoroutine(DisableColliderOnePhysicsFrame());
+        col.sharedMaterial = data.frictionless;
         rb.sharedMaterial = data.frictionless;
         rb.linearVelocityY = data.jumpSpeed;
         if(SoundManager.Instance != null)
@@ -710,6 +713,7 @@ public class Player : MonoBehaviour
     private IEnumerator DisableColliderOnePhysicsFrame()
     {
         col.enabled = false;
+        //yield return new WaitForFixedUpdate();
         yield return new WaitForFixedUpdate();
         col.enabled = true;
     }
@@ -947,6 +951,7 @@ public class Player : MonoBehaviour
         }
         yield return null;
         usingTool = true;
+        col.sharedMaterial = data.someFriction;
         rb.sharedMaterial = data.someFriction;  // ensure we don't slide around when we start interacting
         InInteraction = true;
         // play tool animation or something
@@ -975,6 +980,7 @@ public class Player : MonoBehaviour
             ToggleUmbrella();
         }
         InInteraction = false;
+        col.sharedMaterial = null;
         rb.sharedMaterial = null;
         usingTool = false;
     }
@@ -1149,7 +1155,7 @@ public class Player : MonoBehaviour
     {
         if(SoundManager.Instance != null)
         {
-            SoundManager.Instance.PlaySound(data.walkClips, 0.2f, true, 1.8f, 2f);
+            //SoundManager.Instance.PlaySound(data.walkClips, 0.025f, true, 1.8f, 2f);
         }
     }
     // Called by animation
