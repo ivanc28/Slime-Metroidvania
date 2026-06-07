@@ -948,7 +948,10 @@ public class Player : MonoBehaviour
         // Bubble Blower: 6
         int toolForAnim = (int)tools.GetCurrTool() - 1;
         anim.SetFloat("umbrellaOn", umbrellaState ? 0 : 1);
-        umbrellaRenderer.enabled = false;
+        if(tools.GetCurrTool() == PlayerTools.Tool.Umbrella)
+        {
+            umbrellaRenderer.enabled = false;
+        }
         anim.SetFloat("toolChoice", toolForAnim);
         anim.SetTrigger("useTool");
         yield return new WaitForSeconds(data.toolUseTime);
