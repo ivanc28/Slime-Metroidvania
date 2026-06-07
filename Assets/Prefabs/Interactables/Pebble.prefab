@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -2869397829287053979, guid: f066fe341d9443d4e98f2e35760b2fff, type: 3}
+  m_Sprite: {fileID: 6035993246965501914, guid: a291e203126931f468de62f35621669b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -127,7 +127,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.45
+  m_Radius: 0.15
 --- !u!1 &8566731503368152520
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,6 +177,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Pebble
   rb: {fileID: 0}
   maxFallSpeed: 25
+  pebbleRenderer: {fileID: 2906095453602776317}
+  sprites:
+  - {fileID: 6035993246965501914, guid: a291e203126931f468de62f35621669b, type: 3}
+  - {fileID: -8309849398907823485, guid: a291e203126931f468de62f35621669b, type: 3}
+  - {fileID: -1380965164297187176, guid: a291e203126931f468de62f35621669b, type: 3}
 --- !u!58 &2486355238688549143
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -212,7 +217,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.47
+  m_Radius: 0.12
 --- !u!50 &5993372373101993339
 Rigidbody2D:
   serializedVersion: 5
@@ -239,4 +244,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 0
