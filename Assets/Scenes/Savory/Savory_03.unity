@@ -342715,7 +342715,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 988797337731099234, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 95
+      value: 94
       objectReference: {fileID: 0}
     - target: {fileID: 1325945524568473075, guid: e9845255f0c21a844927dff0061bc2e5, type: 3}
       propertyPath: parallaxFactorX
