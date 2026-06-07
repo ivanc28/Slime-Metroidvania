@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Fork Guy 0 1
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 0
-  line: not much, just looking at these bubbles
+  line: just looking at these bubbles
   choices:
   - choiceText: 
     nextNode: {fileID: 11400000, guid: 2e8ca03e09139974e8fe4a8448a52e27, type: 2}

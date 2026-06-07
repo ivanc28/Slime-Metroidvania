@@ -13,5 +13,9 @@ MonoBehaviour:
   m_Name: Fork Guy 0 10
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 0
-  line: 'come back here if you find something pointy, like it stabs '
-  choices: []
+  line: come back here if you find something pointy
+  choices:
+  - choiceText: 
+    nextNode: {fileID: 11400000, guid: 157355c28efef9044ba357689b37b4f8, type: 2}
+    dialogueEvents: []
+    condition: {fileID: 0}

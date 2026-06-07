@@ -25,7 +25,7 @@ MonoBehaviour:
   talkingSFX: {fileID: 8300000, guid: f3e3c7aef9d3c8c48a8c8e732ef1fa4b, type: 3}
   playSFXEveryXChars: 3
   distanceDialogueAboveHeadOffset: 0.75
-  delayBetweenChars: 0.02
+  delayBetweenChars: 0.0185
   delayAfterPeriod: 0.3
   delayAfterComma: 0.5
   npcTextColor: {r: 0.26352793, g: 0.32301342, b: 0.3962264, a: 1}
