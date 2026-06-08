@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DEventClaimFood
   consumableType: 1
   claimMessage: You found <color=#FF69B4>Floral Tea!</color>
-  itemSprite: {fileID: 6158688922797191274, guid: 72a69fce1d01ccd49a88e85127bffd34, type: 3}
+  itemSprite: {fileID: 709999974, guid: 72a69fce1d01ccd49a88e85127bffd34, type: 3}

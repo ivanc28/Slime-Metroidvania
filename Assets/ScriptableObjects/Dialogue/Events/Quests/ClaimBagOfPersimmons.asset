@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DEventClaimItem
   questItem: {fileID: 11400000, guid: 09b9adf41537f094093dbd417d4d14ca, type: 2}
   optionalPebbleCost: 0
-  claimMessage: You found a Bag of Persimmons!
+  claimMessage: You found a <color=#f1917d>Bag of Persimmons!</color>

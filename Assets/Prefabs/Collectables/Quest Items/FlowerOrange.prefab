@@ -232,7 +232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::QuestCollectable
   data: {fileID: 11400000, guid: e7bc8f2a1dce66b48940a6707148d1da, type: 2}
   collectableID: Savory_Flower
-  pickupMessage: You found an Orange Flower!
+  pickupMessage: You found an <color="orange">Orange Flower!</color>
   keyIcon: {fileID: 6254863482828121653}
   rb: {fileID: 0}
   spriteRend: {fileID: 9093104567981088291}

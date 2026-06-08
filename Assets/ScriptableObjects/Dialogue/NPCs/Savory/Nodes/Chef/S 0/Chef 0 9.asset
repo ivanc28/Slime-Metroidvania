@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Chef 0 9
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 0
-  line: picked up some <color=#00d1d1>Fleur de Sel</color>
+  line: picked up some <color=#cc2d6a>Fleur de Sel</color>
   choices:
   - choiceText: 
     nextNode: {fileID: 11400000, guid: 336f77f5cac1dd04697770d52ae491ca, type: 2}

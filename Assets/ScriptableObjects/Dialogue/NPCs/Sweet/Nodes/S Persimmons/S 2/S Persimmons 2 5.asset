@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: S Persimmons 2 5
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 0
-  line: here! i made some persimmon sorbet for you as a gift of appreciation!
+  line: here! i made some <color=#FF69B4>Persimmon Jam</color> for you as a gift
+    of appreciation!
   choices:
   - choiceText: 
     nextNode: {fileID: 11400000, guid: 2484b26857d166f43adfa36745452cda, type: 2}
