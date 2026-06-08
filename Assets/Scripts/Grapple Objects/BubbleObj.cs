@@ -25,14 +25,16 @@ public class BubbleObj : GrappleObj
     [SerializeField] AudioClip[] bubbleInClips;
     [SerializeField] AudioClip[] popClips;
 
-    private CameraSwitcher[] switchers;
+    //private CameraSwitcher[] switchers;
+    //private ContactFilter2D filter;
     public override void MakeStart()
     {
         base.MakeStart();
         startingPos = transform.position;
         lifetime = lifespan;
         bubbleEmpty = bubbleInteractGain == null;
-        switchers = FindObjectsByType<CameraSwitcher>(FindObjectsSortMode.None);
+        //switchers = FindObjectsByType<CameraSwitcher>(FindObjectsSortMode.None);
+        //filter = new();
     }
     public override void MakeUpdate()
     {
@@ -220,13 +222,10 @@ public class BubbleObj : GrappleObj
         Vector2 movement = velocityDif * accelRate;
 
         rb.AddForce(movement, ForceMode2D.Force);
-        foreach (CameraSwitcher switcher in switchers)
-        {
-            if (switcher.UsingCamera)
-            {
-                switcher.CheckColliderPlayerInBubble();
-            }
-        }
+        //foreach (CameraSwitcher switcher in switchers)
+        //{
+        //    switcher.CheckColliderPlayerInBubble(bubbleTrigger, filter);
+        //}
     }
 
     public IEnumerator PopBubble(float delayBeforeReappear)

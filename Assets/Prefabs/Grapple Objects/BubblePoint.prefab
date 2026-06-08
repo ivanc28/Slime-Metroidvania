@@ -56,7 +56,7 @@ MonoBehaviour:
   popTime: 1
   excludedObjects:
     serializedVersion: 2
-    m_Bits: 247
+    m_Bits: 503
   nothingLayer:
     serializedVersion: 2
     m_Bits: 0

@@ -49,7 +49,7 @@ MonoBehaviour:
   toolUseTime: 0.9
   interactKey: 101
   blowTime: 0.8
-  bubbleMoveSpeed: 12
+  bubbleMoveSpeed: 14
   floatAccelAmount: 20
   floatDecelAmount: 4
   umbrellaJumpGravity: 4

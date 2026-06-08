@@ -364,7 +364,7 @@ GameObject:
   - component: {fileID: 8111422751938740029}
   - component: {fileID: 7040590004895286738}
   - component: {fileID: 855309241049190721}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SwitchCameraBoundary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
