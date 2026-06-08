@@ -232,7 +232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::QuestCollectable
   data: {fileID: 11400000, guid: 715a09f10ba9377418294a63355b7517, type: 2}
   collectableID: Sweet_Ingredient
-  pickupMessage: You found a <color=#cc2d6a>Ladyfinger!</color>
+  pickupMessage: You found a <color=#ff0d55>Ladyfinger!</color>
   keyIcon: {fileID: 6254863482828121653}
   rb: {fileID: 0}
   spriteRend: {fileID: 9093104567981088291}

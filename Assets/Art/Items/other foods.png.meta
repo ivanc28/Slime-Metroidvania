@@ -114,11 +114,24 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: other foods_0
+      name: toast
       rect:
         serializedVersion: 2
         x: 0
@@ -140,7 +153,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: other foods_1
+      name: red tomato
       rect:
         serializedVersion: 2
         x: 16
@@ -162,7 +175,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: other foods_2
+      name: yellow tomato
       rect:
         serializedVersion: 2
         x: 32
@@ -184,7 +197,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: other foods_3
+      name: lemon drop
       rect:
         serializedVersion: 2
         x: 0
@@ -206,7 +219,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: other foods_4
+      name: lime drop
       rect:
         serializedVersion: 2
         x: 16
@@ -228,7 +241,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: other foods_5
+      name: grapefruit drop
       rect:
         serializedVersion: 2
         x: 32
@@ -250,7 +263,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: other foods_6
+      name: green apple
       rect:
         serializedVersion: 2
         x: 48
@@ -287,13 +300,13 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      other foods_0: -4926002230193991297
-      other foods_1: 8683441862014727149
-      other foods_2: -4501691356708268708
-      other foods_3: 6968391445810661890
-      other foods_4: 3569507840648936684
-      other foods_5: 5857340939115240060
-      other foods_6: -4808929779938254377
+      grapefruit drop: 5857340939115240060
+      green apple: -4808929779938254377
+      lemon drop: 6968391445810661890
+      lime drop: 3569507840648936684
+      red tomato: 8683441862014727149
+      toast: -4926002230193991297
+      yellow tomato: -4501691356708268708
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

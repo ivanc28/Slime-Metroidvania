@@ -140,3 +140,9 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: bc3f2fcf6d3357146b81839f27c3631e, type: 2}
   numPebbles: 5
   collectablePrefab: {fileID: 0}
+  interactTransform: {fileID: 0}
+  collectClips:
+  - {fileID: 8300000, guid: 209210b2f2779fc46a4392bd06e59526, type: 3}
+  - {fileID: 8300000, guid: f8779f36ed41d5f478184647673dcb9f, type: 3}
+  - {fileID: 8300000, guid: 6664578f6c67a9f44835bd3f608ccdb6, type: 3}
+  - {fileID: 8300000, guid: a7c1bce14bc09094c87c6eeab4c52d56, type: 3}

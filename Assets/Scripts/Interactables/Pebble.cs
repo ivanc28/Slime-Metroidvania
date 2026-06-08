@@ -46,7 +46,7 @@ public class Pebble : MonoBehaviour
         Player.Instance.currencyData.IncreaseCurrency(1);
         if(SoundManager.Instance != null)
         {
-            SoundManager.Instance.PlaySound(collectClips, 1, true);
+            SoundManager.Instance.PlaySound(collectClips, 0.75f, true);
         }
         Destroy(gameObject);
     }

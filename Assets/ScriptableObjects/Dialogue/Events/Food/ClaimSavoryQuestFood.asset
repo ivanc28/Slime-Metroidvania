@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: ClaimSavoryQuestFood
   m_EditorClassIdentifier: Assembly-CSharp::DEventClaimFood
   consumableType: 0
-  claimMessage: You found some Savory Food!
+  claimMessage: You got some <color=#FF69B4>Cripsy Toast!</color>
+  itemSprite: {fileID: -4926002230193991297, guid: bf51c24a483b3a846accefc12e3ad412, type: 3}
