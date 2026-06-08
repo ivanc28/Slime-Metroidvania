@@ -69,6 +69,10 @@ public abstract class Collectable : MonoBehaviour
         GameManager.Instance.worldIDs.Add(collectableID);
         EnableKeyIcon(false);
         spriteRend.enabled = false;
+        if(SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySound(data.pickupClips, 1, true);
+        }
         if (data.displayMessage)
         {
             yield return StartCoroutine(UIManager.Instance.ShowCollectTextAndWait(pickupMessage));

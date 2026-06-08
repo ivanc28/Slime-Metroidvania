@@ -10,4 +10,5 @@ public class CollectableData : ScriptableObject
     public Sprite keySprite;
     public float pickupTime;
     public bool displayMessage = true;
+    public AudioClip[] pickupClips;
 }
