@@ -220,3 +220,4 @@ MonoBehaviour:
   endPos: {fileID: 2792805037222086070}
   moveTime: 1.5
   power: 5
+  moveClip: {fileID: 8300000, guid: 0669071d23e4aa9449afbd7617d8f3ff, type: 3}
