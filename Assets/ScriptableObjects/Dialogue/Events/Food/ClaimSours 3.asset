@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 921ead34942c2814986c2fa6ba7abf65, type: 3}
-  m_Name: ClaimSweets02
+  m_Name: ClaimSours 3
   m_EditorClassIdentifier: Assembly-CSharp::DEventClaimFood
   consumableType: 0
-  claimMessage: You found some <color=#FF69B4>Sweets!</color>
-  itemSprite: {fileID: 662561771, guid: 72a69fce1d01ccd49a88e85127bffd34, type: 3}
+  claimMessage: You found a <color=#FF69B4>Grapefruit Drop!</color>
+  itemSprite: {fileID: 5857340939115240060, guid: bf51c24a483b3a846accefc12e3ad412, type: 3}

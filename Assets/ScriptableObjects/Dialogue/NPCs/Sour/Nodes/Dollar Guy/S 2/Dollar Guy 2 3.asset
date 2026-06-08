@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Dollar Guy 2 3
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 0
-  line: i got it from town up above
+  line: good thing you don't have to pay for this one!
   choices:
   - choiceText: 
     nextNode: {fileID: 11400000, guid: 25a9d883e3945c144b82bf19a6a8efcf, type: 2}
     dialogueEvents:
-    - {fileID: 11400000, guid: 325057ff5903ac143bad5c6bdd1b54c1, type: 2}
+    - {fileID: 11400000, guid: b89ef02cd2efe2049a92df2cfb192847, type: 2}
     condition: {fileID: 0}
