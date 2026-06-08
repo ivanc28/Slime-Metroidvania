@@ -70,6 +70,7 @@ public class PlayerData : ScriptableObject
     [Header("Sound Effects")]
     public AudioClip[] walkClips;
     public AudioClip[] jumpClips;
+    public AudioClip[] landClips;
     public AudioClip[] whooshClips;
     public AudioClip[] throwGrappleClips;
     public AudioClip grappleLandClip;

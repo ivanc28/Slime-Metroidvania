@@ -64,6 +64,10 @@ MonoBehaviour:
   flashRate: 0.05
   rb: {fileID: 2335034518909459281}
   bubbleTrigger: {fileID: 7355406469698735675}
+  bubbleInClips:
+  - {fileID: 8300000, guid: 3e5d3271f4eac1140833ad96340eac6c, type: 3}
+  popClips:
+  - {fileID: 8300000, guid: 2c5b2ee94ca33904284de4b8134efd74, type: 3}
 --- !u!58 &7355406469698735675
 CircleCollider2D:
   m_ObjectHideFlags: 0
