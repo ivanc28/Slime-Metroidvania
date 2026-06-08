@@ -15,7 +15,7 @@ public class CameraSwitcher : MonoBehaviour
             controller.ChangeCamera(thisVCamera);
             UsingCamera = true;
         }
-        Debug.Log($"player enter: {collision.gameObject.CompareTag("Player")}, bubble enter: {collision.GetComponent<BubbleObj>() != null}");
+        //Debug.Log($"player enter: {collision.gameObject.CompareTag("Player")}, bubble enter: {collision.GetComponent<BubbleObj>() != null}");
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -24,7 +24,7 @@ public class CameraSwitcher : MonoBehaviour
             controller.ChangeCamera(mainVCamera);
             UsingCamera = false;
         }
-        Debug.Log($"player exit: {collision.gameObject.CompareTag("Player")}, bubble exit: {collision.GetComponent<BubbleObj>() != null}");
+        //Debug.Log($"player exit: {collision.gameObject.CompareTag("Player")}, bubble exit: {collision.GetComponent<BubbleObj>() != null}");
     }
     //public void OnPlayerExitBubble()
     //{

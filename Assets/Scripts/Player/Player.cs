@@ -336,7 +336,6 @@ public class Player : MonoBehaviour
             FireHook();
         }
         // Detach grappling hook
-        Debug.Log($"zipping: {zipping}");
         if(Input.GetKeyDown(KeyCode.Space))
         {
             bool shouldJumpAfterDetach = false;
