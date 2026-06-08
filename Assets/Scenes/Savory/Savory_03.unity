@@ -349,17 +349,61 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1608443179185600185, guid: 6e7abc9b6cf1a9c448bafd96d44b7c86, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 8683441862014727149, guid: bf51c24a483b3a846accefc12e3ad412, type: 3}
+    - target: {fileID: 1608443179185600185, guid: 6e7abc9b6cf1a9c448bafd96d44b7c86, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608443179185600185, guid: 6e7abc9b6cf1a9c448bafd96d44b7c86, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608443179185600185, guid: 6e7abc9b6cf1a9c448bafd96d44b7c86, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4492770881531947069, guid: 6e7abc9b6cf1a9c448bafd96d44b7c86, type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 11400000, guid: 531a751682260354083cf33652326bfe, type: 2}
     - target: {fileID: 4492770881531947069, guid: 6e7abc9b6cf1a9c448bafd96d44b7c86, type: 3}
       propertyPath: collectableID
       value: Savory_03_Food_01
       objectReference: {fileID: 0}
+    - target: {fileID: 4492770881531947069, guid: 6e7abc9b6cf1a9c448bafd96d44b7c86, type: 3}
+      propertyPath: pickupMessage
+      value: You found a <color=#FF69B4>Red Tomato!</color>
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958016191313439973, guid: 6e7abc9b6cf1a9c448bafd96d44b7c86, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958016191313439973, guid: 6e7abc9b6cf1a9c448bafd96d44b7c86, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958016191313439973, guid: 6e7abc9b6cf1a9c448bafd96d44b7c86, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958016191313439973, guid: 6e7abc9b6cf1a9c448bafd96d44b7c86, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958016191313439973, guid: 6e7abc9b6cf1a9c448bafd96d44b7c86, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8180098741594223675, guid: 6e7abc9b6cf1a9c448bafd96d44b7c86, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -75.00523
+      value: -75.5
       objectReference: {fileID: 0}
     - target: {fileID: 8180098741594223675, guid: 6e7abc9b6cf1a9c448bafd96d44b7c86, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 110.49037
+      value: 110.5
       objectReference: {fileID: 0}
     - target: {fileID: 8180098741594223675, guid: 6e7abc9b6cf1a9c448bafd96d44b7c86, type: 3}
       propertyPath: m_LocalPosition.z
@@ -395,7 +439,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8227116160457521973, guid: 6e7abc9b6cf1a9c448bafd96d44b7c86, type: 3}
       propertyPath: m_Name
-      value: BasicFood
+      value: Red Tomato
+      objectReference: {fileID: 0}
+    - target: {fileID: 9211548040890170318, guid: 6e7abc9b6cf1a9c448bafd96d44b7c86, type: 3}
+      propertyPath: m_Size.y
+      value: 0.9957962
+      objectReference: {fileID: 0}
+    - target: {fileID: 9211548040890170318, guid: 6e7abc9b6cf1a9c448bafd96d44b7c86, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.0021018982
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
