@@ -159,7 +159,7 @@ public class BubbleObj : GrappleObj
         anim.SetBool("inBubble", true);
         if(SoundManager.Instance != null)
         {
-            SoundManager.Instance.PlaySound(bubbleInClips, 0.9f, true, 1.1f, 1.3f);
+            SoundManager.Instance.PlaySound(bubbleInClips, 0.5f, true);
         }
         Player.Instance.rb.gravityScale = 0;
         Player.Instance.rb.linearVelocity = Vector2.zero;
