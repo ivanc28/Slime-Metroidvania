@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Flower Guy 3 1
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 0
-  line: pretty swell, still perfecting that bubble tea!
+  line: pretty swell, still perfecting that floral tea!
   choices: []
