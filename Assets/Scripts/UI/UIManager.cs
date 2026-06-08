@@ -42,6 +42,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] Animator collectTextAnim;
     [SerializeField] GameObject collectTextContainer;
     [SerializeField] TextMeshProUGUI collectText;
+    [SerializeField] AudioClip collectPopUpClip;
 
     [Header("Inventory")]
     [SerializeField] GameObject inventory;
@@ -429,6 +430,10 @@ public class UIManager : MonoBehaviour
         collectTextContainer.SetActive(true);
         collectText.text = text;
         collectTextAnim.SetBool("isCollecting", true);
+        if(SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySound(collectPopUpClip, 0.2f, true, 1.1f, 1.1f);
+        }
     }
     public void DisableCollectText()
     {

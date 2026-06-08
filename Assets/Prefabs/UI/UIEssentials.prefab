@@ -1694,6 +1694,7 @@ MonoBehaviour:
   collectTextAnim: {fileID: 5290036806775639793}
   collectTextContainer: {fileID: 879558128867075889}
   collectText: {fileID: 3809990790816080961}
+  collectPopUpClip: {fileID: 8300000, guid: 0488a317626668c46a64739d4f7de6d4, type: 3}
   inventory: {fileID: 3531266706159660110}
   inventoryCurrencyText: {fileID: 5815050652694617316}
   questSlotContainer: {fileID: 8516310849792743239}
