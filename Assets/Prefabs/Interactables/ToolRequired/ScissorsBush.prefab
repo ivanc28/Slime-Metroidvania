@@ -164,6 +164,10 @@ MonoBehaviour:
   collectablePrefab: {fileID: 0}
   interactTransform: {fileID: 0}
   bush: {fileID: 4735555051083329099}
+  leavesClips:
+  - {fileID: 8300000, guid: 431713737c20e3e4a8bfa6d2700cad93, type: 3}
+  - {fileID: 8300000, guid: 5c94a488e86670c42b5cba054da97a84, type: 3}
+  - {fileID: 8300000, guid: 2f66464c75835c0428d4b15b0c0ca6ba, type: 3}
 --- !u!1001 &3731811560800602606
 PrefabInstance:
   m_ObjectHideFlags: 0

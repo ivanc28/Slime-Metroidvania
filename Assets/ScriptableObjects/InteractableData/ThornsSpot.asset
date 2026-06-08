@@ -16,7 +16,7 @@ MonoBehaviour:
   requiredTool: 05000000
   destroyOnInteract: 1
   maxDistanceToInteract: 2.5
-  interactionTime: 0.55
+  interactionTime: 0.5
   pebblePrefab: {fileID: 0}
   pebblePickupDelay: 0
   pebbleLaunchSpeed: 0

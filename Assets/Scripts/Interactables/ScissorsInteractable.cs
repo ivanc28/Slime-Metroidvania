@@ -3,6 +3,7 @@ using UnityEngine;
 public class ScissorsInteractable : Interactables
 {
     public ScissorsBush bush;
+    public AudioClip[] leavesClips;
     public override void OnInteract()
     {
         bool firstCut = !GetRoomOfInteractable().bushStates.ContainsKey(GetInteractableID());
@@ -21,5 +22,9 @@ public class ScissorsInteractable : Interactables
         bush.SwapSprite(spriteIndex);
         bush.SaveSpriteIndex(spriteIndex);
         bush.SpawnParticle();
+        if(SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySound(leavesClips, 0.3f, true);
+        }
     }
 }
