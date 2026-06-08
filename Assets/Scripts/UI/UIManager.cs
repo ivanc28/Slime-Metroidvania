@@ -70,6 +70,12 @@ public class UIManager : MonoBehaviour
     [Header("Screen Transition")]
     [SerializeField] Animator screenAnim;
 
+    [Header("Region Title")]
+    [SerializeField] TextMeshProUGUI regionTitleText;
+    [Tooltip("0: Sweet, 1: Savory, 2: Sour, 3: Bitter")]
+    [SerializeField] string[] regionNames;
+    [SerializeField] Animator regionTitleAnim;
+
     public static UIManager Instance { get; private set; }
     private void Awake()
     {
@@ -545,5 +551,28 @@ public class UIManager : MonoBehaviour
         bool active = Player.Instance.maxGrappleCharges > 0;
         grappleSlider.gameObject.SetActive(active);
         grappleCountText.enabled = active;
+    }
+
+    public void DisplayRegionTitle(GameManager.Region region)
+    {
+        switch (region)
+        {
+            case GameManager.Region.Sweet:
+                regionTitleText.text = regionNames[0];
+                break;
+            case GameManager.Region.Savory:
+                regionTitleText.text = regionNames[1];
+                break;
+            case GameManager.Region.Sour:
+                regionTitleText.text = regionNames[2];
+                break;
+            case GameManager.Region.Bitter:
+                regionTitleText.text = regionNames[3];
+                break;
+            default:
+                regionTitleText.text = "";
+                break;
+        }
+        regionTitleAnim.SetTrigger("showName");
     }
 }
