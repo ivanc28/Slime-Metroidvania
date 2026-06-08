@@ -2010,7 +2010,7 @@ PrefabInstance:
     - target: {fileID: 9508128905388827, guid: 1f9a53f9f13fe35448afa24ff9cf92ed, type: 3}
       propertyPath: m_TileAssetArray.Array.data[16].m_Data
       value: 
-      objectReference: {fileID: -5312698159016647520, guid: 491264e6e72d3a346a240a6af09e1a5a, type: 3}
+      objectReference: {fileID: 5774463253758923824, guid: 491264e6e72d3a346a240a6af09e1a5a, type: 3}
     - target: {fileID: 9508128905388827, guid: 1f9a53f9f13fe35448afa24ff9cf92ed, type: 3}
       propertyPath: m_TileColorArray.Array.data[2].m_Data.a
       value: 1
@@ -2030,7 +2030,7 @@ PrefabInstance:
     - target: {fileID: 9508128905388827, guid: 1f9a53f9f13fe35448afa24ff9cf92ed, type: 3}
       propertyPath: m_TileSpriteArray.Array.data[40].m_Data
       value: 
-      objectReference: {fileID: -2305679860135845421, guid: 491264e6e72d3a346a240a6af09e1a5a, type: 3}
+      objectReference: {fileID: 5904026026433468709, guid: 491264e6e72d3a346a240a6af09e1a5a, type: 3}
     - target: {fileID: 9508128905388827, guid: 1f9a53f9f13fe35448afa24ff9cf92ed, type: 3}
       propertyPath: m_Tiles.Array.data[0].second.m_TileIndex
       value: 16
@@ -103245,7 +103245,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2922317802596215707, guid: 1f9a53f9f13fe35448afa24ff9cf92ed, type: 3}
       propertyPath: m_ChunkCullingBounds.x
-      value: 0.06250006
+      value: 0.8125
       objectReference: {fileID: 0}
     - target: {fileID: 2922317802596215707, guid: 1f9a53f9f13fe35448afa24ff9cf92ed, type: 3}
       propertyPath: m_ChunkCullingBounds.y
