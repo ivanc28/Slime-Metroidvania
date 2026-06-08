@@ -278,6 +278,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: plush
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 750be54664adc974ebb346eb0cddcb8a
+      internalID: 622627787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -299,6 +321,7 @@ TextureImporter:
       green flower: 1540184331
       orange flower: 1219813529
       pink flower: -1379295930
+      plush: 622627787
       soda: -2896074028767822764
       yellow flower: -1708254079
       zipline strap: -743835768
