@@ -322,6 +322,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: persimmons
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a02f6cb17db3f5b479f0a2c3ca6534fe
+      internalID: -1435344862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -342,6 +364,7 @@ TextureImporter:
       dollar: -627174181
       green flower: 1540184331
       orange flower: 1219813529
+      persimmons: -1435344862
       pink flower: -1379295930
       plush: 622627787
       soda: -2896074028767822764
