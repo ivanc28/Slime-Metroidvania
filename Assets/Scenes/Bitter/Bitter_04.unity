@@ -320538,10 +320538,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 360870818}
     m_Modifications:
+    - target: {fileID: 2214889959481952392, guid: 3ffe9789e3972944e930c5e5b71efcd7, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -5673444527160157276, guid: 156ffcedf19c6c741961179947866957, type: 3}
     - target: {fileID: 3509028459683019941, guid: 3ffe9789e3972944e930c5e5b71efcd7, type: 3}
       propertyPath: m_Name
       value: ScissorsBush
       objectReference: {fileID: 0}
+    - target: {fileID: 4735555051083329099, guid: 3ffe9789e3972944e930c5e5b71efcd7, type: 3}
+      propertyPath: beforeCut
+      value: 
+      objectReference: {fileID: -5673444527160157276, guid: 156ffcedf19c6c741961179947866957, type: 3}
     - target: {fileID: 8357040566885433329, guid: 3ffe9789e3972944e930c5e5b71efcd7, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.5
