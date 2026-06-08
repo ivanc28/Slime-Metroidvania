@@ -20,6 +20,6 @@ MonoBehaviour:
   displayMessage: 1
   pickupClips:
   - {fileID: 8300000, guid: 543282096bc4b5f46917373dca622323, type: 3}
-  itemName: Bag of Persimmons
-  description: A very full bag of sweet persimmons
-  sprite: {fileID: 0}
+  itemName: Basket of Persimmons
+  description: A very full basket of sweet persimmons
+  sprite: {fileID: -1435344862, guid: 0d0999727d4994f468084d64f15188e6, type: 3}

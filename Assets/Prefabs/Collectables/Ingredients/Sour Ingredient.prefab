@@ -232,7 +232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::QuestCollectable
   data: {fileID: 11400000, guid: 7aca33390b8d59048a6fa1f828b9561e, type: 2}
   collectableID: Sour_Ingredient
-  pickupMessage: You found a <color=#FF69B4>Cherry!</color>
+  pickupMessage: You found a <color=#cc2d6a>Cherry!</color>
   keyIcon: {fileID: 6254863482828121653}
   rb: {fileID: 0}
   spriteRend: {fileID: 9093104567981088291}

@@ -232,7 +232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::QuestCollectable
   data: {fileID: 11400000, guid: 98543ab23fdb694439c5851bcf83bfb1, type: 2}
   collectableID: Sour_3_DollarBill
-  pickupMessage: You found a Dollar Bill!
+  pickupMessage: You found a <color=#f1917d>Dollar Bill!</color>
   keyIcon: {fileID: 6254863482828121653}
   rb: {fileID: 0}
   spriteRend: {fileID: 9093104567981088291}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Chef 0 15
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 0
-  line: we're making <color=#FF69B4>Amaretto Tiramisu!</color>
+  line: we're making <color=#cc2d6a>Amaretto Tiramisu!</color>
   choices:
   - choiceText: 
     nextNode: {fileID: 11400000, guid: 975bbdc9adb3b6b43bc263612812b0a6, type: 2}

@@ -232,7 +232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::QuestCollectable
   data: {fileID: 11400000, guid: 1da191f4f08b1b844b5c1e1b30e23350, type: 2}
   collectableID: Sour_3_Soda
-  pickupMessage: You found a <color=#FF69B4>Can of Soda</color>
+  pickupMessage: You found a <color=#f1917d>Can of Soda</color>
   keyIcon: {fileID: 6254863482828121653}
   rb: {fileID: 0}
   spriteRend: {fileID: 9093104567981088291}
