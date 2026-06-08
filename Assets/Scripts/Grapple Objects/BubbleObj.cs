@@ -22,6 +22,8 @@ public class BubbleObj : GrappleObj
 
     [SerializeField] Rigidbody2D rb;
     [SerializeField] Collider2D bubbleTrigger;
+    [SerializeField] AudioClip[] bubbleInClips;
+    [SerializeField] AudioClip[] popClips;
 
     private CameraSwitcher[] switchers;
     public override void MakeStart()
@@ -155,6 +157,10 @@ public class BubbleObj : GrappleObj
     private void EnterBubble()
     {
         anim.SetBool("inBubble", true);
+        if(SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySound(bubbleInClips, 0.5f, true);
+        }
         Player.Instance.rb.gravityScale = 0;
         Player.Instance.rb.linearVelocity = Vector2.zero;
         Player.Instance.rb.position = transform.position;
@@ -227,6 +233,10 @@ public class BubbleObj : GrappleObj
     {
         yield return null;
         DeactivateBubble();
+        if(SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySound(popClips, 0.2f, true, 0.9f, 1.1f);
+        }
         yield return new WaitForSeconds(delayBeforeReappear);
         ActivateBubble();
         anim.SetTrigger("replaceBubble");

@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
     private float jumpBufferTimer;
     private float coyoteTimer;
     private bool canAdjustGravity = true;
+    private float lastFallVelocity;
     [Header("Components")]
     public Rigidbody2D rb;
     public Animator anim;
@@ -572,7 +573,11 @@ public class Player : MonoBehaviour
             liftedJump = false;
         }
         #endregion
-
+        // Track landing velocity
+        if (rb.linearVelocityY < 0 && !isGrounded)
+        {
+            lastFallVelocity = rb.linearVelocityY;
+        }
         // Adjust gravity
         if (canAdjustGravity)
         {
@@ -1149,6 +1154,14 @@ public class Player : MonoBehaviour
         if(SoundManager.Instance != null)
         {
             //SoundManager.Instance.PlaySound(data.walkClips, 0.025f, true, 1.8f, 2f);
+        }
+    }
+
+    public void PlayLandSFX()
+    {
+        if (SoundManager.Instance != null && lastFallVelocity <= data.terminalFallVel + 5)
+        {
+            SoundManager.Instance.PlaySound(data.landClips, 0.2f, true, 1f, 1.2f);
         }
     }
     // Called by animation
