@@ -80,7 +80,7 @@ public abstract class Interactables : MonoBehaviour
             {
                 room.collectedInteractables.Add(interactableID);
                 GameManager.Instance.worldIDs.Add(interactableID);
-                Debug.Log($"adding to colected interactables and destroying {gameObject.name}");
+                //Debug.Log($"adding to colected interactables and destroying {gameObject.name}");
                 Destroy(gameObject);
             }
         }
