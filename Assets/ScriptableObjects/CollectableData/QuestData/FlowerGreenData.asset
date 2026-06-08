@@ -20,4 +20,4 @@ MonoBehaviour:
   displayMessage: 1
   itemName: Green Flower
   description: A flower as green as all these bushes
-  sprite: {fileID: 0}
+  sprite: {fileID: 1540184331, guid: 0d0999727d4994f468084d64f15188e6, type: 3}
