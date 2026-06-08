@@ -906,6 +906,90 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 32, y: 249}
+  - name: signs_33
+    originalName: 
+    pivot: {x: 0.5, y: 0.6097561}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 118
+      y: 200
+      width: 24
+      height: 41
+    spriteID: 535de96089d5d1749b22c766f33c6afc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 105, y: 200}
+  - name: signs_34
+    originalName: 
+    pivot: {x: 0.5, y: 0.6097561}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 118
+      y: 249
+      width: 24
+      height: 41
+    spriteID: 3d617eec93988f6449453f2266884f4b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 105, y: 249}
+  - name: signs_35
+    originalName: 
+    pivot: {x: 0.5, y: 0.6097561}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 118
+      y: 298
+      width: 24
+      height: 41
+    spriteID: 5206535034a206f40a2a327da99cbe32
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 105, y: 298}
+  - name: signs_36
+    originalName: 
+    pivot: {x: 0.5, y: 0.6097561}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 118
+      y: 347
+      width: 24
+      height: 41
+    spriteID: 45639ac3b185e48449e6511698c8e5e6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 105, y: 347}
   asepriteLayers:
   - layerIndex: 1
     uuid:
@@ -926,9 +1010,9 @@ ScriptedImporter:
       cellRect:
         x: 0
         y: 0
-        width: 8
+        width: 10
         height: 4
-      tileIndices: 01000000020000000300000004000000110000001200000013000000140000000500000006000000070000000800000015000000160000001700000018000000090000000a0000000b0000000c000000190000001a0000001b0000001c0000000d0000000e0000000f000000100000001d0000001e0000001f00000020000000
+      tileIndices: 210000000100000002000000030000000400000011000000120000001300000014000000000000002200000005000000060000000700000008000000150000001600000017000000180000000000000023000000090000000a0000000b0000000c000000190000001a0000001b0000001c00000000000000240000000d0000000e0000000f000000100000001d0000001e0000001f0000002000000000000000
     tileSetIndex: 0
     parentIndex: -1
   tileSets:
@@ -1130,6 +1214,30 @@ ScriptedImporter:
         y: 50
       name: signs_32
       spriteId: e97e5b0f852bf79439bf7bfe7c0f4af1
+    - tileId: 33
+      size:
+        x: 50
+        y: 50
+      name: signs_33
+      spriteId: 535de96089d5d1749b22c766f33c6afc
+    - tileId: 34
+      size:
+        x: 50
+        y: 50
+      name: signs_34
+      spriteId: 3d617eec93988f6449453f2266884f4b
+    - tileId: 35
+      size:
+        x: 50
+        y: 50
+      name: signs_35
+      spriteId: 5206535034a206f40a2a327da99cbe32
+    - tileId: 36
+      size:
+        x: 50
+        y: 50
+      name: signs_36
+      spriteId: 45639ac3b185e48449e6511698c8e5e6
     guid: -1648167588
   platformSettings:
   - name: DefaultTexturePlatform
@@ -1159,5 +1267,5 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 400, y: 250}
+  canvasSize: {x: 450, y: 250}
   previousTextureSize: {x: 256, y: 512}
