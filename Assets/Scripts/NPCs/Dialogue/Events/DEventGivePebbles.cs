@@ -12,7 +12,7 @@ public class DEventGivePebbles : DialogueEvent
         Player.Instance.inventory.CompletePurchase(purchaseID);
         if(SoundManager.Instance != null)
         {
-            SoundManager.Instance.PlaySound(purchaseClip, 0.5f);
+            SoundManager.Instance.PlaySound(purchaseClip, 0.3f);
         }
     }
 }

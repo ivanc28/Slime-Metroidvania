@@ -57,6 +57,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI itemName;
     [SerializeField] TextMeshProUGUI itemDescription;
 
+    [SerializeField] AudioClip openClip;
+    [SerializeField] AudioClip closeClip;
+
     private List<GameObject> addedQuestSlots;
     private List<QuestCollectableData> addedQuestItems;
     private List<GameObject> addedToolSlots;
@@ -463,6 +466,10 @@ public class UIManager : MonoBehaviour
     public void OpenInventory()
     {
         GameManager.Instance.SetPaused(true);
+        if(SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySound(openClip, 1);
+        }
         inventory.SetActive(true);
         inventoryCurrencyText.text = Player.Instance.currencyData.GetCurrency().ToString();
         QuestCollectableData[] items = Player.Instance.inventory.GetAllItems().ToArray();
@@ -517,6 +524,10 @@ public class UIManager : MonoBehaviour
     }
     public void CloseInventory()
     {
+        if (SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySound(closeClip, 1);
+        }
         foreach (GameObject slot in addedQuestSlots)
         {
             Destroy(slot);

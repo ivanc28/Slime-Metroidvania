@@ -1705,6 +1705,8 @@ MonoBehaviour:
   frameSpeed: 10
   itemName: {fileID: 7551653350616647498}
   itemDescription: {fileID: 7034813683347446998}
+  openClip: {fileID: 8300000, guid: 3cad23c764b9b2a4bbb41eafb5c34d35, type: 3}
+  closeClip: {fileID: 8300000, guid: ec5d4bd90fce40c4f9bb2779fd3a7e2e, type: 3}
   screenAnim: {fileID: 2478805950289984615}
   regionTitleText: {fileID: 8231983587791184684}
   regionNames:
