@@ -1233,6 +1233,10 @@ public class Player : MonoBehaviour
             zipDirection = 0;
             AttachToZipline(collision, prevXVelForZip);
             attachingToZip = false;
+            if (SoundManager.Instance != null)
+            {
+                SoundManager.Instance.PlaySound(data.ziplineAttachClip, 1, true);
+            }
         }
     }
 

@@ -142,6 +142,7 @@ MonoBehaviour:
   objRenderer: {fileID: 0}
   objCollider: {fileID: 0}
   anim: {fileID: 0}
+  ziplineAttachClip: {fileID: 8300000, guid: 1ed57c75451b63048bfe762082282020, type: 3}
 --- !u!120 &8017220658648640779
 LineRenderer:
   serializedVersion: 3
