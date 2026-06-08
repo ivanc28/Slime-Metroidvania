@@ -20,4 +20,4 @@ MonoBehaviour:
   displayMessage: 1
   itemName: Watering Can
   description: A modern-looking watering can for farmers
-  sprite: {fileID: 0}
+  sprite: {fileID: 159861774, guid: 0d0999727d4994f468084d64f15188e6, type: 3}
