@@ -23,7 +23,6 @@ public class RoomSetUp : MonoBehaviour
         roomID = SceneManager.GetActiveScene().name;
         GameManager.Instance.AddRoom(roomID);
         GameManager.Instance.SetCurrRoomID(roomID);
-        GameManager.Instance.SetCurrRegion(region);
     }
     private void Start()
     {
@@ -62,6 +61,13 @@ public class RoomSetUp : MonoBehaviour
         Player.Instance.SetGravityToFalling();
         Player.Instance.DetachHook();
 
+        // Show region animation if new region
+        GameManager.Region prevRegion = GameManager.Instance.GetCurrRegion();
+        GameManager.Instance.SetCurrRegion(region);
+        if (prevRegion != region)
+        {
+            UIManager.Instance.DisplayRegionTitle(region);
+        }
 
     }    
 

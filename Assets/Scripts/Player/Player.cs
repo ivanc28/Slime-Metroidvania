@@ -1126,7 +1126,7 @@ public class Player : MonoBehaviour
             foodHolder.GetComponent<SpriteRenderer>().sprite = sprite;
         }
         Vector2 offset = data.eatFoodPosOffset;
-        if (!facingRight)
+        if (rend.flipX)
         {
             offset.x *= -1;
         }
@@ -1218,6 +1218,14 @@ public class Player : MonoBehaviour
         if (SoundManager.Instance != null)
         {
             SoundManager.Instance.PlaySound(data.umbrellaClips, 0.8f, true, 0.9f, 1.1f);
+        }
+    }
+    // Called by animation
+    public void PlayEatSFX()
+    {
+        if (SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySound(data.eatClips, 0.2f, true, 0.9f, 1.1f);
         }
     }
     // ------------------------------------
