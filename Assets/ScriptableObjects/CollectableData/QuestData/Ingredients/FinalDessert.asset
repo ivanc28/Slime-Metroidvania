@@ -20,6 +20,6 @@ MonoBehaviour:
   displayMessage: 1
   pickupClips:
   - {fileID: 8300000, guid: 543282096bc4b5f46917373dca622323, type: 3}
-  itemName: Amaretto Tiramisu
+  itemName: Cherry Amaretto Tiramisu
   description: A cake that infuses all the core flavors of this world
   sprite: {fileID: 1089344639, guid: 65a3c4692082ce946a9ae2e0a290af5f, type: 3}

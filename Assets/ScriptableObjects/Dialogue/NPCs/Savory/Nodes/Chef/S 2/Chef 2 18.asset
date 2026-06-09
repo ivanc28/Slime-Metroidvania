@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Chef 2 18
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 0
-  line: i make this great cake and you just steal it from me???
+  line: i make this great dessert and you just steal it from me???
   choices:
   - choiceText: 
     nextNode: {fileID: 11400000, guid: 0b32768c648cab84c846fb1d0c7b946b, type: 2}
