@@ -3,6 +3,7 @@ using TMPro;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -80,6 +81,12 @@ public class UIManager : MonoBehaviour
     [SerializeField] string[] regionNames;
     [SerializeField] Animator regionTitleAnim;
 
+    [Header("Pause Menu")]
+    [SerializeField] GameObject pauseMenu;
+    [SerializeField] GameObject pauseElements;
+    [SerializeField] GameObject optionsMenu;
+    private bool optionsOpen;
+
     public static UIManager Instance { get; private set; }
     private void Awake()
     {
@@ -152,7 +159,7 @@ public class UIManager : MonoBehaviour
         #region Inventory
         if (!inventoryOpen)
         {
-            if (Input.GetKeyDown(KeyCode.I))
+            if (Input.GetKeyDown(KeyCode.I) && !GameManager.Instance.GamePaused)
             {
                 OpenInventory();
                 inventoryOpen = true;
@@ -279,6 +286,37 @@ public class UIManager : MonoBehaviour
                 }
             }
             
+        }
+        #endregion
+        #region Pause Menu
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
+        {
+            if (inventoryOpen)
+            {
+                CloseInventory();
+                inventoryOpen = false;
+            }
+            else
+            {
+                if (GameManager.Instance.GamePaused)
+                {
+                    if (!optionsOpen)
+                    {
+                        ResumeGame();
+                    }
+                    else
+                    {
+                        ToggleOptions(false);
+                        pauseElements.SetActive(true);
+                    }
+                }
+                else
+                {
+                    DisplayPauseMenu(true);
+                    GameManager.Instance.SetPaused(true);
+                    ToggleOptions(false);
+                }
+            }
         }
         #endregion
     }
@@ -590,5 +628,26 @@ public class UIManager : MonoBehaviour
                 break;
         }
         regionTitleAnim.SetTrigger("showName");
+    }
+
+    public void DisplayPauseMenu(bool enabled)
+    {
+        pauseMenu.SetActive(enabled);
+    }
+    // called by buttons
+    public void ResumeGame()
+    {
+        pauseMenu.SetActive(false);
+        GameManager.Instance.SetPaused(false);
+    }
+    public void QuitToMenu()
+    {
+        GameManager.Instance.ResetGame();
+        SceneManager.LoadScene("MainMenu");
+    }
+    public void ToggleOptions(bool open)
+    {
+        optionsMenu.SetActive(open);
+        optionsOpen = open;
     }
 }
