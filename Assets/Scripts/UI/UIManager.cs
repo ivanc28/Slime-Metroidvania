@@ -42,6 +42,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] Animator collectTextAnim;
     [SerializeField] GameObject collectTextContainer;
     [SerializeField] TextMeshProUGUI collectText;
+    [SerializeField] AudioClip collectPopUpClip;
 
     [Header("Inventory")]
     [SerializeField] GameObject inventory;
@@ -56,6 +57,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI itemName;
     [SerializeField] TextMeshProUGUI itemDescription;
 
+    [SerializeField] AudioClip openClip;
+    [SerializeField] AudioClip closeClip;
+
     private List<GameObject> addedQuestSlots;
     private List<QuestCollectableData> addedQuestItems;
     private List<GameObject> addedToolSlots;
@@ -69,6 +73,12 @@ public class UIManager : MonoBehaviour
 
     [Header("Screen Transition")]
     [SerializeField] Animator screenAnim;
+
+    [Header("Region Title")]
+    [SerializeField] TextMeshProUGUI regionTitleText;
+    [Tooltip("0: Sweet, 1: Savory, 2: Sour, 3: Bitter")]
+    [SerializeField] string[] regionNames;
+    [SerializeField] Animator regionTitleAnim;
 
     public static UIManager Instance { get; private set; }
     private void Awake()
@@ -423,6 +433,10 @@ public class UIManager : MonoBehaviour
         collectTextContainer.SetActive(true);
         collectText.text = text;
         collectTextAnim.SetBool("isCollecting", true);
+        if(SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySound(collectPopUpClip, 0.2f, true, 1.1f, 1.1f);
+        }
     }
     public void DisableCollectText()
     {
@@ -452,6 +466,10 @@ public class UIManager : MonoBehaviour
     public void OpenInventory()
     {
         GameManager.Instance.SetPaused(true);
+        if(SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySound(openClip, 1);
+        }
         inventory.SetActive(true);
         inventoryCurrencyText.text = Player.Instance.currencyData.GetCurrency().ToString();
         QuestCollectableData[] items = Player.Instance.inventory.GetAllItems().ToArray();
@@ -506,6 +524,10 @@ public class UIManager : MonoBehaviour
     }
     public void CloseInventory()
     {
+        if (SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySound(closeClip, 1);
+        }
         foreach (GameObject slot in addedQuestSlots)
         {
             Destroy(slot);
@@ -545,5 +567,28 @@ public class UIManager : MonoBehaviour
         bool active = Player.Instance.maxGrappleCharges > 0;
         grappleSlider.gameObject.SetActive(active);
         grappleCountText.enabled = active;
+    }
+
+    public void DisplayRegionTitle(GameManager.Region region)
+    {
+        switch (region)
+        {
+            case GameManager.Region.Sweet:
+                regionTitleText.text = regionNames[0];
+                break;
+            case GameManager.Region.Savory:
+                regionTitleText.text = regionNames[1];
+                break;
+            case GameManager.Region.Sour:
+                regionTitleText.text = regionNames[2];
+                break;
+            case GameManager.Region.Bitter:
+                regionTitleText.text = regionNames[3];
+                break;
+            default:
+                regionTitleText.text = "";
+                break;
+        }
+        regionTitleAnim.SetTrigger("showName");
     }
 }

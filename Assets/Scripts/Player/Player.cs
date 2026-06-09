@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
     private float jumpBufferTimer;
     private float coyoteTimer;
     private bool canAdjustGravity = true;
+    private float lastFallVelocity;
     [Header("Components")]
     public Rigidbody2D rb;
     public Animator anim;
@@ -219,7 +220,7 @@ public class Player : MonoBehaviour
         anim.SetBool("canFlip", flipTimer <= 0 && !InSceneTransition);
 
 
-        if (InInteraction && !isLockedOnGrapple)
+        if (InInteraction && !isLockedOnGrapple && isGrounded)
         {
             // ensure we can also recharge grapples while interacting with NPCs or picking up stuff
             if (grappleCharges < maxGrappleCharges)
@@ -296,12 +297,14 @@ public class Player : MonoBehaviour
             {
                 coyoteTimer -= Time.deltaTime;
             }
+            col.sharedMaterial = data.frictionless;
             rb.sharedMaterial = data.frictionless;
             incrementGrappleCountAfterTouchGround = true;
         }
         else
         {
             coyoteTimer = data.coyoteTime;
+            col.sharedMaterial = null;
             rb.sharedMaterial = null;
             // checking if charges can be gained, hook is not being thrown, and hook is not attached (there is a frame where hook is attached but slime still grounded where recharge can happen otherwise)
             if (grappleCharges < maxGrappleCharges && currHookBeingThrown == null && isAttaching == false && !isLockedOnGrapple)
@@ -333,7 +336,6 @@ public class Player : MonoBehaviour
             FireHook();
         }
         // Detach grappling hook
-        Debug.Log($"zipping: {zipping}");
         if(Input.GetKeyDown(KeyCode.Space))
         {
             bool shouldJumpAfterDetach = false;
@@ -570,7 +572,11 @@ public class Player : MonoBehaviour
             liftedJump = false;
         }
         #endregion
-
+        // Track landing velocity
+        if (rb.linearVelocityY < 0 && !isGrounded)
+        {
+            lastFallVelocity = rb.linearVelocityY;
+        }
         // Adjust gravity
         if (canAdjustGravity)
         {
@@ -680,10 +686,12 @@ public class Player : MonoBehaviour
     {
         isJumping = true;
         rb.gravityScale = data.risingGravity;
-        if (Mathf.Abs(rb.linearVelocityX) < 1f)
-        {
-            rb.linearVelocityX = 0;
-        }
+        //if (Mathf.Abs(rb.linearVelocityX) < 1f)
+        //{
+        //    rb.linearVelocityX = 0;
+        //}
+        //StartCoroutine(DisableColliderOnePhysicsFrame());
+        col.sharedMaterial = data.frictionless;
         rb.sharedMaterial = data.frictionless;
         rb.linearVelocityY = data.jumpSpeed;
         if(SoundManager.Instance != null)
@@ -940,6 +948,7 @@ public class Player : MonoBehaviour
         }
         yield return null;
         usingTool = true;
+        col.sharedMaterial = data.someFriction;
         rb.sharedMaterial = data.someFriction;  // ensure we don't slide around when we start interacting
         InInteraction = true;
         // play tool animation or something
@@ -968,6 +977,7 @@ public class Player : MonoBehaviour
             ToggleUmbrella();
         }
         InInteraction = false;
+        col.sharedMaterial = null;
         rb.sharedMaterial = null;
         usingTool = false;
     }
@@ -1115,7 +1125,7 @@ public class Player : MonoBehaviour
             foodHolder.GetComponent<SpriteRenderer>().sprite = sprite;
         }
         Vector2 offset = data.eatFoodPosOffset;
-        if (!facingRight)
+        if (rend.flipX)
         {
             offset.x *= -1;
         }
@@ -1142,7 +1152,15 @@ public class Player : MonoBehaviour
     {
         if(SoundManager.Instance != null)
         {
-            SoundManager.Instance.PlaySound(data.walkClips, 0.2f, true, 1.8f, 2f);
+            //SoundManager.Instance.PlaySound(data.walkClips, 0.025f, true, 1.8f, 2f);
+        }
+    }
+
+    public void PlayLandSFX()
+    {
+        if (SoundManager.Instance != null && lastFallVelocity <= data.terminalFallVel + 5)
+        {
+            SoundManager.Instance.PlaySound(data.landClips, 0.2f, true, 1f, 1.2f);
         }
     }
     // Called by animation
@@ -1193,6 +1211,22 @@ public class Player : MonoBehaviour
             SoundManager.Instance.PlaySound(data.bubbleBlowClips, 0.8f, true, 1f, 1.1f);
         }
     }
+    // Called by animation
+    public void PlayUmbrellaSFX()
+    {
+        if (SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySound(data.umbrellaClips, 0.8f, true, 0.9f, 1.1f);
+        }
+    }
+    // Called by animation
+    public void PlayEatSFX()
+    {
+        if (SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySound(data.eatClips, 0.2f, true, 0.9f, 1.1f);
+        }
+    }
     // ------------------------------------
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -1206,6 +1240,10 @@ public class Player : MonoBehaviour
             zipDirection = 0;
             AttachToZipline(collision, prevXVelForZip);
             attachingToZip = false;
+            if (SoundManager.Instance != null)
+            {
+                SoundManager.Instance.PlaySound(data.ziplineAttachClip, 1, true);
+            }
         }
     }
 

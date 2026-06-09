@@ -164,6 +164,10 @@ MonoBehaviour:
   collectablePrefab: {fileID: 0}
   interactTransform: {fileID: 0}
   bush: {fileID: 4735555051083329099}
+  leavesClips:
+  - {fileID: 8300000, guid: 431713737c20e3e4a8bfa6d2700cad93, type: 3}
+  - {fileID: 8300000, guid: 5c94a488e86670c42b5cba054da97a84, type: 3}
+  - {fileID: 8300000, guid: 2f66464c75835c0428d4b15b0c0ca6ba, type: 3}
 --- !u!1001 &3731811560800602606
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -172,6 +176,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8357040566885433329}
     m_Modifications:
+    - target: {fileID: 1608443179185600185, guid: 6e7abc9b6cf1a9c448bafd96d44b7c86, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 645635634, guid: 72a69fce1d01ccd49a88e85127bffd34, type: 3}
+    - target: {fileID: 4492770881531947069, guid: 6e7abc9b6cf1a9c448bafd96d44b7c86, type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 11400000, guid: 1d932cbd13f8bef468357e96da6f67d0, type: 2}
+    - target: {fileID: 4492770881531947069, guid: 6e7abc9b6cf1a9c448bafd96d44b7c86, type: 3}
+      propertyPath: pickupMessage
+      value: You found some <color=#da4367>Berries!</color>
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958016191313439973, guid: 6e7abc9b6cf1a9c448bafd96d44b7c86, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958016191313439973, guid: 6e7abc9b6cf1a9c448bafd96d44b7c86, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958016191313439973, guid: 6e7abc9b6cf1a9c448bafd96d44b7c86, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958016191313439973, guid: 6e7abc9b6cf1a9c448bafd96d44b7c86, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958016191313439973, guid: 6e7abc9b6cf1a9c448bafd96d44b7c86, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8180098741594223675, guid: 6e7abc9b6cf1a9c448bafd96d44b7c86, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -218,6 +254,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8227116160457521973, guid: 6e7abc9b6cf1a9c448bafd96d44b7c86, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9211548040890170318, guid: 6e7abc9b6cf1a9c448bafd96d44b7c86, type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9211548040890170318, guid: 6e7abc9b6cf1a9c448bafd96d44b7c86, type: 3}
+      propertyPath: m_Offset.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

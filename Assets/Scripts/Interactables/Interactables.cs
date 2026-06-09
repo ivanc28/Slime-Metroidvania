@@ -80,7 +80,7 @@ public abstract class Interactables : MonoBehaviour
             {
                 room.collectedInteractables.Add(interactableID);
                 GameManager.Instance.worldIDs.Add(interactableID);
-                Debug.Log($"adding to colected interactables and destroying {gameObject.name}");
+                //Debug.Log($"adding to colected interactables and destroying {gameObject.name}");
                 Destroy(gameObject);
             }
         }
@@ -95,7 +95,7 @@ public abstract class Interactables : MonoBehaviour
             pebble.Initialize(data.pebblePickupDelay);
             Quaternion rotation = Quaternion.AngleAxis(Random.Range(-data.pebbleLaunchMaxAngle, data.pebbleLaunchMaxAngle), Vector3.forward);
             Vector2 dir = (rotation * Vector2.up).normalized;
-            pebble.rb.linearVelocity = dir * data.pebbleLaunchSpeed;
+            pebble.rb.linearVelocity = dir * (data.pebbleLaunchSpeed + Random.Range(-3f, 1f));
         }
     }
 

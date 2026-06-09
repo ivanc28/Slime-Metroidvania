@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Umbrella Guy 1 1
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 0
-  line: but i'm waiting on those 150 pebbles
+  line: but i'm waiting on those 200 pebbles
   choices:
   - choiceText: 
     nextNode: {fileID: 11400000, guid: e1e556903c827da40bcd9e5a627c2eec, type: 2}

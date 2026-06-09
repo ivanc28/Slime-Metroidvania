@@ -232,7 +232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::QuestCollectable
   data: {fileID: 11400000, guid: 895053010b477cf4191519b86ed1dbcd, type: 2}
   collectableID: Bitter_Ingredient
-  pickupMessage: You found <color=#FF69B4>Amaretto!</color>
+  pickupMessage: You found <color=#ff0d55>Amaretto!</color>
   keyIcon: {fileID: 6254863482828121653}
   rb: {fileID: 0}
   spriteRend: {fileID: 9093104567981088291}

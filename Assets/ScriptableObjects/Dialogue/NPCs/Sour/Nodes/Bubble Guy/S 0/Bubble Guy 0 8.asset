@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bubble Guy 0 8
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 0
-  line: i only got one bottle of soda
+  line: i only got one can of soda
   choices:
   - choiceText: 
     nextNode: {fileID: 11400000, guid: f851265f27fac7642aad1f83beab4e45, type: 2}

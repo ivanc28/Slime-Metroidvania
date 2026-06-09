@@ -22,13 +22,19 @@ public class BubbleObj : GrappleObj
 
     [SerializeField] Rigidbody2D rb;
     [SerializeField] Collider2D bubbleTrigger;
+    [SerializeField] AudioClip[] bubbleInClips;
+    [SerializeField] AudioClip[] popClips;
 
+    //private CameraSwitcher[] switchers;
+    //private ContactFilter2D filter;
     public override void MakeStart()
     {
         base.MakeStart();
         startingPos = transform.position;
         lifetime = lifespan;
         bubbleEmpty = bubbleInteractGain == null;
+        //switchers = FindObjectsByType<CameraSwitcher>(FindObjectsSortMode.None);
+        //filter = new();
     }
     public override void MakeUpdate()
     {
@@ -153,6 +159,10 @@ public class BubbleObj : GrappleObj
     private void EnterBubble()
     {
         anim.SetBool("inBubble", true);
+        if(SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySound(bubbleInClips, 0.5f, true);
+        }
         Player.Instance.rb.gravityScale = 0;
         Player.Instance.rb.linearVelocity = Vector2.zero;
         Player.Instance.rb.position = transform.position;
@@ -185,13 +195,13 @@ public class BubbleObj : GrappleObj
         bubbleTrigger.isTrigger = true;
         bubbleTrigger.excludeLayers = nothingLayer;
         startFlashing = false;
-        foreach (CameraSwitcher switcher in FindObjectsByType<CameraSwitcher>(FindObjectsSortMode.None))
-        {
-            if (switcher.UsingCamera)
-            {
-                switcher.OnPlayerExitBubble();
-            }
-        }
+        //foreach (CameraSwitcher switcher in FindObjectsByType<CameraSwitcher>(FindObjectsSortMode.None))
+        //{
+        //    if (switcher.UsingCamera)
+        //    {
+        //        switcher.OnPlayerExitBubble();
+        //    }
+        //}
         StartCoroutine(PopBubble(popTime));
     }
 
@@ -212,12 +222,20 @@ public class BubbleObj : GrappleObj
         Vector2 movement = velocityDif * accelRate;
 
         rb.AddForce(movement, ForceMode2D.Force);
+        //foreach (CameraSwitcher switcher in switchers)
+        //{
+        //    switcher.CheckColliderPlayerInBubble(bubbleTrigger, filter);
+        //}
     }
 
     public IEnumerator PopBubble(float delayBeforeReappear)
     {
         yield return null;
         DeactivateBubble();
+        if(SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySound(popClips, 0.075f, true, 0.9f, 1.1f);
+        }
         yield return new WaitForSeconds(delayBeforeReappear);
         ActivateBubble();
         anim.SetTrigger("replaceBubble");

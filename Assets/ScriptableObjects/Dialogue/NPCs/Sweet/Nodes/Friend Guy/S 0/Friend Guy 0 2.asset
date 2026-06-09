@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Friend Guy 0 2
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 0
-  line: today, we're eating dessert!
+  line: today, we're eating <color=#ff0d55>Dessert!</color>
   choices:
   - choiceText: 
     nextNode: {fileID: 11400000, guid: d461db4eb39532b4d867bff27350a507, type: 2}

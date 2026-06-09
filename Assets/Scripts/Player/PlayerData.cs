@@ -70,15 +70,19 @@ public class PlayerData : ScriptableObject
     [Header("Sound Effects")]
     public AudioClip[] walkClips;
     public AudioClip[] jumpClips;
+    public AudioClip[] landClips;
     public AudioClip[] whooshClips;
     public AudioClip[] throwGrappleClips;
     public AudioClip grappleLandClip;
     public AudioClip[] digClips;
     public AudioClip[] whiskClips;
     public AudioClip[] scissorsClips;
+    public AudioClip[] umbrellaClips;
     public AudioClip[] forkClips;
     public AudioClip[] chopsticksClips;
     public AudioClip[] bubbleBlowClips;
+    public AudioClip ziplineAttachClip;
+    public AudioClip[] eatClips;
     public AudioClip hoverUIClip;
     [Header("Animations")]
     [Tooltip("The offset from player's position where bubbles will spawn due to BLOWING BUBBLES ANIMATION")]

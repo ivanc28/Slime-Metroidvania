@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Flower Guy 0 1
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 0
-  line: i wanted to make a new bubble tea recipe
+  line: i wanted to make a new tea recipe
   choices:
   - choiceText: 
     nextNode: {fileID: 11400000, guid: 0ed9f16099e41614b9a26200c08d692a, type: 2}

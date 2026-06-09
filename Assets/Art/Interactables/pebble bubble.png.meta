@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 26a11915748413141b82605e5c1e0211
+guid: dd4a15f1b519cc04f89e520546984c24
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -96,6 +96,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -137,8 +150,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd1ff77e0afc3f443ab9976d2d67ba8e
-      internalID: 781460988
+      spriteID: 377edde19db001e4589573f6a05e8603
+      internalID: -491542115
       vertices: []
       indices: 
       edges: []
@@ -159,8 +172,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6aed41a5699b54740a00b79a7746fd06
-      internalID: -1557536593
+      spriteID: df76072d646f9b04c9ae0c060598b8e5
+      internalID: -1355127405
       vertices: []
       indices: 
       edges: []
@@ -181,8 +194,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d2cde6a3af601764799a881cb46f3927
-      internalID: -195105845
+      spriteID: ad1e72f65c24e744c84eb648e4d9019b
+      internalID: -1150296715
       vertices: []
       indices: 
       edges: []
@@ -203,8 +216,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3e96d89c063da9246b2c777e1250bdbb
-      internalID: -1392258552
+      spriteID: b9c63ab9e978ed1419e6d927eca40d83
+      internalID: 416740322
       vertices: []
       indices: 
       edges: []
@@ -213,7 +226,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 8ab5617a523a0fb4ba79e245ec965777
+    spriteID: ef2b01bf58efd0c4ea70ff5d9e4fcf65
     internalID: 0
     vertices: []
     indices: 
@@ -226,10 +239,10 @@ TextureImporter:
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       pebble bubble_0: 41490175618422106
-      pebble bubble_1: 781460988
-      pebble bubble_2: -1557536593
-      pebble bubble_3: -195105845
-      pebble bubble_4: -1392258552
+      pebble bubble_1: -491542115
+      pebble bubble_2: -1355127405
+      pebble bubble_3: -1150296715
+      pebble bubble_4: 416740322
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

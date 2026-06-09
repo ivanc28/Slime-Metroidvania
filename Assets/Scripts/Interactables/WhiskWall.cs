@@ -13,7 +13,8 @@ public class WhiskWall : MonoBehaviour
     Vector2 startPos;
     Vector2 moveDir;
     bool isMoving;
-
+    public AudioClip moveClip;
+    private bool canPlayMoveSound = true;
     RoomData room;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -39,6 +40,14 @@ public class WhiskWall : MonoBehaviour
             percentOfWayToEnd = Mathf.Lerp(0, 1, Mathf.Pow(time / moveTime, power));
             wallPos.transform.position = startPos + moveDistance * percentOfWayToEnd * moveDir;
             time += Time.deltaTime;
+            if(time > moveTime / 2.5f && canPlayMoveSound)
+            {
+                if (SoundManager.Instance != null)
+                {
+                    SoundManager.Instance.PlaySound(moveClip, 0.5f);
+                }
+                canPlayMoveSound = false;
+            }
             yield return null;
         }
         wallPos.transform.position = endPos.position;
