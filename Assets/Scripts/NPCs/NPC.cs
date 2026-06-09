@@ -6,13 +6,20 @@ using UnityEngine;
 
 public class NPC : MonoBehaviour
 {
+    public static NPC CurrentInteractingNPC { get; private set; }
     public NPCData data;
     public GameObject keyIcon;
     public SpriteRenderer npcRenderer;
+    public Animator anim;
+    public bool logWarnings;
     [Tooltip("Forces the player to move to the right of NPC when talking")]
     public bool forcePlayerMoveRight;
     [Tooltip("Forces the player to move to the left of NPC when talking")]
     public bool forcePlayerMoveLeft;
+    [Header("Animation Stuff")]
+    public bool alwaysTryFacePlayer;
+    [Tooltip("How close the player must be from this NPC for the NPC to look at them")]
+    public float lookAtPlayerThreshold;
     
     private DialogueNode currNode;
     private int currDialogueSequence;
@@ -28,7 +35,7 @@ public class NPC : MonoBehaviour
     private GameObject currDialogueBox;
 
     RoomData room;
-
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -44,7 +51,7 @@ public class NPC : MonoBehaviour
         keyIcon.GetComponent<SpriteRenderer>().sprite = data.keySprite;
         EnableKeyIcon(false);
         maxDialogueSequences = data.dialogueSequences.Length;
-        
+        anim.logWarnings = logWarnings;
     }
 
     // Update is called once per frame
@@ -65,6 +72,15 @@ public class NPC : MonoBehaviour
             }
         }
 
+        bool playerClose = Vector2.Distance(transform.position, Player.Instance.transform.position) <= lookAtPlayerThreshold;
+        if (alwaysTryFacePlayer)
+        {
+            if(playerClose)
+            {
+                SetFacingRight(transform.position.x < Player.Instance.transform.position.x);
+            }
+        }
+        anim.SetBool("playerClose", playerClose);
     }
 
     /// <summary>
@@ -72,8 +88,10 @@ public class NPC : MonoBehaviour
     /// </summary>
     public void Interact()
     {
+        CurrentInteractingNPC = this;
         isInteracting = true;
         EnableKeyIcon(false);
+        SetFacingRight(transform.position.x < Player.Instance.transform.position.x);
         Condition skipCondition = data.dialogueSequences[currDialogueSequence].skipSequenceCondition;
         if (skipCondition != null && skipCondition.ConditionMet())
         {
@@ -165,7 +183,8 @@ public class NPC : MonoBehaviour
     }
 
     private void EndDialogueSequence()
-    {       
+    {
+        CurrentInteractingNPC = null;
         Destroy(currDialogueBox);
         currDialogueBox = null;
         StartCoroutine(ReleasePlayerNextFrame());
@@ -405,6 +424,28 @@ public class NPC : MonoBehaviour
     public bool IsInteracting()
     {
         return isInteracting;
+    }
+
+    // Animations
+    public void SetFacingRight(bool facingRight)
+    {
+        npcRenderer.flipX = !facingRight;
+    }
+    public void FaceRight()
+    {
+        npcRenderer.flipX = false;
+    }
+    public void FaceLeft()
+    {
+        npcRenderer.flipX = true;
+    }
+    public void SetMoving()
+    {
+        anim.SetBool("isMoving", true);
+    }
+    public void SetIdle()
+    {
+        anim.SetBool("isMoving", false);
     }
     private void OnDrawGizmos()
     {

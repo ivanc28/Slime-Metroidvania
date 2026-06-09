@@ -111,6 +111,15 @@ public class NPCAI : MonoBehaviour
 
     private void Move(float dir)
     {
+        if(dir == 0)
+        {
+            npc.SetIdle();
+        }
+        else
+        {
+            npc.SetMoving();
+            npc.SetFacingRight(dir > 0);
+        }
         rb.linearVelocityX = dir * data.moveSpeed;
     }
     private void Jump()
