@@ -234,7 +234,7 @@ public class BubbleObj : GrappleObj
         DeactivateBubble();
         if(SoundManager.Instance != null)
         {
-            SoundManager.Instance.PlaySound(popClips, 0.075f, true, 0.9f, 1.1f);
+            SoundManager.Instance.PlaySound(popClips, 0.15f, true, 0.9f, 1.1f);
         }
         yield return new WaitForSeconds(delayBeforeReappear);
         ActivateBubble();

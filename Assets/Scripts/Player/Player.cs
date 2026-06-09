@@ -1208,7 +1208,7 @@ public class Player : MonoBehaviour
     {
         if (SoundManager.Instance != null)
         {
-            SoundManager.Instance.PlaySound(data.bubbleBlowClips, 0.8f, true, 1f, 1.1f);
+            SoundManager.Instance.PlaySound(data.bubbleBlowClips, 0.4f, true, 1f, 1.1f);
         }
     }
     // Called by animation
