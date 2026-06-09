@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 18ada4005ecb17944814eaedf6f52465, type: 3}
-  m_Name: YellowTomato
+  m_Name: GreenTomato
   m_EditorClassIdentifier: Assembly-CSharp::CollectableData
   maxDistanceToCollect: 1.5
   itemSprite: {fileID: -4501691356708268708, guid: bf51c24a483b3a846accefc12e3ad412, type: 3}

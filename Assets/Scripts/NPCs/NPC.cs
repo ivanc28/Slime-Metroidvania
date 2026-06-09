@@ -20,6 +20,8 @@ public class NPC : MonoBehaviour
     public bool alwaysTryFacePlayer;
     [Tooltip("How close the player must be from this NPC for the NPC to look at them")]
     public float lookAtPlayerThreshold;
+    public bool neverFlipDir;
+    //public bool onlyFacePlayerWhenSpeak;
     
     private DialogueNode currNode;
     private int currDialogueSequence;
@@ -429,14 +431,20 @@ public class NPC : MonoBehaviour
     // Animations
     public void SetFacingRight(bool facingRight)
     {
+        if (neverFlipDir)
+            return;
         npcRenderer.flipX = !facingRight;
     }
     public void FaceRight()
     {
+        if (neverFlipDir)
+            return;
         npcRenderer.flipX = false;
     }
     public void FaceLeft()
     {
+        if (neverFlipDir)
+            return;
         npcRenderer.flipX = true;
     }
     public void SetMoving()
