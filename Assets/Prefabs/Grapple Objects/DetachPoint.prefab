@@ -267,3 +267,4 @@ MonoBehaviour:
   rb: {fileID: 4267910538756410414}
   spinForce: 2000
   maxSpinSpeed: 750
+  spinClip: {fileID: 8300000, guid: ecafdf20d6e8fbc45b06a203f0a46bf5, type: 3}
