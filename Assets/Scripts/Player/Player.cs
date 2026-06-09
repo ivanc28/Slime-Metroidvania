@@ -95,6 +95,7 @@ public class Player : MonoBehaviour
     private float flipTimer;
     public GameObject foodHolder;
     public bool InSceneTransition {  get; set; }
+    [SerializeField] TrailRenderer trail;
     // Interactions
     public bool InInteraction { get; set; }
 
@@ -210,6 +211,7 @@ public class Player : MonoBehaviour
         anim.SetBool("isGrappleLocked", isLockedOnGrapple);
         anim.SetBool("isZipping", zipping);
         anim.SetBool("inBubble", inBubble);
+        trail.enabled = !inBubble;
 
         if (flipTimer > 0 && !isGrounded)
         {
@@ -285,7 +287,7 @@ public class Player : MonoBehaviour
         RaycastHit2D leftWallCheck = Physics2D.Raycast(leftOrigin, Vector2.left, data.checkWallLength, data.groundObjects);
         touchingWall = rightWallCheck || leftWallCheck;
 
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.Space) /*|| Input.GetKeyDown(KeyCode.W)*/)
         {
             pressedJump = true;
             jumpBufferTimer = data.jumpBuffer;
@@ -340,7 +342,7 @@ public class Player : MonoBehaviour
             }
         } 
         
-        if ((Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.W)) && isJumping && !isLockedOnGrapple)
+        if ((Input.GetKeyUp(KeyCode.Space) /*|| Input.GetKeyUp(KeyCode.W)*/) && isJumping && !isLockedOnGrapple)
         {
             liftedJump = true;
         }
@@ -353,7 +355,7 @@ public class Player : MonoBehaviour
             FireHook();
         }
         // Detach grappling hook
-        if(Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
+        if(Input.GetKeyDown(KeyCode.Space) /*|| Input.GetKeyDown(KeyCode.W)*/)
         {
             bool shouldJumpAfterDetach = false;
             if (isLockedOnGrapple || isAttaching)
