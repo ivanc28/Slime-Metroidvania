@@ -1137,7 +1137,7 @@ public class Player : MonoBehaviour
     }
     // --------------
 
-    // ---- Food animation stuff --------
+    // ---- Animation stuff --------
     public void SetFoodHolder(Sprite sprite)
     {
         foodHolder.SetActive(true);
@@ -1152,6 +1152,12 @@ public class Player : MonoBehaviour
         }
         foodHolder.transform.localPosition = offset;
     }
+
+    public void ClearTrail()
+    {
+        trail.Clear();
+    }
+    // -----------------------------------
     // Called by animation
     public void HideFoodHolder()
     {

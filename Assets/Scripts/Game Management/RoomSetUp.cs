@@ -60,6 +60,7 @@ public class RoomSetUp : MonoBehaviour
         }
         Player.Instance.SetGravityToFalling();
         Player.Instance.DetachHook();
+        Player.Instance.ClearTrail();
 
         // Show region animation if new region
         GameManager.Region prevRegion = GameManager.Instance.GetCurrRegion();
