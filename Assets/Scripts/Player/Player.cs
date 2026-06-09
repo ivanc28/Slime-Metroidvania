@@ -822,6 +822,8 @@ public class Player : MonoBehaviour
         currentAttachedCollider = currentCollider;
 
         rb.gravityScale = 0;
+
+        Instantiate(data.slimeParticle, hookPoint, data.slimeParticle.transform.rotation);
     }
     public void DetachHook()
     {
@@ -1172,12 +1174,16 @@ public class Player : MonoBehaviour
             //SoundManager.Instance.PlaySound(data.walkClips, 0.025f, true, 1.8f, 2f);
         }
     }
-
+    // Called by animation
     public void PlayLandSFX()
     {
-        if (SoundManager.Instance != null && lastFallVelocity <= data.terminalFallVel + 5)
+        if(lastFallVelocity <= data.terminalFallVel + 5)
         {
-            SoundManager.Instance.PlaySound(data.landClips, 0.2f, true, 1f, 1.2f);
+            if (SoundManager.Instance != null)
+            {
+                SoundManager.Instance.PlaySound(data.landClips, 0.2f, true, 1f, 1.2f);
+            }
+            Instantiate(data.slimeParticle, transform.position, data.slimeParticle.transform.rotation);
         }
     }
     // Called by animation

@@ -91,6 +91,7 @@ public class PlayerData : ScriptableObject
     public Vector2 bubbleParticleOffset;
     public ParticleSystem shortBubbleParticle;
     public Vector2 eatFoodPosOffset;
+    public GameObject slimeParticle;
     [Header("Debug")]
     public float noclipSpeed;
 }

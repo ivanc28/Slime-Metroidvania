@@ -111,4 +111,5 @@ MonoBehaviour:
   bubbleParticleOffset: {x: 1, y: 1}
   shortBubbleParticle: {fileID: 6314520340302582308, guid: c4fd394705acb3e49ad009733b2acdeb, type: 3}
   eatFoodPosOffset: {x: 0.5, y: 0.5}
+  slimeParticle: {fileID: 227238257370530332, guid: f93b7c5d1fd76554c9472ef6a4d6f77f, type: 3}
   noclipSpeed: 17.5
