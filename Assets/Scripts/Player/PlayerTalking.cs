@@ -32,7 +32,7 @@ public class PlayerTalking : MonoBehaviour
         {
             nearestNPC.EnableKeyIcon(true);
         }
-        if (Input.GetKeyDown(KeyCode.W) && Player.Instance.GetIsGrounded() && !Player.Instance.InInteraction && !Player.Instance.GetIsLocked() && !Player.Instance.GetIsAttaching() && !Player.Instance.GetHookBeingThrown())
+        if (Input.GetKeyDown(KeyCode.Q) && Player.Instance.GetIsGrounded() && !Player.Instance.InInteraction && !Player.Instance.GetIsLocked() && !Player.Instance.GetIsAttaching() && !Player.Instance.GetHookBeingThrown())
         {
             StartCoroutine(InteractWithNPC(nearestNPC));
             startedMovingForNPC = true;

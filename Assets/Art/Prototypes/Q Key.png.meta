@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: W_Key
+      name: Q_Key
       rect:
         serializedVersion: 2
         x: 0
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      W_Key: -1603291472181913768
+      Q_Key: -1603291472181913768
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

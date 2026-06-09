@@ -285,7 +285,7 @@ public class Player : MonoBehaviour
         RaycastHit2D leftWallCheck = Physics2D.Raycast(leftOrigin, Vector2.left, data.checkWallLength, data.groundObjects);
         touchingWall = rightWallCheck || leftWallCheck;
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
         {
             pressedJump = true;
             jumpBufferTimer = data.jumpBuffer;
@@ -340,7 +340,7 @@ public class Player : MonoBehaviour
             }
         } 
         
-        if (Input.GetKeyUp(KeyCode.Space) && isJumping && !isLockedOnGrapple)
+        if ((Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.W)) && isJumping && !isLockedOnGrapple)
         {
             liftedJump = true;
         }
@@ -353,7 +353,7 @@ public class Player : MonoBehaviour
             FireHook();
         }
         // Detach grappling hook
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
         {
             bool shouldJumpAfterDetach = false;
             if (isLockedOnGrapple || isAttaching)

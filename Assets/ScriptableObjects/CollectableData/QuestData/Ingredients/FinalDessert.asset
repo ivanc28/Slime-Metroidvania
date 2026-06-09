@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::QuestCollectableData
   maxDistanceToCollect: 1.5
   itemSprite: {fileID: 0}
-  pickupKey: 0
+  pickupKey: 113
   keySprite: {fileID: 0}
   pickupTime: 1
   displayMessage: 1
