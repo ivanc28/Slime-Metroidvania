@@ -85,4 +85,17 @@ public class GameManager : MonoBehaviour
         GamePaused = paused;
         Time.timeScale = paused ? 0 : currTimeScale;
     }
+
+    public void ResetGame()
+    {
+        if(Player.Instance != null)
+        {
+            Destroy(Player.Instance.gameObject);
+        }
+        if(MusicManager.Instance != null)
+        {
+            Destroy(MusicManager.Instance.gameObject);
+        }
+        Destroy(gameObject);
+    }
 }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Friend Guy 0 13
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 0
-  line: with baking banned and all
+  line: with desserts banned and all
   choices:
   - choiceText: 
     nextNode: {fileID: 11400000, guid: 51b23ea3fab07e6489ac085b461c8716, type: 2}

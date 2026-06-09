@@ -22,6 +22,8 @@ public class Player : MonoBehaviour
     private float coyoteTimer;
     private bool canAdjustGravity = true;
     private float lastFallVelocity;
+    private bool touchingWall;
+
     [Header("Components")]
     public Rigidbody2D rb;
     public Animator anim;
@@ -277,7 +279,13 @@ public class Player : MonoBehaviour
         //    moveInput = 0;
         //}
         isGrounded = Physics2D.OverlapCircle(feetPos.position, data.feetRadius, data.groundObjects);
-        if (Input.GetKeyDown(KeyCode.Space))
+        Vector2 checkWallOrigin = transform.position;
+        RaycastHit2D rightWallCheck = Physics2D.Raycast(checkWallOrigin + data.checkWallOffset, Vector2.right,data.checkWallLength, data.groundObjects);
+        Vector2 leftOrigin = new Vector2(checkWallOrigin.x - data.checkWallOffset.x, checkWallOrigin.y + data.checkWallOffset.y);
+        RaycastHit2D leftWallCheck = Physics2D.Raycast(leftOrigin, Vector2.left, data.checkWallLength, data.groundObjects);
+        touchingWall = rightWallCheck || leftWallCheck;
+
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
         {
             pressedJump = true;
             jumpBufferTimer = data.jumpBuffer;
@@ -291,21 +299,30 @@ public class Player : MonoBehaviour
                 pressedJump = false;
             }
         }
+
         if (!isGrounded)
         {
             if (coyoteTimer > 0)
             {
                 coyoteTimer -= Time.deltaTime;
             }
+            incrementGrappleCountAfterTouchGround = true;
             col.sharedMaterial = data.frictionless;
             rb.sharedMaterial = data.frictionless;
-            incrementGrappleCountAfterTouchGround = true;
         }
         else
         {
             coyoteTimer = data.coyoteTime;
-            col.sharedMaterial = null;
-            rb.sharedMaterial = null;
+            if (touchingWall)
+            {
+                col.sharedMaterial = data.frictionless;
+                rb.sharedMaterial = data.frictionless;
+            }
+            else
+            {
+                col.sharedMaterial = null;
+                rb.sharedMaterial = null;
+            }
             // checking if charges can be gained, hook is not being thrown, and hook is not attached (there is a frame where hook is attached but slime still grounded where recharge can happen otherwise)
             if (grappleCharges < maxGrappleCharges && currHookBeingThrown == null && isAttaching == false && !isLockedOnGrapple)
             {
@@ -314,7 +331,7 @@ public class Player : MonoBehaviour
                     grappleRechargeTimer += Time.deltaTime;
                     //UIManager.Instance.UpdateGrappleSlider();
                 }
-                if(grappleRechargeTimer >= grappleRechargeTime || incrementGrappleCountAfterTouchGround)
+                if (grappleRechargeTimer >= grappleRechargeTime || incrementGrappleCountAfterTouchGround)
                 {
                     grappleCharges++;
                     grappleRechargeTimer = 0;
@@ -323,7 +340,7 @@ public class Player : MonoBehaviour
             }
         } 
         
-        if (Input.GetKeyUp(KeyCode.Space) && isJumping && !isLockedOnGrapple)
+        if ((Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.W)) && isJumping && !isLockedOnGrapple)
         {
             liftedJump = true;
         }
@@ -336,7 +353,7 @@ public class Player : MonoBehaviour
             FireHook();
         }
         // Detach grappling hook
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
         {
             bool shouldJumpAfterDetach = false;
             if (isLockedOnGrapple || isAttaching)
@@ -1208,7 +1225,7 @@ public class Player : MonoBehaviour
     {
         if (SoundManager.Instance != null)
         {
-            SoundManager.Instance.PlaySound(data.bubbleBlowClips, 0.8f, true, 1f, 1.1f);
+            SoundManager.Instance.PlaySound(data.bubbleBlowClips, 0.4f, true, 1f, 1.1f);
         }
     }
     // Called by animation
@@ -1251,6 +1268,12 @@ public class Player : MonoBehaviour
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(feetPos.position, data.feetRadius);
+        Gizmos.color = Color.red;
+        Vector2 checkWallOrigin = transform.position;
+        Vector2 rightCheck = checkWallOrigin + data.checkWallOffset;
+        Vector2 leftOrigin = new Vector2(checkWallOrigin.x - data.checkWallOffset.x, checkWallOrigin.y + data.checkWallOffset.y);
+        Gizmos.DrawRay(rightCheck, Vector2.right * data.checkWallLength);
+        Gizmos.DrawRay(leftOrigin, Vector2.left * data.checkWallLength);
     }
 
 }

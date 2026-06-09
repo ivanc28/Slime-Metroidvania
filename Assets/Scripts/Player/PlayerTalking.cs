@@ -32,7 +32,7 @@ public class PlayerTalking : MonoBehaviour
         {
             nearestNPC.EnableKeyIcon(true);
         }
-        if (Input.GetKeyDown(KeyCode.W) && Player.Instance.GetIsGrounded() && !Player.Instance.InInteraction && !Player.Instance.GetIsLocked() && !Player.Instance.GetIsAttaching() && !Player.Instance.GetHookBeingThrown())
+        if (Input.GetKeyDown(KeyCode.Q) && Player.Instance.GetIsGrounded() && !Player.Instance.InInteraction && !Player.Instance.GetIsLocked() && !Player.Instance.GetIsAttaching() && !Player.Instance.GetHookBeingThrown())
         {
             StartCoroutine(InteractWithNPC(nearestNPC));
             startedMovingForNPC = true;
@@ -108,13 +108,13 @@ public class PlayerTalking : MonoBehaviour
                             {
                                 // There's ground and no wall, let's go left instead
                                 walkRight = false;
-                                Debug.Log("case 1");
+                                //Debug.Log("case 1");
                             }
                             else
                             {
                                 // Can't go this way either, let's stay in place
                                 rayCheckStayInPlace = true;
-                                Debug.Log("case 2");
+                                //Debug.Log("case 2");
                             }
                         }
                     }
@@ -127,13 +127,13 @@ public class PlayerTalking : MonoBehaviour
                             {
                                 // There's ground and no wall, let's go right instead
                                 walkRight = true;
-                                Debug.Log("case 3");
+                                //Debug.Log("case 3");
                             }
                             else
                             {
                                 // Can't go this way either, let's stay in place
                                 rayCheckStayInPlace = true;
-                                Debug.Log("case 4");
+                                //Debug.Log("case 4");
                             }
                         }
                     }

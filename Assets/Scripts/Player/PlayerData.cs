@@ -24,6 +24,8 @@ public class PlayerData : ScriptableObject
     public float fallingGravity;
     public float stopJumpGravity;
     public float terminalFallVel;
+    public Vector2 checkWallOffset;
+    public float checkWallLength;
     [Tooltip("How many seconds of input jump buffer")]
     public float jumpBuffer;
     [Tooltip("How many seconds of coyote time")]

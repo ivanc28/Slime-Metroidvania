@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Friend Guy 0 7
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 0
-  line: you gotta be my secret agent!
+  line: you gotta be my <color=#cc2d6a>Secret Agent!</color>
   choices:
   - choiceText: 
     nextNode: {fileID: 11400000, guid: bf9975736779b92469a9617e86a1d084, type: 2}

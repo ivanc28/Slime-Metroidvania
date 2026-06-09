@@ -146,6 +146,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 431713737c20e3e4a8bfa6d2700cad93, type: 3}
   - {fileID: 8300000, guid: 5c94a488e86670c42b5cba054da97a84, type: 3}
   - {fileID: 8300000, guid: 2f66464c75835c0428d4b15b0c0ca6ba, type: 3}
+  leavesParticle: {fileID: 227238257370530332, guid: 19118cf7f27a0a6499e7ad7fc59cd948, type: 3}
 --- !u!61 &1128731100851096240
 BoxCollider2D:
   m_ObjectHideFlags: 0

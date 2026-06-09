@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5efc9df48170572458a3afb7e8317a37
+guid: de83f948e2ebc3646a21739a34dd0c75
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1603291472181913768
-    second: New Piskel (3)_0
+      213: 368543389579951487
+    second: slime_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -48,7 +48,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: W_Key
+      name: slime_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 16
-        height: 16
+        y: 8
+        width: 4
+        height: 4
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8571f2196e6ffb9e0800000000000000
-      internalID: -1603291472181913768
+      spriteID: f7d3b3c92445d1500800000000000000
+      internalID: 368543389579951487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slime_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac7813a806cbdfc498e1e815a254bf20
+      internalID: 674778173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slime_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c2c2b8bf73e94845892a1585dbf7b33
+      internalID: -1458911796
       vertices: []
       indices: 
       edges: []
@@ -138,7 +169,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: d1c4bd0b1877fb64cb61aae58cdd7726
+    spriteID: 58d59fe80819d8a4d9c5864a533b9e48
     internalID: 0
     vertices: []
     indices: 
@@ -146,9 +177,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":4.0,"y":4.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      W_Key: -1603291472181913768
+      slime_0: 368543389579951487
+      slime_1: 674778173
+      slime_2: -1458911796
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
