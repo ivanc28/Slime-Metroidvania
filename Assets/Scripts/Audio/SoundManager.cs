@@ -1,11 +1,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance { get; private set; }
 
+    [SerializeField] AudioMixerGroup sfxGroup;
     [SerializeField] int audioSourcePoolSize = 10;
     private List<AudioSource> audioSourcePool = new ();
 
@@ -22,6 +24,7 @@ public class SoundManager : MonoBehaviour
         for (int i = 0; i < audioSourcePoolSize; i++)
         {
             AudioSource source = gameObject.AddComponent<AudioSource>();
+            source.outputAudioMixerGroup = sfxGroup;
             audioSourcePool.Add(source);
         }
     }
