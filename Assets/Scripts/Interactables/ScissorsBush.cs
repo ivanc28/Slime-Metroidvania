@@ -41,7 +41,7 @@ public class ScissorsBush : MonoBehaviour
     {
         if(cutParticle != null)
         {
-            Instantiate(cutParticle, transform.position, Quaternion.identity);
+            Instantiate(cutParticle, transform.position, cutParticle.transform.rotation);
         }
     }
 }
