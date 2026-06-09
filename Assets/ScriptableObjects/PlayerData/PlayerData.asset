@@ -33,6 +33,8 @@ MonoBehaviour:
   fallingGravity: 6
   stopJumpGravity: 10
   terminalFallVel: -25
+  checkWallOffset: {x: 0.5, y: 0.35}
+  checkWallLength: 0.25
   jumpBuffer: 0.1
   coyoteTime: 0.1
   baseGrappleLength: 9
