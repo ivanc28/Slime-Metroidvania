@@ -44,11 +44,11 @@ AnimationClip:
       value: {fileID: -2799193816001643255, guid: 0dd808e28e54aff49857966692288db0, type: 3}
     - time: 5.3333335
       value: {fileID: 8321594070451555016, guid: 0dd808e28e54aff49857966692288db0, type: 3}
-    - time: 5.733333
+    - time: 6.116667
       value: {fileID: 3892245825980754771, guid: 0dd808e28e54aff49857966692288db0, type: 3}
     - time: 6.133333
       value: {fileID: 4469165662667334577, guid: 0dd808e28e54aff49857966692288db0, type: 3}
-    - time: 6.15
+    - time: 6.516667
       value: {fileID: 826613992883734436, guid: 0dd808e28e54aff49857966692288db0, type: 3}
     - time: 6.5333333
       value: {fileID: 2372022978961670741, guid: 0dd808e28e54aff49857966692288db0, type: 3}
