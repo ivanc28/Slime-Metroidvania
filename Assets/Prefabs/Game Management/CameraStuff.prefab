@@ -346,7 +346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineConfiner2D
   BoundingShape2D: {fileID: 4494566472889855665}
-  Damping: 0
+  Damping: 5
   SlowingDistance: 0
   OversizeWindow:
     Enabled: 0
@@ -562,7 +562,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineConfiner2D
   BoundingShape2D: {fileID: 5258134192643421351}
-  Damping: 0
+  Damping: 5
   SlowingDistance: 0
   OversizeWindow:
     Enabled: 0
