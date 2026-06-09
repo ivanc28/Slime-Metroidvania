@@ -120,6 +120,10 @@ public abstract class Interactables : MonoBehaviour
         return interactableID;
     }
 
+    public Vector2 GetInteractPoint()
+    {
+        return interactPoint;
+    }
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
