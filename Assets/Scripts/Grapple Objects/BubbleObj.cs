@@ -59,7 +59,7 @@ public class BubbleObj : GrappleObj
         moveInput = move;
 
         // Escape bubble
-        if (playerInBubble && (Input.GetKeyDown(KeyCode.Space) || Player.Instance.GetIsAttaching()))
+        if (playerInBubble && (Input.GetKeyDown(KeyCode.Space) || Player.Instance.GetIsAttaching() || Player.Instance.GetIsLocked()))
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
