@@ -2431,8 +2431,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1084625185}
-  - component: {fileID: 1084625184}
   - component: {fileID: 1084625186}
+  - component: {fileID: 1084625184}
   m_Layer: 0
   m_Name: MusicManager
   m_TagString: Untagged
@@ -2453,7 +2453,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: f881641d2add77547a07ee78d6a83cbe, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2564,8 +2564,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e5c4286e9169c64abf9fcd2ddb0ecd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MusicManager
+  musicSource: {fileID: 1084625184}
   menuSong: {fileID: 8300000, guid: f881641d2add77547a07ee78d6a83cbe, type: 3}
-  regionSongs: []
+  regionSongs:
+  - {fileID: 8300000, guid: f3c2f21eadef8884ba163b9ae5168db1, type: 3}
+  - {fileID: 8300000, guid: 4fcda0336ad8f2b45afb01f417ee8a61, type: 3}
+  - {fileID: 8300000, guid: f3c2f21eadef8884ba163b9ae5168db1, type: 3}
+  - {fileID: 8300000, guid: 06b89a1c52c46b94cbec27a62565b7d0, type: 3}
+  fadeMusicTime: 1
+  timeBetweenSongs: 0.25
 --- !u!1 &1088247464
 GameObject:
   m_ObjectHideFlags: 0

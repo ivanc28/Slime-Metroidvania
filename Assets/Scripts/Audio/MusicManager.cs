@@ -3,10 +3,12 @@ using UnityEngine;
 
 public class MusicManager : MonoBehaviour
 {
+    public AudioSource musicSource;
     public AudioClip menuSong;
     [Tooltip("0 is Sweet, 1 is Savory, 2 is Sour, 3 is Bitter")]
     public AudioClip[] regionSongs;
     public float fadeMusicTime;
+    public float timeBetweenSongs;
     public static MusicManager Instance { get; private set; }
     private void Awake()
     {
@@ -18,12 +20,21 @@ public class MusicManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
-    public void ChangeSong()
+    public void ChangeSong(GameManager.Region prevRegion, GameManager.Region currRegion)
     {
-
+        if(currRegion == GameManager.Region.None || prevRegion == currRegion)
+        {
+            return;
+        }
+        StartCoroutine(TransitionToNewRegionSong(currRegion));
     }
-    private IEnumerator TransitionToNewSong()
+    private IEnumerator TransitionToNewRegionSong(GameManager.Region region)
     {
+        if(region == GameManager.Region.None)
+        {
+            Debug.LogWarning("Something with the music went wrong");
+            yield break;
+        }
         float volume = AudioListener.volume;
         float timer = fadeMusicTime;
         while (timer > 0)
@@ -32,5 +43,33 @@ public class MusicManager : MonoBehaviour
             AudioListener.volume = Mathf.Lerp(0, volume, timer / fadeMusicTime);
             yield return null;
         }
+        yield return new WaitForSeconds(timeBetweenSongs);
+        if(region == GameManager.Region.Sweet)
+        {
+            musicSource.clip = regionSongs[0];
+        }
+        else if (region == GameManager.Region.Savory)
+        {
+            musicSource.clip = regionSongs[1];
+        }
+        else if(region == GameManager.Region.Sour)
+        {
+            musicSource.clip = regionSongs[2];
+        }
+        else if(region == GameManager.Region.Bitter)
+        {
+            musicSource.clip = regionSongs[3];
+        }
+
+        musicSource.Play();
+        timer = 0;
+        while (timer < fadeMusicTime)
+        {
+            timer += Time.deltaTime;
+            AudioListener.volume = Mathf.Lerp(0, volume, timer / fadeMusicTime);
+            yield return null;
+        }
+        AudioListener.volume = volume;
+
     }
 }
