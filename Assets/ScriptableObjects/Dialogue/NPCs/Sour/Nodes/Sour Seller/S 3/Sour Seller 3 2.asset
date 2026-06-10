@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Sour Seller 3 2
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 0
-  line: got another 150 pebbles?
+  line: got another 100 pebbles?
   choices:
   - choiceText: 
     nextNode: {fileID: 11400000, guid: b02c755f9cbaf004b81985d6a9b054bc, type: 2}

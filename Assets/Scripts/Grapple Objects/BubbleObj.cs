@@ -231,6 +231,11 @@ public class BubbleObj : GrappleObj
     public IEnumerator PopBubble(float delayBeforeReappear)
     {
         yield return null;
+        if (Player.Instance.transform.parent == transform)
+        {
+            Player.Instance.transform.parent = null;
+            DontDestroyOnLoad(Player.Instance.gameObject);
+        }
         DeactivateBubble();
         if(SoundManager.Instance != null)
         {

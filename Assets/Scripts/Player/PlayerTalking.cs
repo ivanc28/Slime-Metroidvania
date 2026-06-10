@@ -62,7 +62,8 @@ public class PlayerTalking : MonoBehaviour
         if (npc != null)
         {
             Player.Instance.InInteraction = true;
-
+            Player.Instance.rb.linearVelocity = Vector2.zero;
+            Player.Instance.DetachHook();
             // When both are checked, just stay in place
             bool shouldStayInPlace = npc.forcePlayerMoveLeft && npc.forcePlayerMoveRight;
 

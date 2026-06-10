@@ -19,7 +19,7 @@ MonoBehaviour:
     nextNode: {fileID: 11400000, guid: 8cd3ab188f7bca54b9e1dfb555be437b, type: 2}
     dialogueEvents:
     - {fileID: 11400000, guid: 0fd101e0415ec60499e56dc4cc179db2, type: 2}
-    condition: {fileID: 11400000, guid: 28b7075e714b76645aa80eaa4c2b64d7, type: 2}
+    condition: {fileID: 11400000, guid: 048cad026b7705f46a1e749af2f6b46a, type: 2}
   - choiceText: i'm good
     nextNode: {fileID: 11400000, guid: b894a308c7385134f86686ebf4733fe7, type: 2}
     dialogueEvents:

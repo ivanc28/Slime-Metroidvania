@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Sour Seller 1 0
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 0
-  line: how about it? 150 pebbles for a sour snack?
+  line: how about it? 100 pebbles for a sour snack?
   choices:
   - choiceText: 
     nextNode: {fileID: 11400000, guid: 9c80cdc19ed63684fa1ea6b740cdb96e, type: 2}

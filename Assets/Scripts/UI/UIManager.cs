@@ -156,6 +156,10 @@ public class UIManager : MonoBehaviour
         UpdateGrappleSlider();
         #endregion
 
+        if (Player.Instance.InSceneTransition)
+        {
+            return;
+        }
         #region Inventory
         if (!inventoryOpen)
         {
