@@ -150,7 +150,8 @@ public class PlayerTalking : MonoBehaviour
                     float walkTimer = 0;
                     while (Vector2.Distance(npc.transform.position, transform.position) < talkDistance)
                     {
-                        if (walkRight)
+                        Debug.Log($"curr distance: {Vector2.Distance(npc.transform.position, transform.position)}, talkDistance is {talkDistance}");
+                        if (walkRight) 
                         {
                             Player.Instance.rb.linearVelocityX = getDistanceSpeed;
                             Player.Instance.GetRenderer().flipX = false;
@@ -176,6 +177,7 @@ public class PlayerTalking : MonoBehaviour
                     {
                         Player.Instance.GetRenderer().flipX ^= true; // flip the player sprite (same as flipX = !flipX)
                     }
+                    Player.Instance.rb.linearVelocity = Vector2.zero;
                     yield return new WaitForSeconds(0.25f);
                 }
             }

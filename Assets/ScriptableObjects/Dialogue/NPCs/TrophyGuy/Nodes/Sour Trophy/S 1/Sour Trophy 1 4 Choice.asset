@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c0552f17edcde34cb93ab0d9a5ca2bb, type: 3}
+  m_Name: Sour Trophy 1 4 Choice
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
+  speaker: 1
+  line: 
+  choices:
+  - choiceText: gimme
+    nextNode: {fileID: 11400000, guid: 7c0ac19e9970e2e45be91708b15477d0, type: 2}
+    dialogueEvents:
+    - {fileID: 11400000, guid: 0b3e66697adf3fa4ab6e27f8c0ebbd21, type: 2}
+    condition: {fileID: 11400000, guid: 048cad026b7705f46a1e749af2f6b46a, type: 2}
+  - choiceText: no you're weird
+    nextNode: {fileID: 11400000, guid: bac929f8983ccab46aa2a091794c6678, type: 2}
+    dialogueEvents:
+    - {fileID: 11400000, guid: 0e82f5701aed91246badee5df80b52c4, type: 2}
+    condition: {fileID: 0}

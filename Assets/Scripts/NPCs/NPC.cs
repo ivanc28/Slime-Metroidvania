@@ -248,6 +248,7 @@ public class NPC : MonoBehaviour
 
         while (i < message.Length)
         {
+            bool breakOutOfOuterLoop = false;
             char nextChar = message[i];
             char nextNextChar = i < message.Length - 1 ? message[i + 1] : ' ';
             if (nextChar == '<')
@@ -278,22 +279,35 @@ public class NPC : MonoBehaviour
                 }
             }
 
-            if (choosingToSkipLine) // choosingToSkipDialogue set in update
-            {
-                text.maxVisibleCharacters = message.Length;
-                break;
-            }
+
+            float timeTillNextChar = 0;
             if (nextChar == '.' || (nextChar == '?' && nextNextChar == ' ') || (nextChar == '!' && nextNextChar == ' ') || (nextChar == '-' && nextNextChar == ' '))
             {
-                yield return new WaitForSeconds(delayAfterPeriod);
+                timeTillNextChar = delayAfterPeriod;
             }
             else if (nextChar == ',')
             {
-                yield return new WaitForSeconds(delayAfterComma);
+                timeTillNextChar = delayAfterComma;
             }
             else
             {
-                yield return new WaitForSeconds(delayBetweenChars);
+                timeTillNextChar = delayBetweenChars;
+            }
+            float timer = 0;
+            while (timer  < timeTillNextChar)
+            {
+                if (choosingToSkipLine) // choosingToSkipDialogue set in update
+                {
+                    breakOutOfOuterLoop = true;
+                    break;
+                }
+                timer += Time.deltaTime;
+                yield return null;
+            }
+            if (breakOutOfOuterLoop)
+            {
+                text.maxVisibleCharacters = message.Length;
+                break;
             }
         }
         text.maxVisibleCharacters = int.MaxValue;

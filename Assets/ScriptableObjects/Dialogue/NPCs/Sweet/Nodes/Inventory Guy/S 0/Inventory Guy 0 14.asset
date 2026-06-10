@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c0552f17edcde34cb93ab0d9a5ca2bb, type: 3}
   m_Name: Inventory Guy 0 14
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
-  speaker: 1
-  line: oh okay
-  choices: []
+  speaker: 0
+  line: and if you have a <color=#FF69B4>Map</color>, you should press <color=#FF69B4>Tab</color>
+    to open it!
+  choices:
+  - choiceText: 
+    nextNode: {fileID: 11400000, guid: f07c1694e2d56ef4b9aa46c05896fc6f, type: 2}
+    dialogueEvents: []
+    condition: {fileID: 0}
