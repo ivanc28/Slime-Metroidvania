@@ -87,6 +87,12 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject optionsMenu;
     private bool optionsOpen;
 
+    [Header("Map")]
+    [SerializeField] GameObject mapDisplay;
+    [SerializeField] Image mapImage;
+    [Tooltip("0 is Empty Map, 1 is Sweet, 2 is Savory, 3 is Sour, 4 is Bitter")]
+    [SerializeField] Sprite[] mapSprites;
+
     public static UIManager Instance { get; private set; }
     private void Awake()
     {
@@ -322,6 +328,16 @@ public class UIManager : MonoBehaviour
                 }
             }
         }
+        #endregion
+        #region Map
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            DisplayMap(GameManager.Instance.GetCurrRegion());
+        }
+        if (Input.GetKeyUp(KeyCode.Tab))
+        {
+            HideMap();
+        }        
         #endregion
     }
     // Called everytime we increase our currency 
@@ -653,5 +669,38 @@ public class UIManager : MonoBehaviour
     {
         optionsMenu.SetActive(open);
         optionsOpen = open;
+    }
+
+    public void DisplayMap(GameManager.Region currRegion)
+    {
+        if (Player.Instance.inventory.HasMap(currRegion))
+        {
+            int index = 0;
+            switch (currRegion)
+            {
+                case GameManager.Region.Sweet:
+                    index = 1;
+                    break;
+                case GameManager.Region.Savory:
+                    index = 2;
+                    break;
+                case GameManager.Region.Sour:
+                    index = 3;
+                    break;
+                case GameManager.Region.Bitter:
+                    index = 4;
+                    break;
+            }
+            mapImage.sprite = mapSprites[index];
+        }
+        else
+        {
+            mapImage.sprite = mapSprites[0];
+        }
+        mapDisplay.SetActive(true);
+    }
+    public void HideMap()
+    {
+        mapDisplay.SetActive(false);
     }
 }

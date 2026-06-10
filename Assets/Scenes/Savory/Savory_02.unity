@@ -161580,6 +161580,75 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1613611518038838955, guid: 1706e69771a463d4d8163fbfc5acea39, type: 3}
   m_PrefabInstance: {fileID: 1006313319}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1025511600
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -424022012732583051, guid: aa51baca4d84af743aad2b3459b9b01c, type: 3}
+      propertyPath: region
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -424022012732583051, guid: aa51baca4d84af743aad2b3459b9b01c, type: 3}
+      propertyPath: collectableID
+      value: Savory_Map
+      objectReference: {fileID: 0}
+    - target: {fileID: -424022012732583051, guid: aa51baca4d84af743aad2b3459b9b01c, type: 3}
+      propertyPath: pickupMessage
+      value: You found a <color="orange">Savory Map!</color>
+      objectReference: {fileID: 0}
+    - target: {fileID: 8180098741594223675, guid: aa51baca4d84af743aad2b3459b9b01c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 28.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 8180098741594223675, guid: aa51baca4d84af743aad2b3459b9b01c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -17.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 8180098741594223675, guid: aa51baca4d84af743aad2b3459b9b01c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8180098741594223675, guid: aa51baca4d84af743aad2b3459b9b01c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8180098741594223675, guid: aa51baca4d84af743aad2b3459b9b01c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8180098741594223675, guid: aa51baca4d84af743aad2b3459b9b01c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8180098741594223675, guid: aa51baca4d84af743aad2b3459b9b01c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8180098741594223675, guid: aa51baca4d84af743aad2b3459b9b01c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8180098741594223675, guid: aa51baca4d84af743aad2b3459b9b01c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8180098741594223675, guid: aa51baca4d84af743aad2b3459b9b01c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8227116160457521973, guid: aa51baca4d84af743aad2b3459b9b01c, type: 3}
+      propertyPath: m_Name
+      value: Map
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aa51baca4d84af743aad2b3459b9b01c, type: 3}
 --- !u!1001 &1078195229
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -164269,3 +164338,4 @@ SceneRoots:
   - {fileID: 2073654117}
   - {fileID: 1983788361}
   - {fileID: 1790967511}
+  - {fileID: 1025511600}

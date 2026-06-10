@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Chef 1 4
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 0
-  line: the one in <color=#069e06>Bitter</color> is at a tall cliff in the center,
+  line: the one in <color=#069e06>Bitter</color> is at the bottom of the region,
     though a <color=#FF69B4>Zipline Strap</color> would be useful if you happen to
     find one
   choices: []

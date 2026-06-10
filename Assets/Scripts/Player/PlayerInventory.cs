@@ -6,6 +6,7 @@ public class PlayerInventory
     private List<QuestCollectableData> questItemList = new();
     private List<ToolInventoryData> toolItemList = new();
     private HashSet<string> completedPurchases = new();
+    private HashSet<GameManager.Region> collectedMaps = new();
     public void AddQuestItem(QuestCollectableData item)
     {
         questItemList.Add(item);
@@ -43,5 +44,14 @@ public class PlayerInventory
     public bool HasPurchased(string purchaseID)
     {
         return completedPurchases.Contains(purchaseID);
+    }
+
+    public void CollectMap(GameManager.Region regionMap)
+    {
+        collectedMaps.Add(regionMap);
+    }
+    public bool HasMap(GameManager.Region regionMap)
+    {
+        return collectedMaps.Contains(regionMap);
     }
 }
