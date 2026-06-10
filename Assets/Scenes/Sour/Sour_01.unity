@@ -5021,6 +5021,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2625276089716732017, guid: 3385855de30868b469ec474e26605771, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 02f969995f2ec29468887e54f63287b3, type: 2}
     - target: {fileID: 5628423949749143985, guid: 3385855de30868b469ec474e26605771, type: 3}
       propertyPath: data
       value: 
@@ -7099,6 +7103,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2625276089716732017, guid: 3385855de30868b469ec474e26605771, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 49f3e2a57506710489b989151b409f98, type: 2}
     - target: {fileID: 5628423949749143985, guid: 3385855de30868b469ec474e26605771, type: 3}
       propertyPath: data
       value: 
@@ -7226,6 +7234,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2625276089716732017, guid: 3385855de30868b469ec474e26605771, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b10520e996cf7654ba591474d181269c, type: 2}
     - target: {fileID: 5628423949749143985, guid: 3385855de30868b469ec474e26605771, type: 3}
       propertyPath: data
       value: 
@@ -7631,6 +7643,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2625276089716732017, guid: 3385855de30868b469ec474e26605771, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 906ab1da6bdd8124285b068145e56be8, type: 2}
+    - target: {fileID: 4664505054422345750, guid: 3385855de30868b469ec474e26605771, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2169932688959056227, guid: 796171cfe76cbfc4583cb238f7bb183f, type: 3}
     - target: {fileID: 5628423949749143985, guid: 3385855de30868b469ec474e26605771, type: 3}
       propertyPath: data
       value: 
