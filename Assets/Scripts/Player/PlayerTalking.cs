@@ -150,7 +150,6 @@ public class PlayerTalking : MonoBehaviour
                     float walkTimer = 0;
                     while (Vector2.Distance(npc.transform.position, transform.position) < talkDistance)
                     {
-                        Debug.Log($"curr distance: {Vector2.Distance(npc.transform.position, transform.position)}, talkDistance is {talkDistance}");
                         if (walkRight) 
                         {
                             Player.Instance.rb.linearVelocityX = getDistanceSpeed;
