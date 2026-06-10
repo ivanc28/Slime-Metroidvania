@@ -90,7 +90,7 @@ MonoBehaviour:
   - {fileID: 5559844837372388416}
   bubbleParticle: {fileID: 8475826247357860277}
   umbrellaRenderer: {fileID: 7463570080399751122}
-  flipTimeTheshold: 0.15
+  flipTimeTheshold: 0.175
   foodHolder: {fileID: 1354930876570351117}
   trail: {fileID: 2437832083418777926}
 --- !u!114 &2856085039485690102
