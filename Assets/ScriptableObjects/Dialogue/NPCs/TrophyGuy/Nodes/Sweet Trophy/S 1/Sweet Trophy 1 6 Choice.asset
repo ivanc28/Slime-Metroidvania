@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c0552f17edcde34cb93ab0d9a5ca2bb, type: 3}
+  m_Name: Sweet Trophy 1 6 Choice
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
+  speaker: 1
+  line: 
+  choices:
+  - choiceText: sure?
+    nextNode: {fileID: 11400000, guid: c3a9f548e3e51834298a15062e69a34b, type: 2}
+    dialogueEvents:
+    - {fileID: 11400000, guid: 0dcfc75ccff31964f881970f3d4b05d7, type: 2}
+    condition: {fileID: 11400000, guid: 048cad026b7705f46a1e749af2f6b46a, type: 2}
+  - choiceText: no
+    nextNode: {fileID: 11400000, guid: 197d04f984dd2304cbea42eed22a0626, type: 2}
+    dialogueEvents:
+    - {fileID: 11400000, guid: 0e82f5701aed91246badee5df80b52c4, type: 2}
+    condition: {fileID: 0}
