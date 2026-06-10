@@ -69,6 +69,10 @@ public class RoomSetUp : MonoBehaviour
         {
             UIManager.Instance.DisplayRegionTitle(region);
         }
+        if(MusicManager.Instance != null)
+        {
+            MusicManager.Instance.ChangeSong(prevRegion, region);
+        }
 
     }    
 
