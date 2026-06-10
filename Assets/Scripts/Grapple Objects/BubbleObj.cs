@@ -180,7 +180,7 @@ public class BubbleObj : GrappleObj
         bubbleTrigger.isTrigger = false;
         bubbleTrigger.excludeLayers = excludedObjects;
     }
-    private void ExitBubble()
+    public void ExitBubble()
     {
         anim.SetBool("inBubble", false);
         Player.Instance.SetInBubble(false);

@@ -36,8 +36,14 @@ public class RoomTransition : MonoBehaviour
     {
         if (canTransition)
         {
-            if (collision.gameObject.CompareTag("Player"))
+            BubbleObj possibleBubble = collision.GetComponent<BubbleObj>();
+            bool touchedABubbleWithPlayer = possibleBubble != null && Player.Instance.IsInBubble();
+            if (collision.gameObject.CompareTag("Player") || touchedABubbleWithPlayer)
             {
+                if (touchedABubbleWithPlayer)
+                {
+                    possibleBubble.ExitBubble();
+                }
                 StartCoroutine(MoveToTransitionPoint());
                 canTransition = false;
             }
