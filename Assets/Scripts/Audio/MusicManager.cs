@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class MusicManager : MonoBehaviour
@@ -16,9 +17,12 @@ public class MusicManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
-    // Update is called once per frame
-    void Update()
+    public void ChangeSong()
     {
-        
+
     }
+    //private IEnumerator TransitionToNewSong()
+    //{
+    //    private float volume =
+    //}
 }
