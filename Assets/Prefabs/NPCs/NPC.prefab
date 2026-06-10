@@ -54,10 +54,12 @@ MonoBehaviour:
   keyIcon: {fileID: 8440627809026406060}
   npcRenderer: {fileID: 4664505054422345750}
   anim: {fileID: 2625276089716732017}
+  logWarnings: 0
   forcePlayerMoveRight: 0
   forcePlayerMoveLeft: 0
   alwaysTryFacePlayer: 0
-  lookAtPlayerThreshold: 0
+  lookAtPlayerThreshold: 7
+  neverFlipDir: 0
 --- !u!61 &2407329635778683229
 BoxCollider2D:
   m_ObjectHideFlags: 0
