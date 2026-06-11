@@ -3202,8 +3202,8 @@ MonoBehaviour:
   mapImage: {fileID: 6995454794115486515}
   mapSprites:
   - {fileID: 2373183141213679312, guid: ad332ffdccaafe34f8226d843f01fdc9, type: 3}
-  - {fileID: 5435608014139152121, guid: 01382508090ee704f864d8c71fde6a35, type: 3}
-  - {fileID: -4335991441621654067, guid: 01382508090ee704f864d8c71fde6a35, type: 3}
+  - {fileID: 21300000, guid: cf455c7b56da3834884fdd4c743298ca, type: 3}
+  - {fileID: 21300000, guid: fca6346ab885a9c41815d94ad8647963, type: 3}
   - {fileID: -627984791, guid: 01382508090ee704f864d8c71fde6a35, type: 3}
   - {fileID: -836532028, guid: 01382508090ee704f864d8c71fde6a35, type: 3}
 --- !u!1 &3925782254625741504
