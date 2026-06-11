@@ -119,11 +119,13 @@ public class BubbleObj : GrappleObj
             else
             {
                 Player.Instance.SetOnBubble(true);
+                Player.Instance.rb.linearVelocity = Vector2.zero;
             }
         }
         else
         {
             Player.Instance.SetOnBubble(true);
+            Player.Instance.rb.linearVelocity = Vector2.zero;
         }
     }
     public override void DetachHook()
