@@ -520,7 +520,6 @@ public class UIManager : MonoBehaviour
     {
         screenAnim.SetTrigger("FadeOut");
     }
-
     public void OpenInventory()
     {
         GameManager.Instance.SetPaused(true);
@@ -663,6 +662,7 @@ public class UIManager : MonoBehaviour
     public void QuitToMenu()
     {
         GameManager.Instance.ResetGame();
+        GameManager.Instance.SetPaused(false);
         SceneManager.LoadScene("MainMenu");
     }
     public void ToggleOptions(bool open)
