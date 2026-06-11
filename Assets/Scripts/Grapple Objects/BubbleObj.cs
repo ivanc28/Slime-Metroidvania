@@ -24,6 +24,7 @@ public class BubbleObj : GrappleObj
     [SerializeField] Collider2D bubbleTrigger;
     [SerializeField] AudioClip[] bubbleInClips;
     [SerializeField] AudioClip[] popClips;
+    [SerializeField] GameObject popParticle;
 
     //private CameraSwitcher[] switchers;
     //private ContactFilter2D filter;
@@ -243,6 +244,7 @@ public class BubbleObj : GrappleObj
         {
             SoundManager.Instance.PlaySound(popClips, 0.15f, true, 0.9f, 1.1f);
         }
+        Instantiate(popParticle, transform.position, popParticle.transform.rotation);
         yield return new WaitForSeconds(delayBeforeReappear);
         ActivateBubble();
         anim.SetTrigger("replaceBubble");

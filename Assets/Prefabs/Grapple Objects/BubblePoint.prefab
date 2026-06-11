@@ -71,6 +71,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9e781455a5462b440b6ea98afb49be6b, type: 3}
   popClips:
   - {fileID: 8300000, guid: 2c5b2ee94ca33904284de4b8134efd74, type: 3}
+  popParticle: {fileID: 2939598703582678111, guid: 4cb45830443be264e8e14b804cca05a0, type: 3}
 --- !u!58 &7355406469698735675
 CircleCollider2D:
   m_ObjectHideFlags: 0
