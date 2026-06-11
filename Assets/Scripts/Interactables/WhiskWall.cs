@@ -16,6 +16,7 @@ public class WhiskWall : MonoBehaviour
     public AudioClip moveClip;
     private bool canPlayMoveSound = true;
     RoomData room;
+    private bool atFinalDestination;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,6 +24,7 @@ public class WhiskWall : MonoBehaviour
         if (room.collectedInteractables.Contains(interactable.GetInteractableID()))
         {
             wallPos.transform.position = endPos.position;
+            atFinalDestination = true;
             return;
         }
         startPos = wallPos.transform.position;
@@ -51,11 +53,12 @@ public class WhiskWall : MonoBehaviour
             yield return null;
         }
         wallPos.transform.position = endPos.position;
+        atFinalDestination = true;
     }
 
     public void CallMoveCoroutine()
     {
-        if (isMoving)
+        if (isMoving || atFinalDestination)
         {
             return;
         }
