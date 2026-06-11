@@ -238035,6 +238035,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 692819684}
     m_Modifications:
     - target: {fileID: 760033343734816891, guid: c93bafbba5404464a9756b7e087cb57b, type: 3}
+      propertyPath: numPebbles
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 760033343734816891, guid: c93bafbba5404464a9756b7e087cb57b, type: 3}
       propertyPath: collectableID
       value: Sweet_05_Pebbles_02
       objectReference: {fileID: 0}
