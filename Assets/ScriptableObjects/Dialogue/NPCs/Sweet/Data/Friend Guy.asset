@@ -20,6 +20,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: dbfc09bf27895ff4db3d9b2d2fa5c37a, type: 2}
   - {fileID: 11400000, guid: 6a4c062f7817739498533a07157d563f, type: 2}
   - {fileID: 11400000, guid: d7225769292c65d4ea3c93a95b717957, type: 2}
+  - {fileID: 11400000, guid: 1e3920d7ce84d8643ab6c3097e0629c8, type: 2}
   dialogueBoxPrefab: {fileID: 8471492469622854947, guid: 19917e134e38e6444a2e69101becaece, type: 3}
   talkingSFX: {fileID: 8300000, guid: 93fa2e39f1fe32b429a82d5b1a87a6c8, type: 3}
   playSFXEveryXChars: 3

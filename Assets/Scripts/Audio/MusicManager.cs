@@ -72,4 +72,23 @@ public class MusicManager : MonoBehaviour
         AudioListener.volume = volume;
 
     }
+
+    public void FadeOutAndDestroy()
+    {
+        StartCoroutine(FadeOutAndDestroyCoroutine());
+    }
+    private IEnumerator FadeOutAndDestroyCoroutine()
+    {
+        float volume = AudioListener.volume;
+        float timer = fadeMusicTime;
+        while (timer > 0)
+        {
+            timer -= Time.deltaTime;
+            AudioListener.volume = Mathf.Lerp(0, volume, timer / fadeMusicTime);
+            yield return null;
+        }
+        yield return null;
+        AudioListener.volume = volume;
+        Destroy(gameObject);
+    }
 }

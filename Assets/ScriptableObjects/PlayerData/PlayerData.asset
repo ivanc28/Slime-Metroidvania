@@ -113,3 +113,4 @@ MonoBehaviour:
   eatFoodPosOffset: {x: 0.5, y: 0.5}
   slimeParticle: {fileID: 227238257370530332, guid: f93b7c5d1fd76554c9472ef6a4d6f77f, type: 3}
   noclipSpeed: 17.5
+  finalDessert: {fileID: 11400000, guid: 183ef6fef05dd514081ac4095cfd6087, type: 2}

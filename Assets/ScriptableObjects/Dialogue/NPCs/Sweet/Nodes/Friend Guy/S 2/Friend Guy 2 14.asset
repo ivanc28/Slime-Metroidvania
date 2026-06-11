@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c0552f17edcde34cb93ab0d9a5ca2bb, type: 3}
-  m_Name: Savory Zip 0 2
+  m_Name: Friend Guy 2 14
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 0
-  line: ah, that's why i moved back to <color="orange">Savory</color>
+  line: time to eat!
   choices:
   - choiceText: 
-    nextNode: {fileID: 11400000, guid: 944c65e414da3f3409ae40fb9c661f06, type: 2}
+    nextNode: {fileID: 11400000, guid: a7259fae83f564043b1720b726132284, type: 2}
     dialogueEvents: []
     condition: {fileID: 0}
