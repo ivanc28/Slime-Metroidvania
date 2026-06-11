@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 114bb445cd0d39549ada32417c3ab58c
+guid: fac6844bf5c2c5843acd27fb7d071b62
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -76,7 +76,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -87,10 +87,10 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -114,7 +114,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -135,6 +135,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -142,12 +155,12 @@ TextureImporter:
       name: bitter slimes_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 128
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.4375}
+        x: 7
+        y: 133
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -164,12 +177,12 @@ TextureImporter:
       name: bitter slimes_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 128
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.4375}
+        x: 39
+        y: 133
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -186,12 +199,12 @@ TextureImporter:
       name: bitter slimes_2
       rect:
         serializedVersion: 2
-        x: 64
-        y: 128
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.4375}
+        x: 71
+        y: 133
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -208,12 +221,12 @@ TextureImporter:
       name: bitter slimes_3
       rect:
         serializedVersion: 2
-        x: 96
-        y: 128
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.4375}
+        x: 103
+        y: 133
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -230,12 +243,12 @@ TextureImporter:
       name: bitter slimes_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 96
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.4375}
+        x: 6
+        y: 101
+        width: 21
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -252,12 +265,12 @@ TextureImporter:
       name: bitter slimes_5
       rect:
         serializedVersion: 2
-        x: 32
-        y: 96
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.4375}
+        x: 38
+        y: 101
+        width: 21
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -274,12 +287,12 @@ TextureImporter:
       name: bitter slimes_6
       rect:
         serializedVersion: 2
-        x: 64
-        y: 96
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.4375}
+        x: 70
+        y: 101
+        width: 21
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -296,12 +309,12 @@ TextureImporter:
       name: bitter slimes_7
       rect:
         serializedVersion: 2
-        x: 0
-        y: 64
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.4375}
+        x: 6
+        y: 69
+        width: 21
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -318,12 +331,12 @@ TextureImporter:
       name: bitter slimes_8
       rect:
         serializedVersion: 2
-        x: 32
-        y: 64
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.4375}
+        x: 38
+        y: 69
+        width: 21
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -340,12 +353,12 @@ TextureImporter:
       name: bitter slimes_9
       rect:
         serializedVersion: 2
-        x: 64
-        y: 64
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.4375}
+        x: 70
+        y: 69
+        width: 21
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -362,12 +375,12 @@ TextureImporter:
       name: bitter slimes_10
       rect:
         serializedVersion: 2
-        x: 0
-        y: 32
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.4375}
+        x: 6
+        y: 37
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -384,12 +397,12 @@ TextureImporter:
       name: bitter slimes_11
       rect:
         serializedVersion: 2
-        x: 32
-        y: 32
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.4375}
+        x: 38
+        y: 37
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -406,12 +419,12 @@ TextureImporter:
       name: bitter slimes_12
       rect:
         serializedVersion: 2
-        x: 64
-        y: 32
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.4375}
+        x: 70
+        y: 37
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -428,12 +441,12 @@ TextureImporter:
       name: bitter slimes_13
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.4375}
+        x: 7
+        y: 5
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -450,7 +463,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 832a678bca97d2a4b810a8b74eea56db
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -458,11 +471,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":true,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.4375},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":9,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
-      - key: SpriteEditor.SliceOnImport
-        value: True
+      entries: []
     nameFileIdTable:
       bitter slimes_0: 8391527065259810646
       bitter slimes_1: 2136355547586645519

@@ -2567,10 +2567,10 @@ MonoBehaviour:
   musicSource: {fileID: 1084625184}
   menuSong: {fileID: 8300000, guid: f881641d2add77547a07ee78d6a83cbe, type: 3}
   regionSongs:
-  - {fileID: 8300000, guid: 207876c34e92c2e49b2bc4be88a0142e, type: 3}
+  - {fileID: 8300000, guid: 59979929932fdaf47b504932ca22e4bf, type: 3}
   - {fileID: 8300000, guid: 4fcda0336ad8f2b45afb01f417ee8a61, type: 3}
   - {fileID: 8300000, guid: f3c2f21eadef8884ba163b9ae5168db1, type: 3}
-  - {fileID: 8300000, guid: 7c15f6be3aed5e04092740432149d319, type: 3}
+  - {fileID: 8300000, guid: 517c2585c0e72694abcbbb68d4ab512d, type: 3}
   fadeMusicTime: 1
   timeBetweenSongs: 0.25
 --- !u!1 &1088247464
