@@ -94,4 +94,5 @@ public class PlayerData : ScriptableObject
     public GameObject slimeParticle;
     [Header("Debug")]
     public float noclipSpeed;
+    public QuestCollectableData finalDessert;
 }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Savory Zip 0 2
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 0
-  line: ah, that's why i moved to <color="orange">Savory</color>
+  line: ah, that's why i moved back to <color="orange">Savory</color>
   choices:
   - choiceText: 
     nextNode: {fileID: 11400000, guid: 944c65e414da3f3409ae40fb9c661f06, type: 2}

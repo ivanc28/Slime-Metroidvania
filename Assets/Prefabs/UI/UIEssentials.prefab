@@ -3205,7 +3205,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: cf455c7b56da3834884fdd4c743298ca, type: 3}
   - {fileID: 21300000, guid: fca6346ab885a9c41815d94ad8647963, type: 3}
   - {fileID: 21300000, guid: 38a114de0977e8e45b0c2f69e9d90f80, type: 3}
-  - {fileID: -836532028, guid: 01382508090ee704f864d8c71fde6a35, type: 3}
+  - {fileID: 21300000, guid: 52a2e4fef4adce8459307a69acc7641c, type: 3}
 --- !u!1 &3925782254625741504
 GameObject:
   m_ObjectHideFlags: 0
@@ -6084,7 +6084,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:

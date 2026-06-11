@@ -12,10 +12,10 @@ public class DEventFadeScreen : DialogueEvent
     }
     public override IEnumerator InvokeAndWait(MonoBehaviour runner)
     {
-        UIManager.Instance.FadeIn();
+        UIManager.Instance.FadeOut();
         yield return new WaitForSeconds(fadeTime);
         yield return new WaitForSeconds(blackTime);
-        UIManager.Instance.FadeOut();
+        UIManager.Instance.FadeIn();
         yield return new WaitForSeconds(fadeTime);
     }
 }

@@ -188,6 +188,10 @@ public class Player : MonoBehaviour
             {
                 currencyData.IncreaseCurrency(100);
             }
+            if (Input.GetKeyDown(KeyCode.F6))
+            {
+                inventory.AddQuestItem(data.finalDessert);
+            }
             if (noclip)
             {
                 float x = Input.GetAxisRaw("Horizontal");

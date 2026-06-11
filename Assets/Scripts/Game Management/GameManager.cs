@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     public bool GamePaused { get; private set; }
     public enum Region { None, Sweet, Savory, Sour, Bitter, Salty }
     private Region currRegion;
-    private float currTimeScale;
+    private float currTimeScale = 1f;
 
     private void Awake()
     {
@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
     }
     public IEnumerator GoNextRoom(string roomID, string spawnPointID, float fadeTime)
     {
-        UIManager.Instance.FadeIn();
+        UIManager.Instance.FadeOut();
         yield return new WaitForSeconds(fadeTime);
         nextSpawnPointID = spawnPointID;
         SceneManager.LoadScene(roomID);
@@ -88,6 +88,10 @@ public class GameManager : MonoBehaviour
 
     public void ResetGame()
     {
+        if(UIManager.Instance != null)
+        {
+            Destroy(UIManager.Instance.gameObject);
+        }
         if(Player.Instance != null)
         {
             Destroy(Player.Instance.gameObject);
@@ -96,6 +100,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(MusicManager.Instance.gameObject);
         }
+        SetPaused(false);
         Destroy(gameObject);
     }
 }

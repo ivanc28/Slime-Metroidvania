@@ -512,13 +512,13 @@ public class UIManager : MonoBehaviour
         DisableCollectText();
     }
 
-    public void FadeIn()
-    {
-        screenAnim.SetTrigger("FadeIn");
-    }
     public void FadeOut()
     {
         screenAnim.SetTrigger("FadeOut");
+    }
+    public void FadeIn()
+    {
+        screenAnim.SetTrigger("FadeIn");
     }
     public void OpenInventory()
     {
@@ -663,6 +663,7 @@ public class UIManager : MonoBehaviour
     {
         GameManager.Instance.ResetGame();
         GameManager.Instance.SetPaused(false);
+        EndGameManager.ResetTrophiesClaimed();
         SceneManager.LoadScene("MainMenu");
     }
     public void ToggleOptions(bool open)
