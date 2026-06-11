@@ -158,7 +158,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 160
+        y: 192
         width: 32
         height: 32
       alignment: 9
@@ -167,9 +167,9 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9e45162800e6f85c0800000000000000
+      spriteID: 35db6982a7ed11b40b50198cad875115
       internalID: -4211026178101652247
       vertices: []
       indices: 
@@ -180,7 +180,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 160
+        y: 192
         width: 32
         height: 32
       alignment: 9
@@ -189,9 +189,9 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 234c216c840170350800000000000000
+      spriteID: b513cf9e57a2fda418c74fa398e25a6f
       internalID: 5982768534731801650
       vertices: []
       indices: 
@@ -202,7 +202,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 160
+        y: 192
         width: 32
         height: 32
       alignment: 9
@@ -211,9 +211,9 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6b52b8bd652d85860800000000000000
+      spriteID: 5ba45179f486c5040893b725da8e6e37
       internalID: 7518990848387392950
       vertices: []
       indices: 
@@ -224,7 +224,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 160
+        y: 192
         width: 32
         height: 32
       alignment: 9
@@ -233,9 +233,9 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 72d6a4ac85e244940800000000000000
+      spriteID: a8a3f039c77ca8c419ba0461d54920f0
       internalID: 5279395622070938919
       vertices: []
       indices: 
@@ -246,7 +246,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 160
+        y: 192
         width: 32
         height: 32
       alignment: 9
@@ -255,9 +255,9 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 90ed99f6bd0ddcbe0800000000000000
+      spriteID: 6b9accb5be2ff264891756483caa0522
       internalID: -1455277463682032119
       vertices: []
       indices: 
@@ -268,7 +268,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 128
+        y: 160
         width: 32
         height: 32
       alignment: 9
@@ -277,9 +277,9 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 5bb3aa555eb0b2040800000000000000
+      spriteID: 7c106eb8da02ec84eab51e38c245a7b0
       internalID: 4623802522038582197
       vertices: []
       indices: 
@@ -290,7 +290,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 128
+        y: 160
         width: 32
         height: 32
       alignment: 9
@@ -299,9 +299,9 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 92ee419189876c860800000000000000
+      spriteID: b68e15d0f0c8d864bb2ea86a88769a81
       internalID: 7549854419984379433
       vertices: []
       indices: 
@@ -312,7 +312,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 128
+        y: 160
         width: 32
         height: 32
       alignment: 9
@@ -321,9 +321,9 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 137f8ea70acca3a90800000000000000
+      spriteID: e9254247ed8de844299fbef428dbce70
       internalID: -7333324053590509775
       vertices: []
       indices: 
@@ -334,7 +334,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 96
+        y: 128
         width: 32
         height: 32
       alignment: 9
@@ -343,9 +343,9 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 5e97844b452eed3c0800000000000000
+      spriteID: d0981c5022d243a45943806bedfce45e
       internalID: -4332776938054059547
       vertices: []
       indices: 
@@ -356,7 +356,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 96
+        y: 128
         width: 32
         height: 32
       alignment: 9
@@ -365,9 +365,9 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: dee305fb5c9ca5870800000000000000
+      spriteID: 4a30925327950b9469a3b1b9da00a983
       internalID: 8672465883610758893
       vertices: []
       indices: 
@@ -378,7 +378,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 96
+        y: 128
         width: 32
         height: 32
       alignment: 9
@@ -387,9 +387,9 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6eba7da24f56548e0800000000000000
+      spriteID: 602382f574442d34a9bd0b4c2a36be22
       internalID: -1709848384152032282
       vertices: []
       indices: 
@@ -400,7 +400,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 96
+        y: 128
         width: 32
         height: 32
       alignment: 9
@@ -409,9 +409,9 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 0be025fc53e940af0800000000000000
+      spriteID: 183ac85e5ea619f4db2822ac4f33f4f4
       internalID: -431045710372008272
       vertices: []
       indices: 
@@ -422,6 +422,72 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
+        y: 96
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e664366ebb1a5641917ea635bf1f037
+      internalID: -7661892797046264774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: savory slimes_13
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfe0980cde2398a4690236c80fc4f66d
+      internalID: 8417972371371410263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: savory slimes_14
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f038ccab8dd131240bf3dfda57819e96
+      internalID: 712259842452626416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: savory slimes_15
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 64
         width: 32
         height: 32
@@ -431,16 +497,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a3ceee4781d7ba590800000000000000
-      internalID: -7661892797046264774
+      spriteID: 1ae9382369b7c8d4d938c1f9201df0d6
+      internalID: -2266379017154289907
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: savory slimes_13
+      name: savory slimes_16
       rect:
         serializedVersion: 2
         x: 32
@@ -453,16 +519,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 75345ac7545a2d470800000000000000
-      internalID: 8417972371371410263
+      spriteID: 0bcb9958ed6c0284187ea04816d90a9e
+      internalID: -912478131430607079
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: savory slimes_14
+      name: savory slimes_17
       rect:
         serializedVersion: 2
         x: 64
@@ -475,16 +541,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 0fb1a219d8472e900800000000000000
-      internalID: 712259842452626416
+      spriteID: 11eed34a18236ff46a1e2823d4fbfee0
+      internalID: 8345278485731045823
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: savory slimes_15
+      name: savory slimes_18
       rect:
         serializedVersion: 2
         x: 0
@@ -497,16 +563,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d0f9e1caa443c80e0800000000000000
-      internalID: -2266379017154289907
+      spriteID: d6c6254bdecec4c46a1558ed12f5b920
+      internalID: -5212345324555079273
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: savory slimes_16
+      name: savory slimes_19
       rect:
         serializedVersion: 2
         x: 32
@@ -519,16 +585,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 91734c659f93653f0800000000000000
-      internalID: -912478131430607079
+      spriteID: 54663b2de25f72441bf017cb5ada3e00
+      internalID: -663166065
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: savory slimes_17
+      name: savory slimes_20
       rect:
         serializedVersion: 2
         x: 64
@@ -541,16 +607,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: fb175bd419260d370800000000000000
-      internalID: 8345278485731045823
+      spriteID: 51645b67498f7934cb3b5b1c47b266cb
+      internalID: 1370535085
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: savory slimes_18
+      name: savory slimes_21
       rect:
         serializedVersion: 2
         x: 0
@@ -563,10 +629,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 791f9332b870aa7b0800000000000000
-      internalID: -5212345324555079273
+      spriteID: 027dec86a55209945a92f7dbb98eaab0
+      internalID: 1346770992
       vertices: []
       indices: 
       edges: []
@@ -600,7 +666,10 @@ TextureImporter:
       savory slimes_16: -912478131430607079
       savory slimes_17: 8345278485731045823
       savory slimes_18: -5212345324555079273
+      savory slimes_19: -663166065
       savory slimes_2: 7518990848387392950
+      savory slimes_20: 1370535085
+      savory slimes_21: 1346770992
       savory slimes_3: 5279395622070938919
       savory slimes_4: -1455277463682032119
       savory slimes_5: 4623802522038582197
