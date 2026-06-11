@@ -2489,10 +2489,10 @@ RectTransform:
   - {fileID: 564899917486888686}
   - {fileID: 9148328098864375083}
   - {fileID: 1379710710509246665}
-  - {fileID: 4117556279108546645}
   - {fileID: 2432306639436847875}
   - {fileID: 3102828174683156327}
   - {fileID: 878841942340205706}
+  - {fileID: 4117556279108546645}
   m_Father: {fileID: 5939180358913543258}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3204,7 +3204,7 @@ MonoBehaviour:
   - {fileID: 2373183141213679312, guid: ad332ffdccaafe34f8226d843f01fdc9, type: 3}
   - {fileID: 21300000, guid: cf455c7b56da3834884fdd4c743298ca, type: 3}
   - {fileID: 21300000, guid: fca6346ab885a9c41815d94ad8647963, type: 3}
-  - {fileID: -627984791, guid: 01382508090ee704f864d8c71fde6a35, type: 3}
+  - {fileID: 21300000, guid: 38a114de0977e8e45b0c2f69e9d90f80, type: 3}
   - {fileID: -836532028, guid: 01382508090ee704f864d8c71fde6a35, type: 3}
 --- !u!1 &3925782254625741504
 GameObject:
