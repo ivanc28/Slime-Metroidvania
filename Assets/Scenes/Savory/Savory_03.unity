@@ -344588,6 +344588,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9100000, guid: b8a4438429848bc408bd389766594320, type: 2}
     - target: {fileID: 4664505054422345750, guid: 3385855de30868b469ec474e26605771, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4664505054422345750, guid: 3385855de30868b469ec474e26605771, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -2266379017154289907, guid: 8f7ae7a711457f640be6301e3b7f94d6, type: 3}
@@ -344607,6 +344611,14 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 875888b947b35e94c8698bc8a1278e65, type: 2}
+    - target: {fileID: 5628423949749143985, guid: 3385855de30868b469ec474e26605771, type: 3}
+      propertyPath: neverFlipDir
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5628423949749143985, guid: 3385855de30868b469ec474e26605771, type: 3}
+      propertyPath: forcePlayerMoveLeft
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5628423949749143985, guid: 3385855de30868b469ec474e26605771, type: 3}
       propertyPath: forcePlayerMoveRight
       value: 1
