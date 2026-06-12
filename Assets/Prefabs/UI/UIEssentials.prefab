@@ -1253,7 +1253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.41037738, b: 0.9285928, a: 1}
+  m_Color: {r: 1, g: 0.41037738, b: 0.7058824, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2578,7 +2578,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -3231,6 +3231,10 @@ MonoBehaviour:
   notchPrefab: {fileID: 4220957934686704833, guid: a21d823b08c84e04c8c87bc83f251aaf, type: 3}
   grappleCountText: {fileID: 2972678277524683937}
   grappleSliderWidthIncrements: 25
+  plusOneGrapplePrefab: {fileID: 1082001319509417546, guid: 5f4ad32d6284cb240b4f5859909821a0, type: 3}
+  plusGrappleMoveSpeed: 1.5
+  plusGrappleMoveUpTime: 0.5
+  plusGrappleFadeTime: 1
   toolImage: {fileID: 8772045079294078960}
   collectTextAnim: {fileID: 5290036806775639793}
   collectTextContainer: {fileID: 879558128867075889}
