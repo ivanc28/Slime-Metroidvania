@@ -1,12 +1,14 @@
-using UnityEngine;
-using TMPro;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.UI;
+using TMPro;
+using Unity.VisualScripting;
+using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    [SerializeField] Canvas canvas;
     [Header("Currency")]
     [SerializeField] TextMeshProUGUI currencyText;
     [SerializeField] TextMeshProUGUI currencyAccText;
@@ -103,7 +105,9 @@ public class UIManager : MonoBehaviour
             return;
         }
         Instance = this;
-
+        canvas.worldCamera = Camera.main;
+        canvas.sortingLayerName = "UI";
+        canvas.sortingOrder = 101;
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
