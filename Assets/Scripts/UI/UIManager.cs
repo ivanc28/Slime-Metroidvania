@@ -478,6 +478,7 @@ public class UIManager : MonoBehaviour
 
         // spawn an increment grapple obj UI
         TextMeshProUGUI extraGrappleTxt = Instantiate(plusOneGrapplePrefab, canvas.transform);
+        extraGrappleTxt.transform.SetAsFirstSibling();
         StartCoroutine(FadeText(extraGrappleTxt, plusGrappleFadeTime, plusGrappleMoveUpTime, plusGrappleMoveSpeed));
     }
 
