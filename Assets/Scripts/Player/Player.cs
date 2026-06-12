@@ -888,6 +888,7 @@ public class Player : MonoBehaviour
         {
             UIManager.Instance.AddNewGrappleNotch(true);
         }
+        UIManager.Instance.ShowGrappleIncrement();
     }
     public void IncreaseGrappleLength()
     {
