@@ -36,6 +36,11 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject notchPrefab;
     [SerializeField] TextMeshProUGUI grappleCountText;
     [SerializeField] float grappleSliderWidthIncrements;
+    [SerializeField] TextMeshProUGUI plusOneGrapplePrefab;
+    [SerializeField] float plusGrappleMoveSpeed;
+    [Tooltip("How long the text moves upward")]
+    [SerializeField] float plusGrappleMoveUpTime;
+    [SerializeField] float plusGrappleFadeTime;
     private float startingGrappleSliderWidth;
 
     [Header("Tool Display")]
@@ -470,6 +475,32 @@ public class UIManager : MonoBehaviour
         float remainingSpace = grappleNotchesContainer.GetComponent<RectTransform>().rect.width - totalNotchWidth;
         float spacingBetween = remainingSpace / Player.Instance.maxGrappleCharges;
         grappleGridGroup.spacing = new Vector2(spacingBetween, 0);
+
+        // spawn an increment grapple obj UI
+        TextMeshProUGUI extraGrappleTxt = Instantiate(plusOneGrapplePrefab, canvas.transform);
+        StartCoroutine(FadeText(extraGrappleTxt, plusGrappleFadeTime, plusGrappleMoveUpTime, plusGrappleMoveSpeed));
+    }
+
+    private IEnumerator FadeText(TextMeshProUGUI text, float fadeTime, float moveUpTime, float moveSpeed)
+    {
+        float timer = 0;
+        while (timer < moveUpTime)
+        {
+            timer += Time.deltaTime;
+            text.transform.position += moveSpeed * Time.deltaTime * Vector3.up;
+            yield return null;
+        }
+        timer = fadeTime;
+        Color textColor = text.color;
+        Color targetColor = new Color(text.color.r, text.color.g, text.color.b, 0);
+        while (timer > 0)
+        {
+            timer -= Time.deltaTime;
+            text.color = Color.Lerp(targetColor, textColor, timer / fadeTime);
+            text.transform.position += moveSpeed * Time.deltaTime * Vector3.up;
+            yield return null;
+        }
+        Destroy(text.gameObject);
     }
 
     private void SetGrappleSliderWidth()
