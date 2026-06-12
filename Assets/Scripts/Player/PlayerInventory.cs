@@ -10,12 +10,12 @@ public class PlayerInventory
     public void AddQuestItem(QuestCollectableData item)
     {
         questItemList.Add(item);
-        Debug.Log($"Items in inventory: {questItemList.Count}");
+        //Debug.Log($"Items in inventory: {questItemList.Count}");
     }
     public void RemoveQuestItem(QuestCollectableData item)
     {
         questItemList.Remove(item);
-        Debug.Log($"Items in inventory: {questItemList.Count}");
+        //Debug.Log($"Items in inventory: {questItemList.Count}");
     }
     public bool HasQuestItem(QuestCollectableData item)
     {

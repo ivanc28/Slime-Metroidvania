@@ -22,4 +22,4 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 543282096bc4b5f46917373dca622323, type: 3}
   itemName: Sour Trophy
   description: A shiny trophy that radiates Sour
-  sprite: {fileID: 0}
+  sprite: {fileID: -3227359907760806840, guid: a141b236f3825d543953c81ccf412004, type: 3}
