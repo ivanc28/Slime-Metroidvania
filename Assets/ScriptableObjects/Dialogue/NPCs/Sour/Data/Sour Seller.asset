@@ -28,5 +28,5 @@ MonoBehaviour:
   distanceDialogueAboveHeadOffset: 0.75
   delayBetweenChars: 0.0185
   delayAfterPeriod: 0.3
-  delayAfterComma: 0.5
+  delayAfterComma: 0.4
   npcTextColor: {r: 0.26352793, g: 0.32301342, b: 0.3962264, a: 1}
