@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c0552f17edcde34cb93ab0d9a5ca2bb, type: 3}
   m_Name: Bubble Guy 2 9
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
-  speaker: 1
-  line: okay
-  choices: []
+  speaker: 0
+  line: once you're in, try moving around inside
+  choices:
+  - choiceText: 
+    nextNode: {fileID: 11400000, guid: a3171dd3cefdea8459f6a4fccf219697, type: 2}
+    dialogueEvents: []
+    condition: {fileID: 0}
