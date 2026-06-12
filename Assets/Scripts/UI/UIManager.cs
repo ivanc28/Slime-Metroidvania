@@ -479,6 +479,14 @@ public class UIManager : MonoBehaviour
         float spacingBetween = remainingSpace / Player.Instance.maxGrappleCharges;
         grappleGridGroup.spacing = new Vector2(spacingBetween, 0);
 
+        // // spawn an increment grapple obj UI
+        // TextMeshProUGUI extraGrappleTxt = Instantiate(plusOneGrapplePrefab, canvas.transform);
+        // extraGrappleTxt.transform.SetAsFirstSibling();
+        // StartCoroutine(FadeText(extraGrappleTxt, plusGrappleFadeTime, plusGrappleMoveUpTime, plusGrappleMoveSpeed));
+    }
+
+    public void ShowGrappleIncrement()
+    {
         // spawn an increment grapple obj UI
         TextMeshProUGUI extraGrappleTxt = Instantiate(plusOneGrapplePrefab, canvas.transform);
         extraGrappleTxt.transform.SetAsFirstSibling();

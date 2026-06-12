@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Farmer 1 5
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 0
-  line: the others in town are so dark prickly 'bout their darn waterin' cans anyway,
+  line: the others in town are so darn prickly 'bout their darn waterin' cans anyway,
     i don't got much hope
   choices: []
