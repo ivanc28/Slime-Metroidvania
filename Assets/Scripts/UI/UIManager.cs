@@ -487,9 +487,9 @@ public class UIManager : MonoBehaviour
         if (Player.Instance.tools.HasTool(toolOption.tool))
         {
             toolImage.enabled = true;
-            if (toolOption.toolImage != null)
+            if (toolOption.toolSprite != null)
             {
-                toolImage.sprite = toolOption.toolImage.sprite;
+                toolImage.sprite = toolOption.toolSprite;
                 toolImage.color = Color.white;
             }
             else

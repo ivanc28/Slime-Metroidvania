@@ -5944,6 +5944,10 @@ PrefabInstance:
       propertyPath: tool
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6766357248075687594, guid: baad90df90ecfa84ca5eddbf728b8ac8, type: 3}
+      propertyPath: toolSprite
+      value: 
+      objectReference: {fileID: 7155652846937496742, guid: a536270742a624047a312c4f2863f2ee, type: 3}
     - target: {fileID: 7097360095395305542, guid: baad90df90ecfa84ca5eddbf728b8ac8, type: 3}
       propertyPath: m_Name
       value: ForkSelection
@@ -6247,6 +6251,10 @@ PrefabInstance:
       propertyPath: tool
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6766357248075687594, guid: baad90df90ecfa84ca5eddbf728b8ac8, type: 3}
+      propertyPath: toolSprite
+      value: 
+      objectReference: {fileID: 1559704157218881296, guid: a536270742a624047a312c4f2863f2ee, type: 3}
     - target: {fileID: 7097360095395305542, guid: baad90df90ecfa84ca5eddbf728b8ac8, type: 3}
       propertyPath: m_Name
       value: ChopsticksSelection
@@ -6514,6 +6522,10 @@ PrefabInstance:
       propertyPath: tool
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 6766357248075687594, guid: baad90df90ecfa84ca5eddbf728b8ac8, type: 3}
+      propertyPath: toolSprite
+      value: 
+      objectReference: {fileID: 942299122, guid: a536270742a624047a312c4f2863f2ee, type: 3}
     - target: {fileID: 7097360095395305542, guid: baad90df90ecfa84ca5eddbf728b8ac8, type: 3}
       propertyPath: m_Name
       value: BubbleBlowerSelection
@@ -6671,6 +6683,10 @@ PrefabInstance:
       propertyPath: tool
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6766357248075687594, guid: baad90df90ecfa84ca5eddbf728b8ac8, type: 3}
+      propertyPath: toolSprite
+      value: 
+      objectReference: {fileID: -5651667117540000442, guid: a536270742a624047a312c4f2863f2ee, type: 3}
     - target: {fileID: 7097360095395305542, guid: baad90df90ecfa84ca5eddbf728b8ac8, type: 3}
       propertyPath: m_Name
       value: WhiskSelection
@@ -6812,6 +6828,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6766357248075687594, guid: baad90df90ecfa84ca5eddbf728b8ac8, type: 3}
+      propertyPath: toolSprite
+      value: 
+      objectReference: {fileID: 8699069900992395679, guid: a536270742a624047a312c4f2863f2ee, type: 3}
     - target: {fileID: 7097360095395305542, guid: baad90df90ecfa84ca5eddbf728b8ac8, type: 3}
       propertyPath: m_Name
       value: SpoonSelection
@@ -6965,6 +6985,10 @@ PrefabInstance:
       propertyPath: tool
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 6766357248075687594, guid: baad90df90ecfa84ca5eddbf728b8ac8, type: 3}
+      propertyPath: toolSprite
+      value: 
+      objectReference: {fileID: 5292716684467120071, guid: a536270742a624047a312c4f2863f2ee, type: 3}
     - target: {fileID: 7097360095395305542, guid: baad90df90ecfa84ca5eddbf728b8ac8, type: 3}
       propertyPath: m_Name
       value: ScissorsSelection
@@ -7122,6 +7146,10 @@ PrefabInstance:
       propertyPath: tool
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 6766357248075687594, guid: baad90df90ecfa84ca5eddbf728b8ac8, type: 3}
+      propertyPath: toolSprite
+      value: 
+      objectReference: {fileID: 640189316, guid: a536270742a624047a312c4f2863f2ee, type: 3}
     - target: {fileID: 7097360095395305542, guid: baad90df90ecfa84ca5eddbf728b8ac8, type: 3}
       propertyPath: m_Name
       value: UmbrellaSelection
