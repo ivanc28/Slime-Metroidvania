@@ -171812,6 +171812,10 @@ PrefabInstance:
       propertyPath: pickupMessage
       value: You found a <color="orange">Savory Map!</color>
       objectReference: {fileID: 0}
+    - target: {fileID: 1608443179185600185, guid: aa51baca4d84af743aad2b3459b9b01c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1091667940489880226, guid: d2be82a0e9365934e955aa70f41b0bcf, type: 3}
     - target: {fileID: 8180098741594223675, guid: aa51baca4d84af743aad2b3459b9b01c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 28.5
