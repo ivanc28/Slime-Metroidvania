@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bitter Trophy 0 2
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 1
-  line: but you are?
+  line: but, you're right in front of me?
   choices:
   - choiceText: 
     nextNode: {fileID: 11400000, guid: be952b0dce480eb479bc0390ff19466b, type: 2}
