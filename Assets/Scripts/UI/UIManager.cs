@@ -313,11 +313,14 @@ public class UIManager : MonoBehaviour
                 if (nextSlot != currToolItemIndex)
                 {
                     currToolItemIndex = nextSlot;
-                    UpdateItemDescription(addedToolItems[currToolItemIndex]);
-                    SetFrameTargetPos(addedToolSlots[currToolItemIndex].GetComponent<RectTransform>().position);
-                    if (SoundManager.Instance != null)
+                    if(addedToolItems.Count > 0)
                     {
-                        SoundManager.Instance.PlaySound(swipeClip, 0.5f);
+                        UpdateItemDescription(addedToolItems[currToolItemIndex]);
+                        SetFrameTargetPos(addedToolSlots[currToolItemIndex].GetComponent<RectTransform>().position);
+                        if (SoundManager.Instance != null)
+                        {
+                            SoundManager.Instance.PlaySound(swipeClip, 0.5f);
+                        }
                     }
                 }
             }
