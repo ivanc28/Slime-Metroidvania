@@ -16,6 +16,6 @@ MonoBehaviour:
   line: if you ever run out of energy, just take a short rest on the ground
   choices:
   - choiceText: 
-    nextNode: {fileID: 11400000, guid: 7b6da0a72173f394a8075d170f5a01ac, type: 2}
+    nextNode: {fileID: 11400000, guid: 5774eda1e004d8e40a02b072ceaa6565, type: 2}
     dialogueEvents: []
     condition: {fileID: 0}

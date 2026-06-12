@@ -12,7 +12,8 @@ public class ButtonFX : MonoBehaviour
     { 
         //buttonSource = gameObject.AddComponent<AudioSource>();
         buttonSource.volume = volume;
-        buttonSource.pitch = randomPitch ? Random.Range(0.9f, 1.1f) : 1f;
+        float pitch = buttonSource.pitch;
+        buttonSource.pitch = randomPitch ? Random.Range(pitch - 0.1f, pitch + 0.1f) : pitch;
     }
     //public void OnPointerEnter(PointerEventData eventData)
     //{

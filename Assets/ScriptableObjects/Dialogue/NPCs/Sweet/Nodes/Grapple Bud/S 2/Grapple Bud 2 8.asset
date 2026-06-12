@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Grapple Bud 2 8
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 0
-  line: eat more food and you could travel to any restaurant this world could offer
+  line: yep, just find some more food and you can grapple to any restaurant this
+    world could offer
   choices:
   - choiceText: 
     nextNode: {fileID: 11400000, guid: aaaf6261251eddc4b9cb476aaaf9288a, type: 2}
