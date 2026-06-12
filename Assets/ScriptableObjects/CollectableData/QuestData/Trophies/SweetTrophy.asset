@@ -22,4 +22,4 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 543282096bc4b5f46917373dca622323, type: 3}
   itemName: Sweet Trophy
   description: A shiny trophy that radiates Sweet
-  sprite: {fileID: 0}
+  sprite: {fileID: -6826707819673027719, guid: a141b236f3825d543953c81ccf412004, type: 3}
