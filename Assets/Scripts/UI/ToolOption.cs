@@ -20,6 +20,10 @@ public class ToolOption : MonoBehaviour
     }
     private void Update()
     {
+        if (GameManager.Instance.GamePaused)
+        {
+            return;
+        }
         if(Player.Instance.GetHoveredTool() == this)
         {
             EnableToolBG(true);
