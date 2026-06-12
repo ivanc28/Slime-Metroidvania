@@ -3649,6 +3649,10 @@ PrefabInstance:
       propertyPath: masterSlider
       value: 
       objectReference: {fileID: 603398597}
+    - target: {fileID: 7057760419480435112, guid: c850170e6fc91f340a1c13b2322766db, type: 3}
+      propertyPath: sceneToLoadOnStart
+      value: WarningScene
+      objectReference: {fileID: 0}
     - target: {fileID: 8935789674156732429, guid: c850170e6fc91f340a1c13b2322766db, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 50b3f83f35e30314789ae125129d18b3
   - enabled: 1
+    path: Assets/Scenes/WarningScene.unity
+    guid: f36193e5489986845bd11b59ba6ab3fd
+  - enabled: 1
     path: Assets/Scenes/DontDestroySetup.unity
     guid: 4118bbc929fe38f47bb25d2b8dcf0ecc
   - enabled: 1

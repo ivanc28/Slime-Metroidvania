@@ -108,6 +108,7 @@ public class BubbleObj : GrappleObj
     }
     public override void EffectOnPlayerContactAfterHook()
     {
+        if (Player.Instance.IsOnbubble()) return; // already handled
         if (Player.Instance.GetBubbledState())
         {
             if (bubbleEmpty)
@@ -145,7 +146,10 @@ public class BubbleObj : GrappleObj
         if (!Player.Instance.GetHookBeingThrown() && !Player.Instance.GetIsAttaching())
         {
             Player.Instance.DetachHook();
-            Player.Instance.currentAttachedCollider = null;
+            if (!Player.Instance.GetIsLocked())
+            {
+                Player.Instance.currentAttachedCollider = null;
+            }
         }
         objCollider.enabled = false;
         objRenderer.enabled = false;
