@@ -45,7 +45,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2de8f072cba31694d9b8e5e1c77f351a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonFX
-  volume: 0.5
   randomPitch: 0
   hoverClip: {fileID: 8300000, guid: 3bd8598a28a515d448f0c8976d926269, type: 3}
   buttonSource: {fileID: 8926197574858307016}
@@ -62,7 +61,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: a5b4e7f5b2a1702478587a6d9e78e14e, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.6
+  m_Volume: 0.25
   m_Pitch: 0.85
   Loop: 0
   Mute: 0
