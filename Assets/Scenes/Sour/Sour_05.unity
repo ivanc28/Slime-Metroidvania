@@ -4882,6 +4882,18 @@ PrefabInstance:
       propertyPath: InitialModule.startLifetime.minScalar
       value: 19
       objectReference: {fileID: 0}
+    - target: {fileID: 7069092549139921797, guid: 2489f06a674b2ab409a0884d7b87ad5b, type: 3}
+      propertyPath: InitialModule.startRotation.minMaxState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7069092549139921797, guid: 2489f06a674b2ab409a0884d7b87ad5b, type: 3}
+      propertyPath: InitialModule.startRotationX.minMaxState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7069092549139921797, guid: 2489f06a674b2ab409a0884d7b87ad5b, type: 3}
+      propertyPath: InitialModule.startRotationY.minMaxState
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

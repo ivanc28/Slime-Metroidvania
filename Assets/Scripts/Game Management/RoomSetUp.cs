@@ -38,6 +38,10 @@ public class RoomSetUp : MonoBehaviour
         if (spawnPointID == null || spawnPointID == string.Empty)
         {
             // Initial call when there is no spawnPointID yet (when GameManager first loaded)
+            if(MusicManager.Instance != null)
+            {
+                MusicManager.Instance.ChangeSong(GameManager.Region.None, region);
+            }
             return;
         }
         bool foundScene = false;

@@ -60,6 +60,7 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] AudioClip openClip;
     [SerializeField] AudioClip closeClip;
+    [SerializeField] AudioClip swipeClip;
 
     private List<GameObject> addedQuestSlots;
     private List<QuestCollectableData> addedQuestItems;
@@ -236,6 +237,10 @@ public class UIManager : MonoBehaviour
                             UpdateItemDescription(addedToolItems[0]);
                             inventoryFrame.transform.SetParent(toolSlotContainer);
                             SetFrameTargetPos(addedToolSlots[0].GetComponent<RectTransform>().position);
+                            if (SoundManager.Instance != null)
+                            {
+                                SoundManager.Instance.PlaySound(swipeClip, 0.5f);
+                            }
                         }
                     }
                 }
@@ -251,6 +256,10 @@ public class UIManager : MonoBehaviour
                     currQuestItemIndex = nextSlot;
                     UpdateItemDescription(addedQuestItems[currQuestItemIndex]);
                     SetFrameTargetPos(addedQuestSlots[currQuestItemIndex].GetComponent<RectTransform>().position);
+                    if(SoundManager.Instance != null)
+                    {
+                        SoundManager.Instance.PlaySound(swipeClip, 0.5f);
+                    }
                 }
             }
             // Looking at tools sections
@@ -286,6 +295,10 @@ public class UIManager : MonoBehaviour
                         UpdateItemDescription(addedQuestItems[0]);
                         inventoryFrame.transform.SetParent(questSlotContainer);
                         SetFrameTargetPos(addedQuestSlots[0].GetComponent<RectTransform>().position);
+                        if (SoundManager.Instance != null)
+                        {
+                            SoundManager.Instance.PlaySound(swipeClip, 0.5f);
+                        }
                     }
                 }
                 if (nextSlot != currToolItemIndex)
@@ -293,6 +306,10 @@ public class UIManager : MonoBehaviour
                     currToolItemIndex = nextSlot;
                     UpdateItemDescription(addedToolItems[currToolItemIndex]);
                     SetFrameTargetPos(addedToolSlots[currToolItemIndex].GetComponent<RectTransform>().position);
+                    if (SoundManager.Instance != null)
+                    {
+                        SoundManager.Instance.PlaySound(swipeClip, 0.5f);
+                    }
                 }
             }
             
