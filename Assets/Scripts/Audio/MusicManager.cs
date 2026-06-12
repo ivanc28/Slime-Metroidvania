@@ -35,6 +35,28 @@ public class MusicManager : MonoBehaviour
             Debug.LogWarning("Something with the music went wrong");
             yield break;
         }
+        AudioClip newClip = null;
+        if (region == GameManager.Region.Sweet)
+        {
+            newClip = regionSongs[0];
+        }
+        else if (region == GameManager.Region.Savory)
+        {
+            newClip = regionSongs[1];
+        }
+        else if (region == GameManager.Region.Sour)
+        {
+            newClip = regionSongs[2];
+        }
+        else if (region == GameManager.Region.Bitter)
+        {
+            newClip = regionSongs[3];
+        }
+        // ensure we never transition to the same music clip
+        if(newClip == musicSource.clip)
+        {
+            yield break;
+        }
         float volume = AudioListener.volume;
         float timer = fadeMusicTime;
         while (timer > 0)
@@ -44,23 +66,8 @@ public class MusicManager : MonoBehaviour
             yield return null;
         }
         yield return new WaitForSeconds(timeBetweenSongs);
-        if(region == GameManager.Region.Sweet)
-        {
-            musicSource.clip = regionSongs[0];
-        }
-        else if (region == GameManager.Region.Savory)
-        {
-            musicSource.clip = regionSongs[1];
-        }
-        else if(region == GameManager.Region.Sour)
-        {
-            musicSource.clip = regionSongs[2];
-        }
-        else if(region == GameManager.Region.Bitter)
-        {
-            musicSource.clip = regionSongs[3];
-        }
 
+        musicSource.clip = newClip;
         musicSource.Play();
         timer = 0;
         while (timer < fadeMusicTime)

@@ -182463,6 +182463,7 @@ GameObject:
   - component: {fileID: 839128864}
   - component: {fileID: 839128863}
   - component: {fileID: 839128862}
+  - component: {fileID: 839128865}
   m_Layer: 5
   m_Name: Quit Button
   m_TagString: Untagged
@@ -182485,9 +182486,9 @@ RectTransform:
   - {fileID: 196731296}
   m_Father: {fileID: 1600130718}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 43}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 306, y: 131}
   m_SizeDelta: {x: 465.729, y: 129.6195}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &839128862
@@ -182584,6 +182585,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 839128860}
   m_CullTransparentMesh: 1
+--- !u!114 &839128865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 839128860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1286843649}
+          m_TargetAssemblyTypeName: ButtonFX, Assembly-CSharp
+          m_MethodName: PlayHoverSFX
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &986715740
 GameObject:
   m_ObjectHideFlags: 0
@@ -183357,6 +183387,74 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1613611518038838955, guid: 1706e69771a463d4d8163fbfc5acea39, type: 3}
   m_PrefabInstance: {fileID: 1237589170}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1286843648
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3582002082026805316, guid: 835de9cc787c1d449a44e68b88ff445c, type: 3}
+      propertyPath: m_Name
+      value: ButtonFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 4882054203916959063, guid: 835de9cc787c1d449a44e68b88ff445c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4882054203916959063, guid: 835de9cc787c1d449a44e68b88ff445c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4882054203916959063, guid: 835de9cc787c1d449a44e68b88ff445c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4882054203916959063, guid: 835de9cc787c1d449a44e68b88ff445c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4882054203916959063, guid: 835de9cc787c1d449a44e68b88ff445c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4882054203916959063, guid: 835de9cc787c1d449a44e68b88ff445c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4882054203916959063, guid: 835de9cc787c1d449a44e68b88ff445c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4882054203916959063, guid: 835de9cc787c1d449a44e68b88ff445c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4882054203916959063, guid: 835de9cc787c1d449a44e68b88ff445c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4882054203916959063, guid: 835de9cc787c1d449a44e68b88ff445c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 835de9cc787c1d449a44e68b88ff445c, type: 3}
+--- !u!114 &1286843649 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4150490281570223972, guid: 835de9cc787c1d449a44e68b88ff445c, type: 3}
+  m_PrefabInstance: {fileID: 1286843648}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2de8f072cba31694d9b8e5e1c77f351a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonFX
 --- !u!1001 &1303216023
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -184291,3 +184389,4 @@ SceneRoots:
   - {fileID: 1090138572}
   - {fileID: 986715742}
   - {fileID: 233666385}
+  - {fileID: 1286843648}

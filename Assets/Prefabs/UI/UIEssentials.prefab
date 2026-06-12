@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 3703482399893524275}
   - component: {fileID: 5657975129174281059}
   - component: {fileID: 206101435645744726}
+  - component: {fileID: 7439772442937678613}
   m_Layer: 5
   m_Name: Resume Button
   m_TagString: Untagged
@@ -270,6 +271,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7439772442937678613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605705532027145114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8075838811045564961}
+          m_TargetAssemblyTypeName: ButtonFX, Assembly-CSharp
+          m_MethodName: PlayHoverSFX
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &747683532196179103
 GameObject:
   m_ObjectHideFlags: 0
@@ -1450,6 +1480,7 @@ GameObject:
   - component: {fileID: 2635883954060015218}
   - component: {fileID: 8550210444130881486}
   - component: {fileID: 1514942825802549517}
+  - component: {fileID: 5097692503602417173}
   m_Layer: 5
   m_Name: Settings Button
   m_TagString: Untagged
@@ -1583,6 +1614,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!114 &5097692503602417173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896579143656478957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8075838811045564961}
+          m_TargetAssemblyTypeName: ButtonFX, Assembly-CSharp
+          m_MethodName: PlayHoverSFX
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1905821355151197149
 GameObject:
   m_ObjectHideFlags: 0
@@ -3187,6 +3247,7 @@ MonoBehaviour:
   itemDescription: {fileID: 7034813683347446998}
   openClip: {fileID: 8300000, guid: 3cad23c764b9b2a4bbb41eafb5c34d35, type: 3}
   closeClip: {fileID: 8300000, guid: ec5d4bd90fce40c4f9bb2779fd3a7e2e, type: 3}
+  swipeClip: {fileID: 8300000, guid: 10b9fca15c846644babba6e65e213509, type: 3}
   screenAnim: {fileID: 2478805950289984615}
   regionTitleText: {fileID: 8231983587791184684}
   regionNames:
@@ -4015,6 +4076,7 @@ GameObject:
   - component: {fileID: 95448825412407644}
   - component: {fileID: 5802728615816327282}
   - component: {fileID: 622309236244297485}
+  - component: {fileID: 6866710107184189049}
   m_Layer: 5
   m_Name: Quit Button
   m_TagString: Untagged
@@ -4136,6 +4198,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6866710107184189049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5328145492635269831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8075838811045564961}
+          m_TargetAssemblyTypeName: ButtonFX, Assembly-CSharp
+          m_MethodName: PlayHoverSFX
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &5631472189067871951
 GameObject:
   m_ObjectHideFlags: 0
@@ -4184,6 +4275,7 @@ GameObject:
   - component: {fileID: 6038233727643013094}
   - component: {fileID: 3268098817725210262}
   - component: {fileID: 8246376355506650317}
+  - component: {fileID: 4135403240962556425}
   m_Layer: 5
   m_Name: Back Button
   m_TagString: Untagged
@@ -4329,6 +4421,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &4135403240962556425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5643424805907575018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8075838811045564961}
+          m_TargetAssemblyTypeName: ButtonFX, Assembly-CSharp
+          m_MethodName: PlayHoverSFX
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &5701513930506481007
 GameObject:
   m_ObjectHideFlags: 0
@@ -6215,8 +6336,82 @@ Transform:
   - {fileID: 3095659680466069192}
   - {fileID: 9067203961750009656}
   - {fileID: 5442889479546916280}
+  - {fileID: 741455775472773138}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &5299228746171766085
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5939180358913543258}
+    m_Modifications:
+    - target: {fileID: 3582002082026805316, guid: 835de9cc787c1d449a44e68b88ff445c, type: 3}
+      propertyPath: m_Name
+      value: ButtonFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 4882054203916959063, guid: 835de9cc787c1d449a44e68b88ff445c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4882054203916959063, guid: 835de9cc787c1d449a44e68b88ff445c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4882054203916959063, guid: 835de9cc787c1d449a44e68b88ff445c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4882054203916959063, guid: 835de9cc787c1d449a44e68b88ff445c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4882054203916959063, guid: 835de9cc787c1d449a44e68b88ff445c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4882054203916959063, guid: 835de9cc787c1d449a44e68b88ff445c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4882054203916959063, guid: 835de9cc787c1d449a44e68b88ff445c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4882054203916959063, guid: 835de9cc787c1d449a44e68b88ff445c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4882054203916959063, guid: 835de9cc787c1d449a44e68b88ff445c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4882054203916959063, guid: 835de9cc787c1d449a44e68b88ff445c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 835de9cc787c1d449a44e68b88ff445c, type: 3}
+--- !u!4 &741455775472773138 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4882054203916959063, guid: 835de9cc787c1d449a44e68b88ff445c, type: 3}
+  m_PrefabInstance: {fileID: 5299228746171766085}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8075838811045564961 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4150490281570223972, guid: 835de9cc787c1d449a44e68b88ff445c, type: 3}
+  m_PrefabInstance: {fileID: 5299228746171766085}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2de8f072cba31694d9b8e5e1c77f351a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonFX
 --- !u!1001 &6099938996723961079
 PrefabInstance:
   m_ObjectHideFlags: 0
