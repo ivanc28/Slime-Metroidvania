@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Grapple Bud 0 6
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 0
-  line: i'll teach ya something sick
+  line: not those strawberry lookin' things though, that ain't food
   choices:
   - choiceText: 
     nextNode: {fileID: 11400000, guid: a1d1cd49a618cd8469335deb6871e275, type: 2}
