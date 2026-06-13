@@ -245,6 +245,7 @@ public class NPC : MonoBehaviour
         int i = 0;
         int sfxCharCount = 0;
         bool canPlaySFX = SoundManager.Instance != null && sfxClip != null;
+        float carryover = 0f;
 
         while (i < message.Length)
         {
@@ -293,16 +294,21 @@ public class NPC : MonoBehaviour
             {
                 timeTillNextChar = delayBetweenChars;
             }
-            float timer = 0;
-            while (timer  < timeTillNextChar)
+            float elapsed = -carryover; // start negative so previous overshoot goes into this wait
+            carryover = 0f;
+            while (elapsed  < timeTillNextChar)
             {
                 if (choosingToSkipLine) // choosingToSkipDialogue set in update
                 {
                     breakOutOfOuterLoop = true;
                     break;
                 }
-                timer += Time.deltaTime;
+                elapsed += Time.deltaTime;
                 yield return null;
+            }
+            if (!breakOutOfOuterLoop)
+            {
+                carryover = elapsed - timeTillNextChar;
             }
             if (breakOutOfOuterLoop)
             {
