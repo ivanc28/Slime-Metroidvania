@@ -58,10 +58,10 @@ MonoBehaviour:
   umbrellaFallingGravity: 3
   umbrellaStopJumpGravity: 5
   umbrellaDescendSpeed: 6
-  textColor: {r: 0.13995196, g: 0.16037738, b: 0.15016468, a: 1}
-  choiceHoverColor: {r: 0.084905684, g: 0.084905684, b: 0.084905684, a: 1}
-  choiceNotHoverColor: {r: 0.509434, g: 0.509434, b: 0.509434, a: 1}
-  choiceDisabledColor: {r: 0.6320754, g: 0.4442417, b: 0.4442417, a: 0.50980395}
+  textColor: {r: 0.15686275, g: 0.06608225, b: 0.28627452, a: 1}
+  choiceHoverColor: {r: 1, g: 0.4117647, b: 0.7058824, a: 1}
+  choiceNotHoverColor: {r: 0.3301116, g: 0.2774564, b: 0.4056604, a: 0.6313726}
+  choiceDisabledColor: {r: 0.32941177, g: 0.2784314, b: 0.4039216, a: 0.5882353}
   talkDistance: 2.25
   getDistanceSpeed: 6
   talkSFX: {fileID: 8300000, guid: 219c2a073a1d9cb48b300f50f2b891e0, type: 3}

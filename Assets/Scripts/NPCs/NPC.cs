@@ -234,7 +234,7 @@ public class NPC : MonoBehaviour
 
     private string ChangeTextColor(string text, Color color)
     {
-        return $"<color=#{ColorUtility.ToHtmlStringRGB(color)}>{text}</color>";
+        return $"<color=#{ColorUtility.ToHtmlStringRGBA(color)}>{text}</color>";
     }
 
     private IEnumerator StartDialogueLine(TextMeshProUGUI text, string message, AudioClip sfxClip, float delayBetweenChars, float delayAfterPeriod, float delayAfterComma)
@@ -357,7 +357,7 @@ public class NPC : MonoBehaviour
             {
                 if (!IsChoiceAvailable(choices[i]))
                 {
-                    updateDialogueText += ChangeTextColor(choices[i].choiceText, Player.Instance.data.choiceDisabledColor);
+                    updateDialogueText += $"<s>{ChangeTextColor(choices[i].choiceText, Player.Instance.data.choiceDisabledColor)}</s>";
                 }
                 else if (i == currChoice)
                 {
