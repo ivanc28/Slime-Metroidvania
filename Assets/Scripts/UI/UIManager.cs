@@ -94,6 +94,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject pauseElements;
     [SerializeField] GameObject optionsMenu;
     private bool optionsOpen;
+    [SerializeField] ButtonFX buttonFX;
 
     [Header("Map")]
     [SerializeField] GameObject mapDisplay;
@@ -722,6 +723,7 @@ public class UIManager : MonoBehaviour
     {
         pauseMenu.SetActive(false);
         GameManager.Instance.SetPaused(false);
+        buttonFX.ResetButtonSprites();
     }
     public void QuitToMenu()
     {
