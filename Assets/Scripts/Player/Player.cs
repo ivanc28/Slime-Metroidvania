@@ -111,7 +111,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-            Debug.Log("I existed HAHA!");
+            //Debug.Log("I existed HAHA!");
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
