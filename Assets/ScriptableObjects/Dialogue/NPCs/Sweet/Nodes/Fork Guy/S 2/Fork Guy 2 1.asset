@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Fork Guy 2 1
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 0
-  line: nice find
+  line: yeah nice find
   choices:
   - choiceText: 
     nextNode: {fileID: 11400000, guid: 6544c0dd0f87acb498a6787b7a6c1589, type: 2}
