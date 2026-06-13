@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c0552f17edcde34cb93ab0d9a5ca2bb, type: 3}
   m_Name: Grapple Bud 0 7
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
-  speaker: 1
-  line: sounds good
-  choices: []
+  speaker: 0
+  line: get some real food, i'll teach ya something sick
+  choices:
+  - choiceText: 
+    nextNode: {fileID: 11400000, guid: f71c49ff151d2ec4e98300726655b3c7, type: 2}
+    dialogueEvents: []
+    condition: {fileID: 0}
