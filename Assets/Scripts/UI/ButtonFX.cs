@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -10,6 +11,7 @@ public class ButtonFX : MonoBehaviour
     public AudioSource buttonSource;
     public Sprite unselectedButton;
     public Sprite selectedButton;
+    private List<Button> buttonList = new();
     private void Start()
     { 
         //buttonSource = gameObject.AddComponent<AudioSource>();
@@ -31,6 +33,10 @@ public class ButtonFX : MonoBehaviour
 
             if (clickedObject != null)
             {
+                if (!buttonList.Contains(clickedObject))
+                {
+                    buttonList.Add(clickedObject);
+                }
                 clickedObject.image.sprite = selectedButton;
             }
         }
@@ -49,5 +55,18 @@ public class ButtonFX : MonoBehaviour
             }
         }
 
+    }
+
+    public List<Button> GetUIButtons()
+    {
+        return buttonList;
+    }
+
+    public void ResetButtonSprites()
+    {
+        foreach (Button button in GetUIButtons())
+        {
+            button.image.sprite = unselectedButton;
+        }
     }
 }
