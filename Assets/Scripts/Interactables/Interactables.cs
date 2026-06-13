@@ -76,7 +76,7 @@ public abstract class Interactables : MonoBehaviour
         if (data.requiredTool.Contains(Player.Instance.tools.GetCurrTool()))
         {
             OnInteract();
-            if (data.destroyOnInteract)
+            if (data.destroyOnInteract && DidInteractSucceed())
             {
                 room.collectedInteractables.Add(interactableID);
                 GameManager.Instance.worldIDs.Add(interactableID);
@@ -85,6 +85,12 @@ public abstract class Interactables : MonoBehaviour
             }
         }
         isInteracting = false;
+    }
+
+    // base implementation — other interactables always succeed
+    public virtual bool DidInteractSucceed()
+    {
+        return true;
     }
     public abstract void OnInteract();
     public  void SpawnPebbles(int numPebbles)
