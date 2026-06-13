@@ -48,6 +48,8 @@ MonoBehaviour:
   randomPitch: 0
   hoverClip: {fileID: 8300000, guid: 3bd8598a28a515d448f0c8976d926269, type: 3}
   buttonSource: {fileID: 8926197574858307016}
+  unselectedButton: {fileID: 2283489916029454352, guid: 75fd32a4b9beae94ca96dc8b3ac0c9cc, type: 3}
+  selectedButton: {fileID: 3539740707272708998, guid: 401dad14bd872d74e9d827fb88c09c4c, type: 3}
 --- !u!82 &8926197574858307016
 AudioSource:
   m_ObjectHideFlags: 0

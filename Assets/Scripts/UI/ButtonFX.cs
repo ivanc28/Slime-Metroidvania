@@ -1,12 +1,15 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class ButtonFX : MonoBehaviour
 {
     public bool randomPitch;
     public AudioClip hoverClip;
     public AudioSource buttonSource;
+    public Sprite unselectedButton;
+    public Sprite selectedButton;
     private void Start()
     { 
         //buttonSource = gameObject.AddComponent<AudioSource>();
@@ -17,8 +20,34 @@ public class ButtonFX : MonoBehaviour
     //{
     //    buttonSource.PlayOneShot(hoverClip);
     //}
-    public void PlayHoverSFX()
+    public void PointerEnter(BaseEventData eventData)
     {
         buttonSource.PlayOneShot(hoverClip);
+        PointerEventData pointerData = (PointerEventData)eventData;
+        if (pointerData.pointerEnter != null)
+        {
+            // 2. Use InParent so it works if hovering over child text/icons
+            Button clickedObject = pointerData.pointerEnter.GetComponentInParent<Button>();
+
+            if (clickedObject != null)
+            {
+                clickedObject.image.sprite = selectedButton;
+            }
+        }
+    }
+
+    public void PointerExit(BaseEventData eventData)
+    {
+        PointerEventData pointerData = (PointerEventData)eventData;
+        if (pointerData.pointerEnter != null)
+        {
+            Button exitedObject = pointerData.pointerEnter.GetComponentInParent<Button>();
+
+            if (exitedObject != null)
+            {
+                exitedObject.image.sprite = unselectedButton;
+            }
+        }
+
     }
 }
