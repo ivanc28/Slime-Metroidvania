@@ -30,7 +30,6 @@ public class ButtonFX : MonoBehaviour
         {
             // 2. Use InParent so it works if hovering over child text/icons
             Button clickedObject = pointerData.pointerEnter.GetComponentInParent<Button>();
-
             if (clickedObject != null)
             {
                 if (!buttonList.Contains(clickedObject))
@@ -38,6 +37,8 @@ public class ButtonFX : MonoBehaviour
                     buttonList.Add(clickedObject);
                 }
                 clickedObject.image.sprite = selectedButton;
+                Debug.Log("what it should be " + selectedButton);
+                Debug.Log(clickedObject.image.sprite);
             }
         }
     }

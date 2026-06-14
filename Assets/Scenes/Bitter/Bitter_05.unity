@@ -1989,11 +1989,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2187572629940727041, guid: 69fad7f23c4ca0a4e961dcc60d9c76f9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 138.86
+      value: 142.42
       objectReference: {fileID: 0}
     - target: {fileID: 2187572629940727041, guid: 69fad7f23c4ca0a4e961dcc60d9c76f9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 80.1
+      value: 81.07
       objectReference: {fileID: 0}
     - target: {fileID: 2636610761331106497, guid: 69fad7f23c4ca0a4e961dcc60d9c76f9, type: 3}
       propertyPath: m_Name
@@ -2831,11 +2831,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1473318916847903887, guid: 69fad7f23c4ca0a4e961dcc60d9c76f9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 166.6
+      value: 164.38
       objectReference: {fileID: 0}
     - target: {fileID: 1473318916847903887, guid: 69fad7f23c4ca0a4e961dcc60d9c76f9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 77.5
+      value: 80.89
       objectReference: {fileID: 0}
     - target: {fileID: 2108276842980964637, guid: 69fad7f23c4ca0a4e961dcc60d9c76f9, type: 3}
       propertyPath: travelPoints.Array.size
