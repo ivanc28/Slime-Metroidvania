@@ -28,4 +28,4 @@ MonoBehaviour:
   delayBetweenChars: 0.0185
   delayAfterPeriod: 0.3
   delayAfterComma: 0.4
-  npcTextColor: {r: 0.2106276, g: 0.06274511, b: 0.21960784, a: 1}
+  npcTextColor: {r: 0.5647059, g: 0, b: 0.41960785, a: 1}
