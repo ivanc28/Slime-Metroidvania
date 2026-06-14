@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Chef 0 28
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 0
-  line: you can be my <color=#cc2d6a>Secret Agent</color>
+  line: you can be my <color=#ff0d55>Secret Agent</color>
   choices:
   - choiceText: 
     nextNode: {fileID: 11400000, guid: d5ae4c0575c13394992eac5352002ab8, type: 2}

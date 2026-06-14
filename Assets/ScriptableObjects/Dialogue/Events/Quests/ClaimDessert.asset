@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DEventClaimItem
   questItem: {fileID: 11400000, guid: 183ef6fef05dd514081ac4095cfd6087, type: 2}
   optionalPebbleCost: 0
-  claimMessage: You found <color=#cc2d6a>Cherry Amaretto Tiramisu!</color>
+  claimMessage: You found <color=#ff0d55>Cherry Amaretto Tiramisu!</color>
