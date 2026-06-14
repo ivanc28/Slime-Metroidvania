@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 0
   line: if you press <color=#FF69B4>Left Click</color>, you can shoot out parts of
-    your body and attatch to surfaces
+    your body and attach to surfaces
   choices:
   - choiceText: 
     nextNode: {fileID: 11400000, guid: fcb050e13eb53cf4f895900b01b3761b, type: 2}
