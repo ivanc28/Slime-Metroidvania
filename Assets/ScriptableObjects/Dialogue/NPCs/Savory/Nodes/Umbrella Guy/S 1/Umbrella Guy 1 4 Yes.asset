@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c0552f17edcde34cb93ab0d9a5ca2bb, type: 3}
   m_Name: Umbrella Guy 1 4 Yes
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
-  speaker: 1
+  speaker: 0
   line: now that's how you scam- i mean... that's how to do business!
   choices:
   - choiceText: 
