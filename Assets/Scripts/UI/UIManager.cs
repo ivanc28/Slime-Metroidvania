@@ -249,7 +249,7 @@ public class UIManager : MonoBehaviour
                             SetFrameTargetPos(addedToolSlots[0].GetComponent<RectTransform>().position);
                             if (SoundManager.Instance != null)
                             {
-                                SoundManager.Instance.PlaySound(swipeClip, 0.5f);
+                                SoundManager.Instance.PlaySound(swipeClip, 0.2f);
                             }
                         }
                     }
@@ -268,7 +268,7 @@ public class UIManager : MonoBehaviour
                     SetFrameTargetPos(addedQuestSlots[currQuestItemIndex].GetComponent<RectTransform>().position);
                     if(SoundManager.Instance != null)
                     {
-                        SoundManager.Instance.PlaySound(swipeClip, 0.5f);
+                        SoundManager.Instance.PlaySound(swipeClip, 0.2f);
                     }
                 }
             }
@@ -307,7 +307,7 @@ public class UIManager : MonoBehaviour
                         SetFrameTargetPos(addedQuestSlots[0].GetComponent<RectTransform>().position);
                         if (SoundManager.Instance != null)
                         {
-                            SoundManager.Instance.PlaySound(swipeClip, 0.5f);
+                            SoundManager.Instance.PlaySound(swipeClip, 0.2f);
                         }
                     }
                 }
@@ -320,7 +320,7 @@ public class UIManager : MonoBehaviour
                         SetFrameTargetPos(addedToolSlots[currToolItemIndex].GetComponent<RectTransform>().position);
                         if (SoundManager.Instance != null)
                         {
-                            SoundManager.Instance.PlaySound(swipeClip, 0.5f);
+                            SoundManager.Instance.PlaySound(swipeClip, 0.2f);
                         }
                     }
                 }
