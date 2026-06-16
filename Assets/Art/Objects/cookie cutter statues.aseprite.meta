@@ -156,8 +156,8 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 76
-      y: 280
+      x: 148
+      y: 4
       width: 64
       height: 84
     spriteID: e3025e0ac675f0743bf4a19a3261eac9
@@ -168,7 +168,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 76, y: 280}
+    uvTransform: {x: 148, y: 4}
   - name: sweet banana
     originalName: 
     pivot: {x: 0.5, y: 0}
@@ -178,7 +178,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 76
-      y: 188
+      y: 372
       width: 64
       height: 84
     spriteID: c7ae2a6de26002f4fb4085edf6203bf4
@@ -189,7 +189,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 76, y: 188}
+    uvTransform: {x: 76, y: 372}
   - name: bitter eggplant
     originalName: 
     pivot: {x: 0.5, y: 0}
@@ -261,8 +261,8 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 4
-      y: 372
+      x: 76
+      y: 4
       width: 64
       height: 84
     spriteID: 1e9ee789e5dccad498c317063032c973
@@ -273,29 +273,8 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 372}
-  - name: savory cheese
-    originalName: 
-    pivot: {x: 0.5, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 76
-      y: 4
-      width: 64
-      height: 84
-    spriteID: aa909e80f4b27a94a9ef804925a5595a
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
     uvTransform: {x: 76, y: 4}
-  - name: savory sun
+  - name: savory cheese
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -307,7 +286,7 @@ ScriptedImporter:
       y: 96
       width: 64
       height: 84
-    spriteID: d4d5a97b27d74964cbab4f860717773c
+    spriteID: aa909e80f4b27a94a9ef804925a5595a
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -316,6 +295,111 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 76, y: 96}
+  - name: savory sun
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 76
+      y: 188
+      width: 64
+      height: 84
+    spriteID: d4d5a97b27d74964cbab4f860717773c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 76, y: 188}
+  - name: sweet heart
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 148
+      y: 96
+      width: 64
+      height: 84
+    spriteID: 1d399d7072fe6fb4394298dad8b97435
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 148, y: 96}
+  - name: savory soy sauce
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 76
+      y: 280
+      width: 64
+      height: 84
+    spriteID: 79d7390a5e31d0e4b9447ed700e70a42
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 76, y: 280}
+  - name: bitter flower
+    originalName: 
+    pivot: {x: 0.5, y: -0.012048193}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 148
+      y: 188
+      width: 64
+      height: 83
+    spriteID: f18e21793db2a3d408cf51d0a526c1f0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 148, y: 188}
+  - name: sour gooseberry
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 372
+      width: 64
+      height: 84
+    spriteID: ebf777c31ca3e5a43ad83b4df3d0da19
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 372}
   spriteSheetImportData: []
   tileSetImportData: []
   asepriteLayers:
@@ -396,6 +480,31 @@ ScriptedImporter:
     parentIndex: -1
   - layerIndex: 3
     uuid:
+      value0: 1558304925
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: 0
+    name: bitter flower
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: bitter flower
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: 1
+        width: 64
+        height: 83
+      spriteId: f18e21793db2a3d408cf51d0a526c1f0
+    linkedCells: []
+    tileCells: []
+    tileSetIndex: 0
+    parentIndex: -1
+  - layerIndex: 4
+    uuid:
       value0: 331557357
       value1: 0
       value2: 0
@@ -419,7 +528,32 @@ ScriptedImporter:
     tileCells: []
     tileSetIndex: 0
     parentIndex: -1
-  - layerIndex: 4
+  - layerIndex: 5
+    uuid:
+      value0: 3459797344
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: 0
+    name: sour gooseberry
+    layerFlags: 2
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: sour gooseberry
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 64
+        height: 84
+      spriteId: ebf777c31ca3e5a43ad83b4df3d0da19
+    linkedCells: []
+    tileCells: []
+    tileSetIndex: 0
+    parentIndex: -1
+  - layerIndex: 6
     uuid:
       value0: 863198748
       value1: 0
@@ -444,7 +578,7 @@ ScriptedImporter:
     tileCells: []
     tileSetIndex: 0
     parentIndex: -1
-  - layerIndex: 5
+  - layerIndex: 7
     uuid:
       value0: 3181528797
       value1: 0
@@ -469,7 +603,7 @@ ScriptedImporter:
     tileCells: []
     tileSetIndex: 0
     parentIndex: -1
-  - layerIndex: 6
+  - layerIndex: 8
     uuid:
       value0: 4240230962
       value1: 0
@@ -494,7 +628,32 @@ ScriptedImporter:
     tileCells: []
     tileSetIndex: 0
     parentIndex: -1
-  - layerIndex: 7
+  - layerIndex: 9
+    uuid:
+      value0: 2723743142
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: 0
+    name: savory soy sauce
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: savory soy sauce
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 64
+        height: 84
+      spriteId: 79d7390a5e31d0e4b9447ed700e70a42
+    linkedCells: []
+    tileCells: []
+    tileSetIndex: 0
+    parentIndex: -1
+  - layerIndex: 10
     uuid:
       value0: 2952178771
       value1: 0
@@ -519,7 +678,7 @@ ScriptedImporter:
     tileCells: []
     tileSetIndex: 0
     parentIndex: -1
-  - layerIndex: 8
+  - layerIndex: 11
     uuid:
       value0: 2367026858
       value1: 0
@@ -540,6 +699,31 @@ ScriptedImporter:
         width: 64
         height: 84
       spriteId: e3025e0ac675f0743bf4a19a3261eac9
+    linkedCells: []
+    tileCells: []
+    tileSetIndex: 0
+    parentIndex: -1
+  - layerIndex: 12
+    uuid:
+      value0: 3536964506
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: 0
+    name: sweet heart
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: sweet heart
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 64
+        height: 84
+      spriteId: 1d399d7072fe6fb4394298dad8b97435
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
