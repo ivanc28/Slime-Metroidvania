@@ -39,6 +39,10 @@ public class PlayerTools
     {
         return claimedTools[(int)tool];
     }
+    public bool[] GetClaimedTools()
+    {
+        return claimedTools;
+    }
     public Tool GetCurrTool()
     {
         return currTool;

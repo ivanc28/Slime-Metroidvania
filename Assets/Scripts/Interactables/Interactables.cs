@@ -59,8 +59,7 @@ public abstract class Interactables : MonoBehaviour
     public virtual void MakeUpdate()
     {
         inRange = Vector2.Distance(interactPoint, Player.Instance.transform.position) <= data.maxDistanceToInteract;
-        bool playerCanInteract = (!Player.Instance.InInteraction && !Player.Instance.IsInBubble() && (Player.Instance.GetIsGrounded() || Player.Instance.GetIsLocked()) && !Player.Instance.GetIsAttaching() && !Player.Instance.IsZipping() && !Player.Instance.GetHookBeingThrown()) || Player.Instance.IsOnbubble();
-        if (inRange && playerCanInteract && !isInteracting)
+        if (inRange && Player.Instance.CanInteract() && !isInteracting)
         {
             if (Input.GetKeyDown(data.interactKey))
             {
@@ -78,8 +77,7 @@ public abstract class Interactables : MonoBehaviour
             OnInteract();
             if (data.destroyOnInteract && DidInteractSucceed())
             {
-                room.collectedInteractables.Add(interactableID);
-                GameManager.Instance.worldIDs.Add(interactableID);
+                AddInteractableToDB(interactableID);
                 //Debug.Log($"adding to colected interactables and destroying {gameObject.name}");
                 Destroy(gameObject);
             }
@@ -143,5 +141,11 @@ public abstract class Interactables : MonoBehaviour
             point = transform.position;
         }
             Gizmos.DrawWireSphere(point, data.maxDistanceToInteract);
+    }
+
+    private void AddInteractableToDB(string id)
+    {
+        room.collectedInteractables.Add(id);
+        GameManager.Instance.worldIDs.Add(id);
     }
 }

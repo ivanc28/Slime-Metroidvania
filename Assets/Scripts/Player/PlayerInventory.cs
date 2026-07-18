@@ -1,4 +1,6 @@
+using NUnit.Framework;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PlayerInventory
@@ -36,6 +38,10 @@ public class PlayerInventory
     {
         return toolItemList;
     }
+    public List<GameManager.Region> GetCollectedMaps()
+    {
+        return collectedMaps.ToList();
+    }
     public void CompletePurchase(string purchaseID)
     {
         completedPurchases.Add(purchaseID);
@@ -45,7 +51,14 @@ public class PlayerInventory
     {
         return completedPurchases.Contains(purchaseID);
     }
-
+    public List<string> GetCompletedPurchases()
+    {
+        return completedPurchases.ToList();
+    }
+    public void SetCompletedPurchasesOnLoad(List<string> purchases)
+    {
+        completedPurchases = new HashSet<string>(purchases);
+    }
     public void CollectMap(GameManager.Region regionMap)
     {
         collectedMaps.Add(regionMap);

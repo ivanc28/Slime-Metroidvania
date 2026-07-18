@@ -35,4 +35,8 @@ public class PlayerCurrency
     {
         return currency;
     }
+    public void SetCurrencyOnLoad(int amount)
+    {
+        currency = amount;
+    }
 }

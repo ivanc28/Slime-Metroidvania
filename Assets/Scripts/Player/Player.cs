@@ -894,6 +894,14 @@ public class Player : MonoBehaviour
     {
         grappleLength += data.grappleLengthIncrements;
     }
+    public float GetGrappleLength()
+    {
+        return grappleLength;
+    }
+    public void SetGrappleLengthOnLoad(float value)
+    {
+        grappleLength = value;
+    }
     // -------------------
 
 
@@ -1139,6 +1147,10 @@ public class Player : MonoBehaviour
     public void ClaimZiplineStrap()
     {
         HasZiplineStrap = true;
+    }
+    public bool CanInteract()
+    {
+        return (!InInteraction && !IsInBubble() && (GetIsGrounded() || GetIsLocked()) && !GetIsAttaching() && !IsZipping() && !GetHookBeingThrown()) || IsOnbubble();
     }
     // --------------
 

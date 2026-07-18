@@ -65,8 +65,7 @@ public abstract class Collectable : MonoBehaviour
     {
         yield return new WaitForSeconds(data.pickupTime);
         Collect();
-        room.collectedCollectables.Add(collectableID);
-        GameManager.Instance.worldIDs.Add(collectableID);
+        AddCollectableToDB(collectableID);
         EnableKeyIcon(false);
         spriteRend.enabled = false;
         if(SoundManager.Instance != null)
@@ -85,6 +84,11 @@ public abstract class Collectable : MonoBehaviour
     private void EnableKeyIcon(bool value)
     {
         keyIcon.SetActive(value);
+    }
+    private void AddCollectableToDB(string id)
+    {
+        room.collectedCollectables.Add(id);
+        GameManager.Instance.worldIDs.Add(id);
     }
     
 }

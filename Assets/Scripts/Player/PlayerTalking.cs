@@ -43,15 +43,18 @@ public class PlayerTalking : MonoBehaviour
     {
         NPC nearestNPC = null;
         float closestDistance = Mathf.Infinity;
-        foreach (NPC npc in NPCsInRoom)
+        if(NPCsInRoom != null)
         {
-            if(npc != null)
+            foreach (NPC npc in NPCsInRoom)
             {
-                float dist = Vector2.Distance(npc.transform.position, transform.position);
-                if (dist <= npc.data.interactDistance && dist < closestDistance)
+                if (npc != null)
                 {
-                    closestDistance = dist;
-                    nearestNPC = npc;
+                    float dist = Vector2.Distance(npc.transform.position, transform.position);
+                    if (dist <= npc.data.interactDistance && dist < closestDistance)
+                    {
+                        closestDistance = dist;
+                        nearestNPC = npc;
+                    }
                 }
             }
         }

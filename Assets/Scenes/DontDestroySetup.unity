@@ -8248,6 +8248,10 @@ PrefabInstance:
       propertyPath: uiManager
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4100452309072477043, guid: 5df7d5e734a991b4d851a0776d33f837, type: 3}
+      propertyPath: enableDebugMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6488276358241451689, guid: 5df7d5e734a991b4d851a0776d33f837, type: 3}
       propertyPath: m_Radius
       value: 0.4
