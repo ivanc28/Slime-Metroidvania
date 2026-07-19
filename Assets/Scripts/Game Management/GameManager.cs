@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
     private Dictionary<string, RoomData> roomStates = new();
     public HashSet<string> worldIDs = new();
+    public QuestCollectableDB questItemsDB;
 
     private string currRoomID;
     private string nextSpawnPointID;
@@ -167,6 +168,14 @@ public class GameManager : MonoBehaviour
             if (save.claimedTools[toolIndex])
             {
                 Player.Instance.tools.ClaimTool((PlayerTools.Tool)toolIndex);
+            }
+        }
+        foreach(string questItem in save.questItems)
+        {
+            QuestCollectableData item = questItemsDB.GetItemByName(questItem);
+            if(item != null)
+            {
+                Player.Instance.inventory.AddQuestItem(item);
             }
         }
         foreach(int mapRegion in save.collectedMaps)

@@ -44,3 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 158bf23c339c0e149a7c198343ff969c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  questItemsDB: {fileID: 11400000, guid: 7beb320bb5be2504b8362a9d2d1493f8, type: 2}
