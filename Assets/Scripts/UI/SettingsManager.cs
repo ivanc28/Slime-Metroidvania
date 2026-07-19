@@ -18,6 +18,9 @@ public class SettingsManager : MonoBehaviour
     public static float sfxValue = 1;
     private void Start()
     {
+        masterValue = PlayerPrefs.GetFloat("masterVolume", 1f);
+        musicValue = PlayerPrefs.GetFloat("musicVolume", 1f);
+        sfxValue = PlayerPrefs.GetFloat("soundVolume", 1f);
         masterSlider.value = masterValue;
         musicSlider.value = musicValue;
         sfxSlider.value = sfxValue;
@@ -36,17 +39,29 @@ public class SettingsManager : MonoBehaviour
     {
         AudioListener.volume = value;
         masterValue = value;
+        PlayerPrefs.SetFloat("masterVolume", value);
     }
     public void SetMusicVolume(float value)
     {
         float db = Mathf.Log10(Mathf.Max(0.0001f, value)) * 20;
         audioMixer.SetFloat("MusicVolume", db);
         musicValue = value;
+        PlayerPrefs.SetFloat("musicVolume", value);
     }
     public void SetSFXVolume(float value)
     {
         float db = Mathf.Log10(Mathf.Max(0.0001f, value)) * 20;
         audioMixer.SetFloat("SoundVolume", db);
         sfxValue = value;
+        PlayerPrefs.SetFloat("soundVolume", value);
+    }
+
+    private void OnDisable()
+    {
+        PlayerPrefs.Save();
+    }
+    private void OnApplicationQuit()
+    {
+        PlayerPrefs.Save();
     }
 }
