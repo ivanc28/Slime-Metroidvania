@@ -34,4 +34,6 @@ public class SaveData
     public string lastSavePointID;
     public string lastSavedRoomID;
     public int lastSavedRegion;
+
+    public int saveVersion = 1;
 }
