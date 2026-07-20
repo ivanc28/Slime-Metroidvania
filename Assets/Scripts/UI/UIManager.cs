@@ -102,6 +102,10 @@ public class UIManager : MonoBehaviour
     [Tooltip("0 is Empty Map, 1 is Sweet, 2 is Savory, 3 is Sour, 4 is Bitter")]
     [SerializeField] Sprite[] mapSprites;
 
+    [Header("Saving")]
+    [SerializeField] Image saveIcon;
+    [SerializeField] Animator saveIconAnim;
+
     public static UIManager Instance { get; private set; }
     private void Awake()
     {
@@ -769,5 +773,10 @@ public class UIManager : MonoBehaviour
     public void HideMap()
     {
         mapDisplay.SetActive(false);
+    }
+
+    public void ShowSaveIcon()
+    {
+        saveIconAnim.SetTrigger("showSave");
     }
 }

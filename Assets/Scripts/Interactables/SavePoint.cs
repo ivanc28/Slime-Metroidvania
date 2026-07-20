@@ -36,6 +36,10 @@ public class SavePoint : MonoBehaviour
         GameManager.Instance.SetSavePointData(GameManager.Instance.GetCurrRoomID(), GameManager.Instance.GetCurrRegion(), savePointID);
         yield return null;
         GameManager.Instance.SaveGame();
+        if(UIManager.Instance != null)
+        {
+            UIManager.Instance.ShowSaveIcon();
+        }
         Player.Instance.InInteraction = false;
     }
 }
