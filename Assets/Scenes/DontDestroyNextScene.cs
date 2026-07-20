@@ -7,9 +7,11 @@ public class DontDestroyNextScene : MonoBehaviour
     void Start()
     {
         GameManager.Instance.ApplySaveData(SaveSystem.Load());
-        if(!string.IsNullOrEmpty(GameManager.Instance.GetLastSavedRoomID()))
+        string lastSavedRoom = GameManager.Instance.GetLastSavedRoomID();
+        if(!string.IsNullOrEmpty(lastSavedRoom))
         {
-            SceneManager.LoadScene(GameManager.Instance.GetLastSavedRoomID());
+            GameManager.Instance.IsLoadingSaveData = true;
+            SceneManager.LoadScene(lastSavedRoom);
         }
         else
         {

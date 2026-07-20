@@ -35,6 +35,15 @@ public class RoomSetUp : MonoBehaviour
         Player.Instance.EnableToolSelectionCanvas(false);
         string spawnPointID = GameManager.Instance.GetNextSpawnPointID();
         UIManager.Instance.FadeIn();
+        if (GameManager.Instance.IsLoadingSaveData)
+        {
+            SavePoint lastSpawnPoint = GameManager.Instance.FindSavePointThatMatchesID(GameManager.Instance.GetLastSavePointID());
+            if(lastSpawnPoint != null)
+            {
+                Player.Instance.transform.position = lastSpawnPoint.transform.position;
+            }
+            GameManager.Instance.IsLoadingSaveData = false;
+        }
         if (spawnPointID == null || spawnPointID == string.Empty)
         {
             // Initial call when there is no spawnPointID yet (when GameManager first loaded)

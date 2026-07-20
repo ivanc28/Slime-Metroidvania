@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     private string currRoomID;
     private string nextSpawnPointID;
     public bool GamePaused { get; private set; }
+    public bool IsLoadingSaveData { get; set; }
     public enum Region { None, Sweet, Savory, Sour, Bitter, Salty }
     private Region currRegion;
     private float currTimeScale = 1f;
@@ -85,6 +86,25 @@ public class GameManager : MonoBehaviour
     {
         return currRegion;
     }
+    /// <summary>
+    /// Called on room set up to find last save point used
+    /// </summary>
+    /// <param name="savePointID"></param>
+    public SavePoint FindSavePointThatMatchesID(string savePointID)
+    {
+        SavePoint[] savePointsInRoom = FindObjectsByType<SavePoint>(FindObjectsSortMode.None);
+        if(savePointsInRoom.Length > 0)
+        {
+            foreach(SavePoint savePoint in savePointsInRoom)
+            {
+                if(savePointID == savePoint.savePointID)
+                {
+                    return savePoint;
+                }
+            }
+        }
+        return null;
+    }
     public void SetPaused(bool paused)
     {
         if (paused)
@@ -122,6 +142,10 @@ public class GameManager : MonoBehaviour
     public string GetLastSavedRoomID()
     {
         return lastSavedRoomID;
+    }
+    public string GetLastSavePointID()
+    {
+        return lastSavePointID;
     }
     public SaveData BuildSaveData()
     {
