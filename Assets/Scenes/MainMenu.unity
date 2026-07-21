@@ -3615,7 +3615,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Save
+  m_text: New Game
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2a5d646f693947e41b1427791cb16fef, type: 2}
   m_sharedMaterial: {fileID: 6119526355280302052, guid: 2a5d646f693947e41b1427791cb16fef, type: 2}
