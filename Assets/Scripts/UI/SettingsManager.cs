@@ -1,12 +1,15 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SettingsManager : MonoBehaviour
 {
-    public string sceneToLoadOnStart;
-
+    public string sceneToLoadOnStartGame;
+    [SerializeField] Button continueButton;
+    [SerializeField] Sprite selectedButtonSprite;
     [Header("Audio Controls")]
     [SerializeField] AudioMixer audioMixer;
     [SerializeField] Slider masterSlider;
@@ -24,10 +27,31 @@ public class SettingsManager : MonoBehaviour
         masterSlider.value = masterValue;
         musicSlider.value = musicValue;
         sfxSlider.value = sfxValue;
+        if(continueButton != null)
+        {
+            if (!PlayerPrefs.HasKey("jsonData"))
+            {
+                continueButton.interactable = false;
+                continueButton.image.sprite = selectedButtonSprite;
+                continueButton.GetComponent<EventTrigger>().enabled = false;
+                Color buttonTextColor = continueButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().color;
+                ColorBlock continueButtonColors = continueButton.colors;
+                buttonTextColor.a = continueButtonColors.disabledColor.a;
+                continueButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = buttonTextColor;
+            }
+        }
     }
+    // Called by button
     public void StartGame()
     {
-        SceneManager.LoadScene(sceneToLoadOnStart);
+        SceneManager.LoadScene(sceneToLoadOnStartGame);
+    }
+    // Called by button
+    public void StartGameNewSave()
+    {
+        PlayerPrefs.DeleteKey("jsonData");
+        PlayerPrefs.Save();
+        SceneManager.LoadScene(sceneToLoadOnStartGame);
     }
     // Called by button
     public void QuitGame()
