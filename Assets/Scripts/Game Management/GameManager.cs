@@ -76,6 +76,7 @@ public class GameManager : MonoBehaviour
         UIManager.Instance.FadeOut();
         yield return new WaitForSeconds(fadeTime);
         nextSpawnPointID = spawnPointID;
+        SaveGame();
         SceneManager.LoadScene(roomID);
     }
     public void SetCurrRegion(Region region)
