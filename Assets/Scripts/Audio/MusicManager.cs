@@ -57,12 +57,12 @@ public class MusicManager : MonoBehaviour
         {
             yield break;
         }
-        float volume = AudioListener.volume;
+        float volume = musicSource.volume;
         float timer = fadeMusicTime;
         while (timer > 0)
         {
             timer -= Time.deltaTime;
-            AudioListener.volume = Mathf.Lerp(0, volume, timer / fadeMusicTime);
+            musicSource.volume = Mathf.Lerp(0, volume, timer / fadeMusicTime);
             yield return null;
         }
         yield return new WaitForSeconds(timeBetweenSongs);
@@ -73,10 +73,10 @@ public class MusicManager : MonoBehaviour
         while (timer < fadeMusicTime)
         {
             timer += Time.deltaTime;
-            AudioListener.volume = Mathf.Lerp(0, volume, timer / fadeMusicTime);
+            musicSource.volume = Mathf.Lerp(0, volume, timer / fadeMusicTime);
             yield return null;
         }
-        AudioListener.volume = volume;
+        musicSource.volume = volume;
 
     }
 
@@ -86,16 +86,16 @@ public class MusicManager : MonoBehaviour
     }
     private IEnumerator FadeOutAndDestroyCoroutine()
     {
-        float volume = AudioListener.volume;
+        float volume = musicSource.volume;
         float timer = fadeMusicTime;
         while (timer > 0)
         {
             timer -= Time.deltaTime;
-            AudioListener.volume = Mathf.Lerp(0, volume, timer / fadeMusicTime);
+            musicSource.volume = Mathf.Lerp(0, volume, timer / fadeMusicTime);
             yield return null;
         }
         yield return null;
-        AudioListener.volume = volume;
+        musicSource.volume = volume;
         Destroy(gameObject);
     }
 }
