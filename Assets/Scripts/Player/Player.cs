@@ -143,6 +143,67 @@ public class Player : MonoBehaviour
         //tools.SwapTool(PlayerTools.Tool.Spoon);
     }
 
+    #region Input Functions
+    public void OnMove(InputAction.CallbackContext context)
+    {
+        Vector2 moveInputVector = context.ReadValue<Vector2>();
+        if(moveInputVector.x > 0)
+        {
+            moveInput = 1;
+            FacingRight(true);
+        }
+        else if(moveInputVector.x < 0)
+        {
+            moveInput = -1;
+            FacingRight(false);
+        }
+        else
+        {
+            moveInput = 0;
+        }
+        Debug.Log("Trying to move with input " + moveInputVector);
+    }
+
+    public void OnJump(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            pressedJump = true;
+            jumpBufferTimer = data.jumpBuffer;
+
+            // Detach grappling hook
+            bool shouldJumpAfterDetach = false;
+            if (isLockedOnGrapple || isAttaching)
+            {
+                shouldJumpAfterDetach = isLockedOnGrapple;
+                DetachHook();
+                SetZipping(false);
+                SetZipDirection(0);
+                //Debug.Log("unzip");
+            }
+            else if (IsZipping() || zipCoyoteTimer > 0)
+            {
+                shouldJumpAfterDetach = true;
+                SetZipping(false);
+                SetZipDirection(0);
+                //Debug.Log("unzip");
+            }
+            if (shouldJumpAfterDetach && !isGrounded)
+            {
+                Jump();
+            }
+            currentAttachedCollider = null;
+        }
+        else if (context.canceled)
+        {
+            if(isJumping && !isLockedOnGrapple)
+            {
+                liftedJump = true;
+            }
+        }
+    }
+    #endregion
+
     // Update is called once per frame
     void Update()
     {
@@ -253,24 +314,24 @@ public class Player : MonoBehaviour
             return;
         }
 
-        float move = 0;
+        //float move = 0;
 
-        if (Keyboard.current != null)
-        {
-            if (Keyboard.current.aKey.isPressed)
-            {
-                move = -1;
-                FacingRight(false);
-            }
-            if (Keyboard.current.dKey.isPressed)
-            {
-                move = 1;
-                FacingRight(true);
-            }
-            if ((Keyboard.current.aKey.isPressed && Keyboard.current.dKey.isPressed) || (!Keyboard.current.aKey.isPressed && !Keyboard.current.dKey.isPressed))
-                move = 0;
-        }
-        moveInput = move;
+        //if (Keyboard.current != null)
+        //{
+        //    if (Keyboard.current.aKey.isPressed)
+        //    {
+        //        move = -1;
+        //        FacingRight(false);
+        //    }
+        //    if (Keyboard.current.dKey.isPressed)
+        //    {
+        //        move = 1;
+        //        FacingRight(true);
+        //    }
+        //    if ((Keyboard.current.aKey.isPressed && Keyboard.current.dKey.isPressed) || (!Keyboard.current.aKey.isPressed && !Keyboard.current.dKey.isPressed))
+        //        move = 0;
+        //}
+        //moveInput = move;
         //moveInput = Input.GetAxisRaw("Horizontal");
         //if (Input.GetKey(KeyCode.A))
         //{
@@ -291,11 +352,11 @@ public class Player : MonoBehaviour
         RaycastHit2D leftWallCheck = Physics2D.Raycast(leftOrigin, Vector2.left, data.checkWallLength, data.groundObjects);
         touchingWall = rightWallCheck || leftWallCheck;
 
-        if (Input.GetKeyDown(KeyCode.Space) /*|| Input.GetKeyDown(KeyCode.W)*/)
-        {
-            pressedJump = true;
-            jumpBufferTimer = data.jumpBuffer;
-        }
+        //if (Input.GetKeyDown(KeyCode.Space) /*|| Input.GetKeyDown(KeyCode.W)*/)
+        //{
+        //    pressedJump = true;
+        //    jumpBufferTimer = data.jumpBuffer;
+        //}
         if (pressedJump)
         {
             jumpBufferTimer -= Time.deltaTime;
@@ -346,10 +407,10 @@ public class Player : MonoBehaviour
             }
         } 
         
-        if ((Input.GetKeyUp(KeyCode.Space) /*|| Input.GetKeyUp(KeyCode.W)*/) && isJumping && !isLockedOnGrapple)
-        {
-            liftedJump = true;
-        }
+        //if ((Input.GetKeyUp(KeyCode.Space) /*|| Input.GetKeyUp(KeyCode.W)*/) && isJumping && !isLockedOnGrapple)
+        //{
+        //    liftedJump = true;
+        //}
 
         // Fire grappling hook if charges are available
         if (Input.GetMouseButtonDown(0) && grappleCharges > 0)
@@ -359,30 +420,30 @@ public class Player : MonoBehaviour
             FireHook();
         }
         // Detach grappling hook
-        if(Input.GetKeyDown(KeyCode.Space) /*|| Input.GetKeyDown(KeyCode.W)*/)
-        {
-            bool shouldJumpAfterDetach = false;
-            if (isLockedOnGrapple || isAttaching)
-            {
-                shouldJumpAfterDetach = isLockedOnGrapple;
-                DetachHook();
-                SetZipping(false);
-                SetZipDirection(0);
-                //Debug.Log("unzip");
-            }
-            else if (IsZipping() || zipCoyoteTimer > 0)
-            {
-                shouldJumpAfterDetach = true;
-                SetZipping(false);
-                SetZipDirection(0);
-                //Debug.Log("unzip");
-            }
-            if (shouldJumpAfterDetach && !isGrounded)
-            {
-                Jump();
-            }
-            currentAttachedCollider = null;
-        }
+        //if(Input.GetKeyDown(KeyCode.Space) /*|| Input.GetKeyDown(KeyCode.W)*/)
+        //{
+        //    bool shouldJumpAfterDetach = false;
+        //    if (isLockedOnGrapple || isAttaching)
+        //    {
+        //        shouldJumpAfterDetach = isLockedOnGrapple;
+        //        DetachHook();
+        //        SetZipping(false);
+        //        SetZipDirection(0);
+        //        //Debug.Log("unzip");
+        //    }
+        //    else if (IsZipping() || zipCoyoteTimer > 0)
+        //    {
+        //        shouldJumpAfterDetach = true;
+        //        SetZipping(false);
+        //        SetZipDirection(0);
+        //        //Debug.Log("unzip");
+        //    }
+        //    if (shouldJumpAfterDetach && !isGrounded)
+        //    {
+        //        Jump();
+        //    }
+        //    currentAttachedCollider = null;
+        //}
 
         // Zip Coyote Time
         if (!zipping)
