@@ -104,6 +104,42 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: c8bc10ee-fc0e-4493-a5a7-9f378cfc4878
     m_ActionName: 'Gameplay/Jump[/Keyboard/space]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 61259e6d-cfdd-4430-b6c7-813013c270f0
+    m_ActionName: Gameplay/Grapple
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4100452309072477043}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: OnPoint
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 69a0fe46-db0a-4e1c-ba9c-6d014b93acef
+    m_ActionName: 'Gameplay/Point[/Mouse/position]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4100452309072477043}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: OnAim
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 6b187c2b-d87c-4a69-bda7-6e2a1a4bdfbe
+    m_ActionName: Gameplay/Aim
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay

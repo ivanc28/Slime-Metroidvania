@@ -52,6 +52,9 @@ public class Player : MonoBehaviour
     [HideInInspector] public Collider2D currentAttachedCollider;
     private float grappleLength;
 
+    private Vector2 pointerScreenPos;
+    private Vector2 aimStickInput;
+
     // Zipline
     private bool zipping;
     [HideInInspector] public int zipDirection; // -1: left; 1: right; 0: not zipped
@@ -201,6 +204,23 @@ public class Player : MonoBehaviour
                 liftedJump = true;
             }
         }
+    }
+    public void OnPoint(InputAction.CallbackContext context)
+    {
+        pointerScreenPos = context.ReadValue<Vector2>();
+    }
+    public void OnAim(InputAction.CallbackContext context)
+    {
+        aimStickInput = context.ReadValue<Vector2>();
+    }
+    private Vector2 GetAimDirection(Vector2 origin)
+    {
+        if(aimStickInput.magnitude > 0.01f)
+        {
+            return aimStickInput.normalized;
+        }
+        Vector2 worldPoint = Camera.main.ScreenToWorldPoint(pointerScreenPos);
+        return (worldPoint - origin).normalized;
     }
     #endregion
 
@@ -840,7 +860,7 @@ public class Player : MonoBehaviour
     // ---- GRAPPLE ----
     private void FireHook()
     {
-        Vector2 dir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - hookFirePoint.position;
+        Vector2 dir = GetAimDirection(hookFirePoint.position);
         dir.Normalize();
         if(dir.x > 0)
         {
@@ -961,7 +981,7 @@ public class Player : MonoBehaviour
     }
     public void SetGrappleLengthOnLoad(float value)
     {
-        grappleLength = value;
+        grappleLength = value > data.baseGrappleLength ? value : data.baseGrappleLength;
     }
     // -------------------
 
@@ -973,9 +993,7 @@ public class Player : MonoBehaviour
     }
     public float GetWheelAngle()
     {
-        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 selectPos = selectWheelCenter.position;
-        Vector2 dir = mousePos - selectPos;
+        Vector2 dir = GetAimDirection(selectWheelCenter.position);
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         angle -= 67.5f; // adjust angle so that the top option is 0-45 deg
         if (angle < 0)
