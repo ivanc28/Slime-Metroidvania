@@ -53,24 +53,37 @@ public class RoomSetUp : MonoBehaviour
             }
             return;
         }
-        bool foundScene = false;
-        foreach(SpawnPoint point in spawnPoints)
+
+        // First check if the player is fast travelling. Only find the spawnpoint if we are NOT fast travelling
+        if (GameManager.Instance.IsUsingFastTravel == false)
         {
-            if(point.spawnPointID == spawnPointID)
+            bool foundScene = false;
+            foreach (SpawnPoint point in spawnPoints)
             {
-                foundScene = true;
-                Player.Instance.transform.position = point.transform.position;
-                Player.Instance.EnableMovement(false);
-                Player.Instance.SetGravityToFalling();
-                Player.Instance.anim.Play("idle", 0, 0);
-                Player.Instance.ResetFlipTimer();
-                StartCoroutine(MoveOutOfTransition(point, transitionTime));
+                if (point.spawnPointID == spawnPointID)
+                {
+                    foundScene = true;
+                    Player.Instance.transform.position = point.transform.position;
+                    Player.Instance.EnableMovement(false);
+                    Player.Instance.SetGravityToFalling();
+                    Player.Instance.anim.Play("idle", 0, 0);
+                    Player.Instance.ResetFlipTimer();
+                    StartCoroutine(MoveOutOfTransition(point, transitionTime));
+                }
+            }
+            if (!foundScene)
+            {
+                Debug.LogWarning($"Failed to find spawnPointID labeled {spawnPointID}");
             }
         }
-        if (!foundScene)
+        // Using fast travel instead
+        else
         {
-            Debug.LogWarning($"Failed to find spawnPointID labeled {spawnPointID}");
+            FastTravel ft = FindFirstObjectByType<FastTravel>();
+            ft.UnlockFastTravel();
+            ft.PopOut();
         }
+
         Player.Instance.SetGravityToFalling();
         Player.Instance.DetachHook();
         Player.Instance.ClearTrail();

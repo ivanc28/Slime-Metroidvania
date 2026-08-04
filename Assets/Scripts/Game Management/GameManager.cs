@@ -10,12 +10,14 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
     private Dictionary<string, RoomData> roomStates = new();
     public HashSet<string> worldIDs = new();
+    public HashSet<string> fastTravelIDs = new();
     public QuestCollectableDB questItemsDB;
 
     private string currRoomID;
     private string nextSpawnPointID;
     public bool GamePaused { get; private set; }
     public bool IsLoadingSaveData { get; set; }
+    public bool IsUsingFastTravel { get; set; }
     public enum Region { None, Sweet, Savory, Sour, Bitter, Salty }
     private Region currRegion;
     private float currTimeScale = 1f;
@@ -78,6 +80,15 @@ public class GameManager : MonoBehaviour
         nextSpawnPointID = spawnPointID;
         SaveGame();
         SceneManager.LoadScene(roomID);
+    }
+    public IEnumerator GoFastTravel(FastTravel ft)
+    {
+        // play animation?
+        UIManager.Instance.FadeOut();
+        yield return new WaitForSeconds(ft.fadeTime);
+        IsUsingFastTravel = true;
+        SaveGame();
+        SceneManager.LoadScene(ft.roomNameToTP);
     }
     public void SetCurrRegion(Region region)
     {
