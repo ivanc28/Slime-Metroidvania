@@ -125,10 +125,15 @@ public class GameManager : MonoBehaviour
         }
         GamePaused = paused;
         Time.timeScale = paused ? 0 : currTimeScale;
+        if(Player.Instance != null)
+        {
+            Player.Instance.EnablePlayerInput(!paused);
+        }
     }
 
     public void ResetGame()
     {
+        SetPaused(false);
         if(UIManager.Instance != null)
         {
             Destroy(UIManager.Instance.gameObject);
@@ -141,7 +146,6 @@ public class GameManager : MonoBehaviour
         {
             Destroy(MusicManager.Instance.gameObject);
         }
-        SetPaused(false);
         SaveGame();
         Destroy(gameObject);
     }

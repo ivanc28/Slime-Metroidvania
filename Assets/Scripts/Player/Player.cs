@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     [SerializeField] public PlayerData data;
     [SerializeField] bool enableDebugMode;
     [SerializeField] public UIManager uiManager;
+    [SerializeField] PlayerInput playerInput;
     // Movement
     private float moveInput;
     private bool canRun = true;
@@ -100,7 +101,19 @@ public class Player : MonoBehaviour
     public bool InSceneTransition {  get; set; }
     [SerializeField] TrailRenderer trail;
     // Interactions
-    public bool InInteraction { get; set; }
+    private bool inInteraction;
+    public bool InInteraction
+    {
+        get => inInteraction;
+        set
+        {
+            if(inInteraction != value)
+            {
+                inInteraction = value;
+                EnablePlayerInput(!value);
+            }
+        }
+    }
 
     // Singleton
     public static Player Instance { get; private set; }
@@ -147,6 +160,21 @@ public class Player : MonoBehaviour
     }
 
     #region Input Functions
+    public void EnablePlayerInput(bool enabled)
+    {
+        if (enabled)
+        {
+            playerInput.ActivateInput();
+        }
+        else
+        {
+            playerInput.DeactivateInput();
+            moveInput = 0;
+            pressedJump = false;
+            liftedJump = false;
+            aimStickInput = Vector2.zero;
+        }
+    }
     public void OnMove(InputAction.CallbackContext context)
     {
         Vector2 moveInputVector = context.ReadValue<Vector2>();
@@ -221,6 +249,54 @@ public class Player : MonoBehaviour
         }
         Vector2 worldPoint = Camera.main.ScreenToWorldPoint(pointerScreenPos);
         return (worldPoint - origin).normalized;
+    }
+    public void OnGrapple(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            // Fire grappling hook if charges are available
+            if (grappleCharges > 0)
+            {
+                grappleCharges--;
+                //UIManager.Instance.UpdateGrappleSlider();
+                FireHook();
+            }
+        }
+    }
+    public void OnSelectTool(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            if (!InInteraction && !usingTool)
+            {
+                if (!toolSelectorEnabled)
+                {
+                    EnableToolSelectionCanvas(true);
+                    toolSelectorEnabled = true;
+                }
+            }
+        }
+
+        if (context.canceled)
+        {
+            if (toolSelectorEnabled)
+            {
+                SelectTool();
+                EnableToolSelectionCanvas(false);
+                toolSelectorEnabled = false;
+            }
+        }
+    }
+    public void OnUseTool(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            if ((!InInteraction && !inBubble && (isGrounded || isLockedOnGrapple) && !isAttaching && !zipping && currHookBeingThrown == null) || onBubble)
+            {
+                StartCoroutine(UseTool());
+                EnableToolSelectionCanvas(false);
+            }
+        }
     }
     #endregion
 
@@ -433,12 +509,12 @@ public class Player : MonoBehaviour
         //}
 
         // Fire grappling hook if charges are available
-        if (Input.GetMouseButtonDown(0) && grappleCharges > 0)
-        {
-            grappleCharges--;
-            //UIManager.Instance.UpdateGrappleSlider();
-            FireHook();
-        }
+        //if (Input.GetMouseButtonDown(0) && grappleCharges > 0)
+        //{
+        //    grappleCharges--;
+        //    //UIManager.Instance.UpdateGrappleSlider();
+        //    FireHook();
+        //}
         // Detach grappling hook
         //if(Input.GetKeyDown(KeyCode.Space) /*|| Input.GetKeyDown(KeyCode.W)*/)
         //{
@@ -478,37 +554,37 @@ public class Player : MonoBehaviour
             coyoteTimer = data.coyoteTime;
         }
 
-        #region Tool Selection
-        if (!InInteraction && !usingTool)
-        {
-            if (Input.GetMouseButton(1))
-            {
-                if (!toolSelectorEnabled)
-                {
-                    EnableToolSelectionCanvas(true);
-                    toolSelectorEnabled = true;
-                }
-            }
+        //#region Tool Selection
+        //if (!InInteraction && !usingTool)
+        //{
+        //    if (Input.GetMouseButton(1))
+        //    {
+        //        if (!toolSelectorEnabled)
+        //        {
+        //            EnableToolSelectionCanvas(true);
+        //            toolSelectorEnabled = true;
+        //        }
+        //    }
 
-        }
-        if (Input.GetMouseButtonUp(1))
-        {
-            if (toolSelectorEnabled)
-            {
-                SelectTool();
-                EnableToolSelectionCanvas(false);
-                toolSelectorEnabled = false;
-            }
-        }
-        #endregion
+        //}
+        //if (Input.GetMouseButtonUp(1))
+        //{
+        //    if (toolSelectorEnabled)
+        //    {
+        //        SelectTool();
+        //        EnableToolSelectionCanvas(false);
+        //        toolSelectorEnabled = false;
+        //    }
+        //}
+        //#endregion
 
-        #region Using Tools
-        if (Input.GetKeyDown(data.interactKey) && ((!InInteraction && !inBubble && (isGrounded || isLockedOnGrapple) && !isAttaching && !zipping && currHookBeingThrown == null) || onBubble))
-        {
-            StartCoroutine(UseTool());
-            EnableToolSelectionCanvas(false);
-        }
-        #endregion
+        //#region Using Tools
+        //if (Input.GetKeyDown(data.interactKey) && ((!InInteraction && !inBubble && (isGrounded || isLockedOnGrapple) && !isAttaching && !zipping && currHookBeingThrown == null) || onBubble))
+        //{
+        //    StartCoroutine(UseTool());
+        //    EnableToolSelectionCanvas(false);
+        //}
+        //#endregion
         //// TEST
         //if (Input.GetKeyDown(KeyCode.LeftShift))
         //{

@@ -732,7 +732,6 @@ public class UIManager : MonoBehaviour
     public void QuitToMenu()
     {
         GameManager.Instance.ResetGame();
-        GameManager.Instance.SetPaused(false);
         EndGameManager.ResetTrophiesClaimed();
         SceneManager.LoadScene("MainMenu");
     }
