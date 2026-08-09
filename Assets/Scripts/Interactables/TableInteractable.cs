@@ -2,18 +2,15 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class TableInteractable : MonoBehaviour
+public class TableInteractable : Inspectable
 {
     public QuestCollectableData finalDessert;
     [Tooltip("0 is Sweet trophy, 1 is Savory, 2 is sour, 3 is Bitter")]
     public QuestCollectableData[] trophies;
     public CollectableData collectDataForKeyIcon;
-    public GameObject keyIcon;
     public KeyCode interactKey;
-    public float interactRange;
     public float fadeTime;
     public string endSceneName;
-    private bool inRange;
     private void Start()
     {
         if (!Player.Instance.inventory.HasQuestItem(finalDessert))
@@ -23,43 +20,23 @@ public class TableInteractable : MonoBehaviour
         keyIcon.GetComponent<SpriteRenderer>().sprite = collectDataForKeyIcon.keySprite;
     }
 
-    private void Update()
+    public override IEnumerator Inspect(Player player)
     {
-        inRange = Vector2.Distance(transform.position, Player.Instance.transform.position) <= interactRange;
-        if (inRange)
-        {
-            bool canInteract = !Player.Instance.InInteraction && !Player.Instance.GetIsAttaching() && Player.Instance.GetIsGrounded() && !Player.Instance.GetIsLocked() && !Player.Instance.GetHookBeingThrown();
-            if (canInteract)
-            {
-                keyIcon.SetActive(true);
-                if (Input.GetKeyDown(interactKey))
-                {
-                    Player.Instance.InInteraction = true;
-                    StartCoroutine(OnInteract());
-                }
-            }
-        }
-        else
-        {
-            keyIcon.SetActive(false);
-        }
-    }
-    private IEnumerator OnInteract()
-    {
+        Player.Instance.InInteraction = true;
         // Check which trophies have been claimed
-        if (Player.Instance.inventory.HasQuestItem(trophies[0]))
+        if (player.inventory.HasQuestItem(trophies[0]))
         {
             EndGameManager.HAS_SWEET_TROPHY = true;
         }
-        if (Player.Instance.inventory.HasQuestItem(trophies[1]))
+        if (player.inventory.HasQuestItem(trophies[1]))
         {
             EndGameManager.HAS_SAVORY_TROPHY = true;
         }
-        if (Player.Instance.inventory.HasQuestItem(trophies[2]))
+        if (player.inventory.HasQuestItem(trophies[2]))
         {
             EndGameManager.HAS_SOUR_TROPHY = true;
         }
-        if (Player.Instance.inventory.HasQuestItem(trophies[3]))
+        if (player.inventory.HasQuestItem(trophies[3]))
         {
             EndGameManager.HAS_BITTER_TROPHY = true;
         }
@@ -80,6 +57,4 @@ public class TableInteractable : MonoBehaviour
 
         // TODO: Change song to end game scene or something
     }
-
-
 }

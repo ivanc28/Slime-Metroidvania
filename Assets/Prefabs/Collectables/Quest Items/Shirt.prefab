@@ -169,7 +169,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 437338375
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -1603291472181913768, guid: 5efc9df48170572458a3afb7e8317a37, type: 3}
@@ -230,10 +230,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f37149f4a0b0964ab44898944b7dd50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::QuestCollectable
+  keyIcon: {fileID: 6254863482828121653}
+  inspectRange: 2
   data: {fileID: 11400000, guid: 3edc03d288de80a41a2d5fc121575a29, type: 2}
   collectableID: SampleScene_Flower
   pickupMessage: You found an Orange Shirt!
-  keyIcon: {fileID: 6254863482828121653}
   rb: {fileID: 0}
   spriteRend: {fileID: 9093104567981088291}
 --- !u!61 &3191726206499858861

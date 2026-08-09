@@ -230,10 +230,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f37149f4a0b0964ab44898944b7dd50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::QuestCollectable
+  keyIcon: {fileID: 6254863482828121653}
+  inspectRange: 2
   data: {fileID: 11400000, guid: 7aca33390b8d59048a6fa1f828b9561e, type: 2}
   collectableID: Sour_Ingredient
   pickupMessage: You found a <color=#ff0d55>Cherry!</color>
-  keyIcon: {fileID: 6254863482828121653}
   rb: {fileID: 0}
   spriteRend: {fileID: 9093104567981088291}
 --- !u!61 &3191726206499858861

@@ -1,16 +1,14 @@
 using System.Collections;
 using UnityEngine;
 
-public abstract class Collectable : MonoBehaviour
+public abstract class Collectable : Inspectable
 {
     public CollectableData data;
     public string collectableID;
     [Tooltip("The message should fit one line")]
     public string pickupMessage;
-    public GameObject keyIcon;
     public Rigidbody2D rb;
     public SpriteRenderer spriteRend;
-    private bool inRange;
     private float pickupTime;
     RoomData room;
     private bool checkID = true;
@@ -26,7 +24,7 @@ public abstract class Collectable : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        EnableKeyIcon(false);
+        OnFocusChanged(false);
     }
     public void Initialize(float timeBeforePickup, bool shouldCheckID)
     {
@@ -40,33 +38,20 @@ public abstract class Collectable : MonoBehaviour
         {
             pickupTime -= Time.deltaTime;
         }
-        inRange = Vector2.Distance(transform.position, Player.Instance.transform.position) <= data.maxDistanceToCollect;
-        if (inRange && pickupTime <= 0 && Player.Instance.GetIsGrounded() && !Player.Instance.InInteraction)
-        {
-            EnableKeyIcon(true);
-            if (Input.GetKeyDown(data.pickupKey) && CanCollect())
-            {
-                Player.Instance.InInteraction = true;
-                Player.Instance.anim.SetTrigger("pickUp");
-                StartCoroutine(PickUp());
-            }
-        }
-        else
-        {
-            EnableKeyIcon(false);
-        }
-    }
-    public virtual bool CanCollect()
-    {
-        return !Player.Instance.IsInBubble() && !Player.Instance.InInteraction;
     }
     public abstract void Collect();
-    private IEnumerator PickUp()
+    public override bool CanInspect(Player player)
     {
+        return base.CanInspect(player) && pickupTime <= 0;
+    }
+    public override IEnumerator Inspect(Player player)
+    {
+        Player.Instance.InInteraction = true;
+        Player.Instance.anim.SetTrigger("pickUp");
         yield return new WaitForSeconds(data.pickupTime);
         Collect();
         AddCollectableToDB(collectableID);
-        EnableKeyIcon(false);
+        OnFocusChanged(false);
         spriteRend.enabled = false;
         if(SoundManager.Instance != null)
         {
@@ -77,13 +62,8 @@ public abstract class Collectable : MonoBehaviour
             yield return StartCoroutine(UIManager.Instance.ShowCollectTextAndWait(pickupMessage));
         }
         yield return null;
-        Player.Instance.InInteraction = false;
+        player.InInteraction = false;
         Destroy(gameObject);
-    }
-
-    private void EnableKeyIcon(bool value)
-    {
-        keyIcon.SetActive(value);
     }
     private void AddCollectableToDB(string id)
     {

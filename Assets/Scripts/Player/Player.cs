@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections.Generic;
+using Unity.Cinemachine;
 
 public class Player : MonoBehaviour
 {
@@ -114,7 +115,7 @@ public class Player : MonoBehaviour
             }
         }
     }
-
+    Inspectable currentInspectable;
     // Singleton
     public static Player Instance { get; private set; }
 
@@ -124,10 +125,6 @@ public class Player : MonoBehaviour
         {
             Destroy(gameObject);
             return;
-        }
-        else
-        {
-            //Debug.Log("I existed HAHA!");
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
@@ -295,6 +292,16 @@ public class Player : MonoBehaviour
             {
                 StartCoroutine(UseTool());
                 EnableToolSelectionCanvas(false);
+            }
+        }
+    }
+    public void OnInspect(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            if (CanInteract() && !GetIsLocked())
+            {
+                StartCoroutine(currentInspectable.Inspect(this));
             }
         }
     }
@@ -596,8 +603,27 @@ public class Player : MonoBehaviour
     {
         if (InInteraction || GameManager.Instance.GamePaused || noclip)
         {
+            if (currentInspectable != null)
+            {
+                currentInspectable.OnFocusChanged(false);
+            }
             return;
         }
+        #region Get Nearest Inspectable
+        Inspectable closestInspectable = GetNearestInspectable(Inspectable.inspectableList);
+        if (closestInspectable != currentInspectable)
+        {
+            if(currentInspectable != null)
+            {
+                currentInspectable.OnFocusChanged(false);
+            }
+            currentInspectable = closestInspectable;
+        }
+        if (currentInspectable != null)
+        {
+            currentInspectable.OnFocusChanged(true);
+        }
+        #endregion
         #region Grappling
         if (isAttaching)
         {
@@ -1307,6 +1333,56 @@ public class Player : MonoBehaviour
     {
         return (!InInteraction && !IsInBubble() && (GetIsGrounded() || GetIsLocked()) && !GetIsAttaching() && !IsZipping() && !GetHookBeingThrown()) || IsOnbubble();
     }
+
+    private Inspectable GetNearestInspectable(List<Inspectable> list)
+    {
+        Inspectable closestInspectable = null;
+        float closestDistance = Mathf.Infinity;
+        Vector2 playerPos = transform.position;
+
+        foreach (Inspectable i in list)
+        {
+            if (i.CanInspect(this))
+            {
+                Vector2 inspectablePos = i.GetTransform().position;
+                Vector2 dist = inspectablePos - playerPos;
+                float maxRange = i.GetInspectRange();
+                float sqrDistance = dist.sqrMagnitude;
+                if (sqrDistance < maxRange * maxRange)
+                {
+                    if(sqrDistance < closestDistance)
+                    {
+                        closestDistance = sqrDistance;
+                        closestInspectable = i;
+                    }
+                }
+            }
+        }
+        return closestInspectable;
+    }
+
+    //private void UpdateClosestInteractable()
+    //{
+    //    IInteractable closest = null;
+    //    float closestSqrDist = float.MaxValue;
+    //    foreach (var interactable in nearbyInteractables)
+    //    {
+    //        if (!interactable.CanInteract(this)) continue;
+    //        float sqrDist = ((Vector2)interactable.GetInteractTransform().position - (Vector2)transform.position).sqrMagnitude;
+    //        if (sqrDist < closestSqrDist)
+    //        {
+    //            closestSqrDist = sqrDist;
+    //            closest = interactable;
+    //        }
+    //    }
+
+    //    if (closest != currentInteractable)
+    //    {
+    //        currentInteractable?.OnFocusChanged(false);
+    //        currentInteractable = closest;
+    //        currentInteractable?.OnFocusChanged(true);
+    //    }
+    //}
     // --------------
 
     // ---- Animation stuff --------

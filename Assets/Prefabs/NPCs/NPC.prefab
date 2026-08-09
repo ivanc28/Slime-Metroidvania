@@ -50,8 +50,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bb58c4e8a6b015459ff62077864e663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPC
-  data: {fileID: 11400000, guid: 9c9aa9befdc789d498d1669bfa2644b7, type: 2}
   keyIcon: {fileID: 8440627809026406060}
+  inspectRange: 2
+  data: {fileID: 11400000, guid: 9c9aa9befdc789d498d1669bfa2644b7, type: 2}
   npcRenderer: {fileID: 4664505054422345750}
   anim: {fileID: 2625276089716732017}
   logWarnings: 0

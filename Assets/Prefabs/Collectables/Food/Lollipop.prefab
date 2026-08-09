@@ -139,10 +139,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17089f572bfb45244829789fd8ff2a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoodCollectable
+  keyIcon: {fileID: 2072592001698282288}
+  inspectRange: 2
   data: {fileID: 11400000, guid: e23c46489d95f0741a4a8925a065a569, type: 2}
   collectableID: Tutorial_Food01
   pickupMessage: You found a <color=#FF69B4>Lollipop!</color>
-  keyIcon: {fileID: 2072592001698282288}
   rb: {fileID: 4828903172990713920}
   spriteRend: {fileID: 6650810553132713288}
   consumableType: 0

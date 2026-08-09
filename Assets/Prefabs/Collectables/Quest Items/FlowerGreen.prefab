@@ -230,10 +230,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f37149f4a0b0964ab44898944b7dd50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::QuestCollectable
+  keyIcon: {fileID: 6254863482828121653}
+  inspectRange: 2
   data: {fileID: 11400000, guid: 409e064a3384a2d4f9ba75a0522fb804, type: 2}
   collectableID: Bitter_03_Flower
   pickupMessage: You found a <color=#069e06>Green Flower!</color>
-  keyIcon: {fileID: 6254863482828121653}
   rb: {fileID: 0}
   spriteRend: {fileID: 9093104567981088291}
 --- !u!61 &3191726206499858861

@@ -31,7 +31,6 @@ public class RoomSetUp : MonoBehaviour
         {
             cam.Follow = Player.Instance.transform;
         }
-        PlayerTalking.SetNPCsInRoom();
         Player.Instance.EnableToolSelectionCanvas(false);
         string spawnPointID = GameManager.Instance.GetNextSpawnPointID();
         UIManager.Instance.FadeIn();

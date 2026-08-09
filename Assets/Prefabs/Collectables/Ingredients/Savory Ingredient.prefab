@@ -230,10 +230,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f37149f4a0b0964ab44898944b7dd50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::QuestCollectable
+  keyIcon: {fileID: 6254863482828121653}
+  inspectRange: 2
   data: {fileID: 11400000, guid: 9ad997951fbd2164f9981a2d1a98ec24, type: 2}
   collectableID: Savory_Ingredient
   pickupMessage: You found <color=#ff0d55>Mascarpone!</color>
-  keyIcon: {fileID: 6254863482828121653}
   rb: {fileID: 0}
   spriteRend: {fileID: 9093104567981088291}
 --- !u!61 &3191726206499858861

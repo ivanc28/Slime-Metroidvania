@@ -230,10 +230,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 519d9b8eea59d244c8ebf12313a87542, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToolCollectable
+  keyIcon: {fileID: 3343622880750300710}
+  inspectRange: 2
   data: {fileID: 11400000, guid: a73c3039338dffc4d8df4aaefab2420c, type: 2}
   collectableID: Whisk
   pickupMessage: You found a <color=#FF69B4>Whisk!</color>
-  keyIcon: {fileID: 3343622880750300710}
   rb: {fileID: 1920031591507770918}
   spriteRend: {fileID: 1608443179185600185}
   tool: 6
