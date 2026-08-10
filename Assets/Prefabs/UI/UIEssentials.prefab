@@ -3278,6 +3278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIManager
   canvas: {fileID: 7451080753282966889}
+  inputActions: {fileID: -944628639613478452, guid: 698764ab5c5246b4ea19fe9db8c4f9da, type: 3}
   currencyText: {fileID: 4705774230194610046}
   currencyAccText: {fileID: 3781518399522074418}
   currencyDelayBeforeAcc: 1
@@ -3484,7 +3485,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 16777215
   m_fontColor: {r: 1, g: 1, b: 1, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3

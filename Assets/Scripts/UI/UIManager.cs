@@ -1,14 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class UIManager : MonoBehaviour
 {
     [SerializeField] Canvas canvas;
+    [Header("Input")]
+    [SerializeField] InputActionAsset inputActions;
+    private InputAction toggleInventory;
+    private InputAction togglePauseMenu;
+    private InputAction closeMessage;
+    private InputAction toggleMap;
     [Header("Currency")]
     [SerializeField] TextMeshProUGUI currencyText;
     [SerializeField] TextMeshProUGUI currencyAccText;
@@ -51,6 +57,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject collectTextContainer;
     [SerializeField] TextMeshProUGUI collectText;
     [SerializeField] AudioClip collectPopUpClip;
+    private bool waitingToCloseMessage;
 
     [Header("Inventory")]
     [SerializeField] GameObject inventory;
@@ -140,7 +147,106 @@ public class UIManager : MonoBehaviour
 
         EnableGrappleSlider();
     }
+    private void OnEnable()
+    {
+        InputActionMap uiMap = inputActions.FindActionMap("UI");
 
+        toggleInventory = uiMap.FindAction("ToggleInventory");
+        toggleInventory.started += OnToggleInventory;
+        togglePauseMenu = uiMap.FindAction("TogglePause");
+        togglePauseMenu.started += OnTogglePause;
+        closeMessage = uiMap.FindAction("CloseMessage");
+        closeMessage.started += OnCloseMessage;
+        // use the same button jump to close message
+        InputAction jumpAction = inputActions.FindActionMap("Gameplay").FindAction("Jump");
+        foreach (InputBinding binding in jumpAction.bindings)
+        {
+            closeMessage.AddBinding().WithPath(binding.effectivePath);
+        }
+        toggleMap = uiMap.FindAction("ToggleMap");
+        toggleMap.started += OnToggleMap;
+        toggleMap.canceled += OnToggleMap;
+        uiMap.Enable();
+    }
+    private void OnDisable()
+    {        
+        toggleInventory.started -= OnToggleInventory;
+        togglePauseMenu.started -= OnTogglePause;
+        closeMessage.started -= OnCloseMessage;
+        closeMessage.RemoveAllBindingOverrides();
+        toggleMap.started -= OnToggleMap;
+        toggleMap.canceled -= OnToggleMap;
+    }
+    #region UI Input
+    public void OnToggleInventory(InputAction.CallbackContext context)
+    {
+        if (Player.Instance.InSceneTransition)
+        {
+            return;
+        }
+
+        if (!inventoryOpen)
+        {
+            if (!GameManager.Instance.GamePaused)
+            {
+                OpenInventory();
+                inventoryOpen = true;
+            }
+        }
+        else
+        {
+            CloseInventory();
+            inventoryOpen = false;
+        }
+    }
+    public void OnTogglePause(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            if (inventoryOpen)
+            {
+                CloseInventory();
+                inventoryOpen = false;
+            }
+            else
+            {
+                if (GameManager.Instance.GamePaused)
+                {
+                    if (!optionsOpen)
+                    {
+                        ResumeGame();
+                    }
+                    else
+                    {
+                        ToggleOptions(false);
+                        pauseElements.SetActive(true);
+                    }
+                }
+                else
+                {
+                    DisplayPauseMenu(true);
+                    GameManager.Instance.SetPaused(true);
+                    ToggleOptions(false);
+                }
+            }
+        }
+    }
+    public void OnCloseMessage(InputAction.CallbackContext context)
+    {
+        waitingToCloseMessage = false;
+    }
+    public void OnToggleMap(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            DisplayMap(GameManager.Instance.GetCurrRegion());
+        }
+        if (context.canceled)
+        {
+            HideMap();
+        }
+    }
+    #endregion
     // Update is called once per frame
     void Update()
     {
@@ -182,22 +288,22 @@ public class UIManager : MonoBehaviour
             return;
         }
         #region Inventory
-        if (!inventoryOpen)
-        {
-            if (Input.GetKeyDown(KeyCode.I) && !GameManager.Instance.GamePaused)
-            {
-                OpenInventory();
-                inventoryOpen = true;
-            }
-        }
-        else
-        {
-            if (Input.GetKeyDown(KeyCode.I))
-            {
-                CloseInventory();
-                inventoryOpen = false;
-            }
-        }
+        //if (!inventoryOpen)
+        //{
+        //    if (Input.GetKeyDown(KeyCode.I) && !GameManager.Instance.GamePaused)
+        //    {
+        //        OpenInventory();
+        //        inventoryOpen = true;
+        //    }
+        //}
+        //else
+        //{
+        //    if (Input.GetKeyDown(KeyCode.I))
+        //    {
+        //        CloseInventory();
+        //        inventoryOpen = false;
+        //    }
+        //}
 
         if (inventoryOpen)
         {
@@ -332,47 +438,47 @@ public class UIManager : MonoBehaviour
             
         }
         #endregion
-        #region Pause Menu
-        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
-        {
-            if (inventoryOpen)
-            {
-                CloseInventory();
-                inventoryOpen = false;
-            }
-            else
-            {
-                if (GameManager.Instance.GamePaused)
-                {
-                    if (!optionsOpen)
-                    {
-                        ResumeGame();
-                    }
-                    else
-                    {
-                        ToggleOptions(false);
-                        pauseElements.SetActive(true);
-                    }
-                }
-                else
-                {
-                    DisplayPauseMenu(true);
-                    GameManager.Instance.SetPaused(true);
-                    ToggleOptions(false);
-                }
-            }
-        }
-        #endregion
-        #region Map
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            DisplayMap(GameManager.Instance.GetCurrRegion());
-        }
-        if (Input.GetKeyUp(KeyCode.Tab))
-        {
-            HideMap();
-        }        
-        #endregion
+        //#region Pause Menu
+        //if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
+        //{
+        //    if (inventoryOpen)
+        //    {
+        //        CloseInventory();
+        //        inventoryOpen = false;
+        //    }
+        //    else
+        //    {
+        //        if (GameManager.Instance.GamePaused)
+        //        {
+        //            if (!optionsOpen)
+        //            {
+        //                ResumeGame();
+        //            }
+        //            else
+        //            {
+        //                ToggleOptions(false);
+        //                pauseElements.SetActive(true);
+        //            }
+        //        }
+        //        else
+        //        {
+        //            DisplayPauseMenu(true);
+        //            GameManager.Instance.SetPaused(true);
+        //            ToggleOptions(false);
+        //        }
+        //    }
+        //}
+        //#endregion
+        //#region Map
+        //if (Input.GetKeyDown(KeyCode.Tab))
+        //{
+        //    DisplayMap(GameManager.Instance.GetCurrRegion());
+        //}
+        //if (Input.GetKeyUp(KeyCode.Tab))
+        //{
+        //    HideMap();
+        //}        
+        //#endregion
     }
     // Called everytime we increase our currency 
     public void UpdateCurrencyUp(int amt)
@@ -574,7 +680,8 @@ public class UIManager : MonoBehaviour
     {
         DisplayCollectText(text);
         yield return null;
-        while (!Input.GetKeyDown(KeyCode.Space))
+        waitingToCloseMessage = true;
+        while (waitingToCloseMessage)
         {
             yield return null;
         }
