@@ -36,6 +36,10 @@ public class NPC : Inspectable
     private GameObject currDialogueBox;
 
     RoomData room;
+
+    private bool seekDialogueFlag;
+    private bool choiceUpFlag;
+    private bool choiceDownFlag;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -58,16 +62,18 @@ public class NPC : Inspectable
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isInteracting && !doneWithLine && !makingAChoice)
+        if (seekDialogueFlag && isInteracting && !doneWithLine && !makingAChoice)
         {
+            seekDialogueFlag = false;
             choosingToSkipLine = true;            
         }
 
         // Only called with linear choice paths
         if (doneWithLine)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (seekDialogueFlag)
             {
+                seekDialogueFlag = false;
                 doneWithLine = false;
                 StartCoroutine(AdvanceDialogue());
             }
@@ -213,6 +219,7 @@ public class NPC : Inspectable
         Player.Instance.GetComponent<PlayerTalking>().SetStartedMovingForNPC(true);
         isInteracting = true;
         yield return MovePlayerForNPC();
+        DialogueInput.Instance.EnableDialogueInput();
         Player.Instance.GetComponent<PlayerTalking>().SetStartedMovingForNPC(false);
         CurrentInteractingNPC = this;
         EnableKeyIcon(false);
@@ -455,8 +462,9 @@ public class NPC : Inspectable
         }
         while (!selectedChoice)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (seekDialogueFlag)
             {
+                seekDialogueFlag = false;
                 selectedChoice = true;
                 break;
             }
@@ -464,8 +472,9 @@ public class NPC : Inspectable
             {
                 currChoice++;
             }
-            if (Input.GetKeyDown(KeyCode.W))
+            if (choiceUpFlag)
             {
+                choiceUpFlag = false;
                 int newChoice = currChoice - 1;
 
                 if (newChoice >= 0 && IsChoiceAvailable(choices[newChoice]))
@@ -473,8 +482,9 @@ public class NPC : Inspectable
                     currChoice = newChoice;
                 }
             }
-            if (Input.GetKeyDown(KeyCode.S))
+            if (choiceDownFlag)
             {
+                choiceDownFlag = false;
                 int newChoice = currChoice + 1;
                 if (newChoice < choices.Length && IsChoiceAvailable(choices[newChoice]))
                 {
@@ -537,6 +547,7 @@ public class NPC : Inspectable
     private IEnumerator ReleasePlayerNextFrame()
     {
         yield return null;
+        DialogueInput.Instance.DisableDialogueInput();
         Player.Instance.InInteraction = false;
         isInteracting = false;
         Player.Instance.rb.sharedMaterial = null;
@@ -570,7 +581,18 @@ public class NPC : Inspectable
     {
         return isInteracting;
     }
-
+    public void SetSeekDialogueFlag()
+    {
+        seekDialogueFlag = true;
+    }
+    public void SetChoiceUpFlag()
+    {
+        choiceUpFlag = true;
+    }
+    public void SetChoiceDownFlag()
+    {
+        choiceDownFlag = true;
+    }
     // Animations
     public void SetFacingRight(bool facingRight)
     {

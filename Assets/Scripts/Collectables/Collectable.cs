@@ -46,8 +46,8 @@ public abstract class Collectable : Inspectable
     }
     public override IEnumerator Inspect(Player player)
     {
-        Player.Instance.InInteraction = true;
-        Player.Instance.anim.SetTrigger("pickUp");
+        player.InInteraction = true;
+        player.anim.SetTrigger("pickUp");
         yield return new WaitForSeconds(data.pickupTime);
         Collect();
         AddCollectableToDB(collectableID);

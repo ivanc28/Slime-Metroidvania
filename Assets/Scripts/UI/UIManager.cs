@@ -166,6 +166,7 @@ public class UIManager : MonoBehaviour
         togglePauseMenu.started += OnTogglePause;
         closeMessage = uiMap.FindAction("CloseMessage");
         closeMessage.started += OnCloseMessage;
+        closeMessage.RemoveAllBindingOverrides();
         // use the same button jump to close message
         InputAction jumpAction = inputActions.FindActionMap("Gameplay").FindAction("Jump");
         foreach (InputBinding binding in jumpAction.bindings)
@@ -178,6 +179,28 @@ public class UIManager : MonoBehaviour
         navigateInventory = uiMap.FindAction("NavigateInventory");
         navigateInventory.performed += OnNavigateInventory;
         navigateInventory.canceled += OnNavigateInventory;
+        navigateInventory.RemoveAllBindingOverrides();
+        InputAction moveAction = inputActions.FindActionMap("Gameplay").FindAction("Move");
+        for(int i = 0; i < moveAction.bindings.Count; i++)
+        {
+            InputBinding binding = moveAction.bindings[i];
+            if (binding.isComposite)
+            {
+                //Debug.Log($"Is Composite: {binding}");
+                var composite = navigateInventory.AddCompositeBinding("2DVector");
+                for(int j = 1; j <= 4; j++)
+                {
+                    InputBinding partBinding = moveAction.bindings[i + j];
+                    composite.With(partBinding.name, partBinding.effectivePath);
+                }
+            }
+            else if(!binding.isPartOfComposite)
+            {
+                //Debug.Log($"Is not part of Composite: {binding}");
+                navigateInventory.AddBinding().WithPath(binding.effectivePath);
+            }
+
+        }
         uiMap.Enable();
     }
 
@@ -189,6 +212,7 @@ public class UIManager : MonoBehaviour
         closeMessage.RemoveAllBindingOverrides();
         toggleMap.started -= OnToggleMap;
         toggleMap.canceled -= OnToggleMap;
+        navigateInventory.RemoveAllBindingOverrides();
         navigateInventory.performed -= OnNavigateInventory;
         navigateInventory.canceled -= OnNavigateInventory;
     }

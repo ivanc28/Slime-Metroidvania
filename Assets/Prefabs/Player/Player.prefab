@@ -45,6 +45,7 @@ Transform:
   - {fileID: 3967270242012141357}
   - {fileID: 4946019974951561775}
   - {fileID: 3760938058440916290}
+  - {fileID: 5938570629878826866}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &-7657361228491750612
@@ -200,6 +201,26 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: ae6be2d1-43e2-425f-9da5-312be7597ef3
     m_ActionName: 'Gameplay/Inspect[/Keyboard/q]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9beab67c-e450-4653-9c90-7506c18e1d86
+    m_ActionName: 'UI/ToggleInventory[/Keyboard/i]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: d14119a7-996d-4fe5-aa54-6d2ead5e5726
+    m_ActionName: 'UI/TogglePause[/Keyboard/escape,/Keyboard/p]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4974d4d6-c7b1-44e0-bf71-d79875bb22c4
+    m_ActionName: UI/CloseMessage
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4b9c7c04-f4a8-413b-b801-181e5c1ff78e
+    m_ActionName: 'UI/ToggleMap[/Keyboard/tab]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: d9a8e607-b1ac-44c3-b9ee-5f1b7f6241d2
+    m_ActionName: 'UI/NavigateInventory[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
@@ -5849,6 +5870,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7561695776983823848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4955776778767784346
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5938570629878826866}
+  - component: {fileID: 6768819282047379962}
+  m_Layer: 0
+  m_Name: DialogueInput
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5938570629878826866
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4955776778767784346}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7561695776983823848}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6768819282047379962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4955776778767784346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83036b29999a5b34682f38fae66de4e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueInput
+  inputActions: {fileID: -944628639613478452, guid: 698764ab5c5246b4ea19fe9db8c4f9da, type: 3}
 --- !u!1 &6375924020915340543
 GameObject:
   m_ObjectHideFlags: 0

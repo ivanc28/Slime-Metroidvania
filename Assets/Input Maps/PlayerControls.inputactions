@@ -323,7 +323,7 @@
                 {
                     "name": "NavigateInventory",
                     "type": "Value",
-                    "id": "d9a8e607-b1ac-44c3-b9ee-5f1b7f6241d2",
+                    "id": "f93dd7dd-5ebc-4f51-9a4b-7e4f91664f45",
                     "expectedControlType": "Vector2",
                     "processors": "StickDeadzone",
                     "interactions": "",
@@ -407,74 +407,33 @@
                     "action": "ToggleMap",
                     "isComposite": false,
                     "isPartOfComposite": false
-                },
-                {
-                    "name": "WASD",
-                    "id": "4339e50f-45b5-4dae-ab65-6100323c032a",
-                    "path": "2DVector",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "NavigateInventory",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "up",
-                    "id": "be35af8f-07ab-4ad8-8a77-734866ce510a",
-                    "path": "<Keyboard>/w",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "NavigateInventory",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "05278962-a739-4801-92b5-efeb56cad2d4",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "NavigateInventory",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "left",
-                    "id": "d362677c-3d32-4019-9ad8-a3afa610a7b6",
-                    "path": "<Keyboard>/a",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "NavigateInventory",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "4b068bbf-59bf-4e7d-9ac2-b3636bf1a9db",
-                    "path": "<Keyboard>/d",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "NavigateInventory",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "",
-                    "id": "042b95fa-1674-409e-bb3b-f6ced21aa679",
-                    "path": "<Gamepad>/leftStick",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "NavigateInventory",
-                    "isComposite": false,
-                    "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Dialogue",
+            "id": "70fcff3d-c3d0-4c97-b6a4-e1011424345a",
+            "actions": [
+                {
+                    "name": "SeekDialogue",
+                    "type": "Button",
+                    "id": "dea3bef9-e0ac-42a4-818a-bc6259713121",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SelectChoice",
+                    "type": "Value",
+                    "id": "c46abbcf-03ef-455f-9eb2-44b5520e953c",
+                    "expectedControlType": "Vector2",
+                    "processors": "StickDeadzone",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": []
         }
     ],
     "controlSchemes": []

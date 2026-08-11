@@ -113,6 +113,7 @@ public class Player : MonoBehaviour
                 inInteraction = value;
                 EnablePlayerInput(!value);
             }
+            Debug.Log($"Interaction is {value}");
         }
     }
     Inspectable currentInspectable;
@@ -196,6 +197,7 @@ public class Player : MonoBehaviour
     {
         if (context.started)
         {
+            Debug.Log($"Trying to jump by pressing space");
             pressedJump = true;
             jumpBufferTimer = data.jumpBuffer;
 
