@@ -15,6 +15,7 @@ public class UIManager : MonoBehaviour
     private InputAction togglePauseMenu;
     private InputAction closeMessage;
     private InputAction toggleMap;
+    private InputAction navigateInventory;
     [Header("Currency")]
     [SerializeField] TextMeshProUGUI currencyText;
     [SerializeField] TextMeshProUGUI currencyAccText;
@@ -68,6 +69,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] InventorySlot slotPrefab;
     [SerializeField] Image inventoryFrame;
     [SerializeField] float frameSpeed;
+    [Tooltip("How long a value must be held in order to start auto moving")]
+    [SerializeField] float navInitialDelay;
+    [Tooltip("Delay between each auto move")]
+    [SerializeField] float navDelay;
 
     [SerializeField] TextMeshProUGUI itemName;
     [SerializeField] TextMeshProUGUI itemDescription;
@@ -86,6 +91,10 @@ public class UIManager : MonoBehaviour
     private int currToolItemIndex;
     private Vector2 frameTargetPos;
     private bool recalculatedLayout;
+    private enum NavDir { None, Up, Down, Left, Right }
+    private NavDir currentNavDir;
+    private float navTimer;
+    private Vector2 navInput;
 
     [Header("Screen Transition")]
     [SerializeField] Animator screenAnim;
@@ -166,8 +175,12 @@ public class UIManager : MonoBehaviour
         toggleMap = uiMap.FindAction("ToggleMap");
         toggleMap.started += OnToggleMap;
         toggleMap.canceled += OnToggleMap;
+        navigateInventory = uiMap.FindAction("NavigateInventory");
+        navigateInventory.performed += OnNavigateInventory;
+        navigateInventory.canceled += OnNavigateInventory;
         uiMap.Enable();
     }
+
     private void OnDisable()
     {        
         toggleInventory.started -= OnToggleInventory;
@@ -176,6 +189,8 @@ public class UIManager : MonoBehaviour
         closeMessage.RemoveAllBindingOverrides();
         toggleMap.started -= OnToggleMap;
         toggleMap.canceled -= OnToggleMap;
+        navigateInventory.performed -= OnNavigateInventory;
+        navigateInventory.canceled -= OnNavigateInventory;
     }
     #region UI Input
     public void OnToggleInventory(InputAction.CallbackContext context)
@@ -246,6 +261,66 @@ public class UIManager : MonoBehaviour
             HideMap();
         }
     }
+    public void OnNavigateInventory(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            navInput = context.ReadValue<Vector2>();
+        }
+        else if (context.canceled)
+        {
+            navInput = Vector2.zero;
+        }
+    }
+    private NavDir GetNextNavDir(Vector2 navInput)
+    {
+        NavDir newDir = NavDir.None;
+        if(navInput != Vector2.zero)
+        {
+            if (Mathf.Abs(navInput.x) > Mathf.Abs(navInput.y))
+            {
+                if(navInput.x > 0)
+                {
+                    newDir = NavDir.Right;
+                }
+                else
+                {
+                    newDir = NavDir.Left;
+                }
+            }
+            else
+            {
+                if(navInput.y > 0)
+                {
+                    newDir = NavDir.Up;
+                }
+                else
+                {
+                    newDir = NavDir.Down;
+                }
+            }
+        }
+        if(newDir != currentNavDir)
+        {
+            currentNavDir = newDir;
+            navTimer = navInitialDelay;
+            return newDir;
+        }
+        if(newDir == NavDir.None)
+        {
+            return newDir;
+        }
+        if(navTimer > 0)
+        {
+            navTimer -= Time.unscaledDeltaTime;
+        }
+        else
+        {
+            navTimer = navDelay;
+            return newDir;
+        }
+        return NavDir.None;
+    }
     #endregion
     // Update is called once per frame
     void Update()
@@ -307,6 +382,7 @@ public class UIManager : MonoBehaviour
 
         if (inventoryOpen)
         {
+            NavDir dir = GetNextNavDir(navInput);
             if (recalculatedLayout)
             {
                 inventoryFrame.rectTransform.position = Vector2.Lerp(inventoryFrame.rectTransform.position, frameTargetPos, Time.unscaledDeltaTime * frameSpeed);
@@ -316,14 +392,14 @@ public class UIManager : MonoBehaviour
             {                
                 int nextSlot = currQuestItemIndex;
                 int colsPerRow = gridLayout.constraintCount;
-                if (Input.GetKeyDown(KeyCode.W))
+                if (dir == NavDir.Up)
                 {
                     if (nextSlot - colsPerRow >= 0)
                     {
                         nextSlot -= colsPerRow;
                     }
                 }
-                if (Input.GetKeyDown(KeyCode.S))
+                if (dir == NavDir.Down)
                 {
                     if (nextSlot + colsPerRow < addedQuestSlots.Count)
                     {
@@ -338,7 +414,7 @@ public class UIManager : MonoBehaviour
                         // do nothing?
                     }
                 }
-                if (Input.GetKeyDown(KeyCode.A))
+                if (dir == NavDir.Left)
                 {
                     if (nextSlot - 1 >= 0 && currQuestItemIndex % colsPerRow != 0)
                     {
@@ -364,7 +440,7 @@ public class UIManager : MonoBehaviour
                         }
                     }
                 }
-                if (Input.GetKeyDown(KeyCode.D))
+                if (dir == NavDir.Right)
                 {
                     if (nextSlot + 1 < addedQuestSlots.Count && nextSlot % colsPerRow != colsPerRow - 1)
                     {
@@ -386,7 +462,7 @@ public class UIManager : MonoBehaviour
             else
             {
                 int nextSlot = currToolItemIndex;
-                if (Input.GetKeyDown(KeyCode.W))
+                if (dir == NavDir.Up)
                 {
                     nextSlot--;
                     if(nextSlot < 0)
@@ -394,7 +470,7 @@ public class UIManager : MonoBehaviour
                         nextSlot = addedToolSlots.Count - 1;
                     }
                 }
-                if (Input.GetKeyDown(KeyCode.S))
+                if (dir == NavDir.Down)
                 {
                     nextSlot++;
                     if(nextSlot >= addedToolSlots.Count)
@@ -402,7 +478,7 @@ public class UIManager : MonoBehaviour
                         nextSlot = 0;
                     }
                 }
-                if (Input.GetKeyDown(KeyCode.D))
+                if (dir == NavDir.Right)
                 {
                     if(addedQuestItems.Count > 0)
                     {

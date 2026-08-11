@@ -3309,6 +3309,8 @@ MonoBehaviour:
   slotPrefab: {fileID: 6464613599032812644, guid: 9e0aab26647dafb4fa8d85b7b3d988ee, type: 3}
   inventoryFrame: {fileID: 3654914328213758440}
   frameSpeed: 10
+  navInitialDelay: 0.6
+  navDelay: 0.15
   itemName: {fileID: 7551653350616647498}
   itemDescription: {fileID: 7034813683347446998}
   openClip: {fileID: 8300000, guid: 3cad23c764b9b2a4bbb41eafb5c34d35, type: 3}

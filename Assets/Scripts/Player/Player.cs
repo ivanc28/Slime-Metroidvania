@@ -189,7 +189,7 @@ public class Player : MonoBehaviour
         {
             moveInput = 0;
         }
-        Debug.Log("Trying to move with input " + moveInputVector);
+        //Debug.Log("Trying to move with input " + moveInputVector);
     }
 
     public void OnJump(InputAction.CallbackContext context)
