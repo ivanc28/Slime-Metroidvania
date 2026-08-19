@@ -42,6 +42,7 @@ public class PlayerData : ScriptableObject
     public float grappleRechargeTime;
     [Header("Tools")]
     public float toolUseTime;
+    public QuestCollectableData ziplineStrap;
     [Header("Bubble Blowing")]
     public KeyCode interactKey;
     public float blowTime;

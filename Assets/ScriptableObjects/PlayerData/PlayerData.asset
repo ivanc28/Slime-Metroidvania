@@ -49,6 +49,7 @@ MonoBehaviour:
   initialMaxGrappleCharges: 0
   grappleRechargeTime: 0.1
   toolUseTime: 0.9
+  ziplineStrap: {fileID: 11400000, guid: 5f79701779798d949b9fa9a711cc398d, type: 2}
   interactKey: 101
   blowTime: 0.8
   bubbleMoveSpeed: 14

@@ -218,7 +218,11 @@ public class GameManager : MonoBehaviour
                 Player.Instance.inventory.AddQuestItem(item);
             }
         }
-        foreach(int mapRegion in save.collectedMaps)
+        if (Player.Instance.inventory.HasQuestItem(Player.Instance.data.ziplineStrap))
+        {
+            Player.Instance.ClaimZiplineStrap();
+        }
+        foreach (int mapRegion in save.collectedMaps)
         {
             Player.Instance.inventory.CollectMap((Region)mapRegion);
         }
