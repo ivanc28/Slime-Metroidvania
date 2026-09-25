@@ -10,6 +10,7 @@ public class NPCData : ScriptableObject
 
     [Header("Dialogue")]
     public DialogueSequence[] dialogueSequences;
+    public DialogueGraph dialogueTree;
     public DialogueBox dialogueBoxPrefab;
     public AudioClip talkingSFX;
     public int playSFXEveryXChars = 3;
