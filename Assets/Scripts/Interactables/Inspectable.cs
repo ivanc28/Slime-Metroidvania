@@ -32,5 +32,9 @@ public abstract class Inspectable : MonoBehaviour
     private void OnDisable()
     {
         inspectableList.Remove(this);
+        if(this == Player.Instance.CurrentInspectable)
+        {
+            Player.Instance.SetCurrentInspectableNull();
+        }
     }
 }

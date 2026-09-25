@@ -113,10 +113,9 @@ public class Player : MonoBehaviour
                 inInteraction = value;
                 EnablePlayerInput(!value);
             }
-            Debug.Log($"Interaction is {value}");
         }
     }
-    Inspectable currentInspectable;
+    public Inspectable CurrentInspectable { get; private set; }
     // Singleton
     public static Player Instance { get; private set; }
 
@@ -301,11 +300,15 @@ public class Player : MonoBehaviour
     {
         if (context.started)
         {
-            if (CanInteract() && !GetIsLocked())
+            if (CanInteract() && !GetIsLocked() && currentInspectable != null)
             {
                 StartCoroutine(currentInspectable.Inspect(this));
             }
         }
+    }
+    public void SetCurrentInspectableNull()
+    {
+        currentInspectable = null;
     }
     #endregion
 
