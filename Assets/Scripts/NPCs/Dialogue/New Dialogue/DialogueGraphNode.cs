@@ -12,4 +12,12 @@ public class DialogueGraphNode : ScriptableObject
     public Condition[] continueConditions;
 
     public List<DialogueLine> lineList;
+
+    // public void fillNode(Dictionary<int,DialogueGraphNode> nodes)
+    // {
+    //     if(nodeId == -1)
+    //     {
+
+    //     }
+    // }
 }

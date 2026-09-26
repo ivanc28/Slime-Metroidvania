@@ -18,6 +18,7 @@ public class DialogueGraph : MonoBehaviour
     {
         string[] tokens = rawInput.Split(tokenSeparator, StringSplitOptions.RemoveEmptyEntries);
         nodes = new Dictionary<int, DialogueGraphNode>();
+        rootNode = null;
 
         bool inNode = false;
         bool inDialogue = false;
@@ -52,11 +53,15 @@ public class DialogueGraph : MonoBehaviour
             }
             if(token == ")")
             {
+                if(rootNode == null)
+                {
+                    rootNode = d;
+                }
                 inNode = false;
                 nodeIdFound = false;
                 d.lineList = lineList;
                 lineList = new List<DialogueLine>();
-                Debug.Log(nodeId);
+                // Debug.Log(nodeId);
                 nodes.Add(nodeId, d);
                 d.hasChoices = hasChoices;
                 hasChoices = false;
@@ -75,7 +80,7 @@ public class DialogueGraph : MonoBehaviour
                 if(token == "[")
                 {
                     inDialogue = true;
-                    Debug.Log("dialogue start");
+                    // Debug.Log("dialogue start");
                     continue;
                     // d.lineList = new string[] {"0","2"};
                     // nodes.Add(d);
@@ -86,7 +91,7 @@ public class DialogueGraph : MonoBehaviour
                     speakerIdentified = false;
                     // lineList.Add(currentLine);
                     currentLine = (DialogueLine)ScriptableObject.CreateInstance(typeof(DialogueLine));
-                    Debug.Log("dialogue end");
+                    // Debug.Log("dialogue end");
                     continue;
                     // rootNode = nodes[0];
                 }
@@ -143,21 +148,41 @@ public class DialogueGraph : MonoBehaviour
                         }
                         continue;
                     }
-                    Debug.Log(token);
+                    // Debug.Log(token);
                     currentLine.line = token;
                     currentLine.speaker = speaker;
                     lineList.Add(currentLine);
                 }
             }
         }
-        rootNode = nodes[4];
-        Debug.Log("start");
+        fillNodes(nodes);
+        // Debug.Log("start");
         foreach(var pair in nodes)
         {
-            Debug.Log(pair.Key.ToString());
+            // Debug.Log(pair.Key.ToString());
             foreach(DialogueLine l in pair.Value.lineList)
             {
-                Debug.Log(l.line);
+                // Debug.Log(l.line);
+            }
+        }
+    }
+
+    public void fillNodes(Dictionary<int,DialogueGraphNode> nodes)
+    {
+        foreach(var pair in nodes)
+        {
+            DialogueGraphNode node = pair.Value;
+            if(node.hasChoices)
+            {
+                DialogueLine line = node.lineList[node.lineList.Count - 1];
+                foreach(DialogueOption choice in line.choices)
+                {
+                    choice.nextNode = nodes[choice.nextNodeId];
+                }
+            }
+            else
+            {
+                node.nextNode = nodes[node.nextNodeId];
             }
         }
     }
