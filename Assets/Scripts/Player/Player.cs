@@ -300,15 +300,15 @@ public class Player : MonoBehaviour
     {
         if (context.started)
         {
-            if (CanInteract() && !GetIsLocked() && currentInspectable != null)
+            if (CanInteract() && !GetIsLocked() && CurrentInspectable != null)
             {
-                StartCoroutine(currentInspectable.Inspect(this));
+                StartCoroutine(CurrentInspectable.Inspect(this));
             }
         }
     }
     public void SetCurrentInspectableNull()
     {
-        currentInspectable = null;
+        CurrentInspectable = null;
     }
     #endregion
 
@@ -608,25 +608,25 @@ public class Player : MonoBehaviour
     {
         if (InInteraction || GameManager.Instance.GamePaused || noclip)
         {
-            if (currentInspectable != null)
+            if (CurrentInspectable != null)
             {
-                currentInspectable.OnFocusChanged(false);
+                CurrentInspectable.OnFocusChanged(false);
             }
             return;
         }
         #region Get Nearest Inspectable
         Inspectable closestInspectable = GetNearestInspectable(Inspectable.inspectableList);
-        if (closestInspectable != currentInspectable)
+        if (closestInspectable != CurrentInspectable)
         {
-            if(currentInspectable != null)
+            if(CurrentInspectable != null)
             {
-                currentInspectable.OnFocusChanged(false);
+                CurrentInspectable.OnFocusChanged(false);
             }
-            currentInspectable = closestInspectable;
+            CurrentInspectable = closestInspectable;
         }
-        if (currentInspectable != null)
+        if (CurrentInspectable != null)
         {
-            currentInspectable.OnFocusChanged(true);
+            CurrentInspectable.OnFocusChanged(true);
         }
         #endregion
         #region Grappling
