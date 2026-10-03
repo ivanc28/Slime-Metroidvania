@@ -16,7 +16,7 @@ A cozy Metroidvania with satisfying grappling mechanics and funny dialogue! Expl
 
 ## Controls
 | Input | Action |
-| :--- | ---: |
+| :---: | :---: |
 | WASD | Move |
 | Space | Jump |
 | Left Click | Shoot Grapple |
@@ -25,7 +25,7 @@ A cozy Metroidvania with satisfying grappling mechanics and funny dialogue! Expl
 | Q | Interact |
 | I | Inventory |
 | Tab | Map |
-| Esc/P | Pause |
+| Esc / P | Pause |
 
 ## Credits
 - Ivan Chiu (Programmer, Game Designer, Level Designer)
