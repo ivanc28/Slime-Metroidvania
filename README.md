@@ -32,4 +32,8 @@ A cozy Metroidvania with satisfying grappling mechanics and funny dialogue! Expl
 - Andy Long (Programmer, Game Designer, Level Designer)
 - Christine Kan (Artist, Animator)
 ## Attributions
-- Music by Musmus
+- jump1.wav by LloydEvans09 -- https://freesound.org/s/187025/ -- License: Attribution 4.0
+- Talking SFXs by  dmochas -- https://dmochas-assets.itch.io/dmochas-bleeps-pack
+- Slime Land by DrMinky -- https://freesound.org/s/167075/ -- License: Attribution 4.0
+- bubbles (2).wav by Glaneur de sons -- https://freesound.org/s/104950/ -- License: Attribution 4.0
+- music by MusMus https://musmus.main.jp/
