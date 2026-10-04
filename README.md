@@ -1,5 +1,5 @@
 # Slime Metroidvania Video Game (Formerly Agent Amaretto)
-A cozy Metroidvania with satisfying grappling mechanics and funny dialogue! Explore a food-themed world and find rare ingredients of each flavor profile to create the ultimate dessert! Grapple and zoom through the map, collecting pebbles along the way with your kitchen utensils! Submitted for the Game Gauntlet Jam and Metroidvania Month 32. Try the jam version below!
+A cozy Metroidvania with satisfying grappling mechanics and funny dialogue! Explore a food-themed world and find rare ingredients of each flavor profile to create the ultimate dessert. Grapple and zoom through the map, collecting pebbles along the way with your kitchen utensils! Submitted for the Game Gauntlet Jam and Metroidvania Month 32. Try the jam version below!
 
 [https://ichiu.itch.io/agent-amaretto](https://ichiu.itch.io/agent-amaretto)
 
