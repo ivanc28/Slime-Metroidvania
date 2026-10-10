@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33d8a525270f304418d65e5aa8a4d3d3, type: 3}
+  m_Name: 0_node
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueGraphNode
+  nodeId: 1
+  folderPath: Assets/ScriptableObjects/Dialogue/ConversationNodes/Fly Guy_58318/0
+  rawInput: '1
+
+    D | P | text
+
+    D | N | text
+
+    C | 2 | x1 | y1 | z1 | x2
+    | y2 | z2
+
+    E | event dict key
+
+    *'
+  hasChoices: 0
+  nextNodeId: 0
+  nextNode: {fileID: 0}
+  continueConditions: []
+  lineList: []
