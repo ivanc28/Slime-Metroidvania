@@ -36,6 +36,7 @@ public class DialogueGraphNode : ScriptableObject
         }
         AssetDatabase.DeleteAsset($"{folderPath}/Lines");
         AssetDatabase.CreateFolder($"{folderPath}", "Lines");
+        lineList = new List<Line>();
         // Debug.Log(lineTokens[0]);
         nodeId = int.Parse(lineTokens[0].Trim());
         foreach(string l in lineTokens.Skip(1))
@@ -57,14 +58,23 @@ public class DialogueGraphNode : ScriptableObject
                     line.speaker = DialogueLine.Speaker.NPC;
                 }
                 line.text = tokens[2];
+                lineList.Add(line);
             }
             else if(tokens[0].Trim().Equals("C"))
             {
                 Debug.Log("Choice");
+                ChoiceLine line = ScriptableObject.CreateInstance<ChoiceLine>();
+                var uniqueFileName = AssetDatabase.GenerateUniqueAssetPath($"{folderPath}/Lines/ChoiceLine.asset");
+                AssetDatabase.CreateAsset(line, uniqueFileName);
+                lineList.Add(line);
             }
             else if(tokens[0].Trim().Equals("E"))
             {
                 Debug.Log("Event");
+                EventLine line = ScriptableObject.CreateInstance<EventLine>();
+                var uniqueFileName = AssetDatabase.GenerateUniqueAssetPath($"{folderPath}/Lines/EventLine.asset");
+                AssetDatabase.CreateAsset(line, uniqueFileName);
+                lineList.Add(line);
             }
         }
     }

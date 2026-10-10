@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da6aeadffaaa85f4a9e217112ecd8257, type: 3}
-  m_Name: DialogueLine 1
-  m_EditorClassIdentifier: Assembly-CSharp::DialogueLine
-  speaker: 0
-  text: 
-  choices: []
+  m_Script: {fileID: 11500000, guid: af6bdb200a99f423c86b5e46c1cb5ed4, type: 3}
+  m_Name: EventLine
+  m_EditorClassIdentifier: Assembly-CSharp::EventLine
+  eventDictKey: 
+  conditions: []

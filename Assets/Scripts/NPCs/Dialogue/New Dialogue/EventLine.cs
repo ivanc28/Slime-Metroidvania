@@ -3,9 +3,7 @@ using System.Collections.Generic;
 
 public class EventLine : Line
 {
-
-
-
-    public string line;
-    public List<DialogueOption> choices;
+    public string eventDictKey;
+    public List<string> conditionDictKeys;
+    public Condition[] conditions;
 }
