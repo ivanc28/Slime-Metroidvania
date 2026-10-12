@@ -83,14 +83,15 @@ public class DialogueGraph : MonoBehaviour
         //     return;
         // }
         string[] folderGuids = AssetDatabase.FindAssets("t:folder", new[] { $"Assets/ScriptableObjects/Dialogue/ConversationNodes/{folderName}" });
-        // Debug.Log(folderGuids);
+        Debug.Log(folderGuids);
         for(int i = 0; i < nodes.Count; i++)
         {
             string assetPath = "";
             string folderPath = "";
-            if(i < folderGuids.Length)
+            if(i < folderGuids.Length / 2)
             {
-                folderPath = AssetDatabase.GUIDToAssetPath(folderGuids[i]);
+                folderPath = AssetDatabase.GUIDToAssetPath(folderGuids[i*2]);
+                Debug.Log(folderPath);
                 if(!folderPath.Equals(""))
                 {
                     Debug.Log(folderPath);
