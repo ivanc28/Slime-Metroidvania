@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using UnityEngine;
 
 // [System.Serializable]
@@ -9,3 +10,4 @@ public class Choice : ScriptableObject
     public DialogueGraphNode nextNode;
     public DialogueEvent[] dialogueEvents;
 }
+#endif
