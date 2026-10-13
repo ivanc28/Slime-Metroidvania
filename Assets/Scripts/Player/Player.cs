@@ -29,6 +29,10 @@ public class Player : MonoBehaviour
     private float lastFallVelocity;
     private bool touchingWall;
 
+    private Vector2 moveVector;
+    public Vector2 MoveVector => moveVector;
+    public static event Action OnJumpPressedGlobal;
+
     [Header("Components")]
     public Rigidbody2D rb;
     public Animator anim;
@@ -176,11 +180,13 @@ public class Player : MonoBehaviour
             liftedJump = false;
             aimStickInput = Vector2.zero;
             lastAimStickInput = Vector2.zero;
+            moveVector = Vector2.zero;
         }
     }
     public void OnMove(InputAction.CallbackContext context)
     {
         Vector2 moveInputVector = context.ReadValue<Vector2>();
+        moveVector = moveInputVector;
         if(Mathf.Abs(moveInputVector.x) > data.horizontalDeadZone)
         {
             if (moveInputVector.x > 0)
@@ -241,6 +247,7 @@ public class Player : MonoBehaviour
                 Jump();
             }
             currentAttachedCollider = null;
+            OnJumpPressedGlobal?.Invoke();
         }
         else if (context.canceled)
         {

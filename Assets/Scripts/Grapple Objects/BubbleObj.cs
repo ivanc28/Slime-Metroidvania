@@ -7,7 +7,6 @@ public class BubbleObj : GrappleObj
     public BubbleInteractable bubbleInteractGain;
     public float popTime;
     private bool playerInBubble;
-    private Vector2 moveInput;
     public LayerMask excludedObjects;
     public LayerMask nothingLayer;
     public float lifespan;
@@ -37,35 +36,31 @@ public class BubbleObj : GrappleObj
         //switchers = FindObjectsByType<CameraSwitcher>(FindObjectsSortMode.None);
         //filter = new();
     }
+    private void OnEnable()
+    {
+        Player.OnJumpPressedGlobal += HandleJumpPressed;
+    }
+    private void OnDisable()
+    {
+        Player.OnJumpPressedGlobal -= HandleJumpPressed;
+    }
+    private void HandleJumpPressed()
+    {
+        if (!playerInBubble)
+        {
+            return;
+        }
+        Player.Instance.Jump();
+        ExitBubble();
+    }
     public override void MakeUpdate()
     {
         base.MakeUpdate();
-        Vector2 move = Vector2.zero;
 
-        if (Keyboard.current != null)
-        {
-            if (Keyboard.current.aKey.isPressed)
-                move.x = -1;
-            if (Keyboard.current.dKey.isPressed)
-                move.x = 1;
-            if ((Keyboard.current.aKey.isPressed && Keyboard.current.dKey.isPressed) || (!Keyboard.current.aKey.isPressed && !Keyboard.current.dKey.isPressed))
-                move.x = 0;
-            if (Keyboard.current.sKey.isPressed)
-                move.y = -1;
-            if (Keyboard.current.wKey.isPressed)
-                move.y = 1;
-            if ((Keyboard.current.sKey.isPressed && Keyboard.current.wKey.isPressed) || (!Keyboard.current.sKey.isPressed && !Keyboard.current.wKey.isPressed))
-                move.y = 0;
-        }
-        moveInput = move;
 
-        // Escape bubble
-        if (playerInBubble && (Input.GetKeyDown(KeyCode.Space) || Player.Instance.GetIsAttaching() || Player.Instance.GetIsLocked()))
+        // Escape bubble by grappling out
+        if (playerInBubble && (Player.Instance.GetIsAttaching() || Player.Instance.GetIsLocked()))
         {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                Player.Instance.Jump();
-            }
             ExitBubble();
         }
         if (playerInBubble)
@@ -215,7 +210,7 @@ public class BubbleObj : GrappleObj
     public void Float()
     {
         // Calculate the direction we want to move in and our desired velocity
-        Vector2 normalizedMoveInput = moveInput.normalized;
+        Vector2 normalizedMoveInput = Player.Instance.MoveVector.normalized;
         Vector2 targetSpeed = normalizedMoveInput * Player.Instance.data.bubbleMoveSpeed;
 
         #region Calculate AccelRate
