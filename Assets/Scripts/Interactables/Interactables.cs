@@ -56,17 +56,26 @@ public abstract class Interactables : MonoBehaviour
         MakeUpdate();
        
     }
-    public virtual void MakeUpdate()
+    public void OnEnable()
+    {
+        Player.OnToolUsedGlobal += UseTool;
+    }
+    public void OnDisable()
+    {
+        Player.OnToolUsedGlobal -= UseTool;
+    }
+    private void UseTool()
     {
         inRange = Vector2.Distance(interactPoint, Player.Instance.transform.position) <= data.maxDistanceToInteract;
         if (inRange && Player.Instance.CanInteract() && !isInteracting)
         {
-            if (Input.GetKeyDown(data.interactKey))
-            {
-                isInteracting = true;
-                StartCoroutine(TryInteract(data.interactionTime));
-            }
+            isInteracting = true;
+            StartCoroutine(TryInteract(data.interactionTime));
         }
+    }
+    public virtual void MakeUpdate()
+    {
+        
     }
 
     private IEnumerator TryInteract(float interactTime)

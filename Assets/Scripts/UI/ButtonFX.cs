@@ -55,7 +55,6 @@ public class ButtonFX : MonoBehaviour
                 exitedObject.image.sprite = unselectedButton;
             }
         }
-
     }
 
     public List<Button> GetUIButtons()

@@ -16,6 +16,15 @@
                     "initialStateCheck": true
                 },
                 {
+                    "name": "DisableMovement",
+                    "type": "Button",
+                    "id": "277613f4-ef95-4c7a-a91f-9bd1c367b741",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Jump",
                     "type": "Button",
                     "id": "c8bc10ee-fc0e-4493-a5a7-9f378cfc4878",
@@ -204,7 +213,7 @@
                 {
                     "name": "",
                     "id": "51174e37-7ec6-4d11-87ed-c671dfd2e791",
-                    "path": "<Gamepad>/rightStick",
+                    "path": "<Gamepad>/leftStick",
                     "interactions": "",
                     "processors": "StickDeadzone",
                     "groups": "",
@@ -226,7 +235,7 @@
                 {
                     "name": "",
                     "id": "313acb83-de5e-49b8-97c8-141e0d1069b3",
-                    "path": "<Gamepad>/leftTrigger",
+                    "path": "<Gamepad>/rightShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -275,6 +284,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Inspect",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d70c8f4f-3dea-41e9-b7c9-fc7e752b2126",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DisableMovement",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

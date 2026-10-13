@@ -16,6 +16,7 @@ public class PlayerData : ScriptableObject
     public float noInputMomentumFactor = 0.85f;
     public PhysicsMaterial2D frictionless;
     public PhysicsMaterial2D someFriction;
+    public float horizontalDeadZone;
     [Header("Jumping")]
     public float jumpSpeed;
     public float feetRadius;

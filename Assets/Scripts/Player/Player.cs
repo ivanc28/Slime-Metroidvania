@@ -2,7 +2,9 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections.Generic;
+using System;
 using Unity.Cinemachine;
+using Unity.Collections.LowLevel.Unsafe;
 
 public class Player : MonoBehaviour
 {
@@ -15,6 +17,7 @@ public class Player : MonoBehaviour
     private bool canRun = true;
     private bool facingRight;
     private bool noclip;
+    private bool disablingMovement;
     // Jumping
     private bool pressedJump;
     private bool liftedJump;
@@ -56,6 +59,7 @@ public class Player : MonoBehaviour
 
     private Vector2 pointerScreenPos;
     private Vector2 aimStickInput;
+    private Vector2 lastAimStickInput;
 
     // Zipline
     private bool zipping;
@@ -78,6 +82,7 @@ public class Player : MonoBehaviour
     [SerializeField] ToolOption[] toolOptions;
     private bool toolSelectorEnabled;
     private bool usingTool;
+    public static event Action OnToolUsedGlobal;
     private int prevToolChoice = -1;
 
     [Header("Blowing Bubbles")]
@@ -170,20 +175,24 @@ public class Player : MonoBehaviour
             pressedJump = false;
             liftedJump = false;
             aimStickInput = Vector2.zero;
+            lastAimStickInput = Vector2.zero;
         }
     }
     public void OnMove(InputAction.CallbackContext context)
     {
         Vector2 moveInputVector = context.ReadValue<Vector2>();
-        if(moveInputVector.x > 0)
+        if(Mathf.Abs(moveInputVector.x) > data.horizontalDeadZone)
         {
-            moveInput = 1;
-            FacingRight(true);
-        }
-        else if(moveInputVector.x < 0)
-        {
-            moveInput = -1;
-            FacingRight(false);
+            if (moveInputVector.x > 0)
+            {
+                moveInput = 1;
+                FacingRight(true);
+            }
+            else if (moveInputVector.x < 0)
+            {
+                moveInput = -1;
+                FacingRight(false);
+            }
         }
         else
         {
@@ -191,7 +200,17 @@ public class Player : MonoBehaviour
         }
         //Debug.Log("Trying to move with input " + moveInputVector);
     }
-
+    public void OnDisableMovement(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            disablingMovement = true;
+        }
+        else if (context.canceled)
+        {
+            disablingMovement = false;
+        }
+    }
     public void OnJump(InputAction.CallbackContext context)
     {
         if (context.started)
@@ -241,16 +260,21 @@ public class Player : MonoBehaviour
     }
     private Vector2 GetAimDirection(Vector2 origin)
     {
-        if(aimStickInput.magnitude > 0.01f)
+        if(Gamepad.current != null)
         {
-            return aimStickInput.normalized;
+            if (aimStickInput.magnitude > 0.01f)
+            {
+                lastAimStickInput = aimStickInput.normalized;
+                return lastAimStickInput;
+            }
+            return lastAimStickInput;
         }
         Vector2 worldPoint = Camera.main.ScreenToWorldPoint(pointerScreenPos);
         return (worldPoint - origin).normalized;
     }
     public void OnGrapple(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (context.performed)
         {
             // Fire grappling hook if charges are available
             if (grappleCharges > 0)
@@ -271,6 +295,10 @@ public class Player : MonoBehaviour
                 {
                     EnableToolSelectionCanvas(true);
                     toolSelectorEnabled = true;
+                    if (Gamepad.current != null)
+                    {
+                        disablingMovement = true;
+                    }
                 }
             }
         }
@@ -282,12 +310,16 @@ public class Player : MonoBehaviour
                 SelectTool();
                 EnableToolSelectionCanvas(false);
                 toolSelectorEnabled = false;
+                if (Gamepad.current != null)
+                {
+                    disablingMovement = false;
+                }
             }
         }
     }
     public void OnUseTool(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (context.performed)
         {
             if ((!InInteraction && !inBubble && (isGrounded || isLockedOnGrapple) && !isAttaching && !zipping && currHookBeingThrown == null) || onBubble)
             {
@@ -298,7 +330,7 @@ public class Player : MonoBehaviour
     }
     public void OnInspect(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (context.performed)
         {
             if (CanInteract() && !GetIsLocked() && CurrentInspectable != null)
             {
@@ -833,6 +865,10 @@ public class Player : MonoBehaviour
     }
     private void FacingRight(bool value)
     {
+        if (disablingMovement)
+        {
+            return;
+        }
         facingRight = value;
         rend.flipX = !value;
         umbrellaRenderer.flipX = !value;
@@ -848,8 +884,11 @@ public class Player : MonoBehaviour
     private void Run(float lerpAmount)
     {
         // Calculate the direction we want to move in and our desired velocity
-
         float targetSpeed = moveInput * data.baseMoveSpeed;
+        if (disablingMovement)
+        {
+            targetSpeed = 0;
+        }
         // We can reduce our control using Lerp() this smooths changes to our direction and speed
         targetSpeed = Mathf.Lerp(rb.linearVelocityX, targetSpeed, lerpAmount);
 
@@ -1168,6 +1207,7 @@ public class Player : MonoBehaviour
         }
         yield return null;
         usingTool = true;
+        OnToolUsedGlobal?.Invoke();
         col.sharedMaterial = data.someFriction;
         rb.sharedMaterial = data.someFriction;  // ensure we don't slide around when we start interacting
         InInteraction = true;
@@ -1201,6 +1241,7 @@ public class Player : MonoBehaviour
         rb.sharedMaterial = null;
         usingTool = false;
     }
+
     public void BlowBubbles()
     {
         bubbledState = !bubbledState;
