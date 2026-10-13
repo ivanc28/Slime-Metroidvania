@@ -12,20 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33d8a525270f304418d65e5aa8a4d3d3, type: 3}
   m_Name: 0_node
   m_EditorClassIdentifier: Assembly-CSharp::DialogueGraphNode
-  nodeId: 1
-  folderPath: Assets/ScriptableObjects/Dialogue/ConversationNodes/Fly Guy_58318/0
-  rawInput: '1
-
-    D | P | text
-
-    D | N | text
-
-    C | 2 | x1 | y1 | z1 | x2
-    | y2 | z2
-
-    E | event dict key
-
-    *'
+  nodeId: 0
+  folderPath: 
+  rawInput: 
   hasChoices: 0
   nextNodeId: 0
   nextNode: {fileID: 0}
