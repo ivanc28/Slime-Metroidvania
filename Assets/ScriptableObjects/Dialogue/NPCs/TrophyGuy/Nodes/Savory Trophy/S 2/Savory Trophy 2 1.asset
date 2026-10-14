@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Savory Trophy 2 1
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   speaker: 0
-  line: nope
+  line: nah
   choices: []

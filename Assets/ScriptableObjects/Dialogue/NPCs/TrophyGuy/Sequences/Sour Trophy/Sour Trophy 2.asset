@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Sour Trophy 2
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSequence
   rootNode: {fileID: 11400000, guid: e68a095b3eabeea448fb854bc03398e4, type: 2}
-  nextSequenceCondition: {fileID: 11400000, guid: 71e3a7005d2c65c4eb1165b3b98c2af0, type: 2}
-  skipSequenceCondition: {fileID: 11400000, guid: 71e3a7005d2c65c4eb1165b3b98c2af0, type: 2}
+  nextSequenceCondition: {fileID: 0}
+  skipSequenceCondition: {fileID: 0}
