@@ -1260,6 +1260,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1561f1f8d4ea3f49810b0a4ed49bad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TableInteractable
+  keyIcon: {fileID: 819916867}
+  inspectRange: 3
   finalDessert: {fileID: 11400000, guid: 183ef6fef05dd514081ac4095cfd6087, type: 2}
   trophies:
   - {fileID: 11400000, guid: 18785730250dc4946b1d2096f853638c, type: 2}
@@ -1267,9 +1269,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 225d90626bc4cc54784571413bc22463, type: 2}
   - {fileID: 11400000, guid: d0b5fe9a5a6798c47b411002b8b6820b, type: 2}
   collectDataForKeyIcon: {fileID: 11400000, guid: a73c3039338dffc4d8df4aaefab2420c, type: 2}
-  keyIcon: {fileID: 819916867}
   interactKey: 113
-  interactRange: 3
   fadeTime: 1
   endSceneName: EndScene
 --- !u!4 &704329409 stripped
@@ -1439,7 +1439,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &819916868
 SpriteRenderer:
   serializedVersion: 2

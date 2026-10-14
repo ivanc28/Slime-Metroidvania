@@ -202,7 +202,8 @@ public class NPC : Inspectable
 
                     yield return null;
                 }
-                if (hasTurnedAround)
+                // Check if either the player has turned around OR the player is facing the same direction as the NPC
+                if (hasTurnedAround || Player.Instance.GetRenderer().flipX == transform.position.x > Player.Instance.transform.position.x)
                 {
                     Player.Instance.GetRenderer().flipX ^= true; // flip the player sprite (same as flipX = !flipX)
                 }
@@ -210,6 +211,10 @@ public class NPC : Inspectable
                 yield return new WaitForSeconds(0.25f);
             }
         }
+    }
+    public override float GetInspectRange()
+    {
+        return data.interactDistance;
     }
     /// <summary>
     /// Called from PlayerTalking because this NPC was the closest
