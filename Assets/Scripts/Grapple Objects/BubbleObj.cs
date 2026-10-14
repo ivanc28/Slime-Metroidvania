@@ -11,6 +11,7 @@ public class BubbleObj : GrappleObj
     public LayerMask nothingLayer;
     public float lifespan;
     private float lifetime;
+    private bool isPopping;
 
     public float flashRate;
     private float flashTimer;
@@ -50,8 +51,8 @@ public class BubbleObj : GrappleObj
         {
             return;
         }
-        Player.Instance.Jump();
         ExitBubble();
+        Player.Instance.Jump();
     }
     public override void MakeUpdate()
     {
@@ -59,10 +60,10 @@ public class BubbleObj : GrappleObj
 
 
         // Escape bubble by grappling out
-        if (playerInBubble && (Player.Instance.GetIsAttaching() || Player.Instance.GetIsLocked()))
-        {
-            ExitBubble();
-        }
+        //if (playerInBubble && (Player.Instance.GetIsAttaching() || Player.Instance.GetIsLocked()))
+        //{
+        //    ExitBubble();
+        //}
         if (playerInBubble)
         {
             if (lifetime > 0)
@@ -103,7 +104,7 @@ public class BubbleObj : GrappleObj
     }
     public override void EffectOnPlayerContactAfterHook()
     {
-        if (Player.Instance.IsOnbubble()) return; // already handled
+        if (isPopping || playerInBubble || Player.Instance.IsOnbubble()) return; // already handled
         if (Player.Instance.GetBubbledState())
         {
             if (bubbleEmpty)
@@ -138,13 +139,10 @@ public class BubbleObj : GrappleObj
     public void DeactivateBubble()
     {
         DetachHook();
-        if (!Player.Instance.GetHookBeingThrown() && !Player.Instance.GetIsAttaching())
+        if (Player.Instance.currentAttachedCollider == objCollider)
         {
             Player.Instance.DetachHook();
-            if (!Player.Instance.GetIsLocked())
-            {
-                Player.Instance.currentAttachedCollider = null;
-            }
+            Player.Instance.currentAttachedCollider = null;
         }
         objCollider.enabled = false;
         objRenderer.enabled = false;
@@ -160,6 +158,7 @@ public class BubbleObj : GrappleObj
     }
     private void EnterBubble()
     {
+        Player.Instance.CurrentBubble = this;
         anim.SetBool("inBubble", true);
         if(SoundManager.Instance != null)
         {
@@ -184,6 +183,11 @@ public class BubbleObj : GrappleObj
     }
     public void ExitBubble()
     {
+        if (!playerInBubble)
+        {
+            return; // already exited
+        }
+        isPopping = true;
         anim.SetBool("inBubble", false);
         Player.Instance.SetInBubble(false);
         playerInBubble = false;
@@ -192,6 +196,7 @@ public class BubbleObj : GrappleObj
 
         Player.Instance.transform.parent = null;
         DontDestroyOnLoad(Player.Instance.gameObject);
+        Player.Instance.rb.position = rb.position; // Sync the simulation before resuming
         Player.Instance.rb.simulated = true;
 
         bubbleTrigger.isTrigger = true;
@@ -246,6 +251,7 @@ public class BubbleObj : GrappleObj
         Instantiate(popParticle, transform.position, popParticle.transform.rotation);
         yield return new WaitForSeconds(delayBeforeReappear);
         ActivateBubble();
+        isPopping = false;
         anim.SetTrigger("replaceBubble");
     }
 }

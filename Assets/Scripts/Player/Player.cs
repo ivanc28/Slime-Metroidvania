@@ -94,6 +94,7 @@ public class Player : MonoBehaviour
     private bool bubbledState;
     private bool inBubble;
     private bool onBubble;
+    public BubbleObj CurrentBubble { get; set; }
 
     [Header("Umbrella")]
     [SerializeField] SpriteRenderer umbrellaRenderer;
@@ -1035,6 +1036,11 @@ public class Player : MonoBehaviour
     }
     public void HookAttached(Vector2 point, HookProjectile hook, Collider2D currentCollider)
     {
+        if (inBubble && CurrentBubble != null)
+        {
+            CurrentBubble.ExitBubble();
+        }
+
         if (currentAttachedCollider != null)
         {
             GrappleObj prevObj = currentAttachedCollider.GetComponent<GrappleObj>();
@@ -1562,7 +1568,7 @@ public class Player : MonoBehaviour
     // ------------------------------------
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Zipline") && attachingToZip && isLockedOnGrapple && collision == currentAttachedCollider)
+        if (collision.gameObject.CompareTag("Zipline") && attachingToZip && isLockedOnGrapple && collision == currentAttachedCollider && !IsInBubble())
         {
             DetachHook();
             
