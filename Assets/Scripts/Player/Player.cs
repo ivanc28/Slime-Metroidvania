@@ -180,7 +180,6 @@ public class Player : MonoBehaviour
             pressedJump = false;
             liftedJump = false;
             aimStickInput = Vector2.zero;
-            lastAimStickInput = Vector2.zero;
             moveVector = Vector2.zero;
         }
     }
@@ -265,17 +264,20 @@ public class Player : MonoBehaviour
     public void OnAim(InputAction.CallbackContext context)
     {
         aimStickInput = context.ReadValue<Vector2>();
+        if(aimStickInput.sqrMagnitude > 0.0001f)
+        {
+            lastAimStickInput = aimStickInput.normalized;
+        }
     }
     private Vector2 GetAimDirection(Vector2 origin)
     {
         if(Gamepad.current != null)
         {
-            if (aimStickInput.magnitude > 0.01f)
+            if (lastAimStickInput.sqrMagnitude > 0.01f)
             {
-                lastAimStickInput = aimStickInput.normalized;
                 return lastAimStickInput;
             }
-            return lastAimStickInput;
+            return Vector2.up;
         }
         Vector2 worldPoint = Camera.main.ScreenToWorldPoint(pointerScreenPos);
         return (worldPoint - origin).normalized;
