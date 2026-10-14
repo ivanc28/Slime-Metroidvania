@@ -376,81 +376,76 @@ public class NPC : Inspectable
     {
         text.text = message;
         text.maxVisibleCharacters = 0;
-        int maxChars = 0;
+
         int i = 0;
+        int visibleChars = 0;
         int sfxCharCount = 0;
         bool canPlaySFX = SoundManager.Instance != null && sfxClip != null;
-        float carryover = 0f;
+
+        float timer = 0f;
+        float nextDelay = 0f; // first character shows immediately
 
         while (i < message.Length)
         {
-            bool breakOutOfOuterLoop = false;
-            char nextChar = message[i];
-            char nextNextChar = i < message.Length - 1 ? message[i + 1] : ' ';
-            if (nextChar == '<')
+            if (choosingToSkipLine) // set in Update
             {
-                int j = i;
-                while (nextChar != '>')
-                {
-                    j++;
-                    nextChar = message[j];
-                }
-                i = j;
-                maxChars--;
-            }
-            i++;
-            maxChars++;
-            text.maxVisibleCharacters = maxChars;
-
-            // play sfx
-            bool isPunctuation = nextChar == '.' || nextChar == ',' || nextChar == '?' ||
-                      nextChar == '!' || nextChar == '-' || nextChar == ' ';
-
-            if (!isPunctuation)
-            {
-                sfxCharCount++;
-                if (canPlaySFX && sfxCharCount % data.playSFXEveryXChars == 1)
-                {
-                    SoundManager.Instance.PlaySound(sfxClip, 1, true);
-                }
-            }
-
-
-            float timeTillNextChar = 0;
-            if (nextChar == '.' || (nextChar == '?' && nextNextChar == ' ') || (nextChar == '!' && nextNextChar == ' ') || (nextChar == '-' && nextNextChar == ' '))
-            {
-                timeTillNextChar = delayAfterPeriod;
-            }
-            else if (nextChar == ',')
-            {
-                timeTillNextChar = delayAfterComma;
-            }
-            else
-            {
-                timeTillNextChar = delayBetweenChars;
-            }
-            float elapsed = -carryover; // start negative so previous overshoot goes into this wait
-            carryover = 0f;
-            while (elapsed  < timeTillNextChar)
-            {
-                if (choosingToSkipLine) // choosingToSkipDialogue set in update
-                {
-                    breakOutOfOuterLoop = true;
-                    break;
-                }
-                elapsed += Time.deltaTime;
-                yield return null;
-            }
-            if (!breakOutOfOuterLoop)
-            {
-                carryover = elapsed - timeTillNextChar;
-            }
-            if (breakOutOfOuterLoop)
-            {
-                text.maxVisibleCharacters = message.Length;
                 break;
             }
+
+            bool playedSFXThisFrame = false;
+
+            // Reveal every character whose time has come (can be several on a slow frame)
+            while (i < message.Length && timer >= nextDelay)
+            {
+                timer -= nextDelay;
+
+                // Skip rich text tags instantly, they aren't visible characters
+                while (i < message.Length && message[i] == '<')
+                {
+                    int close = message.IndexOf('>', i);
+                    if (close == -1) break;
+                    i = close + 1;
+                }
+                if (i >= message.Length) break;
+
+                char c = message[i];
+                char next = i < message.Length - 1 ? message[i + 1] : ' ';
+                i++;
+                visibleChars++;
+                text.maxVisibleCharacters = visibleChars;
+
+                bool isPunctuation = c == '.' || c == ',' || c == '?' || c == '!' || c == '-' || c == ' ';
+                if (!isPunctuation)
+                {
+                    sfxCharCount++;
+                    // only one blip per frame so slow frames don't stack sounds
+                    if (canPlaySFX && !playedSFXThisFrame && sfxCharCount % data.playSFXEveryXChars == 1)
+                    {
+                        SoundManager.Instance.PlaySound(sfxClip, 1, true);
+                        playedSFXThisFrame = true;
+                    }
+                }
+
+                if (c == '.' || (c == '?' && next == ' ') || (c == '!' && next == ' ') || (c == '-' && next == ' '))
+                {
+                    nextDelay = delayAfterPeriod;
+                }
+                else if (c == ',')
+                {
+                    nextDelay = delayAfterComma;
+                }
+                else
+                {
+                    nextDelay = delayBetweenChars;
+                }
+            }
+
+            if (i >= message.Length) break;
+
+            timer += Time.deltaTime;
+            yield return null;
         }
+
         text.maxVisibleCharacters = int.MaxValue;
         doneWithLine = true;
         choosingToSkipLine = false;

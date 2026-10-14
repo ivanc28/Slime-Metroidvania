@@ -20,11 +20,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2bb5e3da4b7b0c548a53a57a358bcefb, type: 2}
   - {fileID: 11400000, guid: 9a7918ded63b39744a1d7e7db134d52b, type: 2}
   - {fileID: 11400000, guid: 3c33f5fcfd240154e8cc3b153db401af, type: 2}
+  dialogueTree: {fileID: 0}
   dialogueBoxPrefab: {fileID: 8471492469622854947, guid: 19917e134e38e6444a2e69101becaece, type: 3}
   talkingSFX: {fileID: 8300000, guid: dca838132ce935c41b7bb4e4295293b4, type: 3}
   playSFXEveryXChars: 3
   distanceDialogueAboveHeadOffset: 0.75
-  delayBetweenChars: 0.0185
+  delayBetweenChars: 0.02
   delayAfterPeriod: 0.3
   delayAfterComma: 0.4
   npcTextColor: {r: 0.5647059, g: 0, b: 0.41960785, a: 1}
